@@ -79,6 +79,7 @@ jobs:
                 echo "Failed to download $js_link, skipping..."
               fi
             done
+            git add "$plugin_file" 
           done
           
       - name: Generate plugin URLs
