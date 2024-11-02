@@ -50,7 +50,7 @@ jobs:
           grep -oP '(?<=\?plugin=)[^ )"]+' Kelee_plugin_urls_raw.txt > Kelee_plugin_urls.txt
 
       - name: Download plugin files
-       run: |
+        run: |
           mkdir -p Modules/{Surge,Loon,Shadowrocket}/{Kelee}/{Beta}
           while read -r plugin_url; do
             Modules_name=$(basename "$plugin_url" .plugin)
