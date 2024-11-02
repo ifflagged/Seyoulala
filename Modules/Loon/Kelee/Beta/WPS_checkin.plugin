@@ -1,4 +1,4 @@
-WPS_checkin%0A：Error: Response code 404 (Not Found)
+WPS_checkin%0A：TypeError: body.replace is not a function
 
 
 

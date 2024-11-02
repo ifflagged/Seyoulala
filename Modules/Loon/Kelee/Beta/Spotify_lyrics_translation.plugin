@@ -1,4 +1,4 @@
-Spotify_lyrics_translation%0A：Error: Response code 404 (Not Found)
+Spotify_lyrics_translation%0A：TypeError: body.replace is not a function
 
 
 

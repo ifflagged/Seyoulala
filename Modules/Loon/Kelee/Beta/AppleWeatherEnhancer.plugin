@@ -1,4 +1,4 @@
-AppleWeatherEnhancer%0A：Error: Response code 404 (Not Found)
+AppleWeatherEnhancer%0A：TypeError: body.replace is not a function
 
 
 

@@ -1,4 +1,4 @@
-TikTok_redirect%0A：Error: Response code 404 (Not Found)
+TikTok_redirect%0A：TypeError: body.replace is not a function
 
 
 

@@ -1,4 +1,4 @@
-NodeLinkCheck.Plugin%0A：Error: Response code 404 (Not Found)
+NodeLinkCheck.Plugin%0A：TypeError: body.replace is not a function
 
 
 

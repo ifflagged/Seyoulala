@@ -1,4 +1,4 @@
-JiaKaoBaoDian_remove_ads%0A：Error: Response code 404 (Not Found)
+JiaKaoBaoDian_remove_ads%0A：TypeError: body.replace is not a function
 
 
 

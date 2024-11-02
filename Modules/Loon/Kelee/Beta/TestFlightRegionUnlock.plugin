@@ -1,4 +1,4 @@
-TestFlightRegionUnlock%0A：Error: Response code 404 (Not Found)
+TestFlightRegionUnlock%0A：TypeError: body.replace is not a function
 
 
 

@@ -1,4 +1,4 @@
-RedPaper_remove_ads%0A：Error: Response code 404 (Not Found)
+RedPaper_remove_ads%0A：TypeError: body.replace is not a function
 
 
 

@@ -1,4 +1,4 @@
-Auto_Join_TF%0A：Error: Response code 404 (Not Found)
+Auto_Join_TF%0A：TypeError: body.replace is not a function
 
 
 

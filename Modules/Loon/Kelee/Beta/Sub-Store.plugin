@@ -1,4 +1,4 @@
-Sub-Store%0A：Error: Response code 404 (Not Found)
+Sub-Store%0A：TypeError: body.replace is not a function
 
 
 

@@ -1,4 +1,4 @@
-QQ_Redirect%0A：Error: Response code 404 (Not Found)
+QQ_Redirect%0A：TypeError: body.replace is not a function
 
 
 
