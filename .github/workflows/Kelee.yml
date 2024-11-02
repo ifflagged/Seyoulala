@@ -59,7 +59,7 @@ jobs:
       - name: Find and replace external JS resources
         continue-on-error: true  # 确保步骤在部分失败时继续执行
         run: |
-          js_base_url="https://github.com/ifflagged/Darwin/raw/main/Modules/JS"
+          js_base_url="https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee"
           mkdir -p Modules/JS/Kelee
           for plugin_file in Modules/Loon/Kelee/*.plugin; do
             echo "Processing $plugin_file"
@@ -93,7 +93,7 @@ jobs:
             fi
           done
 
-      - name: Process to sgmodule files
+      - name: Process to different files
         run: |
           category="Jacob"
           encoded_category=$(echo "$category" | jq -sRr @uri)
