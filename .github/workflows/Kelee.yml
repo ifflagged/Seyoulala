@@ -1,0 +1,127 @@
+name: Extract plugin URLs and download sgmodule files
+
+on:
+  push:
+    branches: [ main ]
+  schedule:
+    - cron: '5,30,55 * * * *'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    services:
+      docker:
+        image: xream/script-hub:latest
+        ports:
+          - 9100:9100
+          - 9101:9101
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Git
+        run: |
+          git config --global user.name "ifflagged"
+          git config --global user.email "qibo.sign@outlook.com"
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y curl jq netcat
+
+      - name: Wait for Docker services to be ready
+        run: |
+          echo "Waiting for Docker services to be ready..."
+          for i in {1..10}; do
+            nc -z localhost 9100 && nc -z localhost 9101 && break
+            sleep 10
+          done
+
+      - name: Download README.md
+        run: |
+          curl -s -o README.md https://raw.githubusercontent.com/luestr/ProxyResource/main/README.md
+
+      - name: Extract .plugin URLs
+        run: |
+          grep -oP 'https?://[^ )"]+\?plugin=[^ )"]+' README.md > Kelee_plugin_urls_raw.txt
+          grep -oP '(?<=\?plugin=)[^ )"]+' Kelee_plugin_urls_raw.txt > Kelee_plugin_urls.txt
+
+      - name: Download plugin files
+        run: |
+          mkdir -p Modules/{Surge,Loon,Shadowrocket}/{Kelee}/{Beta}
+          while read -r plugin_url; do
+            Modules_name=$(basename "$plugin_url" .plugin)
+            curl -A "Surge Mac/2985" -L "$plugin_url" -o "Modules/Loon/Kelee/${Modules_name}.plugin"
+          done < Kelee_plugin_urls.txt
+
+      - name: Generate plugin URLs
+        run: |
+          plugin_base_url="https://github.com/ifflagged/Darwin/raw/main/Modules/Loon/Kelee/"
+          for file in Modules/Loon/*; do
+            if [ -f "$file" ]; then
+              filename=$(basename "$file")
+              local_plugin_url="${plugin_base_url}${filename}"
+              echo "$local_plugin_url" > local_plugin_url.txt
+            fi
+          done
+
+      - name: Process to sgmodule files
+        run: |
+          category="Jacob"
+          encoded_category=$(echo "$category" | jq -sRr @uri)
+          while read -r local_plugin_url; do
+          encoded_Modules_name=$(echo "$Modules_name" | jq -sRr @uri)
+          Surge_url="http://localhost:9100/file/_start_/${local_plugin_url}/_end_/${encoded_Modules_name}.sgmodule?type=loon-plugin&target=surge-module&category=${encoded_category}"
+          Surge_Beta_url="http://localhost:9101/file/_start_/${local_plugin_url}/_end_/${encoded_Modules_name}.sgmodule?type=loon-plugin&target=surge-module&category=${encoded_category}"
+          Shadowrocket_url="http://localhost:9100/file/_start_/${local_plugin_url}/_end_/${encoded_Modules_name}.sgmodule?type=loon-plugin&target=surge-module&category=${encoded_category}"
+          Shadowrocket_Beta_url="http://localhost:9101/file/_start_/${local_plugin_url}/_end_/${encoded_Modules_name}.sgmodule?type=loon-plugin&target=surge-module&category=${encoded_category}"
+          echo "Downloading from $Surge_url"
+          curl -A "Surge Mac/2985" -L -o "Modules/Surge/Kelee/${Modules_name}.sgmodule" "$Surge_url" || echo "Failed to download ${Modules_name}.sgmodule"
+          curl -A "Surge Mac/2985" -L -o "Modules/Surge/Kelee/Beta/${Modules_name}.sgmodule" "$Surge_Beta_url" || echo "Failed to download ${Modules_name}.sgmodule"
+          curl -A "Surge Mac/2985" -L -o "Modules/Shadowrocket/Kelee/${Modules_name}.sgmodule" "$Shadowrocket_url" || echo "Failed to download ${Modules_name}.sgmodule"
+          curl -A "Surge Mac/2985" -L -o "Modules/Shadowrocket/Kelee/Beta/${Modules_name}.sgmodule" "$Shadowrocket_Beta_url" || echo "Failed to download ${Modules_name}.sgmodule"
+          done < local_plugin_url.txt
+
+      - name: Find and replace external JS resources
+        continue-on-error: true  # 确保步骤在部分失败时继续执行
+        run: |
+          js_base_url="https://github.com/ifflagged/Darwin/raw/main/Modules/JS"
+          mkdir -p Modules/JS
+          for plugin_file in Modules/Loon/*.plugin; do
+            echo "Processing $plugin_file"
+            # 查找 .js 文件的外部链接
+            js_links=$(grep -oP 'https?://[^ ]+\.js' "$plugin_file" || echo "")
+            for js_link in $js_links; do
+              js_filename=$(basename "$js_link")
+              local_js_path="Modules/JS/$js_filename"
+              # 使用指定的 User-Agent 下载 .js 文件
+              echo "Downloading $js_link to $local_js_path"
+              if curl -A "Surge Mac/2985" -L -o "$local_js_path" "$js_link"; then
+                echo "Download successful for $js_link"
+                # 替换 plugin 文件中的链接为 GitHub 仓库的路径
+                github_js_url="$js_base_url/$js_filename"
+                sed -i "s|$js_link|$github_js_url|g" "$plugin_file"
+              else
+                echo "Failed to download $js_link, skipping..."
+              fi
+            done
+          done
+
+      - name: Commit and push changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git add Modules/*
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git stash
+            git pull --rebase  # 同步远程仓库的最新更改以避免冲突
+            git stash pop  # 恢复之前的更改
+            git add Modules/*  # 再次添加文件
+            git commit -m "Update files"
+            git push
+          fi
