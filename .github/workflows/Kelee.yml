@@ -50,11 +50,12 @@ jobs:
           grep -oP '(?<=\?plugin=)[^ )"]+' Kelee_plugin_urls_raw.txt > Kelee_plugin_urls.txt
 
       - name: Download plugin files
-        run: |
+       run: |
           mkdir -p Modules/{Surge,Loon,Shadowrocket}/{Kelee}/{Beta}
           while read -r plugin_url; do
             Modules_name=$(basename "$plugin_url" .plugin)
-            curl -A "Surge Mac/2985" -L "$plugin_url" -o "Modules/Loon/Kelee/${Modules_name}.plugin"
+            echo "Downloading $plugin_url to Modules/Loon/Kelee/${Modules_name}.plugin"
+            curl -A "Surge Mac/2985" -L "$plugin_url" -o "Modules/Loon/Kelee/${Modules_name}.plugin" || echo "Failed to download $plugin_url"
           done < Kelee_plugin_urls.txt
 
       - name: Generate plugin URLs
