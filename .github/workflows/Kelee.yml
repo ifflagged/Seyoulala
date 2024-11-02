@@ -1,4 +1,4 @@
-name: Extract plugin URLs and download sgmodule files
+name: Extract Kelee plugin
 
 on:
   push:
@@ -61,7 +61,7 @@ jobs:
       - name: Generate plugin URLs
         run: |
           plugin_base_url="https://github.com/ifflagged/Darwin/raw/main/Modules/Loon/Kelee/"
-          for file in Modules/Loon/*; do
+          for file in Modules/Loon/Kelee/*; do
             if [ -f "$file" ]; then
               filename=$(basename "$file")
               local_plugin_url="${plugin_base_url}${filename}"
