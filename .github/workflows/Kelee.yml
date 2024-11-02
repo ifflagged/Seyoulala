@@ -102,13 +102,15 @@ jobs:
           encoded_Modules_name=$(echo "$Modules_name" | jq -sRr @uri)
           Surge_url="http://localhost:9100/file/_start_/${plugin_local_url}/_end_/${encoded_Modules_name}.sgmodule?type=loon-plugin&target=surge-module&category=${encoded_category}"
           Surge_Beta_url="http://localhost:9101/file/_start_/${plugin_local_url}/_end_/${encoded_Modules_name}.sgmodule?type=loon-plugin&target=surge-module&category=${encoded_category}"
+          Loon_Beta_url="http://localhost:9101/file/_start_/${plugin_local_url}/_end_/${encoded_Modules_name}.sgmodule?type=loon-plugin&target=loon-module&category=${encoded_category}"
           Shadowrocket_url="http://localhost:9100/file/_start_/${plugin_local_url}/_end_/${encoded_Modules_name}.sgmodule?type=loon-plugin&target=shadowrocket-module&category=${encoded_category}"
           Shadowrocket_Beta_url="http://localhost:9101/file/_start_/${plugin_local_url}/_end_/${encoded_Modules_name}.sgmodule?type=loon-plugin&target=shadowrocket-module&category=${encoded_category}"
-          echo "Downloading from $Surge_url"
+          echo "Downloading from uls"
           curl -A "Surge Mac/2985" -L -o "Modules/Surge/Kelee/${Modules_name}.sgmodule" "$Surge_url" || echo "Failed to download ${Modules_name}.sgmodule"
           curl -A "Surge Mac/2985" -L -o "Modules/Surge/Kelee/Beta/${Modules_name}.sgmodule" "$Surge_Beta_url" || echo "Failed to download ${Modules_name}.sgmodule"
-          curl -A "Surge Mac/2985" -L -o "Modules/Shadowrocket/Kelee/${Modules_name}.sgmodule" "$Shadowrocket_url" || echo "Failed to download ${Modules_name}.sgmodule"
-          curl -A "Surge Mac/2985" -L -o "Modules/Shadowrocket/Kelee/Beta/${Modules_name}.sgmodule" "$Shadowrocket_Beta_url" || echo "Failed to download ${Modules_name}.sgmodule"
+          curl -A "Surge Mac/2985" -L -o "Modules/Loon/Kelee/Beta/${Modules_name}.plugin" "$Loon_Beta_url" || echo "Failed to download ${Modules_name}.plugin"
+          curl -A "Surge Mac/2985" -L -o "Modules/Shadowrocket/Kelee/${Modules_name}.srmodule" "$Shadowrocket_url" || echo "Failed to download ${Modules_name}.srmodule"
+          curl -A "Surge Mac/2985" -L -o "Modules/Shadowrocket/Kelee/Beta/${Modules_name}.srmodule" "$Shadowrocket_Beta_url" || echo "Failed to download ${Modules_name}.srmodule"
           done < plugin_local_url.txt
 
       - name: Commit and push changes
