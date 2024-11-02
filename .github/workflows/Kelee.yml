@@ -51,7 +51,7 @@ jobs:
 
       - name: Download plugin files
         run: |
-          mkdir -p Modules/{Surge,Loon,Shadowrocket}/{Kelee}/{Beta}
+          mkdir -p Modules/{Surge,Loon,Shadowrocket}/Kelee/Beta
           while read -r plugin_url; do
             Modules_name=$(basename "$plugin_url" .plugin)
             echo "Downloading $plugin_url to Modules/Loon/Kelee/${Modules_name}.plugin"
