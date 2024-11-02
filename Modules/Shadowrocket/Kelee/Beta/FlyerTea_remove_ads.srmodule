@@ -22,10 +22,10 @@
 
 [Script]
 # 板块广告
-移除板块广告 = type=http-response, pattern=^https:\/\/www\.flyert\.com\.cn\/api\/mobile\/index\.php\?version=5, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/FlyerTea_remove_ads.js, requires-body=true
+移除板块广告 = type=http-response, pattern=^https:\/\/www\.flyert\.com\.cn\/api\/mobile\/index\.php\?version=5, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/FlyerTea_remove_ads.js, requires-body=true
 
 # 签到弹窗广告
-移除签到弹窗广告 = type=http-response, pattern=^https:\/\/www\.flyert\.com\.cn\/api\/mobile\/index\.php\?module=plugin&id=k_misign:sign, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/FlyerTea_remove_ads.js, requires-body=true
+移除签到弹窗广告 = type=http-response, pattern=^https:\/\/www\.flyert\.com\.cn\/api\/mobile\/index\.php\?module=plugin&id=k_misign:sign, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/FlyerTea_remove_ads.js, requires-body=true
 
 [MITM]
 hostname = %APPEND% www.flyert.com.cn, ptf.flyertrip.com
