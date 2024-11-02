@@ -29,7 +29,7 @@ DOMAIN,hc-ssp.sm.cn,REJECT
 
 [Script]
 # 首页 - 活动标签
-移除首页活动标签 = type=http-response, pattern=^https:\/\/api\.gotokeep\.com\/config\/v3\/basic, script-path=https://kelee.one/Resource/Script/Keep/Keep_remove_ads.js, requires-body=true
+移除首页活动标签 = type=http-response, pattern=^https:\/\/api\.gotokeep\.com\/config\/v3\/basic, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Keep_remove_ads.js, requires-body=true
 
 [MITM]
 hostname = %APPEND% api.gotokeep.com, kad.gotokeep.com
