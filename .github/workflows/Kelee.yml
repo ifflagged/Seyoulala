@@ -64,8 +64,8 @@ jobs:
           for file in Modules/Loon/Kelee/*; do
             if [ -f "$file" ]; then
               filename=$(basename "$file")
-              local_plugin_url="${plugin_base_url}${filename}"
-              echo "$local_plugin_url" > local_plugin_url.txt
+              plugin_local_url="${plugin_base_url}${filename}"
+              echo "$plugin_local_url" > plugin_local_url.txt
             fi
           done
 
@@ -73,18 +73,19 @@ jobs:
         run: |
           category="Jacob"
           encoded_category=$(echo "$category" | jq -sRr @uri)
-          while read -r local_plugin_url; do
+          while read -r plugin_local_url; do
+          Modules_name=$(basename "$plugin_local_url" .plugin)
           encoded_Modules_name=$(echo "$Modules_name" | jq -sRr @uri)
-          Surge_url="http://localhost:9100/file/_start_/${local_plugin_url}/_end_/${encoded_Modules_name}.sgmodule?type=loon-plugin&target=surge-module&category=${encoded_category}"
-          Surge_Beta_url="http://localhost:9101/file/_start_/${local_plugin_url}/_end_/${encoded_Modules_name}.sgmodule?type=loon-plugin&target=surge-module&category=${encoded_category}"
-          Shadowrocket_url="http://localhost:9100/file/_start_/${local_plugin_url}/_end_/${encoded_Modules_name}.sgmodule?type=loon-plugin&target=surge-module&category=${encoded_category}"
-          Shadowrocket_Beta_url="http://localhost:9101/file/_start_/${local_plugin_url}/_end_/${encoded_Modules_name}.sgmodule?type=loon-plugin&target=surge-module&category=${encoded_category}"
+          Surge_url="http://localhost:9100/file/_start_/${plugin_local_url}/_end_/${encoded_Modules_name}.sgmodule?type=loon-plugin&target=surge-module&category=${encoded_category}"
+          Surge_Beta_url="http://localhost:9101/file/_start_/${plugin_local_url}/_end_/${encoded_Modules_name}.sgmodule?type=loon-plugin&target=surge-module&category=${encoded_category}"
+          Shadowrocket_url="http://localhost:9100/file/_start_/${plugin_local_url}/_end_/${encoded_Modules_name}.sgmodule?type=loon-plugin&target=shadowrocket-module&category=${encoded_category}"
+          Shadowrocket_Beta_url="http://localhost:9101/file/_start_/${plugin_local_url}/_end_/${encoded_Modules_name}.sgmodule?type=loon-plugin&target=shadowrocket-module&category=${encoded_category}"
           echo "Downloading from $Surge_url"
           curl -A "Surge Mac/2985" -L -o "Modules/Surge/Kelee/${Modules_name}.sgmodule" "$Surge_url" || echo "Failed to download ${Modules_name}.sgmodule"
           curl -A "Surge Mac/2985" -L -o "Modules/Surge/Kelee/Beta/${Modules_name}.sgmodule" "$Surge_Beta_url" || echo "Failed to download ${Modules_name}.sgmodule"
           curl -A "Surge Mac/2985" -L -o "Modules/Shadowrocket/Kelee/${Modules_name}.sgmodule" "$Shadowrocket_url" || echo "Failed to download ${Modules_name}.sgmodule"
           curl -A "Surge Mac/2985" -L -o "Modules/Shadowrocket/Kelee/Beta/${Modules_name}.sgmodule" "$Shadowrocket_Beta_url" || echo "Failed to download ${Modules_name}.sgmodule"
-          done < local_plugin_url.txt
+          done < plugin_local_url.txt
 
       - name: Find and replace external JS resources
         continue-on-error: true  # 确保步骤在部分失败时继续执行
