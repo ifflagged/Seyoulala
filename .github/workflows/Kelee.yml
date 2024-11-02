@@ -65,7 +65,7 @@ jobs:
             if [ -f "$file" ]; then
               filename=$(basename "$file")
               plugin_local_url="${plugin_base_url}${filename}"
-              echo "$plugin_local_url" > plugin_local_url.txt
+              echo "$plugin_local_url" >> plugin_local_url.txt
             fi
           done
 
@@ -92,7 +92,7 @@ jobs:
         run: |
           js_base_url="https://github.com/ifflagged/Darwin/raw/main/Modules/JS"
           mkdir -p Modules/JS
-          for plugin_file in Modules/Loon/*.plugin; do
+          for plugin_file in Modules/Loon/Kelee/*.plugin; do
             echo "Processing $plugin_file"
             # 查找 .js 文件的外部链接
             js_links=$(grep -oP 'https?://[^ ]+\.js' "$plugin_file" || echo "")
