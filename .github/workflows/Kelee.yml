@@ -91,7 +91,7 @@ jobs:
         continue-on-error: true  # 确保步骤在部分失败时继续执行
         run: |
           js_base_url="https://github.com/ifflagged/Darwin/raw/main/Modules/JS"
-          mkdir -p Modules/JS
+          mkdir -p Modules/JS/Kelee
           for plugin_file in Modules/Loon/Kelee/*.plugin; do
             echo "Processing $plugin_file"
             # 查找 .js 文件的外部链接
