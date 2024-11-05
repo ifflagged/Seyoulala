@@ -10,13 +10,13 @@
 
 [Script]
 # Bag (iOS/macOS)
-http-request ^https?:\/\/api2?\.smoot\.apple\.(com|cn)\/bag script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS//request.js, tag=⭕ Siri.Bag.request
-http-response ^https?:\/\/api2?\.smoot\.apple\.(com|cn)\/bag script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS//response.js, requires-body=1, tag=⭕ Siri.Bag.response
+http-request ^https?:\/\/api2?\.smoot\.apple\.(com|cn)\/bag script-path=https://github.com/NSRingo/Siri/releases/latest/download/request.js, tag=⭕ Siri.Bag.request
+http-response ^https?:\/\/api2?\.smoot\.apple\.(com|cn)\/bag script-path=https://github.com/NSRingo/Siri/releases/latest/download/response.js, requires-body=1, tag=⭕ Siri.Bag.response
 # Siri Suggestions & Look Up Search (iOS/macOS)
-http-request ^https?:\/\/api(2|-.+)\.smoot\.apple\.(com|cn)\/search script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS//request.js, tag=🔍 Siri.Search.request
-http-response ^https?:\/\/api(2|-.+)\.smoot\.apple\.(com|cn)\/search script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS//response.js, requires-body=1, tag=🔍 Siri.Search.response
+http-request ^https?:\/\/api(2|-.+)\.smoot\.apple\.(com|cn)\/search script-path=https://github.com/NSRingo/Siri/releases/latest/download/request.js, tag=🔍 Siri.Search.request
+http-response ^https?:\/\/api(2|-.+)\.smoot\.apple\.(com|cn)\/search script-path=https://github.com/NSRingo/Siri/releases/latest/download/response.js, requires-body=1, tag=🔍 Siri.Search.response
 # Flight Search (iOS/macOS)
-http-request ^https?:\/\/api(2|-.+)\.smoot\.apple\.(com|cn)\/flight script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS//request.js, tag=🛫 Siri.Flight.request
+http-request ^https?:\/\/api(2|-.+)\.smoot\.apple\.(com|cn)\/flight script-path=https://github.com/NSRingo/Siri/releases/latest/download/request.js, tag=🛫 Siri.Flight.request
 
 [MITM]
 hostname = api*.smoot.apple.com, api.smoot.apple.cn
