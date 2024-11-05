@@ -7,7 +7,7 @@
 #!tag=去广告
 #!loon_version=3.2.1(749)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!date=2024-08-14 21:37:06
+#!date=2024-11-05 08:18:38
 
 [Rule]
 # Outlook
@@ -71,8 +71,6 @@ DOMAIN,open-pixon.ads-pixiv.net,REJECT
 ^https:\/\/shopapi\.io\.mi\.com\/mtop\/mf\/resource\/homePage\/pageConfig - reject-200
 # 小米运动
 ^https:\/\/api-mifit-cn2\.huami\.com\/discovery\/mi\/cards\/startpage_ad - reject
-# 米家
-^https:\/\/home\.mi\.com\/cgi-op\/api\/v1\/recommendation\/(banner|myTab)\? - reject-dict
 # 米读
 ^https:\/\/apiwz\.midukanshu\.com\/advert\/getPopup$ - reject
 ^https:\/\/apiwz\.midukanshu\.com\/advert\/treasureInfo$ - reject

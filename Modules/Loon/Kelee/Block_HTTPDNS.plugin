@@ -8,7 +8,7 @@
 #!loon_version = 3.2.1(749)
 #!homepage = https://github.com/luestr/ProxyResource/blob/main/README.md
 #!icon = https://raw.githubusercontent.com/luestr/IconResource/main/Other_icon/120px/HTTPDNS.png
-#!date = 2024-09-25 15:45:58
+#!date = 2024-11-05 10:03:15
 
 [Rule]
 # YY语音
@@ -187,6 +187,9 @@ DOMAIN, dotserver.douyucdn.cn, REJECT
 
 # 金山云
 DOMAIN, hdns.ksyun.com, REJECT
+
+# 马蜂窝
+URL-REGEX, ^http:\/\/162\.14\.3\.250\/v4, REJECT
 
 # OPPO
 DOMAIN, httpdns.push.oppomobile.com, REJECT
