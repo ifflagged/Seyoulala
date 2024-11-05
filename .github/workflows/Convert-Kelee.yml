@@ -95,7 +95,7 @@ jobs:
           js_base_url="https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee"
           mkdir -p Modules/JS/Kelee
 
-          # 查找 Surge 和 Shadowrocket 文件夹中的插件文件
+          # 查找 Loon 文件夹中的插件文件
           for plugin_file in Modules/Loon/Kelee/*.plugin; do
             echo "Processing $plugin_file"
 
@@ -111,7 +111,7 @@ jobs:
               if curl -A "Surge Mac/2985" -L -o "$local_js_path" "$js_link"; then
                 echo "Download successful for $js_link"
 
-                # 替换 Loon plugin 文件中的链接为 GitHub 仓库的路径
+                # 替换 Loon 插件文件中的链接为 GitHub 仓库的路径
                 github_js_url="$js_base_url/$js_filename"
                 sed -i "s|$js_link|$github_js_url|g" "$plugin_file"
               else
@@ -119,18 +119,27 @@ jobs:
               fi
             done
 
-            # 对应的 Surge 和 Shadowrocket 文件夹中的插件文件处理
-            for file in Modules/Surge/Kelee/*.sgmodule Modules/Shadowrocket/Kelee/*.srmodule; do
-              if [ -f "$file" ]; then
-                echo "Replacing JS links in $file"
+            # 获取对应的 Surge 和 Shadowrocket 插件文件名
+            surge_file="Modules/Surge/Kelee/$(basename "$plugin_file" .plugin).sgmodule"
+            shadowrocket_file="Modules/Shadowrocket/Kelee/$(basename "$plugin_file" .plugin).srmodule"
 
-                # 替换 Surge 和 Shadowrocket 文件夹中的 JS 链接
-                for js_link in $js_links; do
-                  github_js_url="$js_base_url/$(basename $js_link)"
-                  sed -i "s|$js_link|$github_js_url|g" "$file"
-                done
-              fi
-            done
+            # 如果对应的 Surge 插件文件存在，则替换其中的 JS 链接
+            if [ -f "$surge_file" ]; then
+              echo "Replacing JS links in $surge_file"
+              for js_link in $js_links; do
+                github_js_url="$js_base_url/$(basename "$js_link")"
+                sed -i "s|$js_link|$github_js_url|g" "$surge_file"
+              done
+            fi
+
+            # 如果对应的 Shadowrocket 插件文件存在，则替换其中的 JS 链接
+            if [ -f "$shadowrocket_file" ]; then
+              echo "Replacing JS links in $shadowrocket_file"
+              for js_link in $js_links; do
+                github_js_url="$js_base_url/$(basename "$js_link")"
+                sed -i "s|$js_link|$github_js_url|g" "$shadowrocket_file"
+              done
+            fi
           done
           
       - name: Commit and push changes
