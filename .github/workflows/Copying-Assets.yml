@@ -171,50 +171,60 @@ jobs:
         run: |
           # 基础 GitHub 仓库 URL
           js_base_url="https://github.com/ifflagged/Darwin/raw/main/Modules/JS"
-    
+      
           # 创建目标目录
           mkdir -p Modules/JS/NSRingo
           mkdir -p Modules/JS/BiliUniverse
           mkdir -p Modules/JS/DualSubs
-
-          # 查找 .sgmodule、.plugin 和 .srmodule 文件的外部 JS 链接，并下载
-          for module_file in $(find Modules/Surge/NSRingo Modules/Surge/BiliUniverse Modules/Surge/DualSubs -type f \( -name "*.sgmodule" -o -name "*.plugin" -o -name "*.srmodule" \)); do
-            echo "Processing $module_file"
+      
+          # 查找 .sgmodule 文件中的外部 JS 链接
+          for sgmodule_file in $(find Modules/Surge/NSRingo Modules/Surge/BiliUniverse Modules/Surge/DualSubs -type f -name "*.sgmodule"); do
+            echo "Processing $sgmodule_file"
       
             # 查找文件中的 .js 链接
-            js_links=$(grep -oP 'https?://[^ ]+\.js' "$module_file" || echo "")
+            js_links=$(grep -oP 'https?://[^ ]+\.js' "$sgmodule_file" || echo "")
       
             # 对每个 JS 链接进行处理
             for js_link in $js_links; do
               js_filename=$(basename "$js_link")
-        
+      
               # 根据文件来源确定目标路径
-              if [[ "$module_file" == "Modules/Surge/NSRingo"* ]]; then
+              if [[ "$sgmodule_file" == "Modules/Surge/NSRingo"* ]]; then
                 local_js_path="Modules/JS/NSRingo/$js_filename"
                 js_base_url="https://github.com/ifflagged/Darwin/raw/main/Modules/JS/NSRingo"
-              elif [[ "$module_file" == "Modules/Surge/BiliUniverse"* ]]; then
+              elif [[ "$sgmodule_file" == "Modules/Surge/BiliUniverse"* ]]; then
                 local_js_path="Modules/JS/BiliUniverse/$js_filename"
                 js_base_url="https://github.com/ifflagged/Darwin/raw/main/Modules/JS/BiliUniverse"
-              elif [[ "$module_file" == "Modules/Surge/DualSubs"* ]]; then
+              elif [[ "$sgmodule_file" == "Modules/Surge/DualSubs"* ]]; then
                 local_js_path="Modules/JS/DualSubs/$js_filename"
                 js_base_url="https://github.com/ifflagged/Darwin/raw/main/Modules/JS/DualSubs"
               else
-                echo "Unknown module source, skipping $module_file"
+                echo "Unknown module source, skipping $sgmodule_file"
                 continue
               fi
-        
+      
               # 下载 JS 文件到目标路径
               echo "Downloading $js_link to $local_js_path"
               if curl -A "Surge Mac/2985" -L -o "$local_js_path" "$js_link"; then
                 echo "Download successful for $js_link"
           
-                # 替换 .sgmodule、.plugin、.srmodule 文件中的 JS 链接为 GitHub 链接
+                # 替换 .sgmodule 文件中的 JS 链接为 GitHub 链接
                 github_js_url="$js_base_url/$js_filename"
-                echo "Replacing $js_link with $github_js_url in $module_file"
-                sed -i "s|$js_link|$github_js_url|g" "$module_file"
+                echo "Replacing $js_link with $github_js_url in $sgmodule_file"
+                sed -i "s|$js_link|$github_js_url|g" "$sgmodule_file"
           
                 # 提交文件更新
-                git add "$module_file"
+                git add "$sgmodule_file"
+      
+                # 处理对应的 .plugin 和 .srmodule 文件
+                for ext in ".plugin" ".srmodule"; do
+                  other_file="${sgmodule_file%.*}$ext"
+                  if [ -f "$other_file" ]; then
+                    echo "Replacing JS links in $other_file"
+                    sed -i "s|$js_link|$github_js_url|g" "$other_file"
+                    git add "$other_file"
+                  fi
+                done
               else
                 echo "Failed to download $js_link, skipping..."
               fi
@@ -229,13 +239,13 @@ jobs:
           set +e  # 禁用错误时退出
           git config --global user.name "ifflagged"
           git config --global user.email "qibo.sign@outlook.com"
-
+  
           DATE="$(TZ='Asia/Shanghai' date '+%Y-%m-%d %H:%M:%S')"
-
+  
           git add .
-
+  
           COMMIT_MESSAGE="Synched assets at $DATE (UTC+8)"
-
+  
           # 检查是否有更改，如果有更改则提交
           if git diff --cached --quiet; then
             echo "No changes to commit."
