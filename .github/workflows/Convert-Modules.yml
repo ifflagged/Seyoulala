@@ -58,8 +58,8 @@ jobs:
 
             # 创建文件夹
             echo "Creating directories for $author"
-            mkdir -p "Modules/{Surge,Loon,Shadowrocket}/$author/Beta"
-            mkdir -p "Modules/JS/{Surge,Loon,Shadowrocket}/$author"
+            mkdir -p Modules/{Surge,Loon,Shadowrocket}/$author/Beta
+            mkdir -p Modules/JS/{Surge,Loon,Shadowrocket}/$author
 
             # 构建模块的 URL
             Surge_url="http://localhost:9100/file/_start_/${module_link}/_end_/${encoded_filename}.sgmodule?type=surge-module&target=surge-module&category=${encoded_category}&nore=true"
@@ -71,16 +71,16 @@ jobs:
 
             # 下载各模块文件
             echo "Downloading Surge file: $Surge_url"
-            curl -A "Surge Mac/2985" -L -o "Modules/Surge/$author/$filename.sgmodule" "$Surge_url" || echo "Failed to download $Surge_url"
-            curl -A "Surge Mac/2985" -L -o "Modules/Surge/$author/Beta/$filename.sgmodule" "$Surge_Beta_url" || echo "Failed to download $Surge_Beta_url"
+            curl -A "Surge Mac/2985" -L -o "Modules/Surge/$author/$filename_noext.sgmodule" "$Surge_url" || echo "Failed to download $Surge_url"
+            curl -A "Surge Mac/2985" -L -o "Modules/Surge/$author/Beta/$filename_noext.sgmodule" "$Surge_Beta_url" || echo "Failed to download $Surge_Beta_url"
 
             echo "Downloading Loon file: $Loon_url"
-            curl -A "Surge Mac/2985" -L -o "Modules/Loon/$author/$filename.plugin" "$Loon_url" || echo "Failed to download $Loon_url"
-            curl -A "Surge Mac/2985" -L -o "Modules/Loon/$author/Beta/$filename.plugin" "$Loon_Beta_url" || echo "Failed to download $Loon_Beta_url"
+            curl -A "Surge Mac/2985" -L -o "Modules/Loon/$author/$filename_noext.plugin" "$Loon_url" || echo "Failed to download $Loon_url"
+            curl -A "Surge Mac/2985" -L -o "Modules/Loon/$author/Beta/$filename_noext.plugin" "$Loon_Beta_url" || echo "Failed to download $Loon_Beta_url"
 
             echo "Downloading Shadowrocket file: $Shadowrocket_url"
-            curl -A "Surge Mac/2985" -L -o "Modules/Shadowrocket/$author/$filename.srmodule" "$Shadowrocket_url" || echo "Failed to download $Shadowrocket_url"
-            curl -A "Surge Mac/2985" -L -o "Modules/Shadowrocket/$author/Beta/$filename.srmodule" "$Shadowrocket_Beta_url" || echo "Failed to download $Shadowrocket_Beta_url"
+            curl -A "Surge Mac/2985" -L -o "Modules/Shadowrocket/$author/$filename_noext.srmodule" "$Shadowrocket_url" || echo "Failed to download $Shadowrocket_url"
+            curl -A "Surge Mac/2985" -L -o "Modules/Shadowrocket/$author/Beta/$filename_noext.srmodule" "$Shadowrocket_Beta_url" || echo "Failed to download $Shadowrocket_Beta_url"
 
           done < Links/Modules-Links.txt
 
