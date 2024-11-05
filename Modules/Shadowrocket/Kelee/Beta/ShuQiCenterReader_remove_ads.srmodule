@@ -25,7 +25,7 @@ DOMAIN,render-web.11222.cn,REJECT
 
 [Script]
 # 书城横幅和阅读广告
-移除书城横幅和阅读广告 = type=http-response, pattern=^https:\/\/ocean\.shuqireader\.com\/sqios\/render\/render\/page\/bookstore$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS//ShuQiCenterReader_remove_ads.js, requires-body=true
+移除书城横幅和阅读广告 = type=http-response, pattern=^https:\/\/ocean\.shuqireader\.com\/sqios\/render\/render\/page\/bookstore$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/ShuQiCenterReader_remove_ads.js, requires-body=true
 
 [MITM]
 hostname = %APPEND% ocean.shuqireader.com, huichuan.sm.cn

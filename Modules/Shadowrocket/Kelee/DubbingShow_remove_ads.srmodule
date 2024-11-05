@@ -41,7 +41,7 @@ DOMAIN,tmeadcomm.y.qq.com,REJECT
 
 [Script]
 # 首页 - 底部弹窗
-移除首页底部弹窗 = type=http-response, pattern=^https:\/\/iosapi\.peiyinxiu\.com\/Api\/Film\/GetConfigValue, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS//DubbingShow_remove_ads.js, requires-body=true
+移除首页底部弹窗 = type=http-response, pattern=^https:\/\/iosapi\.peiyinxiu\.com\/Api\/Film\/GetConfigValue, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/DubbingShow_remove_ads.js, requires-body=true
 
 [MITM]
 hostname = %APPEND% iosapi.peiyinxiu.com

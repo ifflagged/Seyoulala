@@ -12,10 +12,10 @@
 
 [Script]
 # 捕获Cookie
-http-request ^https:\/\/moapi\.wps\.cn\/app\/ios\/v1\/app$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS//WPS_checkin.js, requires-body=true, tag=捕获Cookie
+http-request ^https:\/\/moapi\.wps\.cn\/app\/ios\/v1\/app$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/WPS_checkin.js, requires-body=true, tag=捕获Cookie
 
 # 定时签到
-cron "null" script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS//WPS_checkin.js, timeout=120, tag=WPS每日签到, argument="[{AK},{SK},{MAX_RETRIES}]"
+cron "null" script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/WPS_checkin.js, timeout=120, tag=WPS每日签到, argument="[{AK},{SK},{MAX_RETRIES}]"
 
 [MITM]
 hostname = moapi.wps.cn

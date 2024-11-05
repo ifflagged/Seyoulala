@@ -18,7 +18,7 @@
 
 [Script]
 # 查老板 - 推荐老板
-http-response ^https:\/\/m\.riskbird\.com\/prod-qbb-api\/query\/person\/personRecommend script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS//RiskBird_remove_ads.js, requires-body=true, tag=移除推荐老板
+http-response ^https:\/\/m\.riskbird\.com\/prod-qbb-api\/query\/person\/personRecommend script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/RiskBird_remove_ads.js, requires-body=true, tag=移除推荐老板
 
 [MITM]
 hostname = m.riskbird.com
