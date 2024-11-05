@@ -209,9 +209,9 @@ DOMAIN-SUFFIX,bridgeoos.com,REJECT
 ^https:\/\/images\.pinduoduo\.com\/marketing_api\/ - reject
 
 [Script]
-http-response ^https:\/\/appconf\.mail\.163\.com\/mailmaster\/api\/page\/v2\/conf\.do$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS//body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_201, argument=%5B%5B%22json-del%22%2C%5B%22data.functionOperatorInfoList%22%2C%22data.memberOperator%22%2C%22data.activityTabInfoList%22%5D%5D%5D
+http-response ^https:\/\/appconf\.mail\.163\.com\/mailmaster\/api\/page\/v2\/conf\.do$ script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_201, argument=%5B%5B%22json-del%22%2C%5B%22data.functionOperatorInfoList%22%2C%22data.memberOperator%22%2C%22data.activityTabInfoList%22%5D%5D%5D
 
-http-response ^https:\/\/appconf\.mail\.163\.com\/mailmaster\/api\/config\/function\.do$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS//body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_203, argument=%5B%5B%22json-del%22%2C%5B%22data.config%5B39%5D.result.tools%5B2%5D%22%5D%5D%5D
+http-response ^https:\/\/appconf\.mail\.163\.com\/mailmaster\/api\/config\/function\.do$ script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_203, argument=%5B%5B%22json-del%22%2C%5B%22data.config%5B39%5D.result.tools%5B2%5D%22%5D%5D%5D
 
 [MITM]
 hostname = appconf.mail.163.com, dashi.163.com, video-dsp.pddpic.com, t-dsp.pinduoduo.com, images.pinduoduo.com

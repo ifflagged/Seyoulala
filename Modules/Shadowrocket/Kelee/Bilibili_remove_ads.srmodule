@@ -42,7 +42,7 @@ URL-REGEX,^http:\/\/[\d\.]+:8000\/v1\/resource\/\w{32}-1-SPLASH,REJECT-DICT
 
 [Script]
 # 移除右上角活动入口
-echoResponse = type=http-request, pattern=^https:\/\/app\.bilibili\.com\/x\/resource\/top\/activity\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS//echo-response.js, timeout=60, argument=json=%7B%20%22code%22%3A%20-404%2C%20%22message%22%3A%20%22%E5%95%A5%E9%83%BD%E6%9C%A8%E6%9C%89%22%2C%20%22ttl%22%3A%201%2C%20%22data%22%3A%20null%20%7D&status-code=200
+echoResponse = type=http-request, pattern=^https:\/\/app\.bilibili\.com\/x\/resource\/top\/activity\?, script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/echo-response.js, timeout=60, argument=json=%7B%20%22code%22%3A%20-404%2C%20%22message%22%3A%20%22%E5%95%A5%E9%83%BD%E6%9C%A8%E6%9C%89%22%2C%20%22ttl%22%3A%201%2C%20%22data%22%3A%20null%20%7D&status-code=200
 
 # 移除播放页面视频列表广告
 移除播放页面视频列表广告 = type=http-response, pattern=^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.(view|viewunite)\.v1\.View\/(View|ViewProgress)$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS//Bilibili_helper_beta.js, requires-body=true, binary-body-mode=true
