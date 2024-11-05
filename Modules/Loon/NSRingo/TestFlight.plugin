@@ -18,8 +18,8 @@ Universal = switch,false,tag=启用通用应用支持,desc=是否启用通用应
 skip-proxy = iosapps.itunes.apple.com
 
 [Script]
-http-request ^https?:\/\/testflight\.apple\.com\/ script-path=https://github.com/NSRingo/TestFlight/releases/download/v3.2.4/request.js, requires-body=true, tag=✈ TestFlight.request, argument=[{CountryCode},{MultiAccount},{Universal}]
-http-response ^https?:\/\/testflight\.apple\.com\/ script-path=https://github.com/NSRingo/TestFlight/releases/download/v3.2.4/response.js, requires-body=true, tag=✈ TestFlight.response, argument=[{CountryCode},{MultiAccount},{Universal}]
+http-request ^https?:\/\/testflight\.apple\.com\/ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS//request.js, requires-body=true, tag=✈ TestFlight.request, argument=[{CountryCode},{MultiAccount},{Universal}]
+http-response ^https?:\/\/testflight\.apple\.com\/ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS//response.js, requires-body=true, tag=✈ TestFlight.response, argument=[{CountryCode},{MultiAccount},{Universal}]
 
 [MITM]
 hostname = testflight.apple.com

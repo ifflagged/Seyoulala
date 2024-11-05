@@ -28,7 +28,7 @@
 
 [Script]
 # 下发广告
-移除下发广告 = type=http-response, pattern=^https:\/\/portal-portm\.meituan\.com\/horn_ios\/mergeRequest, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/iMaiCai_remove_ads.js, requires-body=true
+移除下发广告 = type=http-response, pattern=^https:\/\/portal-portm\.meituan\.com\/horn_ios\/mergeRequest, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS//iMaiCai_remove_ads.js, requires-body=true
 
 [MITM]
 hostname = %APPEND% portal-portm.meituan.com, mall.meituan.com, businessapi.ksedt.com

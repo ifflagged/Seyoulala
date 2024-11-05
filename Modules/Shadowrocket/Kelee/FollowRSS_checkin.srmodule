@@ -12,5 +12,5 @@
 
 [Script]
 # 定时签到
-Follow每日签到 = type=cron, cronexp="null", script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/FollowRSS_checkin.js, timeout=120, argument="[{token},{cookie}]"
+Follow每日签到 = type=cron, cronexp="null", script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS//FollowRSS_checkin.js, timeout=120, argument="[{token},{cookie}]"
 

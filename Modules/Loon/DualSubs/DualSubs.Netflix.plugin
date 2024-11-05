@@ -19,7 +19,7 @@ Vendor = select,"Google","Microsoft",tag=[翻译器] 服务商API,desc=请选择
 ShowOnly = switch,false,tag=[翻译器] 只显示翻译字幕,desc=是否仅显示翻译后的字幕，不显示源语言字幕。
 
 [Script]
-http-response ^https?:\/\/(.+)\.oca\.nflxvideo\.net\/\?o=\d+&v=\d+&e=\d+&t=.+ requires-body=1, script-path=https://github.com/DualSubs/Universal/releases/latest/download/Translate.response.bundle.js, tag=🍿️ DualSubs.Netflix.Translate.Subtitles.response
+http-response ^https?:\/\/(.+)\.oca\.nflxvideo\.net\/\?o=\d+&v=\d+&e=\d+&t=.+ requires-body=1, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS//Translate.response.bundle.js, tag=🍿️ DualSubs.Netflix.Translate.Subtitles.response
 
 [MITM]
 hostname = *.oca.nflxvideo.net

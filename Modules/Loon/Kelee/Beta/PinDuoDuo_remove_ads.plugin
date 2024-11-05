@@ -38,13 +38,13 @@ DOMAIN,th.pinduoduo.com,REJECT
 ^https:\/\/api\.pinduoduo\.com\/search_hotquery\? - reject-dict
 
 [Script]
-http-response ^https:\/\/api\.pinduoduo\.com\/api\/oak\/integration\/render script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_32, argument=%5B%5B%22json-del%22%2C%5B%22bottom_section_list%22%2C%22ui.bottom_section%22%2C%22ui.live_section.float_info%22%5D%5D%5D
+http-response ^https:\/\/api\.pinduoduo\.com\/api\/oak\/integration\/render script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS//body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_32, argument=%5B%5B%22json-del%22%2C%5B%22bottom_section_list%22%2C%22ui.bottom_section%22%2C%22ui.live_section.float_info%22%5D%5D%5D
 
-http-response ^https:\/\/api\.pinduoduo\.com\/api\/philo\/personal\/hub\? script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_33, argument=%5B%5B%22json-del%22%2C%5B%22monthly_card_entrance%22%2C%22personal_center_style_v2_vo%22%2C%22icon_set.icons%22%2C%22icon_set.top_personal_icons%22%2C%22title_bar_items%22%5D%5D%5D
+http-response ^https:\/\/api\.pinduoduo\.com\/api\/philo\/personal\/hub\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS//body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_33, argument=%5B%5B%22json-del%22%2C%5B%22monthly_card_entrance%22%2C%22personal_center_style_v2_vo%22%2C%22icon_set.icons%22%2C%22icon_set.top_personal_icons%22%2C%22title_bar_items%22%5D%5D%5D
 
-http-response ^https:\/\/api\.pinduoduo\.com\/search script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_35, argument=%5B%5B%22json-del%22%2C%5B%22expansion%22%5D%5D%5D
+http-response ^https:\/\/api\.pinduoduo\.com\/search script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS//body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_35, argument=%5B%5B%22json-del%22%2C%5B%22expansion%22%5D%5D%5D
 
-http-response ^https:\/\/api\.pinduoduo\.com\/api\/alexa\/homepage\/hub\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/PinDuoDuo_remove_ads.js, requires-body=true, tag=精简首页
+http-response ^https:\/\/api\.pinduoduo\.com\/api\/alexa\/homepage\/hub\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS//PinDuoDuo_remove_ads.js, requires-body=true, tag=精简首页
 
 [MITM]
 hostname = api.pinduoduo.com, api.yangkeduo.com
