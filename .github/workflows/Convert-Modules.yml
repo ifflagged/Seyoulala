@@ -51,13 +51,8 @@ jobs:
             fi
 
             # 获取作者名和文件名
-            if [[ "$module_link" =~ ^https?://([^/]+)/([^/]+) ]]; then
-              author="${BASH_REMATCH[1]}"
-              filename="${BASH_REMATCH[2]}"
-            else
-              author="unknown"
-              filename=$(basename "$module_link")
-            fi
+            author=$(echo "$module_link" | cut -d'/' -f4)  # 提取第4个字段作为作者
+            filename=$(basename "$module_link")  # 获取文件名
             filename_noext="${filename%.*}"
             encoded_filename=$(echo "$filename_noext" | jq -sRr @uri)
 
