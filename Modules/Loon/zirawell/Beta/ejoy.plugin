@@ -1,0 +1,12 @@
+#!name=ejoy
+#!desc=ejoy
+#!icon=https://gitlab.com/lodepuly/iconlibrary/-/raw/main/App_icon/120px/Loon.png
+#!keyword=Jacob
+
+[Rewrite]
+# > 易捷加油 - EJOY
+^https?:\/\/a\.sinopecsales\.com\/app\/cms - reject-dict
+
+[MITM]
+hostname = a.sinopecsales.com
+
