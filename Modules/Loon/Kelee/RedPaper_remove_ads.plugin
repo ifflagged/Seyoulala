@@ -8,7 +8,7 @@
 #!loon_version = 3.2.1(749)
 #!homepage = https://github.com/luestr/ProxyResource/blob/main/README.md
 #!icon = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/RedPaper.png
-#!date = 2024-11-05 13:18:22
+#!date = 2024-11-05 15:59:16
 
 [Rule]
 AND, ((PROTOCOL, QUIC), (DOMAIN-SUFFIX, xiaohongshu.com)), REJECT
@@ -41,4 +41,4 @@ http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/(?:v2\/note\/feed|v3
 http-response ^https:\/\/(?:edith|www)\.xiaohongshu\.com\/api\/sns\/(?:v4\/note\/videofeed|v10\/note\/video\/save) script-path = https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/RedPaper_remove_ads.js, requires-body = true, tag = 移除视频水印
 
 [MitM]
-hostname = edith.xiaohongshu.com, www.xiaohongshu.com
+hostname = edith.xiaohongshu.com, rec.xiaohongshu.com, www.xiaohongshu.com
