@@ -119,14 +119,26 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          # 获取当前日期，设置为北京时间 (UTC+8)
+          DATE="$(TZ='Asia/Shanghai' date '+%Y-%m-%d %H:%M:%S')"
+    
+          # 添加所有更改
           git add Modules/*
+    
+          # 如果没有变化，跳过提交
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else
+            # 提交消息，包含动态的日期
+            COMMIT_MESSAGE="Convert files at $DATE (UTC+8)"
+      
+            # 确保仓库是最新的，避免冲突
             git stash
-            git pull --rebase  # 同步远程仓库的最新更改以避免冲突
+            git pull --rebase  # 同步远程仓库的最新更改
             git stash pop  # 恢复之前的更改
-            git add Modules/*  # 再次添加文件
-            git commit -m "Update files"
+      
+            # 再次添加文件，进行提交
+            git add Modules/*
+            git commit -m "$COMMIT_MESSAGE"
             git push
           fi
