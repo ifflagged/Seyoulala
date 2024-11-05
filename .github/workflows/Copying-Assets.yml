@@ -1,0 +1,249 @@
+name: Mirror Release Assets
+
+on:
+  schedule:
+    - cron: '5,30,55 * * * *'  # 每小时的第 5、30、55 分钟运行
+  workflow_dispatch:  # 也可以手动触发工作流
+
+jobs:
+  Downloading_assets:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write  # 对仓库内容的写权限
+    steps:
+      - name: Checkout main branch
+        uses: actions/checkout@v3
+        with:
+          ref: main
+
+      - name: Set repository lists
+        run: |
+          REPOS=(
+            "NSRingo/WeatherKit"
+            "NSRingo/GeoServices"
+            "NSRingo/Siri"
+            "NSRingo/TV"
+            "NSRingo/News"
+            "NSRingo/Testflight"
+            "BiliUniverse/Enhanced"
+            "BiliUniverse/Global"
+            "BiliUniverse/Redirect"
+            "BiliUniverse/ADBlock"
+            "BiliUniverse/Roaming"
+            "DualSubs/Universal"
+            "DualSubs/YouTube"
+            "DualSubs/Spotify"
+            "DualSubs/Netflix"
+            "DualSubs/AddOn"
+          )
+          echo "REPOS<<EOF" >> $GITHUB_ENV
+          printf "%s\n" "${REPOS[@]}" >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
+
+      - name: Install jq
+        run: sudo apt-get install -y jq
+
+      - name: Install sha256sum (if not available)
+        run: sudo apt-get install -y coreutils
+
+      - name: Download assets from releases
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          ASSETS_CHANGED=false
+          UPDATED_FILES=()
+
+          while IFS= read -r REPO; do
+            echo "Processing repository: $REPO"
+
+            # 获取每个仓库的最新版本发布信息
+            RELEASE=$(curl -s -H "Authorization: token $GITHUB_TOKEN" "https://api.github.com/repos/$REPO/releases/latest")
+
+            # 如果没有找到发布版本则跳过该仓库
+            if [ -z "$RELEASE" ] || [ "$RELEASE" == "null" ] || [ "$(echo "$RELEASE" | jq -r '.message')" = "Not Found" ]; then
+              echo "Release not found for $REPO, skipping."
+              continue
+            fi
+
+            echo "Release data for $REPO:"
+            echo "$RELEASE" | jq '.'
+
+            ASSETS=$(echo "$RELEASE" | jq -c '.assets[]')
+
+            # 遍历每个资产文件
+            while IFS= read -r ASSET; do
+              ASSET_NAME=$(echo "$ASSET" | jq -r '.name')
+              ASSET_URL=$(echo "$ASSET" | jq -r '.url')
+              ASSET_SIZE=$(echo "$ASSET" | jq -r '.size')
+
+              echo "Found asset: $ASSET_NAME (Size: $ASSET_SIZE bytes)"
+
+              EXTENSION="${ASSET_NAME##*.}"
+
+              # 根据仓库名称和文件扩展名判断保存的目录
+              if [[ "$REPO" == "NSRingo"* ]]; then
+                if [ "$EXTENSION" = "sgmodule" ]; then
+                  OUTPUT_DIR="./Modules/Surge/NSRingo"
+                elif [ "$EXTENSION" = "plugin" ]; then
+                  OUTPUT_DIR="./Modules/Loon/NSRingo"
+                elif [ "$EXTENSION" = "srmodule" ]; then
+                  OUTPUT_DIR="./Modules/Shadowrocket/NSRingo"
+                else
+                  echo "Skipping unsupported file type: $ASSET_NAME"
+                  continue
+                fi
+              elif [[ "$REPO" == "BiliUniverse"* ]]; then
+                if [ "$EXTENSION" = "sgmodule" ]; then
+                  OUTPUT_DIR="./Modules/Surge/BiliUniverse"
+                elif [ "$EXTENSION" = "plugin" ]; then
+                  OUTPUT_DIR="./Modules/Loon/BiliUniverse"
+                elif [ "$EXTENSION" = "srmodule" ]; then
+                  OUTPUT_DIR="./Modules/Shadowrocket/BiliUniverse"
+                else
+                  echo "Skipping unsupported file type: $ASSET_NAME"
+                  continue
+                fi
+              elif [[ "$REPO" == "DualSubs"* ]]; then
+                if [ "$EXTENSION" = "sgmodule" ]; then
+                  OUTPUT_DIR="./Modules/Surge/DualSubs"
+                elif [ "$EXTENSION" = "plugin" ]; then
+                  OUTPUT_DIR="./Modules/Loon/DualSubs"
+                elif [ "$EXTENSION" = "srmodule" ]; then
+                  OUTPUT_DIR="./Modules/Shadowrocket/DualSubs"
+                else
+                  echo "Skipping unsupported file type: $ASSET_NAME"
+                  continue
+                fi
+              else
+                echo "Skipping unsupported repository: $REPO"
+                continue
+              fi
+
+              # 创建相应的目录
+              mkdir -p "$OUTPUT_DIR"
+
+              OUTPUT_FILE="$OUTPUT_DIR/$ASSET_NAME"
+
+              # 下载文件
+              echo "Downloading: $ASSET_NAME"
+              curl -L -H "Authorization: token $GITHUB_TOKEN" -H "Accept: application/octet-stream" "$ASSET_URL" -o "$OUTPUT_FILE.tmp"
+
+              if [ ! -f "$OUTPUT_FILE.tmp" ]; then
+                echo "Failed to download $ASSET_NAME"
+                continue
+              fi
+
+              # 计算并比较文件的校验和
+              NEW_CHECKSUM=$(sha256sum "$OUTPUT_FILE.tmp" | awk '{ print $1 }')
+              echo "New checksum for $ASSET_NAME: $NEW_CHECKSUM"
+
+              if [ -f "$OUTPUT_FILE" ]; then
+                EXISTING_CHECKSUM=$(sha256sum "$OUTPUT_FILE" | awk '{ print $1 }')
+                echo "Existing checksum for $ASSET_NAME: $EXISTING_CHECKSUM"
+
+                if [ "$NEW_CHECKSUM" = "$EXISTING_CHECKSUM" ]; then
+                  echo "No changes in $ASSET_NAME"
+                  rm "$OUTPUT_FILE.tmp"
+                else
+                  echo "Updating $ASSET_NAME"
+                  mv "$OUTPUT_FILE.tmp" "$OUTPUT_FILE"
+                  UPDATED_FILES+=("$ASSET_NAME")
+                  ASSETS_CHANGED=true
+                fi
+              else
+                echo "Adding new file $ASSET_NAME"
+                mv "$OUTPUT_FILE.tmp" "$OUTPUT_FILE"
+                UPDATED_FILES+=("$ASSET_NAME")
+                ASSETS_CHANGED=true
+              fi
+
+            done <<< "$ASSETS"
+
+          done < <(printf '%s\n' "${REPOS[@]}")
+
+          echo "ASSETS_CHANGED=$ASSETS_CHANGED" >> $GITHUB_ENV
+          echo "UPDATED_FILES<<EOF" >> $GITHUB_ENV
+          printf "%s\n" "${UPDATED_FILES[@]}" >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
+
+      - name: Find and replace external JS resources in .sgmodule, .plugin, and .srmodule files
+        continue-on-error: true  # 确保步骤在部分失败时继续执行
+        run: |
+          # 基础 GitHub 仓库 URL
+          js_base_url="https://github.com/ifflagged/Darwin/raw/main/Modules/JS"
+    
+          # 创建目标目录
+          mkdir -p Modules/JS/NSRingo
+          mkdir -p Modules/JS/BiliUniverse
+          mkdir -p Modules/JS/DualSubs
+
+          # 查找 .sgmodule、.plugin 和 .srmodule 文件的外部 JS 链接，并下载
+          for module_file in $(find Modules/Surge/NSRingo Modules/Surge/BiliUniverse Modules/Surge/DualSubs -type f \( -name "*.sgmodule" -o -name "*.plugin" -o -name "*.srmodule" \)); do
+            echo "Processing $module_file"
+      
+            # 查找文件中的 .js 链接
+            js_links=$(grep -oP 'https?://[^ ]+\.js' "$module_file" || echo "")
+      
+            # 对每个 JS 链接进行处理
+            for js_link in $js_links; do
+              js_filename=$(basename "$js_link")
+        
+              # 根据文件来源确定目标路径
+              if [[ "$module_file" == "Modules/Surge/NSRingo"* ]]; then
+                local_js_path="Modules/JS/NSRingo/$js_filename"
+                js_base_url="https://github.com/ifflagged/Darwin/raw/main/Modules/JS/NSRingo"
+              elif [[ "$module_file" == "Modules/Surge/BiliUniverse"* ]]; then
+                local_js_path="Modules/JS/BiliUniverse/$js_filename"
+                js_base_url="https://github.com/ifflagged/Darwin/raw/main/Modules/JS/BiliUniverse"
+              elif [[ "$module_file" == "Modules/Surge/DualSubs"* ]]; then
+                local_js_path="Modules/JS/DualSubs/$js_filename"
+                js_base_url="https://github.com/ifflagged/Darwin/raw/main/Modules/JS/DualSubs"
+              else
+                echo "Unknown module source, skipping $module_file"
+                continue
+              fi
+        
+              # 下载 JS 文件到目标路径
+              echo "Downloading $js_link to $local_js_path"
+              if curl -A "Surge Mac/2985" -L -o "$local_js_path" "$js_link"; then
+                echo "Download successful for $js_link"
+          
+                # 替换 .sgmodule、.plugin、.srmodule 文件中的 JS 链接为 GitHub 链接
+                github_js_url="$js_base_url/$js_filename"
+                echo "Replacing $js_link with $github_js_url in $module_file"
+                sed -i "s|$js_link|$github_js_url|g" "$module_file"
+          
+                # 提交文件更新
+                git add "$module_file"
+              else
+                echo "Failed to download $js_link, skipping..."
+              fi
+            done
+          done
+
+      - name: Commit and push changes to main branch
+        if: env.ASSETS_CHANGED == 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set +e  # 禁用错误时退出
+          git config --global user.name "ifflagged"
+          git config --global user.email "qibo.sign@outlook.com"
+
+          DATE="$(TZ='Asia/Shanghai' date '+%Y-%m-%d %H:%M:%S')"
+
+          git add .
+
+          COMMIT_MESSAGE="Synched assets at $DATE (UTC+8)"
+
+          # 检查是否有更改，如果有更改则提交
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "$COMMIT_MESSAGE"
+            git push origin main
+          fi
+
+      - name: No changes detected
+        if: env.ASSETS_CHANGED != 'true'
+        run: echo "No changes detected. Workflow will exit without committing."
