@@ -1,0 +1,66 @@
+# 按字母排序
+https://github.com/ifflagged/Neverflagged/raw/main/Surge/Module/TikTok.sgmodule
+https://github.com/ifflagged/Neverflagged/raw/main/Surge/Module/BiliBili.sgmodule
+https://github.com/ifflagged/Neverflagged/raw/main/Loon/Plugin/Common.plugin
+
+# A #
+https://github.com/Ananaskop/Profile/raw/main/Surge/Modules/Common_remove_ads.sgmodule
+
+# D #
+https://github.com/ddgksf2013/Rewrite/raw/master/AdBlock/SmzdmAds.conf
+https://github.com/ddgksf2013/Rewrite/raw/master/AdBlock/StartUp.conf
+https://gist.githubusercontent.com/ddgksf2013/f43026707830c7818ee3ba624e383c8d/raw/baiduCloud.adblock.js
+
+# F #
+https://github.com/fmz200/wool_scripts/raw/main/QuantumultX/rewrite/chongxie.txt
+https://github.com/fmz200/wool_scripts/raw/main/QuantumultX/rewrite/cleanup.snippet
+
+# G #
+https://github.com/githubdulong/Script/raw/master/Surge/TikTok_Surge.sgmodule
+
+# J #
+https://github.com/johnmillzer/tool/raw/main/Plugin/Umetrip_remove_ads.plugin
+
+# M #
+https://github.com/Maasea/sgmodule/raw/master/YouTube.Enhance.sgmodule
+
+# Y #
+https://github.com/Yuheng0101/X/raw/main/Scripts/ChinaMobile/NoAds.js
+
+# Z #
+https://github.com/ZenmoFeiShi/Qx/raw/main/Didichuxing.snippet
+https://github.com/ZenmoFeiShi/Qx/raw/main/Pinduoduo.snippet
+https://github.com/ZenmoFeiShi/Qx/raw/main/Smzdm.snippet
+https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/%23/%E5%8A%9F%E8%83%BD%E7%B1%BB/filter/functional.list😂https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/%23/%E5%8A%9F%E8%83%BD%E7%B1%BB/rewrite/functional.conf
+https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/%23/%E5%B9%BF%E5%91%8A%E8%81%94%E7%9B%9F/filter/adUnion.list😂https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/%23/%E5%B9%BF%E5%91%8A%E8%81%94%E7%9B%9F/rewrite/adUnion.conf
+https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/0-9/12123/filter/12123.list😂https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/0-9/12123/rewrite/12123.conf
+https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/0-9/12306/filter/12306.list😂https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/0-9/12306/rewrite/12306.conf
+https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/A/%E7%88%B1%E5%A5%87%E8%89%BA/filter/iqiyi.list😂https://github.com/zirawell/R-Store/raw//main/Rule/QuanX/Adblock/App/A/%E7%88%B1%E5%A5%87%E8%89%BA/rewrite/iqiyi.conf
+https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/B/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98/rewrite/baidupan.conf
+https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/B/%E4%B8%8D%E8%83%8C%E5%8D%95%E8%AF%8D/rewrite/beingFine.conf
+https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/B/%E6%AF%94%E4%BA%9A%E8%BF%AA%E7%8E%8B%E6%9C%9D/rewrite/bydwc.conf
+https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/D/%E5%A4%A7%E4%BC%97%E7%82%B9%E8%AF%84/filter/dianPing.list😂https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/D/%E5%A4%A7%E4%BC%97%E7%82%B9%E8%AF%84/rewrite/dianPing.conf😂https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/Applet/Wechat/D/%E5%A4%A7%E4%BC%97%E7%82%B9%E8%AF%84/rewrite/dianping.conf
+https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/E/%E9%A5%BF%E4%BA%86%E4%B9%88/rewrite/eleme.conf
+https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/F/%E8%BF%94%E5%88%A9%E7%BD%91/rewrite/51fanli.conf
+https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/H/%E6%B5%B7%E5%B0%94%E6%99%BA%E5%AE%B6/filter/ehaier.list😂https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/H/%E6%B5%B7%E5%B0%94%E6%99%BA%E5%AE%B6/rewrite/ehaier.conf
+https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/H/%E8%88%AA%E6%97%85%E7%BA%B5%E6%A8%AA/filter/umetrip.list😂https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/H/%E8%88%AA%E6%97%85%E7%BA%B5%E6%A8%AA/rewrite/umetrip.conf
+https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/G/%E9%AB%98%E9%93%81%E7%AE%A1%E5%AE%B6/rewrite/rsscc.conf
+https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/J/%E4%BA%AC%E4%B8%9C/filter/jd.list😂https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/J/%E4%BA%AC%E4%B8%9C/rewrite/jd.conf
+https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/J/%E5%BB%BA%E8%AE%BE%E9%93%B6%E8%A1%8C/filter/ccb.list😂https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/J/%E5%BB%BA%E8%AE%BE%E9%93%B6%E8%A1%8C/rewrite/ccb.conf
+https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/M/%E9%BA%A6%E5%BD%93%E5%8A%B3/rewrite/mcd.conf😂https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/Applet/Wechat/M/%E9%BA%A6%E5%BD%93%E5%8A%B3/rewrite/mcd.conf
+https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/M/%E7%BE%8E%E5%9B%A2/filter/meituan.list😂https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/M/%E7%BE%8E%E5%9B%A2/rewrite/meituan.conf
+https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/M/%E7%B1%B3%E5%AE%B6/filter/miHome.list😂https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/M/%E7%B1%B3%E5%AE%B6/rewrite/miHome.conf
+https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/M/%E7%BE%8E%E9%A2%9C%E7%9B%B8%E6%9C%BA/filter/beautycam.list
+https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/Q/%E5%8E%BB%E5%93%AA%E5%84%BF/rewrite/qunar.conf
+https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/S/%E5%B1%B1%E5%A7%86%E4%BC%9A%E5%91%98%E5%95%86%E5%BA%97/rewrite/SAMsClub.conf
+https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/S/%E4%BB%80%E4%B9%88%E5%80%BC%E5%BE%97%E4%B9%B0/filter/smzdm.list😂https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/S/%E4%BB%80%E4%B9%88%E5%80%BC%E5%BE%97%E4%B9%B0/rewrite/smzdm.conf
+https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/T/%E6%B7%98%E5%AE%9D/filter/taobao.list😂https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/T/%E6%B7%98%E5%AE%9D/rewrite/taobao.conf
+https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/T/%E5%A4%A9%E5%BA%9C%E5%B8%82%E6%B0%91%E4%BA%91/rewrite/tfsmy.conf
+https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/T/%E5%A4%A9%E5%BA%9C%E9%80%9A/rewrite/tft.conf
+https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/W/%E7%BD%91%E4%B8%8A%E5%9B%BD%E7%BD%91/filter/sgcc.list😂https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/W/%E7%BD%91%E4%B8%8A%E5%9B%BD%E7%BD%91/rewrite/sgcc.conf
+https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/X/%E5%B8%8C%E5%B0%94%E9%A1%BF%E8%8D%A3%E8%AA%89%E5%AE%A2%E4%BC%9A/rewrite/hilton.conf
+https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/Y/%E6%98%93%E6%8D%B7%E5%8A%A0%E6%B2%B9/rewrite/ejoy.conf
+https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/Y/%E4%BA%91%E9%97%AA%E4%BB%98/filter/unionPay.list😂https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/Y/%E4%BA%91%E9%97%AA%E4%BB%98/rewrite/unionPay.conf
+https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/Z/%E4%B8%AD%E5%9B%BD%E7%A7%BB%E5%8A%A8/filter/10086.list😂https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/Z/%E4%B8%AD%E5%9B%BD%E7%A7%BB%E5%8A%A8/rewrite/10086_general.conf
+https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/Z/%E6%8B%9B%E5%95%86%E9%93%B6%E8%A1%8C/filter/cmb.list😂https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/Z/%E6%8B%9B%E5%95%86%E9%93%B6%E8%A1%8C/rewrite/cmb.conf
+https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/Z/%E6%94%AF%E4%BB%98%E5%AE%9D/filter/alipay.list
