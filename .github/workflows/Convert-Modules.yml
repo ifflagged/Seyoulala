@@ -84,37 +84,43 @@ jobs:
             curl -A "Surge Mac/2985" -L -o "Modules/Shadowrocket/$author/$filename_noext.srmodule" "$Shadowrocket_url" || echo "Failed to download $Shadowrocket_url"
             curl -A "Surge Mac/2985" -L -o "Modules/Shadowrocket/$author/Beta/$filename_noext.srmodule" "$Shadowrocket_Beta_url" || echo "Failed to download $Shadowrocket_Beta_url"
 
-            # 查找文件中的 .js 链接并进行处理
-            for module_file in $(find Modules/{Surge,Loon,Shadowrocket}/$author -type f \( -name "*.sgmodule" -o -name "*.plugin" -o -name "*.srmodule" \)); do
-              echo "Processing $module_file"
-              
-              # 查找文件中的 .js 链接
-              js_links=$(grep -oP 'https?://[^ ]+\.js' "$module_file" || echo "")
-              
-              # 如果没有找到 .js 链接，则跳过
-              if [ -z "$js_links" ]; then
-                echo "No JS links found in $module_file"
-                continue
-              fi
+            # 查找 .sgmodule 文件中的 .js 链接并下载
+            sgmodule_file="Modules/Surge/$author/$filename_noext.sgmodule"
+            echo "Processing $sgmodule_file for JS links"
 
-              # 对每个 JS 链接进行处理
-              for js_link in $js_links; do
-                js_filename=$(basename "$js_link")
-                local_js_path="Modules/JS/$author/$js_filename"
+            js_links=$(grep -oP 'https?://[^ ]+\.js' "$sgmodule_file" || echo "")
+
+            # 如果没有找到 .js 链接，则跳过
+            if [ -z "$js_links" ]; then
+              echo "No JS links found in $sgmodule_file"
+              continue
+            fi
+
+            # 下载和替换每个 JS 链接
+            for js_link in $js_links; do
+              js_filename=$(basename "$js_link")
+              local_js_path="Modules/JS/$author/$js_filename"
+              
+              # 使用指定的 User-Agent 下载 .js 文件
+              echo "Downloading $js_link to $local_js_path"
+              if curl -A "Surge Mac/2985" -L -o "$local_js_path" "$js_link"; then
+                echo "Download successful for $js_link"
                 
-                # 使用指定的 User-Agent 下载 .js 文件
-                echo "Downloading $js_link to $local_js_path"
-                if curl -A "Surge Mac/2985" -L -o "$local_js_path" "$js_link"; then
-                  echo "Download successful for $js_link"
-                  
-                  # 替换 plugin 文件中的链接为 GitHub 仓库的路径
-                  github_js_url="$js_base_url/$author/$js_filename"
+                # 替换所有文件中的 .js 链接为 GitHub 仓库的路径
+                github_js_url="$js_base_url/$author/$js_filename"
+                echo "Replacing $js_link with $github_js_url in $sgmodule_file"
+
+                # 替换 .sgmodule 文件中的 JS 链接
+                sed -i "s|$js_link|$github_js_url|g" "$sgmodule_file"
+
+                # 替换相同作者、文件名的 .plugin 和 .srmodule 文件中的 JS 链接
+                for module_file in Modules/{Loon,Shadowrocket}/$author/*.{plugin,srmodule}; do
                   echo "Replacing $js_link with $github_js_url in $module_file"
                   sed -i "s|$js_link|$github_js_url|g" "$module_file"
-                else
-                  echo "Failed to download $js_link, skipping..."
-                fi
-              done
+                done
+              else
+                echo "Failed to download $js_link, skipping..."
+              fi
             done
           done < Links/Modules-Links.txt
 
