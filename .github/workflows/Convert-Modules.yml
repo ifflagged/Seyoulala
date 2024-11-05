@@ -87,6 +87,8 @@ jobs:
             curl -A "Surge Mac/2985" -L -o "Modules/Shadowrocket/$author/$filename.srmodule" "$Shadowrocket_url" || echo "Failed to download $Shadowrocket_url"
             curl -A "Surge Mac/2985" -L -o "Modules/Shadowrocket/$author/Beta/$filename.srmodule" "$Shadowrocket_Beta_url" || echo "Failed to download $Shadowrocket_Beta_url"
 
+            # 添加文件到 git 暂存区
+            git add .
           done < Links/Modules-Links.txt
 
       - name: Find and replace external JS resources
@@ -112,6 +114,7 @@ jobs:
                 echo "Failed to download $js_link, skipping..."
               fi
             done
+            # 添加替换后的文件到 git
             git add "$module_file"
           done
 
