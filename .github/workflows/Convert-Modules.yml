@@ -103,7 +103,7 @@ jobs:
             # 下载和替换每个 JS 链接
             for js_link in $js_links; do
               js_filename=$(basename "$js_link")
-              local_js_path="Modules/JS/$author/$js_filename"
+              local_js_path="$author/$js_filename"
               # 使用指定的 User-Agent 下载 .js 文件
               echo "Downloading $js_link to $local_js_path"
               if curl -A "Surge Mac/2985" -L -o "$local_js_path" "$js_link"; then
