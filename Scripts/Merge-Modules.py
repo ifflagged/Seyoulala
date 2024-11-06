@@ -371,7 +371,10 @@ def download_modules(module_file):
             elif ".plugin" in base_url:
                 srmodule_url = base_url.replace("Loon", "Shadowrocket").replace(".plugin", ".srmodule")
                 srmodule_urls.append(srmodule_url)
-
+                
+        if "Copy" in platforms:
+            srmodule_urls.append(base_url)
+            
     # 执行合并操作
     if surge_urls:
         merge_modules(module_file, 'sgmodule', surge_urls)
