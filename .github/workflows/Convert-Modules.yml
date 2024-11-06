@@ -115,10 +115,7 @@ jobs:
                 
                 # 替换 GitHub 仓库的路径
                 github_js_url="$js_base_url/$author/$js_filename"
-                echo "Replacing $js_link with $github_js_url in $sgmodule_file"
-
-                # 替换 .sgmodule 文件中的 JS 链接
-                sed -i "s|$js_link|$github_js_url|g" "$sgmodule_file"
+                # echo "Replacing $js_link with $github_js_url in $sgmodule_file"
 
                 # 获取对应的 Loon 和 Shadowrocket 插件文件名
                 surge_Beta_file="Modules/Surge/$author/Beta/$(basename "$sgmodule_file" .sgmodule).sgmodule"
@@ -127,11 +124,13 @@ jobs:
                 shadowrocket_file="Modules/Shadowrocket/$author/$(basename "$sgmodule_file" .sgmodule).srmodule"
                 shadowrocket_Beta_file="Modules/Shadowrocket/$author/Beta/$(basename "$sgmodule_file" .sgmodule).srmodule"
  
-                sed -i "s|$js_link|$github_js_url|g" "$surge_Beta_file"
-                sed -i "s|$js_link|$github_js_url|g" "$loon_file"
-                sed -i "s|$js_link|$github_js_url|g" "$loon_Beta_file"
-                sed -i "s|$js_link|$github_js_url|g" "$shadowrocket_file"
-                sed -i "s|$js_link|$github_js_url|g" "$shadowrocket_Beta_file"
+                # 替换文件中的 JS 链接
+                sed -i "s|$js_link|$github_js_url|g" "$sgmodule_file" && echo "Replaced $sgmodule_file"
+                sed -i "s|$js_link|$github_js_url|g" "$surge_Beta_file" && echo "Replaced $surge_Beta_file"
+                sed -i "s|$js_link|$github_js_url|g" "$loon_file" && echo "Replaced $loon_file"
+                sed -i "s|$js_link|$github_js_url|g" "$loon_Beta_file" && echo "Replaced $loon_Beta_file"
+                sed -i "s|$js_link|$github_js_url|g" "$shadowrocket_file" && echo "Replaced $shadowrocket_file"
+                sed -i "s|$js_link|$github_js_url|g" "$shadowrocket_Beta_file" && echo "Replaced $shadowrocket_Beta_file"
               else
                 echo "Failed to download $js_link, skipping..."
               fi
