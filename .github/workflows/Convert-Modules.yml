@@ -91,12 +91,13 @@ jobs:
           js_base_url="https://github.com/${GITHUB_REPOSITORY}/raw/main/Modules/JS"
 
           for sgmodule_file in $(find Modules/Surge/ \
-                                  -path "Modules/Surge/Kelee" -prune -o \
-                                  -path "Modules/Surge/NSRingo" -prune -o \
-                                  -path "Modules/Surge/BiliUniverse" -prune -o \
-                                  -path "Modules/Surge/DualSubs" -prune -o \
-                                  -path "*/Beta/*" -prune -o \
-                                  -type f -name "*.sgmodule" -print); do
+              -mindepth 2 -type f -name "*.sgmodule" \
+              -path "Modules/Surge/Kelee" -prune -o \
+              -path "Modules/Surge/NSRingo" -prune -o \
+              -path "Modules/Surge/BiliUniverse" -prune -o \
+              -path "Modules/Surge/DualSubs" -prune -o \
+              -path "*/Beta/*" -prune -o \
+              -print); do
             # 获取当前文件所在的文件夹路径
             author=$(dirname "$sgmodule_file" | sed 's|^Modules/Surge/||')
             echo "Processing $sgmodule_file from folder $author for JS links"
