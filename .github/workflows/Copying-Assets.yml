@@ -170,7 +170,7 @@ jobs:
         continue-on-error: true  # 确保步骤在部分失败时继续执行
         run: |
           # 基础 GitHub 仓库 URL
-          js_base_url="https://github.com/ifflagged/Darwin/raw/main/Modules/JS"
+          js_base_url="https://github.com/${GITHUB_REPOSITORY}/raw/main/Modules/JS"
       
           # 创建目标目录
           mkdir -p Modules/JS/NSRingo
@@ -191,13 +191,13 @@ jobs:
               # 根据文件来源确定目标路径
               if [[ "$sgmodule_file" == "Modules/Surge/NSRingo"* ]]; then
                 local_js_path="Modules/JS/NSRingo/$js_filename"
-                js_base_url="https://github.com/ifflagged/Darwin/raw/main/Modules/JS/NSRingo"
+                js_base_url="https://github.com/${GITHUB_REPOSITORY}/raw/main/Modules/JS/NSRingo"
               elif [[ "$sgmodule_file" == "Modules/Surge/BiliUniverse"* ]]; then
                 local_js_path="Modules/JS/BiliUniverse/$js_filename"
-                js_base_url="https://github.com/ifflagged/Darwin/raw/main/Modules/JS/BiliUniverse"
+                js_base_url="https://github.com/${GITHUB_REPOSITORY}/raw/main/Modules/JS/BiliUniverse"
               elif [[ "$sgmodule_file" == "Modules/Surge/DualSubs"* ]]; then
                 local_js_path="Modules/JS/DualSubs/$js_filename"
-                js_base_url="https://github.com/ifflagged/Darwin/raw/main/Modules/JS/DualSubs"
+                js_base_url="https://github.com/${GITHUB_REPOSITORY}/raw/main/Modules/JS/DualSubs"
               else
                 echo "Unknown module source, skipping $sgmodule_file"
                 continue
@@ -237,8 +237,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set +e  # 禁用错误时退出
-          git config --global user.name "ifflagged"
-          git config --global user.email "qibo.sign@outlook.com"
+          git config --global user.name "${GITHUB_ACTOR}"
+          git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
   
           DATE="$(TZ='Asia/Shanghai' date '+%Y-%m-%d %H:%M:%S')"
   
