@@ -42,7 +42,6 @@ jobs:
         run: |
           category="Jacob"
           encoded_category=$(echo "$category" | jq -sRr @uri)
-
           js_base_url="https://github.com/ifflagged/Darwin/raw/main/Modules/JS"
 
           # 处理每个链接
@@ -53,8 +52,8 @@ jobs:
             fi
 
             # 获取作者名和文件名
-            author=$(echo "$module_link" | cut -d'/' -f4)  # 提取第4个字段作为作者
-            filename=$(basename "$module_link")  # 获取文件名
+            author=$(echo "$module_link" | cut -d'/' -f4)
+            filename=$(basename "$module_link")
             filename_noext="${filename%.*}"
             encoded_filename=$(echo "$filename_noext" | jq -sRr @uri)
 
@@ -69,7 +68,7 @@ jobs:
             Loon_url="http://localhost:9100/file/_start_/${module_link}/_end_/${encoded_filename}.plugin?type=loon-plugin&target=loon-plugin&category=${encoded_category}&icon=Loon&nore=true"
             Loon_Beta_url="http://localhost:9101/file/_start_/${module_link}/_end_/${encoded_filename}.plugin?type=loon-plugin&target=loon-plugin&category=${encoded_category}&icon=Loon&nore=true"
             Shadowrocket_url="http://localhost:9100/file/_start_/${module_link}/_end_/${encoded_filename}.srmodule?type=surge-module&target=shadowrocket-module&category=${encoded_category}&nore=true"
-            Shadowrocket_Beta_url="http://localhost:9100/file/_start_/${module_link}/_end_/${encoded_filename}.srmodule?type=surge-module&target=shadowrocket-module&category=${encoded_category}&nore=true"
+            Shadowrocket_Beta_url="http://localhost:9101/file/_start_/${module_link}/_end_/${encoded_filename}.srmodule?type=surge-module&target=shadowrocket-module&category=${encoded_category}&nore=true"
 
             # 下载各模块文件
             echo "Downloading Surge file: $Surge_url"
@@ -100,23 +99,26 @@ jobs:
             for js_link in $js_links; do
               js_filename=$(basename "$js_link")
               local_js_path="Modules/JS/$author/$js_filename"
-              
+
               # 使用指定的 User-Agent 下载 .js 文件
               echo "Downloading $js_link to $local_js_path"
-              if curl -A "Surge Mac/2985" -L -o "$local_js_path" "$js_link"; then
+              if [ ! -f "$local_js_path" ] && curl -A "Surge Mac/2985" -L -o "$local_js_path" "$js_link"; then
                 echo "Download successful for $js_link"
                 
-                # 替换所有文件中的 .js 链接为 GitHub 仓库的路径
+                # 替换 GitHub 仓库的路径
                 github_js_url="$js_base_url/$author/$js_filename"
                 echo "Replacing $js_link with $github_js_url in $sgmodule_file"
 
                 # 替换 .sgmodule 文件中的 JS 链接
                 sed -i "s|$js_link|$github_js_url|g" "$sgmodule_file"
 
-                # 替换相同作者、文件名的 .plugin 和 .srmodule 文件中的 JS 链接
-                for module_file in Modules/{Loon,Shadowrocket}/$author/*.{plugin,srmodule}; do
-                  echo "Replacing $js_link with $github_js_url in $module_file"
-                  sed -i "s|$js_link|$github_js_url|g" "$module_file"
+                # 替换 Loon 和 Shadowrocket 文件中的 JS 链接
+                for ext in plugin srmodule; do
+                  other_file="Modules/${ext^}/$author/${filename_noext}.${ext}"
+                  if [ -f "$other_file" ]; then
+                    echo "Replacing $js_link with $github_js_url in $other_file"
+                    sed -i "s|$js_link|$github_js_url|g" "$other_file"
+                  fi
                 done
               else
                 echo "Failed to download $js_link, skipping..."
