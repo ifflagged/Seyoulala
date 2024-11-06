@@ -103,7 +103,7 @@ jobs:
             echo "Processing $sgmodule_file from folder $author for JS links"
 
             # 查找 .sgmodule 文件中的 .js 和 .json 链接
-            js_links=$(grep -oP 'https?://[^ ]+\.(js|json)' "$sgmodule_file" || echo "")
+            js_links=$(grep -oP 'https?://[^ ]+\.(json|js)' "$sgmodule_file" || echo "")
 
             # 下载和替换每个 JS 链接
             for js_link in $js_links; do
