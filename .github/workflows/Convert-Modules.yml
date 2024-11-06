@@ -61,12 +61,12 @@ jobs:
             mkdir -p Modules/JS/$author/Beta
 
             # 构建模块的 URL
-            Surge_url="http://localhost:9100/file/_start_/${module_link}/_end_/${encoded_filename}.sgmodule?type=surge-module&target=surge-module&category=${encoded_category}&nore=true"
+            Surge_url="http://localhost:9100/file/_start_/{module_link}/_end_/modulename.sgmodule.txt?type=surge-module&target=surge-module&del=true&nore=true"
             Surge_Beta_url="http://localhost:9101/file/_start_/${module_link}/_end_/${encoded_filename}.sgmodule?type=surge-module&target=surge-module&category=${encoded_category}&nore=true"
             Loon_url="http://localhost:9100/file/_start_/${module_link}/_end_/${encoded_filename}.plugin?type=loon-plugin&target=loon-plugin&category=${encoded_category}&icon=Loon&nore=true"
             Loon_Beta_url="http://localhost:9101/file/_start_/${module_link}/_end_/${encoded_filename}.plugin?type=loon-plugin&target=loon-plugin&category=${encoded_category}&icon=Loon&nore=true"
-            Shadowrocket_url="http://localhost:9100/file/_start_/${module_link}/_end_/${encoded_filename}.srmodule?type=surge-module&target=shadowrocket-module&category=${encoded_category}&nore=true"
-            Shadowrocket_Beta_url="http://localhost:9101/file/_start_/${module_link}/_end_/${encoded_filename}.srmodule?type=surge-module&target=shadowrocket-module&category=${encoded_category}&nore=true"
+            Shadowrocket_url="http://localhost:9100/file/_start_/${module_link}/_end_/${encoded_filename}.sgmodule?type=surge-module&target=shadowrocket-module&category=${encoded_category}&nore=true"
+            Shadowrocket_Beta_url="http://localhost:9101/file/_start_/${module_link}/_end_/${encoded_filename}.sgmodule?type=surge-module&target=shadowrocket-module&category=${encoded_category}&nore=true"
 
             # 下载各模块文件
             echo "Downloading Surge file: $Surge_url"
@@ -112,7 +112,6 @@ jobs:
                 
                 # 替换 GitHub 仓库的路径
                 github_js_url="$js_base_url/$author/$js_filename"
-                github_js_Beta_url="$js_base_url/$author/Beta/$js_filename"
                 echo "Replacing $js_link with $github_js_url in $sgmodule_file"
 
                 # 替换 .sgmodule 文件中的 JS 链接
@@ -136,7 +135,7 @@ jobs:
                 if [ -f "$loon_Beta_file" ]; then
                 echo "Replacing JS links in $loon_Beta_file"
                 for js_link in $js_links; do
-                sed -i "s|$js_link|$github_js_Beta_url|g" "$loon_Beta_file"
+                sed -i "s|$js_link|$github_js_url|g" "$loon_Beta_file"
                 done
                 fi
                 
@@ -152,7 +151,7 @@ jobs:
                 if [ -f "$shadowrocket_Beta_file" ]; then
                   echo "Replacing JS links in $shadowrocket_Beta_file"
                   for js_link in $js_links; do
-                    sed -i "s|$js_link|$github_js_Beta_url|g" "$shadowrocket_Beta_file"
+                    sed -i "s|$js_link|$github_js_url|g" "$shadowrocket_Beta_file"
                   done
                 fi
               else
