@@ -121,42 +121,17 @@ jobs:
                 sed -i "s|$js_link|$github_js_url|g" "$sgmodule_file"
 
                 # 获取对应的 Loon 和 Shadowrocket 插件文件名
+                surge_Beta_file="Modules/Surge/$author/Beta/$(basename "$sgmodule_file" .sgmodule).sgmodule"
                 loon_file="Modules/Loon/$author/$(basename "$sgmodule_file" .sgmodule).plugin"
                 loon_Beta_file="Modules/Loon/$author/Beta/$(basename "$sgmodule_file" .sgmodule).plugin"
                 shadowrocket_file="Modules/Shadowrocket/$author/$(basename "$sgmodule_file" .sgmodule).srmodule"
                 shadowrocket_Beta_file="Modules/Shadowrocket/$author/Beta/$(basename "$sgmodule_file" .sgmodule).srmodule"
-
-                # 如果对应的 Loon 插件文件存在，则替换其中的 JS 链接
-                if [ -f "$loon_file" ]; then
-                  echo "Replacing JS links in $loon_file"
-                  for js_link in $js_links; do
-                    github_js_url="$js_base_url/$(basename "$js_link")"
-                    sed -i "s|$js_link|$github_js_url|g" "$loon_file"
-                  done
-                fi
-                
-                if [ -f "$loon_Beta_file" ]; then
-                echo "Replacing JS links in $loon_Beta_file"
-                for js_link in $js_links; do
+ 
+                sed -i "s|$js_link|$github_js_url|g" "$surge_Beta_file"
+                sed -i "s|$js_link|$github_js_url|g" "$loon_file"
                 sed -i "s|$js_link|$github_js_url|g" "$loon_Beta_file"
-                done
-                fi
-                
-                # 如果对应的 Shadowrocket 插件文件存在，则替换其中的 JS 链接
-                if [ -f "$shadowrocket_file" ]; then
-                  echo "Replacing JS links in $shadowrocket_file"
-                  for js_link in $js_links; do
-                    github_js_url="$js_base_url/$(basename "$js_link")"
-                    sed -i "s|$js_link|$github_js_url|g" "$shadowrocket_file"
-                  done
-                fi
-
-                if [ -f "$shadowrocket_Beta_file" ]; then
-                  echo "Replacing JS links in $shadowrocket_Beta_file"
-                  for js_link in $js_links; do
-                    sed -i "s|$js_link|$github_js_url|g" "$shadowrocket_Beta_file"
-                  done
-                fi
+                sed -i "s|$js_link|$github_js_url|g" "$shadowrocket_file"
+                sed -i "s|$js_link|$github_js_url|g" "$shadowrocket_Beta_file"
               else
                 echo "Failed to download $js_link, skipping..."
               fi
