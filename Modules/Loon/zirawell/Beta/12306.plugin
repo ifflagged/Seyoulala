@@ -1,7 +1,16 @@
-12306%0A：Error: Invalid URL
+#!name=12306
+#!desc=12306
+#!icon=https://gitlab.com/lodepuly/iconlibrary/-/raw/main/App_icon/120px/Loon.png
+#!keyword=Jacob
 
+[Rule]
+# > 12306 - 12306
+DOMAIN,ad.12306.cn,REJECT
 
+[Script]
+# > 12306 - 12306
+http-response ^https?:\/\/mobile\.12306\.cn\/otsmobile\/app\/mgs\/mgw\.htm$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/12306.js, timeout=60, tag=12306
 
+[MITM]
+hostname = mobile.12306.cn
 
-
-Script Hub 重写转换: ❌  可自行翻译错误信息或复制错误信息后点击通知进行反馈

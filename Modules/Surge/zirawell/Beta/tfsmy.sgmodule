@@ -1,7 +1,14 @@
-tfsmy%0A：Error: Invalid URL
+#!name=tfsmy
+#!desc=tfsmy
+#!category=Jacob
 
+[Map Local]
+# > 天府市民云 - TFSMY
+^https?:\/\/tfsmy\.chengdu\.gov\.cn\/api\/v\d\/core\/version data-type=text data=" " status-code=200
 
+[Script]
+replaceBody = type=http-response, pattern=^https?:\/\/tft-app\.cdtft\.cn\/gateway-customer\/tftapp\/tft-ams\/api\/appAd, script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/replace-body.js, requires-body=true, max-size=-1, timeout=30, argument=officialAdvertResultVo-%3Erandom-response
 
+[MITM]
+hostname = %APPEND% tfsmy.chengdu.gov.cn, tft-app.cdtft.cn
 
-
-Script Hub 重写转换: ❌  可自行翻译错误信息或复制错误信息后点击通知进行反馈

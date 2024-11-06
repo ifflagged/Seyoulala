@@ -1,7 +1,19 @@
-cmb%0A：Error: Invalid URL
+#!name=cmb
+#!desc=cmb
+#!icon=https://gitlab.com/lodepuly/iconlibrary/-/raw/main/App_icon/120px/Loon.png
+#!keyword=Jacob
 
+[Rule]
+# > 招商银行 - CMBCHINA
+DOMAIN,mbads.paas.cmbchina.com,REJECT
+DOMAIN,yl.zh.cmbchina.com,REJECT
 
+[Rewrite]
+# > 招商银行 - CMBCHINA
+^https?:\/\/webappcfg\.paas\.cmbchina\.com\/v\d\/func\/getmarketconfig - reject-200
+^https?:\/\/webapp\.joyingtrip\.com\/cmbapp\/api\/hotel\/marketing\/adListNew - reject-dict
+^https?:\/\/mobile\.cmbchina\.com\/dcardmanage\/salary-welfare\/get-recommend mock-response-body data="undefined"
 
+[MITM]
+hostname = webappcfg.paas.cmbchina.com, webapp.joyingtrip.com, mobile.cmbchina.com
 
-
-Script Hub 重写转换: ❌  可自行翻译错误信息或复制错误信息后点击通知进行反馈

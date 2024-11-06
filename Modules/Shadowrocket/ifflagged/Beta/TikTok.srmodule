@@ -1,7 +1,26 @@
-TikTok%0A：Error: Invalid URL
+#!name=🎵 TikTok
+#!desc=TikTok Unlock
+#!icon=https://github.com/Koolson/Qure/raw/master/IconSet/Color/TikTok.png
+#!category=Jacob
 
+#!arguments=TikTok_Region:US, TikTok_Watermark:TikTok Watermark Removal
+#!arguments-desc=TikTok_Region: 解锁 TikTok 地区的地区码\n美国：US, 台湾：TW, 新加坡：SG, 日本：JP, 韩国：KR\n\nTikTok_Watermark: 脚本名称\n# TikTok Watermark 为禁用
+#!auther=https://github.com/githubdulong/Script/raw/master/Surge/TikTok_Surge.sgmodule
 
+[URL Rewrite]
+(?<=_region=)CN(?=&) US 307
+(?<=&mcc_mnc=)4 2 307
+^(https?:\/\/(tnc|dm)[\w-]+\.\w+\.com\/.+)(\?)(.+) $1$3 302
+(^https?:\/\/*\.\w{4}okv.com\/.+&.+)(\d{2}\.3\.\d)(.+) $118.0$3 302
+# 去广告
+^https:\/\/api-va\.tiktokv\.com\/api\/ad\/ - reject
+# 域名解析
+#^https:\/\/tnc\d+-platform-\w+\.tiktokv\.com\/get_domains\/ - reject
 
+[Script]
+# > TikTok 去水印
+TikTok Watermark Removal = type=http-response, pattern=https?:\/\/.*\.tiktokv\.com\/aweme\/v\d\/(feed|mix\/aweme|aweme\/post|(multi\/)?aweme\/detail|follow\/feed|nearby\/feed|search\/item|general\/search\/single|hot\/search\/video\/list|aweme\/favorite), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Tiktok.js, requires-body=true, max-size=0, script-update-interval=0, timeout=30
 
+[MITM]
+hostname = %APPEND% *.tiktokv.com, *.byteoversea.com, *.tik-tokapi.com
 
-Script Hub 重写转换: ❌  可自行翻译错误信息或复制错误信息后点击通知进行反馈
