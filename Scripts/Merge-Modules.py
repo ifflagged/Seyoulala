@@ -339,15 +339,23 @@ def download_modules(module_file):
         if not url or url.startswith('#'):
             continue
 
-        # 分离URL和注释部分
+        # Split the URL and the comment part
         url_parts = url.split('#', 1)
         base_url = url_parts[0].strip()  # 获取URL部分
         comment = url_parts[1].strip() if len(url_parts) > 1 else ''  # 获取注释部分
 
+        # Keep original link
+        if ".sgmodule" in base_url:
+            surge_urls.append(base_url)
+        elif ".plugin" in base_url:
+            loon_urls.append(base_url)
+        elif ".srmodule" in base_url:
+            srmodule_urls.append(base_url)
+            
         # 如果注释有多个平台，按逗号分割
         platforms = [platform.strip() for platform in comment.split(',')] if comment else []
 
-        # 针对每个平台进行处理
+        # Handle each platform in the comment
         if "Surge" in platforms:
             if ".plugin" in base_url:
                 surge_url = base_url.replace("Loon", "Surge").replace(".plugin", ".sgmodule")
@@ -375,7 +383,7 @@ def download_modules(module_file):
         if "Copy" in platforms:
             srmodule_urls.append(base_url)
             
-    # 执行合并操作
+    # Execute the merge operation
     if surge_urls:
         merge_modules(module_file, 'sgmodule', surge_urls)
     if loon_urls:
