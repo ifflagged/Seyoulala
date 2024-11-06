@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  Converting:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -24,9 +24,9 @@ jobs:
 
       - name: Set up Git
         run: |
-          git config --global user.name "ifflagged"
-          git config --global user.email "qibo.sign@outlook.com"
-
+          git config --global user.name "${GITHUB_ACTOR}"
+          git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+          
       - name: Install dependencies
         run: |
           sudo apt-get update
@@ -60,7 +60,7 @@ jobs:
           
       - name: Generate plugin URLs
         run: |
-          plugin_base_url="https://github.com/ifflagged/Darwin/raw/main/Modules/Loon/Kelee/"
+          plugin_base_url="https://github.com/${GITHUB_REPOSITORY}/raw/main/Modules/Loon/Kelee/"
           for file in Modules/Loon/Kelee/*; do
             if [ -f "$file" ]; then
               filename=$(basename "$file")
@@ -92,7 +92,7 @@ jobs:
       - name: Find and replace external JS resources
         continue-on-error: true  # 确保步骤在部分失败时继续执行
         run: |
-          js_base_url="https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee"
+          js_base_url="https://github.com/${GITHUB_REPOSITORY}/raw/main/Modules/JS/Kelee"
           mkdir -p Modules/JS/Kelee
 
           # 查找 Loon 文件夹中的插件文件
