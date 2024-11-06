@@ -50,8 +50,8 @@ jobs:
               continue
             fi
             
-            # URL 编码 module_link
-            encoded_module_link=$(echo "$module_link" | jq -sRr @uri)
+            # 特殊URL 😂 处理
+            encoded_module_link=$(echo "$module_link" | sed 's/😂/%F0%9F%98%82/g')
 
             # 获取作者名（假设作者在 URL 中的第4部分）
             author=$(echo "$module_link" | cut -d'/' -f4)
