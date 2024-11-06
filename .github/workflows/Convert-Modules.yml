@@ -101,7 +101,7 @@ jobs:
 
               # 使用指定的 User-Agent 下载 .js 文件
               echo "Downloading $js_link to $local_js_path"
-              if [ ! -f "$local_js_path" ] && curl -L -o "$local_js_path" "$js_link"; then
+              if [ ! -f "$local_js_path" ] && curl -A "Surge Mac/2985" -L -o "$local_js_path" "$js_link"; then
                 echo "Download successful for $js_link"
                 
                 # 替换 GitHub 仓库的路径
