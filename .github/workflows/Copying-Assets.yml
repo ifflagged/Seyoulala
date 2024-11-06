@@ -217,8 +217,8 @@ jobs:
                 git add "$sgmodule_file"
       
                 # 处理对应的 .plugin 和 .srmodule 文件
-                for ext in ".plugin" ".srmodule"; do
-                  other_file="${sgmodule_file%.*}$ext"
+                for ext_folder in "Modules/Loon" "Modules/Shadowrocket"; do
+                  other_file="${ext_folder}/$(basename "${sgmodule_file%.*}").${ext_folder##*/}module"
                   if [ -f "$other_file" ]; then
                     echo "Replacing JS links in $other_file"
                     sed -i "s|$js_link|$github_js_url|g" "$other_file"
