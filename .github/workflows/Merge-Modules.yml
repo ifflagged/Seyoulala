@@ -1,0 +1,64 @@
+name: Merge Modules
+
+on:
+  schedule:
+    - cron: '7 */1 * * *'
+  workflow_dispatch:   
+
+jobs:
+  Merging:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Git
+      run: |
+        git config --global user.name "${GITHUB_ACTOR}"
+        git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install requests
+
+    - name: Run merge script for all matching txt files
+      run: |
+        # 使用通配符找到所有符合 Merge-Modules-*.txt 的文件并执行合并脚本
+        for file in Links/Merge-Modules-*.txt; do
+          python Scripts/Merge-Modules.py "$file"
+        done
+
+      - name: Commit and push changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # 获取当前日期，设置为北京时间 (UTC+8)
+          DATE="$(TZ='Asia/Shanghai' date '+%Y-%m-%d %H:%M:%S')"
+    
+          # 添加所有更改
+          git add Modules/*
+    
+          # 如果没有变化，跳过提交
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            # 提交消息，包含动态的日期
+            COMMIT_MESSAGE="Merged modules at $DATE (UTC+8)"
+      
+            # 确保仓库是最新的，避免冲突
+            git stash
+            git pull --rebase  # 同步远程仓库的最新更改
+            git stash pop  # 恢复之前的更改
+      
+            # 再次添加文件，进行提交
+            git add Modules/*
+            git commit -m "$COMMIT_MESSAGE"
+            git push
+          fi
