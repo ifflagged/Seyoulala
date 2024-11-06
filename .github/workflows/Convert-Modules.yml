@@ -86,7 +86,7 @@ jobs:
             sgmodule_file="Modules/Surge/$author/$filename_noext.sgmodule"
             echo "Processing $sgmodule_file for JS links"
 
-            js_links=$(grep -oP 'https?://[^ ]+\.js' "$sgmodule_file" || echo "")
+            js_links=$(grep -oP 'https?://[^\s,]+\.js' "$sgmodule_file" || echo "")
 
             # 如果没有找到 .js 链接，则跳过
             if [ -z "$js_links" ]; then
