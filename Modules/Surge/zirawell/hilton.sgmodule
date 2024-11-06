@@ -1,7 +1,10 @@
-modulename.sgmodule：Error: Invalid URL
+#!name=hilton
+#!desc=hilton
 
+[Map Local]
+# > 希尔顿荣誉客会 - HILTON
+^https?:\/\/wcprd\.hilton\.com\.cn\/app-middleware\/graphql\?type=splashAd data-type=text data=" " status-code=200
 
+[MITM]
+hostname = %APPEND% wcprd.hilton.com.cn
 
-
-
-Script Hub 重写转换: ❌  可自行翻译错误信息或复制错误信息后点击通知进行反馈

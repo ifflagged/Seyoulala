@@ -176,175 +176,175 @@ URL-REGEX,^http:\/\/[\d\.]+:8000\/v1\/resource\/\w{32}-1-SPLASH,REJECT-IMG
 http-request ^https:\/\/app\.bilibili\.com\/x\/resource\/top\/activity\? script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/echo-response.js, timeout=60, tag=echoResponse, argument=json=%7B%20%22code%22%3A%20-404%2C%20%22message%22%3A%20%22%E5%95%A5%E9%83%BD%E6%9C%A8%E6%9C%89%22%2C%20%22ttl%22%3A%201%2C%20%22data%22%3A%20null%20%7D&status-code=200
 
 #>菜鸟
-http-response ^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/header.js, timeout=60, tag=菜鸟
+http-response ^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/header.js, timeout=60, tag=菜鸟
 
-http-response ^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.app\.mine\.main\.cn script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/cainiao.js, requires-body=true, tag=菜鸟
+http-response ^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.app\.mine\.main\.cn script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/cainiao.js, requires-body=true, tag=菜鸟
 
-http-response ^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.m?show\.cn script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/cainiao.js, requires-body=true, tag=菜鸟
+http-response ^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.m?show\.cn script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/cainiao.js, requires-body=true, tag=菜鸟
 
-http-response ^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.nbpresentation\.(?:pickup\.empty\.page|protocol\.homepage)\.get\.cn script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/cainiao.js, requires-body=true, tag=菜鸟
+http-response ^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.nbpresentation\.(?:pickup\.empty\.page|protocol\.homepage)\.get\.cn script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/cainiao.js, requires-body=true, tag=菜鸟
 
-http-response ^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.nbfriend\.message\.conversation\.list\.cn script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/cainiao.js, requires-body=true, tag=菜鸟
+http-response ^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.nbfriend\.message\.conversation\.list\.cn script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/cainiao.js, requires-body=true, tag=菜鸟
 
-http-response ^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.mshow script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/cainiao.js, requires-body=true, tag=菜鸟
+http-response ^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.mshow script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/cainiao.js, requires-body=true, tag=菜鸟
 
 #>12306 //ad.12306.cn, mobile.12306.cn
-http-request ^https:\/\/ad\.12306\.cn\/ad\/ser\/getAdList$ script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/12306.js, requires-body=true, tag=12306
+http-request ^https:\/\/ad\.12306\.cn\/ad\/ser\/getAdList$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/12306.js, requires-body=true, tag=12306
 
-http-response ^https:\/\/mobile\.12306\.cn\/otsmobile\/app\/mgs\/mgw\.htm$ script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/header.js, tag=12306
+http-response ^https:\/\/mobile\.12306\.cn\/otsmobile\/app\/mgs\/mgw\.htm$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/header.js, tag=12306
 
 #>阿里云盘 //*api.alipan.com, member.alipan.com
-http-response ^https:\/\/(biz)?api\.alipan\.com\/apps\/v\d\/users?\/home\/(?:news|widgets) script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/adrive.js, requires-body=true, tag=阿里云盘
+http-response ^https:\/\/(biz)?api\.alipan\.com\/apps\/v\d\/users?\/home\/(?:news|widgets) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/adrive.js, requires-body=true, tag=阿里云盘
 
-http-response ^https:\/\/member\.alipan\.com\/v1\/users\/onboard_list script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/adrive.js, requires-body=true, tag=阿里云盘
+http-response ^https:\/\/member\.alipan\.com\/v1\/users\/onboard_list script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/adrive.js, requires-body=true, tag=阿里云盘
 
 #>淘宝 //acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com
-http-response ^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(?:cloudvideo\.video\.query|wireless\.home\.splash\.awesome\.get) script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/myBlockAds.js, requires-body=true, tag=淘宝
+http-response ^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(?:cloudvideo\.video\.query|wireless\.home\.splash\.awesome\.get) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/myBlockAds.js, requires-body=true, tag=淘宝
 
-http-response ^https:\/\/poplayer\.template\.alibaba\.com\/\w+\.json script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/myBlockAds.js, requires-body=true, tag=淘宝
+http-response ^https:\/\/poplayer\.template\.alibaba\.com\/\w+\.json script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/myBlockAds.js, requires-body=true, tag=淘宝
 
 #>京东 //api.m.jd.com
-http-response ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(?:deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome) script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/jingdong.js, requires-body=true, tag=京东
+http-response ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(?:deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/jingdong.js, requires-body=true, tag=京东
 
 #>小米商城 //api.m.mi.com, shop-api.retail.mi.com
-http-response ^https:\/\/api\.m\.mi\.com\/v1\/(?:app\/start|order\/expressView) script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/myBlockAds.js, requires-body=true, tag=小米商城
+http-response ^https:\/\/api\.m\.mi\.com\/v1\/(?:app\/start|order\/expressView) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/myBlockAds.js, requires-body=true, tag=小米商城
 
 #>中国农业银行 //mobilepaas.abchina.com.cn
-http-request ^https:\/\/mobilepaas\.abchina\.com\.cn:441\/mgw\.htm$ script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/header.js, tag=中国农业银行
+http-request ^https:\/\/mobilepaas\.abchina\.com\.cn:441\/mgw\.htm$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/header.js, tag=中国农业银行
 
 #>虎扑 //*.hupu.com
-http-response ^https:\/\/fairy\.mobileapi\.hupu\.com\/mang\/preview\/banners script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/HP.js, requires-body=true, tag=虎扑
+http-response ^https:\/\/fairy\.mobileapi\.hupu\.com\/mang\/preview\/banners script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/HP.js, requires-body=true, tag=虎扑
 
-http-response ^https:\/\/bbs\.mobileapi\.hupu\.com\/\d\/\d\.\d\.\d+\/bbsallapi\/lego\/data script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/HP.js, requires-body=true, tag=虎扑
+http-response ^https:\/\/bbs\.mobileapi\.hupu\.com\/\d\/\d\.\d\.\d+\/bbsallapi\/lego\/data script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/HP.js, requires-body=true, tag=虎扑
 
-http-response ^https:\/\/games\.mobileapi\.hupu\.com\/\d\/\d\.\d\.\d+\/buffer\/hotList script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/HP.js, requires-body=true, tag=虎扑
+http-response ^https:\/\/games\.mobileapi\.hupu\.com\/\d\/\d\.\d\.\d+\/buffer\/hotList script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/HP.js, requires-body=true, tag=虎扑
 
-http-response ^https:\/\/games\.mobileapi\.hupu\.com\/\d\/\d\.\d\.\d+\/bplapi\/user\/v1\/more script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/HP.js, requires-body=true, tag=虎扑
+http-response ^https:\/\/games\.mobileapi\.hupu\.com\/\d\/\d\.\d\.\d+\/bplapi\/user\/v1\/more script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/HP.js, requires-body=true, tag=虎扑
 
 #>拼多多 //api.pinduoduo.com, api.yangkeduo.com, video-dsp.pddpic.com, t-dsp.pinduoduo.com, images.pinduoduo.com
-http-response ^https:\/\/api\.pinduoduo\.com\/api\/alexa\/homepage\/hub\? script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/Pinduoduo.js, requires-body=true, tag=拼多多
+http-response ^https:\/\/api\.pinduoduo\.com\/api\/alexa\/homepage\/hub\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Pinduoduo.js, requires-body=true, tag=拼多多
 
 #>航旅纵横 //114.115.217.129, home.umetrip.com
-http-response ^http?:\/\/(114\.115\.217\.129)|(home\.umetrip\.com)\/gateway\/api\/umetrip\/native$ script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/Umetrip.js, requires-body=true, tag=航旅纵横
+http-response ^http?:\/\/(114\.115\.217\.129)|(home\.umetrip\.com)\/gateway\/api\/umetrip\/native$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Umetrip.js, requires-body=true, tag=航旅纵横
 
 #>小红书 //edith.xiaohongshu.com, www.xiaohongshu.com, rec.xiaohongshu.com
-http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/note\/(?:imagefeed|live_photo\/save) script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/xiaohongshu.js, requires-body=true, tag=小红书
+http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/note\/(?:imagefeed|live_photo\/save) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/xiaohongshu.js, requires-body=true, tag=小红书
 
-http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/system_service\/config\? script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/xiaohongshu.js, requires-body=true, tag=小红书
+http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/system_service\/config\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/xiaohongshu.js, requires-body=true, tag=小红书
 
-http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v2\/system_service\/splash_config script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/xiaohongshu.js, requires-body=true, tag=小红书
+http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v2\/system_service\/splash_config script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/xiaohongshu.js, requires-body=true, tag=小红书
 
-http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v2\/(?:note\/widgets|user\/followings\/followfeed) script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/xiaohongshu.js, requires-body=true, tag=小红书
+http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v2\/(?:note\/widgets|user\/followings\/followfeed) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/xiaohongshu.js, requires-body=true, tag=小红书
 
-http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v4\/followfeed\? script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/xiaohongshu.js, requires-body=true, tag=小红书
+http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v4\/followfeed\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/xiaohongshu.js, requires-body=true, tag=小红书
 
-http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v5\/recommend\/user\/follow_recommend\? script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/xiaohongshu.js, requires-body=true, tag=小红书
+http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v5\/recommend\/user\/follow_recommend\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/xiaohongshu.js, requires-body=true, tag=小红书
 
-http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v6\/homefeed\? script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/xiaohongshu.js, requires-body=true, tag=小红书
+http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v6\/homefeed\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/xiaohongshu.js, requires-body=true, tag=小红书
 
-http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v10\/search\/notes\? script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/xiaohongshu.js, requires-body=true, tag=小红书
+http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v10\/search\/notes\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/xiaohongshu.js, requires-body=true, tag=小红书
 
-http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/(?:v2\/note\/feed|v3\/note\/videofeed) script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/xiaohongshu.js, requires-body=true, tag=小红书
+http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/(?:v2\/note\/feed|v3\/note\/videofeed) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/xiaohongshu.js, requires-body=true, tag=小红书
 
-http-response ^https:\/\/(?:edith|rec|www)\.xiaohongshu\.com\/api\/sns\/(?:v4\/note\/videofeed|v10\/note\/video\/save) script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/xiaohongshu.js, requires-body=true, tag=小红书
+http-response ^https:\/\/(?:edith|rec|www)\.xiaohongshu\.com\/api\/sns\/(?:v4\/note\/videofeed|v10\/note\/video\/save) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/xiaohongshu.js, requires-body=true, tag=小红书
 
 #>高德地图 //m5.amap.com, m5-zb.amap.com, oss.amap.com, sns.amap.com
-http-response ^https:\/\/m5\.amap\.com\/ws\/aos\/perception\/publicTravel\/beforeNavi\? script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/amap.js, requires-body=true, tag=高德地图
+http-response ^https:\/\/m5\.amap\.com\/ws\/aos\/perception\/publicTravel\/beforeNavi\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/amap.js, requires-body=true, tag=高德地图
 
-http-response ^https:\/\/m5\.amap\.com\/ws\/bus\/plan\/integrate\? script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/amap.js, requires-body=true, tag=高德地图
+http-response ^https:\/\/m5\.amap\.com\/ws\/bus\/plan\/integrate\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/amap.js, requires-body=true, tag=高德地图
 
-http-response ^https:\/\/m5\.amap\.com\/ws\/c3frontend\/af-(hotel|launch)\/page\/main\? script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/amap.js, requires-body=true, tag=高德地图
+http-response ^https:\/\/m5\.amap\.com\/ws\/c3frontend\/af-(hotel|launch)\/page\/main\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/amap.js, requires-body=true, tag=高德地图
 
-http-response ^https:\/\/m5\.amap\.com\/ws\/perception\/drive\/(routeInfo|routePlan) script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/amap.js, requires-body=true, tag=高德地图
+http-response ^https:\/\/m5\.amap\.com\/ws\/perception\/drive\/(routeInfo|routePlan) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/amap.js, requires-body=true, tag=高德地图
 
-http-response ^https:\/\/m5\.amap\.com\/ws\/shield\/search\/(common\/coupon\/info|poi\/detail) script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/amap.js, requires-body=true, tag=高德地图
+http-response ^https:\/\/m5\.amap\.com\/ws\/shield\/search\/(common\/coupon\/info|poi\/detail) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/amap.js, requires-body=true, tag=高德地图
 
-http-response ^https:\/\/m5\.amap\.com\/ws\/shield\/search_bff\/hotword\? script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/amap.js, requires-body=true, tag=高德地图
+http-response ^https:\/\/m5\.amap\.com\/ws\/shield\/search_bff\/hotword\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/amap.js, requires-body=true, tag=高德地图
 
-http-response ^https:\/\/m5\.amap\.com\/ws\/shield\/search_poi\/(?:mps|search\/sp|sug|tips_operation_location) script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/amap.js, requires-body=true, tag=高德地图
+http-response ^https:\/\/m5\.amap\.com\/ws\/shield\/search_poi\/(?:mps|search\/sp|sug|tips_operation_location) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/amap.js, requires-body=true, tag=高德地图
 
-http-response ^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/(card-service-plan-home|main-page) script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/amap.js, requires-body=true, tag=高德地图
+http-response ^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/(card-service-plan-home|main-page) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/amap.js, requires-body=true, tag=高德地图
 
-http-response ^https:\/\/m5\.amap\.com\/ws\/shield\/frogserver\/aocs\/updatable\/1\? script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/amap.js, requires-body=true, tag=高德地图
+http-response ^https:\/\/m5\.amap\.com\/ws\/shield\/frogserver\/aocs\/updatable\/1\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/amap.js, requires-body=true, tag=高德地图
 
-http-response ^https:\/\/m5\.amap\.com\/ws\/shield\/dsp\/profile\/index\/nodefaasv3\? script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/amap.js, requires-body=true, tag=高德地图
+http-response ^https:\/\/m5\.amap\.com\/ws\/shield\/dsp\/profile\/index\/nodefaasv3\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/amap.js, requires-body=true, tag=高德地图
 
-http-response ^https:\/\/m5\.amap\.com\/ws\/shield\/search\/nearbyrec_smart\? script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/amap.js, requires-body=true, tag=高德地图
+http-response ^https:\/\/m5\.amap\.com\/ws\/shield\/search\/nearbyrec_smart\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/amap.js, requires-body=true, tag=高德地图
 
-http-response ^https:\/\/m5\.amap\.com\/ws\/valueadded\/alimama\/splash_screen\? script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/amap.js, requires-body=true, tag=高德地图
+http-response ^https:\/\/m5\.amap\.com\/ws\/valueadded\/alimama\/splash_screen\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/amap.js, requires-body=true, tag=高德地图
 
-http-response ^https:\/\/m5-zb\.amap\.com\/ws\/boss\/(car\/order\/content_info|order_web\/friendly_information) script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/amap.js, requires-body=true, tag=高德地图
+http-response ^https:\/\/m5-zb\.amap\.com\/ws\/boss\/(car\/order\/content_info|order_web\/friendly_information) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/amap.js, requires-body=true, tag=高德地图
 
-http-response ^https:\/\/m5-zb\.amap\.com\/ws\/promotion-web\/resource(\/home)?\? script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/amap.js, requires-body=true, tag=高德地图
+http-response ^https:\/\/m5-zb\.amap\.com\/ws\/promotion-web\/resource(\/home)?\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/amap.js, requires-body=true, tag=高德地图
 
 #>滴滴出行 //common.diditaxi.com.cn, freight.xiaojukeji.com, daijia.kuaidadi.com, ct.xiaojukeji.com, res.xiaojukeji.com, conf.diditaxi.com.cn, api.udache.com, 123.207.209.*, 112.53.55.225, 120.241.142.*, 120.241.143.*, 116.85.2.*, 116.85.3.*, 139.199.240.84
-http-response ^https:\/\/common\.diditaxi\.com\.cn\/common\/v\d\/usercenter\/me script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/Didichuxing.js, requires-body=true, tag=滴滴出行
+http-response ^https:\/\/common\.diditaxi\.com\.cn\/common\/v\d\/usercenter\/me script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Didichuxing.js, requires-body=true, tag=滴滴出行
 
-http-response ^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/core script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/Didichuxing.js, requires-body=true, tag=滴滴出行
+http-response ^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/core script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Didichuxing.js, requires-body=true, tag=滴滴出行
 
-http-response ^https:\/\/api\.udache\.com\/gulfstream\/pre-sale\/v1\/other\/pGetSceneList script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/Didichuxing.js, requires-body=true, tag=滴滴出行
+http-response ^https:\/\/api\.udache\.com\/gulfstream\/pre-sale\/v1\/other\/pGetSceneList script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Didichuxing.js, requires-body=true, tag=滴滴出行
 
-http-response ^https:\/\/conf\.diditaxi\.com\.cn\/ota\/na\/yuantu\/infoList script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/Didichuxing.js, requires-body=true, tag=滴滴出行
+http-response ^https:\/\/conf\.diditaxi\.com\.cn\/ota\/na\/yuantu\/infoList script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Didichuxing.js, requires-body=true, tag=滴滴出行
 
-http-response ^https:\/\/api\.udache\.com\/gulfstream\/passenger-center\/v2\/other\/pInTripLayout script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/Didichuxing.js, requires-body=true, tag=滴滴出行
+http-response ^https:\/\/api\.udache\.com\/gulfstream\/passenger-center\/v2\/other\/pInTripLayout script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Didichuxing.js, requires-body=true, tag=滴滴出行
 
 #>彩云天气 //api.caiyunapp.com, *.cyapi.cn
-http-response ^https:\/\/api\.caiyunapp\.com\/v1\/activity\? script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/caiyun.js, requires-body=true, tag=彩云天气
+http-response ^https:\/\/api\.caiyunapp\.com\/v1\/activity\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/caiyun.js, requires-body=true, tag=彩云天气
 
-http-response ^https:\/\/biz\.cyapi\.cn\/(api\/v1\/user_detail|p\/v1\/vip_info|v2\/user) script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/caiyun.js, requires-body=true, tag=彩云天气
+http-response ^https:\/\/biz\.cyapi\.cn\/(api\/v1\/user_detail|p\/v1\/vip_info|v2\/user) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/caiyun.js, requires-body=true, tag=彩云天气
 
-http-response ^https:\/\/wrapper\.cyapi\.cn\/v1\/activity\? script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/caiyun.js, requires-body=true, tag=彩云天气
+http-response ^https:\/\/wrapper\.cyapi\.cn\/v1\/activity\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/caiyun.js, requires-body=true, tag=彩云天气
 
-http-request ^https:\/\/wrapper\.cyapi\.cn\/v1\/(nafp\/origin_images|satellite)\? script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/caiyun.js, timeout=60, tag=彩云天气
+http-request ^https:\/\/wrapper\.cyapi\.cn\/v1\/(nafp\/origin_images|satellite)\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/caiyun.js, timeout=60, tag=彩云天气
 
 #>闲鱼 //*.m.goofish.com
-http-response ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.idle\.user\.page\.my\.adapter\/ script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/xianyu.js, requires-body=true, tag=闲鱼
+http-response ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.idle\.user\.page\.my\.adapter\/ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/xianyu.js, requires-body=true, tag=闲鱼
 
-http-response ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlehome\.home\.nextfresh\/ script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/xianyu.js, requires-body=true, tag=闲鱼
+http-response ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlehome\.home\.nextfresh\/ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/xianyu.js, requires-body=true, tag=闲鱼
 
-http-response ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlehome\.home\.circle\.list\/ script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/xianyu.js, requires-body=true, tag=闲鱼
+http-response ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlehome\.home\.circle\.list\/ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/xianyu.js, requires-body=true, tag=闲鱼
 
-http-response ^https:\/\/g-acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.search\/ script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/xianyu.js, requires-body=true, tag=闲鱼
+http-response ^https:\/\/g-acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.search\/ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/xianyu.js, requires-body=true, tag=闲鱼
 
 #>途虎养车 //mkt-gateway.tuhu.cn, cl-gateway.tuhu.cn
-http-response ^https:\/\/cl-gateway\.tuhu\.cn\/cl-shop-api\/shopTab\/getModuleForC script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/TH.js, requires-body=true, tag=途虎养车
+http-response ^https:\/\/cl-gateway\.tuhu\.cn\/cl-shop-api\/shopTab\/getModuleForC script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/TH.js, requires-body=true, tag=途虎养车
 
-http-response ^https:\/\/cl-gateway\.tuhu\.cn\/cl-common-api\/api\/personalCenter\/getCmsModuleList script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/TH.js, requires-body=true, tag=途虎养车
+http-response ^https:\/\/cl-gateway\.tuhu\.cn\/cl-common-api\/api\/personalCenter\/getCmsModuleList script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/TH.js, requires-body=true, tag=途虎养车
 
 #>百度跳转 //m.baidu.com, www.baidu.com, zhidao.baidu.com
-http-response ^https:\/\/(?:www|m)\.baidu\.com(\/|\/\?(tn=&)?from=\d+\w)?$ script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/baidu-index.js, requires-body=true, tag=百度跳转
+http-response ^https:\/\/(?:www|m)\.baidu\.com(\/|\/\?(tn=&)?from=\d+\w)?$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/baidu-index.js, requires-body=true, tag=百度跳转
 
 #>Keep //kad.gotokeep.com, 42.187.199.248, api.gotokeep.com
-http-response ^https:\/\/api\.gotokeep\.com\/config\/v3\/basic script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/Keep.js, requires-body=true, tag=Keep
+http-response ^https:\/\/api\.gotokeep\.com\/config\/v3\/basic script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Keep.js, requires-body=true, tag=Keep
 
 #>哔哩哔哩 //app.bilibili.com, api.bilibili.com, api.live.bilibili.com, grpc.biliapi.net, www.bilibili.com, m.bilibili.com, live.bilibili.com
-http-response ^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.(view|viewunite)\.v1\.View\/(View|ViewProgress)$ script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/Bilibili_helper_beta.js, requires-body=true, binary-body-mode=true, tag=哔哩哔哩
+http-response ^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.(view|viewunite)\.v1\.View\/(View|ViewProgress)$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Bilibili_helper_beta.js, requires-body=true, binary-body-mode=true, tag=哔哩哔哩
 
-http-response ^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.polymer\.app\.search\.v1\.Search\/SearchAll$ script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/Bilibili_helper_beta.js, requires-body=true, binary-body-mode=true, tag=哔哩哔哩
+http-response ^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.polymer\.app\.search\.v1\.Search\/SearchAll$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Bilibili_helper_beta.js, requires-body=true, binary-body-mode=true, tag=哔哩哔哩
 
-http-response ^https:\/\/grpc\.biliapi\.net\/bilibili\.main\.community\.reply\.v1\.Reply\/MainList script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/Bilibili_helper_beta.js, requires-body=true, binary-body-mode=true, tag=哔哩哔哩
+http-response ^https:\/\/grpc\.biliapi\.net\/bilibili\.main\.community\.reply\.v1\.Reply\/MainList script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Bilibili_helper_beta.js, requires-body=true, binary-body-mode=true, tag=哔哩哔哩
 
-http-response ^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.dynamic\.v2\.Dynamic\/DynAll$ script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/Bilibili_helper_beta.js, requires-body=true, binary-body-mode=true, tag=哔哩哔哩
+http-response ^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.dynamic\.v2\.Dynamic\/DynAll$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Bilibili_helper_beta.js, requires-body=true, binary-body-mode=true, tag=哔哩哔哩
 
-http-response ^https:\/\/grpc\.biliapi\.net\/bilibili\.community\.service\.dm\.v1\.DM\/DmSegMobile script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/Bilibili_helper_beta.js, requires-body=true, binary-body-mode=true, tag=哔哩哔哩
+http-response ^https:\/\/grpc\.biliapi\.net\/bilibili\.community\.service\.dm\.v1\.DM\/DmSegMobile script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Bilibili_helper_beta.js, requires-body=true, binary-body-mode=true, tag=哔哩哔哩
 
-http-response ^https:\/\/grpc\.biliapi\.net\/bilibili\.community\.service\.dm\.v1\.DM\/DmView script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/Bilibili_helper_beta.js, requires-body=true, binary-body-mode=true, tag=哔哩哔哩
+http-response ^https:\/\/grpc\.biliapi\.net\/bilibili\.community\.service\.dm\.v1\.DM\/DmView script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Bilibili_helper_beta.js, requires-body=true, binary-body-mode=true, tag=哔哩哔哩
 
-http-response ^https:\/\/grpc\.biliapi\.net\/bilibili\.app\.interface\.v1\.Teenagers\/ModeStatus script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/Bilibili_helper_beta.js, requires-body=true, binary-body-mode=true, tag=哔哩哔哩
+http-response ^https:\/\/grpc\.biliapi\.net\/bilibili\.app\.interface\.v1\.Teenagers\/ModeStatus script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Bilibili_helper_beta.js, requires-body=true, binary-body-mode=true, tag=哔哩哔哩
 
-http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/splash\/(brand\/list|event\/list2|list|show)\? script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/Bilibili_remove_ads.js, requires-body=true, tag=哔哩哔哩
+http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/splash\/(brand\/list|event\/list2|list|show)\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Bilibili_remove_ads.js, requires-body=true, tag=哔哩哔哩
 
-http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/feed\/index(\/story)?\? script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/Bilibili_remove_ads.js, requires-body=true, tag=哔哩哔哩
+http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/feed\/index(\/story)?\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Bilibili_remove_ads.js, requires-body=true, tag=哔哩哔哩
 
-http-response ^https:\/\/app\.bilibili\.com\/x\/resource\/show\/tab\/v2\? script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/Bilibili_remove_ads.js, requires-body=true, tag=哔哩哔哩
+http-response ^https:\/\/app\.bilibili\.com\/x\/resource\/show\/tab\/v2\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Bilibili_remove_ads.js, requires-body=true, tag=哔哩哔哩
 
-http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/search\/square\? script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/Bilibili_remove_ads.js, requires-body=true, tag=哔哩哔哩
+http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/search\/square\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Bilibili_remove_ads.js, requires-body=true, tag=哔哩哔哩
 
-http-response ^https:\/\/api\.bilibili\.com\/pgc\/page\/(bangumi|cinema\/tab\?) script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/Bilibili_remove_ads.js, requires-body=true, tag=哔哩哔哩
+http-response ^https:\/\/api\.bilibili\.com\/pgc\/page\/(bangumi|cinema\/tab\?) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Bilibili_remove_ads.js, requires-body=true, tag=哔哩哔哩
 
-http-response ^https:\/\/api\.live\.bilibili\.com\/xlive\/app-room\/v1\/index\/getInfoByRoom\? script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/Bilibili_remove_ads.js, requires-body=true, tag=哔哩哔哩
+http-response ^https:\/\/api\.live\.bilibili\.com\/xlive\/app-room\/v1\/index\/getInfoByRoom\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Bilibili_remove_ads.js, requires-body=true, tag=哔哩哔哩
 
-http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/account\/(mine\?|mine\/ipad\?) script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/Bilibili_remove_ads.js, requires-body=true, tag=哔哩哔哩
+http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/account\/(mine\?|mine\/ipad\?) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Bilibili_remove_ads.js, requires-body=true, tag=哔哩哔哩
 
 [MITM]
 hostname = cn-acs.m.cainiao.com, guide-acs.m.taobao.com, ad.12306.cn, mobile.12306.cn, list-app-m.i4.cn, *api.alipan.com, member.alipan.com, acs.m.taobao.com, heic.alicdn.com, poplayer.template.alibaba.com, pan.baidu.com, api.douban.com, img3.doubanio.com, qnmob3.doubanio.com, image.mybank.icbc.com.cn, api.m.jd.com, gab.122.gov.cn, flowplus.meituan.net, img.meituan.net, s3plus.meituan.net, osg-service.sgcc.com.cn, mp.weixin.qq.com, api.m.mi.com, home.mi.com, shop-api.retail.mi.com, wallet.95516.com, mobilepaas.abchina.com.cn, *.hupu.com, api.pinduoduo.com, video-dsp.pddpic.com, t-dsp.pinduoduo.com, images.pinduoduo.com, api.yangkeduo.com, 114.115.217.129, home.umetrip.com, edith.xiaohongshu.com, www.xiaohongshu.com, rec.xiaohongshu.com, m5.amap.com, m5-zb.amap.com, oss.amap.com, sns.amap.com, common.diditaxi.com.cn, freight.xiaojukeji.com, daijia.kuaidadi.com, ct.xiaojukeji.com, res.xiaojukeji.com, conf.diditaxi.com.cn, api.udache.com, 123.207.209.*, 112.53.55.225, 120.241.142.*, 120.241.143.*, 116.85.2.*, 116.85.3.*, 139.199.240.84, api.caiyunapp.com, *.cyapi.cn, mkt-gateway.tuhu.cn, cl-gateway.tuhu.cn, m.baidu.com, www.baidu.com, zhidao.baidu.com, *.m.goofish.com, kad.gotokeep.com, 42.187.199.248, api.gotokeep.com, app.bilibili.com, api.bilibili.com, api.live.bilibili.com, grpc.biliapi.net, www.bilibili.com, m.bilibili.com, live.bilibili.com

@@ -1,7 +1,13 @@
-modulename.sgmodule：Error: Invalid URL
+#!name=alipay
+#!desc=alipay
 
+[Rule]
+# > 支付宝 - ALIPAY
+DOMAIN,adgw.alipay.com,REJECT
+DOMAIN,amdc.alipay.com,REJECT
+DOMAIN,amdc-sibling.alipay.com.cn,REJECT
+DOMAIN-SUFFIX,mdap.alipay.com,REJECT
+DOMAIN-SUFFIX,ynuf.alipay.com,REJECT
+DOMAIN-SUFFIX,loggw.alipay.com.cn,REJECT
+DOMAIN-SUFFIX,alipaydns.com,REJECT
 
-
-
-
-Script Hub 重写转换: ❌  可自行翻译错误信息或复制错误信息后点击通知进行反馈

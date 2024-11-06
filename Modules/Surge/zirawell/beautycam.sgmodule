@@ -1,7 +1,8 @@
-modulename.sgmodule：Error: Invalid URL
+#!name=beautycam
+#!desc=beautycam
 
+[Rule]
+# > 美颜相机 - BEAUTYCAM
+DOMAIN,aaid.uyunad.com,REJECT
+DOMAIN,adui.tg.meitu.com,REJECT
 
-
-
-
-Script Hub 重写转换: ❌  可自行翻译错误信息或复制错误信息后点击通知进行反馈
