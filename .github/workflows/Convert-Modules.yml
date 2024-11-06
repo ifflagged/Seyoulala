@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  Converting:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -22,8 +22,8 @@ jobs:
 
       - name: Set up Git
         run: |
-          git config --global user.name "ifflagged"
-          git config --global user.email "qibo.sign@outlook.com"
+          git config --global user.name "${GITHUB_ACTOR}"
+          git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
 
       - name: Install dependencies
         run: |
