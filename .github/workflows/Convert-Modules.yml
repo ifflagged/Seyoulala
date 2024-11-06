@@ -98,7 +98,9 @@ jobs:
             for js_link in $js_links; do
               js_filename=$(basename "$js_link")
               local_js_path="Modules/JS/$author/$js_filename"
-
+              # 确保目标目录存在
+              mkdir -p "$(dirname "$local_js_path")"
+              
               # 使用指定的 User-Agent 下载 .js 文件
               echo "Downloading $js_link to $local_js_path"
               if [ ! -f "$local_js_path" ] && curl -A "Surge Mac/2985" -L -o "$local_js_path" "$js_link"; then
