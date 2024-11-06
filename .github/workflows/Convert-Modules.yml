@@ -39,7 +39,6 @@ jobs:
           done
 
       - name: Process Links and Download Files
-        id: process_links  # 设置id用于后续步骤引用
         run: |
           category="Jacob"
           encoded_category=$(echo "$category" | jq -sRr @uri)
@@ -53,13 +52,8 @@ jobs:
 
             # 获取作者名（假设作者在 URL 中的第4部分）
             author=$(echo "$module_link" | cut -d'/' -f4)
-            filename=$(basename "$module_link")
-            filename_noext="${filename%.*}"
+            filename_noext=$(basename "$module_link" .* )
             encoded_filename=$(echo "$filename_noext" | jq -sRr @uri)
-
-            # 设置作者为 GitHub Actions 的输出变量，以供后续步骤使用
-            echo "author=$author" >> $GITHUB_ENV  # 将 $author 保存为环境变量
-            echo "filename_noext=$filename_noext" >> $GITHUB_ENV  # 将 $author 保存为环境变量
             
             # 创建文件夹
             echo "Creating directories for $author"
@@ -76,62 +70,72 @@ jobs:
 
             # 下载各模块文件
             echo "Downloading Surge file: $Surge_url"
-            curl -A "Surge Mac/2985" -L -o "Modules/Surge/$author/$filename_noext.sgmodule" "$Surge_url" || echo "Failed to download $Surge_url"
-            curl -A "Surge Mac/2985" -L -o "Modules/Surge/$author/Beta/$filename_noext.sgmodule" "$Surge_Beta_url" || echo "Failed to download $Surge_Beta_url"
+            curl -A "Surge Mac/2985" -L -o "Modules/Surge/$author/$filename_noext.sgmodule" "$Surge_url" || echo "Failed to download $filename_noext.sgmodule"
+            curl -A "Surge Mac/2985" -L -o "Modules/Surge/$author/Beta/$filename_noext.sgmodule" "$Surge_Beta_url" || echo "Failed to download $filename_noext.sgmodule"
 
             echo "Downloading Loon file: $Loon_url"
-            curl -A "Surge Mac/2985" -L -o "Modules/Loon/$author/$filename_noext.plugin" "$Loon_url" || echo "Failed to download $Loon_url"
-            curl -A "Surge Mac/2985" -L -o "Modules/Loon/$author/Beta/$filename_noext.plugin" "$Loon_Beta_url" || echo "Failed to download $Loon_Beta_url"
+            curl -A "Surge Mac/2985" -L -o "Modules/Loon/$author/$filename_noext.plugin" "$Loon_url" || echo "Failed to download $filename_noext.plugin"
+            curl -A "Surge Mac/2985" -L -o "Modules/Loon/$author/Beta/$filename_noext.plugin" "$Loon_Beta_url" || echo "Failed to download $filename_noext.plugin"
 
             echo "Downloading Shadowrocket file: $Shadowrocket_url"
-            curl -A "Surge Mac/2985" -L -o "Modules/Shadowrocket/$author/$filename_noext.srmodule" "$Shadowrocket_url" || echo "Failed to download $Shadowrocket_url"
-            curl -A "Surge Mac/2985" -L -o "Modules/Shadowrocket/$author/Beta/$filename_noext.srmodule" "$Shadowrocket_Beta_url" || echo "Failed to download $Shadowrocket_Beta_url"
+            curl -A "Surge Mac/2985" -L -o "Modules/Shadowrocket/$author/$filename_noext.srmodule" "$Shadowrocket_url" || echo "Failed to download $filename_noext.srmodule"
+            curl -A "Surge Mac/2985" -L -o "Modules/Shadowrocket/$author/Beta/$filename_noext.srmodule" "$Shadowrocket_Beta_url" || echo "Failed to download $filename_noext.srmodule"
           done < Links/Modules-Links.txt
 
       - name: Find and replace external JS resources
         continue-on-error: true  # 确保步骤在部分失败时继续执行
         run: |
           js_base_url="https://github.com/${GITHUB_REPOSITORY}/raw/main/Modules/JS"
-          mkdir -p Modules/JS/$author
 
-          # 查找 .sgmodule 文件中的 .js 链接并下载
-          sgmodule_file="Modules/Surge/$author/$filename_noext.sgmodule"
-          echo "Processing $sgmodule_file for JS links"
+          for sgmodule_file in $(find Modules/Surge/ -path "Modules/Kelee" -prune -o -type f -name "*.sgmodule" -print); do
+            # 获取当前文件所在的文件夹路径
+            author=$(dirname "$sgmodule_file")
+            echo "Processing $sgmodule_file from folder $author for JS links"
 
-          js_links=$(grep -oP 'https?://[^ ]+\.js' "$sgmodule_file" || echo "")
+            # 查找 .sgmodule 文件中的 .js 链接
+            js_links=$(grep -oP 'https?://[^ ]+\.js' "$sgmodule_file" || echo "")
 
-          # 下载和替换每个 JS 链接
-          for js_link in $js_links; do
-            js_filename=$(basename "$js_link")
-            local_js_path="Modules/JS/$author/$js_filename"
-            # 使用指定的 User-Agent 下载 .js 文件
-            echo "Downloading $js_link to $local_js_path"
-            if curl -A "Surge Mac/2985" -L -o "$local_js_path" "$js_link"; then
-              echo "Download successful for $js_link"
-              
-              # 替换 GitHub 仓库的路径
-              github_js_url="$js_base_url/$author/$js_filename"
-              echo "Replacing $js_link with $github_js_url in $sgmodule_file"
+            # 下载和替换每个 JS 链接
+            for js_link in $js_links; do
+              js_filename=$(basename "$js_link")
+              local_js_path="Modules/JS/$author/$js_filename"
+              # 使用指定的 User-Agent 下载 .js 文件
+              echo "Downloading $js_link to $local_js_path"
+              if curl -A "Surge Mac/2985" -L -o "$local_js_path" "$js_link"; then
+                echo "Download successful for $js_link"
+                
+                # 替换 GitHub 仓库的路径
+                github_js_url="$js_base_url/$author/$js_filename"
+                echo "Replacing $js_link with $github_js_url in $sgmodule_file"
 
-              # 替换 .sgmodule 文件中的 JS 链接
-              sed -i "s|$js_link|$github_js_url|g" "$sgmodule_file"
+                # 替换 .sgmodule 文件中的 JS 链接
+                sed -i "s|$js_link|$github_js_url|g" "$sgmodule_file"
 
-              # 替换 Loon 和 Shadowrocket 文件中的 JS 链接
-              for ext in plugin srmodule; do
-                if [ "$ext" == "plugin" ]; then
-                  other_file="Modules/Loon/$author/${filename_noext}.${ext}"
-                elif [ "$ext" == "srmodule" ]; then
-                  other_file="Modules/Shadowrocket/$author/${filename_noext}.${ext}"
+                # 获取对应的 Loon 和 Shadowrocket 插件文件名
+                loon_file="Modules/Loon/Kelee/$(basename "$sgmodule_file" .sgmodule).plugin"
+                shadowrocket_file="Modules/Shadowrocket/Kelee/$(basename "$sgmodule_file" .sgmodule).srmodule"
+
+                # 如果对应的 Loon 插件文件存在，则替换其中的 JS 链接
+                if [ -f "$loon_file" ]; then
+                  echo "Replacing JS links in $loon_file"
+                  for js_link in $js_links; do
+                    github_js_url="$js_base_url/$(basename "$js_link")"
+                    sed -i "s|$js_link|$github_js_url|g" "$loon_file"
+                  done
                 fi
 
-                if [ -f "$other_file" ]; then
-                  echo "Replacing $js_link with $github_js_url in $other_file"
-                  sed -i "s|$js_link|$github_js_url|g" "$other_file"
+                # 如果对应的 Shadowrocket 插件文件存在，则替换其中的 JS 链接
+                if [ -f "$shadowrocket_file" ]; then
+                  echo "Replacing JS links in $shadowrocket_file"
+                  for js_link in $js_links; do
+                    github_js_url="$js_base_url/$(basename "$js_link")"
+                    sed -i "s|$js_link|$github_js_url|g" "$shadowrocket_file"
+                  done
                 fi
-              done
-            else
-              echo "Failed to download $js_link, skipping..."
-            fi
+              else
+                echo "Failed to download $js_link, skipping..."
+              fi
+            done
           done
 
       - name: Commit and push changes
@@ -149,7 +153,7 @@ jobs:
             echo "No changes to commit"
           else
             # 提交消息，包含动态的日期
-            COMMIT_MESSAGE="Convert modules at $DATE (UTC+8)"
+            COMMIT_MESSAGE="Converted modules at $DATE (UTC+8)"
       
             # 确保仓库是最新的，避免冲突
             git stash
