@@ -157,7 +157,7 @@ jobs:
             echo "No changes to commit"
           else
             # 提交消息，包含动态的日期
-            COMMIT_MESSAGE="Convert files at $DATE (UTC+8)"
+            COMMIT_MESSAGE="Converted files at $DATE (UTC+8)"
       
             # 确保仓库是最新的，避免冲突
             git stash
