@@ -52,7 +52,7 @@ jobs:
 
             # 获取作者名（假设作者在 URL 中的第4部分）
             author=$(echo "$module_link" | cut -d'/' -f4)
-            filename_noext=$(basename "$module_link" .* )
+            filename_noext=$(basename "$module_link" | sed 's/\(.*\)\..*/\1/')
             encoded_filename=$(echo "$filename_noext" | jq -sRr @uri)
             
             # 创建文件夹
