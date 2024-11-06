@@ -46,11 +46,12 @@ jobs:
           # 处理每个链接
           while read -r module_link; do
             # 跳过注释行和空白行
-            if [[ "$module_link" =~ ^\s*#.* ]] || [[ -z "$module_link" ]]; then
-              continue
+            if [[ "$module_link" =~ ^\s*#.* ]] || [[ -z "${module_link// }" ]]; then
+            continue
             fi
 
-            # 获取作者名和文件名
+            # 直接将整行作为 module_link 来处理
+            # 获取作者名（假设作者在 URL 中的第4部分）
             author=$(echo "$module_link" | cut -d'/' -f4)
             filename=$(basename "$module_link")
             filename_noext="${filename%.*}"
