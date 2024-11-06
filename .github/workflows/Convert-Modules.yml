@@ -115,7 +115,12 @@ jobs:
 
                 # 替换 Loon 和 Shadowrocket 文件中的 JS 链接
                 for ext in plugin srmodule; do
-                  other_file="Modules/${ext^}/$author/${filename_noext}.${ext}"
+                  if [ "$ext" == "plugin" ]; then
+                    other_file="Modules/Loon/$author/${filename_noext}.${ext}"
+                  elif [ "$ext" == "srmodule" ]; then
+                    other_file="Modules/Shadowrocket/$author/${filename_noext}.${ext}"
+                  fi
+
                   if [ -f "$other_file" ]; then
                     echo "Replacing $js_link with $github_js_url in $other_file"
                     sed -i "s|$js_link|$github_js_url|g" "$other_file"
