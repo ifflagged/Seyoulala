@@ -1,4 +1,4 @@
-Common_remove_ads%0A：TypeError: object null is not iterable (cannot read property Symbol(Symbol.iterator))
+Common_remove_ads%0A：Error: Invalid URL
 
 
 
