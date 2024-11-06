@@ -29,7 +29,7 @@ Modules/Surge/Kelee/Bilibili_remove_ads.sgmodule # Loon,Shadowrocket
 Modules/Surge/Kelee/DiDi_remove_ads.sgmodule # Loon,Shadowrocket
 Modules/Surge/Kelee/FleaMarket_remove_ads.sgmodule # Loon,Shadowrocket
 Modules/Surge/Kelee/JD_remove_ads.sgmodule # Loon,Shadowrocket
-Modules/Surge/Kelee/MeetYou_remove_ads.srmodule
+Modules/Shadowrocket/Kelee/MeetYou_remove_ads.srmodule
 Modules/Surge/Kelee/PinDuoDuo_remove_ads.sgmodule # Loon,Shadowrocket
 Modules/Surge/Kelee/RedPaper_remove_ads.sgmodule # Loon,Shadowrocket
 Modules/Surge/Kelee/Weibo_remove_ads.sgmodule # Loon,Shadowrocket
