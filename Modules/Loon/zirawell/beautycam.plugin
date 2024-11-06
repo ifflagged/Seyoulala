@@ -1,10 +1,7 @@
-#!name=beautycam
-#!desc=beautycam
-#!icon=https://gitlab.com/lodepuly/iconlibrary/-/raw/main/App_icon/120px/Loon.png
-#!keyword=Jacob
+beautycam%0A：Error: Invalid URL
 
-[Rule]
-# > 美颜相机 - BEAUTYCAM
-DOMAIN,aaid.uyunad.com,REJECT
-DOMAIN,adui.tg.meitu.com,REJECT
 
+
+
+
+Script Hub 重写转换: ❌  可自行翻译错误信息或复制错误信息后点击通知进行反馈
