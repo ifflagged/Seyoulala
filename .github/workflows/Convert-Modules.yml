@@ -49,6 +49,9 @@ jobs:
             if [[ "$module_link" =~ ^\s*#.* ]] || [[ -z "${module_link// }" ]]; then
               continue
             fi
+            
+            # URL 编码 module_link
+            encoded_module_link=$(echo "$module_link" | jq -sRr @uri)
 
             # 获取作者名（假设作者在 URL 中的第4部分）
             author=$(echo "$module_link" | cut -d'/' -f4)
@@ -61,12 +64,12 @@ jobs:
             mkdir -p Modules/JS/$author/Beta
 
             # 构建模块的 URL
-            Surge_url="http://localhost:9100/file/_start_/${module_link}/_end_/modulename.sgmodule.txt?type=surge-module&target=surge-module&del=true&nore=true"
-            Surge_Beta_url="http://localhost:9101/file/_start_/${module_link}/_end_/${encoded_filename}.sgmodule?type=surge-module&target=surge-module&category=${encoded_category}&nore=true"
-            Loon_url="http://localhost:9100/file/_start_/${module_link}/_end_/${encoded_filename}.plugin?type=loon-plugin&target=loon-plugin&category=${encoded_category}&icon=Loon&nore=true"
-            Loon_Beta_url="http://localhost:9101/file/_start_/${module_link}/_end_/${encoded_filename}.plugin?type=loon-plugin&target=loon-plugin&category=${encoded_category}&icon=Loon&nore=true"
-            Shadowrocket_url="http://localhost:9100/file/_start_/${module_link}/_end_/${encoded_filename}.sgmodule?type=surge-module&target=shadowrocket-module&category=${encoded_category}&nore=true"
-            Shadowrocket_Beta_url="http://localhost:9101/file/_start_/${module_link}/_end_/${encoded_filename}.sgmodule?type=surge-module&target=shadowrocket-module&category=${encoded_category}&nore=true"
+            Surge_url="http://localhost:9100/file/_start_/${encoded_module_link}/_end_/${encoded_filename}.sgmodule?type=surge-module&target=surge-module&category=${encoded_category}&nore=true"
+            Surge_Beta_url="http://localhost:9101/file/_start_/${encoded_module_link}/_end_/${encoded_filename}.sgmodule?type=surge-module&target=surge-module&category=${encoded_category}&nore=true"
+            Loon_url="http://localhost:9100/file/_start_/${encoded_module_link}/_end_/${encoded_filename}.plugin?type=loon-plugin&target=loon-plugin&category=${encoded_category}&icon=Loon&nore=true"
+            Loon_Beta_url="http://localhost:9101/file/_start_/${encoded_module_link}/_end_/${encoded_filename}.plugin?type=loon-plugin&target=loon-plugin&category=${encoded_category}&icon=Loon&nore=true"
+            Shadowrocket_url="http://localhost:9100/file/_start_/${encoded_module_link}/_end_/${encoded_filename}.sgmodule?type=surge-module&target=shadowrocket-module&category=${encoded_category}&nore=true"
+            Shadowrocket_Beta_url="http://localhost:9101/file/_start_/${encoded_module_link}/_end_/${encoded_filename}.sgmodule?type=surge-module&target=shadowrocket-module&category=${encoded_category}&nore=true"
 
             # 下载各模块文件
             echo "Downloading Surge file: $Surge_url"
