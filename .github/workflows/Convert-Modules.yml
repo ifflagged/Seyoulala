@@ -59,6 +59,7 @@ jobs:
 
             # 设置作者为 GitHub Actions 的输出变量，以供后续步骤使用
             echo "author=$author" >> $GITHUB_ENV  # 将 $author 保存为环境变量
+            echo "filename_noext=$filename_noext" >> $GITHUB_ENV  # 将 $author 保存为环境变量
             
             # 创建文件夹
             echo "Creating directories for $author"
