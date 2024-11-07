@@ -96,9 +96,21 @@ def merge_modules(input_file, output_type, module_urls):
                             "comments": [],  # 改为列表
                         }
 
-                    general_dict[key]["values"].append(value)
+                    if value not in general_dict[key]["values"]:
+                        if "%INSERT%" in value or "%APPEND%" in value:
+                            # 只保留第一次出现的 %INSERT% 或 %APPEND%
+                            if "%INSERT%" in value:
+                                # 找到第一个 %INSERT%，并保留它之后的部分
+                                parts = value.split("%INSERT%", 1)
+                                value = parts[0] + "%INSERT%" + parts[1] if len(parts) > 1 else parts[0]
+                            elif "%APPEND%" in value:
+                                # 找到第一个 %APPEND% 并只保留它之后的部分
+                                parts = value.split("%APPEND%", 1)
+                                value = parts[0] + "%APPEND%" + parts[1] if len(parts) > 1 else parts[0]
+
+                        general_dict[key]["values"].append(value)
                     general_dict[key]["comments"].append(comment)  # 添加注释到列表中
-                    
+        
         # Extract Rule section
         rule_section = extract_section(content, "Rule")
 
