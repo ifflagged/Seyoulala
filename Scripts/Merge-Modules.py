@@ -78,7 +78,9 @@ def merge_modules(input_file, output_type, module_urls):
                     if line not in added_sets[section]:
                         added_sets[section].add(line)
                         module_content[section].append(line)
- 
+
+        from collections import Counter
+
         # 处理 General 部分的特殊逻辑
         general_section = extract_section(content, "General")
 
