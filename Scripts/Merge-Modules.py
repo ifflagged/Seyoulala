@@ -194,7 +194,6 @@ def merge_modules(input_file, output_type, module_urls):
                     module_content["MITM"]["hostname-nomal"].update(host.strip() for host in hosts.split(",") if host.strip())
                     
     # 合并 General 部分
-    module_content["General"] = merged_general
     merged_general = []
     for key, details in general_dict.items():
         comments = " & ".join(details["comments"])
