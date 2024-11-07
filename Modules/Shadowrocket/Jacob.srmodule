@@ -6,7 +6,7 @@
 
 [General]
 # HTTPDNS & # Tools & # Bilibili_remove_ads & # BiliBili & # boxjs
-force-http-engine-hosts = %APPEND% dns.weixin.qq.com:8080 119.29.29.29:80 dns.weixin.qq.com:80 dns.weixin.qq.com:443, %APPEND% router.com www.router.com, %APPEND% :8000, %APPEND% *.mcdn.bilivideo.cn:9102 *:8000 *:8082 *.mcdn.bilivideo.cn:4483 *:4480, %APPEND% boxjs.net *.boxjs.com *.boxjs.net boxjs.com
+force-http-engine-hosts = %APPEND% dns.weixin.qq.com:80 dns.weixin.qq.com:8080 dns.weixin.qq.com:443 119.29.29.29:80, %APPEND% router.com www.router.com, %APPEND% :8000, %APPEND% *.mcdn.bilivideo.cn:9102 *:4480 *:8000 *.mcdn.bilivideo.cn:4483 *:8082, %APPEND% *.boxjs.com *.boxjs.net boxjs.net boxjs.com
 
 [Rule]
 # HTTPDNS
