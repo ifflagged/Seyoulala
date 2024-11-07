@@ -94,43 +94,44 @@ def merge_modules(input_file, output_type, module_urls):
                     value = stripped_line[1].strip()
 
                     append_insert_values = []
+                    append_count = 0
+                    insert_count = 0
+
                     if "%APPEND%" in value or "%INSERT%" in value:
                         for item in value.split(","):
                             item = item.strip()
-                            if item.startswith("%APPEND%") or item.startswith("%INSERT%"):
-                                append_insert_values.append(item[len("%APPEND%"):].strip() if item.startswith("%APPEND%") else item[len("%INSERT%"):].strip())
+                            if item.startswith("%APPEND%"):
+                                append_insert_values.append(item[len("%APPEND%"):].strip())
+                                append_count += 1
+                            elif item.startswith("%INSERT%"):
+                                append_insert_values.append(item[len("%INSERT%"):].strip())
+                                insert_count += 1
 
                     if append_insert_values:
+                        # 去重并排序
                         append_insert_values = list(set(append_insert_values))
                         append_insert_values.sort()
 
-                        append_count = Counter(value for item in append_insert_values if "%APPEND%" in item).most_common(1)
-                        insert_count = Counter(value for item in append_insert_values if "%INSERT%" in item).most_common(1)
-
-                        if append_count and insert_count:
-                            if append_count[0][1] >= insert_count[0][1]:
-                                prefix = "%APPEND%"
-                            else:
-                                prefix = "%INSERT%"
-                        elif append_count:
+                        # 根据出现次数选择 %APPEND% 或 %INSERT% 作为前缀
+                        if append_count > insert_count:
                             prefix = "%APPEND%"
                         else:
                             prefix = "%INSERT%"
 
-                        # 合并主机地址和端口，并按要求合并
+                        # 合并主机地址和端口
                         merged_value = f"{prefix} " + ", ".join(append_insert_values)
                     else:
-                        # 如果没有%APPEND%或%INSERT%，直接用, 连接
+                        # 如果没有 %APPEND% 或 %INSERT%，直接用逗号连接
                         merged_value = ", ".join(set(value.split(", ")))
 
                     # 获取注释
                     comment = f"# {module_url.split('/')[-1].split('.')[0]}"
 
-                    # 更新字典
+                   # 更新字典
                     if key not in general_dict:
                         general_dict[key] = {
                             "values": [],
-                            "comments": [], # 改为列表
+                            "comments": [],
                         }
 
                     general_dict[key]["values"].append(merged_value)
