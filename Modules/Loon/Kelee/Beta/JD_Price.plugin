@@ -11,7 +11,7 @@
 #!date=2024-09-18 16:14:34
 
 [Script]
-http-response ^https?:\/\/api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig|basicConfig) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/JD_Price.js, requires-body=true, tag=京东比价
+http-response ^https?:\/\/api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig|basicConfig) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/JD_Price/JD_Price.js, requires-body=true, tag=京东比价
 
 [MITM]
 hostname = api.m.jd.com
