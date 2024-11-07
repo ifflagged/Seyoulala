@@ -15,4 +15,4 @@ CRONEXP = input, "0 0 * * *", tag = 定时参数, desc = 这里需要输入符�
 
 [Script]
 # 定时签到
-cron {CRONEXP} script-path = https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/sxmd.js, tag = 书香门第每日签到, timeout = 120, argument=[{account},{password}]
+cron {CRONEXP} script-path = https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/sxmd_sign/sxmd.js, tag = 书香门第每日签到, timeout = 120, argument=[{account},{password}]
