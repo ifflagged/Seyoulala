@@ -6,8 +6,8 @@
 #!icon = https://github.com/DualSubs/Universal/raw/main/src/assets/icon_rounded.png
 #!tag = 🍿️ DualSubs
 #!system = iOS,iPadOS,macOS,tvOS
-#!date = 2024-11-05 06:45:33
-#!version = 1.6.2
+#!date = 2024-11-07 01:29:20
+#!version = 1.6.3
 #!system_version = 15
 
 [Argument]
