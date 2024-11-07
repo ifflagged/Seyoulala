@@ -58,12 +58,8 @@ Host.PCDN = select,"upos-sz-mirrorali.bilivideo.com","upos-sz-mirrorcos.bilivide
 Host.MCDN = select,"proxy-tf-all-ws.bilivideo.com",,tag=[主机名] 重定向 MCDN 主机名 (中国大陆),desc=请选择 MCDN 要重定向的主机名。
 
 [General]
-# General
-skip-proxy = fe80::/10, ::1/128, 10.0.0.0/8, localhost, passenger.t3go.cn, e.crashlytics.com, 127.0.0.1/32, gate.lagou.com, *.local, 192.168.122.1/32, yunbusiness.ccb.com, captive.apple.com, 172.16.0.0/12, wxh.wo.cn, 193.168.0.1/32, www.baidu.com, login-service.mobile-bank.psbc.com, 192.168.0.0/16, mobile-bank.psbc.com, www.abchina.com.cn
-# General
-real-ip = *.blzstatic.cn, api-jooxtt.sanook.com, *.logon.battlenet.com.cn, PDC._msDCS.*.*, music.taihe.com, network-test.debian.org, *.mcdn.bilivideo.cn, musicapi.taihe.com, *.msftncsi.com, *.cmbchina.com, localhost.*.qq.com, nishub1.10010.com, global.turn.twilio.com, resolver1.opendns.com, GC._msDCS.*.*, DC._msDCS.*.*, *.ntp.org.cn, trackercdn.kugou.com, *.wosms.cn, mdn.open.wo.cn, mobileoc.music.tc.qq.com, *.microdone.cn, *.10099.com.cn, *.msftconnecttest.com, aqqmusic.tc.qq.com, songsearch.kugou.com, music.migu.cn, *.pool.ntp.org, ntp?.*.com, hmrz.wo.cn, xbox.*.microsoft.com, *.pingan.com.cn, streamoc.music.tc.qq.com, *.126.net, enrichgw.10010.com, isure.stream.qqmusic.qq.com, injections.adguard.org, proxy.golang.org, amobile.music.tc.qq.com, pool.ntp.org, *.jegotrip.com.cn, *.music.migu.cn, y.qq.com, *.srv.nintendo.net, time?.*.com, time.*.edu.cn, *.logon.battle.net, time.*.gov, id6.me, opencloud.wostore.cn, localhost.*.weixin.qq.com, ntp.*.com, global.stun.twilio.com, cable.auth.com, *.lan, open.e.189.cn, detectportal.firefox.com, api.joox.com, *.music.163.com, dl.stream.qqmusic.qq.com, local.adguard.org, *.xiami.com, stun.*, *.direct, joox.com, *.y.qq.com, time.*.com, *.stun.playstation.net, *.icitymobile.mobi, *.cmpassport.com, id.mail.wo.cn, *.kuwo.cn, app.yinxiang.com, *.xboxlive.com, music.163.com
-# HTTPDNS & # Bilibili_remove_ads & # BiliBili
-force-http-engine-hosts = dns.weixin.qq.com:8080, 203.107.1.66:80, 119.29.29.29:80, dns.weixin.qq.com:80, dns.weixin.qq.com:443, 203.107.1.65:80, :8000, *.mcdn.bilivideo.cn:9102, *:4480, *:8000, *.mcdn.bilivideo.cn:4483, *:8082
+# BiliBili
+force-http-engine-hosts = *.mcdn.bilivideo.cn:4483, *:8000, *.mcdn.bilivideo.cn:9102, *:4480, *:8082
 
 [Rule]
 # HTTPDNS

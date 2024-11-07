@@ -5,8 +5,8 @@
 #!arguments-desc= # YouTube\n- 屏蔽参数：[true, false] \n- 翻译参数：[语言代码, off] \n- 脚本引擎：[auto, jsc, webview]\n\n1. 语言代码遵循 Google Translate Languages Codes, 当填入 off 时关闭翻译\n2. 推荐使用 jsc 引擎，但你仍可以切换成 webview 体验 Surge 新特性\n3. 开启调试模式用于输出更多日志\n\n# BiliBili\nHost.Akamaized: [主机名] 重定向 Akamaized CDN (港澳台)\n    ├ upos-sz-mirrorali.bilivideo.com: 阿里云 CDN\n    ├ upos-sz-mirrorcos.bilivideo.com: 腾讯云 CDN\n    ├ upos-sz-mirrorhw.bilivideo.com: 华为云 CDN，融合 CDN\n    ├ upos-sz-mirroraliov.bilivideo.com: 阿里云 CDN，海外\n    ├ upos-sz-mirrorcosov.bilivideo.com: 腾讯云 CDN，海外\n    └ upos-sz-mirrorhwov.bilivideo.com: 华为云 CDN，海外\n请选择 Akamaized 要重定向的主机名。\n\nHost.BStar: [主机名] 重定向 BStar CDN (国际版)\n    ├ upos-sz-mirrorali.bilivideo.com: 阿里云 CDN\n    ├ upos-sz-mirrorcos.bilivideo.com: 腾讯云 CDN\n    ├ upos-sz-mirrorhw.bilivideo.com: 华为云 CDN，融合 CDN\n    ├ upos-sz-mirroraliov.bilivideo.com: 阿里云 CDN，海外\n    ├ upos-sz-mirrorcosov.bilivideo.com: 腾讯云 CDN，海外\n    └ upos-sz-mirrorhwov.bilivideo.com: 华为云 CDN，海外\n请选择 BStar 要重定向的主机名。\n\nHost.PCDN: [主机名] 重定向 PCDN 主机名 (中国大陆)\n    ├ upos-sz-mirrorali.bilivideo.com: 阿里云 CDN\n    ├ upos-sz-mirrorcos.bilivideo.com: 腾讯云 CDN\n    ├ upos-sz-mirrorhw.bilivideo.com: 华为云 CDN，融合 CDN\n    ├ upos-sz-mirroraliov.bilivideo.com: 阿里云 CDN，海外\n    ├ upos-sz-mirrorcosov.bilivideo.com: 腾讯云 CDN，海外\n    └ upos-sz-mirrorhwov.bilivideo.com: 华为云 CDN，海外\n请选择 PCDN 要重定向的主机名。\n\nHost.MCDN: [主机名] 重定向 MCDN 主机名 (中国大陆)\n    └ proxy-tf-all-ws.bilivideo.com: proxy-tf-all-ws.bilivideo.com\n请选择 MCDN 要重定向的主机名。\n\n\n# TikTok\nTikTok_Region: 解锁 TikTok 地区的地区码\n美国：US, 台湾：TW, 新加坡：SG, 日本：JP, 韩国：KR\n\nTikTok_Watermark: 脚本名称\n# TikTok Watermark 为禁用
 
 [General]
-# HTTPDNS & # Tools & # Bilibili_remove_ads & # BiliBili & # boxjs
-force-http-engine-hosts = %APPEND% dns.weixin.qq.com:80 dns.weixin.qq.com:8080 dns.weixin.qq.com:443 119.29.29.29:80, %APPEND% router.com www.router.com, %APPEND% :8000, %APPEND% *.mcdn.bilivideo.cn:9102 *:4480 *:8000 *.mcdn.bilivideo.cn:4483 *:8082, %APPEND% *.boxjs.com *.boxjs.net boxjs.net boxjs.com
+# boxjs
+force-http-engine-hosts = %INSERT% boxjs.com
 
 [Rule]
 # HTTPDNS
