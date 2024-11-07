@@ -33,11 +33,6 @@ URL-REGEX,^http:\/\/[\d\.]+:8000\/v1\/resource\/\w{32}-1-SPLASH,REJECT-TINYGIF,e
 ^https:\/\/wallet\.95516\.com(:10533)?\/s\/wl\/icon\/large\/1 - reject
 #>闲鱼
 ^https:\/\/dinamicx\.alibabausercontent\.com\/pub\/fish_home_top_kingkong_new\/ - reject
-# 拼多多广告平台
-^https:\/\/video-dsp\.pddpic\.com\/market-dsp-video\/ - reject
-^https:\/\/t-dsp\.pinduoduo\.com\/dspcb\/i\/mrk_union - reject
-^https:\/\/images\.pinduoduo\.com\/mrk\/ - reject
-^https:\/\/images\.pinduoduo\.com\/marketing_api\/ - reject
 #>哔哩哔哩
 (^https:\/\/(?:www|m)\.bilibili\.com\/video\/(?:BV\w{10}|av\d{9}))(\/?\?.*) $1 302
 (^https:\/\/live\.bilibili\.com\/\d+)(\/?\?.*) $1 302
@@ -204,9 +199,9 @@ URL-REGEX,^http:\/\/[\d\.]+:8000\/v1\/resource\/\w{32}-1-SPLASH,REJECT-TINYGIF,e
 
 ^https:\/\/ct\.xiaojukeji\.com\/agent\/v3\/feeds data-type=text data="{}" status-code=200
 
-#^https:\/\/daijia\.kuaidadi\.com:443\/gateway data-type=text data="{}" status-code=200
+#^https:\/\/daijia\.kuaidadi\.com\/gateway data-type=text data="{}" status-code=200
 
-# ^https:\/\/daijia\.kuaidadi\.com:443\/gateway data-type=text data="{}" status-code=200 
+# ^https:\/\/daijia\.kuaidadi\.com\/gateway data-type=text data="{}" status-code=200 
 ^https:\/\/freight\.xiaojukeji\.com\/gateway data-type=text data="{}" status-code=200
 
 ^https:\/\/res\.xiaojukeji\.com\/resapi\/activity\/mget data-type=text data="{}" status-code=200
@@ -327,7 +322,7 @@ URL-REGEX,^http:\/\/[\d\.]+:8000\/v1\/resource\/\w{32}-1-SPLASH,REJECT-TINYGIF,e
 
 虎扑 = type=http-response, pattern=^https:\/\/games\.mobileapi\.hupu\.com\/\d\/\d\.\d\.\d+\/bplapi\/user\/v1\/more, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Ananaskop/HP.js, requires-body=true
 
-#>拼多多 //api.pinduoduo.com, api.yangkeduo.com, video-dsp.pddpic.com, t-dsp.pinduoduo.com, images.pinduoduo.com
+#>拼多多 //api.pinduoduo.com, api.yangkeduo.com
 拼多多 = type=http-response, pattern=^https:\/\/api\.pinduoduo\.com\/api\/alexa\/homepage\/hub\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Ananaskop/Pinduoduo.js, requires-body=true
 
 #>航旅纵横 //114.115.217.129, home.umetrip.com
