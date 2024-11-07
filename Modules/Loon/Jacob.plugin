@@ -59,7 +59,7 @@ Host.MCDN = select,"proxy-tf-all-ws.bilivideo.com",,tag=[主机名] 重定向 MC
 
 [General]
 # BiliBili
-force-http-engine-hosts = *.mcdn.bilivideo.cn:4483, *:8000, *.mcdn.bilivideo.cn:9102, *:4480, *:8082
+force-http-engine-hosts = *.mcdn.bilivideo.cn:9102, *.mcdn.bilivideo.cn:4483, *:4480, *:8000, *:8082
 
 [Rule]
 # HTTPDNS

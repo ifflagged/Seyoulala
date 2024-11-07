@@ -6,7 +6,7 @@
 
 [General]
 # boxjs
-force-http-engine-hosts = %INSERT% boxjs.com
+force-http-engine-hosts = %APPEND% boxjs.com
 
 [Rule]
 # HTTPDNS
