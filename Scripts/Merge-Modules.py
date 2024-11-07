@@ -97,14 +97,14 @@ def merge_modules(input_file, output_type, module_urls):
                         }
 
                     if value not in general_dict[key]["values"]:
-                        if "%APPEND%" in value:
-                            parts = value.split("%APPEND%")
-                            # 只保留第一个 %APPEND%，后面的 %APPEND% 需要去掉
-                            value = parts[0] + "%APPEND%" + ",".join(parts[1:])
-                        if "%INSERT%" in value:
-                            parts = value.split("%INSERT%")
-                            # 只保留第一个 %INSERT%，后面的 %INSERT% 需要去掉
-                            value = parts[0] + "%INSERT%" + ",".join(parts[1:])
+                        if "%INSERT%" in value or "%APPEND%" in value:
+                            if "%INSERT%" in value:
+                                parts = value.split("%INSERT%", 1)
+                                value = parts[0] + "%INSERT%" + parts[1] if len(parts) > 1 else parts[0]
+                            if "%APPEND%" in value:
+                                parts = value.split("%APPEND%", 1)
+                                value = parts[0] + "%APPEND%" + parts[1].replace("%APPEND%", "") if len(parts) > 1 else parts[0]
+                
                         general_dict[key]["values"].append(value)
                     general_dict[key]["comments"].append(comment)  # 添加注释到列表中
         
@@ -163,6 +163,14 @@ def merge_modules(input_file, output_type, module_urls):
     for key, details in general_dict.items():
         comments = " & ".join(details["comments"])
         merged_value = ', '.join(details["values"])
+
+        if "%INSERT%" in merged_value:
+            parts = merged_value.split("%INSERT%")
+            merged_value = parts[0] + "%INSERT%" + ",".join(parts[1:]).replace("%INSERT%", "")
+        if "%APPEND%" in merged_value:
+            parts = merged_value.split("%APPEND%")
+            merged_value = parts[0] + "%APPEND%" + ",".join(parts[1:]).replace("%APPEND%", "")
+    
         merged_line = f"{key} = {merged_value}"
 
         merged_general.append(f"{comments}\n{merged_line}")
