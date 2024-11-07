@@ -80,62 +80,34 @@ def merge_modules(input_file, output_type, module_urls):
                         module_content[section].append(line)
 
         # 处理 General 部分的特殊逻辑
-        from collections import Counter
         general_section = extract_section(content, "General")
 
         if general_section:
-            # 初始化字典，用于存储 General 部分的 key、value 和评论
-            general_dict = {}
-
             for line in general_section:
                 stripped_line = line.split("=", 1)
                 if len(stripped_line) == 2:
                     key = stripped_line[0].strip()
                     value = stripped_line[1].strip()
-
-                    append_insert_values = []
-                    append_count = 0
-                    insert_count = 0
-
-                    if "%APPEND%" in value or "%INSERT%" in value:
-                        for item in value.split(","):
-                            item = item.strip()
-                            if item.startswith("%APPEND%"):
-                                append_insert_values.append(item[len("%APPEND%"):].strip())
-                                append_count += 1
-                            elif item.startswith("%INSERT%"):
-                                append_insert_values.append(item[len("%INSERT%"):].strip())
-                                insert_count += 1
-
-                    if append_insert_values:
-                        # 去重并排序
-                        append_insert_values = list(set(append_insert_values))
-                        append_insert_values.sort()
-
-                        # 根据出现次数选择 %APPEND% 或 %INSERT% 作为前缀
-                        if append_count > insert_count:
-                            prefix = "%APPEND%"
-                        else:
-                            prefix = "%INSERT%"
-
-                        # 合并主机地址和端口
-                        merged_value = f"{prefix} " + ", ".join(append_insert_values)
-                    else:
-                        # 如果没有 %APPEND% 或 %INSERT%，直接用逗号连接
-                        merged_value = ", ".join(set(value.split(", ")))
-
-                    # 获取注释
                     comment = f"# {module_url.split('/')[-1].split('.')[0]}"
 
-                   # 更新字典
+                    # 移除 %APPEND% 或 %INSERT% 标记，保留唯一标记
+                    append_insert_flag = ""
+                    if "%APPEND%" in value:
+                        append_insert_flag = "%APPEND%"
+                        value = value.replace("%APPEND%", "").strip()
+                    elif "%INSERT%" in value:
+                        append_insert_flag = "%INSERT%"
+                        value = value.replace("%INSERT%", "").strip()
+
                     if key not in general_dict:
                         general_dict[key] = {
                             "values": [],
                             "comments": [],
+                            "flag": append_insert_flag,  # 添加标记信息
                         }
 
-                    general_dict[key]["values"].append(merged_value)
-                    general_dict[key]["comments"].append(comment) # 添加注释到列表中
+                    general_dict[key]["values"].append(value)
+                    general_dict[key]["comments"].append(comment)
 
         # Extract Rule section
         rule_section = extract_section(content, "Rule")
@@ -186,12 +158,17 @@ def merge_modules(input_file, output_type, module_urls):
                 if line.lower().startswith("hostname ="):
                     hosts = line.lower().replace("hostname =", "").strip()
                     module_content["MITM"]["hostname-nomal"].update(host.strip() for host in hosts.split(",") if host.strip())
-                    
+
     # 合并 General 部分
     merged_general = []
     for key, details in general_dict.items():
         comments = " & ".join(details["comments"])
         merged_value = ', '.join(details["values"])
+
+        # 在合并的值中添加唯一标记
+        if details["flag"]:
+            merged_value = f"{details['flag']} {merged_value}"
+
         merged_line = f"{key} = {merged_value}"
 
         merged_general.append(f"{comments}\n{merged_line}")
