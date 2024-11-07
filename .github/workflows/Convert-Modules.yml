@@ -84,7 +84,7 @@ jobs:
             curl -A "Surge Mac/2985" -L -o "Modules/Shadowrocket/$author/$filename_noext.srmodule" "$Shadowrocket_url" || echo "Failed to download $filename_noext.srmodule"
             curl -A "Surge Mac/2985" -L -o "Modules/Shadowrocket/$author/Beta/$filename_noext.srmodule" "$Shadowrocket_Beta_url" || echo "Failed to download $filename_noext.srmodule"
           done < Links/Modules-Links.txt
- 
+
       - name: Find and replace external JS resources
         continue-on-error: true  # 确保步骤在部分失败时继续执行
         run: |
@@ -112,6 +112,8 @@ jobs:
               local_js_path="Modules/JS/$author/$module_folder/$js_filename"
               github_js_url="$js_base_url/$author/$module_folder/$js_filename"
               
+              mkdir -p "$(dirname "$local_js_path")"
+
               # 使用指定的 User-Agent 下载 .js 文件
               echo "Downloading $js_link to $local_js_path"
               if curl -A "Surge Mac/2985" -L -o "$local_js_path" "$js_link"; then
