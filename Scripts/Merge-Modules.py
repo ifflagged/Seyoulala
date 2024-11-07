@@ -90,40 +90,56 @@ def merge_modules(input_file, output_type, module_urls):
                     value = stripped_line[1].strip()
                     comment = f"# {module_url.split('/')[-1].split('.')[0]}"
 
-                    # 提取地址和端口
-                    hosts = []
-                    append_type = None  # 保存 %APPEND% 或 %INSERT%
+                    if "%APPEND%" not in value and "%INSERT%" not in value:
+                        # 直接去重并连接
+                        hosts = set(value.split(","))
+                        hosts = {host.strip() for host in hosts if host.strip()}
+                        if hosts:
+                            merged_value = ', '.join(hosts)
+                            if key not in general_dict:
+                                general_dict[key] = {
+                                    "values": [],
+                                    "comments": [],
+                                }
+                            general_dict[key]["values"].append(merged_value)
+                            general_dict[key]["comments"].append(comment)
+                    else:
+                        # 含有 %APPEND% 或 %INSERT%，需要提取并去重
+                        hosts = []
+                        append_type = None  # 保存 %APPEND% 或 %INSERT%
+                
+                        if '%APPEND%' in value:
+                            append_type = '%APPEND%'
+                            hosts.extend(value.replace('%APPEND%', '').strip().split(','))
+                        if '%INSERT%' in value:
+                            append_type = '%INSERT%'
+                            hosts.extend(value.replace('%INSERT%', '').strip().split(','))
+                
+                        # 去重并清理空值
+                        hosts = set(host.strip() for host in hosts if host.strip())
 
-                    if '%APPEND%' in value:
-                        append_type = '%APPEND%'
-                        hosts.extend(value.replace('%APPEND%', '').strip().split(','))
-                    elif '%INSERT%' in value:
-                        append_type = '%INSERT%'
-                        hosts.extend(value.replace('%INSERT%', '').strip().split(','))
-            
-                    hosts = set(host.strip() for host in hosts if host.strip())
+                        if hosts:
+                            # 统计 %APPEND% 和 %INSERT% 的出现次数
+                            append_count = value.count('%APPEND%')
+                            insert_count = value.count('%INSERT%')
 
-                    if len(hosts) > 0:
-                        # 统计 %APPEND% 和 %INSERT% 的出现次数
-                        append_count = value.count('%APPEND%')
-                        insert_count = value.count('%INSERT%')
+                            # 选择次数最多的作为标记
+                            if append_count > insert_count:
+                                value_prefix = "%APPEND%"
+                           else:
+                                value_prefix = "%INSERT%"
 
-                        # 选择次数最多的作为标记
-                        if append_count > insert_count:
-                            value_prefix = "%APPEND%"
-                        else:
-                            value_prefix = "%INSERT%"
+                            # 更新 general_dict
+                            if key not in general_dict:
+                                general_dict[key] = {
+                                    "values": [],
+                                    "comments": [],  # 改为列表
+                                }
 
-                        # 更新 general_dict
-                        if key not in general_dict:
-                            general_dict[key] = {
-                                "values": [],
-                                "comments": [],  # 注释改为列表
-                            }
-
-                        # 添加去重后的地址，按逗号连接
-                        general_dict[key]["values"].append(f"{value_prefix} {' '.join(hosts)}")
-                        general_dict[key]["comments"].append(comment)  # 添加注释到列表中
+                            # 将去重后的地址按逗号连接，并加上前缀
+                            merged_value = f"{value_prefix} {' '.join(hosts)}"
+                            general_dict[key]["values"].append(merged_value)
+                            general_dict[key]["comments"].append(comment)  # 添加注释到列表中
         
         # Extract Rule section
         rule_section = extract_section(content, "Rule")
@@ -176,6 +192,7 @@ def merge_modules(input_file, output_type, module_urls):
                     module_content["MITM"]["hostname-nomal"].update(host.strip() for host in hosts.split(",") if host.strip())
                     
     # 合并 General 部分
+    module_content["General"] = merged_general
     merged_general = []
     for key, details in general_dict.items():
         comments = " & ".join(details["comments"])
@@ -185,7 +202,7 @@ def merge_modules(input_file, output_type, module_urls):
         merged_general.append(f"{comments}\n{merged_line}")
 
     module_content["General"] = merged_general
-                
+
     # Construct output file path
     name = os.path.splitext(os.path.basename(input_file))[0].replace("Merge-Modules-", "")
     name = name[0].upper() + name[1:] if name else "MergedModules"
