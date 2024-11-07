@@ -90,25 +90,28 @@ def merge_modules(input_file, output_type, module_urls):
                     value = stripped_line[1].strip()
                     comment = f"# {module_url.split('/')[-1].split('.')[0]}"
 
-                    if "%APPEND%" in value or "%INSERT%" in value:
-                        # 只保留一个 %APPEND% 或 %INSERT%，并将其放在最前面
-                        value_parts = value.split(", ")
-                        append_insert_part = None
-                        other_parts = []
+                    # 处理 %APPEND% 和 %INSERT%
+                    append_insert_part = None
+                    other_parts = []
 
+                    if "%APPEND%" in value or "%INSERT%" in value:
+                        value_parts = value.split(", ")  # 按逗号分割
                         for part in value_parts:
-                            if "%APPEND%" in part or "%INSERT%" in part:
-                                if not append_insert_part:
+                            if part.startswith("%APPEND%") or part.startswith("%INSERT%"):
+                                if append_insert_part is None:  # 只保留第一个
                                     append_insert_part = part
                             else:
                                 other_parts.append(part)
 
-                        # 如果找到了 %APPEND% 或 %INSERT% 则将其放在最前面
+                    # 将 %APPEND% 或 %INSERT% 放在最前面
                         if append_insert_part:
                             value = append_insert_part + (", " + ", ".join(other_parts) if other_parts else "")
                         else:
                             value = ", ".join(other_parts)
-                    
+                    else:
+                        value = ", ".join(value.split(", "))  # 对于没有 %APPEND% 或 %INSERT% 的，正常拼接
+
+                    # 将 key 和 value 添加到 general_dict
                     if key not in general_dict:
                         general_dict[key] = {
                             "values": [],
