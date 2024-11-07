@@ -8,7 +8,7 @@
 #!loon_version = 3.2.1(749)
 #!homepage = https://github.com/luestr/ProxyResource/blob/main/README.md
 #!icon = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Amap.png
-#!date = 2024-11-04 13:59:15
+#!date = 2024-11-07 11:03:15
 
 [Rule]
 # 移除广告下发请求
