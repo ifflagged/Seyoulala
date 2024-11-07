@@ -123,7 +123,7 @@ def merge_modules(input_file, output_type, module_urls):
 
                         # 添加去重后的地址，按逗号连接
                         general_dict[key]["values"].append(f"{value_prefix} {' '.join(hosts)}")
-                    general_dict[key]["comments"].append(comment)  # 添加注释到列表中
+                        general_dict[key]["comments"].append(comment)  # 添加注释到列表中
         
         # Extract Rule section
         rule_section = extract_section(content, "Rule")
