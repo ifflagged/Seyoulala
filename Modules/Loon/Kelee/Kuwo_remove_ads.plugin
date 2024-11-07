@@ -70,7 +70,7 @@ URL-REGEX, ^http:\/\/wapi\.kuwo\.cn\/openapi\/v\d\/album\/adBar\/, REJECT-DICT
 
 [Script]
 # 移除听书页面广告
-http-response ^http:\/\/wapi\.kuwo\.cn\/openapi\/v\d\/tingshu\/index\/radio script-path = https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Kuwo_remove_ads.js, requires-body = true, tag = 移除听书页面广告
+http-response ^http:\/\/wapi\.kuwo\.cn\/openapi\/v\d\/tingshu\/index\/radio script-path = https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Kuwo_remove_ads/Kuwo_remove_ads.js, requires-body = true, tag = 移除听书页面广告
 
 [MitM]
 hostname = appi.kuwo.cn, mc.tencentmusic.com, vip*.kuwo.cn, tingshu.kuwo.cn

@@ -76,7 +76,7 @@ URL-REGEX,"^http:\/\/log\.stat\.kugou\.com\/mobile\/ad\.html",REJECT
 
 [Script]
 # 精简顶部标签
-http-response ^https:\/\/gateway(retry)?\.kugou\.com\/ocean\/v\d\/tab\/list_v\d script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/KuGou_remove_ads.js, requires-body=true, tag=精简顶部标签
+http-response ^https:\/\/gateway(retry)?\.kugou\.com\/ocean\/v\d\/tab\/list_v\d script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/KuGou_remove_ads/KuGou_remove_ads.js, requires-body=true, tag=精简顶部标签
 
 [MITM]
 hostname = gateway.kugou.com, fx.service.kugou.com, hwstore.kugou.com, ep.kugou.com, gatewayretry.kugou.com, gzacshow.kugou.com, m1fxgroup.kugou.com
