@@ -128,7 +128,7 @@ def merge_modules(input_file, output_type, module_urls):
                             # 选择次数最多的作为标记
                             if append_count > insert_count:
                                 value_prefix = "%APPEND%"
-                           else:
+                            else:
                                 value_prefix = "%INSERT%"
 
                             # 更新 general_dict
