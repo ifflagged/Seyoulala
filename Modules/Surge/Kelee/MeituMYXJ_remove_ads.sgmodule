@@ -141,7 +141,7 @@ DOMAIN,da.mosspf.com,REJECT
 
 [Script]
 # 首页功能栏目和美颜推荐
-精简首页功能栏目并移除美颜推荐 = type=http-response, pattern=^https:\/\/api\.meiyan\.com\/operation\/home\.json\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/MeituMYXJ_remove_ads/MeituMYXJ_remove_ads.js, requires-body=true
+精简首页功能栏目并移除美颜推荐 = type=http-response, pattern=^https:\/\/api\.meiyan\.com\/operation\/home\.json\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/MeituMYXJ_remove_ads.js, requires-body=true
 
 [MITM]
 hostname = %APPEND% api.meiyan.com, video-dsp.pddpic.com, t-dsp.pinduoduo.com, images.pinduoduo.com
