@@ -166,10 +166,10 @@ def merge_modules(input_file, output_type, module_urls):
 
         if "%INSERT%" in merged_value:
             parts = merged_value.split("%INSERT%")
-            merged_value = parts[0] + "%INSERT%" + ",".join(parts[1:]).replace("%INSERT%", "")
+            merged_value = parts[0] + "%INSERT%" + ",".join([part for part in parts[1:] if part])
         if "%APPEND%" in merged_value:
             parts = merged_value.split("%APPEND%")
-            merged_value = parts[0] + "%APPEND%" + ",".join(parts[1:]).replace("%APPEND%", "")
+            merged_value = parts[0] + "%APPEND%" + ",".join([part for part in parts[1:] if part])
     
         merged_line = f"{key} = {merged_value}"
 
