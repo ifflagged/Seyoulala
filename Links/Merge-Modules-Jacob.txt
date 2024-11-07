@@ -36,7 +36,7 @@ Modules/Surge/Kelee/RedPaper_remove_ads.sgmodule # Loon,Shadowrocket
 Modules/Surge/Kelee/Weibo_remove_ads.sgmodule # Loon,Shadowrocket
 
 Modules/Surge/ZenmoFeiShi/Smzdm.sgmodule # Loon,Shadowrocket
-# Modules/Surge/ddgksf2013/SmzdmAds.sgmodule # Loon,Shadowrocket
+Modules/Surge/ddgksf2013/SmzdmAds.sgmodule # Loon,Shadowrocket
 
 Modules/Surge/zirawell/adUnion.sgmodule # Loon,Shadowrocket
 Modules/Surge/Yuheng0101/NoAds.sgmodule # Loon,Shadowrocket
