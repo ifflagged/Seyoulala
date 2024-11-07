@@ -5,8 +5,8 @@
 #!arguments-desc= # YouTube\n- 屏蔽参数：[true, false] \n- 翻译参数：[语言代码, off] \n- 脚本引擎：[auto, jsc, webview]\n\n1. 语言代码遵循 Google Translate Languages Codes, 当填入 off 时关闭翻译\n2. 推荐使用 jsc 引擎，但你仍可以切换成 webview 体验 Surge 新特性\n3. 开启调试模式用于输出更多日志\n\n# BiliBili\nHost.Akamaized: [主机名] 重定向 Akamaized CDN (港澳台)\n    ├ upos-sz-mirrorali.bilivideo.com: 阿里云 CDN\n    ├ upos-sz-mirrorcos.bilivideo.com: 腾讯云 CDN\n    ├ upos-sz-mirrorhw.bilivideo.com: 华为云 CDN，融合 CDN\n    ├ upos-sz-mirroraliov.bilivideo.com: 阿里云 CDN，海外\n    ├ upos-sz-mirrorcosov.bilivideo.com: 腾讯云 CDN，海外\n    └ upos-sz-mirrorhwov.bilivideo.com: 华为云 CDN，海外\n请选择 Akamaized 要重定向的主机名。\n\nHost.BStar: [主机名] 重定向 BStar CDN (国际版)\n    ├ upos-sz-mirrorali.bilivideo.com: 阿里云 CDN\n    ├ upos-sz-mirrorcos.bilivideo.com: 腾讯云 CDN\n    ├ upos-sz-mirrorhw.bilivideo.com: 华为云 CDN，融合 CDN\n    ├ upos-sz-mirroraliov.bilivideo.com: 阿里云 CDN，海外\n    ├ upos-sz-mirrorcosov.bilivideo.com: 腾讯云 CDN，海外\n    └ upos-sz-mirrorhwov.bilivideo.com: 华为云 CDN，海外\n请选择 BStar 要重定向的主机名。\n\nHost.PCDN: [主机名] 重定向 PCDN 主机名 (中国大陆)\n    ├ upos-sz-mirrorali.bilivideo.com: 阿里云 CDN\n    ├ upos-sz-mirrorcos.bilivideo.com: 腾讯云 CDN\n    ├ upos-sz-mirrorhw.bilivideo.com: 华为云 CDN，融合 CDN\n    ├ upos-sz-mirroraliov.bilivideo.com: 阿里云 CDN，海外\n    ├ upos-sz-mirrorcosov.bilivideo.com: 腾讯云 CDN，海外\n    └ upos-sz-mirrorhwov.bilivideo.com: 华为云 CDN，海外\n请选择 PCDN 要重定向的主机名。\n\nHost.MCDN: [主机名] 重定向 MCDN 主机名 (中国大陆)\n    └ proxy-tf-all-ws.bilivideo.com: proxy-tf-all-ws.bilivideo.com\n请选择 MCDN 要重定向的主机名。\n\n\n# TikTok\nTikTok_Region: 解锁 TikTok 地区的地区码\n美国：US, 台湾：TW, 新加坡：SG, 日本：JP, 韩国：KR\n\nTikTok_Watermark: 脚本名称\n# TikTok Watermark 为禁用
 
 [General]
-# HTTPDNS & # Tools & # Bilibili_remove_ads & # BiliBili
-force-http-engine-hosts = %APPEND% 119.29.29.29:80, dns.weixin.qq.com:80, dns.weixin.qq.com:8080, dns.weixin.qq.com:443, %APPEND% router.com, www.router.com, %APPEND% :8000, %APPEND% *:4480, *.mcdn.bilivideo.cn:4483, *:8000, *:8082, *.mcdn.bilivideo.cn:9102
+# HTTPDNS & # Tools & # Bilibili_remove_ads & # BiliBili & # boxjs
+force-http-engine-hosts = %APPEND% 119.29.29.29:80, dns.weixin.qq.com:80, dns.weixin.qq.com:8080, dns.weixin.qq.com:443, %APPEND% router.com, www.router.com, %APPEND% :8000, %APPEND% *:4480, *.mcdn.bilivideo.cn:4483, *:8000, *:8082, *.mcdn.bilivideo.cn:9102, %APPEND% boxjs.com, boxjs.net, *.boxjs.com, *.boxjs.net
 
 [Rule]
 # HTTPDNS
@@ -909,6 +909,9 @@ DOMAIN-SUFFIX, adashbc.m.taobao.com, REJECT
 DOMAIN-SUFFIX, ut.taobao.com, REJECT
 DOMAIN-SUFFIX, tunion-api.m.taobao.com, REJECT
 DOMAIN-SUFFIX, acs4baichuan.m.taobao.com, REJECT
+# umetrip
+DOMAIN, analytics.umetrip.com, REJECT
+DOMAIN, sensors.umetrip.com.cn, REJECT
 # unionPay
 DOMAIN, switch.cup.com.cn, REJECT
 DOMAIN, ads.cup.com.cn, REJECT
@@ -917,8 +920,6 @@ DOMAIN, tysdk.95516.com, REJECT
 # Bilibili_remove_ads
 URL-REGEX, ^http:\/\/upos-sz-static\.bilivideo\.com\/ssaxcode\/\w{2}\/\w{2}\/\w{32}-1-SPLASH, REJECT-DICT
 URL-REGEX, ^http:\/\/[\d\.]+:8000\/v1\/resource\/\w{32}-1-SPLASH, REJECT-DICT
-# boxjs
-DOMAIN-SUFFIX, jsdelivr.net, PROXY
 
 [URL Rewrite]
 # HTTPDNS
@@ -1069,10 +1070,6 @@ DOMAIN-SUFFIX, jsdelivr.net, PROXY
 ^https:\/\/weibo\.com\/ttarticle\/x\/m\/aj\/(?:reward|uvead) - reject-dict
 # Smzdm
 ^https:\/\/haojia\.m\.smzdm\.com\/detail_modul\/(other_modul|wiki_related_modul)|^https:\/\/s3\.zdmimg\.com\/third\/index|^https:\/\/app-api\.smzdm\.com\/util\/loading - reject-dict
-# SmzdmAds
-^https?:\/\/haojia\.m\.smzdm\.com\/detail_modul\/other_modul - reject-200
-^https?:\/\/haojia\.m\.smzdm\.com\/detail_modul\/user_related_modul - reject-200
-^https?:\/\/haojia\.m\.smzdm\.com\/detail_modul\/wiki_related_modul - reject-200
 # adUnion
 ^https?:\/\/api2\.helper\.qq\.com\/game\/buttons - reject-img
 ^https?:\/\/imgcache\.qq\.com\/qqlive\/ - reject-img
@@ -1249,6 +1246,9 @@ DOMAIN-SUFFIX, jsdelivr.net, PROXY
 ^https?:\/\/tfsmy\.chengdu\.gov\.cn\/api\/v\d\/core\/version - reject-200
 # tft
 ^https?:\/\/ams-cdn\.cdtft\.cn\/prod\/tft-ams - reject-dict
+# umetrip
+^https?:\/\/(discardrp|startup)\.umetrip\.com\/gateway\/api\/umetrip\/native - reject
+^https?:\/\/oss\.umetrip\.com\/fs\/advert\/polite - reject-dict
 # unionPay
 ^https?:\/\/wallet\.95516\.com(:10533)?\/s\/wl\/icon\/large\/1 - reject
 # Bilibili_remove_ads
@@ -1378,17 +1378,6 @@ Smzdm = type=http-response, pattern=^https:\/\/article-api\.smzdm\.com\/publish\
 Smzdm = type=http-response, pattern=^https:\/\/qianbao\.smzdm\.com\/v\d\/app\/home, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ZenmoFeiShi/Smzdm.js, requires-body=true, max-size=-1, timeout=60
 Smzdm = type=http-response, pattern=^https:\/\/s3\.zdmimg\.com\/third\/index, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ZenmoFeiShi/Smzdm.js, requires-body=true, max-size=-1, timeout=60
 Smzdm = type=http-response, pattern=^https:\/\/post\.m\.smzdm\.com\/ajax_app\/ajax_get_footer_list, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ZenmoFeiShi/Smzdm.js, requires-body=true, max-size=-1, timeout=60
-# SmzdmAds
-smzdm_json = type=http-response, pattern=^https?:\/\/s-api.smzdm\.com\/sou\/search_default_keyword, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ddgksf2013/smzdm_json.js, requires-body=true, max-size=-1, timeout=60
-smzdm_json = type=http-response, pattern=^https?:\/\/app-api\.smzdm\.com\/util\/loading, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ddgksf2013/smzdm_json.js, requires-body=true, max-size=-1, timeout=60
-smzdm_json = type=http-response, pattern=^https?:\/\/.*zdmimg\.com\/cpm\/api\/v\d\/advert_distribution\/get_all_advertise, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ddgksf2013/smzdm_json.js, requires-body=true, max-size=-1, timeout=60
-smzdm_json = type=http-response, pattern=^https?:\/\/homepage-api\.smzdm\.com\/v3\/home, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ddgksf2013/smzdm_json.js, requires-body=true, max-size=-1, timeout=60
-smzdm_json = type=http-response, pattern=^https?:\/\/haojia-api\.smzdm\.com\/home\/list, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ddgksf2013/smzdm_json.js, requires-body=true, max-size=-1, timeout=60
-smzdm_json = type=http-response, pattern=^https?:\/\/haojia\.m\.smzdm\.com\/detail_modul\/article_releated_modul, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ddgksf2013/smzdm_json.js, requires-body=true, max-size=-1, timeout=60
-smzdm_json = type=http-response, pattern=^https?:\/\/baike-api\.smzdm\.com\/home_v3\/list, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ddgksf2013/smzdm_json.js, requires-body=true, max-size=-1, timeout=60
-smzdm_json = type=http-response, pattern=^https?:\/\/s-api\.smzdm\.com\/sou\/list_v10, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ddgksf2013/smzdm_json.js, requires-body=true, max-size=-1, timeout=60
-smzdm_json = type=http-response, pattern=^https?:\/\/s-api\.smzdm\.com\/sou\/filter\/tags\/hot_tags, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ddgksf2013/smzdm_json.js, requires-body=true, max-size=-1, timeout=60
-smzdm_json = type=http-response, pattern=^https?:\/\/zhiyou\.m\.smzdm\.com\/user\/vip\/ajax_get_banner, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ddgksf2013/smzdm_json.js, requires-body=true, max-size=-1, timeout=60
 # adUnion
 amdc = type=http-response, pattern=^https?:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/amdc.js, timeout=60
 alicdn = type=http-response, pattern=^https?:\/\/g\.alicdn\.com\/.*o2o-ad, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/alicdn.js, requires-body=true, max-size=-1, timeout=60
@@ -1413,6 +1402,8 @@ taobao = type=http-response, pattern=^https?:\/\/guide-acs\.m\.taobao\.com\/gw\/
 taobao = type=http-response, pattern=^https?:\/\/poplayer\.template\.alibaba\.com\/\w+\.json, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/taobao.js, requires-body=true, max-size=-1, timeout=60
 # tfsmy
 replaceBody = type=http-response, pattern=^https?:\/\/tft-app\.cdtft\.cn\/gateway-customer\/tftapp\/tft-ams\/api\/appAd, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/replace-body.js, requires-body=true, max-size=-1, timeout=30, argument=officialAdvertResultVo-%3Erandom-response
+# umetrip
+umetrip = type=http-response, pattern=^https?:\/\/(bkclient|umerp|home)\.umetrip\.com(\.cn){0,1}\/gateway\/api\/umetrip\/native, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/umetrip.js, timeout=60
 # BiliBili
 精简首页顶部标签 = type=http-response, pattern=^https:\/\/app\.bilibili\.com\/x\/resource\/show\/tab\/v2\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/BiliBili.js, requires-body=true
 # Bilibili_remove_ads
@@ -1458,8 +1449,8 @@ BiliBili.Enhanced.x.v2.channel.region.list = type=http-response, pattern=^https?
 # TikTok
 TikTok Watermark Removal = type=http-response, pattern=https?:\/\/.*\.tiktokv\.com\/aweme\/v\d\/(feed|mix\/aweme|aweme\/post|(multi\/)?aweme\/detail|follow\/feed|nearby\/feed|search\/item|general\/search\/single|hot\/search\/video\/list|aweme\/favorite), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/Tiktok.js, requires-body=true, max-size=0, script-update-interval=0, timeout=30
 # boxjs
-http-request ^https?:\/\/(.+\.)?boxjs\.(com|net) script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/box/chavy.boxjs.js, requires-body=true, timeout=120, tag=BoxJs
+Rewrite: BoxJs = type=http-request,pattern=^https?:\/\/(.+\.)?boxjs\.(com|net),script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/box/chavy.boxjs.js, requires-body=true, timeout=120
 
 [MITM]
-hostname = %APPEND% *.byteoversea.com, *.dianping.com, *.googlevideo.com, *.httpdns.pro, *.jddebug.com, *.mcdn.bilivideo.cn, *.tik-tokapi.com, *.tiktokv.com, *.weibo.cn, *.weibo.com, *.zdmimg.com, 103.37.155.60, 112.53.55.225, 116.85.2.*, 116.85.3.*, 119.29.29.29, 119.29.29.98, 119.29.29.99, 120.241.142.*, 120.241.143.*, 123.207.209.*, 139.199.240.84, 162.14.157.*, 180.76.76.112, 180.76.76.200, a.sinopecsales.com, acs.m.goofish.com, acs.m.taobao.com, ad.12306.cn, afd.baidu.com, amdc-sibling.alipay.com.cn, amdc.alipay.com, amdc.m.taobao.com, ams-cdn.cdtft.cn, api-sams.walmartmobile.cn, api.biliapi.net, api.bilibili.com, api.live.bilibili.com, api.m.jd.com, api.mcd.cn, api.pinduoduo.com, api.revenuecat.com, api.udache.com, api.vc.bilibili.com, api.yangkeduo.com, api2.helper.qq.com, apimobile.meituan.com, app-api.smzdm.com, app.10086.cn, app.biliapi.net, app.bilibili.com, article-api.smzdm.com, awp-assets.meituan.net, baike-api.smzdm.com, bk.bingo.qq.com, bla.gtimg.com, c.m.163.com, cache.bydauto.com.cn, cdn.api.fotoable.com, circle.seeyouyima.com, circle.xmseeyouyima.com, client.app.coc.10086.cn, client.qunar.com, common.diditaxi.com.cn, common.seeyouyima.com, conf.diditaxi.com.cn, configuration.ls.apple.com, cover.baidu.com, csc-service.sgcc.com.cn, ct.xiaojukeji.com, cube.elemecdn.com, cy.cloud.ccb.com, daijia.kuaidadi.com, ddplus.meituan.net, discuz.gtimg.cn, dns.jd.com, dualstack*.amap.com, edith.xiaohongshu.com, elemecdn.com, fcvbjbcebos.baidu.com, flowplus.meituan.net, freight.xiaojukeji.com, fuss10.elemecdn.com, g-acs.m.goofish.com, g.alicdn.com, g1.163.com, grpc.biliapi.net, gspe1-ssl.ls.apple.com, gspe35-ssl.ls.apple.com, guide-acs.m.taobao.com, gw.alicdn.com, h.app.coc.10086.cn, haojia-api.smzdm.com, haojia.m.smzdm.com, heic.alicdn.com, home.mi.com, homefront.qunar.com, homepage-api.smzdm.com, hwimg.beingfine.cn, image1.ccb.com, imageadv.ccb.com, images.pinduoduo.com, img*.360buyimg.com, img.meituan.net, img1.126.net, imgcache.qq.com, ios.prod.ftl.netflix.com, issuecdn.baidupcs.com, l*.51fanli.net, learnywhere.cn, live.bilibili.com, m.bilibili.com, m.dianping.com, m5-zb.amap.com, m5.amap.com, manga.bilibili.com, mapi.dianping.com, mars.meituan.com, mb3admin.com, mmgr.gtimg.com, mobile.12306.cn, mobile.cmbchina.com, ms.jr.jd.com, mtteve.beacon.qq.com, nex.163.com, nr-op.elemecdn.com, osg-service.sgcc.com.cn, oss-zjrs.haier.net, oss.amap.com, p*.meituan.net, p.meituan.com, pan.baidu.com, poplayer.template.alibaba.com, portal-portm.meituan.com, post.m.smzdm.com, qde.qunar.com, qianbao.smzdm.com, qimgs.qunarzz.com, qt.qq.com, qzonestyle.gtimg.cn, rec.xiaohongshu.com, res.xiaojukeji.com, rms.meituan.com, router.com, s-api.smzdm.com, s3.zdmimg.com, s3plus.meituan.net, sns.amap.com, splashqqlive.gtimg.com, sqt.meituan.com, ssl.kohsocialapp.qq.com, storage.360buyimg.com, t-dsp.pinduoduo.com, tfsmy.chengdu.gov.cn, tft-app.cdtft.cn, update.pan.baidu.com, upos-*-mirrorakam.akamaized.net, upos-sz-mirror*bstar1.bilivideo.com, user-api.smzdm.com, video-dsp.pddpic.com, vv.video.qq.com, wallet.95516.com, wcprd.hilton.com.cn, webapp.joyingtrip.com, webappcfg.paas.cmbchina.com, weibo.com, www.baidu.com, www.bilibili.com, www.dpfile.com, www.meituan.com, www.router.com, www.xiaohongshu.com, www.zhihu.com, www1.elecfans.com, y.gtimg.cn, youtubei.googleapis.com, zhiyou.m.smzdm.com, zhuanlan.zhihu.com, zj.haier.net
+hostname = %APPEND% *.boxjs.com, *.boxjs.net, *.byteoversea.com, *.dianping.com, *.googlevideo.com, *.httpdns.pro, *.jddebug.com, *.mcdn.bilivideo.cn, *.tik-tokapi.com, *.tiktokv.com, *.weibo.cn, *.weibo.com, 103.37.155.60, 112.53.55.225, 116.85.2.*, 116.85.3.*, 119.29.29.29, 119.29.29.98, 119.29.29.99, 120.241.142.*, 120.241.143.*, 123.207.209.*, 139.199.240.84, 162.14.157.*, 180.76.76.112, 180.76.76.200, a.sinopecsales.com, acs.m.goofish.com, acs.m.taobao.com, ad.12306.cn, afd.baidu.com, amdc-sibling.alipay.com.cn, amdc.alipay.com, amdc.m.taobao.com, ams-cdn.cdtft.cn, api-sams.walmartmobile.cn, api.biliapi.net, api.bilibili.com, api.live.bilibili.com, api.m.jd.com, api.mcd.cn, api.pinduoduo.com, api.revenuecat.com, api.udache.com, api.vc.bilibili.com, api.yangkeduo.com, api2.helper.qq.com, apimobile.meituan.com, app-api.smzdm.com, app.10086.cn, app.biliapi.net, app.bilibili.com, article-api.smzdm.com, awp-assets.meituan.net, bk.bingo.qq.com, bkclient.umetrip.com.cn, bla.gtimg.com, boxjs.com, boxjs.net, c.m.163.com, cache.bydauto.com.cn, cdn.api.fotoable.com, circle.seeyouyima.com, circle.xmseeyouyima.com, client.app.coc.10086.cn, client.qunar.com, common.diditaxi.com.cn, common.seeyouyima.com, conf.diditaxi.com.cn, configuration.ls.apple.com, cover.baidu.com, csc-service.sgcc.com.cn, ct.xiaojukeji.com, cube.elemecdn.com, cy.cloud.ccb.com, daijia.kuaidadi.com, ddplus.meituan.net, discardrp.umetrip.com, discuz.gtimg.cn, dns.jd.com, dualstack*.amap.com, edith.xiaohongshu.com, elemecdn.com, fcvbjbcebos.baidu.com, flowplus.meituan.net, freight.xiaojukeji.com, fuss10.elemecdn.com, g-acs.m.goofish.com, g.alicdn.com, g1.163.com, grpc.biliapi.net, gspe1-ssl.ls.apple.com, gspe35-ssl.ls.apple.com, guide-acs.m.taobao.com, gw.alicdn.com, h.app.coc.10086.cn, haojia-api.smzdm.com, haojia.m.smzdm.com, heic.alicdn.com, home.mi.com, home.umetrip.com, homefront.qunar.com, homepage-api.smzdm.com, hwimg.beingfine.cn, image1.ccb.com, imageadv.ccb.com, images.pinduoduo.com, img*.360buyimg.com, img.meituan.net, img1.126.net, imgcache.qq.com, ios.prod.ftl.netflix.com, issuecdn.baidupcs.com, l*.51fanli.net, learnywhere.cn, live.bilibili.com, m.bilibili.com, m.dianping.com, m5-zb.amap.com, m5.amap.com, manga.bilibili.com, mapi.dianping.com, mars.meituan.com, mb3admin.com, mmgr.gtimg.com, mobile.12306.cn, mobile.cmbchina.com, ms.jr.jd.com, mtteve.beacon.qq.com, nex.163.com, nr-op.elemecdn.com, osg-service.sgcc.com.cn, oss-zjrs.haier.net, oss.amap.com, oss.umetrip.com, p*.meituan.net, p.meituan.com, pan.baidu.com, poplayer.template.alibaba.com, portal-portm.meituan.com, post.m.smzdm.com, qde.qunar.com, qianbao.smzdm.com, qimgs.qunarzz.com, qt.qq.com, qzonestyle.gtimg.cn, rec.xiaohongshu.com, res.xiaojukeji.com, rms.meituan.com, router.com, s3.zdmimg.com, s3plus.meituan.net, sns.amap.com, splashqqlive.gtimg.com, sqt.meituan.com, ssl.kohsocialapp.qq.com, startup.umetrip.com, storage.360buyimg.com, t-dsp.pinduoduo.com, tfsmy.chengdu.gov.cn, tft-app.cdtft.cn, umerp.umetrip.com, umerp.umetrip.com.cn, update.pan.baidu.com, upos-*-mirrorakam.akamaized.net, upos-sz-mirror*bstar1.bilivideo.com, user-api.smzdm.com, video-dsp.pddpic.com, vv.video.qq.com, wallet.95516.com, wcprd.hilton.com.cn, webapp.joyingtrip.com, webappcfg.paas.cmbchina.com, weibo.com, www.baidu.com, www.bilibili.com, www.dpfile.com, www.meituan.com, www.router.com, www.xiaohongshu.com, www.zhihu.com, www1.elecfans.com, y.gtimg.cn, youtubei.googleapis.com, zhuanlan.zhihu.com, zj.haier.net
 
