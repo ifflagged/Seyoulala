@@ -16,7 +16,7 @@ AND,((URL-REGEX,^http:\/\/((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|
 AND,((URL-REGEX,^http:\/\/\[[0-9a-fA-F:]+\]/[a-zA-Z0-9]+(\?[a-zA-Z0-9=&]+),extended-matching), (USER-AGENT,*com.xunmeng.pinduoduo*)),REJECT
 #>航旅纵横
 URL-REGEX,^http?:\/\/(discardrp|startup)\.umetrip\.com\/gateway\/api\/umetrip\/native,REJECT
-AND,((PROTOCOL,UDP), (DOMAIN-SUFFIX,xiaohongshu.com,extended-matching)),REJECT
+AND,((PROTOCOL,QUIC), (DOMAIN-SUFFIX,xiaohongshu.com,extended-matching)),REJECT
 AND,((URL-REGEX,^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch,extended-matching), (USER-AGENT,AMapiPhone*)),REJECT
 AND,((IP-ASN,45090,no-resolve), (DEST-PORT,25641), (PROTOCOL,TCP)),REJECT
 AND,((IP-ASN,63646,no-resolve), (DEST-PORT,25641), (PROTOCOL,TCP)),REJECT
