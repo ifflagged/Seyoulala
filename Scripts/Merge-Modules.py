@@ -90,22 +90,32 @@ def merge_modules(input_file, output_type, module_urls):
                     value = stripped_line[1].strip()
                     comment = f"# {module_url.split('/')[-1].split('.')[0]}"
 
+                    if "%APPEND%" in value or "%INSERT%" in value:
+                        # 只保留一个 %APPEND% 或 %INSERT%，并将其放在最前面
+                        value_parts = value.split(", ")
+                        append_insert_part = None
+                        other_parts = []
+
+                        for part in value_parts:
+                            if "%APPEND%" in part or "%INSERT%" in part:
+                                if not append_insert_part:
+                                    append_insert_part = part
+                            else:
+                                other_parts.append(part)
+
+                        # 如果找到了 %APPEND% 或 %INSERT% 则将其放在最前面
+                        if append_insert_part:
+                            value = append_insert_part + (", " + ", ".join(other_parts) if other_parts else "")
+                        else:
+                            value = ", ".join(other_parts)
+                    
                     if key not in general_dict:
                         general_dict[key] = {
                             "values": [],
                             "comments": [],  # 改为列表
                         }
 
-                    if value not in general_dict[key]["values"]:
-                        if "%INSERT%" in value or "%APPEND%" in value:
-                            if "%INSERT%" in value:
-                                parts = value.split("%INSERT%", 1)
-                                value = parts[0] + "%INSERT%" + parts[1] if len(parts) > 1 else parts[0]
-                            if "%APPEND%" in value:
-                                parts = value.split("%APPEND%", 1)
-                                value = parts[0] + "%APPEND%" + parts[1].replace("%APPEND%", "") if len(parts) > 1 else parts[0]
-                
-                        general_dict[key]["values"].append(value)
+                    general_dict[key]["values"].append(value)
                     general_dict[key]["comments"].append(comment)  # 添加注释到列表中
         
         # Extract Rule section
@@ -163,14 +173,6 @@ def merge_modules(input_file, output_type, module_urls):
     for key, details in general_dict.items():
         comments = " & ".join(details["comments"])
         merged_value = ', '.join(details["values"])
-
-        if "%INSERT%" in merged_value:
-            parts = merged_value.split("%INSERT%")
-            merged_value = parts[0] + "%INSERT%" + ",".join([part for part in parts[1:] if part])
-        if "%APPEND%" in merged_value:
-            parts = merged_value.split("%APPEND%")
-            merged_value = parts[0] + "%APPEND%" + ",".join([part for part in parts[1:] if part])
-    
         merged_line = f"{key} = {merged_value}"
 
         merged_general.append(f"{comments}\n{merged_line}")
