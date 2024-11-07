@@ -19,7 +19,9 @@ https://github.com/ifflagged/Neverflagged/raw/main/Surge/Module/Tools.sgmodule #
 Modules/Surge/ifflagged/Common.sgmodule # Loon,Shadowrocket
 
 Modules/Surge/Maasea/YouTube.Enhance.sgmodule # Loon,Shadowrocket
-Modules/Surge/DualSubs/DualSubs.Spotify.sgmodule # Loon
+# Modules/Surge/DualSubs/DualSubs.Universal.sgmodule # Loon,Shadowrocket
+# Modules/Surge/DualSubs/DualSubs.Spotify.sgmodule # Loon,Shadowrocket
+# Modules/Surge/DualSubs/DualSubs.YouTube.sgmodule # Loon,Shadowrocket
 
 Modules/Surge/Kelee/BlockAdvertisers.sgmodule # Loon,Shadowrocket
 Modules/Surge/Kelee/12306_remove_ads.sgmodule # Loon,Shadowrocket
@@ -34,7 +36,7 @@ Modules/Surge/Kelee/RedPaper_remove_ads.sgmodule # Loon,Shadowrocket
 Modules/Surge/Kelee/Weibo_remove_ads.sgmodule # Loon,Shadowrocket
 
 Modules/Surge/ZenmoFeiShi/Smzdm.sgmodule # Loon,Shadowrocket
-Modules/Surge/ddgksf2013/SmzdmAds.sgmodule # Loon,Shadowrocket
+# Modules/Surge/ddgksf2013/SmzdmAds.sgmodule # Loon,Shadowrocket
 
 Modules/Surge/zirawell/adUnion.sgmodule # Loon,Shadowrocket
 Modules/Surge/Yuheng0101/NoAds.sgmodule # Loon,Shadowrocket
@@ -62,6 +64,7 @@ Modules/Surge/zirawell/sgcc.sgmodule # Loon,Shadowrocket
 Modules/Surge/zirawell/taobao.sgmodule # Loon,Shadowrocket
 Modules/Surge/zirawell/tfsmy.sgmodule # Loon,Shadowrocket
 Modules/Surge/zirawell/tft.sgmodule # Loon,Shadowrocket
+Modules/Surge/zirawell/umetrip.sgmodule # Loon,Shadowrocket
 Modules/Surge/zirawell/unionPay.sgmodule # Loon,Shadowrocket
 
 Modules/Surge/ifflagged/BiliBili.sgmodule # Loon,Shadowrocket
@@ -72,5 +75,4 @@ Modules/Surge/BiliUniverse/BiliBili.Redirect.sgmodule # Loon,Copy
 
 Modules/Surge/ifflagged/TikTok.sgmodule # Loon,Shadowrocket
 
-https://github.com/chavyleung/scripts/raw/master/box/rewrite/boxjs.rewrite.surge.sgmodule # Loon
-https://github.com/chavyleung/scripts/raw/master/box/rewrite/boxjs.rewrite.loon.plugin # Copy
+https://github.com/chavyleung/scripts/raw/master/box/rewrite/boxjs.rewrite.surge.sgmodule # Loon,Copy
