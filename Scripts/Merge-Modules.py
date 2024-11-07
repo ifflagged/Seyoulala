@@ -97,18 +97,14 @@ def merge_modules(input_file, output_type, module_urls):
                         }
 
                     if value not in general_dict[key]["values"]:
-                        # 只保留第一个 %INSERT% 或 %APPEND%
-                        if "%INSERT%" in value or "%APPEND%" in value:
-                            # 只保留第一次出现的 %INSERT% 或 %APPEND%
-                            if "%INSERT%" in value:
-                                parts = value.split("%INSERT%", 1)
-                                value = parts[0] + "%INSERT%" + parts[1] if len(parts) > 1 else parts[0]
-        
-                            if "%APPEND%" in value:
-                                # 对于 %APPEND% ，只保留第一个 %APPEND%
-                                parts = value.split("%APPEND%", 1)
-                                value = parts[0] + "%APPEND%" + parts[1] if len(parts) > 1 else parts[0]
-    
+                        if "%APPEND%" in value:
+                            parts = value.split("%APPEND%")
+                            # 只保留第一个 %APPEND%，后面的 %APPEND% 需要去掉
+                            value = parts[0] + "%APPEND%" + ",".join(parts[1:])
+                        if "%INSERT%" in value:
+                            parts = value.split("%INSERT%")
+                            # 只保留第一个 %INSERT%，后面的 %INSERT% 需要去掉
+                            value = parts[0] + "%INSERT%" + ",".join(parts[1:])
                         general_dict[key]["values"].append(value)
                     general_dict[key]["comments"].append(comment)  # 添加注释到列表中
         
