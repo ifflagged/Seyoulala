@@ -90,35 +90,39 @@ def merge_modules(input_file, output_type, module_urls):
                     value = stripped_line[1].strip()
                     comment = f"# {module_url.split('/')[-1].split('.')[0]}"
 
-                    # 处理 %APPEND% 和 %INSERT%
-                    append_insert_part = None
-                    other_parts = []
+                    # 提取地址和端口
+                    hosts = []
+                    append_type = None  # 保存 %APPEND% 或 %INSERT%
 
-                    if "%APPEND%" in value or "%INSERT%" in value:
-                        value_parts = value.split(", ")  # 按逗号分割
-                        for part in value_parts:
-                            if part.startswith("%APPEND%") or part.startswith("%INSERT%"):
-                                if append_insert_part is None:  # 只保留第一个
-                                    append_insert_part = part
-                            else:
-                                other_parts.append(part)
+                    if '%APPEND%' in value:
+                        append_type = '%APPEND%'
+                        hosts.extend(value.replace('%APPEND%', '').strip().split(','))
+                    elif '%INSERT%' in value:
+                        append_type = '%INSERT%'
+                        hosts.extend(value.replace('%INSERT%', '').strip().split(','))
+            
+                    hosts = set(host.strip() for host in hosts if host.strip())
 
-                    # 将 %APPEND% 或 %INSERT% 放在最前面
-                        if append_insert_part:
-                            value = append_insert_part + (", " + ", ".join(other_parts) if other_parts else "")
+                    if len(hosts) > 0:
+                        # 统计 %APPEND% 和 %INSERT% 的出现次数
+                        append_count = value.count('%APPEND%')
+                        insert_count = value.count('%INSERT%')
+
+                        # 选择次数最多的作为标记
+                        if append_count > insert_count:
+                            value_prefix = "%APPEND%"
                         else:
-                            value = ", ".join(other_parts)
-                    else:
-                        value = ", ".join(value.split(", "))  # 对于没有 %APPEND% 或 %INSERT% 的，正常拼接
+                            value_prefix = "%INSERT%"
 
-                    # 将 key 和 value 添加到 general_dict
-                    if key not in general_dict:
-                        general_dict[key] = {
-                            "values": [],
-                            "comments": [],  # 改为列表
-                        }
+                        # 更新 general_dict
+                        if key not in general_dict:
+                            general_dict[key] = {
+                                "values": [],
+                                "comments": [],  # 注释改为列表
+                            }
 
-                    general_dict[key]["values"].append(value)
+                        # 添加去重后的地址，按逗号连接
+                        general_dict[key]["values"].append(f"{value_prefix} {' '.join(hosts)}")
                     general_dict[key]["comments"].append(comment)  # 添加注释到列表中
         
         # Extract Rule section
