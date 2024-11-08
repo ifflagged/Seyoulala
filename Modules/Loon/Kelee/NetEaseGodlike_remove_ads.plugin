@@ -1,7 +1,34 @@
-NetEaseGodlike_remove_ads%0A：Error: Response code 404 (Not Found)
+#!name=网易大神去广告
+#!desc=移除开屏广告，精简我的页面。
+#!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+#!icon=https://gitlab.com/lodepuly/iconlibrary/-/raw/main/App_icon/120px/Loon.png
+#!keyword=Jacob
 
+#!openUrl=https://apps.apple.com/app/id1359055423
+#!tag=去广告
+#!loon_version=3.2.1(749)
+#!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
+#!date=2024-09-20 21:37:41
 
+[Rule]
+# 拦截HTTPDNS
+DOMAIN,httpdns.music.163.com,REJECT
+DOMAIN,httpdns.n.netease.com,REJECT
+DOMAIN,httpdns-sdk.n.netease.com,REJECT
+DOMAIN,httpdns.yunxindns.com,REJECT
+DOMAIN,lofter.httpdns.c.163.com,REJECT
+DOMAIN,music.httpdns.c.163.com,REJECT
+IP-CIDR,59.111.239.61/32,REJECT,no-resolve
+IP-CIDR,59.111.239.62/32,REJECT,no-resolve
+IP-CIDR,115.236.121.51/32,REJECT,no-resolve
+IP-CIDR,115.236.121.195/32,REJECT,no-resolve
 
+[Rewrite]
+# 广告下发
+^https:\/\/god\.gameyw\.netease\.com\/v\d\/ad - reject
+# 我的页面 - 横幅广告、为你推荐、更多会员权益、精选活动
+^https:\/\/god\.gameyw\.netease\.com\/v\d\/app\/static\/conf\/getByModuleNameList$ - reject-dict
 
+[MITM]
+hostname = god.gameyw.netease.com, app-conf.ds.163.com
 
-Script Hub 重写转换: ❌  可自行翻译错误信息或复制错误信息后点击通知进行反馈
