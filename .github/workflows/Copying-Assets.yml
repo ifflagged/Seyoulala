@@ -183,6 +183,7 @@ jobs:
                                       -type f -name "*.sgmodule" -print); do
             # 获取当前文件所在的文件夹路径，去掉 "Modules/Surge/" 前缀
             author=$(dirname "$sgmodule_file" | sed 's|^Modules/Surge/||')
+            module_folder=$(basename "$sgmodule_file" .sgmodule)
             echo "Processing $sgmodule_file from folder $author for JS links"
 
             # 查找文件中的 .js 链接
@@ -191,39 +192,34 @@ jobs:
             # 下载和替换每个 JS 链接
             for js_link in $js_links; do
               js_filename=$(basename "$js_link")
-              local_js_path="Modules/JS/$author/$js_filename"
+              local_js_path="Modules/JS/$author/$module_folder/$js_filename"
+              github_js_url="$js_base_url/$author/$module_folder/$js_filename"
+              
+              # 创建文件夹（如果不存在）
+              mkdir -p "$(dirname "$local_js_path")"
+
               # 使用指定的 User-Agent 下载 .js 文件
               echo "Downloading $js_link to $local_js_path"
               if curl -A "Surge Mac/2985" -L -o "$local_js_path" "$js_link"; then
                 echo "Download successful for $js_link"
                 
-                # 替换 GitHub 仓库的路径
-                github_js_url="$js_base_url/$author/$js_filename"
                 echo "Replacing $js_link with $github_js_url in $sgmodule_file"
-
-                # 替换 .sgmodule 文件中的 JS 链接
                 sed -i "s|$js_link|$github_js_url|g" "$sgmodule_file"
 
                 # 获取对应的 Loon 和 Shadowrocket 插件文件名
-                loon_file="Modules/Loon/$author/$(basename "$sgmodule_file" .sgmodule).plugin"
-                shadowrocket_file="Modules/Shadowrocket/$author/$(basename "$sgmodule_file" .sgmodule).srmodule"
+                loon_file="Modules/Loon/$author/$module_folder.plugin"
+                shadowrocket_file="Modules/Shadowrocket/$author/$module_folder.srmodule"
 
                 # 如果对应的 Loon 插件文件存在，则替换其中的 JS 链接
                 if [ -f "$loon_file" ]; then
                   echo "Replacing JS links in $loon_file"
-                  for js_link in $js_links; do
-                    github_js_url="$js_base_url/$(basename "$js_link")"
-                    sed -i "s|$js_link|$github_js_url|g" "$loon_file"
-                  done
+                  sed -i "s|$js_link|$github_js_url|g" "$loon_file"
                 fi
                 
                 # 如果对应的 Shadowrocket 插件文件存在，则替换其中的 JS 链接
                 if [ -f "$shadowrocket_file" ]; then
                   echo "Replacing JS links in $shadowrocket_file"
-                  for js_link in $js_links; do
-                    github_js_url="$js_base_url/$(basename "$js_link")"
-                    sed -i "s|$js_link|$github_js_url|g" "$shadowrocket_file"
-                  done
+                  sed -i "s|$js_link|$github_js_url|g" "$shadowrocket_file"
                 fi
 
               else
