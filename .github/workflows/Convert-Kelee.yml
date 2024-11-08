@@ -57,7 +57,8 @@ jobs:
             Modules_name=$(echo "$plugin_url" | sed -E 's/\.plugin$//I' | xargs basename)
             echo "Downloading $plugin_url to Modules/Loon/Kelee/Official/${Modules_name}.plugin"
             mkdir -p "Modules/Loon/Kelee/Official" 
-            curl -A "Surge Mac/2985" -L "$plugin_url" -o "Modules/Loon/Kelee/Official//${Modules_name}.plugin" || echo "Failed to download $plugin_url"
+            curl -A "Surge Mac/2985" -L "$plugin_url" -o "Modules/Loon/Kelee/${Modules_name}.plugin" || echo "Failed to download $plugin_url"
+            curl -A "Surge Mac/2985" -L "$plugin_url" -o "Modules/Loon/Kelee/Official/${Modules_name}.plugin" || echo "Failed to download $plugin_url"
           done < Kelee_plugin_urls.txt
           
       - name: Generate plugin URLs
@@ -92,7 +93,7 @@ jobs:
             echo "Downloading from uls"
             curl -A "Surge Mac/2985" -L -o "Modules/Surge/Kelee/${Modules_name}.sgmodule" "$Surge_url" || echo "Failed to download ${Modules_name}.sgmodule"
             curl -A "Surge Mac/2985" -L -o "Modules/Surge/Kelee/Beta/${Modules_name}.sgmodule" "$Surge_Beta_url" || echo "Failed to download ${Modules_name}.sgmodule"
-            curl -A "Surge Mac/2985" -L -o "Modules/Loon/Kelee/${Modules_name}.plugin" "$Loon_url" || echo "Failed to download ${Modules_name}.plugin"
+            # curl -A "Surge Mac/2985" -L -o "Modules/Loon/Kelee/${Modules_name}.plugin" "$Loon_url" || echo "Failed to download ${Modules_name}.plugin"
             curl -A "Surge Mac/2985" -L -o "Modules/Loon/Kelee/Beta/${Modules_name}.plugin" "$Loon_Beta_url" || echo "Failed to download ${Modules_name}.plugin"
             curl -A "Surge Mac/2985" -L -o "Modules/Shadowrocket/Kelee/${Modules_name}.srmodule" "$Shadowrocket_url" || echo "Failed to download ${Modules_name}.srmodule"
             curl -A "Surge Mac/2985" -L -o "Modules/Shadowrocket/Kelee/Beta/${Modules_name}.srmodule" "$Shadowrocket_Beta_url" || echo "Failed to download ${Modules_name}.srmodule"
