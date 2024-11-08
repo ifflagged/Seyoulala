@@ -29,7 +29,7 @@ DOMAIN,stun1.qvb.qcloud.com,REJECT
 
 [Script]
 # 首页轮播图和视频流广告
-移除首页轮播图和视频流广告 = type=http-response, pattern=^https:\/\/apiv2\.douyucdn\.cn\/mgapi\/livenc\/home\/getRecV3, script-path=https://kelee.one/Resource/Script/Douyu/Douyu_remove_ads.js, requires-body=true
+移除首页轮播图和视频流广告 = type=http-response, pattern=^https:\/\/apiv2\.douyucdn\.cn\/mgapi\/livenc\/home\/getRecV3, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Douyu_remove_ads/Douyu_remove_ads.js, requires-body=true
 
 [MITM]
 hostname = %APPEND% rtbapi.douyucdn.cn, apiv2.douyucdn.cn, venus.douyucdn.cn

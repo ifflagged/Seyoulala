@@ -12,10 +12,10 @@
 
 [Script]
 # 首页顶部入口
-精简首页顶部入口 = type=http-response, pattern=^https:\/\/app\.missevan\.com\/site\/icons\?, script-path=https://kelee.one/Resource/Script/CatEarFM/CatEarFM_remove_ads.js, requires-body=true
+精简首页顶部入口 = type=http-response, pattern=^https:\/\/app\.missevan\.com\/site\/icons\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/CatEarFM_remove_ads/CatEarFM_remove_ads.js, requires-body=true
 
 # 发现页面 - 直播间、广播剧、免流服务
-精简发现页面 = type=http-response, pattern=^https:\/\/app\.missevan\.com\/discovery\/list$, script-path=https://kelee.one/Resource/Script/CatEarFM/CatEarFM_remove_ads.js, requires-body=true
+精简发现页面 = type=http-response, pattern=^https:\/\/app\.missevan\.com\/discovery\/list$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/CatEarFM_remove_ads/CatEarFM_remove_ads.js, requires-body=true
 
 [MITM]
 hostname = %APPEND% app.missevan.com, fm.missevan.com

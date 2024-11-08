@@ -22,7 +22,7 @@ DOMAIN-SUFFIX,wxs.qq.com,REJECT
 
 [Script]
 # [Script]
-#微信公众号去广告 = type=http-response, pattern=^https?:\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad, script-path=https://kelee.one/Resource/Script/Weixin/Weixin_Official_Accounts_remove_ads.js, requires-body=true
+#微信公众号去广告 = type=http-response, pattern=^https?:\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Weixin_Official_Accounts_remove_ads/Weixin_Official_Accounts_remove_ads.js, requires-body=true
 
 [MITM]
 hostname = %APPEND% mp.weixin.qq.com
