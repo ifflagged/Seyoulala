@@ -123,7 +123,7 @@ DOMAIN, plbslog.umeng.com, REJECT
 
 [Script]
 # 配置修改
-http-response ^https:\/\/base\.mkzcdn\.com\/app\/config\/ script-path = https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/MKZ_remove_ads/MKZ_remove_ads.js, requires-body = true, tag = 配置修改
+http-response ^https:\/\/base\.mkzcdn\.com\/app\/config\/ script-path = https://kelee.one/Resource/Script/MKZ/MKZ_remove_ads.js, requires-body = true, tag = 配置修改
 
 [MitM]
 hostname = base.mkzcdn.com
