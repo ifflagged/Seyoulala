@@ -91,11 +91,13 @@ jobs:
             mkdir -p Modules/{Surge,Loon,Shadowrocket}/Kelee/Beta
 
             # Download plugin files
-            echo "Downloading from uls"
+            echo "Converting to ${Modules_name}.sgmodule"
             curl -A "Surge Mac/2985" -L -o "Modules/Surge/Kelee/${Modules_name}.sgmodule" "$Surge_url" || echo "Failed to download ${Modules_name}.sgmodule"
             curl -A "Surge Mac/2985" -L -o "Modules/Surge/Kelee/Beta/${Modules_name}.sgmodule" "$Surge_Beta_url" || echo "Failed to download ${Modules_name}.sgmodule"
+            echo "Converting to ${Modules_name}.plugin"
             # curl -A "Surge Mac/2985" -L -o "Modules/Loon/Kelee/${Modules_name}.plugin" "$Loon_url" || echo "Failed to download ${Modules_name}.plugin"
             curl -A "Surge Mac/2985" -L -o "Modules/Loon/Kelee/Beta/${Modules_name}.plugin" "$Loon_Beta_url" || echo "Failed to download ${Modules_name}.plugin"
+            echo "Converting to $.srmodule"
             curl -A "Surge Mac/2985" -L -o "Modules/Shadowrocket/Kelee/${Modules_name}.srmodule" "$Shadowrocket_url" || echo "Failed to download ${Modules_name}.srmodule"
             curl -A "Surge Mac/2985" -L -o "Modules/Shadowrocket/Kelee/Beta/${Modules_name}.srmodule" "$Shadowrocket_Beta_url" || echo "Failed to download ${Modules_name}.srmodule"
           done < plugin_local_url.txt
