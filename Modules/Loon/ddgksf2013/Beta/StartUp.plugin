@@ -9,7 +9,7 @@
 
 [Rewrite]
 # > Version
-^https?:\/\/2024.11.06/c353/v2.0.546 - reject-200
+^https?:\/\/2024.11.08/c353/v2.0.547 - reject-200
 # > 10
 ^https?:\/\/ftapi\.10jqka\.com\.cn\/futgwapi\/api\/om\/v\d\/ad\/common\/transfer - reject-200
 # > 139mail
@@ -36,6 +36,7 @@
 ^https?:\/\/sso.ifanr.com\/jiong\/IOS\/appso\/splash\/ - reject-200
 # > alibaba
 ^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv\/ - reject-200
+^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.cbu\.app\.homepage\.startup - reject-200
 # > aastocks
 ^https?:\/\/.*aastocks\.com\/ad\/ - reject-200
 # > anhuizhangshang10000
