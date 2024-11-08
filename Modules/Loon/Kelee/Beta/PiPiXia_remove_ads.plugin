@@ -71,10 +71,10 @@ DOMAIN-KEYWORD,asiad.byteactivity,REJECT
 
 [Script]
 # 视频流广告
-http-response ^https:\/\/api(5-lq)?\.pipix\.com\/bds\/feed\/stream\/v2\/ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/PiPiXia_remove_ads/PiPiXia_remove_ads.js, requires-body=true, tag=移除视频流广告
+http-response ^https:\/\/api(5-lq)?\.pipix\.com\/bds\/feed\/stream\/v2\/ script-path=https://kelee.one/Resource/Script/PiPiXia/PiPiXia_remove_ads.js, requires-body=true, tag=移除视频流广告
 
 # 我的页面
-http-response ^https:\/\/api(5-lq)?\.pipix\.com\/bds\/user\/check_in\/ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/PiPiXia_remove_ads/PiPiXia_remove_ads.js, requires-body=true, tag=精简我的页面
+http-response ^https:\/\/api(5-lq)?\.pipix\.com\/bds\/user\/check_in\/ script-path=https://kelee.one/Resource/Script/PiPiXia/PiPiXia_remove_ads.js, requires-body=true, tag=精简我的页面
 
 [MITM]
 hostname = api.pipix.com, api5-lq.pipix.com
