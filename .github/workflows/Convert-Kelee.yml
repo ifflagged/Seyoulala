@@ -1,8 +1,11 @@
+# https://github.com/bunizao/Mirrored/blob/main/.github/workflows/convert.yml
+
+
 name: Extract Kelee plugin
 
 on:
   schedule:
-    - cron: '5,30,55 * * * *'
+    - cron: '0,30 * * * *'
   workflow_dispatch:
 
 jobs:
