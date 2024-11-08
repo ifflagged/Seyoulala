@@ -1,7 +1,6 @@
 # https://github.com/bunizao/Mirrored/blob/main/.github/workflows/convert.yml
 
-
-name: Extract Kelee plugin
+name: Extract Kelee plugins
 
 on:
   schedule:
@@ -128,10 +127,11 @@ jobs:
                 echo "Replacing $js_link with $github_js_url in $plugin_file"
                 sed -i "s|$js_link|$github_js_url|g" "$plugin_file"
           
-                # 替换同名文件在 Modules/Loon/Kelee 中的 JS 链接
-                plugin_file_in_Kelee="Modules/Loon/Kelee/$module_folder.plugin"
-                echo "Replacing $js_link with $github_js_url in $plugin_file_in_Kelee"
-                sed -i "s|$js_link|$github_js_url|g" "$plugin_file_in_Kelee"
+                Copied_plugin_file="Modules/Loon/Kelee/$author/$module_folder.plugin"
+                if [ -f "$Copied_plugin_file" ]; then
+                echo "Replacing $js_link with $github_js_url in $Copied_plugin_file"
+                sed -i "s|$js_link|$github_js_url|g" "$Copied_plugin_file"
+                fi
               else
                 echo "Failed to download $js_link, skipping..."
               fi
