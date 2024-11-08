@@ -58,9 +58,6 @@ jobs:
             echo "Downloading $plugin_url to Modules/Loon/Kelee/Official/${Modules_name}.plugin"
             mkdir -p "Modules/Loon/Kelee/Official" 
             curl -A "Surge Mac/2985" -L "$plugin_url" -o "Modules/Loon/Kelee/Official/${Modules_name}.plugin" || echo "Failed to download $plugin_url"
-
-            echo "Copying ${Modules_name}.plugin to Modules/Loon/Kelee/"
-            cp "Modules/Loon/Kelee/Official/${Modules_name}.plugin" "Modules/Loon/Kelee/${Modules_name}.plugin" || echo "Failed to copy ${Modules_name}.plugin"
           done < Kelee_plugin_urls.txt
           
       - name: Generate plugin URLs
@@ -121,18 +118,23 @@ jobs:
               github_js_url="$js_base_url/$author/$module_folder/$js_filename"
 
               mkdir -p "$(dirname "$local_js_path")"
-              
+        
               echo "Downloading $js_link to $local_js_path"
               if curl -A "Surge Mac/2985" -L -o "$local_js_path" "$js_link"; then
                 echo "Download successful for $js_link"
                 echo "Replacing $js_link with $github_js_url in $plugin_file"
                 sed -i "s|$js_link|$github_js_url|g" "$plugin_file"
+          
+                # 替换同名文件在 Modules/Loon/Kelee 中的 JS 链接
+                plugin_file_in_Kelee="Modules/Loon/Kelee/$module_folder.plugin"
+                echo "Replacing $js_link with $github_js_url in $plugin_file_in_Kelee"
+                sed -i "s|$js_link|$github_js_url|g" "$plugin_file_in_Kelee"
               else
                 echo "Failed to download $js_link, skipping..."
               fi
             done
           done
-          
+
       - name: Commit and push changes
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
