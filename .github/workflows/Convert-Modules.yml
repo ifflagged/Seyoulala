@@ -92,12 +92,11 @@ jobs:
 
           for sgmodule_file in $(find Modules/Surge/ \
               -mindepth 2 -type f -name "*.sgmodule" \
-              -path "Modules/Surge/Kelee" -prune -o \
-              -path "Modules/Surge/NSRingo" -prune -o \
-              -path "Modules/Surge/BiliUniverse" -prune -o \
-              -path "Modules/Surge/DualSubs" -prune -o \
-              -path "*/Beta/*" -prune -o \
-              -print); do
+              ! -path "Modules/Surge/Kelee/*" \
+              ! -path "Modules/Surge/NSRingo/*" \
+              ! -path "Modules/Surge/BiliUniverse/*" \
+              ! -path "Modules/Surge/DualSubs/*" \
+              ! -path "*/Beta/*"); do
             # 获取当前文件所在的文件夹路径
             author=$(dirname "$sgmodule_file" | sed 's|^Modules/Surge/||')
             module_folder=$(basename "$sgmodule_file" .sgmodule)
@@ -112,6 +111,7 @@ jobs:
               local_js_path="Modules/JS/$author/$module_folder/$js_filename"
               github_js_url="$js_base_url/$author/$module_folder/$js_filename"
               
+              # 创建文件夹（如果不存在）
               mkdir -p "$(dirname "$local_js_path")"
 
               # 使用指定的 User-Agent 下载 .js 文件
