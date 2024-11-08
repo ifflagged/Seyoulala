@@ -1,5 +1,3 @@
-# https://github.com/bunizao/Mirrored/blob/main/.github/workflows/convert.yml
-
 name: Extract Kelee plugin
 
 on:
@@ -51,17 +49,18 @@ jobs:
 
       - name: Download plugin files
         run: |
-          mkdir -p Modules/{Surge,Loon,Shadowrocket}/Kelee/Beta
+          mkdir -p Modules/{Surge,Loon,Shadowrocket}/Kelee/Official
           while read -r plugin_url; do
             Modules_name=$(echo "$plugin_url" | sed -E 's/\.plugin$//I' | xargs basename)
-            echo "Downloading $plugin_url to Modules/Loon/Kelee/${Modules_name}.plugin"
-            curl -A "Surge Mac/2985" -L "$plugin_url" -o "Modules/Loon/Kelee/${Modules_name}.plugin" || echo "Failed to download $plugin_url"
+            echo "Downloading $plugin_url to Modules/Loon/Kelee/Official/${Modules_name}.plugin"
+            mkdir -p "Modules/Loon/Kelee/Official" 
+            curl -A "Surge Mac/2985" -L "$plugin_url" -o "Modules/Loon/Kelee/Official//${Modules_name}.plugin" || echo "Failed to download $plugin_url"
           done < Kelee_plugin_urls.txt
           
       - name: Generate plugin URLs
         run: |
-          plugin_base_url="https://github.com/${GITHUB_REPOSITORY}/raw/main/Modules/Loon/Kelee/"
-          for file in Modules/Loon/Kelee/*; do
+          plugin_base_url="https://github.com/${GITHUB_REPOSITORY}/raw/main/Modules/Loon/Kelee/Official/"
+          for file in Modules/Loon/Kelee/Official/*; do
             if [ -f "$file" ]; then
               filename=$(basename "$file")
               plugin_local_url="${plugin_base_url}${filename}"
@@ -74,19 +73,26 @@ jobs:
           category="Jacob"
           encoded_category=$(echo "$category" | jq -sRr @uri)
           while read -r plugin_local_url; do
-          Modules_name=$(basename "$plugin_local_url" .plugin)
-          encoded_Modules_name=$(echo "$Modules_name" | jq -sRr @uri)
-          Surge_url="http://localhost:9100/file/_start_/${plugin_local_url}/_end_/${encoded_Modules_name}.sgmodule?type=loon-plugin&target=surge-module&category=${encoded_category}&nore=true"
-          Surge_Beta_url="http://localhost:9101/file/_start_/${plugin_local_url}/_end_/${encoded_Modules_name}.sgmodule?type=loon-plugin&target=surge-module&category=${encoded_category}&nore=true"
-          Loon_Beta_url="http://localhost:9101/file/_start_/${plugin_local_url}/_end_/${encoded_Modules_name}.plugin?type=loon-plugin&target=loon-plugin&category=${encoded_category}&icon=Loon&nore=true"
-          Shadowrocket_url="http://localhost:9100/file/_start_/${plugin_local_url}/_end_/${encoded_Modules_name}.sgmodule?type=loon-plugin&target=shadowrocket-module&category=${encoded_category}&nore=true"
-          Shadowrocket_Beta_url="http://localhost:9101/file/_start_/${plugin_local_url}/_end_/${encoded_Modules_name}.sgmodule?type=loon-plugin&target=shadowrocket-module&category=${encoded_category}&nore=true"
-          echo "Downloading from uls"
-          curl -A "Surge Mac/2985" -L -o "Modules/Surge/Kelee/${Modules_name}.sgmodule" "$Surge_url" || echo "Failed to download ${Modules_name}.sgmodule"
-          curl -A "Surge Mac/2985" -L -o "Modules/Surge/Kelee/Beta/${Modules_name}.sgmodule" "$Surge_Beta_url" || echo "Failed to download ${Modules_name}.sgmodule"
-          curl -A "Surge Mac/2985" -L -o "Modules/Loon/Kelee/Beta/${Modules_name}.plugin" "$Loon_Beta_url" || echo "Failed to download ${Modules_name}.plugin"
-          curl -A "Surge Mac/2985" -L -o "Modules/Shadowrocket/Kelee/${Modules_name}.srmodule" "$Shadowrocket_url" || echo "Failed to download ${Modules_name}.srmodule"
-          curl -A "Surge Mac/2985" -L -o "Modules/Shadowrocket/Kelee/Beta/${Modules_name}.srmodule" "$Shadowrocket_Beta_url" || echo "Failed to download ${Modules_name}.srmodule"
+            Modules_name=$(basename "$plugin_local_url" .plugin)
+            encoded_Modules_name=$(echo "$Modules_name" | jq -sRr @uri)
+
+            Surge_url="http://localhost:9100/file/_start_/${plugin_local_url}/_end_/${encoded_Modules_name}.sgmodule?type=loon-plugin&target=surge-module&category=${encoded_category}&nore=true"
+            Surge_Beta_url="http://localhost:9101/file/_start_/${plugin_local_url}/_end_/${encoded_Modules_name}.sgmodule?type=loon-plugin&target=surge-module&category=${encoded_category}&nore=true"
+            Loon_url="http://localhost:9100/file/_start_/${plugin_local_url}/_end_/${encoded_Modules_name}.plugin?type=loon-plugin&target=loon-plugin&category=${encoded_category}&icon=Loon&nore=true"
+            Loon_Beta_url="http://localhost:9101/file/_start_/${plugin_local_url}/_end_/${encoded_Modules_name}.plugin?type=loon-plugin&target=loon-plugin&category=${encoded_category}&icon=Loon&nore=true"
+            Shadowrocket_url="http://localhost:9100/file/_start_/${plugin_local_url}/_end_/${encoded_Modules_name}.sgmodule?type=loon-plugin&target=shadowrocket-module&category=${encoded_category}&nore=true"
+            Shadowrocket_Beta_url="http://localhost:9101/file/_start_/${plugin_local_url}/_end_/${encoded_Modules_name}.sgmodule?type=loon-plugin&target=shadowrocket-module&category=${encoded_category}&nore=true"
+
+            mkdir -p Modules/{Surge,Loon,Shadowrocket}/Kelee/Beta
+
+            # Download plugin files
+            echo "Downloading from uls"
+            curl -A "Surge Mac/2985" -L -o "Modules/Surge/Kelee/${Modules_name}.sgmodule" "$Surge_url" || echo "Failed to download ${Modules_name}.sgmodule"
+            curl -A "Surge Mac/2985" -L -o "Modules/Surge/Kelee/Beta/${Modules_name}.sgmodule" "$Surge_Beta_url" || echo "Failed to download ${Modules_name}.sgmodule"
+            curl -A "Surge Mac/2985" -L -o "Modules/Loon/Kelee/${Modules_name}.plugin" "$Loon_url" || echo "Failed to download ${Modules_name}.plugin"
+            curl -A "Surge Mac/2985" -L -o "Modules/Loon/Kelee/Beta/${Modules_name}.plugin" "$Loon_Beta_url" || echo "Failed to download ${Modules_name}.plugin"
+            curl -A "Surge Mac/2985" -L -o "Modules/Shadowrocket/Kelee/${Modules_name}.srmodule" "$Shadowrocket_url" || echo "Failed to download ${Modules_name}.srmodule"
+            curl -A "Surge Mac/2985" -L -o "Modules/Shadowrocket/Kelee/Beta/${Modules_name}.srmodule" "$Shadowrocket_Beta_url" || echo "Failed to download ${Modules_name}.srmodule"
           done < plugin_local_url.txt
 
       - name: Find and replace external JS resources
@@ -94,15 +100,13 @@ jobs:
         run: |
           js_base_url="https://github.com/${GITHUB_REPOSITORY}/raw/main/Modules/JS"
 
-          # 查找 Loon 文件夹中的插件文件
-          for plugin_file in Modules/Loon/Kelee/*.plugin; do
+          for plugin_file in Modules/Loon/Kelee/Official/*.plugin; do
             echo "Processing $plugin_file"
 
-            author=$(dirname "$plugin_file" | sed 's|^Modules/Loon/||')
+            author=$(echo "$plugin_file" | awk -F'/' '{print $(NF-2)}')
             module_folder=$(basename "$plugin_file" .plugin)
             echo "Processing $plugin_file from folder $author for JS links"
 
-            # 查找 .js 文件的外部链接
             js_links=$(grep -oP 'https?://[^ ]+\.js' "$plugin_file" || echo "")
 
             for js_link in $js_links; do
@@ -110,68 +114,34 @@ jobs:
               local_js_path="Modules/JS/$author/$module_folder/$js_filename"
               github_js_url="$js_base_url/$author/$module_folder/$js_filename"
 
-              # 创建文件夹（如果不存在）
               mkdir -p "$(dirname "$local_js_path")"
               
-              # 下载 .js 文件到指定目录
               echo "Downloading $js_link to $local_js_path"
               if curl -A "Surge Mac/2985" -L -o "$local_js_path" "$js_link"; then
                 echo "Download successful for $js_link"
-
-                # 替换 Loon 插件文件中的链接为 GitHub 仓库的路径
                 echo "Replacing $js_link with $github_js_url in $plugin_file"
                 sed -i "s|$js_link|$github_js_url|g" "$plugin_file"
               else
                 echo "Failed to download $js_link, skipping..."
               fi
             done
-
-            # 获取对应的 Surge 和 Shadowrocket 插件文件名
-            surge_file="Modules/Surge/$author/$module_folder.sgmodule"
-            shadowrocket_file="Modules/Shadowrocket/$author/$module_folder.srmodule"
-
-            # 如果对应的 Surge 插件文件存在，则替换其中的 JS 链接
-            if [ -f "$surge_file" ]; then
-              echo "Replacing JS links in $surge_file"
-              for js_link in $js_links; do
-                github_js_url="$js_base_url/$author/$module_folder/$(basename "$js_link")"
-                sed -i "s|$js_link|$github_js_url|g" "$surge_file"
-              done
-            fi
-
-            # 如果对应的 Shadowrocket 插件文件存在，则替换其中的 JS 链接
-            if [ -f "$shadowrocket_file" ]; then
-              echo "Replacing JS links in $shadowrocket_file"
-              for js_link in $js_links; do
-                github_js_url="$js_base_url/$author/$module_folder/$(basename "$js_link")"
-                sed -i "s|$js_link|$github_js_url|g" "$shadowrocket_file"
-              done
-            fi
           done
           
       - name: Commit and push changes
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          # 获取当前日期，设置为北京时间 (UTC+8)
           DATE="$(TZ='Asia/Shanghai' date '+%Y-%m-%d %H:%M:%S')"
     
-          # 添加所有更改
           git add Modules/*
     
-          # 如果没有变化，跳过提交
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else
-            # 提交消息，包含动态的日期
             COMMIT_MESSAGE="Converted files at $DATE (UTC+8)"
-      
-            # 确保仓库是最新的，避免冲突
             git stash
-            git pull --rebase  # 同步远程仓库的最新更改
-            git stash pop  # 恢复之前的更改
-      
-            # 再次添加文件，进行提交
+            git pull --rebase
+            git stash pop
             git add Modules/*
             git commit -m "$COMMIT_MESSAGE"
             git push
