@@ -21,10 +21,10 @@ CRONEXP = input, "0 8 * * *", tag = 定时参数, desc = 这里需要输入符�
 
 [Script]
 # 捕获Cookie
-http-request ^https:\/\/moapi\.wps\.cn\/app\/ios\/v1\/app$ script-path = https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/WPS_checkin/WPS_checkin.js, requires-body = true, tag = 捕获Cookie, enable = {CaptureCookie}
+http-request ^https:\/\/moapi\.wps\.cn\/app\/ios\/v1\/app$ script-path = https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/WPS_checkin.js, requires-body = true, tag = 捕获Cookie, enable = {CaptureCookie}
 
 # 定时签到
-cron {CRONEXP} script-path = https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/WPS_checkin/WPS_checkin.js, tag = WPS每日签到, timeout = 120, argument=[{AK},{SK},{MAX_RETRIES}]
+cron {CRONEXP} script-path = https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/WPS_checkin.js, tag = WPS每日签到, timeout = 120, argument=[{AK},{SK},{MAX_RETRIES}]
 
 [MitM]
 hostname = moapi.wps.cn
