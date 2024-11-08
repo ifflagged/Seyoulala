@@ -129,8 +129,8 @@ jobs:
           
                 Copied_plugin_file="Modules/Loon/Kelee/$author/$module_folder.plugin"
                 if [ -f "$Copied_plugin_file" ]; then
-                echo "Replacing $js_link with $github_js_url in $Copied_plugin_file"
-                sed -i "s|$js_link|$github_js_url|g" "$Copied_plugin_file"
+                  echo "Replacing $js_link with $github_js_url in $Copied_plugin_file"
+                  sed -i "s|$js_link|$github_js_url|g" "$Copied_plugin_file"
                 fi
               else
                 echo "Failed to download $js_link, skipping..."
