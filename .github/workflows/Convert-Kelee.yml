@@ -133,6 +133,8 @@ jobs:
             # 如果对应的 Surge 插件文件存在，则替换其中的 JS 链接
             if [ -f "$surge_file" ]; then
               echo "Replacing JS links in $surge_file"
+              for js_link in $js_links; do
+                github_js_url="$js_base_url/$author/$module_folder/$(basename "$js_link")"
                 sed -i "s|$js_link|$github_js_url|g" "$surge_file"
               done
             fi
@@ -140,6 +142,8 @@ jobs:
             # 如果对应的 Shadowrocket 插件文件存在，则替换其中的 JS 链接
             if [ -f "$shadowrocket_file" ]; then
               echo "Replacing JS links in $shadowrocket_file"
+              for js_link in $js_links; do
+                github_js_url="$js_base_url/$author/$module_folder/$(basename "$js_link")"
                 sed -i "s|$js_link|$github_js_url|g" "$shadowrocket_file"
               done
             fi
