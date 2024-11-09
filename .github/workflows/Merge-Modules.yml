@@ -27,10 +27,12 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install requests
-
+        
+    - name: Print GitHub Actor
+      run: echo "GITHUB_ACTOR=${GITHUB_ACTOR}"
+      
     - name: Checkout private repository
       uses: actions/checkout@v3
-      run: echo "GITHUB_ACTOR=${GITHUB_ACTOR}"
       with:
         repository: "${GITHUB_ACTOR}/ShalalaLala"
         token: ${{ secrets.PERSONAL_TOKENS }}
