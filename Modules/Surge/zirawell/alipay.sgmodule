@@ -1,0 +1,14 @@
+#!name=alipay
+#!desc=alipay
+#!category=Jacob
+
+[Rule]
+# > 支付宝 - ALIPAY
+DOMAIN,adgw.alipay.com,REJECT
+DOMAIN,amdc.alipay.com,REJECT
+DOMAIN,amdc-sibling.alipay.com.cn,REJECT
+DOMAIN-SUFFIX,mdap.alipay.com,REJECT
+DOMAIN-SUFFIX,ynuf.alipay.com,REJECT
+DOMAIN-SUFFIX,loggw.alipay.com.cn,REJECT
+DOMAIN-SUFFIX,alipaydns.com,REJECT
+
