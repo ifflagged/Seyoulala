@@ -45,7 +45,6 @@ Modules/Surge/zirawell/51fanli.sgmodule # Loon,Shadowrocket
 Modules/Surge/zirawell/SAMsClub.sgmodule # Loon,Shadowrocket
 Modules/Surge/zirawell/alipay.sgmodule # Loon,Shadowrocket
 Modules/Surge/zirawell/beautycam.sgmodule # Loon,Shadowrocket
-Modules/Surge/zirawell/beingFine.sgmodule # Loon,Shadowrocket
 Modules/Surge/zirawell/bydwc.sgmodule # Loon,Shadowrocket
 Modules/Surge/zirawell/ccb.sgmodule # Loon,Shadowrocket
 Modules/Surge/zirawell/cmb.sgmodule # Loon,Shadowrocket
