@@ -31,17 +31,21 @@ jobs:
     - name: Run remote merge script for all matching txt files
       run: |
         for file in Links/Merge-Modules-*.txt; do
-          # 下载并执行合并脚本
-          script_content=$(curl -sL -H "Authorization: token ${{ secrets.PERSONAL_TOKENS }}" \
+          # 下载脚本并检查状态码
+          response=$(curl -sL -w "%{http_code}" -o temp_script.py -H "Authorization: token ${{ secrets.PERSONAL_TOKENS }}" \
             https://github.com/${GITHUB_ACTOR}/ShalalaLala/raw/main/Scripts/Remote-Merge-Modules.py)
+      
+          # 检查状态码是否为 200
+          if [ "$response" != "200" ]; then
+            echo "Failed to download script. HTTP status: $response"
+            cat temp_script.py # 输出内容帮助调试
+            exit 1
+          fi
 
-          # 可选调试输出前几行，排查问题时可启用
-          echo "$script_content" | head -n 10
-
-          # 执行下载的脚本内容
-          echo "$script_content" | python - "$file"
+          # 执行脚本
+          python temp_script.py "$file"
         done
-
+        
     - name: Commit and push changes
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
