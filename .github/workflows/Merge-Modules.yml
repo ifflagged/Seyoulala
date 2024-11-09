@@ -31,7 +31,7 @@ jobs:
     - name: Checkout private repository
       uses: actions/checkout@v3
       with:
-        repository: "{{ secrets.GITHUB_ACTOR }}/ShalalaLala"
+        repository: "{{ secrets.SOURCE_AUTHOR }}/ShalalaLala"
         token: ${{ secrets.PERSONAL_TOKENS }}
         path: Darwin
 
