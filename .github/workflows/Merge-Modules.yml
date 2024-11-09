@@ -8,7 +8,10 @@ on:
 jobs:
   Merging:
     runs-on: ubuntu-latest
-
+    
+    env:
+      REPO: "${{ github.actor }}/ShalalaLala"
+          
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
@@ -35,7 +38,7 @@ jobs:
     - name: Checkout private repository
       uses: actions/checkout@v3
       with:
-        repository: "${GITHUB_ACTOR}/ShalalaLala"
+        repository: "${{ env.REPO }}"
         token: ${{ secrets.PERSONAL_TOKENS }}
         path: Darwin
 
