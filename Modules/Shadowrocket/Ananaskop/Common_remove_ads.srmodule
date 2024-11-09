@@ -8,8 +8,33 @@ force-http-engine-hosts = %APPEND% :8000
 [Rule]
 AND,((OR,((PROTOCOL,QUIC), (PROTOCOL,UDP))), (DEST-PORT,443)),REJECT-NO-DROP
 AND,((URL-REGEX,^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch,extended-matching), (USER-AGENT,Cainiao4iPhone*)),REJECT
+DOMAIN,acs4baichuan.m.taobao.com,REJECT,extended-matching
+DOMAIN,adsmind.ugdtimg.com,REJECT,extended-matching
+DOMAIN,amdc.m.youku.com,REJECT,extended-matching
+DOMAIN,api.sm.cn,REJECT,extended-matching
+DOMAIN,apiv4-iyes.youku.com,REJECT,extended-matching
+DOMAIN,baichuan-sdk.alicdn.com,REJECT,extended-matching
+DOMAIN,cad.youku.com,REJECT,extended-matching
+DOMAIN,huichuan-mc.sm.cn,REJECT,extended-matching
+DOMAIN,huichuan.sm.cn,REJECT,extended-matching
+DOMAIN,iyes.youku.com,REJECT,extended-matching
+DOMAIN,m-vali.cp31.ott.cibntv.net,REJECT,extended-matching
+DOMAIN,mc.atm.youku.com,REJECT,extended-matching
+DOMAIN,nbsdk-baichuan.alicdn.com,REJECT,extended-matching
+DOMAIN,pre-acs.youku.com,REJECT,extended-matching
+DOMAIN,vali-g1.cp31.ott.cibntv.net,REJECT,extended-matching
+DOMAIN,vali-ugc.cp31.ott.cibntv.net,REJECT,extended-matching
+DOMAIN,yk-ssp.ad.youku.com,REJECT,extended-matching
+DOMAIN,ykad-data.youku.com,REJECT,extended-matching
+DOMAIN,youku-acs.m.taobao.com,REJECT,extended-matching
 #>12306
 DOMAIN,ad.12306.cn,DIRECT
+#>阿里巴巴
+DOMAIN,dns.alidns.com,REJECT,extended-matching
+DOMAIN,ems.youku.com,REJECT,extended-matching
+DOMAIN,hudong.alicdn.com,REJECT,extended-matching
+DOMAIN,ossgw.alicdn.com,REJECT,extended-matching
+DOMAIN-SUFFIX,ut.taobao.com,REJECT,extended-matching
 URL-REGEX,^http:\/\/\w{32}\.jddebug\.com\/diagnose\?,REJECT,extended-matching
 AND,((URL-REGEX,^http:\/\/((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\/d,extended-matching), (USER-AGENT,*com.xunmeng.pinduoduo*)),REJECT
 AND,((URL-REGEX,^http:\/\/\[[0-9a-fA-F:]+\]/[a-zA-Z0-9]+(\?[a-zA-Z0-9=&]+),extended-matching), (USER-AGENT,*com.xunmeng.pinduoduo*)),REJECT
