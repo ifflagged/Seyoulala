@@ -18,9 +18,6 @@ https://github.com/fmz200/wool_scripts/raw/main/QuantumultX/rewrite/cleanup.snip
 # G #
 https://github.com/githubdulong/Script/raw/master/Surge/TikTok_Surge.sgmodule
 
-# J #
-https://github.com/johnmillzer/tool/raw/main/Plugin/Umetrip_remove_ads.plugin
-
 # M #
 https://github.com/Maasea/sgmodule/raw/master/YouTube.Enhance.sgmodule
 
@@ -48,6 +45,7 @@ https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/G/%E9%AB%98%
 https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/J/%E4%BA%AC%E4%B8%9C/filter/jd.list😂https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/J/%E4%BA%AC%E4%B8%9C/rewrite/jd.conf
 https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/J/%E5%BB%BA%E8%AE%BE%E9%93%B6%E8%A1%8C/filter/ccb.list😂https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/J/%E5%BB%BA%E8%AE%BE%E9%93%B6%E8%A1%8C/rewrite/ccb.conf
 https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/M/%E9%BA%A6%E5%BD%93%E5%8A%B3/rewrite/mcd.conf😂https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/Applet/Wechat/M/%E9%BA%A6%E5%BD%93%E5%8A%B3/rewrite/mcd.conf
+https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/M/%E7%BE%8E%E5%9B%BE%E7%A7%80%E7%A7%80/filter/meitu.list😂https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/M/%E7%BE%8E%E5%9B%BE%E7%A7%80%E7%A7%80/filter/meitu.list
 https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/M/%E7%BE%8E%E5%9B%A2/filter/meituan.list😂https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/M/%E7%BE%8E%E5%9B%A2/rewrite/meituan.conf
 https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/M/%E7%B1%B3%E5%AE%B6/filter/miHome.list😂https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/M/%E7%B1%B3%E5%AE%B6/rewrite/miHome.conf
 https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/M/%E7%BE%8E%E9%A2%9C%E7%9B%B8%E6%9C%BA/filter/beautycam.list
