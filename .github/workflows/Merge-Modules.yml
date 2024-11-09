@@ -31,13 +31,17 @@ jobs:
     - name: Run remote merge script for all matching txt files
       run: |
         for file in Links/Merge-Modules-*.txt; do
+          # 下载并执行合并脚本
           script_content=$(curl -sL -H "Authorization: token ${{ secrets.PERSONAL_TOKENS }}" \
             https://github.com/${GITHUB_ACTOR}/ShalalaLala/raw/main/Scripts/Remote-Merge-Modules.py)
+
+          # 可选调试输出前几行，排查问题时可启用
           echo "$script_content" | head -n 10
 
-      # 执行下载的脚本内容
+          # 执行下载的脚本内容
           echo "$script_content" | python - "$file"
-        done 
+        done
+
     - name: Commit and push changes
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -45,23 +49,21 @@ jobs:
         # 获取当前日期，设置为北京时间 (UTC+8)
         DATE="$(TZ='Asia/Shanghai' date '+%Y-%m-%d %H:%M:%S')"
 
-        # 添加所有更改
+        # 添加 Modules 目录中的所有更改
         git add Modules/*
 
-        # 如果没有变化，跳过提交
-        if git diff --cached --quiet; then
+        # 检查是否有更改
+        if git diff --cached --quiet Modules/*; then
           echo "No changes to commit"
         else
           # 提交消息，包含动态的日期
           COMMIT_MESSAGE="Merged modules at $DATE (UTC+8)"
 
           # 确保仓库是最新的，避免冲突
-          git stash
-          git pull --rebase  # 同步远程仓库的最新更改
-          git stash pop  # 恢复之前的更改
-
-          # 再次添加文件，进行提交
-          git add Modules/*
+          git fetch origin
+          git pull --rebase origin main  # 假设默认分支是 main
+          
+          # 提交更改
           git commit -m "$COMMIT_MESSAGE"
           git push
         fi
