@@ -30,6 +30,7 @@ jobs:
         
     - name: Print GitHub Actor
       run: echo "GITHUB_ACTOR=${GITHUB_ACTOR}"
+           echo "REPOSITORY=${GITHUB_ACTOR}/ShalalaLala"
       
     - name: Checkout private repository
       uses: actions/checkout@v3
