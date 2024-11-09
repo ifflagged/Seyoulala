@@ -10,7 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     
     env:
-      REPO: "${{ github.actor }}/ShalalaLala"
+      REPOSITORY_NAME: "${{ github.actor }}/ShalalaLala"
+      REPOSITORY_PATH: "${{ github.event.repository.name }}"
           
     steps:
     - name: Checkout repository
@@ -30,23 +31,17 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install requests
-        
-    - name: Print GitHub Actor
-      run: echo "GITHUB_ACTOR=${GITHUB_ACTOR}"
-           echo "REPOSITORY=${GITHUB_ACTOR}/ShalalaLala"
-      
-    - name: Checkout private repository
-      uses: actions/checkout@v3
-      with:
-        repository: "${{ env.REPO }}"
-        token: ${{ secrets.PERSONAL_TOKENS }}
-        path: Darwin
 
     - name: Run remote merge script for all matching txt files
+      uses: actions/checkout@v3
+      with:
+        repository: "${{ env.REPOSITORY_NAME }}"
+        token: ${{ secrets.PERSONAL_TOKENS }}
+        path: ${{ env.REPOSITORY_PATH }}
       run: |
         # 使用通配符找到所有符合 Merge-Modules-*.txt 的文件并执行远程合并脚本
         for file in Links/Merge-Modules-*.txt; do
-          python Darwin/Scripts/Remote-Merge-Modules.py "$file"
+          python ${{ env.REPOSITORY_PATH }}/Scripts/Remote-Merge-Modules.py "$file"
         done
 
     - name: Commit and push changes
