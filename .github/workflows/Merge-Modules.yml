@@ -30,8 +30,9 @@ jobs:
 
     - name: Checkout private repository
       uses: actions/checkout@v3
+      run: echo "GITHUB_ACTOR=${GITHUB_ACTOR}"
       with:
-        repository: "{{ secrets.SOURCE_AUTHOR }}/ShalalaLala"
+        repository: "${GITHUB_ACTOR}/ShalalaLala"
         token: ${{ secrets.PERSONAL_TOKENS }}
         path: Darwin
 
