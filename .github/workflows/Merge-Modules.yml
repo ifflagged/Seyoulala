@@ -2,7 +2,7 @@ name: Merge Modules
 
 on:
   schedule:
-    - cron: '7 */1 * * *'
+    - cron: '7 */1 * * *'  # 每小时执行一次
   workflow_dispatch:
 
 jobs:
@@ -28,24 +28,20 @@ jobs:
         python -m pip install --upgrade pip
         pip install requests
 
+    - name: Checkout private repository
+      uses: actions/checkout@v3
+      with:
+        repository: "${GITHUB_ACTOR}/ShalalaLala"
+        token: ${{ secrets.PERSONAL_TOKENS }}
+        path: ShalalaLala
+
     - name: Run remote merge script for all matching txt files
       run: |
+        # 使用通配符找到所有符合 Merge-Modules-*.txt 的文件并执行远程合并脚本
         for file in Links/Merge-Modules-*.txt; do
-          # 下载脚本并检查状态码
-          response=$(curl -sL -w "%{http_code}" -o temp_script.py -H "Authorization: token ${{ secrets.PERSONAL_TOKENS }}" \
-            https://github.com/${GITHUB_ACTOR}/ShalalaLala/raw/main/Scripts/Remote-Merge-Modules.py)
-      
-          # 检查状态码是否为 200
-          if [ "$response" != "200" ]; then
-            echo "Failed to download script. HTTP status: $response"
-            cat temp_script.py # 输出内容帮助调试
-            exit 1
-          fi
-
-          # 执行脚本
-          python temp_script.py "$file"
+          python ShalalaLala/Scripts/Remote-Merge-Modules.py "$file"
         done
-        
+
     - name: Commit and push changes
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -53,21 +49,23 @@ jobs:
         # 获取当前日期，设置为北京时间 (UTC+8)
         DATE="$(TZ='Asia/Shanghai' date '+%Y-%m-%d %H:%M:%S')"
 
-        # 添加 Modules 目录中的所有更改
+        # 添加所有更改
         git add Modules/*
 
-        # 检查是否有更改
-        if git diff --cached --quiet Modules/*; then
+        # 如果没有变化，跳过提交
+        if git diff --cached --quiet; then
           echo "No changes to commit"
         else
           # 提交消息，包含动态的日期
           COMMIT_MESSAGE="Merged modules at $DATE (UTC+8)"
 
           # 确保仓库是最新的，避免冲突
-          git fetch origin
-          git pull --rebase origin main  # 假设默认分支是 main
-          
-          # 提交更改
+          git stash
+          git pull --rebase  # 同步远程仓库的最新更改
+          git stash pop  # 恢复之前的更改
+
+          # 再次添加文件，进行提交
+          git add Modules/*
           git commit -m "$COMMIT_MESSAGE"
           git push
         fi
