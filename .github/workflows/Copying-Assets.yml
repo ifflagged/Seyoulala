@@ -72,10 +72,8 @@ jobs:
           while IFS= read -r REPO; do
             echo "Processing repository: $REPO"
 
-            # 获取每个仓库的最新版本发布信息
             RELEASE=$(curl -s -H "Authorization: token $GITHUB_TOKEN" "https://api.github.com/repos/$REPO/releases/latest")
 
-            # 如果没有找到发布版本则跳过该仓库
             if [ -z "$RELEASE" ] || [ "$RELEASE" == "null" ] || [ "$(echo "$RELEASE" | jq -r '.message')" = "Not Found" ]; then
               echo "Release not found for $REPO, skipping."
               continue
@@ -85,25 +83,22 @@ jobs:
             echo "$RELEASE" | jq '.'
 
             ASSETS=$(echo "$RELEASE" | jq -c '.assets[]')
-
-            # Initialize sgmodule URL variable
-            sgmodule_url=""
-
+            SGMODULE_URL=""
+            
             # 遍历每个资产文件
             while IFS= read -r ASSET; do
               ASSET_NAME=$(echo "$ASSET" | jq -r '.name')
               ASSET_URL=$(echo "$ASSET" | jq -r '.url')
               ASSET_SIZE=$(echo "$ASSET" | jq -r '.size')
+              EXTENSION="${ASSET_NAME##*.}"
 
               echo "Found asset: $ASSET_NAME (Size: $ASSET_SIZE bytes)"
-
-              EXTENSION="${ASSET_NAME##*.}"
 
               # 根据仓库名称和文件扩展名判断保存的目录
               if [[ "$REPO" == "NSRingo"* ]]; then
                 if [ "$EXTENSION" = "sgmodule" ]; then
                   OUTPUT_DIR="./Modules/Surge/NSRingo"
-                  sgmodule_url="$ASSET_URL"  # Store the sgmodule URL
+                  SGMODULE_URL="$ASSET_URL"
                 elif [ "$EXTENSION" = "plugin" ]; then
                   OUTPUT_DIR="./Modules/Loon/NSRingo"
                 elif [ "$EXTENSION" = "srmodule" ]; then
@@ -115,7 +110,7 @@ jobs:
               elif [[ "$REPO" == "BiliUniverse"* ]]; then
                 if [ "$EXTENSION" = "sgmodule" ]; then
                   OUTPUT_DIR="./Modules/Surge/BiliUniverse"
-                  sgmodule_url="$ASSET_URL"  # Store the sgmodule URL
+                  SGMODULE_URL="$ASSET_URL"
                 elif [ "$EXTENSION" = "plugin" ]; then
                   OUTPUT_DIR="./Modules/Loon/BiliUniverse"
                 elif [ "$EXTENSION" = "srmodule" ]; then
@@ -127,7 +122,7 @@ jobs:
               elif [[ "$REPO" == "DualSubs"* ]]; then
                 if [ "$EXTENSION" = "sgmodule" ]; then
                   OUTPUT_DIR="./Modules/Surge/DualSubs"
-                  sgmodule_url="$ASSET_URL"  # Store the sgmodule URL
+                  SGMODULE_URL="$ASSET_URL"
                 elif [ "$EXTENSION" = "plugin" ]; then
                   OUTPUT_DIR="./Modules/Loon/DualSubs"
                 elif [ "$EXTENSION" = "srmodule" ]; then
@@ -141,12 +136,10 @@ jobs:
                 continue
               fi
 
-              # 创建相应的目录
               mkdir -p "$OUTPUT_DIR"
-
               OUTPUT_FILE="$OUTPUT_DIR/$ASSET_NAME"
-
-              # 下载文件
+              
+              # Download the .sgmodule or other files
               echo "Downloading: $ASSET_NAME"
               curl -L -H "Authorization: token $GITHUB_TOKEN" -H "Accept: application/octet-stream" "$ASSET_URL" -o "$OUTPUT_FILE.tmp"
 
@@ -155,7 +148,6 @@ jobs:
                 continue
               fi
 
-              # 计算并比较文件的校验和
               NEW_CHECKSUM=$(sha256sum "$OUTPUT_FILE.tmp" | awk '{ print $1 }')
               echo "New checksum for $ASSET_NAME: $NEW_CHECKSUM"
 
@@ -181,13 +173,13 @@ jobs:
 
             done <<< "$ASSETS"
 
-            # Check if no srmodule file exists and generate it from sgmodule_url
-            if [[ -n "$sgmodule_url" && ! -f "$OUTPUT_DIR/$ASSET_NAME.srmodule" ]]; then
-              Shadowrocket_url="http://localhost:9100/file/_start_/${sgmodule_url}/_end_/${ASSET_NAME}.sgmodule?type=surge-modul&target=shadowrocket-module&nore=true"
-              shadowrocket_output="Modules/Shadowrocket/${REPO#*/}/$ASSET_NAME.srmodule"
-
-              echo "Downloading Shadowrocket conversion for $ASSET_NAME from $Shadowrocket_url"
-              curl -A "Surge Mac/2985" -L -o "$shadowrocket_output" "$Shadowrocket_url" || echo "Failed to download $ASSET_NAME.srmodule"
+            # Generate Shadowrocket URL if .srmodule is missing but .sgmodule exists
+            if [[ -n "$SGMODULE_URL" && ! -f "$OUTPUT_DIR/${ASSET_NAME%.*}.srmodule" ]]; then
+              SHADOWROCKET_URL="http://localhost:9100/file/_start_/${SGMODULE_URL}/_end_/${ASSET_NAME%.*}.sgmodule?type=surge-modul&target=shadowrocket-module&nore=true"
+              SHADOWROCKET_OUTPUT="$OUTPUT_DIR/${ASSET_NAME%.*}.srmodule"
+              
+              echo "Downloading generated Shadowrocket file for $ASSET_NAME"
+              curl -A "Surge Mac/2985" -L -o "$SHADOWROCKET_OUTPUT" "$SHADOWROCKET_URL" || echo "Failed to download ${ASSET_NAME%.*}.srmodule"
             fi
 
           done < <(printf '%s\n' "${REPOS[@]}")
