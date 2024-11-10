@@ -6,7 +6,6 @@
 force-http-engine-hosts = %APPEND% :8000
 
 [Rule]
-AND,((OR,((PROTOCOL,QUIC), (PROTOCOL,UDP))), (DEST-PORT,443)),REJECT-NO-DROP
 AND,((URL-REGEX,^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch,extended-matching), (USER-AGENT,Cainiao4iPhone*)),REJECT
 DOMAIN,acs4baichuan.m.taobao.com,REJECT,extended-matching
 DOMAIN,adsmind.ugdtimg.com,REJECT,extended-matching
