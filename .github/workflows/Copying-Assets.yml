@@ -182,7 +182,7 @@ jobs:
                 sgmodule_url=$(echo "$ASSET" | jq -r '.browser_download_url')
 
                 # 构造 Shadowrocket_url
-                Shadowrocket_url="http://localhost:9100/file/_start_/${sgmodule_url}/_end_/${ASSET_NAME%.*}.srmodule?type=surge-modul&target=shadowrocket-module&nore=true"
+                Shadowrocket_url="http://localhost:9100/file/_start_/https://github.com/ifflagged/Neverflagged/raw/main/Surge/Module/TikTok.sgmodule/_end_/${ASSET_NAME%.*}.srmodule?type=surge-modul&target=shadowrocket-module&nore=true"
 
                 # 下载并生成 srmodule 文件，保存到 Modules/Shadowrocket 文件夹
                 echo "Generating srmodule from .sgmodule: $Shadowrocket_url"
