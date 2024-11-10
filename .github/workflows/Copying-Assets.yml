@@ -178,7 +178,8 @@ jobs:
                 SGMODULE_URL=$(echo "$RELEASE" | jq -r ".assets[] | select(.name==\"${ASSET_NAME%.*}.sgmodule\") | .browser_download_url")
                 if [ -n "$SGMODULE_URL" ]; then
                   echo "Found corresponding .sgmodule: $SGMODULE_URL"
-                  echo "$SGMODULE_URL" >> $GITHUB_ENV
+                  # Save the URL to a temporary file instead of GITHUB_ENV
+                  echo "$SGMODULE_URL" >> sgmodule_urls.txt
                 fi
               fi
 
@@ -223,7 +224,7 @@ jobs:
 
             # 下载并保存到对应的目录
             curl -A "Surge Mac/2985" -L -o "${MODULE_DIR}/${Modules_name}.srmodule" "$Shadowrocket_url" || echo "Failed to download ${Modules_name}.srmodule"
-          done < <(cat $GITHUB_ENV | grep -o 'http[^ ]*.sgmodule')
+          done < sgmodule_urls.txt
 
       - name: Commit and push changes to main branch
         if: env.ASSETS_CHANGED == 'true'
