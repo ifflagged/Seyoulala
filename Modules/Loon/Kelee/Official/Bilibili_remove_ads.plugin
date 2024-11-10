@@ -15,8 +15,8 @@ force-http-engine-hosts = :8000
 
 [Rule]
 # 开屏广告
-URL-REGEX, ^http:\/\/upos-sz-static\.bilivideo\.com\/ssaxcode\/\w{2}\/\w{2}\/\w{32}-1-SPLASH, REJECT-DICT
-URL-REGEX, ^http:\/\/[\d\.]+:8000\/v1\/resource\/\w{32}-1-SPLASH, REJECT-DICT
+URL-REGEX, "^http:\/\/upos-sz-static\.bilivideo\.com\/ssaxcode\/\w{2}\/\w{2}\/\w{32}-1-SPLASH", REJECT-DICT
+URL-REGEX, "^http:\/\/[\d\.]+:8000\/v1\/resource\/\w{32}-1-SPLASH", REJECT-DICT
 
 [Rewrite]
 # 开屏广告
