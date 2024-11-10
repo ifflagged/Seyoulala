@@ -62,7 +62,7 @@ jobs:
       - name: Install sha256sum (if not available)
         run: sudo apt-get install -y coreutils
 
-            - name: Download assets from releases
+      - name: Download assets from releases
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
