@@ -85,6 +85,7 @@ jobs:
             echo "$RELEASE" | jq '.'
 
             ASSETS=$(echo "$RELEASE" | jq -c '.assets[]')
+            SGMODULE_URL=""  # Initialize the sgmodule URL variable
 
             # 遍历每个资产文件
             while IFS= read -r ASSET; do
@@ -100,6 +101,7 @@ jobs:
               if [[ "$REPO" == "NSRingo"* ]]; then
                 if [ "$EXTENSION" = "sgmodule" ]; then
                   OUTPUT_DIR="./Modules/Surge/NSRingo"
+                  SGMODULE_URL="$ASSET_URL"  # Save sgmodule URL for later
                 elif [ "$EXTENSION" = "plugin" ]; then
                   OUTPUT_DIR="./Modules/Loon/NSRingo"
                 elif [ "$EXTENSION" = "srmodule" ]; then
@@ -111,6 +113,7 @@ jobs:
               elif [[ "$REPO" == "BiliUniverse"* ]]; then
                 if [ "$EXTENSION" = "sgmodule" ]; then
                   OUTPUT_DIR="./Modules/Surge/BiliUniverse"
+                  SGMODULE_URL="$ASSET_URL"  # Save sgmodule URL for later
                 elif [ "$EXTENSION" = "plugin" ]; then
                   OUTPUT_DIR="./Modules/Loon/BiliUniverse"
                 elif [ "$EXTENSION" = "srmodule" ]; then
@@ -122,6 +125,7 @@ jobs:
               elif [[ "$REPO" == "DualSubs"* ]]; then
                 if [ "$EXTENSION" = "sgmodule" ]; then
                   OUTPUT_DIR="./Modules/Surge/DualSubs"
+                  SGMODULE_URL="$ASSET_URL"  # Save sgmodule URL for later
                 elif [ "$EXTENSION" = "plugin" ]; then
                   OUTPUT_DIR="./Modules/Loon/DualSubs"
                 elif [ "$EXTENSION" = "srmodule" ]; then
@@ -137,7 +141,6 @@ jobs:
 
               # 创建相应的目录
               mkdir -p "$OUTPUT_DIR"
-
               OUTPUT_FILE="$OUTPUT_DIR/$ASSET_NAME"
 
               # 下载文件
@@ -172,20 +175,25 @@ jobs:
                 UPDATED_FILES+=("$ASSET_NAME")
                 ASSETS_CHANGED=true
               fi
-
-              # 处理没有 srmodule 的情况
-              if [[ "$EXTENSION" = "sgmodule" ]]; then
-                # 生成 Shadowrocket 下载链接
-                SGMODULE_URL="https://github.com/${GITHUB_REPOSITORY}/raw/main/${OUTPUT_DIR}/${ASSET_NAME}.sgmodule"
-                SHADOWROCKET_URL="http://localhost:9100/file/_start_/${SGMODULE_URL}/_end_/${ASSET_NAME%.sgmodule}.srmodule?type=surge-modul&target=shadowrocket-module&nore=true"
-
-                # 下载 Shadowrocket 模块
-                echo "Downloading Shadowrocket module for $ASSET_NAME"
-                curl -A "Surge Mac/2985" -L -o "Modules/Shadowrocket/${REPO}/${ASSET_NAME%.sgmodule}.srmodule" "$SHADOWROCKET_URL" || echo "Failed to download $ASSET_NAME.srmodule"
-              fi
-
             done <<< "$ASSETS"
 
+            # 如果没有找到 .srmodule 文件但有 .sgmodule 文件，生成 Shadowrocket URL 并下载 srmodule 文件
+            if [ -z "$(echo "$ASSETS" | jq -r '.name' | grep -E '\.srmodule$')" ] && [ ! -z "$SGMODULE_URL" ]; then
+              # 从 .sgmodule URL 中提取文件名部分
+              SGMODULE_NAME=$(basename "$SGMODULE_URL")
+              SGMODULE_EXTENSION="${SGMODULE_NAME%.*}"
+
+              # 构建 Shadowrocket 下载链接
+              SHADOWROCKET_URL="http://localhost:9100/file/_start_/${SGMODULE_URL}/_end_/${SGMODULE_EXTENSION}.sgmodule?type=surge-modul&target=shadowrocket-module&nore=true"
+
+              echo "No srmodule found, generating Shadowrocket URL for $REPO"
+              echo "Generated Shadowrocket URL: $SHADOWROCKET_URL"
+
+              # 下载 srmodule 文件
+              curl -A "Surge Mac/2985" -L -o "./Modules/Shadowrocket/$REPO/$SGMODULE_EXTENSION.srmodule" "$SHADOWROCKET_URL" || echo "Failed to download $SGMODULE_EXTENSION.srmodule"
+              UPDATED_FILES+=("$SGMODULE_EXTENSION.srmodule")
+              ASSETS_CHANGED=true
+            fi
           done < <(printf '%s\n' "${REPOS[@]}")
 
           echo "ASSETS_CHANGED=$ASSETS_CHANGED" >> $GITHUB_ENV
