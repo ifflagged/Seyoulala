@@ -46,8 +46,18 @@ jobs:
           printf "%s\n" "${REPOS[@]}" >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
 
-      - name: Install jq
-        run: sudo apt-get install -y jq
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y curl jq netcat
+
+      - name: Wait for Docker services to be ready
+        run: |
+          echo "Waiting for Docker services to be ready..."
+          for i in {1..10}; do
+            nc -z localhost 9100 && nc -z localhost 9101 && break
+            sleep 10
+          done  
 
       - name: Install sha256sum (if not available)
         run: sudo apt-get install -y coreutils
