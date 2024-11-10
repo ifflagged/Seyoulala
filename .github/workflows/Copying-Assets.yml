@@ -203,7 +203,7 @@ jobs:
             Modules_name=$(basename "$sgmodule_url" .sgmodule)
             encoded_Modules_name=$(echo "$Modules_name" | jq -sRr @uri)
             Shadowrocket_url="http://localhost:9100/file/_start_/${sgmodule_url}/_end_/${encoded_Modules_name}.sgmodule?type=loon-plugin&target=shadowrocket-module&category=${encoded_category}&nore=true"
-            curl -A "Surge Mac/2985" -L -o "Modules/Shadowrocket/$Modules_name.srmodule" "$Shadowrocket_url" || echo "Failed to download ${Modules_name}.srmodule"
+            curl -V -A "Surge Mac/2985" -L -o "Modules/Shadowrocket/$Modules_name.srmodule" "$Shadowrocket_url" || echo "Failed to download ${Modules_name}.srmodule"
           done < sgmodule_url.txt
 
       - name: Commit and push changes to main branch
