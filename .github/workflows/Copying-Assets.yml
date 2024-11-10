@@ -62,7 +62,7 @@ jobs:
       - name: Install sha256sum (if not available)
         run: sudo apt-get install -y coreutils
 
-      - name: Download assets from releases
+            - name: Download assets from releases
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -72,10 +72,10 @@ jobs:
           while IFS= read -r REPO; do
             echo "Processing repository: $REPO"
 
-            # 获取每个仓库的最新版本发布信息
+            # Get the latest release information for each repository
             RELEASE=$(curl -s -H "Authorization: token $GITHUB_TOKEN" "https://api.github.com/repos/$REPO/releases/latest")
 
-            # 如果没有找到发布版本则跳过该仓库
+            # Skip repository if no release is found
             if [ -z "$RELEASE" ] || [ "$RELEASE" == "null" ] || [ "$(echo "$RELEASE" | jq -r '.message')" = "Not Found" ]; then
               echo "Release not found for $REPO, skipping."
               continue
@@ -86,61 +86,49 @@ jobs:
 
             ASSETS=$(echo "$RELEASE" | jq -c '.assets[]')
 
-            # 遍历每个资产文件
+            # Track if .srmodule file is missing and .sgmodule file URL for fallback
+            sgmodule_url=""
+            asset_name_base=""
+
+            # Loop through each asset
             while IFS= read -r ASSET; do
               ASSET_NAME=$(echo "$ASSET" | jq -r '.name')
               ASSET_URL=$(echo "$ASSET" | jq -r '.url')
               ASSET_SIZE=$(echo "$ASSET" | jq -r '.size')
+              EXTENSION="${ASSET_NAME##*.}"
+              asset_name_base="${ASSET_NAME%.*}"
 
               echo "Found asset: $ASSET_NAME (Size: $ASSET_SIZE bytes)"
 
-              EXTENSION="${ASSET_NAME##*.}"
-
-              # 根据仓库名称和文件扩展名判断保存的目录
+              # Determine output directory based on repository and file extension
               if [[ "$REPO" == "NSRingo"* ]]; then
-                if [ "$EXTENSION" = "sgmodule" ]; then
-                  OUTPUT_DIR="./Modules/Surge/NSRingo"
-                elif [ "$EXTENSION" = "plugin" ]; then
-                  OUTPUT_DIR="./Modules/Loon/NSRingo"
-                elif [ "$EXTENSION" = "srmodule" ]; then
-                  OUTPUT_DIR="./Modules/Shadowrocket/NSRingo"
-                else
-                  echo "Skipping unsupported file type: $ASSET_NAME"
-                  continue
-                fi
+                OUTPUT_DIR="./Modules/${EXTENSION}/NSRingo"
               elif [[ "$REPO" == "BiliUniverse"* ]]; then
-                if [ "$EXTENSION" = "sgmodule" ]; then
-                  OUTPUT_DIR="./Modules/Surge/BiliUniverse"
-                elif [ "$EXTENSION" = "plugin" ]; then
-                  OUTPUT_DIR="./Modules/Loon/BiliUniverse"
-                elif [ "$EXTENSION" = "srmodule" ]; then
-                  OUTPUT_DIR="./Modules/Shadowrocket/BiliUniverse"
-                else
-                  echo "Skipping unsupported file type: $ASSET_NAME"
-                  continue
-                fi
+                OUTPUT_DIR="./Modules/${EXTENSION}/BiliUniverse"
               elif [[ "$REPO" == "DualSubs"* ]]; then
-                if [ "$EXTENSION" = "sgmodule" ]; then
-                  OUTPUT_DIR="./Modules/Surge/DualSubs"
-                elif [ "$EXTENSION" = "plugin" ]; then
-                  OUTPUT_DIR="./Modules/Loon/DualSubs"
-                elif [ "$EXTENSION" = "srmodule" ]; then
-                  OUTPUT_DIR="./Modules/Shadowrocket/DualSubs"
-                else
-                  echo "Skipping unsupported file type: $ASSET_NAME"
-                  continue
-                fi
+                OUTPUT_DIR="./Modules/${EXTENSION}/DualSubs"
               else
                 echo "Skipping unsupported repository: $REPO"
                 continue
               fi
 
-              # 创建相应的目录
-              mkdir -p "$OUTPUT_DIR"
+              # Handle supported extensions and mark missing .srmodule cases
+              if [ "$EXTENSION" = "sgmodule" ]; then
+                OUTPUT_DIR="./Modules/Surge/${REPO##*/}"
+                sgmodule_url=$(echo "$ASSET_URL" | sed 's/api.github.com/localhost:9100/g')  # Capture sgmodule URL for fallback
+              elif [ "$EXTENSION" = "srmodule" ]; then
+                OUTPUT_DIR="./Modules/Shadowrocket/${REPO##*/}"
+                sgmodule_url=""  # Reset sgmodule_url if srmodule is found
+              else
+                echo "Skipping unsupported file type: $ASSET_NAME"
+                continue
+              fi
 
+              # Create the necessary output directory
+              mkdir -p "$OUTPUT_DIR"
               OUTPUT_FILE="$OUTPUT_DIR/$ASSET_NAME"
 
-              # 下载文件
+              # Download the file
               echo "Downloading: $ASSET_NAME"
               curl -L -H "Authorization: token $GITHUB_TOKEN" -H "Accept: application/octet-stream" "$ASSET_URL" -o "$OUTPUT_FILE.tmp"
 
@@ -149,7 +137,7 @@ jobs:
                 continue
               fi
 
-              # 计算并比较文件的校验和
+              # Calculate and compare checksums
               NEW_CHECKSUM=$(sha256sum "$OUTPUT_FILE.tmp" | awk '{ print $1 }')
               echo "New checksum for $ASSET_NAME: $NEW_CHECKSUM"
 
@@ -174,6 +162,24 @@ jobs:
               fi
 
             done <<< "$ASSETS"
+
+            # If no .srmodule exists and sgmodule_url is set, download via Shadowrocket conversion
+            if [ -n "$sgmodule_url" ]; then
+              encoded_Modules_name=$(printf '%s' "$asset_name_base" | jq -sRr @uri)
+              Shadowrocket_url="http://localhost:9100/file/_start_/${sgmodule_url}/_end_/${encoded_Modules_name}.sgmodule?type=surge-modul&target=shadowrocket-module&nore=true"
+              shadowrocket_output_file="$OUTPUT_DIR/${asset_name_base}.srmodule"
+
+              echo "Downloading converted Shadowrocket module from: $Shadowrocket_url"
+              curl -L "$Shadowrocket_url" -o "$shadowrocket_output_file"
+
+              if [ -f "$shadowrocket_output_file" ]; then
+                echo "Downloaded and saved Shadowrocket module as: $shadowrocket_output_file"
+                UPDATED_FILES+=("${asset_name_base}.srmodule")
+                ASSETS_CHANGED=true
+              else
+                echo "Failed to download converted Shadowrocket module."
+              fi
+            fi
 
           done < <(printf '%s\n' "${REPOS[@]}")
 
@@ -237,23 +243,6 @@ jobs:
                   echo "Replacing JS links in $shadowrocket_file"
                   sed -i "s|$js_link|$github_js_url|g" "$shadowrocket_file"
                 fi
-
-                if [ -f "$shadowrocket_file" ]; then
-                  echo "Replacing JS links in $shadowrocket_file"
-                  sed -i "s|$js_link|$github_js_url|g" "$shadowrocket_file"
-                else
-                  echo "Shadowrocket file not found, downloading $sgmodule_file"
-                  # 如果不存在 Shadowrocket 文件，则构造下载链接并下载
-                  sgmodule_url="https://github.com/${GITHUB_REPOSITORY}/raw/main/${sgmodule_file}"
-                  encoded_category=$(echo "$author" | base64)
-                  encoded_Modules_name=$(basename "$sgmodule_file" .sgmodule | base64)
-                  Shadowrocket_url="http://localhost:9100/file/_start_/${sgmodule_url}/_end_/${encoded_Modules_name}.sgmodule?type=surge-modul&target=shadowrocket-module&category=${encoded_category}&nore=true"
-
-                  # 下载并保存为 Shadowrocket 文件
-                  echo "Downloading Shadowrocket file from $Shadowrocket_url"
-                  curl -A "Surge Mac/2985" -L "$Shadowrocket_url" -o "Modules/Shadowrocket/$author/$module_folder.srmodule" || echo "Failed to download $Shadowrocket_url"
-                fi
-
               else
                 echo "Failed to download $js_link, skipping..."
               fi
