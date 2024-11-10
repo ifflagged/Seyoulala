@@ -200,7 +200,7 @@ jobs:
           encoded_category=$(echo "$category" | jq -sRr @uri)
           while read -r sgmodule_url; do
             # 提取模块名
-            Modules_name=$(basename "$sgmodule_url" .plugin)
+            Modules_name=$(basename "$sgmodule_url" .sgmodule)
             encoded_Modules_name=$(echo "$Modules_name" | jq -sRr @uri)
 
             # 根据不同的仓库或模块名称创建目录结构
@@ -219,7 +219,7 @@ jobs:
             mkdir -p "$MODULE_DIR"
 
             # 生成 Shadowrocket 模块的 URL
-            Shadowrocket_url="http://localhost:9100/file/_start_/${sgmodule_url}/_end_/${encoded_Modules_name}.sgmodule?type=loon-plugin&target=shadowrocket-module&category=${encoded_category}&nore=true"
+            Shadowrocket_url="http://localhost:9100/file/_start_/${sgmodule_url}/_end_/${encoded_Modules_name}.sgmodule?type=surge-sgmodule&target=shadowrocket-module&category=${encoded_category}&nore=true"
 
             # 输出下载的 URL
             echo "Downloading Shadowrocket module from: $Shadowrocket_url"
