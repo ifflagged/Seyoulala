@@ -23,15 +23,15 @@ IP-CIDR,59.111.239.61/32,REJECT,no-resolve
 IP-CIDR,59.111.239.62/32,REJECT,no-resolve
 IP-CIDR,115.236.121.51/32,REJECT,no-resolve
 IP-CIDR,115.236.121.195/32,REJECT,no-resolve
-URL-REGEX,"^http:\/\/81\.69\.130\.131\/d",REJECT
-URL-REGEX,"^http:\/\/101\.35\.204\.35\/d",REJECT
-URL-REGEX,"^http:\/\/101\.35\.212\.35\/d",REJECT
-URL-REGEX,"^http:\/\/114\.110\.96\.6\/d",REJECT
-URL-REGEX,"^http:\/\/114\.110\.96\.26\/d",REJECT
-URL-REGEX,"^http:\/\/114\.110\.97\.30\/d",REJECT
-URL-REGEX,"^http:\/\/114\.110\.97\.97\/d",REJECT
-URL-REGEX,"^http:\/\/121\.5\.84\.85\/d",REJECT
-URL-REGEX,"^http:\/\/\[2402:4e00:1411:201:0:9964:ba21:5a41\]\/d",REJECT
+URL-REGEX,^http:\/\/81\.69\.130\.131\/d,REJECT
+URL-REGEX,^http:\/\/101\.35\.204\.35\/d,REJECT
+URL-REGEX,^http:\/\/101\.35\.212\.35\/d,REJECT
+URL-REGEX,^http:\/\/114\.110\.96\.6\/d,REJECT
+URL-REGEX,^http:\/\/114\.110\.96\.26\/d,REJECT
+URL-REGEX,^http:\/\/114\.110\.97\.30\/d,REJECT
+URL-REGEX,^http:\/\/114\.110\.97\.97\/d,REJECT
+URL-REGEX,^http:\/\/121\.5\.84\.85\/d,REJECT
+URL-REGEX,^http:\/\/\[2402:4e00:1411:201:0:9964:ba21:5a41\]\/d,REJECT
 AND,((DOMAIN-KEYWORD,-ad-),(DOMAIN-SUFFIX,byteimg.com)),REJECT
 #AND, ((DOMAIN-KEYWORD, -sign-), (DOMAIN-SUFFIX, tiktokcdn.com)), REJECT
 AND,((DOMAIN-KEYWORD,-ttam-),(DOMAIN-SUFFIX,ibyteimg.com)),REJECT
@@ -54,7 +54,7 @@ AND,((DOMAIN-KEYWORD,api),(DOMAIN-KEYWORD,-log-),(DOMAIN-SUFFIX,pangle.io)),REJE
 AND,((DOMAIN-KEYWORD,api),(DOMAIN-KEYWORD,-dual-event-),(DOMAIN-SUFFIX,pangle.io)),REJECT
 AND,((DOMAIN-KEYWORD,api),(DOMAIN-KEYWORD,pangolin),(DOMAIN-SUFFIX,sgsnssdk.com)),REJECT
 AND,((DOMAIN-KEYWORD,ads),(DOMAIN-KEYWORD,-normal-lq),(DOMAIN-SUFFIX,zijieapi.com)),REJECT
-URL-REGEX,"^http:\/\/p\d+-be-pack-sign\.pglstatp-toutiao\.com\/(ad-app-package|web\.business\.image)\/",REJECT
+URL-REGEX,^http:\/\/p\d+-be-pack-sign\.pglstatp-toutiao\.com\/(ad-app-package|web\.business\.image)\/,REJECT
 DOMAIN,mon.zijieapi.com,REJECT
 DOMAIN,lf-ad-ies.bytecdn.cn,REJECT
 DOMAIN,i.snssdk.com,REJECT
