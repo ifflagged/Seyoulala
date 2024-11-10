@@ -2,7 +2,7 @@ name: Mirror Release Assets
 
 on:
   schedule:
-    - cron: '5,30,55 * * * *'  # 每小时的第 5、30、55 分钟运行
+    - cron: '7,30 * * * *'
   workflow_dispatch:  # 也可以手动触发工作流
 
 jobs:
@@ -10,6 +10,12 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write  # 对仓库内容的写权限
+    services:
+      docker:
+        image: xream/script-hub:latest
+        ports:
+          - 9100:9100
+          - 9101:9101 
     steps:
       - name: Checkout main branch
         uses: actions/checkout@v3
@@ -220,6 +226,22 @@ jobs:
                 if [ -f "$shadowrocket_file" ]; then
                   echo "Replacing JS links in $shadowrocket_file"
                   sed -i "s|$js_link|$github_js_url|g" "$shadowrocket_file"
+                fi
+
+                if [ -f "$shadowrocket_file" ]; then
+                  echo "Replacing JS links in $shadowrocket_file"
+                  sed -i "s|$js_link|$github_js_url|g" "$shadowrocket_file"
+                else
+                  echo "Shadowrocket file not found, downloading $sgmodule_file"
+                  # 如果不存在 Shadowrocket 文件，则构造下载链接并下载
+                  sgmodule_url="https://github.com/${GITHUB_REPOSITORY}/raw/main/${sgmodule_file}"
+                  encoded_category=$(echo "$author" | base64)
+                  encoded_Modules_name=$(basename "$sgmodule_file" .sgmodule | base64)
+                  Shadowrocket_url="http://localhost:9100/file/_start_/${sgmodule_url}/_end_/${encoded_Modules_name}.sgmodule?type=surge-modul&target=shadowrocket-module&category=${encoded_category}&nore=true"
+
+                  # 下载并保存为 Shadowrocket 文件
+                  echo "Downloading Shadowrocket file from $Shadowrocket_url"
+                  curl -A "Surge Mac/2985" -L "$Shadowrocket_url" -o "Modules/Shadowrocket/$author/$module_folder.srmodule" || echo "Failed to download $Shadowrocket_url"
                 fi
 
               else
