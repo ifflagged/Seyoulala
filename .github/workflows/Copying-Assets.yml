@@ -187,7 +187,7 @@ jobs:
                 # 下载并生成 srmodule 文件，保存到 Modules/Shadowrocket 文件夹
                 echo "Generating srmodule from .sgmodule: $Shadowrocket_url"
                 mkdir -p "./Modules/Shadowrocket/${REPO}"
-                curl -A "Surge Mac/2985" -L -o "./Modules/Shadowrocket/${REPO}/${ASSET_NAME%.*}.srmodule" "$Shadowrocket_url" || echo "Failed to download ${ASSET_NAME%.*}.srmodule"
+                curl -v -A "Surge Mac/2985" -L -o "./Modules/Shadowrocket/${REPO}/${ASSET_NAME%.*}.srmodule" "$Shadowrocket_url" || echo "Failed to download ${ASSET_NAME%.*}.srmodule"
 
                 GENERATED_SRMODULE=true
                 UPDATED_FILES+=("${REPO}/${ASSET_NAME%.*}.srmodule")
