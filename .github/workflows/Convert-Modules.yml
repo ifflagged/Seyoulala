@@ -96,6 +96,7 @@ jobs:
               ! -path "Modules/Surge/NSRingo/*" \
               ! -path "Modules/Surge/BiliUniverse/*" \
               ! -path "Modules/Surge/DualSubs/*" \
+              ! -path "Modules/Surge/VirgilClyne/*" \
               ! -path "*/Beta/*"); do
             # 获取当前文件所在的文件夹路径
             author=$(dirname "$sgmodule_file" | sed 's|^Modules/Surge/||')
