@@ -753,7 +753,7 @@ http-response ^https?:\/\/gg\.caixin\.com\/s\?z=caixin&op=1&c=3362 script-path=h
 # > dongqiudi
 http-request ^https?:\/\/ap\.dongqiudi\.com\/plat\/v4 script-path=http://127.0.0.1:9100/convert/_start_/https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ddgksf2013/StartUp/dongqiudi.js/_end_/dongqiudi.js?type=mock&target-app=loon-plugin, timeout=60, tag=dongqiudi
 
-#http-response ^https:\/\/api\.gamer\.com\.tw\/mobile_app\/anime\/v\d\/(token|m3u8).php\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ddgksf2013/StartUp/BahamutAnimeAds.js, requires-body=true, timeout=60, tag=BahamutAnimeAds
+#http-response ^https:\/\/api\.gamer\.com\.tw\/mobile_app\/anime\/v\d\/(token|m3u8).php\? script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Bahamut/BahamutAnimeAds.js, requires-body=true, timeout=60, tag=BahamutAnimeAds
 
 # > dingdongmaicai
 http-response ^https?:\/\/maicai\.api\.ddxq\.mobi\/advert\/getAd script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ddgksf2013/StartUp/replace-body.js, requires-body=true, timeout=30, tag=replaceBody, argument=rt_time%22%3A%5Cd%7B2%7D-%3Ert_time%22%3A40
@@ -813,9 +813,9 @@ http-response ^https?:\/\/api\.jk\.cn\/m\.api script-path=https://github.com/iff
 http-response ^https?:\/\/apps\.teamair\.cn\/app\/version script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ddgksf2013/StartUp/qidian.js, requires-body=true, timeout=60, tag=qidian
 
 # > spotify pro
-#http-response ^https:\/\/spclient\.wg\.spotify\.com\/(bootstrap\/v1\/bootstrap|user-customization-service\/v1\/customize)$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ddgksf2013/StartUp/spotify-proto.js, requires-body=true, binary-body-mode=true, timeout=60, tag=spotify-proto
+#http-response ^https:\/\/spclient\.wg\.spotify\.com\/(bootstrap\/v1\/bootstrap|user-customization-service\/v1\/customize)$ script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/spotify-proto.js, requires-body=true, binary-body-mode=true, timeout=60, tag=spotify-proto
 
-#http-request ^https:\/\/spclient\.wg\.spotify\.com\/(artistview\/v1\/artist|album-entity-view\/v2\/album)\/ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ddgksf2013/StartUp/spotify-json.js, timeout=60, tag=spotify-json
+#http-request ^https:\/\/spclient\.wg\.spotify\.com\/(artistview\/v1\/artist|album-entity-view\/v2\/album)\/ script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/spotify-json.js, timeout=60, tag=spotify-json
 
 http-response https://ccsp-egmas.sf-express.com/cx-app-base/base/app/ad/queryInfoFlow script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ddgksf2013/StartUp/shunfeng_json.js, requires-body=true, timeout=60, tag=shunfeng_json
 
