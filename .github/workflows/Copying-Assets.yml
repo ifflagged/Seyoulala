@@ -277,29 +277,30 @@ jobs:
             done
           done
 
-      - name: Commit and push changes to main branch
-        if: env.ASSETS_CHANGED == 'true'
+      - name: Commit and push changes
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          set +e  # 禁用错误时退出
-          git config --global user.name "${GITHUB_ACTOR}"
-          git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-      
+          # 获取当前日期，设置为北京时间 (UTC+8)
           DATE="$(TZ='Asia/Shanghai' date '+%Y-%m-%d %H:%M:%S')"
-      
-          git add .
-      
-          COMMIT_MESSAGE="Synched assets at $DATE (UTC+8)"
-      
-          # 检查是否有更改，如果有更改则提交
+    
+          # 添加所有更改
+          git add Modules/*
+    
+          # 如果没有变化，跳过提交
           if git diff --cached --quiet; then
-            echo "No changes to commit."
+            echo "No changes to commit"
           else
+            # 提交消息，包含动态的日期
+            COMMIT_MESSAGE="Synched assets at $DATE (UTC+8))"
+      
+            # 确保仓库是最新的，避免冲突
+            git stash
+            git pull --rebase  # 同步远程仓库的最新更改
+            git stash pop  # 恢复之前的更改
+      
+            # 再次添加文件，进行提交
+            git add Modules/*
             git commit -m "$COMMIT_MESSAGE"
-            git push origin main
+            git push
           fi
-
-      - name: No changes detected
-        if: env.ASSETS_CHANGED != 'true'
-        run: echo "No changes detected. Workflow will exit without committing."
