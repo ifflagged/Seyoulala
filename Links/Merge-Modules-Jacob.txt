@@ -2,14 +2,17 @@
 https://github.com/ifflagged/Neverflagged/raw/main/Surge/Module/DNS.sgmodule # Copy
 
 # General Settings Enhanced (iOS)
-https://github.com/VirgilClyne/GetSomeFries/raw/main/sgmodule/General.sgmodule # Copy
+https://github.com/VirgilClyne/GetSomeFries/raw/main/sgmodule/General.sgmodule
 https://github.com/VirgilClyne/GetSomeFries/raw/main/plugin/General.plugin
+Modules/Shadowrocket/VirgilClyne/General.srmodule
 # Block HTTPDNS
-https://github.com/VirgilClyne/GetSomeFries/raw/main/sgmodule/HTTPDNS.Block.sgmodule # Copy
+https://github.com/VirgilClyne/GetSomeFries/raw/main/sgmodule/HTTPDNS.Block.sgmodule
 https://github.com/VirgilClyne/GetSomeFries/raw/main/plugin/HTTPDNS.Block.plugin
+Modules/Shadowrocket/VirgilClyne/HTTPDNS.Block.srmodule
 # DNS for Router and Companys
-https://github.com/VirgilClyne/GetSomeFries/raw/main/sgmodule/DNS.sgmodule # Copy
+https://github.com/VirgilClyne/GetSomeFries/raw/main/sgmodule/DNS.sgmodule
 https://github.com/VirgilClyne/GetSomeFries/raw/main/plugin/DNS.plugin
+Modules/Shadowrocket/VirgilClyne/DNS.srmodule
 
 Modules/Surge/NSRingo/WeatherKit.sgmodule # Loon
 Modules/Surge/NSRingo/Location.sgmodule # Loon,Shadowrocket
@@ -20,8 +23,8 @@ Modules/Surge/ifflagged/Common.sgmodule # Loon,Shadowrocket
 
 Modules/Surge/Maasea/YouTube.Enhance.sgmodule # Loon,Shadowrocket
 # Modules/Surge/DualSubs/DualSubs.Universal.sgmodule # Loon,Shadowrocket
-Modules/Surge/DualSubs/DualSubs.Spotify.sgmodule # Loon
-# Modules/Surge/DualSubs/DualSubs.YouTube.sgmodule # Loon
+Modules/Surge/DualSubs/DualSubs.Spotify.sgmodule # Loon,Shadowrocket
+# Modules/Surge/DualSubs/DualSubs.YouTube.sgmodule # Loon,Shadowrocket
 
 Modules/Surge/Kelee/BlockAdvertisers.sgmodule # Loon,Shadowrocket
 Modules/Surge/Kelee/12306_remove_ads.sgmodule # Loon,Shadowrocket
