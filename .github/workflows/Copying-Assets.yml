@@ -1,12 +1,12 @@
-name: Mirror Release Assets
+name: Extract and Process Modules
 
 on:
   schedule:
-    - cron: '7,30 * * * *'
+    - cron: '5,30 * * * *'
   workflow_dispatch:
 
 jobs:
-  Downloading_assets:
+  Converting:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -17,10 +17,13 @@ jobs:
           - 9100:9100
           - 9101:9101
     steps:
-      - name: Checkout main branch
+      - name: Checkout repository
         uses: actions/checkout@v3
-        with:
-          ref: main
+
+      - name: Set up Git
+        run: |
+          git config --global user.name "${GITHUB_ACTOR}"
+          git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
 
       - name: Set repository lists
         run: |
@@ -59,42 +62,48 @@ jobs:
             sleep 10
           done
 
-      - name: Install sha256sum (if not available)
-        run: sudo apt-get install -y coreutils
-
       - name: Download assets from releases
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           ASSETS_CHANGED=false
           UPDATED_FILES=()
-
-          # Temporary file to store sgmodule URLs that need Shadowrocket conversion
-          touch sgmodule_url.txt
+          SGMODULE_URLS=()
 
           while IFS= read -r REPO; do
             echo "Processing repository: $REPO"
 
-            # Get release information
+            # 获取每个仓库的最新版本发布信息
             RELEASE=$(curl -s -H "Authorization: token $GITHUB_TOKEN" "https://api.github.com/repos/$REPO/releases/latest")
 
+            # 如果没有找到发布版本则跳过该仓库
             if [ -z "$RELEASE" ] || [ "$RELEASE" == "null" ] || [ "$(echo "$RELEASE" | jq -r '.message')" = "Not Found" ]; then
               echo "Release not found for $REPO, skipping."
               continue
             fi
 
+            echo "Release data for $REPO:"
+            echo "$RELEASE" | jq '.'
+
             ASSETS=$(echo "$RELEASE" | jq -c '.assets[]')
 
-            # Process each asset
+            # 遍历每个资产文件
             while IFS= read -r ASSET; do
               ASSET_NAME=$(echo "$ASSET" | jq -r '.name')
               ASSET_URL=$(echo "$ASSET" | jq -r '.url')
               ASSET_SIZE=$(echo "$ASSET" | jq -r '.size')
-              BROWSER_DOWNLOAD_URL=$(echo "$ASSET" | jq -r '.browser_download_url')
 
-              EXTENSION="${ASSET_NAME##*.}"
               echo "Found asset: $ASSET_NAME (Size: $ASSET_SIZE bytes)"
 
+              EXTENSION="${ASSET_NAME##*.}"
+
+              # 如果是 sgmodule 文件并且没有找到 srmodule 文件，保存 sgmodule_url
+              if [ "$EXTENSION" = "sgmodule" ] && ! echo "$RELEASE" | jq -e '.assets[] | select(.name | endswith("srmodule"))' > /dev/null; then
+                sgmodule_url=$(echo "$ASSET" | jq -r '.browser_download_url')
+                SGMODULE_URLS+=("$sgmodule_url")
+              fi
+
+              # 根据仓库名称和文件扩展名判断保存的目录
               if [[ "$REPO" == "NSRingo"* ]]; then
                 if [ "$EXTENSION" = "sgmodule" ]; then
                   OUTPUT_DIR="./Modules/Surge/NSRingo"
@@ -103,6 +112,7 @@ jobs:
                 elif [ "$EXTENSION" = "srmodule" ]; then
                   OUTPUT_DIR="./Modules/Shadowrocket/NSRingo"
                 else
+                  echo "Skipping unsupported file type: $ASSET_NAME"
                   continue
                 fi
               elif [[ "$REPO" == "BiliUniverse"* ]]; then
@@ -113,6 +123,7 @@ jobs:
                 elif [ "$EXTENSION" = "srmodule" ]; then
                   OUTPUT_DIR="./Modules/Shadowrocket/BiliUniverse"
                 else
+                  echo "Skipping unsupported file type: $ASSET_NAME"
                   continue
                 fi
               elif [[ "$REPO" == "DualSubs"* ]]; then
@@ -123,98 +134,171 @@ jobs:
                 elif [ "$EXTENSION" = "srmodule" ]; then
                   OUTPUT_DIR="./Modules/Shadowrocket/DualSubs"
                 else
+                  echo "Skipping unsupported file type: $ASSET_NAME"
                   continue
                 fi
               else
+                echo "Skipping unsupported repository: $REPO"
                 continue
               fi
 
+              # 创建相应的目录
               mkdir -p "$OUTPUT_DIR"
+
               OUTPUT_FILE="$OUTPUT_DIR/$ASSET_NAME"
 
-              # Download the file
+              # 下载文件
+              echo "Downloading: $ASSET_NAME"
               curl -L -H "Authorization: token $GITHUB_TOKEN" -H "Accept: application/octet-stream" "$ASSET_URL" -o "$OUTPUT_FILE.tmp"
 
               if [ ! -f "$OUTPUT_FILE.tmp" ]; then
+                echo "Failed to download $ASSET_NAME"
                 continue
               fi
 
-              # Checksum validation
+              # 计算并比较文件的校验和
               NEW_CHECKSUM=$(sha256sum "$OUTPUT_FILE.tmp" | awk '{ print $1 }')
+              echo "New checksum for $ASSET_NAME: $NEW_CHECKSUM"
 
               if [ -f "$OUTPUT_FILE" ]; then
                 EXISTING_CHECKSUM=$(sha256sum "$OUTPUT_FILE" | awk '{ print $1 }')
+                echo "Existing checksum for $ASSET_NAME: $EXISTING_CHECKSUM"
+
                 if [ "$NEW_CHECKSUM" = "$EXISTING_CHECKSUM" ]; then
+                  echo "No changes in $ASSET_NAME"
                   rm "$OUTPUT_FILE.tmp"
                 else
+                  echo "Updating $ASSET_NAME"
                   mv "$OUTPUT_FILE.tmp" "$OUTPUT_FILE"
                   UPDATED_FILES+=("$ASSET_NAME")
                   ASSETS_CHANGED=true
                 fi
               else
+                echo "Adding new file $ASSET_NAME"
                 mv "$OUTPUT_FILE.tmp" "$OUTPUT_FILE"
                 UPDATED_FILES+=("$ASSET_NAME")
                 ASSETS_CHANGED=true
-              fi
-
-              # If `srmodule` file doesn't exist, save the `browser_download_url` to a file
-              if [[ "$EXTENSION" == "sgmodule" && ! -f "$OUTPUT_DIR/$(basename "$ASSET_NAME" .sgmodule).srmodule" ]]; then
-                echo "$BROWSER_DOWNLOAD_URL" >> sgmodule_url.txt
               fi
 
             done <<< "$ASSETS"
 
           done < <(printf '%s\n' "${REPOS[@]}")
 
+          # 将 sgmodule_url 保存到 sgmodule_url.txt 文件
+          if [ ${#SGMODULE_URLS[@]} -gt 0 ]; then
+            echo "Saving sgmodule URLs to sgmodule_url.txt"
+            printf "%s\n" "${SGMODULE_URLS[@]}" > sgmodule_url.txt
+          fi
+
           echo "ASSETS_CHANGED=$ASSETS_CHANGED" >> $GITHUB_ENV
           echo "UPDATED_FILES<<EOF" >> $GITHUB_ENV
           printf "%s\n" "${UPDATED_FILES[@]}" >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
 
-      - name: Create unavailable modules
+      - name: Process Links and Download Files
         run: |
           category="Jacob"
           encoded_category=$(echo "$category" | jq -sRr @uri)
+          
+          # 处理每个链接
+          while read -r module_link; do
+            # 获取作者名（假设作者在 URL 中的第4部分）
+            author=$(echo "$module_link" | cut -d'/' -f4)
+            filename_noext=$(basename "$module_link" | sed 's/\(.*\)\..*/\1/')
+            encoded_filename=$(echo "$filename_noext" | jq -sRr @uri)
 
-          while read -r sgmodule_url; do
-            # Extract the module name from the URL
-            Modules_name=$(basename "$sgmodule_url" .sgmodule)
-            encoded_Modules_name=$(echo "$Modules_name" | jq -sRr @uri)
+            # 构建模块的 URL
+            Shadowrocket_url="http://localhost:9100/file/_start_/${module_link}/_end_/${encoded_filename}.sgmodule?type=surge-module&target=shadowrocket-module&category=${encoded_category}&nore=true"
 
-            # Determine the output directory based on the repository URL
-            if [[ "$sgmodule_url" == *"NSRingo"* ]]; then
-              OUTPUT_DIR="./Modules/Shadowrocket/NSRingo"
-            elif [[ "$sgmodule_url" == *"BiliUniverse"* ]]; then
-              OUTPUT_DIR="./Modules/Shadowrocket/BiliUniverse"
-            elif [[ "$sgmodule_url" == *"DualSubs"* ]]; then
-              OUTPUT_DIR="./Modules/Shadowrocket/DualSubs"
-            else
-              echo "Unknown repository in URL: $sgmodule_url, skipping."
-              continue
-            fi
-
-            # Create the output directory if it doesn't exist
-            mkdir -p "$OUTPUT_DIR"
-
-            # Construct the Shadowrocket download URL
-            Shadowrocket_url="http://localhost:9100/file/_start_/${sgmodule_url}/_end_/${encoded_Modules_name}.sgmodule?type=loon-plugin&target=shadowrocket-module&category=${encoded_category}&nore=true"
-            
-            # Download the srmodule file
-            echo "Downloading Shadowrocket module from: $Shadowrocket_url"
-            curl -A "Surge Mac/2985" -L -o "${OUTPUT_DIR}/${Modules_name}.srmodule" "$Shadowrocket_url" || echo "Failed to download ${Modules_name}.srmodule"
+            # 下载各模块文件
+            echo "Downloading Shadowrocket file: $Shadowrocket_url"
+            curl -A "Surge Mac/2985" -L -o "Modules/Shadowrocket/$author/$filename_noext.srmodule" "$Shadowrocket_url" || echo "Failed to download $filename_noext.srmodule"
           done < sgmodule_url.txt
 
       - name: Find and replace external JS resources in .sgmodule, .plugin, and .srmodule files
-        continue-on-error: true
+        continue-on-error: true  # 确保步骤在部分失败时继续执行
         run: |
-          # (existing JS replacement logic here...)
+          # 基础 JS 文件存放目录
+          js_base_url="https://github.com/${GITHUB_REPOSITORY}/raw/main/Modules/JS"
+
+          # 创建目标目录
+          mkdir -p Modules/JS/NSRingo
+          mkdir -p Modules/JS/BiliUniverse
+          mkdir -p Modules/JS/DualSubs
+
+          # 查找 .sgmodule 文件中的外部 JS 链接
+          for sgmodule_file in $(find Modules/Surge/NSRingo Modules/Surge/BiliUniverse Modules/Surge/DualSubs \
+                                      -path "*/Beta/*" -prune -o \
+                                      -type f -name "*.sgmodule" -print); do
+            # 获取当前文件所在的文件夹路径，去掉 "Modules/Surge/" 前缀
+            author=$(dirname "$sgmodule_file" | sed 's|^Modules/Surge/||')
+            module_folder=$(basename "$sgmodule_file" .sgmodule)
+            echo "Processing $sgmodule_file from folder $author for JS links"
+
+            # 查找文件中的 .js 链接
+            js_links=$(grep -oP 'https?://[^ ]+\.js' "$sgmodule_file" || echo "")
+
+            # 下载和替换每个 JS 链接
+            for js_link in $js_links; do
+              js_filename=$(basename "$js_link")
+              local_js_path="Modules/JS/$author/$module_folder/$js_filename"
+              github_js_url="$js_base_url/$author/$module_folder/$js_filename"
+              
+              # 创建文件夹（如果不存在）
+              mkdir -p "$(dirname "$local_js_path")"
+
+              # 使用指定的 User-Agent 下载 .js 文件
+              echo "Downloading $js_link to $local_js_path"
+              if curl -A "Surge Mac/2985" -L -o "$local_js_path" "$js_link"; then
+                echo "Download successful for $js_link"
+                
+                echo "Replacing $js_link with $github_js_url in $sgmodule_file"
+                sed -i "s|$js_link|$github_js_url|g" "$sgmodule_file"
+
+                # 获取对应的 Loon 和 Shadowrocket 插件文件名
+                loon_file="Modules/Loon/$author/$module_folder.plugin"
+                shadowrocket_file="Modules/Shadowrocket/$author/$module_folder.srmodule"
+
+                # 如果对应的 Loon 插件文件存在，则替换其中的 JS 链接
+                if [ -f "$loon_file" ]; then
+                  echo "Replacing JS links in $loon_file"
+                  sed -i "s|$js_link|$github_js_url|g" "$loon_file"
+                fi
+                
+                # 如果对应的 Shadowrocket 插件文件存在，则替换其中的 JS 链接
+                if [ -f "$shadowrocket_file" ]; then
+                  echo "Replacing JS links in $shadowrocket_file"
+                  sed -i "s|$js_link|$github_js_url|g" "$shadowrocket_file"
+                fi
+
+              else
+                echo "Failed to download $js_link, skipping..."
+              fi
+            done
+          done
 
       - name: Commit and push changes to main branch
         if: env.ASSETS_CHANGED == 'true'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          # (existing commit and push logic here...)
+          set +e  # 禁用错误时退出
+          git config --global user.name "${GITHUB_ACTOR}"
+          git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+      
+          DATE="$(TZ='Asia/Shanghai' date '+%Y-%m-%d %H:%M:%S')"
+      
+          git add .
+      
+          COMMIT_MESSAGE="Synched assets at $DATE (UTC+8)"
+      
+          # 检查是否有更改，如果有更改则提交
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "$COMMIT_MESSAGE"
+            git push origin main
+          fi
 
       - name: No changes detected
         if: env.ASSETS_CHANGED != 'true'
