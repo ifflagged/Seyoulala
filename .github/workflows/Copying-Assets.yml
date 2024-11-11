@@ -279,9 +279,10 @@ jobs:
           mkdir -p Modules/JS/NSRingo
           mkdir -p Modules/JS/BiliUniverse
           mkdir -p Modules/JS/DualSubs
+          mkdir -p Modules/JS/VirgilClyne
 
           # 查找 .sgmodule 文件中的外部 JS 链接
-          for sgmodule_file in $(find Modules/Surge/NSRingo Modules/Surge/BiliUniverse Modules/Surge/DualSubs \
+          for sgmodule_file in $(find Modules/Surge/NSRingo Modules/Surge/BiliUniverse Modules/Surge/DualSubs Modules/Surge/VirgilClyne \
                                       -path "*/Beta/*" -prune -o \
                                       -type f -name "*.sgmodule" -print); do
             # 获取当前文件所在的文件夹路径，去掉 "Modules/Surge/" 前缀
