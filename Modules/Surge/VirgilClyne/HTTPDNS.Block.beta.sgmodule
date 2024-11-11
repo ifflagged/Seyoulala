@@ -72,7 +72,7 @@ DOMAIN,httpdns.meituan.com,REJECT,extended-matching,pre-matching
 DOMAIN,httpdnsvip.meituan.com,REJECT,extended-matching,pre-matching
 
 # NetEase
-# refer: https://github.com/ifflagged/Darwin/raw/main/Modules/JS/VirgilClyne/HTTPDNS.Block.beta/conf.jsp
+# refer: https://lbs.netease.im/lbs/conf.jsp
 DOMAIN,httpdns.yunxindns.com,REJECT,extended-matching,pre-matching
 DOMAIN,httpdns.n.netease.com,REJECT,extended-matching,pre-matching
 DOMAIN,httpdns.music.163.com,REJECT,extended-matching,pre-matching
