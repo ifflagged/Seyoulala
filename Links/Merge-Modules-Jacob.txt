@@ -2,13 +2,13 @@
 https://github.com/ifflagged/Neverflagged/raw/main/Surge/Module/DNS.sgmodule # Copy
 
 # General Settings Enhanced (iOS)
-https://github.com/VirgilClyne/GetSomeFries/raw/main/sgmodule/General.sgmodule
+https://github.com/VirgilClyne/GetSomeFries/raw/main/sgmodule/General.sgmodule # Copy
 https://github.com/VirgilClyne/GetSomeFries/raw/main/plugin/General.plugin
 # Block HTTPDNS
 https://github.com/VirgilClyne/GetSomeFries/raw/main/sgmodule/HTTPDNS.Block.sgmodule # Copy
 https://github.com/VirgilClyne/GetSomeFries/raw/main/plugin/HTTPDNS.Block.plugin
 # DNS for Router and Companys
-https://github.com/VirgilClyne/GetSomeFries/raw/main/sgmodule/DNS.sgmodule
+https://github.com/VirgilClyne/GetSomeFries/raw/main/sgmodule/DNS.sgmodule # Copy
 https://github.com/VirgilClyne/GetSomeFries/raw/main/plugin/DNS.plugin
 
 Modules/Surge/NSRingo/WeatherKit.sgmodule # Loon
