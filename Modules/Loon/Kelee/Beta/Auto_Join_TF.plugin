@@ -15,11 +15,11 @@
 DOMAIN,testflight.apple.com,PROXY
 
 [Script]
-http-request ^https?:\/\/testflight\.apple\.com\/v3\/accounts\/.*\/apps$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Auto_Join_TF/TF_keys.js, tag=获取账号令牌
+http-request ^https?:\/\/testflight\.apple\.com\/v3\/accounts\/.*\/apps$ script-path=https://kelee.one/Resource/Script/TestFlight/TF_keys.js, tag=获取账号令牌
 
-http-request ^https://testflight.apple.com/join/(.*) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Auto_Join_TF/TF_keys.js, tag=应用ID捕获
+http-request ^https://testflight.apple.com/join/(.*) script-path=https://kelee.one/Resource/Script/TestFlight/TF_keys.js, tag=应用ID捕获
 
-cron "null" script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Auto_Join_TF/Auto_join_TF.js, timeout=180, tag=自动加入TF
+cron "null" script-path=https://kelee.one/Resource/Script/TestFlight/Auto_join_TF.js, timeout=180, tag=自动加入TF
 
 [MITM]
 hostname = testflight.apple.com
