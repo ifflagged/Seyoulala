@@ -290,8 +290,8 @@ jobs:
             module_folder=$(basename "$sgmodule_file" .sgmodule)
             echo "Processing $sgmodule_file from folder $author for JS links"
 
-            # 查找文件中的 .js 链接
-            js_links=$(grep -oP 'https?://[^ ]+\.js' "$sgmodule_file" || echo "")
+            # 查找 .sgmodule 文件中的 .js 和 .json 链接（不含#）
+            js_links=$(grep -v '#' "$sgmodule_file" | grep -oP 'https?://[^ ]+\.(json|js)' || echo "")
 
             # 下载和替换每个 JS 链接
             for js_link in $js_links; do
