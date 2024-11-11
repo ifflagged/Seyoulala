@@ -1,4 +1,4 @@
-name: Extract and Process Modules
+name: Mirror Release Assets
 
 on:
   schedule:
@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  Converting:
+  Downloading_Assets:
     runs-on: ubuntu-latest
     permissions:
       contents: write
