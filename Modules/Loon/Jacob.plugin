@@ -235,6 +235,7 @@ DOMAIN, user.jpush.cn, REJECT
 DOMAIN-SUFFIX, jiguang.cn, REJECT
 DOMAIN-SUFFIX, jpush.cn, REJECT
 DOMAIN-SUFFIX, jpush.io, REJECT
+DOMAIN, afd.baidu.com, REJECT
 DOMAIN, als.baidu.com, REJECT
 DOMAIN, bgg.baidu.com, REJECT
 DOMAIN, cpro.baidustatic.com, REJECT
