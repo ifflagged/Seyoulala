@@ -1,7 +1,11 @@
-meitu%0A：ReferenceError: Cannot access 'BodyRewrite' before initialization
+#!name=meitu
+#!desc=meitu
+#!icon=https://gitlab.com/lodepuly/iconlibrary/-/raw/main/App_icon/120px/Loon.png
+#!keyword=Jacob
 
+[Rule]
+# > 美图秀秀 - MEITU
+DOMAIN,adui.tg.meitu.com,REJECT
+# > 美图秀秀 - MEITU
+DOMAIN,adui.tg.meitu.com,REJECT
 
-
-
-
-Script Hub 重写转换: ❌  可自行翻译错误信息或复制错误信息后点击通知进行反馈
