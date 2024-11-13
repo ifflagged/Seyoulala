@@ -1,24 +1,7 @@
-#!name=555电影去广告
-#!desc=移除开屏广告和各类横幅广告，支持iPadOS。
-#!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
-#!icon=https://gitlab.com/lodepuly/iconlibrary/-/raw/main/App_icon/120px/Loon.png
-#!keyword=Jacob
+555DY_remove_ads%0A：ReferenceError: Cannot access 'BodyRewrite' before initialization
 
-#!openUrl=https://5wuv.com/
-#!tag=去广告
-#!system=iOS, iPadOS
-#!loon_version=3.2.1(749)
-#!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!date=2024-08-28 15:16:38
 
-[Rewrite]
-# 广告配置
-^https:\/\/app-v1\.ecoliving168\.com\/api\/v1\/advert\/config - reject-dict
 
-[Script]
-# 移除横幅广告
-http-response ^https:\/\/app-v1\.ecoliving168\.com\/api\/v1\/movie\/index_recommend\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/555DY_remove_ads/555DY_remove_ads.js, requires-body=true, tag=移除横幅广告
 
-[MITM]
-hostname = app-v1.ecoliving168.com
 
+Script Hub 重写转换: ❌  可自行翻译错误信息或复制错误信息后点击通知进行反馈
