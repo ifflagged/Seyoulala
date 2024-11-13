@@ -1,14 +1,7 @@
-#!name=mcd
-#!desc=mcd
-#!category=Jacob
+mcd%0A：ReferenceError: Cannot access 'BodyRewrite' before initialization
 
-[URL Rewrite]
-# > 麦当劳 - MCD
-^https?:\/\/api\.mcd\.cn\/bff\/portal\/(home\/splash|richpop) - reject-200
-# > 麦当劳<微信小程序> - MCD
-^https?:\/\/api\.mcd\.cn\/bff\/portal\/home\/hotActivity - reject-dict
-^https?:\/\/api\.mcd\.cn\/bff\/portal\/richpop - reject-dict
 
-[MITM]
-hostname = %APPEND% api.mcd.cn
 
+
+
+Script Hub 重写转换: ❌  可自行翻译错误信息或复制错误信息后点击通知进行反馈

@@ -1,11 +1,7 @@
-#!name=tft
-#!desc=tft
-#!category=Jacob
+tft%0A：ReferenceError: Cannot access 'BodyRewrite' before initialization
 
-[URL Rewrite]
-# > 天府通 - TFT
-^https?:\/\/ams-cdn\.cdtft\.cn\/prod\/tft-ams - reject-dict
 
-[MITM]
-hostname = %APPEND% ams-cdn.cdtft.cn
 
+
+
+Script Hub 重写转换: ❌  可自行翻译错误信息或复制错误信息后点击通知进行反馈
