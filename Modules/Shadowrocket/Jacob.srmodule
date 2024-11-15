@@ -186,6 +186,7 @@ DOMAIN, dnms.getui.com, REJECT
 DOMAIN, ido.getui.net, REJECT
 DOMAIN, sdk-conf.getui.com, REJECT
 DOMAIN, sdk-open-phone.getui.com, REJECT
+DOMAIN, ido.gepush.com, REJECT
 DOMAIN-SUFFIX, mobileservice.cn, REJECT
 DOMAIN-SUFFIX, getui.com, REJECT
 DOMAIN-SUFFIX, igexin.com, REJECT
@@ -267,6 +268,7 @@ DOMAIN, adx-os.bridgeoos.com, REJECT
 DOMAIN, adx-sg-req.bridgeoos.com, REJECT
 DOMAIN-SUFFIX, bridgeoos.com, REJECT
 DOMAIN, ad-evods.tianya.tv, REJECT
+DOMAIN, adx.tuia.cn, REJECT
 # 12306_remove_ads
 DOMAIN, ad.12306.cn, DIRECT
 # Amap_remove_ads
