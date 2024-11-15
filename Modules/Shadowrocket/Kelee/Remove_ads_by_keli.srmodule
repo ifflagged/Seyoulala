@@ -7,7 +7,7 @@
 #!tag=去广告
 #!loon_version=3.2.1(749)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!date=2024-11-05 08:18:38
+#!date=2024-11-15 15:45:15
 
 [Rule]
 # Outlook
@@ -148,8 +148,6 @@ DOMAIN,open-pixon.ads-pixiv.net,REJECT
 ^https:\/\/p0\.pipi\.cn\/(adAdmin|mediaplus\/maoyantong_ads_fe)\/\w+\.(jpg|png)\?imageMogr2\/thumbnail\/(860x0|!165x165|!1049x1169) - reject-dict
 # 站酷 - 开屏广告
 ^https:\/\/api\.zcool\.com\.cn\/v\d\.\d\.\d/common\/open-screen - reject-dict
-# 下厨房 - 开屏广告
-^https:\/\/api\.xiachufang\.com\/v2\/ad\/ - reject-dict
 # 懒饭 - 开屏广告
 ^https:\/\/lanfanapp\.com\/api\/v1\/ads\/ - reject-dict
 #向日葵 #开屏广告 #主机名client-api-v2.oray.com
