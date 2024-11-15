@@ -8,7 +8,7 @@
 #!loon_version = 3.2.1(749)
 #!homepage = https://github.com/luestr/ProxyResource/blob/main/README.md
 #!icon = https://raw.githubusercontent.com/luestr/IconResource/main/Other_icon/120px/KeLee.png
-#!date = 2024-11-05 08:18:38
+#!date = 2024-11-15 15:45:15
 
 [Rule]
 # Outlook
@@ -187,9 +187,6 @@ DOMAIN, open-pixon.ads-pixiv.net, REJECT
 
 # 香山智能 - 开屏广告
 ^https:\/\/shealthyapi\.senssun\.com\/v1\/app\/banner\/findByType\?type=bottom$
-
-# 下厨房 - 开屏广告
-^https:\/\/api\.xiachufang\.com\/v2\/ad\/ reject-dict
 
 # 懒饭 - 开屏广告
 ^https:\/\/lanfanapp\.com\/api\/v1\/ads\/ reject-dict
