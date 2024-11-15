@@ -195,7 +195,6 @@ DOMAIN, gdfp.gifshow.com, REJECT
 DOMAIN, open.e.kuaishou.com, REJECT
 DOMAIN, adtrack.e.kuaishou.com, REJECT
 DOMAIN-SUFFIX, adukwai.com, REJECT
-DOMAIN-SUFFIX, adbkwai.com, REJECT
 DOMAIN, init.supersonicads.com, REJECT
 DOMAIN, st.appsad.cn, REJECT
 DOMAIN, sdk.beizi.biz, REJECT
