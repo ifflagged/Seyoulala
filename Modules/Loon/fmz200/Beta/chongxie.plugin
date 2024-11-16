@@ -2441,7 +2441,7 @@ http-response ^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/note\/widgets 
 #http-response ^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/recommend\/user\/follow_recommend\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/chongxie/xiaohongshu.js, requires-body=true, timeout=60, tag=xiaohongshu
 
 # 图片水印,视频水印
-http-response ^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/note\/(imagefeed|live_photo\/save)\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/chongxie/xiaohongshu.js, requires-body=true, timeout=60, tag=xiaohongshu
+http-response ^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/note\/(imagefeed|live_photo\/save) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/chongxie/xiaohongshu.js, requires-body=true, timeout=60, tag=xiaohongshu
 
 http-response ^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/(followfeed|homefeed)\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/chongxie/xiaohongshu.js, requires-body=true, timeout=60, tag=xiaohongshu
 
