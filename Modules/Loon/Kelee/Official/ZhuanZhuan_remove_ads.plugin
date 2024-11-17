@@ -8,7 +8,7 @@
 #!loon_version = 3.2.4(780)
 #!homepage = https://github.com/luestr/ProxyResource/blob/main/README.md
 #!icon = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/ZhuanZhuan.png
-#!date = 2024-11-17 16:17:17
+#!date = 2024-11-17 16:26:05
 
 [Rewrite]
 # 开屏广告
@@ -48,6 +48,7 @@
 ^https:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzinfoshow\/getchoicegoodsinfos\? reject-dict
 
 # 精简我的页面
+^https:\/\/app\.zhuanzhuan\.com\/zz\/transfer\/getmyprofilev3$ response-body-json-del respData.bmNewInfo
 ^https:\/\/app\.zhuanzhuan\.com\/zz\/transfer\/getmyprofilev3$ response-body-json-jq 'del(.respData.itemGroupList[].itemList[] | select(.name == "天天赚钱" or .name == "借钱")) | del(.respData.itemGroupList[] | select(.groupType == 15))'
 
 [MitM]

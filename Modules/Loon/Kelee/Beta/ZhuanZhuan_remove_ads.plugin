@@ -1,29 +1,39 @@
 #!name=转转去广告
-#!desc=移除开屏广告、应用内悬浮窗，精简我的页面。
+#!desc=移除开屏广告、应用内悬浮窗、商品推荐、首页弹窗，精简我的页面。
 #!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 #!icon=https://gitlab.com/lodepuly/iconlibrary/-/raw/main/App_icon/120px/Loon.png
 #!keyword=Jacob
 
 #!openUrl=https://apps.apple.com/app/id1002355194
 #!tag=去广告
-#!loon_version=3.2.1(749)
+#!loon_version=3.2.4(780)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!date=2024-06-30 00:52:59
+#!date=2024-11-17 16:17:17
 
 [Rewrite]
 # 开屏广告
-^https:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzlogic\/getOpenScreen - reject
+^https:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzlogic\/getOpenScreen\? - reject
+# 首页 - 信息流 - 猜你想搜
+^https:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzinfoshow\/getwindvanecardv2$ - reject-dict
+# 首页 - 弹窗
+^https:\/\/app\.zhuanzhuan\.com\/zzopen\/popwindow\/getallpopwin\? - reject-dict
+# 收藏 - 订阅 - 热门精选
+^https:\/\/app\.zhuanzhuan\.com\/zzopen\/ptuserlogic\/subscribehotrecommend\$ - reject-dict
+# 收藏 - 收藏 - 精选推荐
+^https:\/\/app\.zhuanzhuan\.com\/zzopen\/ptsimpleshow\/recommendbymyloveinfo\? - reject-dict
+# 收藏 - 足迹 - 精选推荐
+^https:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzinfoshow\/footprintsamerecommend\? - reject-dict
+# 商品页面 - 评价 - 好货推荐
+^https:\/\/app\.zhuanzhuan\.com\/zzopen\/ypmall\/listData$ - reject-dict
 # 我的页面 - 发布闲置赚钱
-^https:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzusercenter\/myprofilevariouscards - reject-dict
+^https:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzusercenter\/myprofilevariouscards$ - reject-dict
 # 我的页面 - 精选好货
-^https:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzinfoshow\/getchoicegoodsinfos - reject-dict
+^https:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzinfoshow\/getchoicegoodsinfos\? - reject-dict
 
 [Script]
-# 移除悬浮窗
-http-response ^https:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzinfoshow\/getfeedflowinfo script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/ZhuanZhuan_remove_ads/ZhuanZhuan_remove_ads.js, requires-body=true, tag=移除悬浮窗
+http-response ^https:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzlogic\/mycontinenthomepage\? script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_15, argument=%5B%5B%22json-del%22%2C%5B%22respData.topActBanner%22%5D%5D%5D
 
-# 精简我的页面
-http-response ^https:\/\/app\.zhuanzhuan\.com\/zz\/transfer\/getmyprofilev3 script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/ZhuanZhuan_remove_ads/ZhuanZhuan_remove_ads.js, requires-body=true, tag=精简我的页面
+http-response ^https:\/\/app\.zhuanzhuan\.com\/zzx\/transfer\/getConfigInfo\? script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_17, argument=%5B%5B%22json-del%22%2C%5B%22respData.freeMarketTabLeadPop%22%2C%22respData.topOperations%22%5D%5D%5D
 
 [MITM]
 hostname = app.zhuanzhuan.com
