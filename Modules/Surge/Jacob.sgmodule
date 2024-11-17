@@ -817,7 +817,6 @@ DOMAIN, amdc-sibling.alipay.com.cn, REJECT
 DOMAIN-SUFFIX, mdap.alipay.com, REJECT
 DOMAIN-SUFFIX, ynuf.alipay.com, REJECT
 DOMAIN-SUFFIX, loggw.alipay.com.cn, REJECT
-DOMAIN-SUFFIX, alipaydns.com, REJECT
 # beautycam
 DOMAIN, adui.tg.meitu.com, REJECT
 # ccb
