@@ -1,6 +1,6 @@
 #!name=滴滴出行去广告
 #!desc=移除开屏广告、精简首页、底栏和我的页面。
-#!author=ZenmoFeiShi[https://github.com/ZenmoFeiShi], 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+#!author=ZenmoFeiShi[https://github.com/ZenmoFeiShi],可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/DiDi.png
 #!category=Jacob
 
@@ -15,8 +15,8 @@
 DOMAIN,hd.xiaojukeji.com,REJECT
 # 拦截广告下发
 DOMAIN,gwp.xiaojukeji.com,REJECT
-AND, ((IP-ASN, 45090, no-resolve), (DEST-PORT, 25641), (PROTOCOL, TCP)), REJECT
-AND, ((IP-ASN, 63646, no-resolve), (DEST-PORT, 25641), (PROTOCOL, TCP)), REJECT
+AND,((IP-ASN,45090,no-resolve),(DEST-PORT,25641),(PROTOCOL,TCP)),REJECT
+AND,((IP-ASN,63646,no-resolve),(DEST-PORT,25641),(PROTOCOL,TCP)),REJECT
 #DOMAIN,img-ys011.didistatic.com,REJECT
 
 [Map Local]
