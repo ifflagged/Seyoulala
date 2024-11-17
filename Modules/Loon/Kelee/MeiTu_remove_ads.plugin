@@ -1,14 +1,14 @@
-#!name = 美图秀秀去广告
-#!desc = 移除开屏广告、横幅推广，精简我的页面。
-#!openUrl = https://apps.apple.com/app/id416048305
-#!author = 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
-#!tag = 去广告
-#!system = 
-#!system_version = 
-#!loon_version = 3.2.1(749)
-#!homepage = https://github.com/luestr/ProxyResource/blob/main/README.md
-#!icon = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/MeiTu.png
-#!date = 2024-09-01 00:25:23
+#!name=美图秀秀去广告
+#!desc=移除开屏广告、横幅推广，精简我的页面。
+#!openUrl=https://apps.apple.com/app/id416048305
+#!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+#!tag=去广告
+#!system=
+#!system_version=
+#!loon_version=3.2.1(749)
+#!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/MeiTu.png
+#!date=2024-09-01 00:25:23
 
 [Rule]
 # 字节跳动广告
@@ -151,4 +151,4 @@ DOMAIN, adui.tg.meitu.com, REJECT
 ^https:\/\/(api|tool)\.xiuxiu\.meitu\.com\/v\d\/tool\/common\/home\.json response-body-json-del data[0].items[10] data[1].scheme data[1].wallet_title data[1].items[1] data[1].items[1] data[2].items[1]
 
 [MitM]
-hostname = api.xiuxiu.meitu.com, tool.xiuxiu.meitu.com, api.posters.meitu.com
+hostname=api.xiuxiu.meitu.com, tool.xiuxiu.meitu.com, api.posters.meitu.com

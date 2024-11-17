@@ -1,14 +1,14 @@
-#!name = Keep去广告
-#!desc = 移除开屏广告、应用内广告和弹窗广告。移除首页活动标签、关注推荐、文章相关推荐。修改首页默认标签为推荐页面。
-#!openUrl = https://apps.apple.com/app/id952694580
-#!author = 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
-#!tag = 去广告
-#!system = 
-#!system_version = 
-#!loon_version = 3.2.1(749)
-#!homepage = https://github.com/luestr/ProxyResource/blob/main/README.md
-#!icon = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Keep.png
-#!date = 2024-09-06 21:02:25
+#!name=Keep去广告
+#!desc=移除开屏广告、应用内广告和弹窗广告。移除首页活动标签、关注推荐、文章相关推荐。修改首页默认标签为推荐页面。
+#!openUrl=https://apps.apple.com/app/id952694580
+#!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+#!tag=去广告
+#!system=
+#!system_version=
+#!loon_version=3.2.1(749)
+#!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Keep.png
+#!date=2024-09-06 21:02:25
 
 [Rule]
 # 拦截HTTPDNS
@@ -36,7 +36,7 @@ DOMAIN, hc-ssp.sm.cn, REJECT
 
 [Script]
 # 首页 - 活动标签
-http-response ^https:\/\/api\.gotokeep\.com\/config\/v3\/basic script-path = https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Keep_remove_ads/Keep_remove_ads.js, requires-body = true, tag = 移除首页活动标签
+http-response ^https:\/\/api\.gotokeep\.com\/config\/v3\/basic script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Keep_remove_ads/Keep_remove_ads.js, requires-body=true, tag=移除首页活动标签
 
 [MitM]
-hostname = api.gotokeep.com, kad.gotokeep.com
+hostname=api.gotokeep.com, kad.gotokeep.com

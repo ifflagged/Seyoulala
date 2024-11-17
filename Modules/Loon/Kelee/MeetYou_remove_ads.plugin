@@ -1,14 +1,14 @@
-#!name = 美柚去广告
-#!desc = 移除开屏广告、弹窗推广和信息流推广，移除青少年模式弹窗和我的页面推广。
-#!openUrl = https://apps.apple.com/app/id634896669
-#!author = 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
-#!tag = 去广告
-#!system = 
-#!system_version = 
-#!loon_version = 3.2.1(749)
-#!homepage = https://github.com/luestr/ProxyResource/blob/main/README.md
-#!icon = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/MeetYou.png
-#!date = 2024-11-02 15:19:15
+#!name=美柚去广告
+#!desc=移除开屏广告、弹窗推广和信息流推广，移除青少年模式弹窗和我的页面推广。
+#!openUrl=https://apps.apple.com/app/id634896669
+#!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+#!tag=去广告
+#!system=
+#!system_version=
+#!loon_version=3.2.1(749)
+#!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/MeetYou.png
+#!date=2024-11-02 15:19:15
 
 [Rule]
 # 拦截HTTPDNS
@@ -173,4 +173,4 @@ DOMAIN, ad-evods.tianya.tv, REJECT
 ^https:\/\/images\.pinduoduo\.com\/marketing_api\/ reject
 
 [MitM]
-hostname = circle.seeyouyima.com, circle.xmseeyouyima.com, common.seeyouyima.com, video-dsp.pddpic.com, t-dsp.pinduoduo.com, images.pinduoduo.com
+hostname=circle.seeyouyima.com, circle.xmseeyouyima.com, common.seeyouyima.com, video-dsp.pddpic.com, t-dsp.pinduoduo.com, images.pinduoduo.com

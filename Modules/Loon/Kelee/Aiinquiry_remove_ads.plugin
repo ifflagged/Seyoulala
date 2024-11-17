@@ -1,14 +1,14 @@
-#!name = 爱企查去广告
-#!desc = 移除开屏广告、应用内弹窗、首页轮播图、悬浮部件、信息流和搜索填充词。
-#!openUrl = https://apps.apple.com/app/id1527039353
-#!author = 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
-#!tag = 去广告
-#!system = 
-#!system_version = 
-#!loon_version = 3.2.1(749)
-#!homepage = https://github.com/luestr/ProxyResource/blob/main/README.md
-#!icon = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Aiinquiry.png
-#!date = 2024-06-29 19:35:12
+#!name=爱企查去广告
+#!desc=移除开屏广告、应用内弹窗、首页轮播图、悬浮部件、信息流和搜索填充词。
+#!openUrl=https://apps.apple.com/app/id1527039353
+#!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+#!tag=去广告
+#!system=
+#!system_version=
+#!loon_version=3.2.1(749)
+#!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Aiinquiry.png
+#!date=2024-06-29 19:35:12
 
 [Rule]
 URL-REGEX, ^http:\/\/180\.76\.76\.112\/v\d\/, REJECT
@@ -49,4 +49,4 @@ URL-REGEX, ^http:\/\/180\.76\.76\.112\/v\d\/, REJECT
 # ^https:\/\/b2baifanfan\.baidu\.com\/crm\/web\/b2b\/im\/common\/getConfigByDeviceNum reject-dict
 
 [MitM]
-hostname = aiqicha.baidu.com
+hostname=aiqicha.baidu.com

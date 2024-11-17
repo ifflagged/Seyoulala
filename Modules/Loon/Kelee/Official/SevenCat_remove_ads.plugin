@@ -1,19 +1,19 @@
-#!name = 七猫小说去广告
-#!desc = 移除大部分七猫小说广告，但受限于七猫小说自身对MitM和VPN状态的检测，部分页面广告无法移除。
-#!openUrl = https://apps.apple.com/app/id1387717110
-#!author = 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
-#!tag = 去广告
-#!system = 
-#!system_version = 
-#!loon_version = 3.2.1(749)
-#!homepage = https://github.com/luestr/ProxyResource/blob/main/README.md
-#!icon = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/SevenCat.png
-#!date = 2024-09-29 12:44:08
+#!name=七猫小说去广告
+#!desc=移除大部分七猫小说广告，但受限于七猫小说自身对MitM和VPN状态的检测，部分页面广告无法移除。
+#!openUrl=https://apps.apple.com/app/id1387717110
+#!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+#!tag=去广告
+#!system=
+#!system_version=
+#!loon_version=3.2.1(749)
+#!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/SevenCat.png
+#!date=2024-09-29 12:44:08
 
 [Rule]
-DOMAIN, cdn-ad.wtzw.com, REJECT
-DOMAIN, cdn-new-ad.wtzw.com, REJECT
-DOMAIN-SUFFIX, gdt.qq.com, REJECT
+DOMAIN,cdn-ad.wtzw.com,REJECT
+DOMAIN,cdn-new-ad.wtzw.com,REJECT
+DOMAIN-SUFFIX,gdt.qq.com,REJECT
 
 [Rewrite]
 # 开屏广告
@@ -49,4 +49,4 @@ DOMAIN-SUFFIX, gdt.qq.com, REJECT
 ^https:\/\/xiaoshuo\.wtzw\.com\/api\/v\d\/user\/my-center\? response-body-json-del data.func_area[1]  data.func_area[2]
 
 [MitM]
-hostname = api-cfg.wtzw.com, sf3-fe-tos.pglstatp-toutiao.com, api-bc.wtzw.com, api-gw.wtzw.com, cdn.wtzw.com
+hostname=api-cfg.wtzw.com,sf3-fe-tos.pglstatp-toutiao.com,api-bc.wtzw.com,api-gw.wtzw.com,cdn.wtzw.com

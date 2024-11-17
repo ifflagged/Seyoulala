@@ -1,14 +1,14 @@
-#!name = 一刻相册去广告
-#!desc = 移除开屏广告、横幅广告和弹窗推广。
-#!openUrl = https://apps.apple.com/app/id1467852587
-#!author = 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
-#!tag = 去广告
-#!system = 
-#!system_version = 
-#!loon_version = 3.2.1(749)
-#!homepage = https://github.com/luestr/ProxyResource/blob/main/README.md
-#!icon = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/BaiduPhoto.png
-#!date = 2024-11-11 15:27:11
+#!name=一刻相册去广告
+#!desc=移除开屏广告、横幅广告和弹窗推广。
+#!openUrl=https://apps.apple.com/app/id1467852587
+#!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+#!tag=去广告
+#!system=
+#!system_version=
+#!loon_version=3.2.1(749)
+#!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/BaiduPhoto.png
+#!date=2024-11-11 15:27:11
 
 [Rule]
 # 百度联盟 - 广告服务商
@@ -91,4 +91,4 @@ DOMAIN-KEYWORD, asiad.byteactivity, REJECT
 ^https:\/\/mbd\.baidu\.com\/ccs\/v1\/start\/confsync\? response-body-json-del data.service.config.advertisement data.service.config.youa.pm_config_ad 
 
 [MitM]
-hostname = pan.baidu.com, mbd.baidu.com
+hostname=pan.baidu.com, mbd.baidu.com

@@ -1,14 +1,14 @@
-#!name = 美颜相机去广告
-#!desc = 移除开屏广告、应用内弹窗，精简首页和我的页面。
-#!openUrl = https://apps.apple.com/app/id592331499
-#!author = 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
-#!tag = 去广告
-#!system = 
-#!system_version = 
-#!loon_version = 3.2.3(751)
-#!homepage = https://github.com/luestr/ProxyResource/blob/main/README.md
-#!icon = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/MeituMYXJ.png
-#!date = 2024-09-07 23:08:09
+#!name=美颜相机去广告
+#!desc=移除开屏广告、应用内弹窗，精简首页和我的页面。
+#!openUrl=https://apps.apple.com/app/id592331499
+#!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+#!tag=去广告
+#!system=
+#!system_version=
+#!loon_version=3.2.3(751)
+#!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/MeituMYXJ.png
+#!date=2024-09-07 23:08:09
 
 [Rule]
 # 广告下发
@@ -149,7 +149,7 @@ DOMAIN, da.mosspf.com, REJECT
 
 [Script]
 # 首页功能栏目和美颜推荐
-http-response ^https:\/\/api\.meiyan\.com\/operation\/home\.json\? script-path = https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/MeituMYXJ_remove_ads/MeituMYXJ_remove_ads.js, requires-body = true, tag = 精简首页功能栏目并移除美颜推荐
+http-response ^https:\/\/api\.meiyan\.com\/operation\/home\.json\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/MeituMYXJ_remove_ads/MeituMYXJ_remove_ads.js, requires-body=true, tag=精简首页功能栏目并移除美颜推荐
 
 [MitM]
-hostname = api.meiyan.com, video-dsp.pddpic.com, t-dsp.pinduoduo.com, images.pinduoduo.com
+hostname=api.meiyan.com, video-dsp.pddpic.com, t-dsp.pinduoduo.com, images.pinduoduo.com
