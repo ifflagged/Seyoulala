@@ -1240,7 +1240,7 @@ DOMAIN-SUFFIX, jsdelivr.net, PROXY
 ^https:\/\/api\.bilibili\.com\/x\/vip\/ads\/materials\? reject-dict
 ^https:\/\/api\.live\.bilibili\.com\/xlive\/e-commerce-interface\/v1\/ecommerce-user\/get_shopping_info\? reject-dict
 ^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\? response-body-json-del data.common_equip
-^https:\/\/app\.bilibili\.com\/x\/resource\/top\/activity\? mock-response-body data-type=json status-code=200 data="{ "code": -404,"message": "啥都木有","ttl": 1,"data": null }"
+^https:\/\/app\.bilibili\.com\/x\/resource\/top\/activity\? mock-response-body data-type = json data="{"code":-404,"message":"啥都木有","ttl":1,"data":null}" status-code = 200
 ^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.interface\.v1\.Search\/DefaultWords$ reject-dict
 ^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.view\.v1\.View\/TFInfo$ url reject-dict
 ^https:\/\/app\.bilibili\.com\/x\/resource\/ip reject-dict
