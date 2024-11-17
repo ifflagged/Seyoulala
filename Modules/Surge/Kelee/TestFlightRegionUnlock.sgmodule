@@ -8,10 +8,7 @@
 #!tag=功能增强
 #!loon_version=3.2.1(749)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!date=2024-08-07 16:25:33
-
-[General]
-skip-proxy = %APPEND% iosapps.itunes.apple.com
+#!date=2024-11-17 23:47:13
 
 [MITM]
 hostname = %APPEND% testflight.apple.com
