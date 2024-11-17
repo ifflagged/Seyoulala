@@ -1,38 +1,33 @@
-#!name=网易邮箱大师去广告
-#!desc=移除网易邮箱大师开屏广告、签到任务提醒，精简侧拉抽屉和我的页面。
-#!openUrl=https://apps.apple.com/app/id897003024
+#!name=下厨房去广告
+#!desc=移除开屏广告、信息流推广、各类横幅推广，精简首页标签。
+#!openUrl=https://apps.apple.com/app/id460979760
 #!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 #!tag=去广告
 #!system=
 #!system_version=
 #!loon_version=3.2.4(780)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/MailMaster.png
-#!date=2024-11-17 20:32:38
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/XiaChuFang.png
+#!date=2024-11-15 16:45:47
 
 [Rule]
-# 拦截HTTPDNS
-DOMAIN,httpdns.music.163.com,REJECT
-DOMAIN,httpdns.n.netease.com,REJECT
-DOMAIN,httpdns-sdk.n.netease.com,REJECT
-DOMAIN,httpdns.yunxindns.com,REJECT
-DOMAIN,lofter.httpdns.c.163.com,REJECT
-DOMAIN,music.httpdns.c.163.com,REJECT
-DOMAIN,httpdns.yunxindns.com,REJECT
-IP-CIDR,59.111.239.61/32,REJECT,no-resolve
-IP-CIDR,59.111.239.62/32,REJECT,no-resolve
-IP-CIDR,115.236.121.51/32,REJECT,no-resolve
-IP-CIDR,115.236.121.195/32,REJECT,no-resolve
+# 友盟
+DOMAIN,cnlogs.umeng.com,REJECT
+DOMAIN,errlog.umeng.com,REJECT
+DOMAIN,errnewlog.umeng.com,REJECT
+DOMAIN,ucc.umeng.com,REJECT
+DOMAIN,ulogs.umeng.com,REJECT
+DOMAIN,utoken.umeng.com,REJECT
+DOMAIN,deeplink.umeng.com,REJECT
+DOMAIN,aspect-upush.umeng.com,REJECT
+DOMAIN,plbslog.umeng.com,REJECT
+DOMAIN,log.umtrack.com,REJECT
+DOMAIN,aaid.umeng.com,REJECT
+DOMAIN,log.umsns.com,REJECT
 
-URL-REGEX,^http:\/\/81\.69\.130\.131\/d,REJECT
-URL-REGEX,^http:\/\/101\.35\.204\.35\/d,REJECT
-URL-REGEX,^http:\/\/101\.35\.212\.35\/d,REJECT
-URL-REGEX,^http:\/\/114\.110\.96\.6\/d,REJECT
-URL-REGEX,^http:\/\/114\.110\.96\.26\/d,REJECT
-URL-REGEX,^http:\/\/114\.110\.97\.30\/d,REJECT
-URL-REGEX,^http:\/\/114\.110\.97\.97\/d,REJECT
-URL-REGEX,^http:\/\/121\.5\.84\.85\/d,REJECT
-URL-REGEX,^http:\/\/\[2402:4e00:1411:201:0:9964:ba21:5a41\]\/d,REJECT
+# 上海倍孜
+DOMAIN,sdk.beizi.biz,REJECT
+DOMAIN,api-htp.beizi.biz,REJECT
 
 # 字节跳动广告
 AND,((DOMAIN-KEYWORD,-ad-),(DOMAIN-SUFFIX,byteimg.com)),REJECT
@@ -86,21 +81,12 @@ DOMAIN-KEYWORD,-ad.byteoversea.com,REJECT
 DOMAIN-KEYWORD,video-cn.snssdk.com,REJECT
 DOMAIN-KEYWORD,asiad.byteactivity,REJECT
 
-# 百度联盟 - 广告服务商
-DOMAIN,als.baidu.com,REJECT
-DOMAIN,bgg.baidu.com,REJECT
-DOMAIN,cpro.baidustatic.com,REJECT
-DOMAIN,feed-image.baidu.com,REJECT
-DOMAIN,click-bes.baidu.com,REJECT
-DOMAIN,eclick.baidu.com,REJECT
-DOMAIN,mobads-logs.baidu.com,REJECT
-DOMAIN,mobads-pre-config.cdn.bcebos.com,REJECT
-DOMAIN,mobads.baidu.com,REJECT
-DOMAIN,nadvideo2.baidu.com,REJECT
-DOMAIN,wn.pos.baidu.com,REJECT
-DOMAIN,miniapp-ad.cdn.bcebos.com,REJECT
-DOMAIN-SUFFIX,union.baidu.cn,REJECT
-DOMAIN-SUFFIX,union.baidu.com,REJECT
+# 快手联盟 - 广告服务商
+DOMAIN,gdfp.gifshow.com,REJECT
+DOMAIN,open.e.kuaishou.com,REJECT
+DOMAIN,adtrack.e.kuaishou.com,REJECT
+DOMAIN-SUFFIX,adukwai.com,REJECT
+DOMAIN-SUFFIX,adbkwai.com,REJECT
 
 # 腾讯
 DOMAIN,adsmind.gdtimg.com,REJECT
@@ -110,6 +96,7 @@ DOMAIN,huatuocode.huatuo.qq.com,REJECT
 DOMAIN,info4.video.qq.com,REJECT
 DOMAIN,info6.video.qq.com,REJECT
 DOMAIN,ios.bugly.qq.com,REJECT
+DOMAIN,pro.bugly.qq.com,REJECT
 DOMAIN,ios.video.mpush.qq.com,REJECT
 # DOMAIN,mazu.m.qq.com,REJECT // 误杀
 DOMAIN,mi.gdt.qq.com,REJECT
@@ -140,58 +127,26 @@ DOMAIN-SUFFIX,l.qq.com,REJECT
 DOMAIN-SUFFIX,ugdtimg.com,REJECT
 IP-CIDR,47.110.187.87/32,REJECT,no-resolve
 
-# 阿里巴巴
-DOMAIN,ossgw.alicdn.com,REJECT
-DOMAIN,ems.youku.com,REJECT
-DOMAIN,hudong.alicdn.com,REJECT
-DOMAIN,et.tanx.com,REJECT
-DOMAIN,beacon-api.aliyuncs.com,REJECT
-DOMAIN,adash.man.aliyuncs.com,REJECT
-DOMAIN,applog.uc.cn,REJECT
-AND,((DOMAIN-KEYWORD,adash),(DOMAIN-SUFFIX,ut.taobao.com)),REJECT
-
-# 网易
-DOMAIN,nex.163.com,REJECT
-DOMAIN,iad.g.163.com,REJECT
-DOMAIN,adx-bj.anythinktech.com,REJECT
-DOMAIN,api.anythinktech.com,REJECT
-DOMAIN,tk.anythinktech.com,REJECT
-DOMAIN,da.anythinktech.com,REJECT
-DOMAIN,gorgon.youdao.com,REJECT
-
 # 京东
 DOMAIN,dsp-x.jd.com,REJECT
+DOMAIN,im-x.jd.com,REJECT
 DOMAIN,xlog.jd.com,REJECT
 DOMAIN,janapi.jd.com,REJECT
 
-# 上海倍孜
-DOMAIN,sdk.beizi.biz,REJECT
-DOMAIN,api-htp.beizi.biz,REJECT
-
-# 变现猫
-DOMAIN,guide2.bianxianmao.com,REJECT
-
-# 聚次方 - TopOn
-DOMAIN,api.mosspf.com,REJECT
-DOMAIN,da.mosspf.com,REJECT
-DOMAIN,mores.toponad.com,REJECT
-DOMAIN,api.toponadss.com,REJECT
-DOMAIN,da.toponadss.com,REJECT
-DOMAIN,tk.toponadss.com,REJECT
-DOMAIN,adx-os.toponadss.com,REJECT
-
-# 塔酷信息
-DOMAIN,mores.motowoo.com,REJECT
-DOMAIN-SUFFIX,motowoo.com,REJECT
-
-# 快手联盟 - 广告服务商
-DOMAIN,gdfp.gifshow.com,REJECT
-DOMAIN,open.e.kuaishou.com,REJECT
-DOMAIN-SUFFIX,adukwai.com,REJECT
-
-# 北京锐讯灵通科技有限公司
-DOMAIN,ztoken.uyunad.com,REJECT
-DOMAIN,aaid.uyunad.com,REJECT
+# 个推
+DOMAIN,b-gtc.getui.net,REJECT
+DOMAIN,c-gtc.getui.net,REJECT
+DOMAIN,c-hzgt2.getui.com,REJECT
+DOMAIN,c-ido.getui.net,REJECT
+DOMAIN,c-gtc.getui.net,REJECT
+DOMAIN,dnms.getui.com,REJECT
+DOMAIN,ido.getui.net,REJECT
+DOMAIN,sdk-conf.getui.com,REJECT
+DOMAIN,sdk-open-phone.getui.com,REJECT
+DOMAIN,ido.gepush.com,REJECT
+DOMAIN-SUFFIX,mobileservice.cn,REJECT
+DOMAIN-SUFFIX,getui.com,REJECT
+DOMAIN-SUFFIX,igexin.com,REJECT
 
 # 钧云 - ADHUB
 DOMAIN,api.htp.hubcloud.com.cn,REJECT
@@ -199,41 +154,29 @@ DOMAIN,res1.hubcloud.com.cn,REJECT
 DOMAIN,sdktmp.hubcloud.com.cn,REJECT
 DOMAIN,v.adx.hubcloud.com.cn,REJECT
 
-# 章鱼移动
-DOMAIN,caid.adintl.cn,REJECT
-DOMAIN,sv.adintl.cn,REJECT
-DOMAIN,v.adintl.cn,REJECT
-DOMAIN,oss.cdn.adintl.cn,REJECT
+# 杭州推啊网络科技有限公司
+DOMAIN,adx.tuia.cn,REJECT
 
-# 布里奇信息科技有限公司
-DOMAIN,tk.bridgeoos.com,REJECT
-DOMAIN,da.bridgeoos.com,REJECT
-DOMAIN,api.bridgeoos.com,REJECT
-DOMAIN,adx-os.bridgeoos.com,REJECT
-DOMAIN,adx-sg-req.bridgeoos.com,REJECT
-DOMAIN-SUFFIX,bridgeoos.com,REJECT
+# 北京锐讯灵通科技有限公司
+DOMAIN,ztoken.uyunad.com,REJECT
+DOMAIN,aaid.uyunad.com,REJECT
+DOMAIN,yumao.puata.info,REJECT
 
 [Rewrite]
-# 拦截HTTPDNS
-^https:\/\/appconf\.mail\.163\.com\/mailmaster\/api\/http\/urlConfig\.do$ reject-dict
+# 开屏广告
+^https:\/\/api\.xiachufang\.com\/v2\/ad\/ reject-dict
 
-# 精简我的页面
-^https:\/\/appconf\.mail\.163\.com\/mailmaster\/api\/page\/v2\/conf\.do$ response-body-json-del data.functionOperatorInfoList data.memberOperator data.activityTabInfoList
+# 首页 - 信息流广告
+^https:\/\/api\.xiachufang\.com\/v2\/homepage\/paged_waterfall_recommendations\.json$ response-body-json-jq 'del(.multiplex_cells[] | select(.recommendation_cell.impression_sensor_events[]?.properties.target_type? == "ad"))'
 
-# 精简侧拉抽屉
-^https:\/\/appconf\.mail\.163\.com\/mailmaster\/api\/config\/function\.do$ response-body-json-jq 'del(.data.config[] | select(.result.tools[]?.name? == "看视频扩容")) | del(.data.config[] | select(.functionName == "Function-AD"))'
+# 首页 - 标签
+^https:\/\/api\.xiachufang\.com\/v2\/config\/get\.json$ response-body-json-jq 'del(.content.tab_name[] | select(. == "减脂" or . == "商店" or . == "分类"))'
 
-# 签到任务
-^https:\/\/dashi\.163\.com\/task-center-api\/fapi\/task\/list$ reject-dict
+# 首页 - 关注 - 作品推荐
+^https:\/\/api\.xiachufang\.com\/v2\/account\/feeds_v7\.json reject-dict
 
-# 扩容推广
-^https:\/\/appconf\.mail\.163\.com\/mailoperating\/mailmaster\/api\/operator\/get$ reject-dict
-
-# 拼多多广告平台
-^https:\/\/video-dsp\.pddpic\.com\/market-dsp-video\/ reject
-^https:\/\/t-dsp\.pinduoduo\.com\/dspcb\/i\/mrk_union reject
-^https:\/\/images\.pinduoduo\.com\/mrk\/ reject
-^https:\/\/images\.pinduoduo\.com\/marketing_api\/ reject
+# 发布 - 横幅推广
+^https:\/\/api\.xiachufang\.com\/v2\/mark_mission\/get_sticker_info\.json reject-dict
 
 [MitM]
-hostname=appconf.mail.163.com,dashi.163.com,video-dsp.pddpic.com,t-dsp.pinduoduo.com,images.pinduoduo.com
+hostname=api.xiachufang.com

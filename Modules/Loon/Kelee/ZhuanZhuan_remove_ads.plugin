@@ -8,14 +8,14 @@
 #!loon_version=3.2.4(780)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/ZhuanZhuan.png
-#!date=2024-11-17 18:31:54
+#!date=2024-11-17 20:08:15
 
 [Rewrite]
 # 开屏广告
 ^https:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzlogic\/getOpenScreen$ reject-dict
 
-# 首页 - 顶部横幅
-^https:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzlogic\/mycontinenthomepage\? response-body-json-del respData.topActBanner
+# 首页 - 精简
+^https:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzlogic\/mycontinenthomepage\? response-body-json-del respData.topOpera.leftOpera respData.topOpera.rightOpera2 respData.topActBanner respData.bmArea
 
 # 首页 - 顶部下拉配置
 ^https:\/\/app\.zhuanzhuan\.com\/zzx\/transfer\/getConfigInfo\? response-body-json-del respData.freeMarketTabLeadPop respData.topOperations
@@ -49,6 +49,9 @@
 
 # 我的页面 - 精选好货
 ^https:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzinfoshow\/getchoicegoodsinfos\? mock-response-body data-type=json data="{"respCode":0,"respData":{},"errorMsg":"","errMsg":""}" status-code=200
+
+# 我的页面 - 更多工具
+^https:\/\/app\.zhuanzhuan\.com\/zz\/transfer\/getmymoretools$ response-body-json-jq 'walk(if type == "object" and .name == "免流量特权" then empty else . end) | del(.respData.groupList[] | select(.groupName == "活动参与" or .groupName == "金融工具"))'
 
 # 精简我的页面
 ^https:\/\/app\.zhuanzhuan\.com\/zz\/transfer\/getmyprofilev3$ response-body-json-del respData.bmNewInfo

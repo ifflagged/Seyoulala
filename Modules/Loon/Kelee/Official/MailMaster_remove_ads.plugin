@@ -5,10 +5,10 @@
 #!tag=去广告
 #!system=
 #!system_version=
-#!loon_version=3.2.1(749)
+#!loon_version=3.2.4(780)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/MailMaster.png
-#!date=2024-10-04 03:32:32
+#!date=2024-11-17 20:32:38
 
 [Rule]
 # 拦截HTTPDNS
@@ -221,7 +221,7 @@ DOMAIN-SUFFIX,bridgeoos.com,REJECT
 ^https:\/\/appconf\.mail\.163\.com\/mailmaster\/api\/page\/v2\/conf\.do$ response-body-json-del data.functionOperatorInfoList data.memberOperator data.activityTabInfoList
 
 # 精简侧拉抽屉
-^https:\/\/appconf\.mail\.163\.com\/mailmaster\/api\/config\/function\.do$ response-body-json-del data.config[39].result.tools[2]
+^https:\/\/appconf\.mail\.163\.com\/mailmaster\/api\/config\/function\.do$ response-body-json-jq 'del(.data.config[] | select(.result.tools[]?.name? == "看视频扩容")) | del(.data.config[] | select(.functionName == "Function-AD"))'
 
 # 签到任务
 ^https:\/\/dashi\.163\.com\/task-center-api\/fapi\/task\/list$ reject-dict
