@@ -11,8 +11,8 @@
 #!date=2024-08-09 22:17:30
 
 [Rule]
-DOMAIN, ad.jia.360.cn, REJECT
-DOMAIN, ad.iot.360.cn, REJECT
+DOMAIN,ad.jia.360.cn,REJECT
+DOMAIN,ad.iot.360.cn,REJECT
 
 [Rewrite]
 # 删除 - 底栏商城入口、首页视频教程、广告配置、我的页面推广语

@@ -1,6 +1,6 @@
 #!name=小红书去广告
 #!desc=过滤信息流推广，移除图片及视频水印，如有异常，请先清除缓存再尝试。
-#!author=RuCu6[https://github.com/RuCu6], fmz200[https://github.com/fmz200]
+#!author=RuCu6[https://github.com/RuCu6],fmz200[https://github.com/fmz200]
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/RedPaper.png
 #!category=Jacob
 
@@ -11,7 +11,7 @@
 #!date=2024-11-06 16:05:55
 
 [Rule]
-AND, ((PROTOCOL, QUIC), (DOMAIN-SUFFIX, xiaohongshu.com)), REJECT
+AND,((PROTOCOL,QUIC),(DOMAIN-SUFFIX,xiaohongshu.com)),REJECT
 
 [Map Local]
 # 惊喜弹窗

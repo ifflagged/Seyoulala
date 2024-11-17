@@ -9,7 +9,7 @@
 #!loon_version=3.2.1(749)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
 #!date=2024-04-24 16:13:05
-#!select=镜像源, A镜像, B镜像
+#!select=镜像源,A镜像,B镜像
 
 [Rule]
 DOMAIN,fastraw.ixnic.net,DIRECT

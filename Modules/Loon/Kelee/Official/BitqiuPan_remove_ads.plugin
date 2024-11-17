@@ -12,18 +12,18 @@
 
 [Rule]
 # 友盟
-DOMAIN, cnlogs.umeng.com, REJECT
-DOMAIN, errlog.umeng.com, REJECT
-DOMAIN, errnewlog.umeng.com, REJECT
-DOMAIN, ucc.umeng.com, REJECT
-DOMAIN, ulogs.umeng.com, REJECT
-DOMAIN, utoken.umeng.com, REJECT
-DOMAIN, deeplink.umeng.com, REJECT
-DOMAIN, aspect-upush.umeng.com, REJECT
-DOMAIN, plbslog.umeng.com, REJECT
-DOMAIN, log.umtrack.com, REJECT
-DOMAIN, aaid.umeng.com, REJECT
-DOMAIN, log.umsns.com, REJECT
+DOMAIN,cnlogs.umeng.com,REJECT
+DOMAIN,errlog.umeng.com,REJECT
+DOMAIN,errnewlog.umeng.com,REJECT
+DOMAIN,ucc.umeng.com,REJECT
+DOMAIN,ulogs.umeng.com,REJECT
+DOMAIN,utoken.umeng.com,REJECT
+DOMAIN,deeplink.umeng.com,REJECT
+DOMAIN,aspect-upush.umeng.com,REJECT
+DOMAIN,plbslog.umeng.com,REJECT
+DOMAIN,log.umtrack.com,REJECT
+DOMAIN,aaid.umeng.com,REJECT
+DOMAIN,log.umsns.com,REJECT
 
 [Rewrite]
 # 开屏广告

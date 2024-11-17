@@ -1,6 +1,6 @@
 #!name=网易云音乐去广告
 #!desc=过滤网易云音乐广告，并允许自定义界面。
-#!author=RuCu6[https://github.com/RuCu6], Keywos[https://github.com/Keywos]
+#!author=RuCu6[https://github.com/RuCu6],Keywos[https://github.com/Keywos]
 #!icon=https://gitlab.com/lodepuly/iconlibrary/-/raw/main/App_icon/120px/Loon.png
 #!keyword=Jacob
 
@@ -9,19 +9,19 @@
 #!loon_version=3.2.1(749)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
 #!date=2024-10-11 07:22:12
-#!select=隐藏漫游标签, 是, 否
-#!select=隐藏动态标签, 是, 否
-#!select=隐藏推荐标签, 是, 否
-#!select=隐藏发现标签, 是, 否
-#!select=隐藏首页问候语, 是, 否
-#!select=隐藏首页排行榜, 是, 否
-#!select=隐藏首页每日推荐, 是, 否
-#!select=隐藏首页推荐歌单, 是, 否
-#!select=隐藏首页最近常听, 是, 否
-#!select=隐藏首页雷达歌单, 是, 否
-#!select=隐藏首页音乐合伙人, 是, 否
-#!select=隐藏首页推荐专属歌单, 是, 否
-#!select=隐藏首页你的专属歌单, 是, 否
+#!select=隐藏漫游标签,是,否
+#!select=隐藏动态标签,是,否
+#!select=隐藏推荐标签,是,否
+#!select=隐藏发现标签,是,否
+#!select=隐藏首页问候语,是,否
+#!select=隐藏首页排行榜,是,否
+#!select=隐藏首页每日推荐,是,否
+#!select=隐藏首页推荐歌单,是,否
+#!select=隐藏首页最近常听,是,否
+#!select=隐藏首页雷达歌单,是,否
+#!select=隐藏首页音乐合伙人,是,否
+#!select=隐藏首页推荐专属歌单,是,否
+#!select=隐藏首页你的专属歌单,是,否
 
 [Rule]
 DOMAIN,httpdns.music.163.com,REJECT
@@ -30,7 +30,7 @@ DOMAIN,iadmat.nosdn.127.net,REJECT
 DOMAIN,iadmatapk.nosdn.127.net,REJECT
 DOMAIN,iadmusicmat.music.126.net,REJECT
 #DOMAIN,iadmusicmatvideo.music.126.net,REJECT
-# DOMAIN, iadmusicmatvideo.music.126.net, REJECT
+# DOMAIN,iadmusicmatvideo.music.126.net,REJECT
 DOMAIN-SUFFIX,163jiasu.com,REJECT
 
 [Rewrite]

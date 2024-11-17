@@ -11,33 +11,33 @@
 #!date=2024-07-25 00:46:39
 
 [Rule]
-DOMAIN, ads.service.kugou.com, REJECT
-DOMAIN, adstats.tencentmusic.com, REJECT
-DOMAIN, adsmind.gdtimg.com, REJECT
-DOMAIN, adserviceretry.kugou.com, REJECT
-DOMAIN, adserviceretry.kglink.cn, REJECT
-DOMAIN, ad.tencentmusic.com, REJECT
-DOMAIN, adservice.kugou.com, REJECT
-DOMAIN, splashimgretrybssdl.cloud.kugou.com, REJECT
+DOMAIN,ads.service.kugou.com,REJECT
+DOMAIN,adstats.tencentmusic.com,REJECT
+DOMAIN,adsmind.gdtimg.com,REJECT
+DOMAIN,adserviceretry.kugou.com,REJECT
+DOMAIN,adserviceretry.kglink.cn,REJECT
+DOMAIN,ad.tencentmusic.com,REJECT
+DOMAIN,adservice.kugou.com,REJECT
+DOMAIN,splashimgretrybssdl.cloud.kugou.com,REJECT
 
 # 腾讯优量汇 - 广告服务商
-DOMAIN, ios.bugly.qq.com, REJECT
-DOMAIN, sdk.e.qq.com, REJECT
-DOMAIN, us.l.qq.com, REJECT
-DOMAIN-SUFFIX, ugdtimg.com, REJECT
-# DOMAIN, adsmind.ugdtimg.com, REJECT
-# DOMAIN, pgdt.ugdtimg.com, REJECT
-# DOMAIN, qzs.gdtimg.com, REJECT
+DOMAIN,ios.bugly.qq.com,REJECT
+DOMAIN,sdk.e.qq.com,REJECT
+DOMAIN,us.l.qq.com,REJECT
+DOMAIN-SUFFIX,ugdtimg.com,REJECT
+# DOMAIN,adsmind.ugdtimg.com,REJECT
+# DOMAIN,pgdt.ugdtimg.com,REJECT
+# DOMAIN,qzs.gdtimg.com,REJECT
 
-DOMAIN-SUFFIX, gdt.qq.com, REJECT
-# DOMAIN, mi.gdt.qq.com, REJECT
-# DOMAIN, win.gdt.qq.com, REJECT
-# DOMAIN, v2.gdt.qq.com, REJECT
-# v.gdt.qq.com, REJECT
-# t.gdt.qq.com, REJECT
-# c2.gdt.qq.com, REJECT
+DOMAIN-SUFFIX,gdt.qq.com,REJECT
+# DOMAIN,mi.gdt.qq.com,REJECT
+# DOMAIN,win.gdt.qq.com,REJECT
+# DOMAIN,v2.gdt.qq.com,REJECT
+# v.gdt.qq.com,REJECT
+# t.gdt.qq.com,REJECT
+# c2.gdt.qq.com,REJECT
 
-URL-REGEX, ^http:\/\/log\.stat\.kugou\.com\/mobile\/ad\.html, REJECT
+URL-REGEX,^http:\/\/log\.stat\.kugou\.com\/mobile\/ad\.html,REJECT
 
 [Rewrite]
 # 广告配置
@@ -80,7 +80,7 @@ URL-REGEX, ^http:\/\/log\.stat\.kugou\.com\/mobile\/ad\.html, REJECT
 
 [Script]
 # 精简顶部标签
-http-response ^https:\/\/gateway(retry)?\.kugou\.com\/ocean\/v\d\/tab\/list_v\d script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/KuGou_remove_ads/KuGou_remove_ads.js, requires-body=true, tag=精简顶部标签
+http-response ^https:\/\/gateway(retry)?\.kugou\.com\/ocean\/v\d\/tab\/list_v\d script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/KuGou_remove_ads/KuGou_remove_ads.js,requires-body=true,tag=精简顶部标签
 
 [MitM]
-hostname=gateway.kugou.com, fx.service.kugou.com, hwstore.kugou.com, ep.kugou.com, gatewayretry.kugou.com, gzacshow.kugou.com, m1fxgroup.kugou.com
+hostname=gateway.kugou.com,fx.service.kugou.com,hwstore.kugou.com,ep.kugou.com,gatewayretry.kugou.com,gzacshow.kugou.com,m1fxgroup.kugou.com

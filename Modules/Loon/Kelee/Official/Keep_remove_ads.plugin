@@ -12,11 +12,11 @@
 
 [Rule]
 # 拦截HTTPDNS
-DOMAIN, httpdns.n.netease.com, REJECT
-DOMAIN, httpdns.calorietech.com, REJECT
+DOMAIN,httpdns.n.netease.com,REJECT
+DOMAIN,httpdns.calorietech.com,REJECT
 
 # 拦截广告下发
-DOMAIN, hc-ssp.sm.cn, REJECT
+DOMAIN,hc-ssp.sm.cn,REJECT
 
 [Rewrite]
 # 搜索填充词
@@ -36,7 +36,7 @@ DOMAIN, hc-ssp.sm.cn, REJECT
 
 [Script]
 # 首页 - 活动标签
-http-response ^https:\/\/api\.gotokeep\.com\/config\/v3\/basic script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Keep_remove_ads/Keep_remove_ads.js, requires-body=true, tag=移除首页活动标签
+http-response ^https:\/\/api\.gotokeep\.com\/config\/v3\/basic script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Keep_remove_ads/Keep_remove_ads.js,requires-body=true,tag=移除首页活动标签
 
 [MitM]
-hostname=api.gotokeep.com, kad.gotokeep.com
+hostname=api.gotokeep.com,kad.gotokeep.com

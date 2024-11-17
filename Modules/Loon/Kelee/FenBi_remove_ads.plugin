@@ -26,4 +26,4 @@
 # ^https:\/\/keapi\.fenbi\.com\/app\/iphone\/\w+\/small_banner reject-dict
 
 [MitM]
-hostname=keapi.fenbi.com, market-api.fenbi.com, tiku.fenbi.com
+hostname=keapi.fenbi.com,market-api.fenbi.com,tiku.fenbi.com

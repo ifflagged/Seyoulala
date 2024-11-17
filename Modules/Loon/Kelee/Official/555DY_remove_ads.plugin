@@ -3,7 +3,7 @@
 #!openUrl=https://5wuv.com/
 #!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 #!tag=去广告
-#!system=iOS, iPadOS
+#!system=iOS,iPadOS
 #!system_version=
 #!loon_version=3.2.1(749)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
@@ -16,7 +16,7 @@
 
 [Script]
 # 移除横幅广告
-http-response ^https:\/\/app-v1\.ecoliving168\.com\/api\/v1\/movie\/index_recommend\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/555DY_remove_ads/555DY_remove_ads.js, requires-body=true, tag=移除横幅广告
+http-response ^https:\/\/app-v1\.ecoliving168\.com\/api\/v1\/movie\/index_recommend\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/555DY_remove_ads/555DY_remove_ads.js,requires-body=true,tag=移除横幅广告
 
 [MitM]
 hostname=app-v1.ecoliving168.com
