@@ -1,6 +1,6 @@
 #!name = 转转去广告
 #!desc = 移除开屏广告、应用内悬浮窗、商品推荐、首页弹窗，精简我的页面。
-#!openUrl = https://apps.apple.com/app/id1002355194
+#!openUrl=https://apps.apple.com/app/id1002355194
 #!author = 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 #!tag = 去广告
 #!system = 
@@ -8,11 +8,11 @@
 #!loon_version = 3.2.4(780)
 #!homepage = https://github.com/luestr/ProxyResource/blob/main/README.md
 #!icon = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/ZhuanZhuan.png
-#!date = 2024-11-17 16:26:05
+#!date = 2024-11-17 17:17:46
 
 [Rewrite]
 # 开屏广告
-^https:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzlogic\/getOpenScreen\? reject
+^https:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzlogic\/getOpenScreen$ reject-dict
 
 # 首页 - 顶部横幅
 ^https:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzlogic\/mycontinenthomepage\? response-body-json-del respData.topActBanner
@@ -30,13 +30,13 @@
 ^https:\/\/app\.zhuanzhuan\.com\/zzopen\/popwindow\/getallpopwin\? reject-dict
 
 # 收藏 - 订阅 - 热门精选
-^https:\/\/app\.zhuanzhuan\.com\/zzopen\/ptuserlogic\/subscribehotrecommend\$ reject-dict
+^https:\/\/app\.zhuanzhuan\.com\/zzopen\/ptuserlogic\/subscribehotrecommend$ reject-dict
 
 # 收藏 - 收藏 - 精选推荐
-^https:\/\/app\.zhuanzhuan\.com\/zzopen\/ptsimpleshow\/recommendbymyloveinfo\? reject-dict
+^https:\/\/app\.zhuanzhuan\.com\/zzopen\/ptsimpleshow\/recommendbymyloveinfo\? mock-response-body data-type=json data="{"respCode":0,"errorMsg":"null","errMsg":""}" status-code=200
 
 # 收藏 - 足迹 - 精选推荐
-^https:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzinfoshow\/footprintsamerecommend\? reject-dict
+^https:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzinfoshow\/footprintsamerecommend\? mock-response-body data-type=json data="{"respCode":0,"errorMsg":"","errMsg":""}" status-code=200
 
 # 商品页面 - 评价 - 好货推荐
 ^https:\/\/app\.zhuanzhuan\.com\/zzopen\/ypmall\/listData$ reject-dict
@@ -45,11 +45,11 @@
 ^https:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzusercenter\/myprofilevariouscards$ reject-dict
 
 # 我的页面 - 精选好货
-^https:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzinfoshow\/getchoicegoodsinfos\? reject-dict
+^https:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzinfoshow\/getchoicegoodsinfos\? mock-response-body data-type=json data="{"respCode":0,"errorMsg":"","errMsg":""}" status-code=200
 
 # 精简我的页面
 ^https:\/\/app\.zhuanzhuan\.com\/zz\/transfer\/getmyprofilev3$ response-body-json-del respData.bmNewInfo
 ^https:\/\/app\.zhuanzhuan\.com\/zz\/transfer\/getmyprofilev3$ response-body-json-jq 'del(.respData.itemGroupList[].itemList[] | select(.name == "天天赚钱" or .name == "借钱")) | del(.respData.itemGroupList[] | select(.groupType == 15))'
 
 [MitM]
-hostname = app.zhuanzhuan.com
+hostname=app.zhuanzhuan.com
