@@ -8,7 +8,7 @@
 #!tag=去广告
 #!loon_version=3.2.4(780)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!date=2024-11-17 18:12:58
+#!date=2024-11-17 18:31:54
 
 [URL Rewrite]
 # 开屏广告
@@ -21,14 +21,10 @@
 ^https:\/\/app\.zhuanzhuan\.com\/zzopen\/zzbmlogic\/queryFrontPageWindowInfo\? - reject-dict
 # 收藏 - 订阅 - 热门精选
 ^https:\/\/app\.zhuanzhuan\.com\/zzopen\/ptuserlogic\/subscribehotrecommend$ - reject-dict
-# 收藏 - 足迹 - 精选推荐
-^https:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzinfoshow\/footprintsamerecommend\? - reject-dict
 # 商品页面 - 评价 - 好货推荐
 ^https:\/\/app\.zhuanzhuan\.com\/zzopen\/ypmall\/listData$ - reject-dict
 # 我的页面 - 发布闲置赚钱
 ^https:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzusercenter\/myprofilevariouscards$ - reject-dict
-# 我的页面 - 精选好货
-^https:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzinfoshow\/getchoicegoodsinfos\? - reject-dict
 
 [Script]
 body_rewrite_15 = type=http-response, pattern=^https:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzlogic\/mycontinenthomepage\?, script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22json-del%22%2C%5B%22respData.topActBanner%22%5D%5D%5D
@@ -37,6 +33,12 @@ body_rewrite_17 = type=http-response, pattern=^https:\/\/app\.zhuanzhuan\.com\/z
 
 # 收藏 - 收藏 - 精选推荐
 echoResponse = type=http-request, pattern=^https:\/\/app\.zhuanzhuan\.com\/zzopen\/ptsimpleshow\/recommendbymyloveinfo\?, script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/echo-response.js, timeout=60, argument=text=%7B%22respCode%22%3A0%2C%22errorMsg%22%3A%22null%22%2C%22errMsg%22%3A%22%22%7D&status-code=200
+
+# 收藏 - 足迹 - 精选推荐
+echoResponse = type=http-request, pattern=^https:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzinfoshow\/footprintsamerecommend\?, script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/echo-response.js, timeout=60, argument=text=%7B%22respCode%22%3A0%2C%22errorMsg%22%3A%22%22%2C%22errMsg%22%3A%22%22%7D&status-code=200
+
+# 我的页面 - 精选好货
+echoResponse = type=http-request, pattern=^https:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzinfoshow\/getchoicegoodsinfos\?, script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/echo-response.js, timeout=60, argument=text=%7B%22respCode%22%3A0%2C%22respData%22%3A%7B%7D%2C%22errorMsg%22%3A%22%22%2C%22errMsg%22%3A%22%22%7D&status-code=200
 
 body_rewrite_39 = type=http-response, pattern=^https:\/\/app\.zhuanzhuan\.com\/zz\/transfer\/getmyprofilev3$, script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22json-del%22%2C%5B%22respData.bmNewInfo%22%5D%5D%5D
 

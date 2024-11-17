@@ -8,7 +8,7 @@
 #!tag=去广告
 #!loon_version=3.2.4(780)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!date=2024-11-17 18:12:58
+#!date=2024-11-17 18:31:54
 
 [Rewrite]
 # 开屏广告
@@ -21,16 +21,16 @@
 ^https:\/\/app\.zhuanzhuan\.com\/zzopen\/zzbmlogic\/queryFrontPageWindowInfo\? - reject-dict
 # 收藏 - 订阅 - 热门精选
 ^https:\/\/app\.zhuanzhuan\.com\/zzopen\/ptuserlogic\/subscribehotrecommend$ - reject-dict
-# 收藏 - 足迹 - 精选推荐
-^https:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzinfoshow\/footprintsamerecommend\? - reject-dict
 # 商品页面 - 评价 - 好货推荐
 ^https:\/\/app\.zhuanzhuan\.com\/zzopen\/ypmall\/listData$ - reject-dict
 # 我的页面 - 发布闲置赚钱
 ^https:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzusercenter\/myprofilevariouscards$ - reject-dict
-# 我的页面 - 精选好货
-^https:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzinfoshow\/getchoicegoodsinfos\? - reject-dict
 # 收藏 - 收藏 - 精选推荐
 ^https:\/\/app\.zhuanzhuan\.com\/zzopen\/ptsimpleshow\/recommendbymyloveinfo\? mock-response-body data-type=json data="{"respCode":0,"errorMsg":"null","errMsg":""}" status-code=200
+# 收藏 - 足迹 - 精选推荐
+^https:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzinfoshow\/footprintsamerecommend\? mock-response-body data-type=json data="{"respCode":0,"errorMsg":"","errMsg":""}" status-code=200
+# 我的页面 - 精选好货
+^https:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzinfoshow\/getchoicegoodsinfos\? mock-response-body data-type=json data="{"respCode":0,"respData":{},"errorMsg":"","errMsg":""}" status-code=200
 
 [Script]
 http-response ^https:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzlogic\/mycontinenthomepage\? script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_15, argument=%5B%5B%22json-del%22%2C%5B%22respData.topActBanner%22%5D%5D%5D
