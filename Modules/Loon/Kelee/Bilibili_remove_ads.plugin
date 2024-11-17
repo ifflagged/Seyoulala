@@ -35,7 +35,7 @@ URL-REGEX,^http:\/\/[\d\.]+:8000\/v1\/resource\/\w{32}-1-SPLASH,REJECT-DICT
 ^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\? response-body-json-del data.common_equip
 
 # 移除右上角活动入口
-^https:\/\/app\.bilibili\.com\/x\/resource\/top\/activity\? mock-response-body data-type=json status-code=200 data="{ "code": -404,"message": "啥都木有","ttl": 1,"data": null }"
+^https:\/\/app\.bilibili\.com\/x\/resource\/top\/activity\? mock-response-body data-type = json data="{"code":-404,"message":"啥都木有","ttl":1,"data":null}" status-code = 200
 
 # 屏蔽默认搜索框关键词
 ^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.interface\.v1\.Search\/DefaultWords$ reject-dict
