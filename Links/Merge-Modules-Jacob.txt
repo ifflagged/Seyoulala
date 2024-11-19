@@ -19,8 +19,8 @@ Modules/Surge/NSRingo/Location.sgmodule # Loon,Shadowrocket
 Modules/Surge/NSRingo/Maps.sgmodule # Loon,Shadowrocket
 
 https://github.com/ifflagged/Neverflagged/raw/main/Surge/Module/Tools.sgmodule # Loon,Copy
-Modules/Surge/ifflagged/Surge-Common.sgmodule # Loon,Shadowrocket
-Modules/Surge/ifflagged/Loon-Common.sgmodule # Loon,Shadowrocket
+Modules/Surge/ifflagged/Module-Common.sgmodule # Loon,Shadowrocket
+Modules/Surge/ifflagged/Plugin-Common.sgmodule # Loon,Shadowrocket
 
 Modules/Surge/Maasea/YouTube.Enhance.sgmodule # Loon,Shadowrocket
 # Modules/Surge/DualSubs/DualSubs.Universal.sgmodule # Loon,Shadowrocket
