@@ -119,21 +119,8 @@ DOMAIN,open.e.kuaishou.com,REJECT
 DOMAIN-SUFFIX,kuaishouzt.com,REJECT
 DOMAIN-SUFFIX,adukwai.com,REJECT
 # > 友盟 - UMENG
-DOMAIN,ar.umeng.com,REJECT
-DOMAIN,ucc.umeng.com,REJECT
-DOMAIN,utoken.umeng.com,REJECT
-DOMAIN,deeplink.umeng.com,REJECT
-DOMAIN,aspect-upush.umeng.com,REJECT
-DOMAIN,log.umtrack.com,REJECT
-DOMAIN,log.umsns.com,REJECT
-DOMAIN,stats.umsns.com,REJECT
-DOMAIN,aaid.umeng.com,REJECT
-DOMAIN,msg.umengcloud.com,REJECT
-DOMAIN-KEYWORD,uop.umeng.com,REJECT
-DOMAIN-KEYWORD,log.umeng.com,REJECT
-DOMAIN-KEYWORD,logs.umeng.com,REJECT
-DOMAIN-KEYWORD,log.umengcloud.com,REJECT
-DOMAIN-KEYWORD,logs.umengcloud.com,REJECT
+DOMAIN-SUFFIX,umeng.com,REJECT
+DOMAIN-SUFFIX,umengcloud.com,REJECT
 # > 谷歌 - GOOGLE
 DOMAIN-SUFFIX,googleadsserving.cn,REJECT
 DOMAIN-SUFFIX,googleadservices.com,REJECT
