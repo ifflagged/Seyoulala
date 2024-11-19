@@ -471,14 +471,8 @@ DOMAIN-KEYWORD, pangolin.snssdk.com, REJECT
 DOMAIN-KEYWORD, pglstatp-toutiao, REJECT
 DOMAIN, open.kuaishou.com, REJECT
 DOMAIN-SUFFIX, kuaishouzt.com, REJECT
-DOMAIN, ar.umeng.com, REJECT
-DOMAIN, stats.umsns.com, REJECT
-DOMAIN, msg.umengcloud.com, REJECT
-DOMAIN-KEYWORD, uop.umeng.com, REJECT
-DOMAIN-KEYWORD, log.umeng.com, REJECT
-DOMAIN-KEYWORD, logs.umeng.com, REJECT
-DOMAIN-KEYWORD, log.umengcloud.com, REJECT
-DOMAIN-KEYWORD, logs.umengcloud.com, REJECT
+DOMAIN-SUFFIX, umeng.com, REJECT
+DOMAIN-SUFFIX, umengcloud.com, REJECT
 DOMAIN-SUFFIX, googleadsserving.cn, REJECT
 DOMAIN-SUFFIX, googleadservices.com, REJECT
 DOMAIN-SUFFIX, googlecommerce.com, REJECT
