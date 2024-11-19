@@ -1,7 +1,8 @@
 # 按字母排序
 https://github.com/ifflagged/Neverflagged/raw/main/Surge/Module/TikTok.sgmodule
 https://github.com/ifflagged/Neverflagged/raw/main/Surge/Module/BiliBili.sgmodule
-https://github.com/ifflagged/Neverflagged/raw/main/Loon/Plugin/Common.plugin
+https://github.com/ifflagged/Neverflagged/raw/main/Surge/Module/Surge-Common.sgmodule
+https://github.com/ifflagged/Neverflagged/raw/main/Loon/Plugin/Loon-Common.plugin
 
 # A #
 https://github.com/Ananaskop/Profile/raw/main/Surge/Modules/Common_remove_ads.sgmodule
