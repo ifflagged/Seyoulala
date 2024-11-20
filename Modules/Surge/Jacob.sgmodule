@@ -990,7 +990,7 @@ URL-REGEX, ^http:\/\/[\d\.]+:8000\/v1\/resource\/\w{32}-1-SPLASH, REJECT-TINYGIF
 ^https?:\/\/images\.pinduoduo\.com\/(mrk|marketing_api)\/ - reject
 ^https?:\/\/(gw|heic)\.alicdn\.com\/mt\/ - reject
 ^https?:\/\/(gw|heic)\.alicdn\.com\/t(?>f|p)s\/.+\d{3,4}-\d{4} - reject
-^https?:\/\/(gw|heic)\.alicdn\.com\/imgextra\/\w{2}\/\w+!+(?!600000000(?>5412|6148|4021|5802))\d*-\d-tps-(?!1035)\d{3,4}-(?!570)\d{3,4}\.(?>jpg|png)_(1\d{3}|9\d{2})x(1\d{3}|9\d{2})q\d0\.jpg_\.(?>heic|webp) - reject
+^https?:\/\/(gw|heic)\.alicdn\.com\/imgextra\/\w{2}\/\w+!+(?!600000000(5412|6148|4021|5802))\d*-\d-tps-(?!1035)\d{3,4}-(?!570)\d{3,4}\.(?>jpg|png)_(1\d{3}|9\d{2})x(1\d{3}|9\d{2})q\d0\.jpg_\.(?>heic|webp) - reject
 ^https?:\/\/img1.126.net\/.+dpi=\w{7,8} - reject
 ^https?:\/\/img1.126.net\/channel14\/ - reject
 ^https?:\/\/nex.163.com\/q - reject
@@ -1468,10 +1468,10 @@ upos-sz-upcdntx.bilivideo.com = server:https://doh.pub/dns-query // BiliBili upo
 ^https?:\/\/img\.meituan\.net\/groceryimages\/\w+\.gif data-type=tiny-gif status-code=200
 ^https?:\/\/img\.meituan\.net\/groceryimages\/\w+\.png@220w_220h_1e_1l data-type=tiny-gif status-code=200
 ^https?:\/\/p\d\.meituan\.net\/movie\/.+?\.jpg\?may_covertWebp data-type=tiny-gif status-code=200
-^https?:\/\/p[1-9]{1}\.meituan\.net\/linglong\/\w+(?!.*%(?>4088h_88w|40115h_115w)_1e_1l)\.(?>gif|jpg|webp|png)(?!.*@(?>100w_100h|150w_150h|1284w|1200w_0h)) data-type=tiny-gif status-code=200
+^https?:\/\/p[1-9]{1}\.meituan\.net\/linglong\/\w+(?!.*%(4088h_88w|40115h_115w)_1e_1l)\.(?>gif|jpg|webp|png)(?!.*@(100w_100h|150w_150h|1284w|1200w_0h)) data-type=tiny-gif status-code=200
 ^https?:\/\/p\d\.meituan\.net\/linglong\/(?!88a67c|20ad6b|f084a7|1cc20d|c31784|3f03f8|374276|d1c1f6|5f7e3c|2bc17f|f35609|86c8cd|46c1cf|ad5446)\w+\.png\.webp@1284w_1l$ data-type=tiny-gif status-code=200
-^https?:\/\/p\d\.meituan\.net\/travelcube\/(?>?!1d4a663|52e9bfc|29a6227).+@100w_100h data-type=tiny-gif status-code=200
-^https?:\/\/p\d\.meituan\.net\/(\d+\.\d+\.\d+\/)?wmbanner\/(?>?!fb51b9d|4e9d3c4).+\.gif data-type=tiny-gif status-code=200
+^https?:\/\/p\d\.meituan\.net\/travelcube\/(?!1d4a663|52e9bfc|29a6227).+@100w_100h data-type=tiny-gif status-code=200
+^https?:\/\/p\d\.meituan\.net\/(\d+\.\d+\.\d+\/)?wmbanner\/(?!fb51b9d|4e9d3c4).+\.gif data-type=tiny-gif status-code=200
 ^https?:\/\/(s3plus|flowplus)\.meituan\.net\/v\d\/\w+\/linglong\/.+\.(?>gif|jpg|mp4) data-type=tiny-gif status-code=200
 ^https?:\/\/portal-portm\.meituan\.com\/horn_ios data-type=text data="{}" status-code=200
 # qunar
