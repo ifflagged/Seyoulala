@@ -45,9 +45,9 @@ DOMAIN-KEYWORD,report.meituan,REJECT
 
 ^https?:\/\/p\d\.meituan\.net\/linglong\/(?!88a67c|20ad6b|f084a7|1cc20d|c31784|3f03f8|374276|d1c1f6|5f7e3c|2bc17f|f35609|86c8cd|46c1cf|ad5446)\w+\.png\.webp@1284w_1l$ data-type=tiny-gif status-code=200
 
-^https?:\/\/p\d\.meituan\.net\/travelcube\/(?>?!1d4a663|52e9bfc|29a6227).+@100w_100h data-type=tiny-gif status-code=200
+^https?:\/\/p\d\.meituan\.net\/travelcube\/(?!1d4a663|52e9bfc|29a6227).+@100w_100h data-type=tiny-gif status-code=200
 
-^https?:\/\/p\d\.meituan\.net\/(\d+\.\d+\.\d+\/)?wmbanner\/(?>?!fb51b9d|4e9d3c4).+\.gif data-type=tiny-gif status-code=200
+^https?:\/\/p\d\.meituan\.net\/(\d+\.\d+\.\d+\/)?wmbanner\/(?!fb51b9d|4e9d3c4).+\.gif data-type=tiny-gif status-code=200
 
 ^https?:\/\/(s3plus|flowplus)\.meituan\.net\/v\d\/\w+\/linglong\/.+\.(?>gif|jpg|mp4) data-type=tiny-gif status-code=200
 
