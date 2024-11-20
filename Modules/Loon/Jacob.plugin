@@ -1075,9 +1075,9 @@ DOMAIN-SUFFIX, jsdelivr.net, PROXY
 ^https?:\/\/t-dsp\.pinduoduo\.com\/dspcb\/i\/mrk_union - reject
 ^https?:\/\/images\.pinduoduo\.com\/(mrk|marketing_api)\/ - reject
 ^https?:\/\/(gw|heic)\.alicdn\.com\/mt\/ - reject
-^https?:\/\/(gw|heic)\.alicdn\.com\/t(f|p)s\/.+\d{3,4}-\d{4} - reject
-^https?:\/\/(gw|heic)\.alicdn\.com\/imgextra\/\w{2}\/\w+!+(?!600000000(5412|6148|4021|5802))\d*-\d-tps-(?!1035)\d{3,4}-(?!570)\d{3,4}\.(jpg|png)_(1\d{3}|9\d{2})x(1\d{3}|9\d{2})q\d0\.jpg_\.(heic|webp) - reject
-^https?:\/\/g\.alicdn\.com\/(alilog|trace) - reject-200
+^https?:\/\/(gw|heic)\.alicdn\.com\/t(?>f|p)s\/.+\d{3,4}-\d{4} - reject
+^https?:\/\/(gw|heic)\.alicdn\.com\/imgextra\/\w{2}\/\w+!+(?!600000000(?>5412|6148|4021|5802))\d*-\d-tps-(?!1035)\d{3,4}-(?!570)\d{3,4}\.(?>jpg|png)_(1\d{3}|9\d{2})x(1\d{3}|9\d{2})q\d0\.jpg_\.(?>heic|webp) - reject
+^https?:\/\/g\.alicdn\.com\/(?>alilog|trace) - reject-200
 ^https?:\/\/yixiu-abtest\.alicdn\.com\/ut-abtest\/config - reject-dict
 ^https?:\/\/img1.126.net\/.+dpi=\w{7,8} - reject
 ^https?:\/\/img1.126.net\/channel14\/ - reject
@@ -1107,14 +1107,14 @@ DOMAIN-SUFFIX, jsdelivr.net, PROXY
 ^https?:\/\/cache\.bydauto\.com\.cn\/dilink_user_upload\/20 - reject-200
 # ccb
 ^https?:\/\/image1\.ccb\.com\/newsinfo\/eBranch\/check\/(nf\/newfin\/activity|po\/poortheme\/activity)\/\w+\.png - reject
-^https?:\/\/imageadv\.ccb\.com\/adpic\/(nctm\/ad|sszserver\/upload\/activity)\/\d{8}\/\w+\.(gif|png|jpg)$ - reject
+^https?:\/\/imageadv\.ccb\.com\/adpic\/(nctm\/ad|sszserver\/upload\/activity)\/\d{8}\/\w+\.(?>gif|png|jpg)$ - reject
 ^https?:\/\/cy\.cloud\.ccb\.com\/\/gateway\/user-server\/user\/qyCenter\/getCustomizedAdv - reject-dict
 # cmb
 ^https?:\/\/webappcfg\.paas\.cmbchina\.com\/v\d\/func\/getmarketconfig - reject-200
 ^https?:\/\/webapp\.joyingtrip\.com\/cmbapp\/api\/hotel\/marketing\/adListNew - reject-dict
 # dianping
 ^https?:\/\/103\.37\.155\.60\/fetch - reject
-^https?:\/\/mapi\.dianping\.com\/mapi\/operating\/(indexopsmodules|loadsplashconfig) - reject
+^https?:\/\/mapi\.dianping\.com\/mapi\/operating\/(?>indexopsmodules|loadsplashconfig) - reject
 ^https?:\/\/mapi\.dianping\.com\/mapi\/intelliindex - reject-dict
 ^https?:\/\/mapi\.dianping\.com\/wdrpreload\/userprediction - reject
 ^https?:\/\/mapi\.dianping\.com\/adshopping - reject
@@ -1166,7 +1166,7 @@ DOMAIN-SUFFIX, jsdelivr.net, PROXY
 # jd
 ^https?:\/\/\w{32}\.jddebug\.com\/diagnose\? - reject
 ^https?:\/\/(bdsp-x|dsp-x)\.jd\.com\/adx\/ - reject-200
-^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(searchBoxWord|xview2Config|stationPullService|getWidget|widget|hybrid|jdDiscoveryRedPoint|queryMaterialAdverts) - reject-200
+^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(?>searchBoxWord|xview2Config|stationPullService|getWidget|widget|hybrid|jdDiscoveryRedPoint|queryMaterialAdverts) - reject-200
 ^https?:\/\/storage\.360buyimg\.com\/app\.m\.jd\.com\/lottie - reject
 ^https?:\/\/storage\.360buyimg\.com\/dynamicConfig\/binary - reject
 ^https?:\/\/img\d+\.360buyimg\.com\/jddjadvertise\/ - reject
@@ -1181,15 +1181,15 @@ DOMAIN-SUFFIX, jsdelivr.net, PROXY
 ^https?:\/\/img\.meituan\.net\/groceryimages\/\w+\.png@220w_220h_1e_1l - reject-img
 ^https?:\/\/img\.meituan\.net\/bizad - reject
 ^https?:\/\/p\d\.meituan\.net\/movie\/.+?\.jpg\?may_covertWebp - reject-img
-^https?:\/\/p[1-9]{1}\.meituan\.net\/linglong\/\w+(?!.*%(4088h_88w|40115h_115w)_1e_1l)\.(gif|jpg|webp|png)(?!.*@(100w_100h|150w_150h|1284w|1200w_0h)) - reject-img
+^https?:\/\/p[1-9]{1}\.meituan\.net\/linglong\/\w+(?!.*%(?>4088h_88w|40115h_115w)_1e_1l)\.(?>gif|jpg|webp|png)(?!.*@(?>100w_100h|150w_150h|1284w|1200w_0h)) - reject-img
 ^https?:\/\/p\d\.meituan\.net\/linglong\/(?!88a67c|20ad6b|f084a7|1cc20d|c31784|3f03f8|374276|d1c1f6|5f7e3c|2bc17f|f35609|86c8cd|46c1cf|ad5446)\w+\.png\.webp@1284w_1l$ - reject-img
-^https?:\/\/p\d\.meituan\.net\/travelcube\/(?!1d4a663|52e9bfc|29a6227).+@100w_100h - reject-img
-^https?:\/\/p\d\.meituan\.net\/(\d+\.\d+\.\d+\/)?wmbanner\/(?!fb51b9d|4e9d3c4).+\.gif - reject-img
+^https?:\/\/p\d\.meituan\.net\/travelcube\/(?>?!1d4a663|52e9bfc|29a6227).+@100w_100h - reject-img
+^https?:\/\/p\d\.meituan\.net\/(\d+\.\d+\.\d+\/)?wmbanner\/(?>?!fb51b9d|4e9d3c4).+\.gif - reject-img
 ^https?:\/\/p\d\.meituan\.net\/(display|mmc)\/ - reject
 ^https?:\/\/apimobile\.meituan\.com\/appupdate\/mach\/checkUpdate? - reject
 ^https?:\/\/apimobile\.meituan\.com\/group\/v\d\/recommend\/unity\/recommends - reject
 ^https?:\/\/www\.meituan\.com\/api\/v\d\/appstatus\? - reject
-^https?:\/\/(s3plus|flowplus)\.meituan\.net\/v\d\/\w+\/linglong\/.+\.(gif|jpg|mp4) - reject-img
+^https?:\/\/(s3plus|flowplus)\.meituan\.net\/v\d\/\w+\/linglong\/.+\.(?>gif|jpg|mp4) - reject-img
 ^https?:\/\/s3plus\.meituan\.net\/v\d\/mss_\w+\/waimai-alita\/\w+\.zip$ - reject
 ^https?:\/\/s3plus\.meituan\.net\/v\d\/mss_\w+\/brandcpt - reject
 ^https?:\/\/portal-portm\.meituan\.com\/horn_ios - reject-dict
@@ -1202,11 +1202,10 @@ DOMAIN-SUFFIX, jsdelivr.net, PROXY
 ^https?:\/\/client\.qunar\.com\/pitcher-proxy\?qrt=p_splashAd - reject
 ^https?:\/\/qimgs\.qunarzz\.com\/wpf_newmpic_001\/06c3a131f53cca9a78dd26272e3e4cb3 - reject-img
 # sgcc
-^https?:\/\/(csc|osg)-service\.sgcc\.com\.cn:\d+\/emss-(?!bia|pfa).*-front\/ - reject
-^https?:\/\/(csc|osg)-service\.sgcc\.com\.cn:\d+\/emss-pfa-appset-front\/bootpageoutter\/ - reject-dict
-^https?:\/\/(csc|osg)-service\.sgcc\.com\.cn:\d+\/emss-pfa-appset-front\/appSync\/getAppForceUpgrade - reject
-^https?:\/\/(csc|osg)-service\.sgcc\.com\.cn:\d+\/dtportal-app\/app_api\/selectInfoByCondition - reject-dict
-^https?:\/\/(csc|osg)-service\.sgcc\.com\.cn:\d+\/osg-omgmt0024\/inner\/cache - reject
+^https?:\/\/(?>csc|osg)-service\.sgcc\.com\.cn:\d+\/emss-pfa-appset-front\/bootpageoutter\/ - reject-dict
+^https?:\/\/(?>csc|osg)-service\.sgcc\.com\.cn:\d+\/emss-pfa-appset-front\/appSync\/getAppForceUpgrade - reject
+^https?:\/\/(?>csc|osg)-service\.sgcc\.com\.cn:\d+\/dtportal-app\/app_api\/selectInfoByCondition - reject-dict
+^https?:\/\/(?>csc|osg)-service\.sgcc\.com\.cn:\d+\/osg-omgmt0024\/inner\/cache - reject
 # taobao
 ^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.etao\.noah\.query\/.+tao_splash - reject
 ^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alimama\.etao\.config\.query\/.+?etao_advertise - reject
@@ -1612,7 +1611,7 @@ http-response ^https?:\/\/img\.meituan\.net\/dpmobile\/ script-path=https://gith
 http-response ^https?:\/\/oss-zjrs\.haier\.net\/resource\/confFile\/\d{22}\.json$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/ehaier/haier.js, requires-body=true, timeout=60, tag=haier
 http-response ^https?:\/\/zj\.haier\.net\/omsappapi\/resource\/v\d\/get\/resourceBag$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/ehaier/haier.js, requires-body=true, timeout=60, tag=haier
 # jd
-http-response ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/jd/jd.js, requires-body=true, timeout=60, tag=jd
+http-response ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(?>deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/jd/jd.js, requires-body=true, timeout=60, tag=jd
 # taobao
 http-response ^https?:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(cloudvideo\.video\.query|wireless\.home\.splash\.awesome\.get) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/taobao/taobao.js, requires-body=true, timeout=60, tag=taobao
 http-response ^https?:\/\/poplayer\.template\.alibaba\.com\/\w+\.json script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/taobao/taobao.js, requires-body=true, timeout=60, tag=taobao
