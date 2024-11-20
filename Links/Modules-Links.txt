@@ -9,6 +9,7 @@ https://github.com/Ananaskop/Profile/raw/main/Surge/Modules/Common_remove_ads.sg
 
 # D #
 https://github.com/ddgksf2013/dev/raw/master/ForOwnUse.conf
+https://github.com/ddgksf2013/Modules/raw/main/RevenueCat.Vip.sgmodule
 https://github.com/ddgksf2013/Rewrite/raw/master/AdBlock/SmzdmAds.conf
 https://github.com/ddgksf2013/Rewrite/raw/master/AdBlock/StartUp.conf
 https://gist.githubusercontent.com/ddgksf2013/f43026707830c7818ee3ba624e383c8d/raw/baiduCloud.adblock.js
