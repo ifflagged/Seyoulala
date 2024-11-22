@@ -5,6 +5,7 @@ https://github.com/ifflagged/Neverflagged/raw/main/Surge/Module/Module-Common.sg
 https://github.com/ifflagged/Neverflagged/raw/main/Loon/Plugin/Plugin-Common.plugin
 
 # A #
+https://github.com/Alex0510/Eric/raw/master/surge/Module/revenucar.sgmodule
 https://github.com/Ananaskop/Profile/raw/main/Surge/Modules/Common_remove_ads.sgmodule
 
 # D #
