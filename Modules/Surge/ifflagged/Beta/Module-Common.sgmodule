@@ -2,12 +2,22 @@
 #!desc=Common Tools for All
 #!category=Jacob
 
+[URL Rewrite]
+# NSFW #
+^https:\/\/(cn|www)\.pornhub\.com\/_xa\/ads - reject
+https?:\/\/91porn\.com(\/|)$ https://91porn.com/index.php 302
+
 [Script]
 # Gentler Streak //api.revenuecat.com
-Gentler Streak = type=http-response, pattern=^https?:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/?(.*?)*$), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/Module-Common/gsjk.js, requires-body=true, max-size=0, script-update-interval=0
+Gentler Streak = type=http-response, pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts|subscribers\/(\$RCAnonymousID%)?([\u4E00-\u9FA5A-Za-z0-9-_]+))$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/Module-Common/GentlerStreak.js, requires-body=true, max-size=0, script-update-interval=0
 
-Gentler Streak = type=http-request, pattern=^https?:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/?(.*?)*$), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/Module-Common/gsjk.js, script-update-interval=0
+Gentler Streak = type=http-request, pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts|subscribers\/(\$RCAnonymousID%)?([\u4E00-\u9FA5A-Za-z0-9-_]+))$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/Module-Common/GentlerStreak.js, max-size=0, script-update-interval=0
+
+# NSFW #
+Pornhub = type=http-response, pattern=^https?:/\/(cn|www)\.pornhub\.com\/($|(view|video).*$), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/Module-Common/pornhub.js, requires-body=true, max-size=0, script-update-interval=0
+
+91Porn = type=http-response, pattern=https?:\/\/91porn\.com\/(index|view_video|login|search_result)\.php, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/Module-Common/91porn.js, requires-body=true, max-size=0, script-update-interval=0
 
 [MITM]
-hostname = %APPEND% api.revenuecat.com
+hostname = %APPEND% api.revenuecat.com, *.pornhub.com, 91porn.com
 
