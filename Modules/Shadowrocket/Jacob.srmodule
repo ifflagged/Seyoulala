@@ -13,6 +13,69 @@ always-real-ip = %INSERT% *.lan, *.direct, cable.auth.com, *.msftconnecttest.com
 force-http-engine-hosts = %APPEND% 119.29.29.29:80, dns.weixin.qq.com:80, dns.weixin.qq.com:8080, dns.weixin.qq.com:443, router.com, www.router.com, :8000, *:4480, *.mcdn.bilivideo.cn:4483, *:8000, *:8082, *.mcdn.bilivideo.cn:9102, boxjs.com, boxjs.net, *.boxjs.com, *.boxjs.net
 
 [Rule]
+# HTTPDNS
+DOMAIN, httpdns.alicdn.com, REJECT, extended-matching
+DOMAIN, httpdns-api.aliyuncs.com, REJECT, extended-matching
+DOMAIN, httpdns-sc.aliyuncs.com, REJECT, extended-matching
+IP-CIDR, 203.107.1.0/24, REJECT, no-resolve
+DOMAIN, httpsdns.baidu.com, REJECT, extended-matching
+DOMAIN, httpdns.baidu.com, REJECT, extended-matching
+DOMAIN, httpdns.baidubce.com, REJECT, extended-matching
+IP-CIDR, 186.76.76.200/32, REJECT, no-resolve
+DOMAIN, httpdns.bilivideo.com, REJECT, extended-matching
+IP-CIDR, 47.101.175.206/32, REJECT, no-resolve
+IP-CIDR, 47.100.123.169/32, REJECT, no-resolve
+IP-CIDR, 120.46.169.234/32, REJECT, no-resolve
+IP-CIDR, 121.36.72.124/32, REJECT, no-resolve
+IP-CIDR, 116.63.10.135/32, REJECT, no-resolve
+IP-CIDR, 122.9.7.134/32, REJECT, no-resolve
+IP-CIDR, 117.185.228.108/32, REJECT, no-resolve
+IP-CIDR, 117.144.238.29/32, REJECT, no-resolve
+IP-CIDR, 122.9.13.79/32, REJECT, no-resolve
+IP-CIDR, 122.9.15.129/32, REJECT, no-resolve
+IP-CIDR, 101.91.140.224/32, REJECT, no-resolve
+IP-CIDR, 101.91.140.124/32, REJECT, no-resolve
+IP-CIDR, 114.116.215.110/32, REJECT, no-resolve
+IP-CIDR, 116.63.10.31/32, REJECT, no-resolve
+IP-CIDR, 112.64.218.119/32, REJECT, no-resolve
+IP-CIDR, 112.65.200.117/32, REJECT, no-resolve
+DOMAIN, httpdns.c.cdnhwc2.com, REJECT, extended-matching
+DOMAIN, dns.jd.com, REJECT, extended-matching
+IP-CIDR, 101.124.19.122/32, REJECT, no-resolve
+IP-CIDR6, 2402:db40:5100:1011::5/128, REJECT, no-resolve
+IP-CIDR, 103.224.222.208/32, REJECT, no-resolve
+DOMAIN, httpdns.meituan.com, REJECT, extended-matching
+DOMAIN, httpdnsvip.meituan.com, REJECT, extended-matching
+DOMAIN, httpdns.yunxindns.com, REJECT, extended-matching
+DOMAIN, httpdns.n.netease.com, REJECT, extended-matching
+DOMAIN, httpdns.music.163.com, REJECT, extended-matching
+DOMAIN, music.httpdns.c.163.com, REJECT, extended-matching
+DOMAIN, lofter.httpdns.c.163.com, REJECT, extended-matching
+IP-CIDR, 59.111.239.61/32, REJECT, no-resolve
+IP-CIDR, 59.111.239.62/32, REJECT, no-resolve
+IP-CIDR, 115.236.121.51/32, REJECT, no-resolve
+IP-CIDR, 115.236.121.195/32, REJECT, no-resolve
+DOMAIN, httpdns.push.oppomobile.com, REJECT, extended-matching
+DOMAIN-SUFFIX, httpdns.pro, REJECT, extended-matching
+IP-CIDR, 119.29.29.98/32, REJECT, no-resolve
+IP-CIDR, 119.29.29.99/32, REJECT, no-resolve
+DOMAIN, httpdns.volcengineapi.com, REJECT, extended-matching
+DOMAIN, dns.weibo.cn, REJECT, extended-matching
+IP-CIDR, 39.97.128.148/32, REJECT, no-resolve
+IP-CIDR, 39.97.130.51/32, REJECT, no-resolve
+IP-CIDR, 182.254.116.117/32, REJECT, no-resolve
+IP-CIDR, 182.254.118.119/32, REJECT, no-resolve
+DOMAIN, dns.weixin.qq.com, REJECT, extended-matching
+DOMAIN, dns.weixin.qq.com.cn, REJECT, extended-matching
+IP-CIDR, 42.81.232.18/32, REJECT, no-resolve
+IP-CIDR, 42.187.182.106/32, REJECT, no-resolve
+IP-CIDR, 42.187.182.123/32, REJECT, no-resolve
+IP-CIDR, 42.187.184.154/32, REJECT, no-resolve
+IP-CIDR, 123.151.54.50/32, REJECT, no-resolve
+IP-CIDR6, 2402:4e00:1900:1700:0:9554:1ad9:c3a/128, REJECT, no-resolve
+IP-CIDR6, 240e:928:1400:10::25/128, REJECT, no-resolve
+IP-CIDR, 118.89.204.198/23, REJECT, no-resolve
+IP-CIDR6, 2402:4e00:1200:ed00:0:9089:6dac:96b6/128, REJECT, no-resolve
 # Location
 DOMAIN, gspe1-ssl.ls.apple.com, DIRECT
 # Maps
@@ -304,8 +367,6 @@ AND, ((URL-REGEX, ^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch), (USER-A
 # JD_remove_ads
 DOMAIN, dns.jd.com, REJECT
 URL-REGEX, ^http:\/\/\w{32}\.jddebug\.com\/diagnose\?, REJECT
-IP-CIDR, 101.124.19.122/32, REJECT, no-resolve
-IP-CIDR6, 2402:db40:5100:1011::5/128, REJECT, no-resolve
 # MeetYou_remove_ads
 DOMAIN, httpdns.music.163.com, REJECT
 DOMAIN, httpdns.n.netease.com, REJECT
@@ -313,10 +374,6 @@ DOMAIN, httpdns-sdk.n.netease.com, REJECT
 DOMAIN, httpdns.yunxindns.com, REJECT
 DOMAIN, lofter.httpdns.c.163.com, REJECT
 DOMAIN, music.httpdns.c.163.com, REJECT
-IP-CIDR, 59.111.239.61/32, REJECT, no-resolve
-IP-CIDR, 59.111.239.62/32, REJECT, no-resolve
-IP-CIDR, 115.236.121.51/32, REJECT, no-resolve
-IP-CIDR, 115.236.121.195/32, REJECT, no-resolve
 DOMAIN, ad.seeyouyima.com, REJECT
 DOMAIN, axxd.xmseeyouyima.com, REJECT
 DOMAIN-SUFFIX, adbkwai.com, REJECT
@@ -335,8 +392,6 @@ AND, ((PROTOCOL, QUIC), (DOMAIN-SUFFIX, xiaohongshu.com)), REJECT
 DOMAIN, wbapp.uve.weibo.com, DIRECT
 DOMAIN-SUFFIX, biz.weibo.com, REJECT
 DOMAIN, dns.weibo.cn, REJECT
-IP-CIDR, 39.97.130.51/32, REJECT, no-resolve
-IP-CIDR, 39.97.128.148/32, REJECT, no-resolve
 URL-REGEX, ^http:\/\/api\.weibo\.cn\/2\/httpdns\/config, REJECT
 URL-REGEX, ^http:\/\/api\.weibo\.cn\/httpdns\/config, REJECT
 # adUnion
@@ -779,8 +834,6 @@ DOMAIN, safebrowsing.googleapis.com, REJECT
 DOMAIN, safebrowsing.urlsec.qq.com, REJECT
 DOMAIN-SUFFIX, safebrowsing.apple, REJECT
 DOMAIN-SUFFIX, u3.ucweb.com, REJECT
-IP-CIDR, 119.29.29.98/32, REJECT, no-resolve
-IP-CIDR, 119.29.29.99/32, REJECT, no-resolve
 IP-CIDR, 81.71.61.216/32, REJECT, no-resolve
 DOMAIN, geo2.adobe.com, REJECT
 # jd
