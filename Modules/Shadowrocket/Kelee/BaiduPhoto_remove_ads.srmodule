@@ -49,7 +49,7 @@ AND,((DOMAIN-KEYWORD,api),(DOMAIN-KEYWORD,-log-),(DOMAIN-SUFFIX,pangle.io)),REJE
 AND,((DOMAIN-KEYWORD,api),(DOMAIN-KEYWORD,-dual-event-),(DOMAIN-SUFFIX,pangle.io)),REJECT
 AND,((DOMAIN-KEYWORD,api),(DOMAIN-KEYWORD,pangolin),(DOMAIN-SUFFIX,sgsnssdk.com)),REJECT
 AND,((DOMAIN-KEYWORD,ads),(DOMAIN-KEYWORD,-normal-lq),(DOMAIN-SUFFIX,zijieapi.com)),REJECT
-URL-REGEX,^http:\/\/p\d+-be-pack-sign\.pglstatp-toutiao\.com\/(ad-app-package|web\.business\.image)\/,REJECT
+URL-REGEX,"^http:\/\/p\d+-be-pack-sign\.pglstatp-toutiao\.com\/(ad-app-package|web\.business\.image)\/",REJECT
 DOMAIN,mon.zijieapi.com,REJECT
 DOMAIN,lf-ad-ies.bytecdn.cn,REJECT
 DOMAIN,i.snssdk.com,REJECT
@@ -82,6 +82,9 @@ DOMAIN-KEYWORD,asiad.byteactivity,REJECT
 ^https:\/\/pan\.baidu\.com\/act\/api\/conf\?.*conf_key=youa_core_config_ios - reject-dict
 # 弹窗推广
 ^https:\/\/pan\.baidu\.com\/youai\/material\/v1\/getbynavid\?.*nav_id=1 - reject-dict
+
+[Script]
+body_rewrite_85 = type=http-response, pattern=^https:\/\/mbd\.baidu\.com\/ccs\/v1\/start\/confsync\?, script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22json-del%22%2C%5B%22data.service.config.advertisement%22%2C%22data.service.config.youa.pm_config_ad%22%5D%5D%5D
 
 [MITM]
 hostname = %APPEND% pan.baidu.com, mbd.baidu.com

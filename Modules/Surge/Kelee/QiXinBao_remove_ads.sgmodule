@@ -42,10 +42,6 @@
 # 我的页面 - 轮播图
 ^https:\/\/appc-v6\.qixin\.com\/v4\/general\/getAppBottomBanners$ data-type=text data="{}" status-code=200
 
-[Script]
-# 首页 - 个性化推荐
-#移除个性化推荐信息流 = type=http-response, pattern=^https:\/\/appc-v6\.qixin\.com\/v4\/enterprise\/homePageRecommend\/recommendCard\d+, script-path=https://kelee.one/Resource/Script/QiXinBao/QiXinBao_remove_ads.js, requires-body=true
-
 [MITM]
 hostname = %APPEND% appc.qixin.com, appc-v6.qixin.com, qxb-minicode-pic-osscache.qixin.com
 

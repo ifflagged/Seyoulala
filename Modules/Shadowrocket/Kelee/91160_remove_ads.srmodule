@@ -12,9 +12,9 @@
 
 [Rule]
 # 放行请求
-URL-REGEX,^https:\/\/patientgate\.91160\.com\/advert-api\/v1\/advert\/homepage_icon\?,DIRECT
+URL-REGEX,"^https:\/\/patientgate\.91160\.com\/advert-api\/v1\/advert\/homepage_icon\?",DIRECT
 # 广告下发
-URL-REGEX,^https:\/\/patientgate\.91160\.com\/advert-api\/,REJECT-DICT
+URL-REGEX,"^https:\/\/patientgate\.91160\.com\/advert-api\/",REJECT-DICT
 # 拦截HTTPDNS
 DOMAIN,httpdns.music.163.com,REJECT
 DOMAIN,httpdns.n.netease.com,REJECT
@@ -113,6 +113,9 @@ DOMAIN-SUFFIX,igexin.com,REJECT
 ^https:\/\/patientgate\.91160\.com\/rec\/homepage\/open\/getUserGoodsList\? - reject-dict
 # 其他广告
 ^https:\/\/patientappapi\.91160\.com\/cus_index\.php\?c=adver - reject
+
+[Script]
+body_rewrite_114 = type=http-response, pattern=^https:\/\/soapi\.91160\.com\/homepage-recommendation\/recommendation\/medical\/complex\?, script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22json-del%22%2C%5B%22data.checkupList%22%5D%5D%5D
 
 [MITM]
 hostname = %APPEND% patientgate.91160.com, soapi.91160.com, msglb.91160.com, patientappapi.91160.com

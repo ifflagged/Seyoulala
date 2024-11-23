@@ -11,7 +11,7 @@
 #!date=2024-07-27 20:21:36
 
 [Rule]
-AND,((GEOIP,CN),(DOMAIN,pitaya.bytedance.com)),DIRECT
+AND,((GEOIP,CN,no-resolve),(DOMAIN,pitaya.bytedance.com)),DIRECT
 
 [URL Rewrite]
 # 去广告

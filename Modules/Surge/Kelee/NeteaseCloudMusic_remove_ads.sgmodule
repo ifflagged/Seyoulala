@@ -22,8 +22,8 @@ DOMAIN-SUFFIX,163jiasu.com,REJECT
 
 [Header Rewrite]
 # 新版加密通用处理
-^https?:\/\/interface\d?\.music\.163\.com\/e?api\/(?:batch|v2\/resource\/comment\/floor\/get|homepage\/block\/page|link\/home\/framework\/tab|link\/page\/rcmd\/block\/resource\/multi\/refresh|link\/page\/rcmd\/resource\/show|user\/follow\/users\/mixed\/get) header-replace x-aeapi false
-^https?:\/\/interface\d?\.music\.163\.com\/w?eapi\/(?:activity\/bonus\/playpage\/time\/query|resource-exposure\/|search\/(?:chart\/|default\/|rcmd\/keyword\/|specialkeyword\/)) header-del x-aeapi
+http-request ^https?:\/\/interface\d?\.music\.163\.com\/e?api\/(?:batch|v2\/resource\/comment\/floor\/get|homepage\/block\/page|link\/home\/framework\/tab|link\/page\/rcmd\/block\/resource\/multi\/refresh|link\/page\/rcmd\/resource\/show|user\/follow\/users\/mixed\/get) header-replace 'x-aeapi' 'false'
+http-request ^https?:\/\/interface\d?\.music\.163\.com\/w?eapi\/(?:activity\/bonus\/playpage\/time\/query|resource-exposure\/|search\/(?:chart\/|default\/|rcmd\/keyword\/|specialkeyword\/)) header-del 'x-aeapi'
 
 [Map Local]
 # 开屏广告
@@ -57,9 +57,6 @@ DOMAIN-SUFFIX,163jiasu.com,REJECT
 
 # 发现
 发现页 = type=http-response, pattern=^https?:\/\/interface\d?\.music\.163\.com\/eapi\/link\/page\/discovery\/resource\/show, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/NeteaseCloudMusic_remove_ads/NeteaseCloudMusic_remove_ads.js, requires-body=true, binary-body-mode=true, timeout=20
-
-# 播放音效
-#播放音效 = type=http-response, pattern=^https?:\/\/interface\d?\.music\.163\.com\/eapi\/song\/play\/more\/list\/, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/NeteaseCloudMusic_remove_ads/NeteaseCloudMusic_remove_ads.js, requires-body=true, binary-body-mode=true, timeout=20
 
 # 我的页面
 我的页面 = type=http-response, pattern=^https?:\/\/interface\d?\.music\.163\.com\/eapi\/link\/position\/show\/resource, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/NeteaseCloudMusic_remove_ads/NeteaseCloudMusic_remove_ads.js, requires-body=true, binary-body-mode=true, timeout=20

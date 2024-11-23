@@ -47,9 +47,6 @@ DOMAIN-SUFFIX,163jiasu.com,REJECT
 # 发现
 发现页 = type=http-response, pattern=^https?:\/\/interface\d?\.music\.163\.com\/eapi\/link\/page\/discovery\/resource\/show, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/NeteaseCloudMusic_remove_ads/NeteaseCloudMusic_remove_ads.js, requires-body=true, binary-body-mode=true, timeout=20
 
-# 播放音效
-#播放音效 = type=http-response, pattern=^https?:\/\/interface\d?\.music\.163\.com\/eapi\/song\/play\/more\/list\/, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/NeteaseCloudMusic_remove_ads/NeteaseCloudMusic_remove_ads.js, requires-body=true, binary-body-mode=true, timeout=20
-
 # 我的页面
 我的页面 = type=http-response, pattern=^https?:\/\/interface\d?\.music\.163\.com\/eapi\/link\/position\/show\/resource, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/NeteaseCloudMusic_remove_ads/NeteaseCloudMusic_remove_ads.js, requires-body=true, binary-body-mode=true, timeout=20
 

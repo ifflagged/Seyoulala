@@ -28,9 +28,6 @@
 # 板块广告
 移除板块广告 = type=http-response, pattern=^https:\/\/www\.flyert\.com\.cn\/api\/mobile\/index\.php\?version=5, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/FlyerTea_remove_ads/FlyerTea_remove_ads.js, requires-body=true
 
-# 我的页面 - 新用户推广横幅
-#清理我的页面 = type=http-response, pattern=^https:\/\/www\.flyert\.com\.cn\/api\/mobile\/index\.php\?module=basicdata&type=app_onoff, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/FlyerTea_remove_ads/FlyerTea_remove_ads.js, requires-body=true
-
 # 签到弹窗广告
 移除签到弹窗广告 = type=http-response, pattern=^https:\/\/www\.flyert\.com\.cn\/api\/mobile\/index\.php\?module=plugin&id=k_misign:sign, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/FlyerTea_remove_ads/FlyerTea_remove_ads.js, requires-body=true
 
