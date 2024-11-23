@@ -1931,6 +1931,10 @@ https?:\/\/m\.sd\.10086\.cn\/zapi\/app_common\/homeWelcome\/welcome.do - reject-
 ^https?:\/\/apio\.zhengqi100\.com\/forum\/thread\/listsHome - reject-dict
 # hostname = beehiveapi.58.com
 ^https?:\/\/beehiveapi\.58\.com\/adplace\/zcm - reject-dict
+# hostname = wrapper.cyapi.cn, api.caiyunapp.com
+^https?:\/\/wrapper\.cyapi\.cn\/v1\/activity\? mock-response-body data="undefined"
+# 删除首页+金融+我的多个横幅等乱七八糟的广告
+^https?:\/\/yunbusiness\.ccb\.com\/basic_service\/txCtrl\?txcode=A3341AB05 mock-response-body data="undefined"
 
 [Script]
 # hostname = ad.12306.cn
@@ -2048,9 +2052,6 @@ http-response ^https:\/\/api\.boohee\.com\/open-interface\/v1\/string\/market_pa
 # hostname = beta-api.crunchyroll.com
 http-response ^https?:\/\/beta-api\.crunchyroll\.com\/cms script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/chongxie/replace-body.js, requires-body=true, timeout=30, tag=replaceBody, argument=offset_ms%22%3A%5Cd%2B-%3Eoffset_ms%22%3A99999999999999
 
-# hostname = wrapper.cyapi.cn, api.caiyunapp.com
-http-request ^https?:\/\/wrapper\.cyapi\.cn\/v1\/activity\? script-path=http://127.0.0.1:9100/convert/_start_/https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/chongxie/caiyun.json/_end_/caiyun.json?type=mock&target-app=loon-plugin, timeout=60, tag=caiyun
-
 # 其他
 http-response ^https?:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/chongxie/header.js, timeout=60, tag=header
 
@@ -2129,9 +2130,6 @@ http-response ^https?:\/\/www\.i3zh\.com script-path=https://github.com/ifflagge
 http-response ^https?:\/\/napi\.ithome\.com\/api\/(news\/index|topmenu\/getfeeds) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/chongxie/ithome.js, requires-body=true, timeout=60, tag=ithome
 
 http-response ^https?:\/\/yunbusiness\.ccb\.com\/basic_service\/txCtrl\?txcode=A3341AB04 script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/chongxie/ccbLifeAds.js, requires-body=true, timeout=60, tag=ccbLifeAds
-
-# 删除首页+金融+我的多个横幅等乱七八糟的广告
-http-request ^https?:\/\/yunbusiness\.ccb\.com\/basic_service\/txCtrl\?txcode=A3341AB05 script-path=http://127.0.0.1:9100/convert/_start_/https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/chongxie/A3341AB05.json/_end_/A3341AB05.json?type=mock&target-app=loon-plugin, timeout=60, tag=A3341AB05
 
 # 我的页面悬浮广告
 http-response ^https?:\/\/yunbusiness\.ccb\.com\/basic_service\/txCtrl\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/chongxie/replace-body.js, requires-body=true, timeout=30, tag=replaceBody, argument=%22TAG_AD_INFO%22-%3E%22fmz200%22

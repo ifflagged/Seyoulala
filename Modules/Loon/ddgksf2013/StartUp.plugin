@@ -727,6 +727,8 @@ https?:\/\/m\.sd\.10086\.cn\/zapi\/app_common\/homeWelcome\/welcome.do - reject-
 ^https?:\/\/api\.ireader\.mobi\/activity\/ad\/openScreen - reject-200
 # > zhaojin
 ^https?:\/\/i\.zhaojinapp\.com\/APPAD - reject-200
+# > dongqiudi
+^https?:\/\/ap\.dongqiudi\.com\/plat\/v4 mock-response-body data="undefined"
 
 [Script]
 # > 555
@@ -753,9 +755,6 @@ http-response https://beta-api.crunchyroll.com/cms script-path=https://github.co
 
 # > caixin
 http-response ^https?:\/\/gg\.caixin\.com\/s\?z=caixin&op=1&c=3362 script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ddgksf2013/StartUp/caixinads.js, requires-body=true, timeout=60, tag=caixinads
-
-# > dongqiudi
-http-request ^https?:\/\/ap\.dongqiudi\.com\/plat\/v4 script-path=http://127.0.0.1:9100/convert/_start_/https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ddgksf2013/StartUp/dongqiudi.js/_end_/dongqiudi.js?type=mock&target-app=loon-plugin, timeout=60, tag=dongqiudi
 
 #http-response ^https:\/\/api\.gamer\.com\.tw\/mobile_app\/anime\/v\d\/(token|m3u8).php\? script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Bahamut/BahamutAnimeAds.js, requires-body=true, timeout=60, tag=BahamutAnimeAds
 
