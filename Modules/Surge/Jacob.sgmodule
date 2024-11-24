@@ -1304,7 +1304,7 @@ upos-sz-upcdntx.bilivideo.com = server:https://doh.pub/dns-query // BiliBili upo
 # Plugin-Common
 ^https:\/\/api\.pinduoduo\.com\/api\/alexa\/cells\/hub\/v3\? data-type=text data="{}" status-code=200
 # YouTube
-^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad data-type=text data=""
+^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad data-type=text data="" status-code=502
 # Amap_remove_ads
 ^https:\/\/m5\.amap\.com\/ws\/shield\/search\/new_hotword\? data-type=text data="{}" status-code=200
 ^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/card-service-(?:car-end|route-plan) data-type=text data="{}" status-code=200
