@@ -10,19 +10,18 @@
 #!system_version=15
 #!loon_version=3.2.1(749)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!date=2024-11-16 21:55:06
+#!date=2024-11-24 22:25:16
 
 [Rule]
 AND,((DOMAIN-SUFFIX,googlevideo.com),(PROTOCOL,QUIC)),REJECT
 AND,((DOMAIN-SUFFIX,youtubei.googleapis.com),(PROTOCOL,QUIC)),REJECT
 
 [Rewrite]
-# 使用reject-dict方法以减少开销
-^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad - reject-dict
+^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad mock-response-body data-type=text data-path=https://kelee.one/Resource/Script/YouTube/YouTube_remove_ads/YouTube_502Bad.mock status-code=502
 
 [Script]
-# http-request ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|reel\/reel_watch_sequence|get_watch) script-path=https://kelee.one/Resource/Script/YouTube/YouTube_remove_ads/YouTube_remove_ads_request.js,requires-body=true,binary-body-mode=true,tag=YouTube请求
-http-response ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/YouTube_remove_ads/YouTube_remove_ads_response.js, requires-body=true, binary-body-mode=true, tag=YouTube响应, argument="[{blockUpload},{blockImmersive},{captionLang},{lyricLang},{debug}]"
+# YouTube去广告
+http-response ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/YouTube_remove_ads/YouTube_remove_ads_response.js, requires-body=true, binary-body-mode=true, tag=YouTube去广告, argument="[{blockUpload},{blockImmersive},{captionLang},{lyricLang},{debug}]"
 
 [MITM]
 hostname = *.googlevideo.com, youtubei.googleapis.com
