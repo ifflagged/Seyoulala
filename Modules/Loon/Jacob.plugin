@@ -378,7 +378,7 @@ DOMAIN, adx.tuia.cn, REJECT
 # 12306_remove_ads
 DOMAIN, ad.12306.cn, DIRECT
 # Amap_remove_ads
-AND, ((URL-REGEX, ^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch), (USER-AGENT, AMapiPhone*)), REJECT
+AND, ((URL-REGEX, ^http:\/\/.+\/amdc\/mobileDispatch), (USER-AGENT, AMapiPhone*)), REJECT
 DOMAIN, amap-aos-info-nogw.amap.com, REJECT
 DOMAIN, free-aos-cdn-image.amap.com, REJECT
 DOMAIN-SUFFIX, v.smtcdns.com, REJECT
@@ -407,7 +407,7 @@ DOMAIN, gwp.xiaojukeji.com, REJECT
 AND, ((IP-ASN, 45090, no-resolve), (DEST-PORT, 25641), (PROTOCOL, TCP)), REJECT
 AND, ((IP-ASN, 63646, no-resolve), (DEST-PORT, 25641), (PROTOCOL, TCP)), REJECT
 # FleaMarket_remove_ads
-AND, ((URL-REGEX, ^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch), (USER-AGENT, %E9%97%B2%E9%B1%BC*)), REJECT
+AND, ((URL-REGEX, ^http:\/\/.+\/amdc\/mobileDispatch), (USER-AGENT, %E9%97%B2%E9%B1%BC*)), REJECT
 # JD_remove_ads
 URL-REGEX, ^http:\/\/\w{32}\.jddebug\.com\/diagnose\?, REJECT
 # PinDuoDuo_remove_ads
