@@ -5,9 +5,9 @@
 #!homepage = https://ADBlock.BiliUniverse.io
 #!icon = https://github.com/BiliUniverse/ADBlock/raw/main/src/assets/icon_rounded.png
 #!tag = 🪐 BiliUniverse
-#!system = iOS,iPadOS,macOS,tvOS
-#!date = 2024-11-08 08:58:52
-#!version = 0.6.8
+#!system = iOS,iPadOS
+#!date = 2024-11-25 13:55:38
+#!version = 0.6.10
 #!system_version = 15
 
 [Argument]
