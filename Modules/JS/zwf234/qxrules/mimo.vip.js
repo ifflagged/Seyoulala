@@ -1,34 +1,7 @@
-var obj = JSON.parse($response.body);
-
-obj= {
-  "source": "ios",
-  "status": "active",
-  "interval": "yearly",
-  "billingInfo": {
-    "currency": "USD",
-    "nextBillingPrice": 59.98999999999999
-  },
-  "subscriptions": [
-    {
-      "source": "ios",
-      "status": "active",
-      "interval": "yearly",
-      "billingInfo": {
-        "currency": "USD",
-        "nextBillingPrice": 59.98999999999999
-      },
-      "intervalCount": 1,
-      "activeUntil": "2099-10-10T08:04:21+00:00",
-      "createdAt": "2019-10-03T08:04:21+00:00",
-      "clientSecret": "",
-      "isActive": true
-    }
-  ],
-  "intervalCount": 1,
-  "activeUntil": "2099-10-10T08:04:21+00:00",
-  "createdAt": "2019-10-03T08:04:21+00:00",
-  "clientSecret": "",
-  "isActive": true
-};
-
-$done({body: JSON.stringify(obj)});
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<h1>502 Bad Gateway</h1>
+<p>The proxy server received an invalid response from an upstream server.<hr/>Powered by Tengine</body>
+</html>
