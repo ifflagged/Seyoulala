@@ -1,7 +1,15 @@
-<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
-<html>
-<head><title>502 Bad Gateway</title></head>
-<body>
-<h1>502 Bad Gateway</h1>
-<p>The proxy server received an invalid response from an upstream server.<hr/>Powered by Tengine</body>
-</html>
+
+var obj= {
+  "originalTransactionId" : "20000625420102",
+  "subscriptionState" : "trial",
+  "isInGracePeriod" : false,
+  "subscriptionExpirationDate" : "17:48 25/11/2099",
+  "isDocuments6User" : true,
+  "isEligibleForIntroPeriod" : false,
+  "subscriptionAutoRenewStatus" : "autoRenewOff",
+  "subscriptionReceiptId" : "1530908572000"
+};
+
+$done({body: JSON.stringify(obj)});
+
+// Descriptions
