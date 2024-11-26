@@ -8,10 +8,7 @@
 #!loon_version=3.2.1(749)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Bilibili.png
-#!date=2024-11-15 17:17:23
-
-[General]
-force-http-engine-hosts=:8000
+#!date=2024-11-26 13:23:43
 
 [Rule]
 # 开屏广告
