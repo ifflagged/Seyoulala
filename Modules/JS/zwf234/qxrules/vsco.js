@@ -1,7 +1,24 @@
-<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
-<html>
-<head><title>502 Bad Gateway</title></head>
-<body>
-<h1>502 Bad Gateway</h1>
-<p>The proxy server received an invalid response from an upstream server.<hr/>Powered by Tengine</body>
-</html>
+var body = $response.body;
+var url = $request.url;
+
+const path1 = '/api/subscriptions/2.1/user-subscriptions/';
+
+let obj = JSON.parse(body);
+
+if (url.indexOf(path1) != -1) {
+	obj.user_subscription["expires_on_sec"] = 1655536094;
+	obj.user_subscription["expired"] = false;
+	obj.user_subscription["payment_type"] = 2;
+	obj.user_subscription["is_trial_period"] = true;
+	obj.user_subscription["starts_on_sec"] = 1560831070;
+	obj.user_subscription["is_active"] = true;
+	obj.user_subscription["auto_renew"] = true;
+	obj.user_subscription["last_verified_sec"] = 1560831070;
+	obj.user_subscription["subscription_code"] = "VSCOANNUAL";
+	obj.user_subscription["user_id"] = 54624336;
+	obj.user_subscription["source"] = 1;
+	body = JSON.stringify(obj);  
+ }
+
+$done({body});
+//bynubyta
