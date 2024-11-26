@@ -1,7 +1,9 @@
-<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
-<html>
-<head><title>502 Bad Gateway</title></head>
-<body>
-<h1>502 Bad Gateway</h1>
-<p>The proxy server received an invalid response from an upstream server.<hr/>Powered by Tengine</body>
-</html>
+var obj = JSON.parse($response.body);
+var url = $request.url;
+var cons = "user/info";
+if(url.indexOf(cons) != -1)
+{
+obj["data"]["premium"]["is_premium"] = true;
+obj["data"]["premium"]["to_time"] = 4096019658000;
+}
+$done({body: JSON.stringify(obj)});
