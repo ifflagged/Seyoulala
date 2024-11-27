@@ -1712,7 +1712,7 @@ http-request ^https?:\/\/[xy0-9]+\.mcdn\.bilivideo\.(cn|com):(4483|9102)\/upgcxc
 http-request ^https?:\/\/(.+):4480\/upgcxcode\/ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/BiliUniverse/BiliBili.Redirect/request.bundle.js, tag=📺 BiliBili.Redirect.PCDN.upgcxcode.m4s, argument=Host.PCDN=upos-sz-mirrorali.bilivideo.com, argument=[{Host.Akamaized},{Host.BStar},{Host.PCDN},{Host.MCDN}]
 http-request ^https?:\/\/upos-(hz|bstar1)-mirrorakam\.akamaized\.net/upgcxcode\/ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/BiliUniverse/BiliBili.Redirect/request.bundle.js, tag=📺 BiliBili.Redirect.Akamaized.upgcxcode.m4s, argument=Host.Akamaized=upos-sz-mirrorali.bilivideo.com, argument=[{Host.Akamaized},{Host.BStar},{Host.PCDN},{Host.MCDN}]
 # TikTok
-http-response https?:\/\/.*\.tiktokv\.com\/aweme\/v\d\/(feed|mix\/aweme|aweme\/post|(multi\/)?aweme\/detail|follow\/feed|nearby\/feed|search\/item|general\/search\/single|hot\/search\/video\/list|aweme\/favorite) script-path=https://raw.githubusercontent.com/Tartarus2014/Script/master/Tiktok.js, requires-body=true, timeout=30, tag=TikTok Watermark Removal
+http-response https?:\/\/.*\.tiktokv\.com\/aweme\/v\d\/(feed|mix\/aweme|aweme\/post|(multi\/)?aweme\/detail|follow\/feed|nearby\/feed|search\/item|general\/search\/single|hot\/search\/video\/list|aweme\/favorite) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/TikTok/Tiktok.js, requires-body=true, timeout=30, tag=TikTok Watermark Removal
 # boxjs
 http-request ^https?:\/\/(.+\.)?boxjs\.(com|net) script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/box/chavy.boxjs.js, requires-body=true, timeout=120, tag=BoxJs
 
