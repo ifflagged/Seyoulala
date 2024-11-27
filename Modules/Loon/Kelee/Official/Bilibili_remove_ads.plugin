@@ -5,15 +5,15 @@
 #!tag=去广告
 #!system=iOS,iPadOS
 #!system_version=15
-#!loon_version=3.2.1(749)
+#!loon_version=3.2.4(787)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Bilibili.png
-#!date=2024-11-26 13:23:43
+#!date=2024-11-28 00:00:00
 
 [Rule]
 # 开屏广告
-URL-REGEX,^http:\/\/upos-sz-static\.bilivideo\.com\/ssaxcode\/\w{2}\/\w{2}\/\w{32}-1-SPLASH,REJECT-DICT
-URL-REGEX,^http:\/\/[\d\.]+:8000\/v1\/resource\/\w{32}-1-SPLASH,REJECT-DICT
+URL-REGEX,"^http:\/\/upos-sz-static\.bilivideo\.com\/ssaxcode\/\w{2}\/\w{2}\/\w{32}-1-SPLASH",REJECT-DICT
+URL-REGEX,"^http:\/\/[\d\.]+:8000\/v1\/resource\/\w{32}-1-SPLASH",REJECT-DICT
 
 [Rewrite]
 # 开屏广告
@@ -45,10 +45,10 @@ URL-REGEX,^http:\/\/[\d\.]+:8000\/v1\/resource\/\w{32}-1-SPLASH,REJECT-DICT
 ^https:\/\/api\.bilibili\.com\/x\/web-interface\/zone\?jsonp reject-dict
 
 # 移除直播间链接跟踪参数
-(^https:\/\/live\.bilibili\.com\/\d+)(\/?\?.*) 302 $1
+(^https:\/\/live\.bilibili\.com\/\d+)(\/?\?.*) 307 $1
 
 # 移除视频链接跟踪参数
-(^https:\/\/(?:www|m)\.bilibili\.com\/video\/(?:BV\w{10}|av\d{9}))(\/?\?.*) 302 $1
+(^https:\/\/(?:www|m)\.bilibili\.com\/video\/(?:BV\w{10}|av\d{9}))(\/?\?.*) 307 $1
 
 [Script]
 http-response ^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.dynamic\.v2\.Dynamic\/DynAll$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Bilibili_remove_ads/Bilibili_proto_kokoryh.js,requires-body=true,binary-body-mode=true,tag=移除动态页面广告

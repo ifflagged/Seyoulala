@@ -5,10 +5,10 @@
 #!tag=去广告
 #!system=
 #!system_version=
-#!loon_version=3.2.1(749)
+#!loon_version=3.2.4(787)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Spotify.png
-#!date=2024-04-28 15:54:48
+#!date=2024-11-28 00:00:00
 
 [Script]
 http-request ^https:\/\/spclient\.wg\.spotify\.com\/(artistview\/v1\/artist|album-entity-view\/v2\/album)\/ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Spotify_remove_ads/Spotify_remove_ads.js,timeout=10,tag=JSON处理

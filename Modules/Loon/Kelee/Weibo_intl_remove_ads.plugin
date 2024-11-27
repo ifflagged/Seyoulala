@@ -5,10 +5,10 @@
 #!tag=去广告
 #!system=
 #!system_version=
-#!loon_version=3.2.1(749)
+#!loon_version=3.2.4(787)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Weibo_intl.png
-#!date=2023-09-07 23:18:14
+#!date=2024-11-28 00:00:00
 
 [Rewrite]
 # 热门视频、热推荐

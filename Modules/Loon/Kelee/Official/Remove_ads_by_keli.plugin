@@ -5,10 +5,10 @@
 #!tag=去广告
 #!system=
 #!system_version=
-#!loon_version=3.2.1(749)
+#!loon_version=3.2.4(787)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/Other_icon/120px/KeLee.png
-#!date=2024-11-15 15:45:15
+#!date=2024-11-28 00:00:00
 
 [Rule]
 # Outlook
@@ -31,7 +31,7 @@ DOMAIN-SUFFIX,doubleclick.net,REJECT
 # 虎牙直播开屏广告
 DOMAIN,business.msstatic.com,REJECT
 DOMAIN-SUFFIX,v1d.szbdyd.com,REJECT
-URL-REGEX,^http:\/\/cdn\.wup\.huya\.com\/launch\/queryHttpDns$,REJECT
+URL-REGEX,"^http:\/\/cdn\.wup\.huya\.com\/launch\/queryHttpDns$",REJECT
 
 # 中国联通
 DOMAIN-SUFFIX,m1.ad.10010.com,REJECT
@@ -45,8 +45,8 @@ IP-CIDR,122.229.8.47/32,REJECT,no-resolve
 IP-CIDR,122.229.29.89/32,REJECT,no-resolve
 
 # 快递100
-URL-REGEX,^http:\/\/p\.kuaidi100\.com\/mobile\/mobileapi\.do,REJECT-DICT
-URL-REGEX,^http:\/\/p\.kuaidi100\.com\/advertisement\/,REJECT-DICT
+URL-REGEX,"^http:\/\/p\.kuaidi100\.com\/mobile\/mobileapi\.do",REJECT-DICT
+URL-REGEX,"^http:\/\/p\.kuaidi100\.com\/advertisement\/",REJECT-DICT
 
 # 亲邻开门
 DOMAIN,mall-dsp2.qinlinkeji.com,REJECT // 首页商品信息流

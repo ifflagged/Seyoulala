@@ -5,22 +5,22 @@
 #!tag=去广告
 #!system=
 #!system_version=
-#!loon_version=3.2.1(749)
+#!loon_version=3.2.4(787)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/BabyTree.png
-#!date=2023-11-22 19:25
+#!date=2024-11-28 00:00:00
 
 [Rule]
 # 首页 - 活动弹窗、签到图标
-URL-REGEX,^http:\/\/go\.babytree\.com\/go_pregnancy\/api\/(index_activity\/get_app_index_activity|sign\/sign_h_5)\?,REJECT-DICT
+URL-REGEX,"^http:\/\/go\.babytree\.com\/go_pregnancy\/api\/(index_activity\/get_app_index_activity|sign\/sign_h_5)\?",REJECT-DICT
 # 搜索框填充词
-URL-REGEX,^http:\/\/go\.babytree\.com\/go_search\/api\/mobile_search_new\/get_multi_search_default_keywords\?,REJECT-DICT
+URL-REGEX,"^http:\/\/go\.babytree\.com\/go_search\/api\/mobile_search_new\/get_multi_search_default_keywords\?",REJECT-DICT
 # 我的页面商品信息流
-URL-REGEX,^http:\/\/m\.meitun\.com\/newapi\/router\/topic\/hometptf\/feedRecommend,REJECT-DICT
+URL-REGEX,"^http:\/\/m\.meitun\.com\/newapi\/router\/topic\/hometptf\/feedRecommend",REJECT-DICT
 # 新客专享红包
-URL-REGEX,^http:\/\/pic08\.babytreeimg\.com\/knowledge\/2022\/0923\/\w+,REJECT
+URL-REGEX,"^http:\/\/pic08\.babytreeimg\.com\/knowledge\/2022\/0923\/\w+",REJECT
 # 开屏广告
-URL-REGEX,^http:\/\/plough\.babytree\.com\/plough\.do,REJECT-DICT
+URL-REGEX,"^http:\/\/plough\.babytree\.com\/plough\.do",REJECT-DICT
 
 [Script]
 # 整体配置

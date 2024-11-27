@@ -5,10 +5,10 @@
 #!tag=去广告
 #!system=
 #!system_version=
-#!loon_version=3.2.1(749)
+#!loon_version=3.2.4(787)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/BooHee.png
-#!date=2024-08-16 18:33:22
+#!date=2024-11-28 00:00:00
 
 [Rewrite]
 # 记录 - 大家都在看data.recom_cards / 底部按钮data.recom_btns

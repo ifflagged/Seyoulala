@@ -5,14 +5,14 @@
 #!tag=去广告
 #!system=
 #!system_version=
-#!loon_version=3.2.1(749)
+#!loon_version=3.2.4(787)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/FleaMarket.png
-#!date=2024-11-24 19:15:39
+#!date=2024-11-28 00:00:00
 
 [Rule]
 # 拦截广告下发
-AND,((URL-REGEX,^http:\/\/.+\/amdc\/mobileDispatch),(USER-AGENT,%E9%97%B2%E9%B1%BC*)),REJECT
+AND,((URL-REGEX,"^http:\/\/.+\/amdc\/mobileDispatch"),(USER-AGENT,"%E9%97%B2%E9%B1%BC*")),REJECT
 
 [Rewrite]
 # 首页顶部标签

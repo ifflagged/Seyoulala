@@ -5,16 +5,16 @@
 #!tag=去广告
 #!system=
 #!system_version=
-#!loon_version=3.2.1(749)
+#!loon_version=3.2.4(787)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/PuPuMall.png
-#!date=2024-11-26 13:23:43
+#!date=2024-11-28 00:00:00
 
 [Rule]
-URL-REGEX,^http:\/\/54\.222\.159\.138:8053\/httpdns\/,REJECT
-URL-REGEX,^http:\/\/101\.42\.130\.147:8053\/httpdns\/,REJECT
-URL-REGEX,^http:\/\/106\.55\.220\.18:8053\/httpdns\/,REJECT
-URL-REGEX,^http:\/\/139\.196\.12\.179:8053\/httpdns\/,REJECT
+URL-REGEX,"^http:\/\/54\.222\.159\.138:8053\/httpdns\/",REJECT
+URL-REGEX,"^http:\/\/101\.42\.130\.147:8053\/httpdns\/",REJECT
+URL-REGEX,"^http:\/\/106\.55\.220\.18:8053\/httpdns\/",REJECT
+URL-REGEX,"^http:\/\/139\.196\.12\.179:8053\/httpdns\/",REJECT
 
 [Rewrite]
 ^https:\/\/j1\.pupuapi\.com\/client\/account\/discount\/order reject

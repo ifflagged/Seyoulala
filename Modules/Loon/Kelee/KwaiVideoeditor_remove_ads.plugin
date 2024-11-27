@@ -5,10 +5,10 @@
 #!tag=去广告
 #!system=
 #!system_version=
-#!loon_version=3.2.4(780)
+#!loon_version=3.2.4(787)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/KwaiVideoeditor.png
-#!date=2024-11-15 18:58:10
+#!date=2024-11-28 00:00:00
 
 [Rule]
 # 腾讯HTTPDNS
@@ -32,9 +32,9 @@ DOMAIN,dns.iqiyi.com,REJECT
 DOMAIN,doh.iqiyi.com,REJECT
 DOMAIN,dns.qiyipic.iqiyi.com,REJECT
 DOMAIN,httpdns.n.shifen.com,REJECT
-URL-REGEX,^http:\/\/180\.76\.76\.112\/v\d\/,REJECT
-URL-REGEX,^http:\/\/180\.76\.76\.112\/v\d\/resolve,REJECT
-URL-REGEX,^http:\/\/180\.76\.76\.220\/v\d\/resolve,REJECT
+URL-REGEX,"^http:\/\/180\.76\.76\.112\/v\d\/",REJECT
+URL-REGEX,"^http:\/\/180\.76\.76\.112\/v\d\/resolve",REJECT
+URL-REGEX,"^http:\/\/180\.76\.76\.220\/v\d\/resolve",REJECT
 IP-CIDR,186.76.76.200/32,REJECT,no-resolve
 
 # 阿里巴巴HTTPDNS
@@ -72,7 +72,7 @@ AND,((DOMAIN-KEYWORD,api),(DOMAIN-KEYWORD,-log-),(DOMAIN-SUFFIX,pangle.io)),REJE
 AND,((DOMAIN-KEYWORD,api),(DOMAIN-KEYWORD,-dual-event-),(DOMAIN-SUFFIX,pangle.io)),REJECT
 AND,((DOMAIN-KEYWORD,api),(DOMAIN-KEYWORD,pangolin),(DOMAIN-SUFFIX,sgsnssdk.com)),REJECT
 AND,((DOMAIN-KEYWORD,ads),(DOMAIN-KEYWORD,-normal-lq),(DOMAIN-SUFFIX,zijieapi.com)),REJECT
-URL-REGEX,^http:\/\/p\d+-be-pack-sign\.pglstatp-toutiao\.com\/(ad-app-package|web\.business\.image)\/,REJECT
+URL-REGEX,"^http:\/\/p\d+-be-pack-sign\.pglstatp-toutiao\.com\/(ad-app-package|web\.business\.image)\/",REJECT
 DOMAIN,mon.zijieapi.com,REJECT
 DOMAIN,lf-ad-ies.bytecdn.cn,REJECT
 DOMAIN,i.snssdk.com,REJECT

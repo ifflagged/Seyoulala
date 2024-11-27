@@ -5,10 +5,10 @@
 #!tag=签到
 #!system=
 #!system_version=
-#!loon_version=3.2.1(749)
+#!loon_version=3.2.4(787)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/Resource/Markdown/WPS/README.md
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/WPS.png
-#!date=2024-10-13 17:59:50
+#!date=2024-11-28 00:00:00
 
 [Argument]
 CaptureCookie=switch,false,true,tag=捕获Cookie,desc=此开关控制插件是否捕获Cookie

@@ -5,10 +5,10 @@
 #!tag=功能增强
 #!system=
 #!system_version=15
-#!loon_version=3.2.1(749)
+#!loon_version=3.2.4(787)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/YouTube.png
-#!date=2024-09-24 23:06:40
+#!date=2024-11-28 00:00:00
 
 [Argument]
 Type=select,"Official","Translate",tag=字幕类型,desc=请选择要使用的字幕，双语字幕将使用您选择类型呈现。

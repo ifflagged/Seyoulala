@@ -5,13 +5,13 @@
 #!tag=去广告
 #!system=
 #!system_version=
-#!loon_version=3.2.1(749)
+#!loon_version=3.2.4(787)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/IThome.png
 #!select=移除置顶项,开启,关闭
 #!select=移除轮播图广告,开启,关闭
 #!select=移除全部轮播图,开启,关闭
-#!date=2024-08-11 12:57:27
+#!date=2024-11-28 00:00:00
 
 [Rewrite]
 ^https?:\/\/api\.zuihuimai\.com\/static\/.*\/hongbao reject

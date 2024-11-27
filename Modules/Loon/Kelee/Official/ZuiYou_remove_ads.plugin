@@ -5,10 +5,10 @@
 #!tag=去广告
 #!system=
 #!system_version=
-#!loon_version=3.2.1(749)
+#!loon_version=3.2.4(787)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/ZuiYou.png
-#!date=2024-07-13 02:37:32
+#!date=2024-11-28 00:00:00
 
 [Rule]
 # 字节跳动
@@ -42,9 +42,9 @@ DOMAIN-SUFFIX,adukwai.com,REJECT
 # 其他广告
 DOMAIN,adapi.izuiyou.com,REJECT
 # 信息流广告
-URL-REGEX,^http:\/\/mercury-gateway\.ixiaochuan\.cn\/mercury\/v1\/ad\/,REJECT-DICT
+URL-REGEX,"^http:\/\/mercury-gateway\.ixiaochuan\.cn\/mercury\/v1\/ad\/",REJECT-DICT
 # 搜索 - 榜单页面
-URL-REGEX,^http:\/\/file-share\.izuiyou\.com\/octopus\/media\/templates\/search_home_page_(nv|nv_v2)\/search_home_page_nv,REJECT
+URL-REGEX,"^http:\/\/file-share\.izuiyou\.com\/octopus\/media\/templates\/search_home_page_(nv|nv_v2)\/search_home_page_nv",REJECT
 
 [Rewrite]
 # 轮播图广告

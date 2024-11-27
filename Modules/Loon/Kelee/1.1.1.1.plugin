@@ -5,10 +5,10 @@
 #!tag=配置管理
 #!system=
 #!system_version=
-#!loon_version=3.2.1(749)
+#!loon_version=3.2.4(787)
 #!homepage=http://boxjs.com/#/app/Cloudflare.1dot1dot1dot1
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/1.1.1.1.png
-#!date=2024-10-23 11:45:04
+#!date=2024-11-28 00:00:00
 
 [Script]
 # WARP Personal

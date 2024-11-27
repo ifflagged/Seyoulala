@@ -5,10 +5,10 @@
 #!tag=去广告
 #!system=
 #!system_version=
-#!loon_version=3.2.1(749)
+#!loon_version=3.2.4(787)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/QQKSong.png
-#!date=2024-09-08 16:16:45
+#!date=2024-11-28 00:00:00
 
 [Rule]
 DOMAIN,adsmind.gdtimg.com,REJECT
@@ -46,7 +46,7 @@ DOMAIN-SUFFIX,gdt.qq.com,REJECT
 DOMAIN-SUFFIX,l.qq.com,REJECT
 DOMAIN-SUFFIX,ugdtimg.com,REJECT
 IP-CIDR,47.110.187.87/32,REJECT,no-resolve
-URL-REGEX,^http:\/\/y\.gtimg\.cn\/music\/common\/upload\/t_k_main_page_banner\/,REJECT
+URL-REGEX,"^http:\/\/y\.gtimg\.cn\/music\/common\/upload\/t_k_main_page_banner\/",REJECT
 
 [Rewrite]
 ^https:\/\/wallpaper-\d+\.file\.myqcloud\.com\/dsl\/ reject-dict

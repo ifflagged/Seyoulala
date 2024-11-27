@@ -5,11 +5,11 @@
 #!tag=定时任务
 #!system=
 #!system_version=
-#!loon_version=3.2.1(749)
+#!loon_version=3.2.4(787)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/TestFlight.png
 #!input=APP_ID
-#!date=2024-10-22 00:22:37
+#!date=2024-11-28 00:00:00
 
 [Argument]
 CaptureAccountToken=switch,false,true,tag=捕获账号令牌,desc=此开关控制插件是否捕获账户令牌

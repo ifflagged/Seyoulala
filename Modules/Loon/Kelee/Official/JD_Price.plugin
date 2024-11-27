@@ -5,10 +5,10 @@
 #!tag=功能增强
 #!system=
 #!system_version=
-#!loon_version=3.2.1(749)
+#!loon_version=3.2.4(787)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/JD.png
-#!date=2024-09-18 16:14:34
+#!date=2024-11-28 00:00:00
 
 [Script]
 http-response ^https?:\/\/api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig|basicConfig) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/JD_Price/JD_Price.js,requires-body=true,tag=京东比价

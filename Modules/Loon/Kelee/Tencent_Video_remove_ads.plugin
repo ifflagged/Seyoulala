@@ -5,10 +5,10 @@
 #!tag=去广告
 #!system=
 #!system_version=
-#!loon_version=3.2.1(749)
+#!loon_version=3.2.4(787)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Tencent_Video.png
-#!date=2023-10-01 21:35:52
+#!date=2024-11-28 00:00:00
 
 [Rule]
 DOMAIN,adsmind.gdtimg.com,REJECT
@@ -24,9 +24,9 @@ DOMAIN-SUFFIX,l.qq.com,REJECT
 DOMAIN-KEYWORD,trace.qq.com,REJECT
 DOMAIN-KEYWORD,trace.video.qq.com,REJECT
 IP-CIDR,47.110.187.87/32,REJECT,no-resolve
-URL-REGEX,^http:\/\/[\d\.:]*\/?(defaultts\.tc|vmind\.qqvideo\.tc|finderpdd\.video)\.qq\.com\/\w+,REJECT
-URL-REGEX,^http:\/\/apd-vlive\.apdcdn\.tc\.qq\.com\/vmind\.qqvideo\.tc\.qq\.com\/\w+,REJECT
-URL-REGEX,^http:\/\/apd-\w+\.v\.smtcdns\.com\/(defaultts|omts|vmind\.qqvideo)\.tc\.qq\.com\/\w+,REJECT
+URL-REGEX,"^http:\/\/[\d\.:]*\/?(defaultts\.tc|vmind\.qqvideo\.tc|finderpdd\.video)\.qq\.com\/\w+",REJECT
+URL-REGEX,"^http:\/\/apd-vlive\.apdcdn\.tc\.qq\.com\/vmind\.qqvideo\.tc\.qq\.com\/\w+",REJECT
+URL-REGEX,"^http:\/\/apd-\w+\.v\.smtcdns\.com\/(defaultts|omts|vmind\.qqvideo)\.tc\.qq\.com\/\w+",REJECT
 
 [Rewrite]
 ^https?:\/\/vv\.video\.qq\.com\/(diff|get)vmind reject-dict
