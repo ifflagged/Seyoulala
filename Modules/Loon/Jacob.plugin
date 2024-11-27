@@ -426,6 +426,15 @@ DOMAIN, wbapp.uve.weibo.com, DIRECT
 DOMAIN-SUFFIX, biz.weibo.com, REJECT
 URL-REGEX, ^http:\/\/api\.weibo\.cn\/2\/httpdns\/config, REJECT
 URL-REGEX, ^http:\/\/api\.weibo\.cn\/httpdns\/config, REJECT
+# Zhihu_remove_ads
+DOMAIN, appcloud.zhihu.com, REJECT
+DOMAIN, appcloud2.in.zhihu.com, REJECT
+DOMAIN, crash2.zhihu.com, REJECT
+DOMAIN, mqtt.zhihu.com, REJECT
+DOMAIN, sugar.zhihu.com, REJECT
+DOMAIN, zxid-m.mobileservice.cn, REJECT
+IP-CIDR, 103.41.167.237/32, REJECT, no-resolve
+IP-CIDR, 118.89.204.198/32, REJECT, no-resolve
 # adUnion
 DOMAIN, ws.tapjoyads.com, REJECT
 DOMAIN, hdns.ksyun.com, REJECT
@@ -1045,6 +1054,33 @@ https?:\/\/91porn\.com(\/|)$ https://91porn.com/index.php 302
 ^https:\/\/sdkapp\.uve\.weibo\.com\/interface\/sdk\/(?:get-lbs-cell-info\.php|sdkconfig\.php) reject-dict
 ^https:\/\/card\.weibo\.com\/article\/m\/aj\/(?:reward|uvead) reject-dict
 ^https:\/\/weibo\.com\/ttarticle\/x\/m\/aj\/(?:reward|uvead) reject-dict
+# Zhihu_remove_ads
+^https:\/\/api\.zhihu\.com\/commercial_api\/ reject-dict
+^https:\/\/api\.zhihu\.com\/content-distribution-core\/bubble\/common\/settings reject-dict
+^https:\/\/api\.zhihu\.com\/(?:moments\/lastread|drama\/hot-drama-list) reject-dict
+^https:\/\/api\.zhihu\.com\/root\/window reject-dict
+^https:\/\/api\.zhihu\.com\/(?:bazaar\/float_window|market\/popovers_v2) reject-dict
+^https:\/\/api\.zhihu\.com\/bazaar\/vip_tab\/header\? response-body-json-del activity_banner activity_window vip_tip
+^https:\/\/api\.zhihu\.com\/me\/guides reject-dict
+^https:\/\/api\.zhihu\.com\/people\/homepage_entry_v2 reject-dict
+^https:\/\/api\.zhihu\.com\/unlimited\/go\/my_card reject
+^https:\/\/www\.zhihu\.com\/appview\/v3\/zhmore reject
+^https:\/\/api\.zhihu\.com\/search\/(hot_search|preset_words) reject-dict
+^https:\/\/api\.zhihu\.com\/search\/recommend_query\/v2\? response-body-replace-regex "recommend_queries":\{.+\} "recommend_queries":{}
+^https:\/\/www\.zhihu\.com\/api\/v4\/search\/related_queries\/(?:article|answer)\/\d+ reject-dict
+^https:\/\/api\.zhihu\.com\/comment_v5\/(?:articles|answers)\/\d+\/list-headers reject-dict
+^https:\/\/api\.zhihu\.com\/prague\/related_suggestion_native\/feed\? reject-dict
+^https:\/\/api\.zhihu\.com\/v5\.1\/topics\/answer\/\d+\/relation reject-dict
+^https:\/\/api\.zhihu\.com\/ab\/api\/v1\/products\/zhihu\/platforms\/ios\/config reject-dict
+^https:\/\/api\.zhihu\.com\/ad-style-service\/request reject-dict
+^https:\/\/appcloud2\.zhihu\.com\/v3\/resource\?group_name=mp reject-dict
+^https:\/\/link\.zhihu\.com\/\?target=(?:https?)?(?:%3A|:)?(?:\/\/|%2F%2F)?(.*) 302 http://$1
+^https:\/\/api\.zhihu\.com\/distribute\/rhea\/qa_ad_card\/h5\/recommendation\? reject-dict
+^https:\/\/www\.zhihu\.com\/api\/v4\/hot_recommendation reject-dict
+^https:\/\/www\.zhihu\.com\/api\/v4\/mcn\/v2\/linkcards\? reject-dict
+^https:\/\/www\.zhihu\.com\/api\/v4/(?:answers|questions)\/\d+/related-readings reject-dict
+^https:\/\/www\.zhihu\.com\/commercial_api\/banners_v3\/mobile_banner reject-dict
+^https:\/\/zhuanlan\.zhihu\.com\/api\/articles\/\d+\/recommendation reject-dict
 # Smzdm
 ^https:\/\/haojia\.m\.smzdm\.com\/detail_modul\/(other_modul|wiki_related_modul)|^https:\/\/s3\.zdmimg\.com\/third\/index|^https:\/\/app-api\.smzdm\.com\/util\/loading - reject-dict
 # SmzdmAds
@@ -1575,6 +1611,18 @@ http-response ^https:\/\/api\.weibo\.cn\/2\/searchall\? script-path=https://gith
 http-response ^https:\/\/bootpreload\.uve\.weibo\.com\/v[12]\/ad\/preload script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Weibo_remove_ads/Weibo_remove_ads.js,requires-body=true,tag=移除开屏广告
 http-response ^https:\/\/sdkapp\.uve\.weibo\.com\/interface\/sdk\/sdkad\.php script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Weibo_remove_ads/Weibo_remove_ads.js,requires-body=true,tag=移除开屏广告
 http-response ^https:\/\/wbapp\.uve\.weibo\.com\/(?:preload\/get_ad|wbapplua\/wbpullad\.lua) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Weibo_remove_ads/Weibo_remove_ads.js,requires-body=true,tag=移除开屏广告
+# Zhihu_remove_ads
+http-response ^https:\/\/(?:api|page-info)\.zhihu\.com\/(?:answers|articles)\/v2\/\d+ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Zhihu_remove_ads/Zhihu_remove_ads.js,requires-body=true,tag=移除回答底部卡片推广
+http-response ^https:\/\/api\.zhihu\.com\/commercial_api\/app_float_layer script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Zhihu_remove_ads/Zhihu_remove_ads.js,requires-body=true,tag=移除首页悬浮图标
+http-response ^https:\/\/api\.zhihu\.com\/feed\/render\/tab\/config\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Zhihu_remove_ads/Zhihu_remove_ads.js,requires-body=true,tag=移除推荐信息流推广
+http-response ^https:\/\/api\.zhihu\.com\/(?:moments_v3|topstory\/hot-lists\/total|topstory\/recommend) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Zhihu_remove_ads/Zhihu_remove_ads.js,requires-body=true,tag=移除推荐信息流推广
+http-response ^https:\/\/api\.zhihu\.com\/root\/tab script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Zhihu_remove_ads/Zhihu_remove_ads.js,requires-body=true,tag=精简顶部标签
+http-response ^https:\/\/api\.zhihu\.com\/v2\/topstory\/hot-lists\/everyone-seeing\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Zhihu_remove_ads/Zhihu_remove_ads.js,requires-body=true,tag=移除热榜信息流推广
+http-response ^https:\/\/api\.zhihu\.com\/next-(?:bff|data|render) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Zhihu_remove_ads/Zhihu_remove_ads.js,requires-body=true,tag=移除下一个回答推广、评论区顶部推广
+http-response ^https:\/\/api\.zhihu\.com\/questions\/\d+(?:\/answers|\/feeds|\?include=) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Zhihu_remove_ads/Zhihu_remove_ads.js,requires-body=true,tag=移除回答详情页推广
+http-response ^https:\/\/www\.zhihu\.com\/api\/v4\/(?:articles|answers)\/\d+\/recommendations?\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Zhihu_remove_ads/Zhihu_remove_ads.js,requires-body=true,tag=移除回答详情页推广
+http-response ^https:\/\/appcloud2\.zhihu\.com\/v3\/config script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Zhihu_remove_ads/Zhihu_remove_ads.js,requires-body=true,tag=拦截服务器推送配置 config
+http-response ^https:\/\/m-cloud\.zhihu\.com\/api\/cloud\/zhihu\/config\/all\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Zhihu_remove_ads/Zhihu_remove_ads.js,requires-body=true,tag=拦截服务器推送配置 config all
 # Smzdm
 http-response ^https:\/\/app-api\.smzdm\.com\/util\/loading script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ZenmoFeiShi/Smzdm/Smzdm.js, requires-body=true, timeout=60, tag=Smzdm
 http-response ^https:\/\/haojia-api\.smzdm\.com\/home\/list script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ZenmoFeiShi/Smzdm/Smzdm.js, requires-body=true, timeout=60, tag=Smzdm
