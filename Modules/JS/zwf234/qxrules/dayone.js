@@ -1,7 +1,23 @@
-<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
-<html>
-<head><title>504 Gateway Time-out</title></head>
-<body>
-<h1>504 Gateway Time-out</h1>
-<p>The gateway did not receive a timely response from the upstream server or application.<hr/>Powered by Tengine</body>
-</html>
+if ($response.statusCode == 200) {
+        if ($request.url.endsWith("account-status")) {
+
+            $done({body: JSON.stringify({
+  "expirationDate": 1893427199000,
+  "startDate": 1546272000000,
+  "subscriptionPlan": "com.bloombuilt.dayoneios.subscription.premium.yearly_discounted_trial",
+  "lastRenewalDate": 1546531200000,
+  "subscriptionName": "premium",
+  "bundleReason": "purchase",
+  "cancellationDate": 0
+} )});
+
+        } else {
+	     const bodyJson = JSON.parse($response.body);
+
+	     bodyJson.featureBundle = {"bundleName":"premium","features":[{"name":"imagesPerEntry","limit":30,"canUpgrade":false},{"name":"printingDiscount","canUpgrade":false},{"name":"syncMac","canUpgrade":false},{"name":"prioritySupport","canUpgrade":false},{"name":"sync","canUpgrade":false},{"name":"journalLimit","limit":100,"canUpgrade":false},{"name":"audioPerEntry","limit":10,"canUpgrade":false}]};
+
+	    $done({body: JSON.stringify(bodyJson)});
+        }
+} else {
+	$done({});
+}

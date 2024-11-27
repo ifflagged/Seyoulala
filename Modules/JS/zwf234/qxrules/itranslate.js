@@ -1,7 +1,7 @@
-<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
-<html>
-<head><title>504 Gateway Time-out</title></head>
-<body>
-<h1>504 Gateway Time-out</h1>
-<p>The gateway did not receive a timely response from the upstream server or application.<hr/>Powered by Tengine</body>
-</html>
+var obj = JSON.parse($response.body);
+
+obj= {"licenses": [{"is_trial_period": true, "product_id": "com.itranslate.pro.yearly", "original_transaction_id": "20000627379146", "expires_date_ms": 4099246456000, "bundle_id": "com.outerspaceapps.itranslate", "transaction_id": "20000627379146"}, {"is_trial_period": true, "product_id": "com.itranslate.pro.yearly", "original_transaction_id": "20000627379146", "expires_date_ms": 4099246456000, "bundle_id": "com.outerspaceapps.itranslate", "transaction_id": "20000627379146"}]};
+
+$done({body: JSON.stringify(obj)});
+
+// Descriptions

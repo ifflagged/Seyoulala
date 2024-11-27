@@ -1,7 +1,12 @@
-<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
-<html>
-<head><title>504 Gateway Time-out</title></head>
-<body>
-<h1>504 Gateway Time-out</h1>
-<p>The gateway did not receive a timely response from the upstream server or application.<hr/>Powered by Tengine</body>
-</html>
+var obj = JSON.parse($response.body);
+
+obj= {
+  "active_expires_at" : "2029-01-01T00:00:00Z",
+  "is_subscription_active" : true,
+  "active_subscription_type" : "premium",
+  "is_blocked" : false
+};
+
+$done({body: JSON.stringify(obj)});
+
+// Descriptions
