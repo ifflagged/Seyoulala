@@ -1,7 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
 <html>
-<head><title>504 Gateway Time-out</title></head>
+<head><title>502 Bad Gateway</title></head>
 <body>
-<h1>504 Gateway Time-out</h1>
-<p>The gateway did not receive a timely response from the upstream server or application.<hr/>Powered by Tengine</body>
+<h1>502 Bad Gateway</h1>
+<p>The proxy server received an invalid response from an upstream server.<hr/>Powered by Tengine</body>
 </html>
