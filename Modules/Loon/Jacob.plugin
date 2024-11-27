@@ -150,7 +150,7 @@ AND, ((DOMAIN-KEYWORD, api), (DOMAIN-KEYWORD, -log-), (DOMAIN-SUFFIX, pangle.io)
 AND, ((DOMAIN-KEYWORD, api), (DOMAIN-KEYWORD, -dual-event-), (DOMAIN-SUFFIX, pangle.io)), REJECT
 AND, ((DOMAIN-KEYWORD, api), (DOMAIN-KEYWORD, pangolin), (DOMAIN-SUFFIX, sgsnssdk.com)), REJECT
 AND, ((DOMAIN-KEYWORD, ads), (DOMAIN-KEYWORD, -normal-lq), (DOMAIN-SUFFIX, zijieapi.com)), REJECT
-URL-REGEX, ^http:\/\/p\d+-be-pack-sign\.pglstatp-toutiao\.com\/(ad-app-package|web\.business\.image)\/, REJECT
+URL-REGEX, "^http:\/\/p\d+-be-pack-sign\.pglstatp-toutiao\.com\/(ad-app-package|web\.business\.image)\/", REJECT
 DOMAIN, mon.zijieapi.com, REJECT
 DOMAIN, lf-ad-ies.bytecdn.cn, REJECT
 DOMAIN, i.snssdk.com, REJECT
@@ -378,7 +378,7 @@ DOMAIN, adx.tuia.cn, REJECT
 # 12306_remove_ads
 DOMAIN, ad.12306.cn, DIRECT
 # Amap_remove_ads
-AND, ((URL-REGEX, ^http:\/\/.+\/amdc\/mobileDispatch), (USER-AGENT, AMapiPhone*)), REJECT
+AND, ((URL-REGEX, "^http:\/\/.+\/amdc\/mobileDispatch"), (USER-AGENT, "AMapiPhone*")), REJECT
 DOMAIN, amap-aos-info-nogw.amap.com, REJECT
 DOMAIN, free-aos-cdn-image.amap.com, REJECT
 DOMAIN-SUFFIX, v.smtcdns.com, REJECT
@@ -388,14 +388,12 @@ AND, ((DOMAIN-KEYWORD, api100-normal-quic-), (DOMAIN-SUFFIX, amemv.com)), REJECT
 AND, ((DOMAIN-KEYWORD, api100-normal-quic-aweme-), (DOMAIN-SUFFIX, amemv.com)), REJECT
 AND, ((DOMAIN-KEYWORD, api100-quic-core-), (DOMAIN-SUFFIX, amemv.com)), REJECT
 AND, ((DOMAIN-KEYWORD, api100-quic-normal-), (DOMAIN-SUFFIX, amemv.com)), REJECT
-AND, ((DOMAIN-KEYWORD, frontier-aweme-), (AND, ((OR, ((DOMAIN-KEYWORD, -ipa.), (DOMAIN-KEYWORD, -ipainner.), (DOMAIN-KEYWORD, -origin.), (DOMAIN-KEYWORD, -ipainner-))), (OR, ((DOMAIN-SUFFIX, snssdk.com), (DOMAIN-SUFFIX, amemv.com)))))), REJECT
 AND, ((DOMAIN-KEYWORD, frontier100-aweme), (DOMAIN-SUFFIX, amemv.com)), REJECT
 AND, ((DOMAIN-KEYWORD, ma5-normal-), (DOMAIN-SUFFIX, zijieapi.com)), REJECT
 AND, ((DOMAIN-KEYWORD, polaris5-normal-), (DOMAIN-SUFFIX, zijieapi.com)), REJECT
 AND, ((DOMAIN-KEYWORD, webcast100-ws-c-), (DOMAIN-SUFFIX, amemv.com)), REJECT
 AND, ((DOMAIN-KEYWORD, tnc), (AND, ((OR, ((DOMAIN-KEYWORD, -bjlgy), (DOMAIN-KEYWORD, -alisc), (DOMAIN-KEYWORD, -aliec), (DOMAIN-KEYWORD, -alisg))), (OR, ((DOMAIN-SUFFIX, snssdk.com), (DOMAIN-SUFFIX, isnssdk.com), (DOMAIN-SUFFIX, toutiaoapi.com), (DOMAIN-SUFFIX, bytedance.com), (DOMAIN-SUFFIX, zijieapi.com)))))), REJECT
 DOMAIN, frontier-aweme-hl.snssdk.com, REJECT
-DOMAIN, frontier-aweme.snssdk.com, REJECT
 DOMAIN, frontier-quic-test.bytedance.com, REJECT
 AND, ((IP-CIDR, 110.249.199.75/32, no-resolve), (DEST-PORT, 6443)), REJECT
 AND, ((IP-CIDR, 111.225.147.191/32, no-resolve), (DEST-PORT, 6443)), REJECT
@@ -407,12 +405,12 @@ DOMAIN, gwp.xiaojukeji.com, REJECT
 AND, ((IP-ASN, 45090, no-resolve), (DEST-PORT, 25641), (PROTOCOL, TCP)), REJECT
 AND, ((IP-ASN, 63646, no-resolve), (DEST-PORT, 25641), (PROTOCOL, TCP)), REJECT
 # FleaMarket_remove_ads
-AND, ((URL-REGEX, ^http:\/\/.+\/amdc\/mobileDispatch), (USER-AGENT, %E9%97%B2%E9%B1%BC*)), REJECT
+AND, ((URL-REGEX, "^http:\/\/.+\/amdc\/mobileDispatch"), (USER-AGENT, "%E9%97%B2%E9%B1%BC*")), REJECT
 # JD_remove_ads
-URL-REGEX, ^http:\/\/\w{32}\.jddebug\.com\/diagnose\?, REJECT
+URL-REGEX, "^http:\/\/\w{32}\.jddebug\.com\/diagnose\?", REJECT
 # PinDuoDuo_remove_ads
-AND, ((URL-REGEX, ^http:\/\/((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\/d), (USER-AGENT, *com.xunmeng.pinduoduo*)), REJECT
-AND, ((URL-REGEX, ^http:\/\/\[((([0-9A-Fa-f]{1, 4}:){7}([0-9A-Fa-f]{1, 4}|:))|(([0-9A-Fa-f]{1, 4}:){6}(:[0-9A-Fa-f]{1, 4}|((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3})|:))|(([0-9A-Fa-f]{1, 4}:){5}(((:[0-9A-Fa-f]{1, 4}){1, 2})|:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3})|:))|(([0-9A-Fa-f]{1, 4}:){4}(((:[0-9A-Fa-f]{1, 4}){1, 3})|((:[0-9A-Fa-f]{1, 4})?:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1, 4}:){3}(((:[0-9A-Fa-f]{1, 4}){1, 4})|((:[0-9A-Fa-f]{1, 4}){0, 2}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1, 4}:){2}(((:[0-9A-Fa-f]{1, 4}){1, 5})|((:[0-9A-Fa-f]{1, 4}){0, 3}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1, 4}:){1}(((:[0-9A-Fa-f]{1, 4}){1, 6})|((:[0-9A-Fa-f]{1, 4}){0, 4}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(:(((:[0-9A-Fa-f]{1, 4}){1, 7})|((:[0-9A-Fa-f]{1, 4}){0, 5}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:)))\]\/d4\?), (USER-AGENT, *com.xunmeng.pinduoduo*)), REJECT
+AND, ((URL-REGEX, "^http:\/\/((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\/d"), (USER-AGENT, "*com.xunmeng.pinduoduo*")), REJECT
+AND, ((URL-REGEX, "^http:\/\/\[((([0-9A-Fa-f]{1, 4}:){7}([0-9A-Fa-f]{1, 4}|:))|(([0-9A-Fa-f]{1, 4}:){6}(:[0-9A-Fa-f]{1, 4}|((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3})|:))|(([0-9A-Fa-f]{1, 4}:){5}(((:[0-9A-Fa-f]{1, 4}){1, 2})|:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3})|:))|(([0-9A-Fa-f]{1, 4}:){4}(((:[0-9A-Fa-f]{1, 4}){1, 3})|((:[0-9A-Fa-f]{1, 4})?:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1, 4}:){3}(((:[0-9A-Fa-f]{1, 4}){1, 4})|((:[0-9A-Fa-f]{1, 4}){0, 2}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1, 4}:){2}(((:[0-9A-Fa-f]{1, 4}){1, 5})|((:[0-9A-Fa-f]{1, 4}){0, 3}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1, 4}:){1}(((:[0-9A-Fa-f]{1, 4}){1, 6})|((:[0-9A-Fa-f]{1, 4}){0, 4}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(:(((:[0-9A-Fa-f]{1, 4}){1, 7})|((:[0-9A-Fa-f]{1, 4}){0, 5}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:)))\]\/d4\?"), (USER-AGENT, "*com.xunmeng.pinduoduo*")), REJECT
 DOMAIN, titan.pinduoduo.com, REJECT
 DOMAIN, ta-a.pinduoduo.com, REJECT
 DOMAIN, ta.pinduoduo.com, REJECT
@@ -424,8 +422,8 @@ AND, ((PROTOCOL, QUIC), (DOMAIN-SUFFIX, xiaohongshu.com)), REJECT
 # Weibo_remove_ads
 DOMAIN, wbapp.uve.weibo.com, DIRECT
 DOMAIN-SUFFIX, biz.weibo.com, REJECT
-URL-REGEX, ^http:\/\/api\.weibo\.cn\/2\/httpdns\/config, REJECT
-URL-REGEX, ^http:\/\/api\.weibo\.cn\/httpdns\/config, REJECT
+URL-REGEX, "^http:\/\/api\.weibo\.cn\/2\/httpdns\/config", REJECT
+URL-REGEX, "^http:\/\/api\.weibo\.cn\/httpdns\/config", REJECT
 # Zhihu_remove_ads
 DOMAIN, appcloud.zhihu.com, REJECT
 DOMAIN, appcloud2.in.zhihu.com, REJECT
@@ -948,8 +946,8 @@ DOMAIN, ads.cup.com.cn, REJECT
 DOMAIN, analytics.95516.com, REJECT
 DOMAIN, tysdk.95516.com, REJECT
 # Bilibili_remove_ads
-URL-REGEX, ^http:\/\/upos-sz-static\.bilivideo\.com\/ssaxcode\/\w{2}\/\w{2}\/\w{32}-1-SPLASH, REJECT-DICT
-URL-REGEX, ^http:\/\/[\d\.]+:8000\/v1\/resource\/\w{32}-1-SPLASH, REJECT-DICT
+URL-REGEX, "^http:\/\/upos-sz-static\.bilivideo\.com\/ssaxcode\/\w{2}\/\w{2}\/\w{32}-1-SPLASH", REJECT-DICT
+URL-REGEX, "^http:\/\/[\d\.]+:8000\/v1\/resource\/\w{32}-1-SPLASH", REJECT-DICT
 # boxjs
 DOMAIN-SUFFIX, jsdelivr.net, PROXY
 
@@ -1074,7 +1072,7 @@ https?:\/\/91porn\.com(\/|)$ https://91porn.com/index.php 302
 ^https:\/\/api\.zhihu\.com\/ab\/api\/v1\/products\/zhihu\/platforms\/ios\/config reject-dict
 ^https:\/\/api\.zhihu\.com\/ad-style-service\/request reject-dict
 ^https:\/\/appcloud2\.zhihu\.com\/v3\/resource\?group_name=mp reject-dict
-^https:\/\/link\.zhihu\.com\/\?target=(?:https?)?(?:%3A|:)?(?:\/\/|%2F%2F)?(.*) 302 http://$1
+^https:\/\/link\.zhihu\.com\/\?target=(?:https?)?(?:%3A|:)?(?:\/\/|%2F%2F)?(.*) 307 http://$1
 ^https:\/\/api\.zhihu\.com\/distribute\/rhea\/qa_ad_card\/h5\/recommendation\? reject-dict
 ^https:\/\/www\.zhihu\.com\/api\/v4\/hot_recommendation reject-dict
 ^https:\/\/www\.zhihu\.com\/api\/v4\/mcn\/v2\/linkcards\? reject-dict
@@ -1275,8 +1273,8 @@ https?:\/\/91porn\.com(\/|)$ https://91porn.com/index.php 302
 ^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.view\.v1\.View\/TFInfo$ url reject-dict
 ^https:\/\/app\.bilibili\.com\/x\/resource\/ip reject-dict
 ^https:\/\/api\.bilibili\.com\/x\/web-interface\/zone\?jsonp reject-dict
-(^https:\/\/live\.bilibili\.com\/\d+)(\/?\?.*) 302 $1
-(^https:\/\/(?:www|m)\.bilibili\.com\/video\/(?:BV\w{10}|av\d{9}))(\/?\?.*) 302 $1
+(^https:\/\/live\.bilibili\.com\/\d+)(\/?\?.*) 307 $1
+(^https:\/\/(?:www|m)\.bilibili\.com\/video\/(?:BV\w{10}|av\d{9}))(\/?\?.*) 307 $1
 # BiliBili
 ^https?:\/\/(grpc|app)\.bili(bili\.com|api\.net)\/bilibili\.app\.interface\.v1\.Search\/DefaultWords$ - reject
 ^https?:\/\/api\.vc\.bilibili\.com\/search_svr\/v\d\/Search\/recommend_words - reject-dict
