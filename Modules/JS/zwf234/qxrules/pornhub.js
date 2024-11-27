@@ -1,4 +1,7 @@
-/* 公众号墨鱼手记 crated by ddgksf2013 on 2022-05-28 */
-var body = $response.body
-    .replace(/<head>/, '<head><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ddgksf2013/Html/pornhub.css" type="text/css">');
-$done({ body });
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html>
+<head><title>504 Gateway Time-out</title></head>
+<body>
+<h1>504 Gateway Time-out</h1>
+<p>The gateway did not receive a timely response from the upstream server or application.<hr/>Powered by Tengine</body>
+</html>
