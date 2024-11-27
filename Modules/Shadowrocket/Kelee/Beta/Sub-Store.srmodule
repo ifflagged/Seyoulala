@@ -8,7 +8,7 @@
 #!tag=订阅管理
 #!loon_version=3.2.1(749)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!date=2024-10-22 14:00:18
+#!date=2024-11-28 00:00:00
 
 [Rule]
 DOMAIN,sub-store.vercel.app,PROXY
