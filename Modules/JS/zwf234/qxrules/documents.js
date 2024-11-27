@@ -1,7 +1,15 @@
-<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
-<html>
-<head><title>504 Gateway Time-out</title></head>
-<body>
-<h1>504 Gateway Time-out</h1>
-<p>The gateway did not receive a timely response from the upstream server or application.<hr/>Powered by Tengine</body>
-</html>
+
+var obj= {
+  "originalTransactionId" : "20000625420102",
+  "subscriptionState" : "trial",
+  "isInGracePeriod" : false,
+  "subscriptionExpirationDate" : "17:48 25/11/2099",
+  "isDocuments6User" : true,
+  "isEligibleForIntroPeriod" : false,
+  "subscriptionAutoRenewStatus" : "autoRenewOff",
+  "subscriptionReceiptId" : "1530908572000"
+};
+
+$done({body: JSON.stringify(obj)});
+
+// Descriptions
