@@ -5,8 +5,8 @@
 #!homepage = https://Enhanced.BiliUniverse.io
 #!icon = https://github.com/BiliUniverse/Enhanced/raw/main/src/assets/icon_rounded.png
 #!category = 🪐 BiliUniverse
-#!date = 2024-11-26 04:27:02
-#!version = 0.5.5
+#!date = 2024-11-27 07:58:48
+#!version = 0.5.6
 
 [Script]
 BiliBili.Enhanced.x.resource.show.tab.v2 = type=http-response, pattern=^https?:\/\/app\.bili(bili\.com|api\.net)\/x\/resource\/show\/tab\/v2\?, requires-body=1, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/BiliUniverse/BiliBili.Enhanced/response.bundle.js, argument=
