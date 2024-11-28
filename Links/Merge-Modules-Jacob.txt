@@ -38,7 +38,6 @@ Modules/Shadowrocket/Kelee/MeetYou_remove_ads.srmodule
 Modules/Surge/Kelee/PinDuoDuo_remove_ads.sgmodule # Loon,Shadowrocket
 Modules/Surge/Kelee/RedPaper_remove_ads.sgmodule # Loon,Shadowrocket
 Modules/Surge/Kelee/Weibo_remove_ads.sgmodule # Loon,Shadowrocket
-Modules/Surge/Kelee/Zhihu_remove_ads.sgmodule # Loon,Shadowrocket
 
 Modules/Surge/ZenmoFeiShi/Smzdm.sgmodule # Loon,Shadowrocket
 Modules/Surge/ddgksf2013/SmzdmAds.sgmodule # Loon,Shadowrocket
