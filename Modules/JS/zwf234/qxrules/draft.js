@@ -1,12 +1,7 @@
-var obj = JSON.parse($response.body);
-
-obj= {
-  "active_expires_at" : "2029-01-01T00:00:00Z",
-  "is_subscription_active" : true,
-  "active_subscription_type" : "premium",
-  "is_blocked" : false
-};
-
-$done({body: JSON.stringify(obj)});
-
-// Descriptions
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<h1>502 Bad Gateway</h1>
+<p>The proxy server received an invalid response from an upstream server.<hr/>Powered by Tengine</body>
+</html>
