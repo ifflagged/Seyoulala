@@ -1,18 +1,7 @@
-let obj = JSON.parse($response.body);
-let url = $request.url;
-const cons1 = "me/";
-const cons2 = "dashboard/";
-const cons3 = "following/";
-
-if(url.endsWith(cons1)) {
-obj["profile"]["is_pro"] = true;
-}
-
-if(url.endsWith(cons2)) {
-obj["user"]["is_premium"] = true;
-}
-
-if(url.indexOf(cons3) != -1 ) {
-obj["users"][0]["is_premium"] = true;
-}
-$done({body: JSON.stringify(obj)});
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<h1>502 Bad Gateway</h1>
+<p>The proxy server received an invalid response from an upstream server.<hr/>Powered by Tengine</body>
+</html>
