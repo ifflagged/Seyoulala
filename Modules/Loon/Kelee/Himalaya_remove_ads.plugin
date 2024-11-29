@@ -8,7 +8,7 @@
 #!loon_version=3.2.4(787)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Himalaya.png
-#!date=2024-11-29 13:14:47
+#!date=2024-11-29 13:29:25
 
 [Rule]
 # 广告下发
@@ -49,7 +49,7 @@ URL-REGEX,"^http:\/\/xmc\.ximalaya\.com\/xmlymain-login-web\/login\/",REJECT
 ^https:\/\/(mobile|mobilehera)\.ximalaya\.com\/track-feed\/v\d\/chase\/recommend\/ reject-dict
 
 # 订阅 - 圈子 - 圈子推荐
-^https:\/\/(m|mwsa)\.ximalaya\.com\/community\/square\/v\d\/stream\? response-body-json-del data.cards
+# ^https:\/\/(m|mwsa)\.ximalaya\.com\/community\/square\/v\d\/stream\? response-body-json-del data.cards
 
 # 播放器 - 推荐
 ^https:\/\/(mobile|mobilehera)\.ximalaya\.com\/mobile-playpage\/playpage\/recommendContentV\d\/ reject-dict
