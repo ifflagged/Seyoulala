@@ -8,7 +8,7 @@
 #!loon_version=3.2.4(787)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/GaoDing.png
-#!date=2024-11-28 00:00:00
+#!date=2024-11-29 07:57:17
 
 [Rewrite]
 # 开屏广告
@@ -26,9 +26,8 @@
 # 我的页面轮播图
 ^https:\/\/www\.gaoding\.com\/api\/v\d\/oc\/exhibitions\/app_mine\/resources$ response-body-json-jq '.pits |= map(select(.module_type != "BANNER"))'
 
-
 # 移除功能入口角标
-^https:\/\/www\.gaoding\.com\/api\/v\d\/oc\/exhibitions\/(templates|all_editor_tools)\/resources$ response-body-replace-regex "badge_img_url":"https:\/\/(gaoding-market|st\d)\.dancf\.com\/market-operations\/market\/side\/([a-z0-9]+\/)?\d+\.png","badge_img_url":"",
+^https:\/\/www\.gaoding\.com\/api\/v\d\/oc\/exhibitions\/(templates|all_editor_tools)\/resources$ response-body-json-jq 'walk(if type == "object" and .badge_img_url? then .badge_img_url = "" else . end)'
 
 [MitM]
 hostname=www.gaoding.com
