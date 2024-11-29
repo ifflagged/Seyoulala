@@ -1,7 +1,20 @@
-<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
-<html>
-<head><title>502 Bad Gateway</title></head>
-<body>
-<h1>502 Bad Gateway</h1>
-<p>The proxy server received an invalid response from an upstream server.<hr/>Powered by Tengine</body>
-</html>
+var obj = JSON.parse($response.body);
+
+obj=
+{
+  "res": "OK",
+  "response": {
+    "result": "0",
+    "purchases": [{
+      "productID": "com.pentaloop.playerx.addon.pro",
+      "purchaseDate": "2019-12-14 21:31:16 Etc/GMT",
+      "originalPurchaseDate": "2019-12-14 21:31:16 Etc/GMT",
+      "type": "0",
+      "isTrialPeriod": "false"
+    }]
+  }
+};
+
+$done({body: JSON.stringify(obj)});
+
+// Descriptions
