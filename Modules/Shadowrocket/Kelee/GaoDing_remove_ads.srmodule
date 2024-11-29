@@ -11,11 +11,8 @@
 #!date=2024-11-29 07:57:17
 
 [URL Rewrite]
-# 开屏广告
 ^https:\/\/www\.gaoding\.com\/api\/v\d\/oc\/v\d\/delivery-pits\/ios-splash\/modules$ - reject-dict
-# 模板中心弹窗
 ^https:\/\/www\.gaoding\.com\/api\/v\d\/oc\/delivery-pits\/(template|mine|home)-page-dialog\/modules$ - reject-dict
-# 搜索栏填充词
 ^https:\/\/www\.gaoding\.com\/api\/v\d\/cp\/search-words\/v2\/placeholder - reject-dict
 
 [MITM]
