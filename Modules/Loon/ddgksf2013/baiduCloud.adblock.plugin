@@ -14,6 +14,8 @@
 ^https?:\/\/pan\.baidu\.com\/act\/api\/activityentry - reject-200
 # > 百度网盘_热搜list@ddgksf2013
 ^https:\/\/pan\.baidu\.com\/feed\/hotlist - reject-200
+# > 百度网盘_活动推广@ddgksf2013
+^https?:\/\/.*zhangyuyidong\.cn\/api\/zysdk - reject-200
 # > 百度网盘_搜索填词@ddgksf2013
 ^https:\/\/pan\.baidu\.com\/queryintent\/queryhint - reject-200
 # > 百度网盘_金币乐园@ddgksf2013

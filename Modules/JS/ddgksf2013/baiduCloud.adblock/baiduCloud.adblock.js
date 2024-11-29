@@ -3,7 +3,7 @@
 > 应用名称：墨鱼自用百度网盘去广告脚本
 > 脚本作者：@ddgksf2013
 > 微信账号：墨鱼手记
-> 更新时间：2024-09-04
+> 更新时间：2024-11-29
 > 下载地址：https://apps.apple.com/cn/app/id547166701
 > 通知频道：https://t.me/ddgksf2021
 > 贡献投稿：https://t.me/ddgksf2013_bot
@@ -28,6 +28,8 @@
 ^https:\/\/pan\.baidu\.com\/rest\/.*\/membership\/user\?method=gamecenter url script-response-body https://gist.githubusercontent.com/ddgksf2013/f43026707830c7818ee3ba624e383c8d/raw/baiduCloud.adblock.js
 # > 百度网盘_热搜list@ddgksf2013
 ^https:\/\/pan\.baidu\.com\/feed\/hotlist url reject-200
+# > 百度网盘_活动推广@ddgksf2013
+^https?:\/\/.*zhangyuyidong\.cn\/api\/zysdk url reject-200
 # > 百度网盘_搜索填词@ddgksf2013
 ^https:\/\/pan\.baidu\.com\/queryintent\/queryhint url reject-200
 # > 百度网盘_金币乐园@ddgksf2013

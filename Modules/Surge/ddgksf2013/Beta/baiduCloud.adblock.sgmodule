@@ -18,6 +18,9 @@
 # > 百度网盘_热搜list@ddgksf2013
 ^https:\/\/pan\.baidu\.com\/feed\/hotlist data-type=text data=" " status-code=200
 
+# > 百度网盘_活动推广@ddgksf2013
+^https?:\/\/.*zhangyuyidong\.cn\/api\/zysdk data-type=text data=" " status-code=200
+
 # > 百度网盘_搜索填词@ddgksf2013
 ^https:\/\/pan\.baidu\.com\/queryintent\/queryhint data-type=text data=" " status-code=200
 
