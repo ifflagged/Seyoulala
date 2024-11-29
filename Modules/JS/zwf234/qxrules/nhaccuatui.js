@@ -1,9 +1,7 @@
-var obj = JSON.parse($response.body);
-let url = $request.url;
-var cons = "users/info";
-if(url.indexOf(cons) != -1)
-{
-obj.data.VIPExpire= "27/03/9999 00:00:00";
-obj.data.isVIP= true;
-}
-$done({body: JSON.stringify(obj)});
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<h1>502 Bad Gateway</h1>
+<p>The proxy server received an invalid response from an upstream server.<hr/>Powered by Tengine</body>
+</html>
