@@ -8,18 +8,23 @@
 #!tag=去广告
 #!loon_version=3.2.4(787)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!date=2024-11-29 10:53:45
+#!date=2024-11-29 11:43:00
 
 [Rule]
 # 广告下发
 DOMAIN,adse.ximalaya.com,REJECT
+DOMAIN,adse.wsa.ximalaya.com,REJECT
+# 拦截HTTPDNS
+DOMAIN,dns2.q2cdn.com,REJECT
+URL-REGEX,"^http:\/\/xmc\.ximalaya\.com\/xmlymain-login-web\/login\/",REJECT
 
 [Rewrite]
 ^https:\/\/(mobile|mobilehera)\.ximalaya\.com\/discovery-feed\/v\d\/mix\/ response-body-json-jq '.heData |= map(select(.item.list[].bizType != "SceneListenCard"))'
 ^https:\/\/(mobile|mobilehera)\.ximalaya\.com\/discovery-category\/customCategories\/ response-body-json-jq '.categoryList |= map(.itemList |= map(select(.title | test("直播|123狂欢节"; "i") | not))) | .customCategoryList |= map(select(.title | test("直播|123狂欢节"; "i") | not))'
 ^https:\/\/(mobile|mobilehera)\.ximalaya\.com\/mobile-user\/v\d\/homePage\/ response-body-json-jq '.data.serviceModule.entrances |= map(select(.name == "全部服务"))'
+^https:\/\/mobile\.ximalaya\.com\/nexus-web\/v4\/tabs\/customTabs\? response-body-json-jq .data.feedTabs |= map(select(.name != "大赛"))
 # 拦截HTTPDNS
-^https:\/\/gslbali\.ximalaya\.com\/linkeye-cloud\/httpdns\/ - reject-dict
+^https:\/\/gslbali\.ximalaya\.com\/linkeye-cloud\/httpdns\/ - reject
 # 搜索词
 ^https:\/\/(search|searchwsa)\.ximalaya\.com\/hub\/guideWordV\d\/ - reject-dict
 ^https:\/\/(mobile|mobilehera)\.ximalaya\.com\/discovery-feed\/v\d\/scene\/listen\/refresh\? - reject-dict
@@ -27,9 +32,11 @@ DOMAIN,adse.ximalaya.com,REJECT
 ^https:\/\/(mobile|mobilehera)\.ximalaya\.com\/subscribe\/v\d\/subscribe\/tagAlbumList$ - reject-dict
 # 播放器 - 推广
 ^https:\/\/(mobile|mobilehera)\.ximalaya\.com\/mobile-playpage\/playpage\/recommend\/resource\/allocation\/ - reject-dict
+# 弹窗
+^https:\/\/(mobile|mobilehera)\.ximalaya\.com\/firework-portal\/v\d+\/sync\? - reject-dict
 
 [Script]
-http-response ^https:\/\/(mobile|mobilehera)\.ximalaya\.com\/football-portal\/diff2\/batch\? script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_27, argument=%5B%5B%22json-del%22%2C%5B%22json.ad%22%5D%5D%5D
+http-response ^https:\/\/(mobile|mobilehera)\.ximalaya\.com\/football-portal\/diff2\/batch\? script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_31, argument=%5B%5B%22json-del%22%2C%5B%22json.ad%22%5D%5D%5D
 
 [MITM]
 hostname = gslbali.ximalaya.com, search.ximalaya.com, searchwsa.ximalaya.com, mobile.ximalaya.com, mobilehera.ximalaya.com
