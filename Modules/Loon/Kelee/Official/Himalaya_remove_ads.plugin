@@ -8,15 +8,20 @@
 #!loon_version=3.2.4(787)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Himalaya.png
-#!date=2024-11-29 10:53:45
+#!date=2024-11-29 11:43:00
 
 [Rule]
 # 广告下发
 DOMAIN,adse.ximalaya.com,REJECT
+DOMAIN,adse.wsa.ximalaya.com,REJECT
+
+# 拦截HTTPDNS
+DOMAIN,dns2.q2cdn.com,REJECT
+URL-REGEX,"^http:\/\/xmc\.ximalaya\.com\/xmlymain-login-web\/login\/",REJECT
 
 [Rewrite]
 # 拦截HTTPDNS
-^https:\/\/gslbali\.ximalaya\.com\/linkeye-cloud\/httpdns\/ reject-dict
+^https:\/\/gslbali\.ximalaya\.com\/linkeye-cloud\/httpdns\/ reject
 
 # 搜索词
 ^https:\/\/(search|searchwsa)\.ximalaya\.com\/hub\/guideWordV\d\/ reject-dict
@@ -37,8 +42,14 @@ DOMAIN,adse.ximalaya.com,REJECT
 # 订阅 - 订阅推荐
 ^https:\/\/(mobile|mobilehera)\.ximalaya\.com\/subscribe\/v\d\/subscribe\/tagAlbumList$ reject-dict
 
+# 订阅 - 精简类别
+^https:\/\/mobile\.ximalaya\.com\/nexus-web\/v4\/tabs\/customTabs\? response-body-json-jq .data.feedTabs |= map(select(.name != "大赛"))
+
 # 播放器 - 推广
 ^https:\/\/(mobile|mobilehera)\.ximalaya\.com\/mobile-playpage\/playpage\/recommend\/resource\/allocation\/ reject-dict
+
+# 弹窗
+^https:\/\/(mobile|mobilehera)\.ximalaya\.com\/firework-portal\/v\d+\/sync\? reject-dict
 
 [MitM]
 hostname=gslbali.ximalaya.com,search.ximalaya.com,searchwsa.ximalaya.com,mobile.ximalaya.com,mobilehera.ximalaya.com
