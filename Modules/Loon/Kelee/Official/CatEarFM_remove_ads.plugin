@@ -11,35 +11,17 @@
 #!date=2024-11-28 00:00:00
 
 [Rewrite]
-# 开屏广告
 ^https:\/\/app\.missevan\.com\/site\/launch\? response-body-json-del info
-
-# 首页 - 直播 - 热门 - 主播横幅推广
 ^https:\/\/fm\.missevan\.com\/api\/v2\/meta\/banner$ response-body-json-del info
-
-# 首页 - 推荐 - 热门搜索词、轮播图推广
 ^https:\/\/app\.missevan\.com\/site\/get-top$ response-body-json-del info.extra_banners
-
-# 首页 - 推荐 - 主播推荐列表
 ^https:\/\/fm\.missevan\.com\/api\/v2\/recommended\/top$ response-body-json-del info
-
-# 首页 - 广播剧 - 轮播图推广、热门搜索词
 ^https:\/\/app\.missevan\.com\/drama\/catalog-homepage\? response-body-json-del info.extra_banners
-
-# 首页 - 声音恋人 - 轮播图推广、热门搜索词
 ^https:\/\/app\.missevan\.com\/catalog\/sound-homepage\? response-body-json-del info.extra_banners
-
-# 播放器 - 主播推荐
 ^https:\/\/fm\.missevan\.com\/api\/v2\/chatroom\/sound\/recommend\? response-body-json-del info
-
-# 青少年模式
 ^https:\/\/app\.missevan\.com\/site\/config$ response-body-json-del info.teenager_popup_mode
 
 [Script]
-# 首页顶部入口
 http-response ^https:\/\/app\.missevan\.com\/site\/icons\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/CatEarFM_remove_ads/CatEarFM_remove_ads.js,requires-body=true,tag=精简首页顶部入口
-
-# 发现页面 - 直播间、广播剧、免流服务
 http-response ^https:\/\/app\.missevan\.com\/discovery\/list$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/CatEarFM_remove_ads/CatEarFM_remove_ads.js,requires-body=true,tag=精简发现页面
 
 [MitM]
