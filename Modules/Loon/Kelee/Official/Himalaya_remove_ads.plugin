@@ -8,7 +8,7 @@
 #!loon_version=3.2.4(787)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Himalaya.png
-#!date=2024-11-29 11:43:00
+#!date=2024-11-29 13:14:47
 
 [Rule]
 # 广告下发
@@ -30,20 +30,29 @@ URL-REGEX,"^http:\/\/xmc\.ximalaya\.com\/xmlymain-login-web\/login\/",REJECT
 ^https:\/\/(mobile|mobilehera)\.ximalaya\.com\/discovery-feed\/v\d\/mix\/ response-body-json-jq '.heData |= map(select(.item.list[].bizType != "SceneListenCard"))'
 ^https:\/\/(mobile|mobilehera)\.ximalaya\.com\/discovery-feed\/v\d\/scene\/listen\/refresh\? reject-dict
 
-# 精简频道分类
+# 首页 - 右上角红包
+^https:\/\/(m|mwsa)\.ximalaya\.com\/x-web-activity\/signIn\/getHomePageSignInInfo\/ reject-dict
+
+# 首页 - 精简频道分类
 ^https:\/\/(mobile|mobilehera)\.ximalaya\.com\/discovery-category\/customCategories\/ response-body-json-jq '.categoryList |= map(.itemList |= map(select(.title | test("直播|123狂欢节"; "i") | not))) | .customCategoryList |= map(select(.title | test("直播|123狂欢节"; "i") | not))'
 
-# 我的页面 - 服务模块
-^https:\/\/(mobile|mobilehera)\.ximalaya\.com\/mobile-user\/v\d\/homePage\/ response-body-json-jq '.data.serviceModule.entrances |= map(select(.name == "全部服务"))'
-
 # 全局广告
-^https:\/\/(mobile|mobilehera)\.ximalaya\.com\/football-portal\/diff2\/batch\? response-body-json-del json.ad
+^https:\/\/(mobile|mobilehera)\.ximalaya\.com\/football-portal\/diff2\/batch\? response-body-json-del json.ad json.toc
+
+# 订阅 - 精简类别
+^https:\/\/(mobile|mobilehera)\.ximalaya\.com\/nexus-web\/v\d\/tabs\/customTabs\? response-body-json-jq '.data.feedTabs |= map(select(.name != "大赛"))'
 
 # 订阅 - 订阅推荐
 ^https:\/\/(mobile|mobilehera)\.ximalaya\.com\/subscribe\/v\d\/subscribe\/tagAlbumList$ reject-dict
 
-# 订阅 - 精简类别
-^https:\/\/mobile\.ximalaya\.com\/nexus-web\/v4\/tabs\/customTabs\? response-body-json-jq .data.feedTabs |= map(select(.name != "大赛"))
+# 订阅 - 追更 -追更推荐
+^https:\/\/(mobile|mobilehera)\.ximalaya\.com\/track-feed\/v\d\/chase\/recommend\/ reject-dict
+
+# 订阅 - 圈子 - 圈子推荐
+^https:\/\/(m|mwsa)\.ximalaya\.com\/community\/square\/v\d\/stream\? response-body-json-del data.cards
+
+# 播放器 - 推荐
+^https:\/\/(mobile|mobilehera)\.ximalaya\.com\/mobile-playpage\/playpage\/recommendContentV\d\/ reject-dict
 
 # 播放器 - 推广
 ^https:\/\/(mobile|mobilehera)\.ximalaya\.com\/mobile-playpage\/playpage\/recommend\/resource\/allocation\/ reject-dict
@@ -51,5 +60,20 @@ URL-REGEX,"^http:\/\/xmc\.ximalaya\.com\/xmlymain-login-web\/login\/",REJECT
 # 弹窗
 ^https:\/\/(mobile|mobilehera)\.ximalaya\.com\/firework-portal\/v\d+\/sync\? reject-dict
 
+# 皮肤配置
+^https:\/\/(mobile|mobwsa)\.ximalaya\.com\/app-skin-service\/skin\/setting\/info\/ reject-dict
+
+# 我的页面 - 右上角免费听图标
+^https:\/\/(mobile|mobilehera)\.ximalaya\.com\/mobile-user\/v\d\/homePage\/ response-body-json-del data.freeListenV2
+
+# 我的页面 - 服务模块
+^https:\/\/(mobile|mobilehera)\.ximalaya\.com\/mobile-user\/v\d\/homePage\/ response-body-json-jq '.data.serviceModule.entrances |= map(select(.name == "全部服务"))'
+
+# 我的页面 - 本地 - 你可能感兴趣的内容
+^https:\/\/(mobile|mobilehera)\.ximalaya\.com\/subscribe\/v\d\/subscribe\/recommend\? reject-dict
+
+# 我的页面 - 已购 - 为你推荐
+^https:\/\/(mobile|mobilehera)\.ximalaya\.com\/mobile-user\/v\d\/purchased\/recommend\/ reject-dict
+
 [MitM]
-hostname=gslbali.ximalaya.com,search.ximalaya.com,searchwsa.ximalaya.com,mobile.ximalaya.com,mobilehera.ximalaya.com
+hostname=gslbali.ximalaya.com,search.ximalaya.com,searchwsa.ximalaya.com,mobile.ximalaya.com,mobilehera.ximalaya.com,m.ximalaya.com,mwsa.ximalaya.com,mobwsa.ximalaya.com
