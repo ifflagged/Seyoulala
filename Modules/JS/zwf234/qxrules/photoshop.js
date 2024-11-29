@@ -1,7 +1,6 @@
-<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
-<html>
-<head><title>502 Bad Gateway</title></head>
-<body>
-<h1>502 Bad Gateway</h1>
-<p>The proxy server received an invalid response from an upstream server.<hr/>Powered by Tengine</body>
-</html>
+let obj = JSON.parse($response.body)
+let pro= obj["mobileProfile"];
+pro["profileStatus"] = "PROFILE_AVAILABLE";
+pro["legacyProfile"] = "{}";
+pro["relationshipProfile"] = "[]";
+$done({body: JSON.stringify(obj)})
