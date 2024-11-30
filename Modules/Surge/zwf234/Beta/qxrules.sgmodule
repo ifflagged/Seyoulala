@@ -583,7 +583,7 @@ CamScaner = type=http-response, pattern=^https:\/\/(api|api-cs)\.intsig\.net\/pu
 over.vip = type=http-response, pattern=^https:\/\/api\.overhq\.com\/(user\/token\/refresh$|subscription\/verifyReceipt$), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zwf234/qxrules/over.vip.js, requires-body=true, max-size=-1, timeout=60
 
 #speak&translate
-speak&translate = type=http-response, pattern=^https:\/\/receipt-validator\.herewetest\.com\/apple\/verifyTransaction$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zwf234/qxrules/speakhttps://github.com/ifflagged/Darwin/raw/main/Modules/JS/zwf234/qxrules/speakhttps://nav.qixinpro.com/rules/QuantumultX/js/yue/speak&translate.jstranslate.jstranslate.jstranslate.js, requires-body=true, max-size=-1, timeout=60
+speak&translate = type=http-response, pattern=^https:\/\/receipt-validator\.herewetest\.com\/apple\/verifyTransaction$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zwf234/qxrules/speakhttps://github.com/ifflagged/Darwin/raw/main/Modules/JS/zwf234/qxrules/speakhttps://github.com/ifflagged/Darwin/raw/main/Modules/JS/zwf234/qxrules/speakhttps://nav.qixinpro.com/rules/QuantumultX/js/yue/speak&translate.jstranslate.jstranslate.jstranslate.jstranslate.jstranslate.jstranslate.jstranslate.js, requires-body=true, max-size=-1, timeout=60
 
 #document
 documents = type=http-response, pattern=^https:\/\/license\.pdfexpert\.com\/api\/.*\/documents\/subscription\/(refresh$|check$), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zwf234/qxrules/documents.js, requires-body=true, max-size=-1, timeout=60
