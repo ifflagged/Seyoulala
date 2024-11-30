@@ -13,7 +13,7 @@ https://b.appsimg.com/upload/momin/ - reject
 
 [Map Local]
 # > Version
-^https?:\/\/2024.11.27/c357/v2.0.553 data-type=text data=" " status-code=200
+^https?:\/\/2024.11.30/c358/v2.0.554 data-type=text data=" " status-code=200
 
 # > 10
 ^https?:\/\/ftapi\.10jqka\.com\.cn\/futgwapi\/api\/om\/v\d\/ad\/common\/transfer data-type=text data=" " status-code=200
@@ -1116,6 +1116,9 @@ https?:\/\/m\.sd\.10086\.cn\/zapi\/app_common\/homeWelcome\/welcome.do data-type
 
 # > zijinnongshangyinhang*
 ^https?:\/\/zjmbank\.js96008\.com:8090\/gw\/advert\/oprAdvertQry data-type=text data=" " status-code=200
+
+# > zhangyu
+^https?:\/\/.*zhangyuyidong\.cn\/api\/ data-type=text data=" " status-code=200
 
 # > zhongguoguangdian
 ^https?:\/\/app\.10099\.com\.cn\/contact-web\/api\/version\/getFlashScreenPage data-type=text data=" " status-code=200

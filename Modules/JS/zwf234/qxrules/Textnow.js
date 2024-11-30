@@ -1,7 +1,9 @@
-<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
-<html>
-<head><title>502 Bad Gateway</title></head>
-<body>
-<h1>502 Bad Gateway</h1>
-<p>The proxy server received an invalid response from an upstream server.<hr/>Powered by Tengine</body>
-</html>
+/*
+^https:\/\/api\.textnow\.me\/api2.0\/users\/.* url script-response-body langkhach/Textnow.js
+*/var obj = JSON.parse($response.body); 
+obj['show_ads'] = false;
+obj['premium_calling'] = true;
+$done({body: JSON.stringify(obj)});
+
+
+

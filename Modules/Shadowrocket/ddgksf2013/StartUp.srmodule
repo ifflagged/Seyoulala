@@ -8,7 +8,7 @@
 
 [URL Rewrite]
 # > Version
-^https?:\/\/2024.11.27/c357/v2.0.553 - reject-200
+^https?:\/\/2024.11.30/c358/v2.0.554 - reject-200
 # > 10
 ^https?:\/\/ftapi\.10jqka\.com\.cn\/futgwapi\/api\/om\/v\d\/ad\/common\/transfer - reject-200
 # > 139mail
@@ -720,6 +720,8 @@ https?:\/\/m\.sd\.10086\.cn\/zapi\/app_common\/homeWelcome\/welcome.do - reject-
 ^https?:\/\/m\.ctrip\.com\/restapi\/soa2\/\d+\/scjson\/tripAds - reject-200
 # > zijinnongshangyinhang*
 ^https?:\/\/zjmbank\.js96008\.com:8090\/gw\/advert\/oprAdvertQry - reject-200
+# > zhangyu
+^https?:\/\/.*zhangyuyidong\.cn\/api\/ - reject-200
 # > zhongguoguangdian
 ^https?:\/\/app\.10099\.com\.cn\/contact-web\/api\/version\/getFlashScreenPage - reject-200
 # > zhihuisuzhou
