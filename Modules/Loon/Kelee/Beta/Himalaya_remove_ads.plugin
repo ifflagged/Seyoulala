@@ -8,7 +8,7 @@
 #!tag=去广告
 #!loon_version=3.2.4(787)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!date=2024-11-30 00:55:05
+#!date=2024-11-30 19:00:26
 
 [Rule]
 DOMAIN,adse.ximalaya.com,REJECT
@@ -27,7 +27,7 @@ URL-REGEX,"^http:\/\/xmc\.ximalaya\.com\/xmlymain-login-web\/login\/",REJECT
 ^https:\/\/(m|mwsa)\.ximalaya\.com\/x-web-activity\/signIn\/getHomePageSignInInfo\/ - reject-dict
 ^https:\/\/(mobile|mobilehera)\.ximalaya\.com\/subscribe\/v\d\/subscribe\/tagAlbumList$ - reject-dict
 ^https:\/\/(mobile|mobilehera)\.ximalaya\.com\/track-feed\/v\d\/chase\/recommend\/ - reject-dict
-^https:\/\/mobile\.ximalaya\.com\/social-web\/follow-stream\/category\/\d+$ - reject-dict
+^https:\/\/(mobile|mobilehera)\.ximalaya\.com\/social-web\/follow-stream\/category\/\d+$ - reject-dict
 ^https:\/\/(mobile|mobilehera)\.ximalaya\.com\/mobile-playpage\/playpage\/recommendContentV\d\/ - reject-dict
 ^https:\/\/(mobile|mobilehera)\.ximalaya\.com\/mobile-playpage\/playpage\/recommend\/resource\/allocation\/ - reject-dict
 ^https:\/\/(mobile|mobilehera)\.ximalaya\.com\/firework-portal\/v\d+\/sync\? - reject-dict
