@@ -71,4 +71,4 @@ https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/Y/%E4%BA%91%
 https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/Z/%E4%B8%AD%E5%9B%BD%E7%A7%BB%E5%8A%A8/filter/10086.list😂https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/Z/%E4%B8%AD%E5%9B%BD%E7%A7%BB%E5%8A%A8/rewrite/10086_general.conf
 https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/Z/%E6%8B%9B%E5%95%86%E9%93%B6%E8%A1%8C/filter/cmb.list😂https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/Z/%E6%8B%9B%E5%95%86%E9%93%B6%E8%A1%8C/rewrite/cmb.conf
 https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/Z/%E6%94%AF%E4%BB%98%E5%AE%9D/filter/alipay.list
-https://github.com/zwf234/rules/raw/master/QuantumultX/qxrules.conf
+# https://github.com/zwf234/rules/raw/master/QuantumultX/qxrules.conf
