@@ -26,8 +26,6 @@ https://github.com/githubdulong/Script/raw/master/Surge/TikTok_Surge.sgmodule
 # M #
 https://github.com/Maasea/sgmodule/raw/master/YouTube.Enhance.sgmodule
 https://github.com/Moli-X/Resources/raw/main/Rewrite/Collections.conf
-https://github.com/Moli-X/Resources/raw/main/Script/MTxiuxiu/MeiTu.js
-https://github.com/Moli-X/Resources/raw/main/Script/MTxiuxiu/MTxiuxiu.js
 
 # Y #
 https://github.com/Yuheng0101/X/raw/main/Scripts/ChinaMobile/NoAds.js
