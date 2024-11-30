@@ -29,6 +29,7 @@ https://github.com/Moli-X/Resources/raw/main/Rewrite/Collections.conf
 
 # Y #
 https://github.com/Yuheng0101/X/raw/main/Scripts/ChinaMobile/NoAds.js
+https://github.com/Yuheng0101/Hostname_Monitor/releases/download/Auto_Update/heiliao.sgmodule
 
 # Z #
 https://github.com/ZenmoFeiShi/Qx/raw/main/Didichuxing.snippet
