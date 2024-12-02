@@ -8,7 +8,7 @@
 #!loon_version=3.2.4(787)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/XiaChuFang.png
-#!date=2024-11-28 00:00:00
+#!date=2024-12-02 09:16:28
 
 [Rule]
 DOMAIN,cnlogs.umeng.com,REJECT
@@ -144,6 +144,7 @@ DOMAIN,yumao.puata.info,REJECT
 ^https:\/\/api\.xiachufang\.com\/v2\/homepage\/paged_waterfall_recommendations\.json$ response-body-json-jq 'del(.multiplex_cells[] | select(.recommendation_cell.impression_sensor_events[]?.properties.target_type? == "ad"))'
 ^https:\/\/api\.xiachufang\.com\/v2\/config\/get\.json$ response-body-json-jq 'del(.content.tab_name[] | select(. == "减脂" or . == "商店" or . == "分类"))'
 ^https:\/\/api\.xiachufang\.com\/v2\/account\/feeds_v7\.json reject-dict
+^https:\/\/api\.xiachufang\.com\/v2\/homepage1810\/init_page\.json reject-dict
 ^https:\/\/api\.xiachufang\.com\/v2\/mark_mission\/get_sticker_info\.json reject-dict
 
 [MitM]
