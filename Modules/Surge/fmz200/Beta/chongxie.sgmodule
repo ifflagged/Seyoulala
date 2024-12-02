@@ -3134,19 +3134,19 @@ replaceBody = type=http-response, pattern=^https?:\/\/mp\.weixin\.qq\.com\/mp\/g
 # 微信跳过中间界面，支付宝链接、被封禁链接进行通知弹窗跳转，在微信中用快照显示被封禁的链接（可选），在微信中进行强制重定向（可选），群聊 / 扫码均可使用，可选项可在脚本 2、3 行更改，也可在 BoxJs 中更改。
 UnblockURLinWeChat = type=http-response, pattern=^https\:\/\/(weixin110\.qq|security.wechat)\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/chongxie/UnblockURLinWeChat.js, requires-body=true, max-size=-1, timeout=60
 
-wyres = type=http-response, pattern=https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/e?api\/(batch|v\d\/resource\/comment\/floor\/get), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/chongxie/wyres.js, requires-body=true, binary-body-mode=true, max-size=-1, timeout=60
+wyres = type=http-response, pattern=https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/e?api\/(batch|v\d\/resource\/comment\/floor\/get), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/chongxie/wyres.js, requires-body=true, max-size=-1, timeout=60
 
-wyres = type=http-response, pattern=https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/e?api\/link\/home\/framework\/tab, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/chongxie/wyres.js, requires-body=true, binary-body-mode=true, max-size=-1, timeout=60
+wyres = type=http-response, pattern=https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/e?api\/link\/home\/framework\/tab, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/chongxie/wyres.js, requires-body=true, max-size=-1, timeout=60
 
-wyres = type=http-response, pattern=https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/e?api\/(homepage\/block\/page|link\/page\/rcmd\/(resource\/show|block\/resource\/multi\/refresh)), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/chongxie/wyres.js, requires-body=true, binary-body-mode=true, max-size=-1, timeout=60
+wyres = type=http-response, pattern=https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/e?api\/(homepage\/block\/page|link\/page\/rcmd\/(resource\/show|block\/resource\/multi\/refresh)), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/chongxie/wyres.js, requires-body=true, max-size=-1, timeout=60
 
-wyres = type=http-response, pattern=https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/e?api\/link\/page\/discovery\/resource\/show, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/chongxie/wyres.js, requires-body=true, binary-body-mode=true, max-size=-1, timeout=60
+wyres = type=http-response, pattern=https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/e?api\/link\/page\/discovery\/resource\/show, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/chongxie/wyres.js, requires-body=true, max-size=-1, timeout=60
 
-wyres = type=http-response, pattern=https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/e?api\/song\/play\/more\/list\/v\d, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/chongxie/wyres.js, requires-body=true, binary-body-mode=true, max-size=-1, timeout=60
+wyres = type=http-response, pattern=https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/e?api\/song\/play\/more\/list\/v\d, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/chongxie/wyres.js, requires-body=true, max-size=-1, timeout=60
 
-wyres = type=http-response, pattern=https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/e?api\/link\/position\/show\/resource, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/chongxie/wyres.js, requires-body=true, binary-body-mode=true, max-size=-1, timeout=60
+wyres = type=http-response, pattern=https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/e?api\/link\/position\/show\/resource, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/chongxie/wyres.js, requires-body=true, max-size=-1, timeout=60
 
-wyres = type=http-response, pattern=https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/e?api\/user\/follow\/users\/mixed\/get, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/chongxie/wyres.js, requires-body=true, binary-body-mode=true, max-size=-1, timeout=60
+wyres = type=http-response, pattern=https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/e?api\/user\/follow\/users\/mixed\/get, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/chongxie/wyres.js, requires-body=true, max-size=-1, timeout=60
 
 # 首页净化，学习Tab界面净化，首页听读训练净化
 dict-youdao-ad = type=http-response, pattern=^https?:\/\/dict\.youdao\.com\/(homepage\/promotion|course\/tab\/home|homepage\/tile), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/chongxie/dict-youdao-ad.js, requires-body=true, max-size=-1, timeout=60
