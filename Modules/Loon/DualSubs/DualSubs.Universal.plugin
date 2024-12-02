@@ -6,8 +6,8 @@
 #!icon = https://github.com/DualSubs/Universal/raw/main/src/assets/icon_rounded.png
 #!tag = 🍿️ DualSubs
 #!system = iOS,iPadOS,macOS,tvOS
-#!date = 2024-11-29 08:41:43
-#!version = 1.6.8
+#!date = 2024-12-02 06:38:53
+#!version = 1.6.9
 #!system_version = 15
 
 [Argument]
@@ -16,7 +16,7 @@ Languages[0] = select,"AUTO","ZH","ZH-HANS","ZH-HK","ZH-HANT","EN","ES","JA","KO
 Languages[1] = select,"ZH","ZH-HANS","ZH-HK","ZH-HANT","EN","EN-US","ES","ES-ES","ES-419","JA","KO","DE","FR","TR","KM",tag=[字幕] 副语言（目标语言）,desc=当“副语言”字幕存在时，将生成“副语言/主语言（官方）”的字幕或字幕选项。
 Position = select,"Reverse","Forward",tag=[字幕] 主语言（源语言）字幕位置,desc=主语言（源语言）字幕的显示位置。
 Vendor = select,"Google","Microsoft",tag=[翻译器] 服务商API,desc=请选择翻译器所使用的服务商API，更多翻译选项请使用BoxJs。
-ShowOnly = switch,false,tag=[翻译器] 只显示翻译后字幕,desc=开启后仅显示翻译字幕，不做字幕合并操作。
+ShowOnly = switch,false,tag=[翻译器] 只显示翻译字幕,desc=开启后仅显示翻译字幕，不做字幕合并操作。
 
 [Script]
 http-response ^https?:\/\/(play|play-edge|hls)\.itunes\.apple\.com\/WebObjects\/(MZPlay|MZPlayLocal)\.woa\/hls\/playlist\.m3u8 requires-body=1, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/DualSubs/DualSubs.Universal/Manifest.response.bundle.js, tag=🍿️ DualSubs.TV.M3U8.Master.response, argument=[{Types},{Languages[0]},{Languages[1]},{Position},{Vendor},{ShowOnly}]
