@@ -8,7 +8,7 @@
 
 [URL Rewrite]
 # > Version
-^https?:\/\/2024.12.04/c358/v2.0.555 - reject-200
+^https?:\/\/2024.12.04/c358/v2.0.556 - reject-200
 # > 10
 ^https?:\/\/ftapi\.10jqka\.com\.cn\/futgwapi\/api\/om\/v\d\/ad\/common\/transfer - reject-200
 # > 139mail
@@ -96,7 +96,7 @@
 ^https?:\/\/app-gw\.csdn\.net\/silkroad-api\/api\/v\d\/assemble\/list\/pub\/channel\/app_open_screen_ad - reject-200
 # > cailianshe
 ^https?:\/\/api3\.cls\.cn\/v1\/boot\/ad - reject-200
-^https?:\/\/pinggai*.caixin\.com\/s\?z=caixin - reject-200
+^https?:\/\/pinggai.*caixin\.com\/s\?z=caixin - reject-200
 # > dongkakongjian*
 #^https?:\/\/m\.creditcard\.ecitic\.com\/citiccard\/mbk\/appspace-getway\/getWay\/dkkj-system-web\/system\/v\d\/init-config - reject-200
 # > dangdang

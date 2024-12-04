@@ -13,7 +13,7 @@ https://b.appsimg.com/upload/momin/ - reject
 
 [Map Local]
 # > Version
-^https?:\/\/2024.12.04/c358/v2.0.555 data-type=text data=" " status-code=200
+^https?:\/\/2024.12.04/c358/v2.0.556 data-type=text data=" " status-code=200
 
 # > 10
 ^https?:\/\/ftapi\.10jqka\.com\.cn\/futgwapi\/api\/om\/v\d\/ad\/common\/transfer data-type=text data=" " status-code=200
@@ -153,7 +153,7 @@ https://b.appsimg.com/upload/momin/ - reject
 # > cailianshe
 ^https?:\/\/api3\.cls\.cn\/v1\/boot\/ad data-type=text data=" " status-code=200
 
-^https?:\/\/pinggai*.caixin\.com\/s\?z=caixin data-type=text data=" " status-code=200
+^https?:\/\/pinggai.*caixin\.com\/s\?z=caixin data-type=text data=" " status-code=200
 
 # > dongkakongjian*
 #^https?:\/\/m\.creditcard\.ecitic\.com\/citiccard\/mbk\/appspace-getway\/getWay\/dkkj-system-web\/system\/v\d\/init-config data-type=text data=" " status-code=200
