@@ -1,0 +1,19 @@
+# 按字母排序
+https://github.com/ifflagged/Neverflagged/raw/main/Surge/Ruleset/Direct.list
+https://github.com/ifflagged/Neverflagged/raw/main/Surge/Ruleset/Media/Emby.list
+https://github.com/ifflagged/nBlock/raw/main/Walalala/Rules/MyBlockAds.list
+https://github.com/ifflagged/nBlock/raw/main/Walalala/Rules/PornAds.list
+
+# B #
+https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Surge/Gemini/Gemini.list
+https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Surge/OpenAI/OpenAI.list
+
+# C #
+https://github.com/ConnersHua/RuleGo/raw/master/Surge/Ruleset/Extra/AI.list
+https://github.com/ConnersHua/RuleGo/raw/master/Surge/Ruleset/Extra/Reject/Advertising.list
+https://github.com/ConnersHua/RuleGo/raw/master/Surge/Ruleset/Extra/Reject/Malicious.list
+https://github.com/ConnersHua/RuleGo/raw/master/Surge/Ruleset/Extra/Reject/Tracking.list
+
+# F #
+https://github.com/fmz200/wool_scripts/raw/main/QuantumultX/filter/fenliu.list
+https://github.com/fmz200/wool_scripts/raw/main/QuantumultX/filter/fenliuxiuzheng.list
