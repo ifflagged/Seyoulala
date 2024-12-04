@@ -19,13 +19,13 @@
 ^https:\/\/api\.pinduoduo\.com\/api\/caterham\/v3\/query\/likes - reject-dict
 
 [Script]
-Pinduoduo = type=http-response, pattern=^https:\/\/api\.pinduoduo\.com\/search, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ZenmoFeiShi/Pinduoduo/Pinduoduo.js, requires-body=true, max-size=-1, timeout=60
+Pinduoduo = type=http-response, pattern=^https:\/\/api\.pinduoduo\.com\/search, script-path=https://raw.githubusercontent.com/ZenmoFeiShi/Qx/main/Pinduoduo.js, requires-body=true, max-size=-1, timeout=60
 
-Pinduoduo = type=http-response, pattern=^https:\/\/api\.pinduoduo\.com\/api\/philo\/personal\/hub, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ZenmoFeiShi/Pinduoduo/Pinduoduo.js, requires-body=true, max-size=-1, timeout=60
+Pinduoduo = type=http-response, pattern=^https:\/\/api\.pinduoduo\.com\/api\/philo\/personal\/hub, script-path=https://raw.githubusercontent.com/ZenmoFeiShi/Qx/main/Pinduoduo.js, requires-body=true, max-size=-1, timeout=60
 
-Pinduoduo = type=http-response, pattern=^https:\/\/api\.pinduoduo\.com\/api\/alexa\/homepage\/hub, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ZenmoFeiShi/Pinduoduo/Pinduoduo.js, requires-body=true, max-size=-1, timeout=60
+Pinduoduo = type=http-response, pattern=^https:\/\/api\.pinduoduo\.com\/api\/alexa\/homepage\/hub, script-path=https://raw.githubusercontent.com/ZenmoFeiShi/Qx/main/Pinduoduo.js, requires-body=true, max-size=-1, timeout=60
 
-Pinduoduo = type=http-response, pattern=^https:\/\/api\.pinduoduo\.com\/api\/oak\/integration\/render, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ZenmoFeiShi/Pinduoduo/Pinduoduo.js, requires-body=true, max-size=-1, timeout=60
+Pinduoduo = type=http-response, pattern=^https:\/\/api\.pinduoduo\.com\/api\/oak\/integration\/render, script-path=https://raw.githubusercontent.com/ZenmoFeiShi/Qx/main/Pinduoduo.js, requires-body=true, max-size=-1, timeout=60
 
 [MITM]
 hostname = %APPEND% api.pinduoduo.com
