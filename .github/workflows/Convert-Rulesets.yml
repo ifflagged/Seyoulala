@@ -57,7 +57,7 @@ jobs:
             
             # 创建文件夹
             echo "Creating directories for $author"
-            mkdir -p Rulesets/{Surge,Loon,Shadowrocket}/$author/Beta
+            mkdir -p Rulesets/{Surge,Loon,Shadowrocket,Clash}/$author/Beta
 
             # 构建模块的 URL
             Surge_url="http://localhost:9100/file/_start_/${encoded_module_link}/_end_/${encoded_filename}.list?type=rule-set&target=surge-rule-set&nore=true"
