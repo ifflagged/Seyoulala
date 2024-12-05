@@ -6,8 +6,8 @@
 #!icon = https://github.com/BiliUniverse/Enhanced/raw/main/src/assets/icon_rounded.png
 #!tag = 🪐 BiliUniverse
 #!system = iOS,iPadOS,macOS,tvOS
-#!date = 2024-11-29 05:16:38
-#!version = 0.5.8
+#!date = 2024-12-05 07:01:13
+#!version = 0.5.9
 #!system_version = 15
 
 [Argument]
