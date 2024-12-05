@@ -5,8 +5,8 @@
 #!homepage = https://NSRingo.github.io/guide/apple-tv
 #!icon = https://developer.apple.com/assets/elements/icons/apple-tv/apple-tv-128x128.png
 #!category =  iRingo
-#!date = 2024-12-04 07:55:41
-#!version = 3.4.0
+#!date = 2024-12-05 08:30:09
+#!version = 3.4.1
 #!arguments = ThirdParty:false,HLSUrl:"play-edge.itunes.apple.com",FPSUrl:"play.itunes.apple.com"
 #!arguments-desc = ThirdParty: 启用第三方 App 与 TV app 关联功能\n是否将桌面版/macOS版/app版等平台的 TV app 转换至 iPad 版，以启用第三方 App 与 TV app 关联功能(如: Disney+, Prime Video 等)。\n\nHLSUrl: [主机名] HTTP实时流(HLS)地址\n    ├ : OFF(不修改)\n    ├ play.itunes.apple.com: play.itunes.apple.com (不推荐，与播放服务域名重叠)\n    └ play-edge.itunes.apple.com: play-edge.itunes.apple.com (默认)\n因为FPS服务域名禁止MitM，修改此地址可以分离HLS与FPS的域名，从而恢复对DualSubs的双语字幕支持。\n\nFPSUrl: [主机名] FairPlay流(FPS)地址\n    ├ : OFF(不修改)\n    ├ play.itunes.apple.com: play.itunes.apple.com (默认)\n    └ play-edge.itunes.apple.com: play-edge.itunes.apple.com (不推荐，与播放服务域名重叠)\n因为FPS服务域名禁止MitM，修改此地址可以分离HLS与FPS的域名，从而恢复对DualSubs的双语字幕支持。\n
 

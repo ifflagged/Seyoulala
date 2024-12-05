@@ -5,8 +5,8 @@
 #!homepage = https://NSRingo.github.io/guide/apple-tv
 #!icon = https://developer.apple.com/assets/elements/icons/apple-tv/apple-tv-128x128.png
 #!category =  iRingo
-#!date = 2024-12-04 07:55:41
-#!version = 3.4.0
+#!date = 2024-12-05 08:30:09
+#!version = 3.4.1
 
 [Script]
 📺 TV.uts.request = type=http-request, pattern=^https?:\/\/uts-api\.itunes\.apple\.com\/uts\/(v1|v2|v3)\/, requires-body=1, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/NSRingo/iRingo.TV/request.bundle.js, argument=
