@@ -5,8 +5,8 @@
 #!homepage = https://NSRingo.github.io/guide/test-flight
 #!icon = https://developer.apple.com/assets/elements/icons/testflight/testflight-128x128.png
 #!category =  iRingo
-#!date = 2024-12-04 08:27:11
-#!version = 3.3.0
+#!date = 2024-12-05 08:26:56
+#!version = 3.3.1
 
 [General]
 skip-proxy = %APPEND% iosapps.itunes.apple.com

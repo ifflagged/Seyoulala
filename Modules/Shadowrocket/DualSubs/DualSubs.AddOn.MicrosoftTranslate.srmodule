@@ -5,8 +5,8 @@
 #!homepage = https://DualSubs.github.io/guide/addon
 #!icon = https://github.com/DualSubs/AddOn/raw/main/src/assets/icon_rounded.png
 #!category = 🍿️ DualSubs
-#!date = 2024-12-02 07:57:31
-#!version = 1.0.6
+#!date = 2024-12-05 07:36:07
+#!version = 1.0.7
 
 [Script]
 🍿️ DualSubs.AddOn.Microsoft.Translate = type=cron, cronexp="*/10 * * * *", timeout=60, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/DualSubs/DualSubs.AddOn.MicrosoftTranslate/Microsoft.Translate.bundle.js
