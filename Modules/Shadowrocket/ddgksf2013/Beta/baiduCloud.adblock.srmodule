@@ -22,16 +22,16 @@
 
 [Script]
 # > 百度网盘_开屏广告@ddgksf2013
-baiduCloud.adblock = type=http-response, pattern=^https?:\/\/pan\.baidu\.com\/api\/getsyscfg, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ddgksf2013/baiduCloud.adblock/baiduCloud.adblock.js, requires-body=true, max-size=-1, timeout=60
+baiduCloud.adblock = type=http-response, pattern=^https?:\/\/pan\.baidu\.com\/api\/getsyscfg, script-path=https://gist.githubusercontent.com/ddgksf2013/f43026707830c7818ee3ba624e383c8d/raw/baiduCloud.adblock.js, requires-body=true, max-size=-1, timeout=60
 
 # > 百度网盘_广告推广@ddgksf2013
-baiduCloud.adblock = type=http-response, pattern=^https?:\/\/afd\.baidu\.com\/afd\/entry, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ddgksf2013/baiduCloud.adblock/baiduCloud.adblock.js, requires-body=true, max-size=-1, timeout=60
+baiduCloud.adblock = type=http-response, pattern=^https?:\/\/afd\.baidu\.com\/afd\/entry, script-path=https://gist.githubusercontent.com/ddgksf2013/f43026707830c7818ee3ba624e383c8d/raw/baiduCloud.adblock.js, requires-body=true, max-size=-1, timeout=60
 
 # > 百度网盘_游戏广告@ddgksf2013
-baiduCloud.adblock = type=http-response, pattern=^https:\/\/pan\.baidu\.com\/rest\/.*\/membership\/user\?method=gamecenter, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ddgksf2013/baiduCloud.adblock/baiduCloud.adblock.js, requires-body=true, max-size=-1, timeout=60
+baiduCloud.adblock = type=http-response, pattern=^https:\/\/pan\.baidu\.com\/rest\/.*\/membership\/user\?method=gamecenter, script-path=https://gist.githubusercontent.com/ddgksf2013/f43026707830c7818ee3ba624e383c8d/raw/baiduCloud.adblock.js, requires-body=true, max-size=-1, timeout=60
 
 # > 百度网盘_首页信息流@ddgksf2013
-baiduCloud.adblock = type=http-response, pattern=^https:\/\/pan\.baidu\.com\/feed\/cardinfos, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ddgksf2013/baiduCloud.adblock/baiduCloud.adblock.js, requires-body=true, max-size=-1, timeout=60
+baiduCloud.adblock = type=http-response, pattern=^https:\/\/pan\.baidu\.com\/feed\/cardinfos, script-path=https://gist.githubusercontent.com/ddgksf2013/f43026707830c7818ee3ba624e383c8d/raw/baiduCloud.adblock.js, requires-body=true, max-size=-1, timeout=60
 
 [MITM]
 hostname = %APPEND% pan.baidu.com, afd.baidu.com
