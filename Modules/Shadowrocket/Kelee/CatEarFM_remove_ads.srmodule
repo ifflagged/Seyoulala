@@ -8,13 +8,13 @@
 #!tag=去广告
 #!loon_version=3.2.4(787)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!date=2024-12-07 23:31:30
+#!date=2024-12-08 00:15:57
 
 [URL Rewrite]
 ^https:\/\/fm\.missevan\.com\/api\/v\d\/chatroom\/open\/search-recommend-list$ - reject-dict
 ^https:\/\/app\.missevan\.com\/sound\/recommend\? - reject-dict
 ^https:\/\/app\.missevan\.com\/drama\/get-recommend-by-id\? - reject-dict
-^https:\/\/fm\.missevan\.com\/api\/v\d\/chatroom\/open\/feed-list\? - reject-dict
+^https:\/\/fm\.missevan\.com\/api\/v\d\/chatroom\/open\/recommend-list\? - reject-dict
 ^https:\/\/fm\.missevan\.com\/api\/v\d\/meta\/banner$ - reject-dict
 
 [Script]
