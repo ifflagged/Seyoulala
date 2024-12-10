@@ -1587,7 +1587,7 @@ replaceBody = type=http-response, pattern=^https?:\/\/tft-app\.cdtft\.cn\/gatewa
 # umetrip
 umetrip = type=http-response, pattern=^https?:\/\/(bkclient|umerp|home)\.umetrip\.com(\.cn){0,1}\/gateway\/api\/umetrip\/native, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/umetrip/umetrip.js, timeout=60
 # BiliBili
-精简首页顶部标签 = type=http-response, pattern=^https:\/\/app\.bilibili\.com\/x\/resource\/show\/tab\/v2\?, script-path=https://github.com/ifflagged/Neverflagged/raw/main/Surge/Scripts/BiliBili.js, requires-body=true
+精简首页顶部标签 = type=http-response, pattern=^https:\/\/app\.bilibili\.com\/x\/resource\/show\/tab\/v2\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/BiliBili/BiliBili.js, requires-body=true
 # Bilibili_remove_ads
 body_rewrite_21 = type=http-response, pattern=^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\?, script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22json-del%22%2C%5B%22data.common_equip%22%5D%5D%5D
 echoResponse = type=http-request, pattern=^https:\/\/app\.bilibili\.com\/x\/resource\/top\/activity\?, script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/echo-response.js, timeout=60, argument=text=%7B%22code%22%3A-404%2C%22message%22%3A%22%E5%95%A5%E9%83%BD%E6%9C%A8%E6%9C%89%22%2C%22ttl%22%3A1%2C%22data%22%3Anull%7D&status-code=200
