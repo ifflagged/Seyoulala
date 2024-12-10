@@ -6,8 +6,8 @@
 #!icon = https://github.com/DualSubs/YouTube/raw/main/src/assets/icon_rounded.png
 #!tag = 🍿️ DualSubs
 #!system = iOS,iPadOS,macOS
-#!date = 2024-12-05 07:52:01
-#!version = 1.5.9
+#!date = 2024-12-10 08:54:35
+#!version = 1.5.10
 #!system_version = 15
 
 [Argument]
@@ -15,10 +15,9 @@ Type = select,"Official","Translate",tag=[字幕] 启用类型,desc=请选择要
 Types = input,"Translate",tag=[歌词] 启用类型,desc=请选择要添加的歌词选项，如果为多选，则会自动决定提供的歌词类型。
 AutoCC = switch,true,tag=[字幕] 自动显示,desc=是否总是自动开启字幕显示。
 Position = select,"Forward","Reverse",tag=[字幕] 主语言（源语言）字幕位置,desc=主语言（源语言）字幕的显示位置。
-Languages[0] = select,"AUTO","ZH","ZH-HANS","ZH-HK","ZH-HANT","EN","ES","JA","KO","DE","FR","TR","KM",tag=[翻译器] 主语言（源语言）,desc=仅当源语言识别不准确时更改此选项。
-Languages[1] = select,"ZH","ZH-HANS","ZH-HK","ZH-HANT","EN","EN-US","ES","ES-ES","ES-419","JA","KO","DE","FR","TR","KM",tag=[翻译器] 副语言（目标语言）,desc=请指定翻译歌词的目标语言。
 Vendor = select,"Google","Microsoft",tag=[翻译器] 服务商API,desc=请选择翻译器所使用的服务商API，更多翻译选项请使用BoxJs。
-ShowOnly = switch,false,tag=[翻译器] 只显示“自动翻译”字幕,desc=是否仅显示“自动翻译”后的字幕，不显示源语言字幕。
+ShowOnly = switch,false,tag=[翻译器] 只显示“自动翻译”字幕,desc=是否仅显示“自动翻译”字幕，不显示源语言字幕。
+LogLevel = select,"WARN","OFF","ERROR","INFO","DEBUG","ALL",tag=[调试] 日志等级,desc=选择脚本日志的输出等级，低于所选等级的日志将全部输出。
 
 [Rewrite]
 # 使用reject-img减少开销
@@ -26,20 +25,20 @@ ShowOnly = switch,false,tag=[翻译器] 只显示“自动翻译”字幕,desc=�
 
 [Script]
 # YouTube
-http-request ^https?:\/\/(www|m|tv)\.youtube\.com\/youtubei\/v1\/player(\?.+)?$ requires-body=1, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/DualSubs/DualSubs.YouTube/request.bundle.js, tag=🍿️ DualSubs.YouTube.Player.request.json, argument=[{Type},{Types},{AutoCC},{Position},{Languages[0]},{Languages[1]},{Vendor},{ShowOnly}]
-http-response ^https?:\/\/(www|m|tv)\.youtube\.com\/youtubei\/v1\/player(\?.+)?$ requires-body=1, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/DualSubs/DualSubs.YouTube/response.bundle.js, tag=🍿️ DualSubs.YouTube.Player.response.json, argument=[{Type},{Types},{AutoCC},{Position},{Languages[0]},{Languages[1]},{Vendor},{ShowOnly}]
-http-request ^https?:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/player(\?.+)?$ requires-body=1, binary-body-mode=1, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/DualSubs/DualSubs.YouTube/request.bundle.js, tag=🍿️ DualSubs.YouTube.Player.request.proto, argument=[{Type},{Types},{AutoCC},{Position},{Languages[0]},{Languages[1]},{Vendor},{ShowOnly}]
-http-response ^https?:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/player(\?.+)?$ requires-body=1, binary-body-mode=1, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/DualSubs/DualSubs.YouTube/response.bundle.js, tag=🍿️ DualSubs.YouTube.Player.response.proto, argument=[{Type},{Types},{AutoCC},{Position},{Languages[0]},{Languages[1]},{Vendor},{ShowOnly}]
-http-response ^https?:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/get_watch(\?.+)?$ requires-body=1, binary-body-mode=1, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/DualSubs/DualSubs.YouTube/response.bundle.js, tag=🍿️ DualSubs.YouTube.GetWatch.response.proto, argument=[{Type},{Types},{AutoCC},{Position},{Languages[0]},{Languages[1]},{Vendor},{ShowOnly}]
-http-request ^https?:\/\/(www|m)\.youtube\.com\/api\/timedtext(\?.+)?$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/DualSubs/DualSubs.YouTube/request.bundle.js, tag=🍿️ DualSubs.YouTube.TimedText.request, argument=[{Type},{Types},{AutoCC},{Position},{Languages[0]},{Languages[1]},{Vendor},{ShowOnly}]
-http-response ^https?:\/\/(www|m)\.youtube\.com\/api\/timedtext\?(.*)subtype=(Official|External) requires-body=1, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/DualSubs/DualSubs.YouTube/Composite.Subtitles.response.bundle.js, tag=🍿️ DualSubs.YouTube.Composite.TimedText.response, argument=[{Type},{Types},{AutoCC},{Position},{Languages[0]},{Languages[1]},{Vendor},{ShowOnly}]
-http-response ^https?:\/\/(www|m)\.youtube\.com\/api\/timedtext\?(.*)subtype=Translate requires-body=1, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/DualSubs/DualSubs.YouTube/Translate.response.bundle.js, tag=🍿️ DualSubs.YouTube.Translate.TimedText.response, argument=[{Type},{Types},{AutoCC},{Position},{Languages[0]},{Languages[1]},{Vendor},{ShowOnly}]
+http-request ^https?:\/\/(www|m|tv)\.youtube\.com\/youtubei\/v1\/player(\?.+)?$ requires-body=1, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/DualSubs/DualSubs.YouTube/request.bundle.js, tag=🍿️ DualSubs.YouTube.Player.request.json, argument=[{Type},{Types},{AutoCC},{Position},{Vendor},{ShowOnly},{LogLevel}]
+http-response ^https?:\/\/(www|m|tv)\.youtube\.com\/youtubei\/v1\/player(\?.+)?$ requires-body=1, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/DualSubs/DualSubs.YouTube/response.bundle.js, tag=🍿️ DualSubs.YouTube.Player.response.json, argument=[{Type},{Types},{AutoCC},{Position},{Vendor},{ShowOnly},{LogLevel}]
+http-request ^https?:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/player(\?.+)?$ requires-body=1, binary-body-mode=1, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/DualSubs/DualSubs.YouTube/request.bundle.js, tag=🍿️ DualSubs.YouTube.Player.request.proto, argument=[{Type},{Types},{AutoCC},{Position},{Vendor},{ShowOnly},{LogLevel}]
+http-response ^https?:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/player(\?.+)?$ requires-body=1, binary-body-mode=1, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/DualSubs/DualSubs.YouTube/response.bundle.js, tag=🍿️ DualSubs.YouTube.Player.response.proto, argument=[{Type},{Types},{AutoCC},{Position},{Vendor},{ShowOnly},{LogLevel}]
+http-response ^https?:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/get_watch(\?.+)?$ requires-body=1, binary-body-mode=1, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/DualSubs/DualSubs.YouTube/response.bundle.js, tag=🍿️ DualSubs.YouTube.GetWatch.response.proto, argument=[{Type},{Types},{AutoCC},{Position},{Vendor},{ShowOnly},{LogLevel}]
+http-request ^https?:\/\/(www|m)\.youtube\.com\/api\/timedtext(\?.+)?$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/DualSubs/DualSubs.YouTube/request.bundle.js, tag=🍿️ DualSubs.YouTube.TimedText.request, argument=[{Type},{Types},{AutoCC},{Position},{Vendor},{ShowOnly},{LogLevel}]
+http-response ^https?:\/\/(www|m)\.youtube\.com\/api\/timedtext\?(.*)subtype=(Official|External) requires-body=1, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/DualSubs/DualSubs.YouTube/Composite.Subtitles.response.bundle.js, tag=🍿️ DualSubs.YouTube.Composite.TimedText.response, argument=[{Type},{Types},{AutoCC},{Position},{Vendor},{ShowOnly},{LogLevel}]
+http-response ^https?:\/\/(www|m)\.youtube\.com\/api\/timedtext\?(.*)subtype=Translate requires-body=1, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/DualSubs/DualSubs.YouTube/Translate.response.bundle.js, tag=🍿️ DualSubs.YouTube.Translate.TimedText.response, argument=[{Type},{Types},{AutoCC},{Position},{Vendor},{ShowOnly},{LogLevel}]
 
 # YouTube Music
-http-request ^https?:\/\/music\.youtube\.com\/youtubei\/v1\/browse(\?.+)?$ requires-body=1, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/DualSubs/DualSubs.YouTube/request.bundle.js, tag=🍿️ DualSubs.YouTubeMusic.Browse.request.json, argument=[{Type},{Types},{AutoCC},{Position},{Languages[0]},{Languages[1]},{Vendor},{ShowOnly}]
-http-request ^https?:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/browse(\?.+)?$ requires-body=1, binary-body-mode=1, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/DualSubs/DualSubs.YouTube/request.bundle.js, tag=🍿️ DualSubs.YouTube.Browse.request.proto, argument=[{Type},{Types},{AutoCC},{Position},{Languages[0]},{Languages[1]},{Vendor},{ShowOnly}]
-http-response ^https?:\/\/music\.youtube\.com\/youtubei\/v1\/browse\?(.*)subtype=Translate requires-body=1, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/DualSubs/DualSubs.YouTube/Translate.response.bundle.js, tag=🍿️ DualSubs.YouTubeMusic.Translate.Lyrics.response.json, argument=[{Type},{Types},{AutoCC},{Position},{Languages[0]},{Languages[1]},{Vendor},{ShowOnly}]
-http-response ^https?:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/browse\?(.*)subtype=Translate requires-body=1, binary-body-mode=1, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/DualSubs/DualSubs.YouTube/Translate.response.bundle.js, tag=🍿️ DualSubs.YouTubeMusic.Translate.Lyrics.response.proto, argument=[{Type},{Types},{AutoCC},{Position},{Languages[0]},{Languages[1]},{Vendor},{ShowOnly}]
+http-request ^https?:\/\/music\.youtube\.com\/youtubei\/v1\/browse(\?.+)?$ requires-body=1, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/DualSubs/DualSubs.YouTube/request.bundle.js, tag=🍿️ DualSubs.YouTubeMusic.Browse.request.json, argument=[{Type},{Types},{AutoCC},{Position},{Vendor},{ShowOnly},{LogLevel}]
+http-request ^https?:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/browse(\?.+)?$ requires-body=1, binary-body-mode=1, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/DualSubs/DualSubs.YouTube/request.bundle.js, tag=🍿️ DualSubs.YouTube.Browse.request.proto, argument=[{Type},{Types},{AutoCC},{Position},{Vendor},{ShowOnly},{LogLevel}]
+http-response ^https?:\/\/music\.youtube\.com\/youtubei\/v1\/browse\?(.*)subtype=Translate requires-body=1, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/DualSubs/DualSubs.YouTube/Translate.response.bundle.js, tag=🍿️ DualSubs.YouTubeMusic.Translate.Lyrics.response.json, argument=[{Type},{Types},{AutoCC},{Position},{Vendor},{ShowOnly},{LogLevel}]
+http-response ^https?:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/browse\?(.*)subtype=Translate requires-body=1, binary-body-mode=1, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/DualSubs/DualSubs.YouTube/Translate.response.bundle.js, tag=🍿️ DualSubs.YouTubeMusic.Translate.Lyrics.response.proto, argument=[{Type},{Types},{AutoCC},{Position},{Vendor},{ShowOnly},{LogLevel}]
 
 [MITM]
 hostname = www.youtube.com, m.youtube.com, tv.youtube.com, music.youtube.com, youtubei.googleapis.com, -redirector*.googlevideo.com, *.googlevideo.com
