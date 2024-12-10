@@ -6,8 +6,8 @@
 #!icon = https://developer.apple.com/assets/elements/icons/maps/maps-128x128.png
 #!tag =  iRingo
 #!system = iOS,iPadOS,macOS
-#!date = 2024-12-10 04:32:55
-#!version = 4.2.1
+#!date = 2024-12-10 16:10:46
+#!version = 4.2.2
 #!system_version = 15
 
 [Argument]
