@@ -2322,9 +2322,8 @@ soul_ads = type=http-response, pattern=^https?:\/\/47\.110\.187\.87\/winterfell\
 soda = type=http-response, pattern=^https?:\/\/api\.sodalife\.xyz\/v1\/posters\?location=SODA_APP%3AHOME%3ATOP, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/chongxie/soda.js, requires-body=true, max-size=-1, timeout=60
 
 # hostname = homepage-api.smzdm.com, haojia-api.smzdm.com, app-api.smzdm.com, user-api.smzdm.com, article-api.smzdm.com, qianbao.smzdm.com
-#smzdm_ads = type=http-response, pattern=^https?:\/\/app-api\.smzdm\.com\/util\/update, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/chongxie/smzdm_ads.js, requires-body=true, max-size=-1, timeout=60
+smzdm_ads = type=http-response, pattern=^https:\/\/haojia-api\.smzdm\.com\/ranking_list\/articles\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/chongxie/smzdm_ads.js, requires-body=true, max-size=-1, timeout=60
 
-#^https?:\/\/app-api\.smzdm\.com\/util\/update url script-response-body https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/chongxie/smzdm_ads.js
 smzdm_ads = type=http-response, pattern=^https?:\/\/user-api\.smzdm\.com\/vip\/creator_user_center, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/chongxie/smzdm_ads.js, requires-body=true, max-size=-1, timeout=60
 
 # 感谢【怎么肥事】分享
