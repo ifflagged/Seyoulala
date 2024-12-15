@@ -471,6 +471,7 @@ DOMAIN-SUFFIX, bianxianmao.com, REJECT
 DOMAIN-SUFFIX, gentags.net, REJECT
 DOMAIN-KEYWORD, ads.g.doubleclick, REJECT
 DOMAIN-KEYWORD, sdk.1rtb.net, REJECT
+DOMAIN-KEYWORD, sensorsdata.cn, REJECT
 DOMAIN-SUFFIX, gozendata.com, REJECT
 DOMAIN-SUFFIX, gzads.com, REJECT
 DOMAIN-SUFFIX, gz-data.com, REJECT
