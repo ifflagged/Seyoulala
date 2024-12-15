@@ -62,6 +62,8 @@ DOMAIN-KEYWORD,ads.g.doubleclick,REJECT
 DOMAIN-KEYWORD,iflyad.bj.openstorage.cn,REJECT
 DOMAIN-KEYWORD,bjimp.voiceads.cn,REJECT
 DOMAIN-KEYWORD,sdk.1rtb.net,REJECT
+# > 神策 - SENSORDATA
+DOMAIN-KEYWORD,sensorsdata.cn,REJECT
 # > GozenData - GOZENDATA
 DOMAIN-SUFFIX,gozendata.com,REJECT
 DOMAIN-SUFFIX,gzads.com,REJECT
