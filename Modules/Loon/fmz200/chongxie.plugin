@@ -1284,10 +1284,13 @@ https://apis.lifeweek.com.cn/api/baseConfig/getIosNewConfig - reject
 ^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.trip\.activity\.querytmsresources - reject-dict
 ^https?:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(volvo\.secondfloor\.getconfig|wireless\.home\.newface\.awesome\.get) - reject-dict
 # hostname = vv.video.qq.com
-^https?:\/\/[\d\.:]*\/?(defaultts\.tc|vmind\.qqvideo\.tc|finderpdd\.video)\.qq\.com\/\w+ - reject
-^https?:\/\/apd-vlive\.apdcdn\.tc\.qq\.com\/vmind\.qqvideo\.tc\.qq\.com\/\w+ - reject
-^https?:\/\/apd-\w+\.v\.smtcdns\.com\/(defaultts|omts|vmind\.qqvideo)\.tc\.qq\.com\/\w+ - reject
-^https?:\/\/vv\.video\.qq\.com\/(diff|get)vmind - reject-dict
+#^https?:\/\/[\d\.:]*\/?(defaultts\.tc|vmind\.qqvideo\.tc|finderpdd\.video)\.qq\.com\/\w+ - reject
+# ^https?:\/\/[\d\.:]*\/?(defaultts\.tc|vmind\.qqvideo\.tc|finderpdd\.video)\.qq\.com\/\w+ url reject
+#^https?:\/\/apd-vlive\.apdcdn\.tc\.qq\.com\/vmind\.qqvideo\.tc\.qq\.com\/\w+ - reject
+# ^https?:\/\/apd-vlive\.apdcdn\.tc\.qq\.com\/vmind\.qqvideo\.tc\.qq\.com\/\w+ url reject
+#^https?:\/\/apd-\w+\.v\.smtcdns\.com\/(defaultts|omts|vmind\.qqvideo)\.tc\.qq\.com\/\w+ - reject
+# ^https?:\/\/apd-\w+\.v\.smtcdns\.com\/(defaultts|omts|vmind\.qqvideo)\.tc\.qq\.com\/\w+ url reject
+#^https?:\/\/vv\.video\.qq\.com\/(diff|get)vmind - reject-dict
 # 感谢【jinlvei】分享
 ^https?:\/\/ccmsupport-sz\.tenpay\.com\/cgi-bin\/common\/ccm_page_element.cgi - reject
 # > 如果想拦截1234567890-1234?wx类的长连接就加长规则,不加结尾符,只要前面的匹配了都会拦截。
@@ -2363,7 +2366,8 @@ http-response ^https?:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(cloudvid
 
 http-response ^https?:\/\/poplayer\.template\.alibaba\.com\/\w+\.json script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/chongxie/myBlockAds.js, requires-body=true, timeout=60, tag=myBlockAds
 
-http-request ^https?:\/\/vv\.video\.qq\.com\/getvinfo script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/chongxie/replace-body.js, requires-body=true, timeout=30, tag=replaceBody, argument=%26sppreviewtype%3D%5Cd(.*)%26spsrt%3D%5Cd-%3E%26sppreviewtype%3D0%241%26spsrt%3D0
+# ^https?:\/\/vv\.video\.qq\.com\/(diff|get)vmind url reject-dict
+#http-request ^https?:\/\/vv\.video\.qq\.com\/getvinfo script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/chongxie/replace-body.js, requires-body=true, timeout=30, tag=replaceBody, argument=%26sppreviewtype%3D%5Cd(.*)%26spsrt%3D%5Cd-%3E%26sppreviewtype%3D0%241%26spsrt%3D0
 
 http-response ^https?:\/\/(news\.ssp\.qq\.com\/app|r\.inews\.qq\.com\/(get(QQNewsUnreadList|TagFeedList)|gw\/page\/event_detail|news_feed\/hot_module_list)) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/chongxie/qq-news.js, requires-body=true, timeout=60, tag=qq-news
 
