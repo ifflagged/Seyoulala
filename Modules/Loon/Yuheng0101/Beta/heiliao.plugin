@@ -3,13 +3,13 @@
 #!icon=https://gitlab.com/lodepuly/iconlibrary/-/raw/main/App_icon/120px/Loon.png
 #!keyword=Jacob
 
-#!date=2024-12-16 04:12:58
+#!date=2024-12-16 08:14:35
 
 [Script]
-http-response ^https?:\/\/(18hlw\.com|zk046\.mjunrkx\.cc|riapc\.mjqngeov\.com|hlweb\.yzfkawpe\.com|d1runu6b5vnfuj\.cloudfront\.net).* script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Yuheng0101/heiliao/web.js, requires-body=true, timeout=60, tag=黑料去广告
+http-response ^https?:\/\/(18hlw\.com|630xb\.mqdijpw\.com|zk046\.mjunrkx\.cc|hlweb\.yzfkawpe\.com|d1runu6b5vnfuj\.cloudfront\.net).* script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Yuheng0101/heiliao/web.js, requires-body=true, timeout=60, tag=黑料去广告
 
 http-response ^https:\/\/api(\d+)?.hlwapi(\d+)?\.com\/api\.php\/api\/index\/(config|userInfo|index|detail) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Yuheng0101/heiliao/app.js, requires-body=true, timeout=30, tag=黑料App去广告
 
 [MITM]
-hostname = 18hlw.com, zk046.mjunrkx.cc, riapc.mjqngeov.com, hlweb.yzfkawpe.com, d1runu6b5vnfuj.cloudfront.net, api*.hlwapi*.com
+hostname = 18hlw.com, 630xb.mqdijpw.com, zk046.mjunrkx.cc, hlweb.yzfkawpe.com, d1runu6b5vnfuj.cloudfront.net, api*.hlwapi*.com
 
