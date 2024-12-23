@@ -6,8 +6,8 @@
 #!icon = https://github.com/DualSubs/Universal/raw/main/src/assets/icon_rounded.png
 #!tag = 🍿️ DualSubs
 #!system = iOS,iPadOS,macOS,tvOS
-#!date = 2024-12-10 08:54:28
-#!version = 1.6.11
+#!date = 2024-12-19 08:51:04
+#!version = 1.7.0
 #!system_version = 15
 
 [Argument]
@@ -58,7 +58,7 @@ http-response ^https?:\/\/cf-timedtext\.aux\.pv-cdn\.net\/(.+)\/([0-9a-f]{8}(-[0
 http-response ^https?:\/\/(cf|akm|gcp|fly|.+)\.pro?d\.media\.(h264\.io|max\.com)\/r\/hls\.m3u8 requires-body=1, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/DualSubs/DualSubs.Universal/Manifest.response.bundle.js, tag=🍿️ DualSubs.Max.M3U8.Master.response, argument=[{Types},{Languages[0]},{Languages[1]},{Position},{Vendor},{ShowOnly},{LogLevel}]
 http-response ^https?:\/\/(cf|akm|gcp|fly|.+)\.pro?d\.media\.(h264\.io|max\.com)\/r\/hlsMedia\.m3u8\?(.*)subtype= requires-body=1, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/DualSubs/DualSubs.Universal/Manifest.response.bundle.js, tag=🍿️ DualSubs.Max.M3U8.Subtitles.response, argument=[{Types},{Languages[0]},{Languages[1]},{Position},{Vendor},{ShowOnly},{LogLevel}]
 http-response ^https?:\/\/(cf|akm|gcp|fly|.+)\.pro?d\.media\.(h264\.io|max\.com)\/(.+)\.vtt\?(.*)subtype=(Official|External) requires-body=1, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/DualSubs/DualSubs.Universal/Composite.Subtitles.response.bundle.js, tag=🍿️ DualSubs.Max.Composite.Subtitles.response, argument=[{Types},{Languages[0]},{Languages[1]},{Position},{Vendor},{ShowOnly},{LogLevel}]
-http-response ^https?:\/\/(cf|akm|gcp|fly|.+)\.pro?d\.media\.(h264\.io|max\.com)\/(.+)\.vtt requires-body=1, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/DualSubs/DualSubs.Universal/Translate.response.bundle.js, tag=🍿️ DualSubs.Max.Translate.Subtitles.response, argument=[{Types},{Languages[0]},{Languages[1]},{Position},{Vendor},{ShowOnly},{LogLevel}]
+http-response ^https?:\/\/(cf|akm|gcp|fly|.+)\.pro?d\.media\.(h264\.io|max\.com)\/(.+)\.vtt\?(.*)subtype=Translate requires-body=1, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/DualSubs/DualSubs.Universal/Translate.response.bundle.js, tag=🍿️ DualSubs.Max.Translate.Subtitles.response, argument=[{Types},{Languages[0]},{Languages[1]},{Position},{Vendor},{ShowOnly},{LogLevel}]
 
 http-response ^https?:\/\/manifests(\.v2)?\.api\.hbo\.com\/hls\.m3u8 requires-body=1, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/DualSubs/DualSubs.Universal/Manifest.response.bundle.js, tag=🍿️ DualSubs.HBOMax.M3U8.Master.response, argument=[{Types},{Languages[0]},{Languages[1]},{Position},{Vendor},{ShowOnly},{LogLevel}]
 http-response ^https?:\/\/manifests(\.v2)?\.api\.hbo\.com\/hlsMedia\.m3u8\?(.*)subtype= requires-body=1, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/DualSubs/DualSubs.Universal/Manifest.response.bundle.js, tag=🍿️ DualSubs.HBOMax.M3U8.Subtitles.response, argument=[{Types},{Languages[0]},{Languages[1]},{Position},{Vendor},{ShowOnly},{LogLevel}]
