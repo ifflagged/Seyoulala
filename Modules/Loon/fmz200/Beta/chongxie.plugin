@@ -1,7 +1,7 @@
 #!name=广告拦截合集-重写
 #!desc=(R)针对部分APP和小程序广告进行拦截，某些APP要清除缓存或者重新安装拦截广告才会生效！
 #!author=奶思
-#!icon=https://gitlab.com/lodepuly/iconlibrary/-/raw/main/App_icon/120px/Loon.png
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
 #!keyword=Jacob
 
 #!homepage=https://github.com/fmz200/wool_scripts

@@ -1,6 +1,6 @@
 #!name=抖音国际
 #!desc=TikTok解锁区域限制,下载去水印,自定义参数
-#!icon=https://gitlab.com/lodepuly/iconlibrary/-/raw/main/App_icon/120px/Loon.png
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
 #!keyword=Jacob
 
 #!arguments=RULE_SET_ENABLED:RULE-SET,PROXY_NAME:PROXY,REGION_CODE:JP,WATERMARK_REMOVAL:下载水印
