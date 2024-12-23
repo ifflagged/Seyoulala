@@ -389,12 +389,9 @@ DOMAIN, th.pinduoduo.com, REJECT
 # RedPaper_remove_ads
 AND, ((PROTOCOL, QUIC), (DOMAIN-SUFFIX, xiaohongshu.com)), REJECT
 # Weibo_remove_ads
-DOMAIN, wbapp.uve.weibo.com, DIRECT
+DOMAIN-SUFFIX, uve.weibo.com, DIRECT
 DOMAIN, huodong.weibo.cn, REJECT
 DOMAIN-SUFFIX, biz.weibo.com, REJECT
-DOMAIN, dns.weibo.cn, REJECT
-URL-REGEX, "^http:\/\/api\.weibo\.cn\/2\/httpdns\/config", REJECT
-URL-REGEX, "^http:\/\/api\.weibo\.cn\/httpdns\/config", REJECT
 # adUnion
 DOMAIN, ws.tapjoyads.com, REJECT
 DOMAIN, hdns.ksyun.com, REJECT
@@ -1058,6 +1055,7 @@ https?:\/\/91porn\.com(\/|)$ https://91porn.com/index.php 302
 ^https:\/\/api\.weibo\.cn\/2\/hot\/hours_spotlight\? - reject-dict
 ^https:\/\/api\.weibo\.cn\/2\/video\/redpacket\? - reject-dict
 ^https:\/\/api\.weibo\.cn\/!\/(sug\/list\/finderchange|was\/finder\/searchbarchange)\? - reject-dict
+^https:\/\/api\.weibo\.cn\/2\/video\/tiny_video_info_show\? - reject-dict
 ^https:\/\/bootrealtime\.uve\.weibo\.com\/v[23]\/ad\/realtime - reject-dict
 ^https:\/\/sdkapp\.uve\.weibo\.com\/interface\/sdk\/(?:get-lbs-cell-info\.php|sdkconfig\.php) - reject-dict
 ^https:\/\/card\.weibo\.com\/article\/m\/aj\/(?:reward|uvead) - reject-dict
@@ -1536,7 +1534,7 @@ body_rewrite_21 = type=http-response, pattern=^https:\/\/edith\.xiaohongshu\.com
 移除超话搜索页广告 = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/shproxy\/chaohua\/discovery\/searchactive\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Weibo_remove_ads/Weibo_remove_ads.js, requires-body=true
 移除信息流广告 = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/statuses\/(?:container_timeline(?:_hot|_topic|_topicpage|_unread)?|repost_timeline|unread_hot_timeline), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Weibo_remove_ads/Weibo_remove_ads.js, requires-body=true
 移除微博详情页广告 = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/statuses\/(?:extend|show), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Weibo_remove_ads/Weibo_remove_ads.js, requires-body=true
-移除视频流广告 = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/video\/tiny_stream_video_list\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Weibo_remove_ads/Weibo_remove_ads.js, requires-body=true
+移除视频流广告 = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/video\/(?:full_screen_stream|tiny_stream_video_list)\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Weibo_remove_ads/Weibo_remove_ads.js, requires-body=true
 移除超话顶部标签 = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/!\/huati\/discovery_home_bottom_channels\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Weibo_remove_ads/Weibo_remove_ads.js, requires-body=true
 移除消息页列表广告 = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/direct_messages\/user_list\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Weibo_remove_ads/Weibo_remove_ads.js, requires-body=true
 移除消息页提醒 = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/messageflow\/notice\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Weibo_remove_ads/Weibo_remove_ads.js, requires-body=true
