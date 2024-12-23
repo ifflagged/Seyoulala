@@ -1,4 +1,4 @@
-#规则数量:35
+#规则数量:36
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -30,6 +30,7 @@ DOMAIN,generativelanguage.googleapis.com
 DOMAIN,proactivebackend-pa.googleapis.com
 DOMAIN,aistudio.google.com
 DOMAIN,alkalimakersuite-pa.clients6.google.com
+DOMAIN-KEYWORD,labs.google
 DOMAIN-SUFFIX,grazie.ai
 DOMAIN,copilot.microsoft.com
 DOMAIN,sydney.bing.com
