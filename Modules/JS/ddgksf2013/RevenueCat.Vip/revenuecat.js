@@ -20,12 +20,12 @@ https://appraven.net/collection/77299969
 [rewrite_local]
 
 # ～ RevenueCat@ddgksf2013
-^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/[^/]+$) url script-response-body https://gist.githubusercontent.com/ddgksf2013/dbb1695cd96743eef18f3fac5c6fe227/raw/revenuecat.js
-^https:\/\/api\.revenuecat\.com\/.+\/(receipts|subscribers) url script-request-header https://raw.githubusercontent.com/ddgksf2013/Scripts/master/deleteHeader.js
+^https:\/\/api\.(revenuecat|rc-backup)\.com\/.+\/(receipts$|subscribers\/[^/]+$) url script-response-body https://gist.githubusercontent.com/ddgksf2013/dbb1695cd96743eef18f3fac5c6fe227/raw/revenuecat.js
+^https:\/\/api\.(revenuecat|rc-backup)\.com\/.+\/(receipts|subscribers) url script-request-header https://raw.githubusercontent.com/ddgksf2013/Scripts/master/deleteHeader.js
 
 [mitm]
 
-hostname=api.revenuecat.com
+hostname=api.revenuecat.com, api.rc-backup.com
 
 ***********************************/
 
@@ -44,6 +44,7 @@ const mapping = {
   'Yosum/': ['Premium'],
   'Currency-Converter/': ['pro'],
   'Precious/': ['Pro'],
+  'GBA/': ['xGBA.pro'],
   'Unfold/': ['PRO'],
   'mark_cup/': ['premiun'],
   'Photomator': ['pixelmator_photo_pro_access'],
