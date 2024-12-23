@@ -1,7 +1,7 @@
 #!name=起点读书去广告
 #!desc=移除起点读书开屏广告、每日导读、发现页活动弹窗、底栏活动标签及其他推广行为。
 #!author=app2smile[https://github.com/app2smile]
-#!icon=https://gitlab.com/lodepuly/iconlibrary/-/raw/main/App_icon/120px/Loon.png
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
 #!keyword=Jacob
 
 #!openUrl=https://apps.apple.com/app/id534174796
