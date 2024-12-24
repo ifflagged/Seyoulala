@@ -6,8 +6,8 @@
 #!icon = https://developer.apple.com/assets/elements/icons/siri/siri-128x128.png
 #!tag =  iRingo
 #!system = iOS,iPadOS,macOS
-#!date = 2024-12-19 03:17:22
-#!version = 4.2.6
+#!date = 2024-12-24 04:25:06
+#!version = 4.2.7
 #!system_version = 15
 
 [Argument]
