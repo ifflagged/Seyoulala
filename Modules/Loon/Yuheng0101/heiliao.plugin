@@ -3,13 +3,13 @@
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
 #!keyword=Jacob
 
-#!date=2024-12-24 16:10:31
+#!date=2024-12-24 20:09:43
 
 [Script]
-http-response ^https?:\/\/(18hlw\.com|xhka5\.zfjgjwrx\.com|uzmk2\.ywkzzdrh\.com|d2r7ucekce31hd\.cloudfront\.net).* script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Yuheng0101/heiliao/web.js, requires-body=true, timeout=60, tag=黑料去广告
+http-response ^https?:\/\/(18hlw\.com|fzwyd\.kdqvqcc\.com|xhka5\.zfjgjwrx\.com|d2r7ucekce31hd\.cloudfront\.net).* script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Yuheng0101/heiliao/web.js, requires-body=true, timeout=60, tag=黑料去广告
 
 http-response ^https:\/\/api(\d+)?.hlwapi(\d+)?\.com\/api\.php\/api\/index\/(config|userInfo|index|detail) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Yuheng0101/heiliao/app.js, requires-body=true, timeout=30, tag=黑料App去广告
 
 [MITM]
-hostname = 18hlw.com, xhka5.zfjgjwrx.com, uzmk2.ywkzzdrh.com, d2r7ucekce31hd.cloudfront.net, api*.hlwapi*.com
+hostname = 18hlw.com, fzwyd.kdqvqcc.com, xhka5.zfjgjwrx.com, d2r7ucekce31hd.cloudfront.net, api*.hlwapi*.com
 
