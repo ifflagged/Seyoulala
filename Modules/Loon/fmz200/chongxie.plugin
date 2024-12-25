@@ -14,6 +14,7 @@
 #!remark=下方的所有规则都标注了对应的hostname，可能存在错误或者遗漏，欢迎反馈。对于无法/可选MITM的hostname都特别做了“如开启可自行添加主机名”提示，如果提示后面没有标注主机名则包含所有主机名，否则只包含提示语后面的主机名。
 
 [Rewrite]
+#http:\/\/dili.sqcosmos.com\/jiekou\/mains\/p\d+.html response-body-json-jq '.album |= map(select(.id != "4154" and .id != "4165"))'
 # 拦截广告下发
 ^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch - reject
 # hostname = gab.122.gov.cn
