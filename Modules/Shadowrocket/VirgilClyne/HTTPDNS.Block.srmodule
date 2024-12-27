@@ -53,6 +53,10 @@ IP-CIDR,101.124.19.122/32,REJECT,no-resolve
 IP-CIDR6,2402:db40:5100:1011::5/128,REJECT,no-resolve
 # refer: https://docs.jdcloud.com/cn/httpdns/interface-specification
 IP-CIDR,103.224.222.208/32,REJECT,no-resolve
+# Keep
+DOMAIN,httpdns.calorietech.com,REJECT,extended-matching
+# Kuaishou
+DOMAIN,kuaishou.httpdns.pro,REJECT,extended-matching
 # Meituan
 DOMAIN,httpdns.meituan.com,REJECT,extended-matching
 DOMAIN,httpdnsvip.meituan.com,REJECT,extended-matching
