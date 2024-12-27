@@ -1609,6 +1609,7 @@ http-response ^https?:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch$ script-pat
 http-response ^https?:\/\/g\.alicdn\.com\/.*o2o-ad script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/adUnion/alicdn.js, requires-body=true, timeout=60, tag=alicdn
 # dianping
 http-response ^https?:\/\/img\.meituan\.net\/dpmobile\/ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/dianping/dianping.js, requires-body=true, timeout=60, tag=dianping
+http-response ^https?:\/\/ddplus\.meituan\.net\/v\d\/mss_\w+\/picassovc script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/dianping/dianping.js, requires-body=true, timeout=60, tag=dianping
 # ehaier
 http-response ^https?:\/\/oss-zjrs\.haier\.net\/resource\/confFile\/\d{22}\.json$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/ehaier/haier.js, requires-body=true, timeout=60, tag=haier
 http-response ^https?:\/\/zj\.haier\.net\/omsappapi\/resource\/v\d\/get\/resourceBag$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/ehaier/haier.js, requires-body=true, timeout=60, tag=haier

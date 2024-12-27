@@ -1656,6 +1656,7 @@ amdc = type=http-response, pattern=^https?:\/\/amdc\.m\.taobao\.com\/amdc\/mobil
 alicdn = type=http-response, pattern=^https?:\/\/g\.alicdn\.com\/.*o2o-ad, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/adUnion/alicdn.js, requires-body=true, max-size=-1, timeout=60
 # dianping
 dianping = type=http-response, pattern=^https?:\/\/img\.meituan\.net\/dpmobile\/, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/dianping/dianping.js, requires-body=true, max-size=-1, timeout=60
+dianping = type=http-response, pattern=^https?:\/\/ddplus\.meituan\.net\/v\d\/mss_\w+\/picassovc, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/dianping/dianping.js, requires-body=true, max-size=-1, timeout=60
 # ehaier
 haier = type=http-response, pattern=^https?:\/\/oss-zjrs\.haier\.net\/resource\/confFile\/\d{22}\.json$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/ehaier/haier.js, requires-body=true, max-size=-1, timeout=60
 haier = type=http-response, pattern=^https?:\/\/zj\.haier\.net\/omsappapi\/resource\/v\d\/get\/resourceBag$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/ehaier/haier.js, requires-body=true, max-size=-1, timeout=60
