@@ -3,13 +3,13 @@
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
 #!keyword=Jacob
 
-#!date=2024-12-27 12:16:29
+#!date=2024-12-27 16:10:34
 
 [Script]
-http-response ^https?:\/\/(18hlw\.com|vzxpu\.fsqefgxc\.net|yfhiu\.fqfqyaq\.net|d1v2n68kayh8ox\.cloudfront\.net).* script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Yuheng0101/heiliao/web.js, requires-body=true, timeout=60, tag=黑料去广告
+http-response ^https?:\/\/(18hlw\.com|es2v3\.fxpscmu\.com|vzxpu\.fsqefgxc\.net|d1v2n68kayh8ox\.cloudfront\.net).* script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Yuheng0101/heiliao/web.js, requires-body=true, timeout=60, tag=黑料去广告
 
 http-response ^https:\/\/api(\d+)?.hlwapi(\d+)?\.com\/api\.php\/api\/index\/(config|userInfo|index|detail) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Yuheng0101/heiliao/app.js, requires-body=true, timeout=30, tag=黑料App去广告
 
 [MITM]
-hostname = 18hlw.com, vzxpu.fsqefgxc.net, yfhiu.fqfqyaq.net, d1v2n68kayh8ox.cloudfront.net, api*.hlwapi*.com
+hostname = 18hlw.com, es2v3.fxpscmu.com, vzxpu.fsqefgxc.net, d1v2n68kayh8ox.cloudfront.net, api*.hlwapi*.com
 
