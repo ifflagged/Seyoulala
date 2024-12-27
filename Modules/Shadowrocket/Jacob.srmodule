@@ -44,6 +44,8 @@ DOMAIN, dns.jd.com, REJECT, extended-matching
 IP-CIDR, 101.124.19.122/32, REJECT, no-resolve
 IP-CIDR6, 2402:db40:5100:1011::5/128, REJECT, no-resolve
 IP-CIDR, 103.224.222.208/32, REJECT, no-resolve
+DOMAIN, httpdns.calorietech.com, REJECT, extended-matching
+DOMAIN, kuaishou.httpdns.pro, REJECT, extended-matching
 DOMAIN, httpdns.meituan.com, REJECT, extended-matching
 DOMAIN, httpdnsvip.meituan.com, REJECT, extended-matching
 DOMAIN, httpdns.yunxindns.com, REJECT, extended-matching
