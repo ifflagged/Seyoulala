@@ -125,6 +125,7 @@ const mapping = {
   'SimpleScan/': ['premium', 'com.atlantia.SimpleScan.Purchases.Lifetime'],
   'OneWidget': ['allaccess'],
   'CardPhoto': ['premium'],
+  'ProCamera': ['pro_camera_up_entitlement','com.cocologics.ProCamera.Up.Yearly'],
   'Journal_iOS/': ['PRO'],
   'LemonKeepAccounts/': ['VIP','lm_1_1month'],
   'PDF%20Viewer': ['sub.pro'],
