@@ -1,15 +1,7 @@
-#!name=tfsmy
-#!desc=tfsmy
-#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
-#!keyword=Jacob
+tfsmy%0A：Error: Response code 404 (Not Found)
 
-[Rewrite]
-# > 天府市民云 - TFSMY
-^https?:\/\/tfsmy\.chengdu\.gov\.cn\/api\/v\d\/core\/version - reject-200
 
-[Script]
-http-response ^https?:\/\/tft-app\.cdtft\.cn\/gateway-customer\/tftapp\/tft-ams\/api\/appAd script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/tfsmy/replace-body.js, requires-body=true, timeout=30, tag=replaceBody, argument=officialAdvertResultVo-%3Erandom-response
 
-[MITM]
-hostname = tfsmy.chengdu.gov.cn, tft-app.cdtft.cn
 
+
+Script Hub 重写转换: ❌  可自行翻译错误信息或复制错误信息后点击通知进行反馈
