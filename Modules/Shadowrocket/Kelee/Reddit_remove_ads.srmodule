@@ -1,4 +1,15 @@
-#!name=Reddit_remove_ads
-#!desc=Reddit_remove_ads
+#!name=Reddit去广告
+#!desc=过滤应用内推广，阻止NSFW提示。
+#!author=xream[https://github.com/xream]
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Reddit.png
 #!category=Jacob
+
+#!openUrl=https://apps.apple.com/app/id1064216828
+#!tag=去广告
+#!loon_version=3.2.4(787)
+#!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
+#!date=2024-12-02 10:28:36
+
+[MITM]
+hostname = %APPEND% gql.reddit.com, gql-fed.reddit.com
 

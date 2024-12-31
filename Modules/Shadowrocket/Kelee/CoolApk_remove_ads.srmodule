@@ -1,4 +1,21 @@
-#!name=CoolApk_remove_ads
-#!desc=CoolApk_remove_ads
+#!name=酷安去广告
+#!desc=过滤酷安广告
+#!author=RuCu6[https://github.com/RuCu6]
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/CoolApk.png
 #!category=Jacob
+
+#!openUrl=https://apps.apple.com/app/id1422581869
+#!tag=去广告
+#!loon_version=3.2.4(787)
+#!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
+#!date=2024-12-05 14:00:35
+
+[URL Rewrite]
+^https:\/\/api\.coolapk\.com\/v6\/search\?.*type=hotSearch - reject-dict
+
+[Script]
+移除酷安广告 = type=http-response, pattern=^https:\/\/api\.coolapk\.com\/v6\/(?:feed\/detail|feed\/replyList|page\/dataList|main\/dataList|main\/indexV8|main\/init), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/CoolApk_remove_ads/CoolApk_remove_ads.js, requires-body=true
+
+[MITM]
+hostname = %APPEND% api.coolapk.com
 
