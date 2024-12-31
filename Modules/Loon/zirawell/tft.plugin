@@ -1,7 +1,12 @@
-tft%0A：Error: Response code 404 (Not Found)
+#!name=tft
+#!desc=tft
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
+#!keyword=Jacob
 
+[Rewrite]
+# > 天府通 - TFT
+^https?:\/\/ams-cdn\.cdtft\.cn\/prod\/tft-ams - reject-dict
 
+[MITM]
+hostname = ams-cdn.cdtft.cn
 
-
-
-Script Hub 重写转换: ❌  可自行翻译错误信息或复制错误信息后点击通知进行反馈
