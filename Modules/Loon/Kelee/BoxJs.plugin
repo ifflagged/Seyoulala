@@ -10,11 +10,15 @@
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/Other_icon/120px/BoxJS.png
 #!date=2024-11-28 00:00:00
 
+
 [Rule]
 DOMAIN-SUFFIX,jsdelivr.net,PROXY
 
+
 [Script]
+
 http-request ^https?:\/\/(.+\.)?boxjs\.(com|net) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/BoxJs/chavy.boxjs.js,requires-body= true,tag=BoxJS,timeout=120
+
 
 [MitM]
 hostname=boxjs.com,boxjs.net,*.boxjs.com,*.boxjs.net

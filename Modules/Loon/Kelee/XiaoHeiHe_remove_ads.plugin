@@ -10,9 +10,12 @@
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/XiaoHeiHe.png
 #!date=2024-12-23 11:27:16
 
+
 [Rewrite]
 ^https:\/\/api\.xiaoheihe\.cn\/account\/get_ads_info_v2 reject-dict
+
 http-response ^https:\/\/api\.xiaoheihe\.cn\/bbs\/app\/feeds\/news script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/XiaoHeiHe_remove_ads/XiaoHeiHe_remove_ads.js,requires-body=true,tag=移除热点板块信息流广告
+
 
 [MitM]
 hostname=api.xiaoheihe.cn
