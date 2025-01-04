@@ -806,6 +806,7 @@ IP-CIDR, 120.240.95.37/32, REJECT, no-resolve
 # alipay
 DOMAIN, adgw.alipay.com, REJECT
 DOMAIN, amdc.alipay.com, REJECT
+DOMAIN, rtms.alipay.com, REJECT
 DOMAIN, amdc-sibling.alipay.com.cn, REJECT
 DOMAIN-SUFFIX, mdap.alipay.com, REJECT
 DOMAIN-SUFFIX, ynuf.alipay.com, REJECT
