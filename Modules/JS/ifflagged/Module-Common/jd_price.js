@@ -64,12 +64,11 @@ function priceSummary(data) {
         item.Name = nameMap[item.Name] || item.Name;
         Delimiter = '  ';
         if(item.Price=='-'){return} // 没数不展示了
-        if (item.Price.length + 1 < maxWidth){
-            item.Price = item.Price.includes('.')?item.Price:`${item.Price}.`
-            item.Price = item.Price.padEnd(maxWidth,'0')        
-        }
-        if (item.Price.length + 1 == maxWidth){
-            item.Price = item.Price.padEnd(maxWidth)        
+        let len = item.Price.length
+        if (len < maxWidth){
+            item.Price = item.Price.includes('.')||(len + 1 == maxWidth)?item.Price:`${item.Price}.`
+            let flag = item.Price.includes('.')?'0':' '
+            item.Price = item.Price.padEnd(maxWidth, flag)        
         }
         summary += `${item.Name}${Delimiter}${item.Price}${Delimiter}${item.Date}${Delimiter}${item.Difference=='-'?'':item.Difference}\n`;
     });
