@@ -28,7 +28,6 @@ Modules/Surge/DualSubs/DualSubs.Spotify.sgmodule # Loon,Shadowrocket
 # Modules/Surge/DualSubs/DualSubs.YouTube.sgmodule # Loon,Shadowrocket
 
 # D #
-Modules/Surge/ddgksf2013/JD_Price.sgmodule # Loon,Shadowrocket
 Modules/Surge/ddgksf2013/SmzdmAds.sgmodule # Loon,Shadowrocket
 
 # K #
