@@ -878,7 +878,6 @@ DOMAIN-SUFFIX, img-x.jd.com, REJECT
 DOMAIN-SUFFIX, du.jd.com, REJECT
 DOMAIN-SUFFIX, c-nfa.jd.com, REJECT
 DOMAIN-SUFFIX, cm.jd.com, REJECT
-DOMAIN-KEYWORD, policy.jd.com, REJECT
 DOMAIN-KEYWORD, kepler.jd.com, REJECT
 DOMAIN-KEYWORD, bdsp.x.jd.com, REJECT
 DOMAIN-KEYWORD, keplerapi.jd.com, REJECT
