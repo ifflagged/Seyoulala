@@ -144,7 +144,7 @@ jobs:
                 echo "Release not found for $REPO, skipping."
                 continue
               fi
-
+              
               # 遍历每个资产文件
               ASSETS=$(echo "$RELEASE" | jq -c '.assets[]')
               while IFS= read -r ASSET; do
@@ -155,14 +155,6 @@ jobs:
                 echo "Found asset: $ASSET_NAME (Size: $ASSET_SIZE bytes)"
 
                 EXTENSION="${ASSET_NAME##*.}"
-
-                # 如果是 sgmodule 类型的文件，保存其 URL
-                if [ "$EXTENSION" = "sgmodule" ]; then
-                  ASSET_Surge_URL=$(echo "$ASSET" | jq -r '.browser_download_url')
-                  echo "Found sgmodule URL: $ASSET_Surge_URL"
-                  # 将 sgmodule URL 保存到 No_link_provided_for_srmodule.txt 文件
-                  echo "$ASSET_Surge_URL" >> No_link_provided_for_srmodule.txt
-                fi
 
                 # 判断保存目录和类型
                 if [[ "$REPO" == "NSRingo"* ]]; then
@@ -339,6 +331,29 @@ jobs:
               fi
             done
           done
+
+      - name: Modify sgmodule files after sync
+        run: |
+          MODIFICATIONS_MADE=false
+
+          # Find all sgmodule files and apply modifications
+          find ./iRingo/sgmodule -type f -name "*.sgmodule" | while read -r FILE; do
+            echo "Modifying $FILE"
+            sed -i 's/,pre-matching//g' "$FILE"
+            MODIFICATIONS_MADE=true
+          done
+
+          # Set ASSETS_CHANGED to true if modifications were made
+          if [ "$MODIFICATIONS_MADE" = "true" ]; then
+            ASSETS_CHANGED=true
+            echo "Modifications were made."
+          else
+            echo "No modifications were made."
+          fi
+
+          # Export variables to environment
+          echo "ASSETS_CHANGED=$ASSETS_CHANGED" >> $GITHUB_ENV
+          echo "MODIFICATIONS_MADE=$MODIFICATIONS_MADE" >> $GITHUB_ENV
 
       - name: Commit and push changes
         env:
