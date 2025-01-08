@@ -2,11 +2,11 @@
 https://github.com/ifflagged/Neverflagged/raw/main/Surge/Module/DNS.sgmodule # Copy
 
 # General Settings Enhanced (iOS)
-Modules/Surge/VirgilClyne/General.sgmodule # Loon,Shadowrocket
+Modules/Surge/VirgilClyne/General.sgmodule # Loon,Copy
 # Block HTTPDNS
-Modules/Shadowrocket/VirgilClyne/HTTPDNS.Block.sgmodule # Loon,Shadowrocket
+Modules/Surge/VirgilClyne/HTTPDNS.Block.sgmodule # Loon,Shadowrocket
 # DNS for Router and Companys
-Modules/Shadowrocket/VirgilClyne/DNS.sgmodule # Loon,Shadowrocket
+Modules/Surge/VirgilClyne/DNS.sgmodule # Loon,Copy
 
 Modules/Surge/NSRingo/iRingo.WeatherKit.sgmodule # Loon,Shadowrocket
 Modules/Surge/NSRingo/iRingo.Location.sgmodule # Loon,Shadowrocket
