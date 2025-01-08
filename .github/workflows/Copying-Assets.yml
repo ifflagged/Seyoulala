@@ -166,7 +166,10 @@ jobs:
                     OUTPUT_DIR="./Modules/Loon/NSRingo"
                   elif [ "$EXTENSION" = "srmodule" ]; then
                     OUTPUT_DIR="./Modules/Shadowrocket/NSRingo"
-                    sed -i "/$ASSET_Surge_URL/d" No_link_provided_for_srmodule.txt
+                    if [ -n "$ASSET_Surge_URL" ]; then
+                      escaped_url=$(echo "$ASSET_Surge_URL" | sed 's/[&/\]/\\&/g')
+                    sed -i "/$escaped_url/d" No_link_provided_for_srmodule.txt
+                    fi
                   else
                     echo "Skipping unsupported file type: $ASSET_NAME"
                     continue
@@ -180,7 +183,10 @@ jobs:
                     OUTPUT_DIR="./Modules/Loon/BiliUniverse"
                   elif [ "$EXTENSION" = "srmodule" ]; then
                     OUTPUT_DIR="./Modules/Shadowrocket/BiliUniverse"
-                    sed -i "/$ASSET_Surge_URL/d" No_link_provided_for_srmodule.txt
+                    if [ -n "$ASSET_Surge_URL" ]; then
+                      escaped_url=$(echo "$ASSET_Surge_URL" | sed 's/[&/\]/\\&/g')
+                    sed -i "/$escaped_url/d" No_link_provided_for_srmodule.txt
+                    fi
                   else
                     echo "Skipping unsupported file type: $ASSET_NAME"
                     continue
@@ -194,7 +200,10 @@ jobs:
                     OUTPUT_DIR="./Modules/Loon/DualSubs"
                   elif [ "$EXTENSION" = "srmodule" ]; then
                     OUTPUT_DIR="./Modules/Shadowrocket/DualSubs"
-                    sed -i "/$ASSET_Surge_URL/d" No_link_provided_for_srmodule.txt
+                    if [ -n "$ASSET_Surge_URL" ]; then
+                      escaped_url=$(echo "$ASSET_Surge_URL" | sed 's/[&/\]/\\&/g')
+                    sed -i "/$escaped_url/d" No_link_provided_for_srmodule.txt
+                    fi
                   else
                     echo "Skipping unsupported file type: $ASSET_NAME"
                     continue
