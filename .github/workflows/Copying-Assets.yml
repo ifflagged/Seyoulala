@@ -151,11 +151,15 @@ jobs:
                 ASSET_NAME=$(echo "$ASSET" | jq -r '.name')
                 ASSET_URL=$(echo "$ASSET" | jq -r '.url')
                 ASSET_SIZE=$(echo "$ASSET" | jq -r '.size')
-                ASSET_Surge_URL=$(echo "$ASSET" | jq -r '.browser_download_url')
 
                 echo "Found asset: $ASSET_NAME (Size: $ASSET_SIZE bytes)"
 
                 EXTENSION="${ASSET_NAME##*.}"
+
+                if [ "$EXTENSION" = "sgmodule" ]; then
+                  ASSET_Surge_URL=$(echo "$ASSET" | jq -r '.browser_download_url')
+                  echo "Found sgmodule URL: $ASSET_Surge_URL"
+                fi
 
                 # 判断保存目录和类型
                 if [[ "$REPO" == "NSRingo"* ]]; then
