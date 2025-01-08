@@ -9,14 +9,11 @@
 https?:\/\/91porn\.com(\/|)$ https://91porn.com/index.php 302
 
 [Script]
-# ➡️ J ⬅️ #
-http-request ^https:\/\/in\.m\.jd\.com\/product\/graphext\/\d+\.html script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/Module-Common/jd_price.js, requires-body=true, timeout=60, tag=JD Price
-
 # NSFW #
 http-response ^https?:/\/(cn|www)\.pornhub\.com\/($|(view|video).*$) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/Module-Common/pornhub.js, requires-body=true, tag=Pornhub
 
 http-response https?:\/\/91porn\.com\/(index|view_video|login|search_result)\.php script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/Module-Common/91porn.js, requires-body=true, tag=91Porn
 
 [MITM]
-hostname = api.revenuecat.com, in.m.jd.com, *.pornhub.com, 91porn.com
+hostname = api.revenuecat.com, *.pornhub.com, 91porn.com
 
