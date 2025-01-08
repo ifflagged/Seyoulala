@@ -4,7 +4,7 @@
 #!icon= https://github.com/Semporia/Hand-Painted-icon/raw/master/Social_Media/Apple.png
 
 [Argument]
-# iRingo
+# iRingo.WeatherKit
 NextHour.Provider = select,"ColorfulClouds","WeatherKit","QWeather",tag=[未来一小时降水强度] 数据源,desc=始终会使用选定的数据源，填补无降水监测地区的数据。
 AQI.Provider = select,"ColorfulClouds","WeatherKit","QWeather","WAQI",tag=[空气质量] 数据源,desc=始终会使用选定的数据源，填补无空气质量监测地区的数据。
 AQI.ReplaceProviders = input,"QWeather",tag=[空气质量] 需要替换的供应商,desc=选中的空气质量数据源会被替换。
@@ -16,9 +16,9 @@ API.QWeather.Host = select,"devapi.qweather.com","api.qweather.com",tag=[API] �
 API.QWeather.Token = input,"",tag=[API] 和风天气令牌,desc=和风天气 API 令牌
 API.WAQI.Token = input,"",tag=[API] WAQI 令牌,desc=WAQI API 令牌，填写此字段将自动使用WAQI高级API
 LogLevel = select,"WARN","OFF","ERROR","INFO","DEBUG","ALL",tag=[调试] 日志等级,desc=选择脚本日志的输出等级，低于所选等级的日志将全部输出。
-# iRingo
+# iRingo.Location
 PEP.GCC = select,"US","AUTO","HK","TW","SG","US","JP","AU","GB","KR","CA","IE",tag=[地区检测] 地理国家或地区代码,desc=要更改为的地区或国家，此选项影响Wi-Fi或有线网络下国家和地区检测的结果。
-# iRingo
+# iRingo.Maps
 GeoManifest.Dynamic.Config.CountryCode = select,"CN","AUTO","HK","TW","SG","US","JP","AU","GB","KR","CA","IE",tag=[动态配置] 资源清单的国家或地区代码,desc=此选项影响“地图”整体配置内容，包括以下的地图功能与服务。
 UrlInfoSet.Dispatcher = select,"AutoNavi","AUTO","Apple",tag=[URL信息集] 调度器,desc=地点数据接口，此选项影响公共指南，兴趣点(POI)与位置信息等功能。
 UrlInfoSet.Directions = select,"AutoNavi","AUTO","Apple",tag=[URL信息集] 导航与ETA,desc=导航与ETA服务接口，此选项影响导航与ETA(到达时间)等功能。
@@ -27,12 +27,12 @@ UrlInfoSet.LocationShift = select,"AUTO","AutoNavi","Apple",tag=[URL信息集] �
 TileSet.Satellite = select,"HYBRID","AUTO","CN","XX",tag=[瓦片数据集] 卫星图像,desc=此选项影响所列位图、影像与模型数据。
 TileSet.Flyover = select,"XX","AUTO","CN",tag=[瓦片数据集] 飞行俯瞰,desc=此选项影响飞行俯瞰全球各地的主要地标和城市功能。
 TileSet.Munin = select,"XX","AUTO","CN",tag=[瓦片数据集] 四处看看,desc=此选项影响 360 度全景视角在某些地点四处看看功能。
-# iRingo
+# iRingo.Siri
 CountryCode = select,"US","OFF","AUTO","CN","HK","TW","SG","JP","AU","GB","KR","CA","IE",tag=国家或地区代码,desc=不同国家或地区提供的内容或有差别，此选项同时会影响分配给您不同地区的 Siri 服务器。
 SiriLocale = select,"zh_CN","OFF","AUTO","zh_TW","yue_CN","zh_HK","ja_JP","en_CA","en_SG","en_AU","en_IE","en_US","en_GB","ko_KR",tag=Siri 区域,desc=忽略系统中“Siri”的“语言”设置，强制采用这里的设置。
 Region = select,"OFF","AUTO","CN","HK","TW","SG","US","JP","AU","GB","KR","CA","IE",tag=区域,desc=作用未知，待测试。
 SiriResponseLanguageVariant = select,"zh_CN","OFF","AUTO","zh_TW","yue_CN","zh_HK","ja_JP","en_CA","en_SG","en_AU","en_IE","en_US","en_GB","ko_KR",tag=Siri 响应语言修改,desc=自定义 Siri 回复时使用的语言。
-# DualSubs
+# DualSubs.Spotify
 Types = input,"Translate,External",tag=[歌词] 启用类型（多选）,desc=请选择要添加的歌词选项，如果为多选，则会自动决定提供的歌词类型。
 Languages[0] = select,"AUTO","ZH","ZH-HANS","ZH-HK","ZH-HANT","EN","ES","JA","KO","DE","FR","TR","KM",tag=[翻译器] 主语言（源语言）,desc=仅当源语言识别不准确时更改此选项。
 Languages[1] = select,"ZH","ZH-HANS","ZH-HK","ZH-HANT","EN","ES","JA","KO","DE","FR","TR","KM",tag=[翻译器] 副语言（目标语言）,desc=请指定翻译歌词的目标语言。
@@ -40,7 +40,7 @@ Vendor = select,"Google","Microsoft",tag=[翻译器] 服务商API,desc=请选择
 LrcVendor = select,"NeteaseMusic","QQMusic","NeteaseMusicNodeJS",tag=[歌词] 服务商API,desc=请选择外部源所使用的服务商API。
 # Bilibili_remove_ads
 showUpList=select,"auto","true","false",tag=[动态]中[最常访问]的显示方式,desc=auto：仅当列表中存在直播状态时显示；true：始终显示；false：始终隐藏。
-# BiliBili
+# BiliBili.ADBlock
 Splash = switch,true,tag=[开屏] 去除广告,desc=是否启用此处修改
 Feed.AD = switch,true,tag=[推荐] 去除广告,desc=是否启用此处修改
 Feed.Activity = switch,false,tag=[推荐] 去除“活动大图”,desc=是否启用此处修改
@@ -58,13 +58,13 @@ View.AD = switch,true,tag=[用户投稿] 去除视频广告,desc=是否启用此
 DM.Command = switch,false,tag=[弹幕] 去除交互式弹幕,desc=是否启用此处修改
 DM.Colorful = switch,false,tag=[弹幕] 替换彩色弹幕,desc=是否启用此处修改
 Reply.AD = switch,true,tag=[评论] 去除广告,desc=是否启用此处修改
-# BiliBili
+# BiliBili.Enhanced
 Home.Tab = input,"直播tab,推荐tab,hottopic,bangumi,anime,film,koreavtw",tag=[首页] 标签页,desc=请选择启用的首页标签页，建议不超过7个。
 Home.Tab_default = select,"推荐tab","直播tab","hottopic","bangumi","anime","film","koreavtw","game","mctab","dhtr","gaoxiao","school","kj",tag=[首页] 默认标签页,desc=请选择启动APP时默认展示的标签页，需选择已启用的标签页。
 Home.Top_left = select,"mine","videoshortcut",tag=[首页] 顶栏（左侧）按钮（用户头像）,desc=请选择顶栏（左侧）按钮（用户头像）的作用（在biliBili粉色版中无法修改）。
 Home.Top = input,"消息Top",tag=[首页] 顶栏（右侧）按钮,desc=请选择启用的顶栏（右侧）按钮。
 Bottom = input,"home,dynamic,ogv,会员购Bottom,我的Bottom",tag=[底部] 导航栏按钮,desc=请选择启用的底部导航栏按钮，最多6个。
-# BiliBili
+# BiliBili.Redirect
 Host.Akamaized = select,"upos-sz-mirrorali.bilivideo.com","upos-sz-mirrorcos.bilivideo.com","upos-sz-mirrorhw.bilivideo.com","upos-sz-mirroraliov.bilivideo.com","upos-sz-mirrorcosov.bilivideo.com","upos-sz-mirrorhwov.bilivideo.com",tag=[主机名] 重定向 Akamaized CDN (港澳台),desc=请选择 Akamaized 要重定向的主机名。
 Host.BStar = select,"upos-sz-mirrorali.bilivideo.com","upos-sz-mirrorcos.bilivideo.com","upos-sz-mirrorhw.bilivideo.com","upos-sz-mirroraliov.bilivideo.com","upos-sz-mirrorcosov.bilivideo.com","upos-sz-mirrorhwov.bilivideo.com",tag=[主机名] 重定向 BStar CDN (国际版),desc=请选择 BStar 要重定向的主机名。
 Host.PCDN = select,"upos-sz-mirrorali.bilivideo.com","upos-sz-mirrorcos.bilivideo.com","upos-sz-mirrorhw.bilivideo.com","upos-sz-mirroraliov.bilivideo.com","upos-sz-mirrorcosov.bilivideo.com","upos-sz-mirrorhwov.bilivideo.com",tag=[主机名] 重定向 PCDN 主机名 (中国大陆),desc=请选择 PCDN 要重定向的主机名。
@@ -75,11 +75,11 @@ Host.MCDN = select,"proxy-tf-all-ws.bilivideo.com",,tag=[主机名] 重定向 MC
 skip-proxy = localhost, *.local, captive.apple.com, e.crashlytics.com, www.baidu.com, passenger.t3go.cn, yunbusiness.ccb.com, wxh.wo.cn, gate.lagou.com, www.abchina.com.cn, login-service.mobile-bank.psbc.com, mobile-bank.psbc.com, 10.0.0.0/8, 127.0.0.1/32, 172.16.0.0/12, 192.168.0.0/16, 192.168.122.1/32, 193.168.0.1/32, ::1/128, fe80::/10
 # General
 real-ip = *.lan, *.direct, cable.auth.com, *.msftconnecttest.com, *.msftncsi.com, network-test.debian.org, detectportal.firefox.com, resolver1.opendns.com, *.srv.nintendo.net, *.stun.playstation.net, xbox.*.microsoft.com, *.xboxlive.com, stun.*, global.turn.twilio.com, global.stun.twilio.com, app.yinxiang.com, injections.adguard.org, local.adguard.org, localhost.*.qq.com, localhost.*.weixin.qq.com, *.logon.battlenet.com.cn, *.logon.battle.net, *.blzstatic.cn, music.163.com, *.music.163.com, *.126.net, musicapi.taihe.com, music.taihe.com, songsearch.kugou.com, trackercdn.kugou.com, *.kuwo.cn, api-jooxtt.sanook.com, api.joox.com, joox.com, y.qq.com, *.y.qq.com, streamoc.music.tc.qq.com, mobileoc.music.tc.qq.com, isure.stream.qqmusic.qq.com, dl.stream.qqmusic.qq.com, aqqmusic.tc.qq.com, amobile.music.tc.qq.com, *.xiami.com, *.music.migu.cn, music.migu.cn, proxy.golang.org, *.mcdn.bilivideo.cn, *.cmpassport.com, id6.me, open.e.189.cn, opencloud.wostore.cn, id.mail.wo.cn, mdn.open.wo.cn, hmrz.wo.cn, nishub1.10010.com, enrichgw.10010.com, *.wosms.cn, *.jegotrip.com.cn, *.icitymobile.mobi, *.pingan.com.cn, *.cmbchina.com, *.10099.com.cn, *.microdone.cn, pool.ntp.org, *.pool.ntp.org, ntp.*.com, time.*.com, ntp?.*.com, time?.*.com, time.*.gov, time.*.edu.cn, *.ntp.org.cn, PDC._msDCS.*.*, DC._msDCS.*.*, GC._msDCS.*.*
-# HTTPDNS & # BiliBili
+# HTTPDNS.Block & # BiliBili.Redirect
 force-http-engine-hosts = 119.29.29.29:80, dns.weixin.qq.com:80, dns.weixin.qq.com:8080, dns.weixin.qq.com:443, 203.107.1.65:80, 203.107.1.66:80, *:4480, *.mcdn.bilivideo.cn:4483, *:8000, *:8082, *.mcdn.bilivideo.cn:9102
 
 [Rule]
-# HTTPDNS
+# HTTPDNS.Block
 DOMAIN, httpdns.alicdn.com, REJECT
 DOMAIN, httpdns-api.aliyuncs.com, REJECT
 DOMAIN, httpdns-sc.aliyuncs.com, REJECT
@@ -126,16 +126,16 @@ IP-CIDR, 182.254.116.117/32, REJECT, no-resolve
 IP-CIDR, 182.254.118.119/32, REJECT, no-resolve
 IP-CIDR, 118.89.204.198/23, REJECT, no-resolve
 IP-CIDR6, 2402:4e00:1200:ed00:0:9089:6dac:96b6/128, REJECT, no-resolve
-# iRingo
+# iRingo.WeatherKit
 DOMAIN, weather-analytics-events.apple.com, REJECT-DROP
 DOMAIN-SUFFIX, tthr.apple.com, REJECT-DROP
-# iRingo
+# iRingo.Location
 DOMAIN, gspe1-ssl.ls.apple.com, DIRECT
-# iRingo
+# iRingo.Maps
 DOMAIN, gspe19-cn-ssl.ls.apple.com, DIRECT
 DOMAIN, dispatcher.is.autonavi.com, DIRECT
 DOMAIN, direction2.is.autonavi.com, DIRECT
-# YouTube
+# YouTube.Enhance
 AND, ((DOMAIN-SUFFIX, googlevideo.com), (PROTOCOL, UDP)), REJECT
 AND, ((DOMAIN, youtubei.googleapis.com), (PROTOCOL, UDP)), REJECT
 # BlockAdvertisers
@@ -948,7 +948,7 @@ DOMAIN, tysdk.95516.com, REJECT
 # Bilibili_remove_ads
 URL-REGEX, "^http:\/\/upos-sz-static\.bilivideo\.com\/ssaxcode\/\w{2}\/\w{2}\/\w{32}-1-SPLASH", REJECT-DICT
 URL-REGEX, "^http:\/\/[\d\.]+:8000\/v1\/resource\/\w{32}-1-SPLASH", REJECT-DICT
-# boxjs
+# boxjs.rewrite.loon
 DOMAIN-SUFFIX, jsdelivr.net, PROXY
 
 [Rewrite]
@@ -957,7 +957,7 @@ DOMAIN-SUFFIX, jsdelivr.net, PROXY
 https?:\/\/91porn\.com(\/|)$ https://91porn.com/index.php 302
 # Plugin-Common
 ^https:\/\/api\.pinduoduo\.com\/api\/alexa\/cells\/hub\/v3\? - reject-dict
-# YouTube
+# YouTube.Enhance
 ^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad mock-response-body data-type=text data="" status-code=502
 # SmzdmAds
 ^https?:\/\/haojia\.m\.smzdm\.com\/detail_modul\/other_modul - reject-200
@@ -1249,7 +1249,7 @@ https?:\/\/91porn\.com(\/|)$ https://91porn.com/index.php 302
 ^https:\/\/api\.bilibili\.com\/x\/web-interface\/zone\?jsonp reject-dict
 (^https:\/\/live\.bilibili\.com\/\d+)(\/?\?.*) 307 $1
 (^https:\/\/(?:www|m)\.bilibili\.com\/video\/(?:BV\w{10}|av\d{9}))(\/?\?.*) 307 $1
-# BiliBili
+# BiliBili.ADBlock
 ^https?:\/\/(grpc|app)\.bili(bili\.com|api\.net)\/bilibili\.app\.interface\.v1\.Search\/DefaultWords$ - reject
 ^https?:\/\/api\.vc\.bilibili\.com\/search_svr\/v\d\/Search\/recommend_words - reject-dict
 ^https?:\/\/api\.vc\.bilibili\.com\/topic_svr\/v1\/topic_svr - reject-dict
@@ -1494,19 +1494,19 @@ upos-sz-upcdntx.bilivideo.com = server:https://doh.pub/dns-query
 *.he.net = server:https://ordns.he.net/dns-query
 
 [Script]
-# iRingo
+# iRingo.WeatherKit
 http-response ^https?:\/\/weatherkit\.apple\.com\/api\/v1\/availability\/ requires-body=1, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/NSRingo/iRingo.WeatherKit/response.bundle.js, tag=🌤 WeatherKit.api.v1.availability.response, argument=[{NextHour.Provider},{AQI.Provider},{AQI.ReplaceProviders},{AQI.Local.Scale},{AQI.Local.ReplaceScales},{AQI.Local.ConvertUnits},{API.ColorfulClouds.Token},{API.QWeather.Host},{API.QWeather.Token},{API.WAQI.Token},{LogLevel}]
 http-response ^https?:\/\/weatherkit\.apple\.com\/api\/v2\/weather\/ requires-body=1, binary-body-mode=1, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/NSRingo/iRingo.WeatherKit/response.bundle.js, tag=🌤 WeatherKit.api.v2.weather.response, argument=[{NextHour.Provider},{AQI.Provider},{AQI.ReplaceProviders},{AQI.Local.Scale},{AQI.Local.ReplaceScales},{AQI.Local.ConvertUnits},{API.ColorfulClouds.Token},{API.QWeather.Host},{API.QWeather.Token},{API.WAQI.Token},{LogLevel}]
-# iRingo
+# iRingo.Location
 http-response ^https?:\/\/gspe1-ssl\.ls\.apple\.com\/pep\/gcc script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/NSRingo/iRingo.Location/response.bundle.js, requires-body=1, tag=📍 Location.pep.gcc.response, argument=[{PEP.GCC}]
-# iRingo
+# iRingo.Maps
 http-request ^https?:\/\/configuration\.ls\.apple\.com\/config\/defaults script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/NSRingo/iRingo.Maps/request.bundle.js, tag=🗺️ Maps.config.defaults.request, argument=[{GeoManifest.Dynamic.Config.CountryCode},{UrlInfoSet.Dispatcher},{UrlInfoSet.Directions},{UrlInfoSet.RAP},{UrlInfoSet.LocationShift},{TileSet.Satellite},{TileSet.Flyover},{TileSet.Munin},{LogLevel}]
 http-response ^https?:\/\/configuration\.ls\.apple\.com\/config\/defaults script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/NSRingo/iRingo.Maps/response.bundle.js, requires-body=1, tag=🗺️ Maps.config.defaults.response, argument=[{GeoManifest.Dynamic.Config.CountryCode},{UrlInfoSet.Dispatcher},{UrlInfoSet.Directions},{UrlInfoSet.RAP},{UrlInfoSet.LocationShift},{TileSet.Satellite},{TileSet.Flyover},{TileSet.Munin},{LogLevel}]
 http-request ^https?:\/\/gspe35-ssl\.ls\.apple\.(com|cn)\/config\/announcements script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/NSRingo/iRingo.Maps/request.bundle.js, tag=🗺️ Maps.config.announcements.request, argument=[{GeoManifest.Dynamic.Config.CountryCode},{UrlInfoSet.Dispatcher},{UrlInfoSet.Directions},{UrlInfoSet.RAP},{UrlInfoSet.LocationShift},{TileSet.Satellite},{TileSet.Flyover},{TileSet.Munin},{LogLevel}]
 http-response ^https?:\/\/gspe35-ssl\.ls\.apple\.(com|cn)\/config\/announcements script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/NSRingo/iRingo.Maps/response.bundle.js, requires-body=1, binary-body-mode=1, tag=🗺️ Maps.config.announcements.response, argument=[{GeoManifest.Dynamic.Config.CountryCode},{UrlInfoSet.Dispatcher},{UrlInfoSet.Directions},{UrlInfoSet.RAP},{UrlInfoSet.LocationShift},{TileSet.Satellite},{TileSet.Flyover},{TileSet.Munin},{LogLevel}]
 http-request ^https?:\/\/gspe35-ssl\.ls\.apple\.(com|cn)\/geo_manifest\/dynamic\/config script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/NSRingo/iRingo.Maps/request.bundle.js, tag=🗺️ Maps.config.announcements.request, argument=[{GeoManifest.Dynamic.Config.CountryCode},{UrlInfoSet.Dispatcher},{UrlInfoSet.Directions},{UrlInfoSet.RAP},{UrlInfoSet.LocationShift},{TileSet.Satellite},{TileSet.Flyover},{TileSet.Munin},{LogLevel}]
 http-response ^https?:\/\/gspe35-ssl\.ls\.apple\.(com|cn)\/geo_manifest\/dynamic\/config script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/NSRingo/iRingo.Maps/response.bundle.js, requires-body=1, binary-body-mode=1, tag=🗺️ Maps.geo_manifest.dynamic.config.response, argument=[{GeoManifest.Dynamic.Config.CountryCode},{UrlInfoSet.Dispatcher},{UrlInfoSet.Directions},{UrlInfoSet.RAP},{UrlInfoSet.LocationShift},{TileSet.Satellite},{TileSet.Flyover},{TileSet.Munin},{LogLevel}]
-# iRingo
+# iRingo.Siri
 http-request ^https?:\/\/(api-siri|api2|api-.+)\.smoot\.apple\.com\/search script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/NSRingo/iRingo.Siri/request.bundle.js, tag=⭕ Siri.Search.request , argument=[{CountryCode},{SiriLocale},{Region},{SiriResponseLanguageVariant},{LogLevel}]
 http-request ^https?:\/\/(guzzoni|api2|api-.+)\.smoot\.apple\.com\/apple\.parsec\.siri\.v2alpha\.SiriSearch\/SiriSearch requires-body=1, binary-body-mode=1, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/NSRingo/iRingo.Siri/request.bundle.js, tag=⭕ Siri.SiriSearch.request, argument=[{CountryCode},{SiriLocale},{Region},{SiriResponseLanguageVariant},{LogLevel}]
 http-request ^https?:\/\/api-safari(-.+)?\.smoot\.apple\.com\/apple\.parsec\.safari\.v1alpha\.SafariSearch\/SafariSearch requires-body=1, binary-body-mode=1, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/NSRingo/iRingo.Siri/request.bundle.js, tag=🔍 Safari.SafariSearch.request, argument=[{CountryCode},{SiriLocale},{Region},{SiriResponseLanguageVariant},{LogLevel}]
@@ -1517,9 +1517,9 @@ http-request ^https?:\/\/(api-.+)\.smoot\.apple\.com\/apple\.parsec\.spotlight\.
 # Module-Common
 http-response ^https?:/\/(cn|www)\.pornhub\.com\/($|(view|video).*$) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/Module-Common/pornhub.js, requires-body=true, tag=Pornhub
 http-response https?:\/\/91porn\.com\/(index|view_video|login|search_result)\.php script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/Module-Common/91porn.js, requires-body=true, tag=91Porn
-# YouTube
+# YouTube.Enhance
 http-response ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Maasea/YouTube.Enhance/youtube.response.preview.js, requires-body=true, binary-body-mode=true, tag=youtube.response, argument="{"lyricLang":"zh-Hans","captionLang":"zh-Hans","blockUpload":true,"blockImmersive":true,"debug":false}"
-# DualSubs
+# DualSubs.Spotify
 http-response ^https?:\/\/api\.spotify\.com\/v1\/tracks\? requires-body=1, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/DualSubs/DualSubs.Spotify/response.bundle.js, tag=🍿️ DualSubs.Spotify.Tracks.response.json, argument=[{Types},{Languages[0]},{Languages[1]},{Vendor},{LrcVendor},{LogLevel}]
 http-request ^https?:\/\/spclient\.wg\.spotify\.com\/color-lyrics\/v2\/track\/(.+)\?(.*)format=json requires-body=1, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/DualSubs/DualSubs.Spotify/request.bundle.js, tag=🍿️ DualSubs.Spotify.Lyrics.request.json, argument=[{Types},{Languages[0]},{Languages[1]},{Vendor},{LrcVendor},{LogLevel}]
 http-request ^https?:\/\/spclient\.wg\.spotify\.com\/color-lyrics\/v2\/track\/\w+\?(.*) requires-body=1, binary-body-mode=1, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/DualSubs/DualSubs.Spotify/request.bundle.js, tag=🍿️ DualSubs.Spotify.Lyrics.request.proto, argument=[{Types},{Languages[0]},{Languages[1]},{Vendor},{LrcVendor},{LogLevel}]
@@ -1658,7 +1658,7 @@ http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/search\/square\? script-path
 http-response ^https:\/\/api\.bilibili\.com\/pgc\/page\/(?:bangumi|cinema\/tab) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Bilibili_remove_ads/Bilibili_remove_ads.js,requires-body=true,tag=移除观影页广告
 http-response ^https:\/\/api\.live\.bilibili\.com\/xlive\/app-room\/v1\/index\/getInfoByRoom\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Bilibili_remove_ads/Bilibili_remove_ads.js,requires-body=true,tag=移除直播间广告
 http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/account\/(?:mine|myinfo) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Bilibili_remove_ads/Bilibili_remove_ads.js,requires-body=true,tag=精简我的页面
-# BiliBili
+# BiliBili.ADBlock
 http-request ^https?:\/\/app\.bili(bili\.com|api\.net)\/x\/v2\/feed\/index\? requires-body=0, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/BiliUniverse/BiliBili.ADBlock/request.bundle.js, tag=📺 BiliBili.ADBlock.request.json, argument=[{Splash},{Feed.AD},{Feed.Activity},{Feed.Vertical},{Feed.BlockUpLiveList},{Feed.Story},{Search.AD},{Search.HotSearch},{PGC.AD},{Xlive.AD},{Dynamic.HotTopics},{Dynamic.MostVisited},{Dynamic.AdCard},{View.AD},{DM.Command},{DM.Colorful},{Reply.AD},{LogLevel}]
 http-response ^https?:\/\/app\.bili(bili\.com|api\.net)\/x\/v2\/(splash\/(brand\/list|event\/list2|list|show)|feed\/index(\/story)?|search\/square) requires-body=1, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/BiliUniverse/BiliBili.ADBlock/response.bundle.js, tag=📺 BiliBili.ADBlock.response.json, argument=[{Splash},{Feed.AD},{Feed.Activity},{Feed.Vertical},{Feed.BlockUpLiveList},{Feed.Story},{Search.AD},{Search.HotSearch},{PGC.AD},{Xlive.AD},{Dynamic.HotTopics},{Dynamic.MostVisited},{Dynamic.AdCard},{View.AD},{DM.Command},{DM.Colorful},{Reply.AD},{LogLevel}]
 http-response ^https?:\/\/api\.bilibili\.com\/x\/web-interface\/wbi\/index\/top\/feed\/rcmd\? requires-body=1, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/BiliUniverse/BiliBili.ADBlock/response.bundle.js, tag=📺 BiliBili.ADBlock.response.json, argument=[{Splash},{Feed.AD},{Feed.Activity},{Feed.Vertical},{Feed.BlockUpLiveList},{Feed.Story},{Search.AD},{Search.HotSearch},{PGC.AD},{Xlive.AD},{Dynamic.HotTopics},{Dynamic.MostVisited},{Dynamic.AdCard},{View.AD},{DM.Command},{DM.Colorful},{Reply.AD},{LogLevel}]
@@ -1671,12 +1671,12 @@ http-response ^https?:\/\/(grpc|app)\.bili(bili\.com|api\.net)\/bilibili\.polyme
 http-response ^https:\/\/(grpc|app)\.bili(bili\.com|api\.net)\/bilibili\.community\.service\.dm\.v1\.DM\/(DmView|DmSegMobile) requires-body=1, binary-body-mode=1, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/BiliUniverse/BiliBili.ADBlock/response.bundle.js, tag=📺 BiliBili.ADBlock.dm.response.grpc, argument=[{Splash},{Feed.AD},{Feed.Activity},{Feed.Vertical},{Feed.BlockUpLiveList},{Feed.Story},{Search.AD},{Search.HotSearch},{PGC.AD},{Xlive.AD},{Dynamic.HotTopics},{Dynamic.MostVisited},{Dynamic.AdCard},{View.AD},{DM.Command},{DM.Colorful},{Reply.AD},{LogLevel}]
 http-response ^https:\/\/(grpc|app)\.bili(bili\.com|api\.net)\/bilibili\.app\.interface\.v1\.Teenagers\/ModeStatus requires-body=1, binary-body-mode=1, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/BiliUniverse/BiliBili.ADBlock/response.bundle.js, tag=📺 BiliBili.ADBlock.interface.response.grpc, argument=[{Splash},{Feed.AD},{Feed.Activity},{Feed.Vertical},{Feed.BlockUpLiveList},{Feed.Story},{Search.AD},{Search.HotSearch},{PGC.AD},{Xlive.AD},{Dynamic.HotTopics},{Dynamic.MostVisited},{Dynamic.AdCard},{View.AD},{DM.Command},{DM.Colorful},{Reply.AD},{LogLevel}]
 http-response ^https:\/\/(grpc|app)\.bili(bili\.com|api\.net)\/bilibili\.main\.community\.reply\.v1\.Reply\/MainList requires-body=1, binary-body-mode=1, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/BiliUniverse/BiliBili.ADBlock/response.bundle.js, tag=📺 BiliBili.ADBlock.reply.response.grpc, argument=[{Splash},{Feed.AD},{Feed.Activity},{Feed.Vertical},{Feed.BlockUpLiveList},{Feed.Story},{Search.AD},{Search.HotSearch},{PGC.AD},{Xlive.AD},{Dynamic.HotTopics},{Dynamic.MostVisited},{Dynamic.AdCard},{View.AD},{DM.Command},{DM.Colorful},{Reply.AD},{LogLevel}]
-# BiliBili
+# BiliBili.Enhanced
 http-response ^https?:\/\/app\.bili(bili\.com|api\.net)\/x\/resource\/show\/tab\/v2\? requires-body=1, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/BiliUniverse/BiliBili.Enhanced/response.bundle.js, tag=📺 BiliBili.Enhanced.x.resource.show.tab.v2, argument=[{Home.Tab},{Home.Tab_default},{Home.Top_left},{Home.Top},{Bottom},{LogLevel}]
 http-response ^https?:\/\/app\.bili(bili\.com|api\.net)\/x\/v2\/account\/mine(\/ipad)?\? requires-body=1, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/BiliUniverse/BiliBili.Enhanced/response.bundle.js, tag=📺 BiliBili.Enhanced.x.v2.account.mine, argument=[{Home.Tab},{Home.Tab_default},{Home.Top_left},{Home.Top},{Bottom},{LogLevel}]
 http-response ^https?:\/\/app\.bili(bili\.com|api\.net)\/x\/v2\/region\/index\? requires-body=1, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/BiliUniverse/BiliBili.Enhanced/response.bundle.js, tag=📺 BiliBili.Enhanced.x.v2.region.index, argument=[{Home.Tab},{Home.Tab_default},{Home.Top_left},{Home.Top},{Bottom},{LogLevel}]
 http-response ^https?:\/\/app\.bili(bili\.com|api\.net)\/x\/v2\/channel\/region\/list\? requires-body=1, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/BiliUniverse/BiliBili.Enhanced/response.bundle.js, tag=📺 BiliBili.Enhanced.x.v2.channel.region.list, argument=[{Home.Tab},{Home.Tab_default},{Home.Top_left},{Home.Top},{Bottom},{LogLevel}]
-# BiliBili
+# BiliBili.Redirect
 http-request ^https?:\/\/.+\.bilivideo\.com\/upgcxcode\/ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/BiliUniverse/BiliBili.Redirect/request.bundle.js, tag=📺 BiliBili.Redirect.CDN.upgcxcode.m4s, argument=[{Host.Akamaized},{Host.BStar},{Host.PCDN},{Host.MCDN},{LogLevel}]
 http-request ^https?:\/\/(.+):(8000|8082)\/v1\/resource\/ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/BiliUniverse/BiliBili.Redirect/request.bundle.js, tag=📺 BiliBili.Redirect.MCDN.v1.resource.m4s, argument=Host.MCDN=proxy-tf-all-ws.bilivideo.com, argument=[{Host.Akamaized},{Host.BStar},{Host.PCDN},{Host.MCDN},{LogLevel}]
 http-request ^https?:\/\/[xy0-9]+\.mcdn\.bilivideo\.(cn|com):(4483|9102)\/upgcxcode\/ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/BiliUniverse/BiliBili.Redirect/request.bundle.js, tag=📺 BiliBili.Redirect.MCDN.upgcxcode.m4s, argument=Host.MCDN=proxy-tf-all-ws.bilivideo.com, argument=[{Host.Akamaized},{Host.BStar},{Host.PCDN},{Host.MCDN},{LogLevel}]
@@ -1687,7 +1687,7 @@ http-response ^https?:\/\/(18hlw\.com|om86e\.pzospnh\.com|5ec69\.pyfyhxzl\.com|w
 http-response ^https:\/\/api(\d+)?.hlwapi(\d+)?\.com\/api\.php\/api\/index\/(config|userInfo|index|detail) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Yuheng0101/heiliao/app.js, requires-body=true, timeout=30, tag=黑料App去广告
 # TikTok
 http-response https?:\/\/.*\.tiktokv\.com\/aweme\/v\d\/(feed|mix\/aweme|aweme\/post|(multi\/)?aweme\/detail|follow\/feed|nearby\/feed|search\/item|general\/search\/single|hot\/search\/video\/list|aweme\/favorite) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/TikTok/Tiktok.js, requires-body=true, timeout=30, tag=TikTok Watermark Removal
-# boxjs
+# boxjs.rewrite.loon
 http-request ^https?:\/\/(.+\.)?boxjs\.(com|net) script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/box/chavy.boxjs.js, requires-body=true, timeout=120, tag=BoxJs
 
 [MITM]
