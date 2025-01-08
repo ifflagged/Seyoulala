@@ -144,7 +144,7 @@ jobs:
                 echo "Release not found for $REPO, skipping."
                 continue
               fi
-              
+
               # 遍历每个资产文件
               ASSETS=$(echo "$RELEASE" | jq -c '.assets[]')
               while IFS= read -r ASSET; do
@@ -156,24 +156,22 @@ jobs:
 
                 EXTENSION="${ASSET_NAME##*.}"
 
+                # 如果是 sgmodule 类型的文件，保存其 URL
                 if [ "$EXTENSION" = "sgmodule" ]; then
                   ASSET_Surge_URL=$(echo "$ASSET" | jq -r '.browser_download_url')
                   echo "Found sgmodule URL: $ASSET_Surge_URL"
+                  # 将 sgmodule URL 保存到 No_link_provided_for_srmodule.txt 文件
+                  echo "$ASSET_Surge_URL" >> No_link_provided_for_srmodule.txt
                 fi
 
                 # 判断保存目录和类型
                 if [[ "$REPO" == "NSRingo"* ]]; then
                   if [ "$EXTENSION" = "sgmodule" ]; then
                     OUTPUT_DIR="./Modules/Surge/NSRingo"
-                    echo "$ASSET_Surge_URL" >> No_link_provided_for_srmodule.txt
                   elif [ "$EXTENSION" = "plugin" ]; then
                     OUTPUT_DIR="./Modules/Loon/NSRingo"
                   elif [ "$EXTENSION" = "srmodule" ]; then
                     OUTPUT_DIR="./Modules/Shadowrocket/NSRingo"
-                    if [ -n "$ASSET_Surge_URL" ]; then
-                      escaped_url=$(echo "$ASSET_Surge_URL" | sed 's/[&/\]/\\&/g')
-                    sed -i "/$escaped_url/d" No_link_provided_for_srmodule.txt
-                    fi
                   else
                     echo "Skipping unsupported file type: $ASSET_NAME"
                     continue
@@ -181,15 +179,10 @@ jobs:
                 elif [[ "$REPO" == "BiliUniverse"* ]]; then
                   if [ "$EXTENSION" = "sgmodule" ]; then
                     OUTPUT_DIR="./Modules/Surge/BiliUniverse"
-                    echo "$ASSET_Surge_URL" >> No_link_provided_for_srmodule.txt
                   elif [ "$EXTENSION" = "plugin" ]; then
                     OUTPUT_DIR="./Modules/Loon/BiliUniverse"
                   elif [ "$EXTENSION" = "srmodule" ]; then
                     OUTPUT_DIR="./Modules/Shadowrocket/BiliUniverse"
-                    if [ -n "$ASSET_Surge_URL" ]; then
-                      escaped_url=$(echo "$ASSET_Surge_URL" | sed 's/[&/\]/\\&/g')
-                    sed -i "/$escaped_url/d" No_link_provided_for_srmodule.txt
-                    fi
                   else
                     echo "Skipping unsupported file type: $ASSET_NAME"
                     continue
@@ -197,15 +190,10 @@ jobs:
                 elif [[ "$REPO" == "DualSubs"* ]]; then
                   if [ "$EXTENSION" = "sgmodule" ]; then
                     OUTPUT_DIR="./Modules/Surge/DualSubs"
-                    echo "$ASSET_Surge_URL" >> No_link_provided_for_srmodule.txt
                   elif [ "$EXTENSION" = "plugin" ]; then
                     OUTPUT_DIR="./Modules/Loon/DualSubs"
                   elif [ "$EXTENSION" = "srmodule" ]; then
                     OUTPUT_DIR="./Modules/Shadowrocket/DualSubs"
-                    if [ -n "$ASSET_Surge_URL" ]; then
-                      escaped_url=$(echo "$ASSET_Surge_URL" | sed 's/[&/\]/\\&/g')
-                    sed -i "/$escaped_url/d" No_link_provided_for_srmodule.txt
-                    fi
                   else
                     echo "Skipping unsupported file type: $ASSET_NAME"
                     continue
