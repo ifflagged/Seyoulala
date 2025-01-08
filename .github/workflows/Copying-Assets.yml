@@ -151,6 +151,7 @@ jobs:
                 ASSET_NAME=$(echo "$ASSET" | jq -r '.name')
                 ASSET_URL=$(echo "$ASSET" | jq -r '.url')
                 ASSET_SIZE=$(echo "$ASSET" | jq -r '.size')
+                ASSET_Surge_URL=$(echo "$ASSET" | jq -r '.browser_download_url')
 
                 echo "Found asset: $ASSET_NAME (Size: $ASSET_SIZE bytes)"
 
@@ -160,12 +161,8 @@ jobs:
                 if [[ "$REPO" == "NSRingo"* ]]; then
                   if [ "$EXTENSION" = "sgmodule" ]; then
                     OUTPUT_DIR="./Modules/Surge/NSRingo"
-                    # 获取与 .sgmodule 同名的 .srmodule 文件名
-                    SRMODULE_NAME="${ASSET_NAME%.sgmodule}.srmodule"
-                    # 检查 ASSET_NAME 是否已经包含 .srmodule
                     if [[ "$ASSET_NAME" != *".srmodule"* ]]; then
-                      ASSET_Surge_URL=$(echo "$ASSET" | jq -r '.browser_download_url')
-                      echo "$ASSET_Surge_URL" >> No_link_provided_for_srmodule.txt
+                      SGMODULE_URLS+=("$ASSET_Surge_URL") 
                     fi
                   elif [ "$EXTENSION" = "plugin" ]; then
                     OUTPUT_DIR="./Modules/Loon/NSRingo"
@@ -178,12 +175,8 @@ jobs:
                 elif [[ "$REPO" == "BiliUniverse"* ]]; then
                   if [ "$EXTENSION" = "sgmodule" ]; then
                     OUTPUT_DIR="./Modules/Surge/BiliUniverse"
-                    # 获取与 .sgmodule 同名的 .srmodule 文件名
-                    SRMODULE_NAME="${ASSET_NAME%.sgmodule}.srmodule"
-                    # 检查 ASSET_NAME 是否已经包含 .srmodule
                     if [[ "$ASSET_NAME" != *".srmodule"* ]]; then
-                      ASSET_Surge_URL=$(echo "$ASSET" | jq -r '.browser_download_url')
-                      echo "$ASSET_Surge_URL" >> No_link_provided_for_srmodule.txt
+                      SGMODULE_URLS+=("$ASSET_Surge_URL") 
                     fi
                   elif [ "$EXTENSION" = "plugin" ]; then
                     OUTPUT_DIR="./Modules/Loon/BiliUniverse"
@@ -196,12 +189,8 @@ jobs:
                 elif [[ "$REPO" == "DualSubs"* ]]; then
                   if [ "$EXTENSION" = "sgmodule" ]; then
                     OUTPUT_DIR="./Modules/Surge/DualSubs"
-                    # 获取与 .sgmodule 同名的 .srmodule 文件名
-                    SRMODULE_NAME="${ASSET_NAME%.sgmodule}.srmodule"
-                    # 检查 ASSET_NAME 是否已经包含 .srmodule
                     if [[ "$ASSET_NAME" != *".srmodule"* ]]; then
-                      ASSET_Surge_URL=$(echo "$ASSET" | jq -r '.browser_download_url')
-                      echo "$ASSET_Surge_URL" >> No_link_provided_for_srmodule.txt
+                      SGMODULE_URLS+=("$ASSET_Surge_URL") 
                     fi
                   elif [ "$EXTENSION" = "plugin" ]; then
                     OUTPUT_DIR="./Modules/Loon/DualSubs"
