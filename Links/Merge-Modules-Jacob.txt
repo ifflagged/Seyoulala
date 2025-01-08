@@ -2,22 +2,16 @@
 https://github.com/ifflagged/Neverflagged/raw/main/Surge/Module/DNS.sgmodule # Copy
 
 # General Settings Enhanced (iOS)
-https://github.com/VirgilClyne/GetSomeFries/raw/main/sgmodule/General.sgmodule
-https://github.com/VirgilClyne/GetSomeFries/raw/main/plugin/General.plugin
-Modules/Shadowrocket/VirgilClyne/General.srmodule
+Modules/Surge/VirgilClyne/General.sgmodule # Loon,Copy
 # Block HTTPDNS
-https://github.com/VirgilClyne/GetSomeFries/raw/main/sgmodule/HTTPDNS.Block.sgmodule
-https://github.com/VirgilClyne/GetSomeFries/raw/main/plugin/HTTPDNS.Block.plugin
-Modules/Shadowrocket/VirgilClyne/HTTPDNS.Block.srmodule
+Modules/Shadowrocket/VirgilClyne/HTTPDNS.Block.sgmodule # Loon,Copy
 # DNS for Router and Companys
-https://github.com/VirgilClyne/GetSomeFries/raw/main/sgmodule/DNS.sgmodule
-https://github.com/VirgilClyne/GetSomeFries/raw/main/plugin/DNS.plugin
-Modules/Shadowrocket/VirgilClyne/DNS.srmodule
+Modules/Shadowrocket/VirgilClyne/DNS.sgmodule # Loon,Shadowrocket
 
-Modules/Surge/NSRingo/WeatherKit.sgmodule # Loon
-Modules/Surge/NSRingo/Location.sgmodule # Loon,Shadowrocket
-Modules/Surge/NSRingo/Maps.sgmodule # Loon,Shadowrocket
-Modules/Surge/NSRingo/iRingo.Siri.sgmodule # Loon
+Modules/Surge/NSRingo/iRingo.WeatherKit.sgmodule # Loon,Shadowrocket
+Modules/Surge/NSRingo/iRingo.Location.sgmodule # Loon,Shadowrocket
+Modules/Surge/NSRingo/iRingo.Maps.sgmodule # Loon,Shadowrocket
+Modules/Surge/NSRingo/iRingo.Siri.sgmodule # Loon,Shadowrocket
 
 https://github.com/ifflagged/Neverflagged/raw/main/Surge/Module/Tools.sgmodule # Loon,Copy
 Modules/Surge/ifflagged/Module-Common.sgmodule # Loon,Shadowrocket
