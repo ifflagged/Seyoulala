@@ -163,7 +163,7 @@ jobs:
                     OUTPUT_DIR="./Modules/Shadowrocket/NSRingo"
                     SRMODULE_FOUND=true
                   fi
-                  if [ "$EXTENSION" = "sgmodule" ]; then
+                  elif [ "$EXTENSION" = "sgmodule" ]; then
                     OUTPUT_DIR="./Modules/Surge/NSRingo"
                     ASSET_Surge_URL=$(echo "$ASSET" | jq -r '.browser_download_url')
                     echo "Found sgmodule URL: $ASSET_Surge_URL"
@@ -186,7 +186,7 @@ jobs:
                     OUTPUT_DIR="./Modules/Shadowrocket/BiliUniverse"
                     SRMODULE_FOUND=true
                   fi
-                  if [ "$EXTENSION" = "sgmodule" ]; then
+                  elif [ "$EXTENSION" = "sgmodule" ]; then
                     OUTPUT_DIR="./Modules/Surge/BiliUniverse"
                     ASSET_Surge_URL=$(echo "$ASSET" | jq -r '.browser_download_url')
                     echo "Found sgmodule URL: $ASSET_Surge_URL"
@@ -209,7 +209,7 @@ jobs:
                     OUTPUT_DIR="./Modules/Shadowrocket/DualSubs"
                     SRMODULE_FOUND=true
                   fi
-                  if [ "$EXTENSION" = "sgmodule" ]; then
+                  elif [ "$EXTENSION" = "sgmodule" ]; then
                     OUTPUT_DIR="./Modules/Surge/DualSubs"
                     ASSET_Surge_URL=$(echo "$ASSET" | jq -r '.browser_download_url')
                     echo "Found sgmodule URL: $ASSET_Surge_URL"
