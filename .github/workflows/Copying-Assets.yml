@@ -151,6 +151,7 @@ jobs:
                 ASSET_NAME=$(echo "$ASSET" | jq -r '.name')
                 ASSET_URL=$(echo "$ASSET" | jq -r '.url')
                 ASSET_SIZE=$(echo "$ASSET" | jq -r '.size')
+                ASSET_Surge_URL=$(echo "$ASSET" | jq -r '.browser_download_url')
 
                 echo "Found asset: $ASSET_NAME (Size: $ASSET_SIZE bytes)"
 
@@ -160,7 +161,6 @@ jobs:
                 if [[ "$REPO" == "NSRingo"* ]]; then
                   if [ "$EXTENSION" = "sgmodule" ]; then
                     OUTPUT_DIR="./Modules/Surge/NSRingo"
-                    ASSET_Surge_URL=$(echo "$ASSET" | jq -r '.browser_download_url')
                     echo "$ASSET_Surge_URL" >> No_link_provided_for_srmodule.txt
                   elif [ "$EXTENSION" = "plugin" ]; then
                     OUTPUT_DIR="./Modules/Loon/NSRingo"
@@ -177,7 +177,6 @@ jobs:
                 elif [[ "$REPO" == "BiliUniverse"* ]]; then
                   if [ "$EXTENSION" = "sgmodule" ]; then
                     OUTPUT_DIR="./Modules/Surge/BiliUniverse"
-                    ASSET_Surge_URL=$(echo "$ASSET" | jq -r '.browser_download_url')
                     echo "$ASSET_Surge_URL" >> No_link_provided_for_srmodule.txt
                   elif [ "$EXTENSION" = "plugin" ]; then
                     OUTPUT_DIR="./Modules/Loon/BiliUniverse"
@@ -194,7 +193,6 @@ jobs:
                 elif [[ "$REPO" == "DualSubs"* ]]; then
                   if [ "$EXTENSION" = "sgmodule" ]; then
                     OUTPUT_DIR="./Modules/Surge/DualSubs"
-                    ASSET_Surge_URL=$(echo "$ASSET" | jq -r '.browser_download_url')
                     echo "$ASSET_Surge_URL" >> No_link_provided_for_srmodule.txt
                   elif [ "$EXTENSION" = "plugin" ]; then
                     OUTPUT_DIR="./Modules/Loon/DualSubs"
