@@ -149,7 +149,7 @@ jobs:
               ASSETS=$(echo "$RELEASE" | jq -c '.assets[]')
               while IFS= read -r ASSET; do
                 ASSET_NAME=$(echo "$ASSET" | jq -r '.name')
-                ASSET_URL=$(echo "$ASSET" | jq -r '.url')
+                ASSET_URL=$(echo "$ASSET" | jq -r '.browser_download_url')
                 ASSET_SIZE=$(echo "$ASSET" | jq -r '.size')
 
                 echo "Found asset: $ASSET_NAME (Size: $ASSET_SIZE bytes)"
