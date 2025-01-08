@@ -9,7 +9,7 @@
 #!tg-group=https://t.me/lanjieguanggao
 #!tag=去广告, 奶思
 #!system=iOS, iPadOS
-#!date=2024-12-14 20:00:00
+#!date=2025-01-09 05:30:00
 #!support=支持约511款APP/小程序
 #!remark=下方的所有规则都标注了对应的hostname，可能存在错误或者遗漏，欢迎反馈。对于无法/可选MITM的hostname都特别做了“如开启可自行添加主机名”提示，如果提示后面没有标注主机名则包含所有主机名，否则只包含提示语后面的主机名。
 
@@ -2455,11 +2455,11 @@ xiaohongshu = type=http-response, pattern=^https?:\/\/edith\.xiaohongshu\.com\/a
 #xiaohongshu = type=http-response, pattern=^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/recommend\/user\/follow_recommend\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/chongxie/xiaohongshu.js, requires-body=true, max-size=-1, timeout=60
 
 # 图片水印,视频水印
-xiaohongshu = type=http-response, pattern=^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/note\/(imagefeed|live_photo\/save), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/chongxie/xiaohongshu.js, requires-body=true, max-size=-1, timeout=60
+xiaohongshu = type=http-response, pattern=^https?:\/\/(edith|rec|www)\.xiaohongshu\.com\/api\/sns\/v\d\/note\/(imagefeed|live_photo\/save), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/chongxie/xiaohongshu.js, requires-body=true, max-size=-1, timeout=60
 
-xiaohongshu = type=http-response, pattern=^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/(followfeed|homefeed)\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/chongxie/xiaohongshu.js, requires-body=true, max-size=-1, timeout=60
+xiaohongshu = type=http-response, pattern=^https?:\/\/(edith|rec|www)\.xiaohongshu\.com\/api\/sns\/v\d\/(followfeed|homefeed)\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/chongxie/xiaohongshu.js, requires-body=true, max-size=-1, timeout=60
 
-xiaohongshu = type=http-response, pattern=^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/(v2\/note\/feed|v3\/note\/videofeed)\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/chongxie/xiaohongshu.js, requires-body=true, max-size=-1, timeout=60
+xiaohongshu = type=http-response, pattern=^https?:\/\/(edith|rec|www)\.xiaohongshu\.com\/api\/sns\/(v2\/note\/feed|v3\/note\/videofeed)\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/chongxie/xiaohongshu.js, requires-body=true, max-size=-1, timeout=60
 
 xiaohongshu = type=http-response, pattern=^https?:\/\/(edith|rec|www)\.xiaohongshu\.com\/api\/sns\/(v4\/note\/videofeed|v10\/note\/video\/save)\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/chongxie/xiaohongshu.js, requires-body=true, max-size=-1, timeout=60
 
