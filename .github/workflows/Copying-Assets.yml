@@ -156,14 +156,6 @@ jobs:
 
                 EXTENSION="${ASSET_NAME##*.}"
 
-                # 如果是 sgmodule 类型的文件，保存其 URL
-                if [ "$EXTENSION" = "sgmodule" ]; then
-                  ASSET_Surge_URL=$(echo "$ASSET" | jq -r '.browser_download_url')
-                  echo "Found sgmodule URL: $ASSET_Surge_URL"
-                  # 将 sgmodule URL 保存到 No_link_provided_for_srmodule.txt 文件
-                  echo "$ASSET_Surge_URL" >> No_link_provided_for_srmodule.txt
-                fi
-
                 # 判断保存目录和类型
                 if [[ "$REPO" == "NSRingo"* ]]; then
                   if [ "$EXTENSION" = "sgmodule" ]; then
@@ -172,6 +164,10 @@ jobs:
                     OUTPUT_DIR="./Modules/Loon/NSRingo"
                   elif [ "$EXTENSION" = "srmodule" ]; then
                     OUTPUT_DIR="./Modules/Shadowrocket/NSRingo"
+                  else
+                    ASSET_Surge_URL=$(echo "$ASSET" | jq -r '.browser_download_url')
+                    echo "$ASSET_Surge_URL" >> No_link_provided_for_srmodule.txt
+                  fi
                   else
                     echo "Skipping unsupported file type: $ASSET_NAME"
                     continue
@@ -184,6 +180,10 @@ jobs:
                   elif [ "$EXTENSION" = "srmodule" ]; then
                     OUTPUT_DIR="./Modules/Shadowrocket/BiliUniverse"
                   else
+                    ASSET_Surge_URL=$(echo "$ASSET" | jq -r '.browser_download_url')
+                    echo "$ASSET_Surge_URL" >> No_link_provided_for_srmodule.txt
+                  fi
+                  else
                     echo "Skipping unsupported file type: $ASSET_NAME"
                     continue
                   fi
@@ -194,6 +194,10 @@ jobs:
                     OUTPUT_DIR="./Modules/Loon/DualSubs"
                   elif [ "$EXTENSION" = "srmodule" ]; then
                     OUTPUT_DIR="./Modules/Shadowrocket/DualSubs"
+                  else
+                    ASSET_Surge_URL=$(echo "$ASSET" | jq -r '.browser_download_url')
+                    echo "$ASSET_Surge_URL" >> No_link_provided_for_srmodule.txt
+                  fi
                   else
                     echo "Skipping unsupported file type: $ASSET_NAME"
                     continue
