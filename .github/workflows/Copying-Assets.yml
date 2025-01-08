@@ -144,7 +144,7 @@ jobs:
                 echo "Release not found for $REPO, skipping."
                 continue
               fi
-              
+
               # 遍历每个资产文件
               ASSETS=$(echo "$RELEASE" | jq -c '.assets[]')
               while IFS= read -r ASSET; do
@@ -162,7 +162,7 @@ jobs:
                   if [ "$EXTENSION" = "sgmodule" ]; then
                     OUTPUT_DIR="./Modules/Surge/NSRingo"
                     if [[ "$ASSET_NAME" != *".srmodule"* ]]; then
-                      SGMODULE_URLS+=("$ASSET_Surge_URL") 
+                      SGMODULE_2_URLS+=("$ASSET_Surge_URL") 
                     fi
                   elif [ "$EXTENSION" = "plugin" ]; then
                     OUTPUT_DIR="./Modules/Loon/NSRingo"
@@ -176,7 +176,7 @@ jobs:
                   if [ "$EXTENSION" = "sgmodule" ]; then
                     OUTPUT_DIR="./Modules/Surge/BiliUniverse"
                     if [[ "$ASSET_NAME" != *".srmodule"* ]]; then
-                      SGMODULE_URLS+=("$ASSET_Surge_URL") 
+                      SGMODULE_2_URLS+=("$ASSET_Surge_URL") 
                     fi
                   elif [ "$EXTENSION" = "plugin" ]; then
                     OUTPUT_DIR="./Modules/Loon/BiliUniverse"
@@ -190,7 +190,7 @@ jobs:
                   if [ "$EXTENSION" = "sgmodule" ]; then
                     OUTPUT_DIR="./Modules/Surge/DualSubs"
                     if [[ "$ASSET_NAME" != *".srmodule"* ]]; then
-                      SGMODULE_URLS+=("$ASSET_Surge_URL") 
+                      SGMODULE_2_URLS+=("$ASSET_Surge_URL") 
                     fi
                   elif [ "$EXTENSION" = "plugin" ]; then
                     OUTPUT_DIR="./Modules/Loon/DualSubs"
@@ -248,9 +248,18 @@ jobs:
           done < <(printf '%s\n' "${REPOS[@]}")
 
           # 将 sgmodule URLs 保存到 No_link_provided_for_srmodule.txt 文件
-          if [ ${#SGMODULE_URLS[@]} -gt 0 ]; then
+          if [ ${#SGMODULE_URLS[@]} -gt 0 ] || [ ${#SGMODULE_2_URLS[@]} -gt 0 ]; then
             echo "Saving sgmodule URLs to No_link_provided_for_srmodule.txt"
-            printf "%s\n" "${SGMODULE_URLS[@]}" > No_link_provided_for_srmodule.txt
+  
+            # 保存 SGMODULE_URLS 中的内容
+            if [ ${#SGMODULE_URLS[@]} -gt 0 ]; then
+              printf "%s\n" "${SGMODULE_URLS[@]}" >> No_link_provided_for_srmodule.txt
+            fi
+
+            # 保存 SGMODULE_2_URLS 中的内容
+            if [ ${#SGMODULE_2_URLS[@]} -gt 0 ]; then
+              printf "%s\n" "${SGMODULE_2_URLS[@]}" >> No_link_provided_for_srmodule.txt
+            fi
           fi
 
           echo "ASSETS_CHANGED=$ASSETS_CHANGED" >> $GITHUB_ENV
