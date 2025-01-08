@@ -340,8 +340,8 @@ jobs:
           for sgmodule_file in $(find Modules/Surge/NSRingo Modules/Surge/BiliUniverse Modules/Surge/DualSubs Modules/Surge/VirgilClyne \
                                       -path "*/Beta/*" -prune -o \
                                       -type f -name "*.sgmodule" -print); do
-            echo "Modifying $FILE"
-            sed -i 's/,pre-matching//g' "$FILE"
+            echo "Modifying $sgmodule_file"
+            sed -i 's/,pre-matching//g' "$sgmodule_file"
             MODIFICATIONS_MADE=true
           done
 
