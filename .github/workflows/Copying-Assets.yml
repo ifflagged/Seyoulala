@@ -149,18 +149,25 @@ jobs:
               ASSETS=$(echo "$RELEASE" | jq -c '.assets[]')
               while IFS= read -r ASSET; do
                 ASSET_NAME=$(echo "$ASSET" | jq -r '.name')
-                ASSET_URL=$(echo "$ASSET" | jq -r '.browser_download_url')
+                ASSET_URL=$(echo "$ASSET" | jq -r '.url')
                 ASSET_SIZE=$(echo "$ASSET" | jq -r '.size')
 
                 echo "Found asset: $ASSET_NAME (Size: $ASSET_SIZE bytes)"
 
                 EXTENSION="${ASSET_NAME##*.}"
 
+                # 如果是 sgmodule 类型的文件，保存其 URL
+                if [ "$EXTENSION" = "sgmodule" ]; then
+                  ASSET_Surge_URL=$(echo "$ASSET" | jq -r '.browser_download_url')
+                  echo "Found sgmodule URL: $ASSET_Surge_URL"
+                  # 将 sgmodule URL 保存到 No_link_provided_for_srmodule.txt 文件
+                  echo "$ASSET_Surge_URL" >> No_link_provided_for_srmodule.txt
+                fi
+
                 # 判断保存目录和类型
                 if [[ "$REPO" == "NSRingo"* ]]; then
                   if [ "$EXTENSION" = "sgmodule" ]; then
                     OUTPUT_DIR="./Modules/Surge/NSRingo"
-                    SGMODULE_URLS+=("$ASSET_URL")  # 将 sgmodule URL 保存到数组中
                   elif [ "$EXTENSION" = "plugin" ]; then
                     OUTPUT_DIR="./Modules/Loon/NSRingo"
                   elif [ "$EXTENSION" = "srmodule" ]; then
@@ -172,7 +179,6 @@ jobs:
                 elif [[ "$REPO" == "BiliUniverse"* ]]; then
                   if [ "$EXTENSION" = "sgmodule" ]; then
                     OUTPUT_DIR="./Modules/Surge/BiliUniverse"
-                    SGMODULE_URLS+=("$ASSET_URL")  # 将 sgmodule URL 保存到数组中
                   elif [ "$EXTENSION" = "plugin" ]; then
                     OUTPUT_DIR="./Modules/Loon/BiliUniverse"
                   elif [ "$EXTENSION" = "srmodule" ]; then
@@ -184,7 +190,6 @@ jobs:
                 elif [[ "$REPO" == "DualSubs"* ]]; then
                   if [ "$EXTENSION" = "sgmodule" ]; then
                     OUTPUT_DIR="./Modules/Surge/DualSubs"
-                    SGMODULE_URLS+=("$ASSET_URL")  # 将 sgmodule URL 保存到数组中
                   elif [ "$EXTENSION" = "plugin" ]; then
                     OUTPUT_DIR="./Modules/Loon/DualSubs"
                   elif [ "$EXTENSION" = "srmodule" ]; then
