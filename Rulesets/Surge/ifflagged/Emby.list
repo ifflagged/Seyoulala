@@ -1,13 +1,10 @@
-#规则数量:22
+#规则数量:19
 #不支持的规则数量:0
 #已排除的规则数量:0
 
 #-----------------以下为解析后的规则-----------------#
 
 DOMAIN-SUFFIX,emby.wtf
-DOMAIN-SUFFIX,jmsooo.com
-DOMAIN-SUFFIX,emby.pro
-DOMAIN-SUFFIX,jmsuper.com
 DOMAIN-SUFFIX,xmsl.org
 DOMAIN-SUFFIX,loseremby.org
 DOMAIN-SUFFIX,emby.moe
