@@ -1,6 +1,7 @@
 # 按字母排序
 https://github.com/ifflagged/Neverflagged/raw/main/Surge/Ruleset/Direct.list
 https://github.com/ifflagged/Neverflagged/raw/main/Surge/Ruleset/Media/Emby.list
+https://github.com/ifflagged/Neverflagged/raw/main/Surge/Ruleset/Media/Nocopyright.list
 https://github.com/ifflagged/nBlock/raw/main/Walalala/Rules/MyBlockAds.list
 https://github.com/ifflagged/nBlock/raw/main/Walalala/Rules/PornAds.list
 
