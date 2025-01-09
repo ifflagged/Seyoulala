@@ -13,7 +13,7 @@ https://b.appsimg.com/upload/momin/ - reject
 
 [Map Local]
 # > Version
-^https?:\/\/2025.01.04/c364/v2.0.563 data-type=text data=" " status-code=200
+^https?:\/\/2025.01.09/c364/v2.0.564 data-type=text data=" " status-code=200
 
 # > 10
 ^https?:\/\/ftapi\.10jqka\.com\.cn\/futgwapi\/api\/om\/v\d\/ad\/common\/transfer data-type=text data=" " status-code=200
@@ -22,9 +22,6 @@ https://b.appsimg.com/upload/momin/ - reject
 ^https?:\/\/ad\.mcloud\.139\.com\/advertapi data-type=text data=" " status-code=200
 
 ^https?:\/\/smsrebuild1\.mail\.10086\.cn\/together\/s data-type=text data=" " status-code=200
-
-# > 369chuxing
-^https?:\/\/api\.369cx\.cn\/v\d\/Splash\/GetSplashAd data-type=text data=" " status-code=200
 
 # > 58
 ^https?:\/\/app\.58\.com\/api\/home\/(advertising|appadv) data-type=text data=" " status-code=200
@@ -1159,6 +1156,9 @@ https?:\/\/m\.sd\.10086\.cn\/zapi\/app_common\/homeWelcome\/welcome.do data-type
 ^https?:\/\/ap\.dongqiudi\.com\/plat\/v4 data-type=file data="https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ddgksf2013/StartUp/dongqiudi.js"
 
 [Script]
+# > 369chuxing
+dict = type=http-response, pattern=^https?:\/\/api\.369cx\.cn\/v\d\/Splash\/GetSplashAd, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ddgksf2013/StartUp/dict.js, requires-body=true, max-size=-1, timeout=60
+
 # > 555
 555Ad = type=http-response, pattern="^https?:\/\/[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+){1,3}(:\d+)?\/api\/v\d\/movie\/index_recommend", script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ddgksf2013/StartUp/555Ad.js, requires-body=true, max-size=-1, timeout=60
 
