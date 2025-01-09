@@ -16,7 +16,7 @@
 
 
 [Script]
-http-response ^https:\/\/api\.coolapk\.com\/v6\/(?:feed\/detail|feed\/replyList|page\/dataList|main\/dataList|main\/indexV8|main\/init) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/CoolApk_remove_ads/CoolApk_remove_ads.js,requires-body=true,tag=移除酷安广告
+http-response ^https:\/\/api\.coolapk\.com\/v6\/(?:feed\/detail|feed\/replyList|page\/dataList|main\/dataList|main\/indexV8|main\/init) script-path=https://kelee.one/Resource/Script/CoolApk/CoolApk_remove_ads.js,requires-body=true,tag=移除酷安广告
 
 
 [MitM]
