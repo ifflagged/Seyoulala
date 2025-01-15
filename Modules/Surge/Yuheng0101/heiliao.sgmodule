@@ -2,13 +2,13 @@
 #!desc=去除烦人的广告
 #!category=Jacob
 
-#!date=2025-01-15 12:16:43
+#!date=2025-01-15 16:10:50
 
 [Script]
-黑料去广告 = type=http-response, pattern=^https?:\/\/(18hlw\.com|eiy9j\.uwmnovc\.com|5deip\.utdwdnz\.com|www\.yobrvasl\.com|d2kn6v73oo7z7k\.cloudfront\.net).*, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Yuheng0101/heiliao/web.js, requires-body=true, max-size=0, timeout=60
+黑料去广告 = type=http-response, pattern=^https?:\/\/(18hlw\.com|7fvsg\.ayjxopoz\.net|eiy9j\.uwmnovc\.com|www\.yobrvasl\.com|d2kn6v73oo7z7k\.cloudfront\.net).*, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Yuheng0101/heiliao/web.js, requires-body=true, max-size=0, timeout=60
 
 黑料App去广告 = type=http-response, pattern=^https:\/\/api(\d+)?.hlwapi(\d+)?\.com\/api\.php\/api\/index\/(config|userInfo|index|detail), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Yuheng0101/heiliao/app.js, requires-body=true, max-size=-1, timeout=30
 
 [MITM]
-hostname = %APPEND% 18hlw.com, eiy9j.uwmnovc.com, 5deip.utdwdnz.com, www.yobrvasl.com, d2kn6v73oo7z7k.cloudfront.net, api*.hlwapi*.com
+hostname = %APPEND% 18hlw.com, 7fvsg.ayjxopoz.net, eiy9j.uwmnovc.com, www.yobrvasl.com, d2kn6v73oo7z7k.cloudfront.net, api*.hlwapi*.com
 
