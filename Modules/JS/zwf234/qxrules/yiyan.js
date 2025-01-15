@@ -1,24 +1,57 @@
-/***********************************
 
-> 應用名稱：一言
-> 軟件版本：4.13
-> 下載地址：https://apps.apple.com/us/app/id1010174792
-> 腳本作者：Cuttlefish
-> 微信賬號：墨魚手記
-> 更新時間：2022-07-21
-> 通知頻道：https://t.me/ddgksf2021
-> 問題反饋：https://t.me/ddgksf2013_bot
-> 特別說明：本腳本僅供學習交流使用，禁止轉載售賣
- 
-[rewrite_local]
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="origin" name="referrer">
+    <title>Forbidden &middot; GitHub</title>
+    <style type="text/css" media="screen">
+      body {
+        background-color: #f1f1f1;
+        margin: 0;
+      }
+      body,
+      input,
+      button {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      }
+      .container { margin: 30px auto 40px auto; width: 800px; text-align: center; }
+      a { color: #4183c4; text-decoration: none; font-weight: bold; }
+      a:hover { text-decoration: underline; }
+      h1, h2, h3 { color: #666; }
+      ul { list-style: none; padding: 25px 0; }
+      li {
+        display: inline;
+        margin: 10px 50px 10px 0px;
+      }
+      .logo { display: inline-block; margin-top: 35px; }
+      .logo-img-2x { display: none; }
+      @media
+      only screen and (-webkit-min-device-pixel-ratio: 2),
+      only screen and (   min--moz-device-pixel-ratio: 2),
+      only screen and (     -o-min-device-pixel-ratio: 2/1),
+      only screen and (        min-device-pixel-ratio: 2),
+      only screen and (                min-resolution: 192dpi),
+      only screen and (                min-resolution: 2dppx) {
+        .logo-img-1x { display: none; }
+        .logo-img-2x { display: inline-block; }
+      }
+    </style>
+  </head>
+  <body>
 
-# ～ 一言解锁会员权限（2022-07-21）@ddgksf2013
-^https:\/\/app\.yiyan\.art\/yiyan\/ url script-response-body https://ocd0522.tk/ddgksf2013/Cuttlefish/raw/branch/master/Crack/yiyan.js
+    <div class="container">
+      <h1>Access to this site has been restricted.</h1>
 
-[mitm] 
+      <p>
+        <br>
+        If you believe this is an error,
+        please contact <a href="https://support.github.com">Support</a>.
+      </p>
 
-hostname=app.yiyan.art
-
-***********************************/
-var body = $response.body.replace(/viptype":"1"/g, 'viptype":"4"')
-$done({ body });
+      <div id="s">
+        <a href="https://githubstatus.com">GitHub Status</a> &mdash;
+        <a href="https://twitter.com/githubstatus">@githubstatus</a>
+      </div>
+    </div>
+  </body>
+</html>

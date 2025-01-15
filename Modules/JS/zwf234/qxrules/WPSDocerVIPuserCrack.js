@@ -1,39 +1,57 @@
-/******************************
 
-脚本功能：WPS解锁稻壳会员
-软件版本：11.26.0
-下载地址：http://t.cn/A6ZD2hl3
-脚本作者：Hausd0rff
-更新时间：2022-07-05
-脚本发布：https://t.me/yqc_123
-问题反馈：https://t.me/yqc_777
-使用声明：⚠️此脚本仅供学习与交流，
-        请勿转载与贩卖！⚠️⚠️⚠️
-*******************************
-[rewrite_local]
-# > WPS解锁稻壳会员
-^https?:\/\/account\.wps\.cn\/api\/v3\/mine\/vips url script-response-body https://raw.githubusercontent.com/yqc007/QuantumultX/master/WPSDocerVIPuserCrack.js
-^https?:\/\/.+\.(docer.)?wps.cn\/(user\/v1\/vip|android\/mb\/buy|download\/v1\/ios|partner\/invoke\/usable|(api|rank)\/v1(\/mobile\/mb)?\/detail) url script-request-header https://raw.githubusercontent.com/yqc007/QuantumultX/master/WPSDocerVIPowerCrack.js
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="origin" name="referrer">
+    <title>Forbidden &middot; GitHub</title>
+    <style type="text/css" media="screen">
+      body {
+        background-color: #f1f1f1;
+        margin: 0;
+      }
+      body,
+      input,
+      button {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      }
+      .container { margin: 30px auto 40px auto; width: 800px; text-align: center; }
+      a { color: #4183c4; text-decoration: none; font-weight: bold; }
+      a:hover { text-decoration: underline; }
+      h1, h2, h3 { color: #666; }
+      ul { list-style: none; padding: 25px 0; }
+      li {
+        display: inline;
+        margin: 10px 50px 10px 0px;
+      }
+      .logo { display: inline-block; margin-top: 35px; }
+      .logo-img-2x { display: none; }
+      @media
+      only screen and (-webkit-min-device-pixel-ratio: 2),
+      only screen and (   min--moz-device-pixel-ratio: 2),
+      only screen and (     -o-min-device-pixel-ratio: 2/1),
+      only screen and (        min-device-pixel-ratio: 2),
+      only screen and (                min-resolution: 192dpi),
+      only screen and (                min-resolution: 2dppx) {
+        .logo-img-1x { display: none; }
+        .logo-img-2x { display: inline-block; }
+      }
+    </style>
+  </head>
+  <body>
 
-[mitm] 
-hostname = *.docer.wps.cn, vipapi.wps.cn, account.wps.cn
+    <div class="container">
+      <h1>Access to this site has been restricted.</h1>
 
-*******************************/
+      <p>
+        <br>
+        If you believe this is an error,
+        please contact <a href="https://support.github.com">Support</a>.
+      </p>
 
-var body = $response.body;
-var objc = JSON.parse(body);
-
-objc.vips = [
-    {
-      "memberid" : 12,
-      "expire_time" : 32495476149,
-      "name" : "稻壳会员",
-      "has_ad" : 0,
-      "enabled" : null
-    }
-];
-
-body = JSON.stringify(objc);
-$done({ 
-    body 
-});
+      <div id="s">
+        <a href="https://githubstatus.com">GitHub Status</a> &mdash;
+        <a href="https://twitter.com/githubstatus">@githubstatus</a>
+      </div>
+    </div>
+  </body>
+</html>

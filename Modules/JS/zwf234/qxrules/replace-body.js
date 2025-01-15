@@ -1,73 +1,57 @@
-/*
-脚本作者：mieqq
-引用地址：https://raw.githubusercontent.com/mieqq/mieqq/master/replace-body.js
 
-用Loon的脚本实现Quantumult X的response-body和request-body重写类型
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="origin" name="referrer">
+    <title>Forbidden &middot; GitHub</title>
+    <style type="text/css" media="screen">
+      body {
+        background-color: #f1f1f1;
+        margin: 0;
+      }
+      body,
+      input,
+      button {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      }
+      .container { margin: 30px auto 40px auto; width: 800px; text-align: center; }
+      a { color: #4183c4; text-decoration: none; font-weight: bold; }
+      a:hover { text-decoration: underline; }
+      h1, h2, h3 { color: #666; }
+      ul { list-style: none; padding: 25px 0; }
+      li {
+        display: inline;
+        margin: 10px 50px 10px 0px;
+      }
+      .logo { display: inline-block; margin-top: 35px; }
+      .logo-img-2x { display: none; }
+      @media
+      only screen and (-webkit-min-device-pixel-ratio: 2),
+      only screen and (   min--moz-device-pixel-ratio: 2),
+      only screen and (     -o-min-device-pixel-ratio: 2/1),
+      only screen and (        min-device-pixel-ratio: 2),
+      only screen and (                min-resolution: 192dpi),
+      only screen and (                min-resolution: 2dppx) {
+        .logo-img-1x { display: none; }
+        .logo-img-2x { display: inline-block; }
+      }
+    </style>
+  </head>
+  <body>
 
-如Quantumult X的重写：
-https://service.ilovepdf.com/v1/user url response-body false response-body true
-   
-可改写为Loon的脚本复写：
-[Script] 
-http-response https://service.ilovepdf.com/v1/user requires-body=true, script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/main/Resource/Script/CommonScript/replace-body.js, argument = false->true
+    <div class="container">
+      <h1>Access to this site has been restricted.</h1>
 
-argument=要匹配值=作为替换的值
-支持正则：如argument=\w+->test
-支持正则修饰符：如argument=/\w+/g->test
-支持多参数，如：argument=匹配值1->替换值1&匹配值2->替换值2
+      <p>
+        <br>
+        If you believe this is an error,
+        please contact <a href="https://support.github.com">Support</a>.
+      </p>
 
-支持改写响应体和请求体体[type=http-response或http-request]注意必须打开需要body[requires-body = true]
-
-提示：
-修改json格式的键值对可以这样：
-argument=("key")\s?:\s?"(.+?)"->$1: "new_value"
-
-s修饰符可以让.匹配换行符，如argument=/.+/s->hello
-  
-*/
-
-function getRegexp(re_str) {
-  let regParts = re_str.match(/^\/(.*?)\/([gims]*)$/)
-  if (regParts) {
-    return new RegExp(regParts[1], regParts[2])
-  } else {
-    return new RegExp(re_str)
-  }
-}
-
-let body
-if (typeof $argument == 'undefined') {
-  console.log('requires $argument')
-} else {
-  if (typeof $response != 'undefined') {
-    body = $response.body
-  } else if (typeof $request != 'undefined') {
-    body = $request.body
-  } else {
-    console.log('script type error')
-  }
-}
-
-let argument = $argument ?? ''
-if (body) {
-  try {
-    argument = decodeURIComponent(argument)
-  } catch (e) {}
-  console.log('argument')
-  console.log(argument)
-  argument.split('&').forEach(item => {
-    let [match, replace] = item.split('->')
-    console.log('match')
-    console.log(match)
-    console.log('replace')
-    console.log(replace)
-    let re = getRegexp(match)
-    body = body.replace(re, replace)
-  })
-  // console.log('body')
-  // console.log(body)
-  $done({ body })
-} else {
-  console.log('Not Modify')
-  $done({})
-}
+      <div id="s">
+        <a href="https://githubstatus.com">GitHub Status</a> &mdash;
+        <a href="https://twitter.com/githubstatus">@githubstatus</a>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,34 +1,57 @@
-body = $response.body.replace(/while.{7}\n/, "");
-let obj = JSON.parse(body);
-obj.entitlement.status="subscriber";
-obj.current_subs={
-      "product_id": "lightroom",
-      "store": "adobe",
-      "purchase_date": "2019-10-10T16:32:10.254954Z",
-      "sao": {
-        "inpkg_CCES": "0",
-        "inpkg_CCLE": "1",
-        "inpkg_CCSN": "0",
-        "inpkg_CCSV": "0",
-        "inpkg_LCCC": "0",
-        "inpkg_LPES": "0",
-        "inpkg_LRBRL": "0",
-        "inpkg_LRMAC": "0",
-        "inpkg_LRMC": "0",
-        "inpkg_LRMP": "0",
-        "inpkg_LRTB": "0",
-        "inpkg_PHLT": "0",
-        "inpkg_PHLT2": "0",
-        "inpkg_PLES": "0",
-        "storage_quota": "100"
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="origin" name="referrer">
+    <title>Forbidden &middot; GitHub</title>
+    <style type="text/css" media="screen">
+      body {
+        background-color: #f1f1f1;
+        margin: 0;
       }
-    };
-obj.entitlement.storage={
-      "used": 0,
-      "limit": 1154487209165,
-      "display_limit": 1099511627776,
-      "warn": 992137445376
-    };
-obj.avatar.placeholder=true;
-body = JSON.stringify(obj); 
-$done({body});
+      body,
+      input,
+      button {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      }
+      .container { margin: 30px auto 40px auto; width: 800px; text-align: center; }
+      a { color: #4183c4; text-decoration: none; font-weight: bold; }
+      a:hover { text-decoration: underline; }
+      h1, h2, h3 { color: #666; }
+      ul { list-style: none; padding: 25px 0; }
+      li {
+        display: inline;
+        margin: 10px 50px 10px 0px;
+      }
+      .logo { display: inline-block; margin-top: 35px; }
+      .logo-img-2x { display: none; }
+      @media
+      only screen and (-webkit-min-device-pixel-ratio: 2),
+      only screen and (   min--moz-device-pixel-ratio: 2),
+      only screen and (     -o-min-device-pixel-ratio: 2/1),
+      only screen and (        min-device-pixel-ratio: 2),
+      only screen and (                min-resolution: 192dpi),
+      only screen and (                min-resolution: 2dppx) {
+        .logo-img-1x { display: none; }
+        .logo-img-2x { display: inline-block; }
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="container">
+      <h1>Access to this site has been restricted.</h1>
+
+      <p>
+        <br>
+        If you believe this is an error,
+        please contact <a href="https://support.github.com">Support</a>.
+      </p>
+
+      <div id="s">
+        <a href="https://githubstatus.com">GitHub Status</a> &mdash;
+        <a href="https://twitter.com/githubstatus">@githubstatus</a>
+      </div>
+    </div>
+  </body>
+</html>

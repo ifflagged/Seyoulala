@@ -1,24 +1,57 @@
-var body = $response.body;
-var url = $request.url;
 
-const path1 = '/api/subscriptions/2.1/user-subscriptions/';
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="origin" name="referrer">
+    <title>Forbidden &middot; GitHub</title>
+    <style type="text/css" media="screen">
+      body {
+        background-color: #f1f1f1;
+        margin: 0;
+      }
+      body,
+      input,
+      button {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      }
+      .container { margin: 30px auto 40px auto; width: 800px; text-align: center; }
+      a { color: #4183c4; text-decoration: none; font-weight: bold; }
+      a:hover { text-decoration: underline; }
+      h1, h2, h3 { color: #666; }
+      ul { list-style: none; padding: 25px 0; }
+      li {
+        display: inline;
+        margin: 10px 50px 10px 0px;
+      }
+      .logo { display: inline-block; margin-top: 35px; }
+      .logo-img-2x { display: none; }
+      @media
+      only screen and (-webkit-min-device-pixel-ratio: 2),
+      only screen and (   min--moz-device-pixel-ratio: 2),
+      only screen and (     -o-min-device-pixel-ratio: 2/1),
+      only screen and (        min-device-pixel-ratio: 2),
+      only screen and (                min-resolution: 192dpi),
+      only screen and (                min-resolution: 2dppx) {
+        .logo-img-1x { display: none; }
+        .logo-img-2x { display: inline-block; }
+      }
+    </style>
+  </head>
+  <body>
 
-let obj = JSON.parse(body);
+    <div class="container">
+      <h1>Access to this site has been restricted.</h1>
 
-if (url.indexOf(path1) != -1) {
-	obj.user_subscription["expires_on_sec"] = 1655536094;
-	obj.user_subscription["expired"] = false;
-	obj.user_subscription["payment_type"] = 2;
-	obj.user_subscription["is_trial_period"] = true;
-	obj.user_subscription["starts_on_sec"] = 1560831070;
-	obj.user_subscription["is_active"] = true;
-	obj.user_subscription["auto_renew"] = true;
-	obj.user_subscription["last_verified_sec"] = 1560831070;
-	obj.user_subscription["subscription_code"] = "VSCOANNUAL";
-	obj.user_subscription["user_id"] = 54624336;
-	obj.user_subscription["source"] = 1;
-	body = JSON.stringify(obj);  
- }
+      <p>
+        <br>
+        If you believe this is an error,
+        please contact <a href="https://support.github.com">Support</a>.
+      </p>
 
-$done({body});
-//bynubyta
+      <div id="s">
+        <a href="https://githubstatus.com">GitHub Status</a> &mdash;
+        <a href="https://twitter.com/githubstatus">@githubstatus</a>
+      </div>
+    </div>
+  </body>
+</html>

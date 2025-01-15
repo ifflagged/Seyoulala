@@ -1,19 +1,57 @@
-/*
 
-脚本功能：糖心网页版解锁会员
-网页地址：http://txv04.com/
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="origin" name="referrer">
+    <title>Forbidden &middot; GitHub</title>
+    <style type="text/css" media="screen">
+      body {
+        background-color: #f1f1f1;
+        margin: 0;
+      }
+      body,
+      input,
+      button {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      }
+      .container { margin: 30px auto 40px auto; width: 800px; text-align: center; }
+      a { color: #4183c4; text-decoration: none; font-weight: bold; }
+      a:hover { text-decoration: underline; }
+      h1, h2, h3 { color: #666; }
+      ul { list-style: none; padding: 25px 0; }
+      li {
+        display: inline;
+        margin: 10px 50px 10px 0px;
+      }
+      .logo { display: inline-block; margin-top: 35px; }
+      .logo-img-2x { display: none; }
+      @media
+      only screen and (-webkit-min-device-pixel-ratio: 2),
+      only screen and (   min--moz-device-pixel-ratio: 2),
+      only screen and (     -o-min-device-pixel-ratio: 2/1),
+      only screen and (        min-device-pixel-ratio: 2),
+      only screen and (                min-resolution: 192dpi),
+      only screen and (                min-resolution: 2dppx) {
+        .logo-img-1x { display: none; }
+        .logo-img-2x { display: inline-block; }
+      }
+    </style>
+  </head>
+  <body>
 
-[rewrite_local]
-# 糖心网页版解锁会员
-^https?:\/\/txv04\.com\/h5\/user\/findQrcode$ url script-response-body https://raw.githubusercontent.com/zwf234/rules/master/js/tangxin.js
+    <div class="container">
+      <h1>Access to this site has been restricted.</h1>
 
-[mitm] 
-hostname = txv04.com
+      <p>
+        <br>
+        If you believe this is an error,
+        please contact <a href="https://support.github.com">Support</a>.
+      </p>
 
-*/
-
-var body = $response.body;
-    
-    body = "UgFUysG7EOk3ra3zPvTBomoKxK0brYZZXyFZ35S6yHgqhVhd+OQG/47X/9UyJgPV5AWHpboOcbnjK29g7+TWdBCP4lP63oTEfLmCiEMVreaeyLVHUJiLo+zSR1Sla51RUAeCnC8D0Ru1DoaAczNLI+LSqXrVP41EnLYGb6QoICi4abs2Jnj3HRhzgoOhBE2N9uDDM4Wu9o2eOAqYa7B/KeK3B4muLOqtU6YVntsswvcYw8+SCJmKmQiLLMRDr0EeMogoFRNE97U1lZmcRbE2DSrIXiwRR/xUwSHsHu2+EDjZAbUVWgwDtKZGeEaGiWNe/9KACOecM+9RX30q+l5eS+Wy1H44lBKMNx6sr1lTuqJXDREuUOUshLFOeGBKezkY";
-
-$done({body});
+      <div id="s">
+        <a href="https://githubstatus.com">GitHub Status</a> &mdash;
+        <a href="https://twitter.com/githubstatus">@githubstatus</a>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,55 +1,57 @@
-/*
-香蕉视频 解锁部分观看限制
-官网: https://www.aa2.app
 
-***************************
-QuantumultX:
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="origin" name="referrer">
+    <title>Forbidden &middot; GitHub</title>
+    <style type="text/css" media="screen">
+      body {
+        background-color: #f1f1f1;
+        margin: 0;
+      }
+      body,
+      input,
+      button {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      }
+      .container { margin: 30px auto 40px auto; width: 800px; text-align: center; }
+      a { color: #4183c4; text-decoration: none; font-weight: bold; }
+      a:hover { text-decoration: underline; }
+      h1, h2, h3 { color: #666; }
+      ul { list-style: none; padding: 25px 0; }
+      li {
+        display: inline;
+        margin: 10px 50px 10px 0px;
+      }
+      .logo { display: inline-block; margin-top: 35px; }
+      .logo-img-2x { display: none; }
+      @media
+      only screen and (-webkit-min-device-pixel-ratio: 2),
+      only screen and (   min--moz-device-pixel-ratio: 2),
+      only screen and (     -o-min-device-pixel-ratio: 2/1),
+      only screen and (        min-device-pixel-ratio: 2),
+      only screen and (                min-resolution: 192dpi),
+      only screen and (                min-resolution: 2dppx) {
+        .logo-img-1x { display: none; }
+        .logo-img-2x { display: inline-block; }
+      }
+    </style>
+  </head>
+  <body>
 
-[rewrite_local]
-^https?:\/\/.+?\.(pipi|fuli|xiang(jiao|xiang))apps\.com\/(ucp\/index|getGlobalData|(\/|)vod\/reqplay\/) url script-response-body https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/File/xjsp.js
+    <div class="container">
+      <h1>Access to this site has been restricted.</h1>
 
-[mitm]
-hostname = ios.fuliapps.com, apple.fuliapps.com, ios.xiangjiaoapps.com, apple.xiangjiaoapps.com, *.xiangxiangapps.com, *.pipiapps.com
+      <p>
+        <br>
+        If you believe this is an error,
+        please contact <a href="https://support.github.com">Support</a>.
+      </p>
 
-***************************
-Surge4 or Loon:
-
-[Script]
-http-response https?:\/\/.+?\.(pipi|fuli|xiang(jiao|xiang))apps\.com\/(ucp\/index|getGlobalData|(\/|)vod\/reqplay\/) requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/File/xjsp.js
-
-[MITM]
-hostname = ios.fuliapps.com, apple.fuliapps.com, ios.xiangjiaoapps.com, apple.xiangjiaoapps.com, *.xiangxiangapps.com, *.pipiapps.com
-
-**************************/
-
-var body = $response.body;
-var url = $request.url;
-
-if (body) {
-  var obj = JSON.parse($response.body);
-  if (/\/ucp\/index/.test(url) && obj.data) {
-    obj.data.uinfo.minivod_play_daily_remainders = "666";
-    obj.data.uinfo.minivod_down_daily_remainders = "666";
-    obj.data.uinfo.down_daily_remainders = "666";
-    obj.data.uinfo.play_daily_remainders = "666";
-    obj.data.uinfo["next_upgrade_need"] = "0";
-    obj.data.user.isvip = "1";
-    obj.data.user.gicon = "V5";
-    obj.data.user.gid = "5";
-  }
-  if (/\/getGlobalData/.test(url) && obj.data) {
-    obj.data.app_launch_times_adshow = "0";
-    obj.data.adgroups = "";
-    obj.data.iOS_adgroups = "";
-  }
-  if (/\/reqplay\//.test(url) && obj.data) {
-    obj.retcode = "0";
-    if (obj.data.hasOwnProperty("httpurl_preview")) {
-      var playurl = obj.data["httpurl_preview"];
-      obj.data["httpurl"] = playurl;
-    };
-  }
-  $done({ body: JSON.stringify(obj) });
-} else {
-  $done({})
-}
+      <div id="s">
+        <a href="https://githubstatus.com">GitHub Status</a> &mdash;
+        <a href="https://twitter.com/githubstatus">@githubstatus</a>
+      </div>
+    </div>
+  </body>
+</html>

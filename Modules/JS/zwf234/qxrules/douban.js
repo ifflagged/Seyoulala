@@ -1,164 +1,57 @@
-/*
-- 豆瓣电影移动版网页增强
-- 快捷跳转 茶杯狐 搜索
-- 展示在映流媒体平台
-- 快捷收藏电影至 Airtable
-- 豆瓣移动版网页去广告
 
-使用说明：
-收藏功能，需自行修改代码，点击 想看 / 看过 触发收藏
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="origin" name="referrer">
+    <title>Forbidden &middot; GitHub</title>
+    <style type="text/css" media="screen">
+      body {
+        background-color: #f1f1f1;
+        margin: 0;
+      }
+      body,
+      input,
+      button {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      }
+      .container { margin: 30px auto 40px auto; width: 800px; text-align: center; }
+      a { color: #4183c4; text-decoration: none; font-weight: bold; }
+      a:hover { text-decoration: underline; }
+      h1, h2, h3 { color: #666; }
+      ul { list-style: none; padding: 25px 0; }
+      li {
+        display: inline;
+        margin: 10px 50px 10px 0px;
+      }
+      .logo { display: inline-block; margin-top: 35px; }
+      .logo-img-2x { display: none; }
+      @media
+      only screen and (-webkit-min-device-pixel-ratio: 2),
+      only screen and (   min--moz-device-pixel-ratio: 2),
+      only screen and (     -o-min-device-pixel-ratio: 2/1),
+      only screen and (        min-device-pixel-ratio: 2),
+      only screen and (                min-resolution: 192dpi),
+      only screen and (                min-resolution: 2dppx) {
+        .logo-img-1x { display: none; }
+        .logo-img-2x { display: inline-block; }
+      }
+    </style>
+  </head>
+  <body>
 
-[rewrite_local]
-茶杯狐、流媒体
-^https://m.douban.com/movie/subject/.+ url script-response-body https://raw.githubusercontent.com/zwf234/rules/master/js/douban.js
-Airtable 收藏
-^https://m.douban.com/movie/subject/.+\?seen=\d url script-request-header https://raw.githubusercontent.com/zwf234/rules/master/js/douban.js
+    <div class="container">
+      <h1>Access to this site has been restricted.</h1>
 
-[mitm]
-hostname = m.douban.com
-*/
+      <p>
+        <br>
+        If you believe this is an error,
+        please contact <a href="https://support.github.com">Support</a>.
+      </p>
 
-let url = $request.url
-let movieId = url.match(/subject\/(\d+)/)
-let seen = url.match(/\?seen=(\d)$/)
-let collect = false  //收藏功能，默认关闭，需自行配置
-let region = "US" //流媒体区域
-let tmdb_api_key = "" // TMDB API KEY
-
-if (!seen) douban_addons()
-if (seen) collect_movie()
-
-async function douban_addons() {
-    let body = $response.body
-    let title = body.match(/"sub-title">([^<]+)/)
-    if (!title) $done({})
-    if (collect) body = body.replace(/<a.+pbtn.+wish.+>/, `<a href="${url}?seen=0">`)
-    if (collect) body = body.replace(/<a.+pbtn.+collect.+>/, `<a href="${url}?seen=1">`)
-
-    let mweb = [`<div class="sub-ddgksf2013" style="background:rgba(0,0,0,0.1);border-radius:6px;padding:13px 15px;margin-top:10px"> <img src="https://files.catbox.moe/c8vszl.png" height="23" width="32" style="vertical-align: middle;"><a href="https://www.cupfox.com/search?key=${title[1]}"><span class="vendor-text" style="display: inline-block;vertical-align:middle;font-size:15px;color:#fff;margin-left:5px;">茶杯狐 👉 Click to Play 👈</span> </a></div>`]
-    mweb.push(`<div class="sub-ddgksf2013" style="background:rgba(0,0,0,0.1);border-radius:6px;padding:13px 15px;margin-top:10px"> <img src="https://p0.meituan.net/dpgroup/bf54b6ae9ee149d304b3a351b4247d563960.png" height="32" width="32" style="vertical-align: middle;"><a href="https://www.libvio.me/search/-------------.html?wd=${title[1]}"><span class="vendor-text" style="display: inline-block;vertical-align:middle;font-size:15px;color:#fff;margin-left:5px;">Libvio 👉 Click to Play 👈</span> </a></div>`);
-    let douban_options = {
-        url: `https://frodo.douban.com/api/v2/movie/${movieId[1]}?apiKey=0ac44ae016490db2204ce0a042db2916`,
-        method: "GET",
-        headers: {
-            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.3(0x18000323) NetType/WIFI Language/en",
-            "Referer": "https://servicewechat.com/wx2f9b06c1de1ccfca/82/page-frame.html"
-        }
-    }
-
-    let douban_result = {};//await send_request(douban_options)
-
-    if (tmdb_api_key&&(douban_result.type == "movie" || douban_result.type == "tv") && douban_result.original_title) {
-
-        let tbdb_query_options = {
-            url: `https://api.themoviedb.org/3/search/${douban_result.type}?api_key=${tmdb_api_key}&query=${encodeURIComponent(douban_result.original_title.replace(/Season \d+$/, ""))}&page=1`,
-            method: "GET"
-        }
-        let tmdb_query = await send_request(tbdb_query_options)
-
-        if (tmdb_query.results[0]) {
-
-            let providers_query_options = {
-                url: `https://api.themoviedb.org/3/${douban_result.type}/${tmdb_query.results[0].id}/watch/providers?api_key=${tmdb_api_key}`,
-                method: "GET"
-            }
-
-            let tmdb_providers = await send_request(providers_query_options)
-
-            if (tmdb_providers.results[region]) {
-                if (tmdb_providers.results[region].flatrate) {
-                    for (var i in tmdb_providers.results[region].flatrate) {
-                        mweb.push(`<a href=""><img src="https://image.tmdb.org/t/p/original${tmdb_providers.results[region].flatrate[i].logo_path}" height="25" width="25" style="vertical-align: text-top;" /></a>`)
-                    }
-                }
-            }
-
-        }
-
-    }
-    //.replace(/link\ href\=\"https?:\/\/img3\.doubanio\.com\/.+\.css\"/, `link href="https://img3.doubanio.com/f/talion/4eddaaed2bec5a0baa663274d47d136c54a2c03c/css/card/base.css"`)
-
-    body = body.replace(/\<div\ class\=\"sub\-vendor\"[\s\S]*?\<\/div\>/, `${mweb.join("\n")}`)
-               .replace(/<head>/, '<head><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ddgksf2013/Html/douban.css" type="text/css">')
-
-    $done({ body });
-
-}
-
-async function collect_movie() {
-    if ($response) $done({})
-    let options = {
-        url: `https://frodo.douban.com/api/v2/movie/${movieId[1]}?apiKey=0ac44ae016490db2204ce0a042db2916`,
-        method: "GET",
-        headers: {
-            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.3(0x18000323) NetType/WIFI Language/en",
-            "Referer": "https://servicewechat.com/wx2f9b06c1de1ccfca/82/page-frame.html"
-        }
-    }
-
-    let douban_result = await send_request(options)
-
-    if (douban_result.msg == "movie_not_found") {
-        $notify('豆瓣电影', data.msg, "");
-        $done({ path: url.replace(/https:\/\/m.douban.com|\/\?seen=\d/g, "") })
-    }
-
-    let casts = ""
-    for (var i = 0; i < douban_result.actors.length; i++) {
-        casts = casts + douban_result.actors[i].name + " / "
-    }
-    let directors = ""
-    for (var k = 0; k < douban_result.directors.length; k++) {
-        directors = directors + douban_result.directors[k].name + " / "
-    }
-    let title = douban_result.title + "  " + douban_result.original_title
-    let table = {
-        url: "https://api.airtable.com/v0/BASE_ID/Douban",
-        method: "POST",
-        headers: {
-            Authorization: "Bearer API_KEY",
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            records: [
-                {
-                    "fields": {
-                        "Title": title,
-                        "Description": douban_result.intro,
-                        "Poster": [
-                            {
-                                "url": douban_result.pic.large
-                            }
-                        ],
-                        "Seen": seen[1] == 1 ? true : false,
-                        "Actors": casts.replace(/\s\/\s$/, ""),
-                        "Director": directors.replace(/\s\/\s$/, ""),
-                        "Genre": douban_result.genres.toString(),
-                        "Douban": "https://movie.douban.com/subject/" + movieId[1],
-                        "Rating": douban_result.rating.value,
-                        "Year": douban_result.year
-                    }
-                }
-            ]
-        })
-    }
-
-    let airtable_collect = await send_request(table)
-
-    if (!airtable_collect.records) {
-        $notify('收藏失败', airtable_collect.error.type, airtable_collect.error.message);
-        $done({ path: url.replace(/https:\/\/m.douban.com|\/\?seen=\d/g, "") })
-    }
-
-    $notify('豆瓣电影', title + " 收藏成功", "");
-    $done({ path: url.replace(/https:\/\/m.douban.com|\/\?seen=\d/g, "") })
-}
-
-function send_request(options) {
-    return new Promise((resolve, reject) => {
-        $task.fetch(options).then(response => {
-            resolve(JSON.parse(response.body))
-        })
-    })
-}
-
+      <div id="s">
+        <a href="https://githubstatus.com">GitHub Status</a> &mdash;
+        <a href="https://twitter.com/githubstatus">@githubstatus</a>
+      </div>
+    </div>
+  </body>
+</html>

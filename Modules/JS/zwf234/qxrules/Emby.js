@@ -1,79 +1,57 @@
-/**
-* @author: Stranger
-*
-Surge
-[Script]
-embyPremiere.js = type=http-response,pattern=^https?:\/\/mb3admin.com\/admin\/service\/registration\/validateDevice,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/zwf234/rules/master/js/Emby.js
 
-QuanX
-[rewrite_local]
-^https:\/\/mb3admin\.com\/admin\/service(\/registration\/validateDevice|\/appstore\/register|\/registration\/validate|\/registration\/getStatus|\/supporter\/retrievekey) url script-echo-response https://raw.githubusercontent.com/zwf234/rules/master/js/Emby.js
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="origin" name="referrer">
+    <title>Forbidden &middot; GitHub</title>
+    <style type="text/css" media="screen">
+      body {
+        background-color: #f1f1f1;
+        margin: 0;
+      }
+      body,
+      input,
+      button {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      }
+      .container { margin: 30px auto 40px auto; width: 800px; text-align: center; }
+      a { color: #4183c4; text-decoration: none; font-weight: bold; }
+      a:hover { text-decoration: underline; }
+      h1, h2, h3 { color: #666; }
+      ul { list-style: none; padding: 25px 0; }
+      li {
+        display: inline;
+        margin: 10px 50px 10px 0px;
+      }
+      .logo { display: inline-block; margin-top: 35px; }
+      .logo-img-2x { display: none; }
+      @media
+      only screen and (-webkit-min-device-pixel-ratio: 2),
+      only screen and (   min--moz-device-pixel-ratio: 2),
+      only screen and (     -o-min-device-pixel-ratio: 2/1),
+      only screen and (        min-device-pixel-ratio: 2),
+      only screen and (                min-resolution: 192dpi),
+      only screen and (                min-resolution: 2dppx) {
+        .logo-img-1x { display: none; }
+        .logo-img-2x { display: inline-block; }
+      }
+    </style>
+  </head>
+  <body>
 
-Loon
-[Script]
-http-response ^https?:\/\/mb3admin.com\/admin\/service\/registration\/validateDevice requires-body=1,max-size=0, script-path=https://raw.githubusercontent.com/zwf234/rules/master/js/Emby.js,tag=embyUnlocked
+    <div class="container">
+      <h1>Access to this site has been restricted.</h1>
 
-Shadowrocket
-[Script]
-EmbyPremiere = type=http-response,script-path=https://raw.githubusercontent.com/zwf234/rules/master/js/Emby.js,pattern=^https?:\/\/mb3admin.com\/admin\/service\/registration\/validateDevice,max-size=131072,requires-body=true,timeout=10,enable=true
+      <p>
+        <br>
+        If you believe this is an error,
+        please contact <a href="https://support.github.com">Support</a>.
+      </p>
 
-----------------------------------------
-
-[MITM]
-hostname = mb3admin.com
-
-*/
-var url = $request.url;
-
-const myStatus = "HTTP/1.1 200 OK";
-const myHeaders = {
-    "Crack": "KS", 
-    "Access-Control-Allow-Origin": "*", 
-    "Access-Control-Allow-Headers": "*", 
-    "Access-Control-Allow-Method": "*", 
-    "Access-Control-Allow-Credentials": "true"
-};
-
-
-if (url.indexOf('/admin/service/registration/validateDevice') != -1) {
-  obj = {
-      "cacheExpirationDays": 365,
-      "message": "Device Valid",
-      "resultCode": "GOOD"
-	};
-} else if (url.indexOf('/admin/service/appstore/register') != -1) {
-  obj = {
-      "featId":"",
-      "registered":true,
-      "expDate":"2099-01-01",
-      "key":""
-	};
-} else if (url.indexOf('/admin/service/registration/validate') != -1) {
-	obj = {
-      "featId":"",
-      "registered":true,
-      "expDate":"2099-01-01",
-      "key":""
-	};
-} else if (url.indexOf('/admin/service/registration/getStatus') != -1){
-	obj = {
-      "planType":"Cracked",
-      "deviceStatus":"",
-      "subscriptions":[]
-	};
-} else if (url.indexOf('/admin/service/supporter/retrievekey') != -1){
-	obj = {
-      "Success":false,
-      "ErrorMessage":"Supporter not found"
-	};
-}
-
-myData = JSON.stringify(obj);
-
-const myResponse = {
-    status: myStatus,
-    headers: myHeaders, // Optional.
-    body: myData // Optional.
-};
-
-$done(myResponse);
+      <div id="s">
+        <a href="https://githubstatus.com">GitHub Status</a> &mdash;
+        <a href="https://twitter.com/githubstatus">@githubstatus</a>
+      </div>
+    </div>
+  </body>
+</html>

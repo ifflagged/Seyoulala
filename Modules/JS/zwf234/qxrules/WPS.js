@@ -1,9 +1,57 @@
-/*
-脚本功能：解锁WPS本地会员
-脚本作者：R·E
-支持版本：商店最新 11.24.0(US) 11.26.1(CN)
-更新时间：2022.07.10
-问题反馈：https://t.me/Functional_Store_Hub
-使用声明：⚠️⚠️⚠️此脚本仅供学习与交流，禁止转载与贩卖！⚠️⚠️⚠️
-*/
-var a='{\x22result\x22:\x22ok\x22,\x22privilege\x22:[],\x22total_cost\x22:0,\x22level\x22:88,\x22wealth\x22:0,\x22exp\x22:0,\x22vip\x22:{\x22has_ad\x22:0,\x22enabled\x22:[]},\x22total_buy\x22:0}';var b=JSON['parse'](a);const c=new Array('data_recover','ocr','pdf2doc','pdf_merge','pdf_sign','pdf_split');const d=new Array(['超级会员',0x28],['WPS会员',0x14],['稻壳会员',0xc]);const e=0x70db6800;b['server_time']=e;b['userid']=e;b['vip']['name']=d[0x0][0x0];b['vip']['memberid']=d[0x0][0x1];b['vip']['expire_time']=e;for(i=0x0;i<c['length'];i++){b['privilege'][i]={'times':0x0,'expire_time':e,'spid':c[i]};}for(o=0x0;o<d['length'];o++){b['vip']['enabled'][o]={'name':d[o][0x0],'expire_time':e,'memberid':d[o][0x1]};}console['log']('\x0aR·E\x20WPS\x20Script\x20Log:\x0aWPS已解锁到2030年\x0a😎可享受'+c['length']+'+项会员服务');$done({body : JSON['stringify'](b)});
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="origin" name="referrer">
+    <title>Forbidden &middot; GitHub</title>
+    <style type="text/css" media="screen">
+      body {
+        background-color: #f1f1f1;
+        margin: 0;
+      }
+      body,
+      input,
+      button {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      }
+      .container { margin: 30px auto 40px auto; width: 800px; text-align: center; }
+      a { color: #4183c4; text-decoration: none; font-weight: bold; }
+      a:hover { text-decoration: underline; }
+      h1, h2, h3 { color: #666; }
+      ul { list-style: none; padding: 25px 0; }
+      li {
+        display: inline;
+        margin: 10px 50px 10px 0px;
+      }
+      .logo { display: inline-block; margin-top: 35px; }
+      .logo-img-2x { display: none; }
+      @media
+      only screen and (-webkit-min-device-pixel-ratio: 2),
+      only screen and (   min--moz-device-pixel-ratio: 2),
+      only screen and (     -o-min-device-pixel-ratio: 2/1),
+      only screen and (        min-device-pixel-ratio: 2),
+      only screen and (                min-resolution: 192dpi),
+      only screen and (                min-resolution: 2dppx) {
+        .logo-img-1x { display: none; }
+        .logo-img-2x { display: inline-block; }
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="container">
+      <h1>Access to this site has been restricted.</h1>
+
+      <p>
+        <br>
+        If you believe this is an error,
+        please contact <a href="https://support.github.com">Support</a>.
+      </p>
+
+      <div id="s">
+        <a href="https://githubstatus.com">GitHub Status</a> &mdash;
+        <a href="https://twitter.com/githubstatus">@githubstatus</a>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,62 +1,57 @@
-/*
-PicsArt 解锁高级功能
-数据来自 @chxm1023
 
-***************************
-QuantumultX:
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="origin" name="referrer">
+    <title>Forbidden &middot; GitHub</title>
+    <style type="text/css" media="screen">
+      body {
+        background-color: #f1f1f1;
+        margin: 0;
+      }
+      body,
+      input,
+      button {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      }
+      .container { margin: 30px auto 40px auto; width: 800px; text-align: center; }
+      a { color: #4183c4; text-decoration: none; font-weight: bold; }
+      a:hover { text-decoration: underline; }
+      h1, h2, h3 { color: #666; }
+      ul { list-style: none; padding: 25px 0; }
+      li {
+        display: inline;
+        margin: 10px 50px 10px 0px;
+      }
+      .logo { display: inline-block; margin-top: 35px; }
+      .logo-img-2x { display: none; }
+      @media
+      only screen and (-webkit-min-device-pixel-ratio: 2),
+      only screen and (   min--moz-device-pixel-ratio: 2),
+      only screen and (     -o-min-device-pixel-ratio: 2/1),
+      only screen and (        min-device-pixel-ratio: 2),
+      only screen and (                min-resolution: 192dpi),
+      only screen and (                min-resolution: 2dppx) {
+        .logo-img-1x { display: none; }
+        .logo-img-2x { display: inline-block; }
+      }
+    </style>
+  </head>
+  <body>
 
-[rewrite_local]
-^https:\/\/api\.(picsart|meiease)\.c(n|om)\/shop\/subscription\/(validate|apple\/purchases) url script-response-body https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/PicsArt.js
+    <div class="container">
+      <h1>Access to this site has been restricted.</h1>
 
-[mitm]
-hostname = api.picsart.c*, api.meiease.c*
+      <p>
+        <br>
+        If you believe this is an error,
+        please contact <a href="https://support.github.com">Support</a>.
+      </p>
 
-***************************
-Surge4 or Loon:
-
-[Script]
-http-response ^https:\/\/api\.(picsart|meiease)\.c(n|om)\/shop\/subscription\/(validate|apple\/purchases) requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/PicsArt.js
-
-[MITM]
-hostname = api.picsart.c*, api.meiease.c*
-
-**************************/
-
-$done({
-    body: JSON.stringify({
-        "status": "success",
-        "response": [
-            {
-                "status": "SUBSCRIPTION_PURCHASED",
-                "order_id": "490001314520000",
-                "original_order_id": "490001314520000",
-                "is_trial": true,
-                "plan_meta": {
-                    "storage_limit_in_mb": 20480,
-                    "frequency": "yearly",
-                    "scope_id": "full",
-                    "id": "com.picsart.editor.subscription_yearly",
-                    "product_id": "subscription_yearly",
-                    "level": 2000,
-                    "auto_renew_product_id": "com.picsart.editor.subscription_yearly",
-                    "type": "renewable",
-                    "tier_id": "gold_old",
-                    "permissions": [
-                        "premium_tools_standard",
-                        "premium_tools_ai"
-                    ],
-                    "description": "china"
-                },
-                "limitation": {
-                    "max_count": 5,
-                    "limits_exceeded": false
-                },
-                "reason": "ok",
-                "subscription_id": "com.picsart.editor.subscription_yearly",
-                "is_eligible_for_introductory": false,
-                "purchase_date": 1687020148000,
-                "expire_date": 4092599349000
-            }
-        ]
-    })
-});
+      <div id="s">
+        <a href="https://githubstatus.com">GitHub Status</a> &mdash;
+        <a href="https://twitter.com/githubstatus">@githubstatus</a>
+      </div>
+    </div>
+  </body>
+</html>

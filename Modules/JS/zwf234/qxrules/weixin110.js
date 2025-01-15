@@ -1,45 +1,57 @@
-/*
- 在微信中打开淘宝等被屏蔽链接，点击 Surge/QuantumultX 通知跳转到 Safari 或淘宝 App
-  by @HotKids & @XIAO_KOP,修改自 @江湖中人
-/*********************
-QuantumultX 远程脚本配置:
-**********************
-[rewrite_local]
-^https?:\/\/weixin110\.qq\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi url script-response-body https://raw.githubusercontent.com/HotKids/Rules/master/Script/weixin110.js
-[mitm] 
-hostname= weixin110.qq.com
-**********************
-Surge 4.2.0+ 脚本配置:
-**********************
-[Script]
-tbopener.js = type=http-response,pattern=^https?:\/\/weixin110\.qq\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi,script-path=https://raw.githubusercontent.com/HotKids/Rules/master/Script/weixin110.js
-[MITM] 
-hostname= weixin110.qq.com
-*/
 
-var str = ($response.body);
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="origin" name="referrer">
+    <title>Forbidden &middot; GitHub</title>
+    <style type="text/css" media="screen">
+      body {
+        background-color: #f1f1f1;
+        margin: 0;
+      }
+      body,
+      input,
+      button {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      }
+      .container { margin: 30px auto 40px auto; width: 800px; text-align: center; }
+      a { color: #4183c4; text-decoration: none; font-weight: bold; }
+      a:hover { text-decoration: underline; }
+      h1, h2, h3 { color: #666; }
+      ul { list-style: none; padding: 25px 0; }
+      li {
+        display: inline;
+        margin: 10px 50px 10px 0px;
+      }
+      .logo { display: inline-block; margin-top: 35px; }
+      .logo-img-2x { display: none; }
+      @media
+      only screen and (-webkit-min-device-pixel-ratio: 2),
+      only screen and (   min--moz-device-pixel-ratio: 2),
+      only screen and (     -o-min-device-pixel-ratio: 2/1),
+      only screen and (        min-device-pixel-ratio: 2),
+      only screen and (                min-resolution: 192dpi),
+      only screen and (                min-resolution: 2dppx) {
+        .logo-img-1x { display: none; }
+        .logo-img-2x { display: inline-block; }
+      }
+    </style>
+  </head>
+  <body>
 
-str = str.match(/:&#x2f;&#x2f;(\S*)"}/)[1].replace(/&#x2f;/g, '/').replace(/&amp;/g, '&').split("\"")[0]
-let opener = str.indexOf("m.tb.cn") != -1 ? "taobao://" + str: ($response.body)
-//console.log(str);
+    <div class="container">
+      <h1>Access to this site has been restricted.</h1>
 
-const $ = new cmp()
+      <p>
+        <br>
+        If you believe this is an error,
+        please contact <a href="https://support.github.com">Support</a>.
+      </p>
 
-if (str.indexOf("m.tb.cn") != -1) {
-    $.notify(``, "", "🛍️点击打开淘宝", opener)
-} else if (str.indexOf("如需浏览")) {
-    $.notify(``,"", "🔗点击打开链接", "https://"+str)
-}
-
-$done({body: $response.body});
-
-function cmp() {
-    _isQuanX = typeof $task != "undefined"
-    _isLoon = typeof $loon != "undefined"
-    _isSurge = typeof $httpClient != "undefined" && !_isLoon
-    this.notify = (title, subtitle, message, url) => {
-        if (_isLoon) $notification.post(title, subtitle, message, url)
-        if (_isQuanX) $notify(title, subtitle, message, { "open-url": url })
-        if (_isSurge) $notification.post(title, subtitle, message, { url: url })
-    }
-}
+      <div id="s">
+        <a href="https://githubstatus.com">GitHub Status</a> &mdash;
+        <a href="https://twitter.com/githubstatus">@githubstatus</a>
+      </div>
+    </div>
+  </body>
+</html>

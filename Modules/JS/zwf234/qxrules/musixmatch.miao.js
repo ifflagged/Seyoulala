@@ -1,23 +1,57 @@
-let obj=JSON.parse($response.body);
-let usr=obj.message.body;
-usr.app_config.trial=false;
-usr.app_config.active_products=[
-          {
-            "product_id" : "com.musixmatch.offers.removeads.autorenewable.oneyear",
-            "start_date" : "2019-10-27T16:27:38.000Z",
-            "creation_date" : "2019-10-27T16:27:38.000Z",
-            "credits" : 10,
-            "end_date" : "2099-11-03T17:27:38.000Z",
-            "product_type" : "subscription",
-            "features" : {
-              "no_ads" : 1,
-              "clean_metadata" : 1,
-              "party_mode" : 1,
-              "lyrics_offline" : 1
-            }
-          }
-        ],
-        
-usr.app_config.reference= "active";
-usr.app_config.last_modified="Fri Nov 08 2019 17:35:48 GMT+0000 (UTC)";
-$done({body: JSON.stringify(obj)});
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="origin" name="referrer">
+    <title>Forbidden &middot; GitHub</title>
+    <style type="text/css" media="screen">
+      body {
+        background-color: #f1f1f1;
+        margin: 0;
+      }
+      body,
+      input,
+      button {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      }
+      .container { margin: 30px auto 40px auto; width: 800px; text-align: center; }
+      a { color: #4183c4; text-decoration: none; font-weight: bold; }
+      a:hover { text-decoration: underline; }
+      h1, h2, h3 { color: #666; }
+      ul { list-style: none; padding: 25px 0; }
+      li {
+        display: inline;
+        margin: 10px 50px 10px 0px;
+      }
+      .logo { display: inline-block; margin-top: 35px; }
+      .logo-img-2x { display: none; }
+      @media
+      only screen and (-webkit-min-device-pixel-ratio: 2),
+      only screen and (   min--moz-device-pixel-ratio: 2),
+      only screen and (     -o-min-device-pixel-ratio: 2/1),
+      only screen and (        min-device-pixel-ratio: 2),
+      only screen and (                min-resolution: 192dpi),
+      only screen and (                min-resolution: 2dppx) {
+        .logo-img-1x { display: none; }
+        .logo-img-2x { display: inline-block; }
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="container">
+      <h1>Access to this site has been restricted.</h1>
+
+      <p>
+        <br>
+        If you believe this is an error,
+        please contact <a href="https://support.github.com">Support</a>.
+      </p>
+
+      <div id="s">
+        <a href="https://githubstatus.com">GitHub Status</a> &mdash;
+        <a href="https://twitter.com/githubstatus">@githubstatus</a>
+      </div>
+    </div>
+  </body>
+</html>

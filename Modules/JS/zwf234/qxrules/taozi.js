@@ -1,49 +1,57 @@
-/*
-微信公众号：ios黑科技
-官方网站：s7aa.cn
 
-QX:
-[rewrite_local]
-#桃子视频解锁会员
-^http:\/\/api\.(.+)\.xyz\/fast-cloud\/user\/info url script-response-body tz.js
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="origin" name="referrer">
+    <title>Forbidden &middot; GitHub</title>
+    <style type="text/css" media="screen">
+      body {
+        background-color: #f1f1f1;
+        margin: 0;
+      }
+      body,
+      input,
+      button {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      }
+      .container { margin: 30px auto 40px auto; width: 800px; text-align: center; }
+      a { color: #4183c4; text-decoration: none; font-weight: bold; }
+      a:hover { text-decoration: underline; }
+      h1, h2, h3 { color: #666; }
+      ul { list-style: none; padding: 25px 0; }
+      li {
+        display: inline;
+        margin: 10px 50px 10px 0px;
+      }
+      .logo { display: inline-block; margin-top: 35px; }
+      .logo-img-2x { display: none; }
+      @media
+      only screen and (-webkit-min-device-pixel-ratio: 2),
+      only screen and (   min--moz-device-pixel-ratio: 2),
+      only screen and (     -o-min-device-pixel-ratio: 2/1),
+      only screen and (        min-device-pixel-ratio: 2),
+      only screen and (                min-resolution: 192dpi),
+      only screen and (                min-resolution: 2dppx) {
+        .logo-img-1x { display: none; }
+        .logo-img-2x { display: inline-block; }
+      }
+    </style>
+  </head>
+  <body>
 
-[mitm]
-hostname = api.*.xyz,
+    <div class="container">
+      <h1>Access to this site has been restricted.</h1>
 
-桃子视频下载地址；
-http://69t.co
+      <p>
+        <br>
+        If you believe this is an error,
+        please contact <a href="https://support.github.com">Support</a>.
+      </p>
 
-*/
-
-let obj = JSON.parse($response.body);
-obj = {
-  "code" : "0000",
-  "message" : "",
-  "result" : {
-    "account" : "ios黑科技",
-    "nickName" : "ios黑科技",
-    "stars" : 0,
-    "channelCode" : null,
-    "vipValidDate" : 4092579678000,
-    "bindStatus" : 1,
-    "sex" : null,
-    "invitationCode" : "EGFGKHK",
-    "vipType" : 1,
-    "accessToken" : "QBEJ42HGG6DAP4XX3XXOVDOZ616OHXR9",
-    "id" : 2434858,
-    "tokenValidDate" : 1608652800000,
-    "phone" : "微信公众号：ios黑科技",
-    "gold" : 9999,
-    "avatar" : null,
-    "fans" : 0,
-    "createDate" : 1606139671000,
-    "newUser" : false,
-    "accountLevel" : null,
-    "authType" : 1,
-    "machineCode" : "iPhone 7|13.5"
-  },
-  "data" : null,
-  "total" : null
-};
-
-$done({body: JSON.stringify(obj)});
+      <div id="s">
+        <a href="https://githubstatus.com">GitHub Status</a> &mdash;
+        <a href="https://twitter.com/githubstatus">@githubstatus</a>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,59 +1,57 @@
-/*
-微信公众号：ios黑科技
-官方网站：s7aa.cn
 
-圈X:
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="origin" name="referrer">
+    <title>Forbidden &middot; GitHub</title>
+    <style type="text/css" media="screen">
+      body {
+        background-color: #f1f1f1;
+        margin: 0;
+      }
+      body,
+      input,
+      button {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      }
+      .container { margin: 30px auto 40px auto; width: 800px; text-align: center; }
+      a { color: #4183c4; text-decoration: none; font-weight: bold; }
+      a:hover { text-decoration: underline; }
+      h1, h2, h3 { color: #666; }
+      ul { list-style: none; padding: 25px 0; }
+      li {
+        display: inline;
+        margin: 10px 50px 10px 0px;
+      }
+      .logo { display: inline-block; margin-top: 35px; }
+      .logo-img-2x { display: none; }
+      @media
+      only screen and (-webkit-min-device-pixel-ratio: 2),
+      only screen and (   min--moz-device-pixel-ratio: 2),
+      only screen and (     -o-min-device-pixel-ratio: 2/1),
+      only screen and (        min-device-pixel-ratio: 2),
+      only screen and (                min-resolution: 192dpi),
+      only screen and (                min-resolution: 2dppx) {
+        .logo-img-1x { display: none; }
+        .logo-img-2x { display: inline-block; }
+      }
+    </style>
+  </head>
+  <body>
 
-[rewrite_local]
+    <div class="container">
+      <h1>Access to this site has been restricted.</h1>
 
-#酷咪视频VIP无限看
-^https:\/\/lginstaacademy\.com(\/\/api\/movie\/addPlay|\/\/api\/member|\/api\/video_clip\/play|\/api\/app\/message_list|\/api\/home\/index_recommend|\/\/api\/movie\/play\/|\/\/api\/vip\/index) url script-response-body kumiyw.js
+      <p>
+        <br>
+        If you believe this is an error,
+        please contact <a href="https://support.github.com">Support</a>.
+      </p>
 
-酷咪下载地址
-km.app
-
-MITM = lginstaacademy.com
-*/
-
-
-var body = $response.body;
-var url = $request.url;
-var obj = JSON.parse(body);
-
-
-const p2 = '//api/movie/addPlay';
-const p3 = '//api/member';
-const p4 = '/api/video_clip/play';
-const p5 = '/api/app/message_list';
-const p6 = '/api/home/index_recommend';
-const p7 = '//api/vip/index';
-
-
-if (url.indexOf(p2) != -1) {
-    obj.data.re_today_view_times = 999;
-    body = JSON.stringify(obj);
-} 
-if (url.indexOf(p3) != -1) {
-    obj.data.is_vip = 1;
-    obj.data.expire_time = 2099-09-09;
-    obj.data.nick_name = "ios黑科技";
-    obj.data.expire_time1 = 4092579678;
-    body = JSON.stringify(obj);
-} 
-if (url.indexOf(p4) != -1) {
-    obj.data.is_login = 0;
-    body = JSON.stringify(obj);
-} 
-if (url.indexOf(p5) != -1) {
-    obj.code = 1;
-    body = JSON.stringify(obj);
-} 
-if (url.indexOf(p6) != -1) {
-    obj.data.list.ob_game_list = 1;
-} 
-if (url.indexOf(p7) != -1) {
-    obj.is_vip = 1;
-    obj.expire_time = "2099-09-09";
-    }
-    body = JSON.stringify(obj);
-$done({body});
+      <div id="s">
+        <a href="https://githubstatus.com">GitHub Status</a> &mdash;
+        <a href="https://twitter.com/githubstatus">@githubstatus</a>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,207 +1,57 @@
-/*
-QX：
-[rewrite_local]
-^https:\/\/api\.rr\.tv\/user\/profile* url script-response-body https://raw.githubusercontent.com/byour13/Script/main/rrtvvip.js
 
-QX 
-[MITM]
-hostname = api.rr.tv
-by byour13
-*/
-
-var obj = JSON.parse($response.body);
-obj = {
-  "requestId": "24786e8f1fb44d75b982f73532e00000",
-  "code": "0000",
-  "msg": "Success",
-  "recordsTotal": null,
-  "data": {
-    "commentUser": false,
-    "user": {
-      "id": 180760000,
-      "headImgUrl": "",
-      "isConfirmed": false,
-      "roleInfo": "normal",
-      "level": 9999,
-      "levelStr": "yyds",
-      "sex": 0,
-      "confirmInfo": "",
-      "replyCount": 0,
-      "articleCount": 0,
-      "favoriteCount": 0,
-      "silverCount": 10,
-      "achievementCount": 0,
-      "hasSignIn": false,
-      "sign": "",
-      "birthday": "2000-01-01",
-      "city": "",
-      "loginFrom": null,
-      "token": null,
-      "mobile": "5794620000",
-      "nickName": "yyds",
-      "isSilence": false,
-      "silenceMsg": "",
-      "isBlack": false,
-      "score": 1614,
-      "continuousDay": 0,
-      "fansCount": 0,
-      "focusUserCount": 0,
-      "seriesCount": 0,
-      "actorCount": 0,
-      "focus": false,
-      "wmSign": null,
-      "medalList": [{
-        "name": "yyds",
-        "endTime": "9999-06-08 15:17:08",
-        "imgUrl": "http://img.rr.tv/cover/20200424/o_1587720799676.png",
-        "id": 1
-      }],
-      "privilegeList": [{
-        "id": null,
-        "createTimeStr": "",
-        "createTime": null,
-        "updateTime": null,
-        "effectObject": "video",
-        "action": "play",
-        "function": "originalPainting",
-        "func": "originalPainting",
-        "description": "解锁原画",
-        "icon": "jiesuoyuanhua",
-        "endTime": 3675562920000
-      }, {
-        "id": null,
-        "createTimeStr": "",
-        "createTime": null,
-        "updateTime": null,
-        "effectObject": "mall",
-        "action": "sale",
-        "function": "mallDiscount",
-        "func": "mallDiscount",
-        "description": "龙醇商城九折",
-        "icon": "longchunshangcheng",
-        "endTime": 3675562920000
-      }, {
-        "id": null,
-        "createTimeStr": "",
-        "createTime": null,
-        "updateTime": null,
-        "effectObject": "article",
-        "action": "write",
-        "function": "highLight",
-        "func": "highLight",
-        "description": "高亮发帖",
-        "icon": "gaoliangfatie",
-        "endTime": 3675562920000
-      }, {
-        "id": null,
-        "createTimeStr": "",
-        "createTime": null,
-        "updateTime": null,
-        "effectObject": "nickName",
-        "action": "show",
-        "function": "nameHighLight",
-        "func": "nameHighLight",
-        "description": "高亮昵称",
-        "icon": "gaoliangnicheng",
-        "endTime": 3675562920000
-      }, {
-        "id": null,
-        "createTimeStr": "",
-        "createTime": null,
-        "updateTime": null,
-        "effectObject": "comment",
-        "action": "write",
-        "function": "highLight",
-        "func": "highLight",
-        "description": "高亮评论回复",
-        "icon": "huifu",
-        "endTime": 3675562920000
-      }, {
-        "id": null,
-        "createTimeStr": "",
-        "createTime": null,
-        "updateTime": null,
-        "effectObject": "danmu",
-        "action": "send",
-        "function": "superBarrageBlue",
-        "func": "superBarrageBlue",
-        "description": "超级弹幕",
-        "icon": "chaojidanmu",
-        "endTime": 3675562920000
-      }, {
-        "id": null,
-        "createTimeStr": "",
-        "createTime": null,
-        "updateTime": null,
-        "effectObject": "growth",
-        "action": "play",
-        "function": "0.15",
-        "func": "0.15",
-        "description": "看剧经验+15%",
-        "icon": "jingyanzhijiacheng",
-        "endTime": 3675562920000
-      }, {
-        "id": null,
-        "createTimeStr": "",
-        "createTime": null,
-        "updateTime": null,
-        "effectObject": "video",
-        "action": "play",
-        "function": "vipVideo",
-        "func": "vipVideo",
-        "description": "勋章专享剧集",
-        "icon": "zhuanxiangjuji",
-        "endTime": 3675562920000
-      }, {
-        "id": null,
-        "createTimeStr": "",
-        "createTime": null,
-        "updateTime": null,
-        "effectObject": "growth",
-        "action": "play",
-        "function": "0.4",
-        "func": "0.4",
-        "description": "看剧经验+40%",
-        "icon": "jingyanzhijiacheng",
-        "endTime": 3675562920000
-      }, {
-        "id": null,
-        "createTimeStr": "",
-        "createTime": null,
-        "updateTime": null,
-        "effectObject": "video",
-        "action": "play",
-        "function": "noLimit",
-        "func": "noLimit",
-        "description": "看剧无限制",
-        "icon": "kanjuwuxianzhi",
-        "endTime": 3675562920000
-      }, {
-        "id": null,
-        "createTimeStr": "",
-        "createTime": null,
-        "updateTime": null,
-        "effectObject": "video",
-        "action": "play",
-        "function": "noAd",
-        "func": "noAd",
-        "description": "看剧无广告",
-        "icon": "kanjuwuguanggao",
-        "endTime": 3675562920000
-      }],
-      "createTime": 1620544566000,
-      "newUser": false,
-      "certLabel": null,
-      "certNote": null,
-      "vipMedal": {
-        "name": "yyds",
-        "endTime": "9999-06-08 15:17:08",
-        "imgUrl": "http://img.rr.tv/cover/20200424/o_1587720799676.png",
-        "id": 1,
-        "isExpired": false
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="origin" name="referrer">
+    <title>Forbidden &middot; GitHub</title>
+    <style type="text/css" media="screen">
+      body {
+        background-color: #f1f1f1;
+        margin: 0;
       }
-    }
-  }
-};
+      body,
+      input,
+      button {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      }
+      .container { margin: 30px auto 40px auto; width: 800px; text-align: center; }
+      a { color: #4183c4; text-decoration: none; font-weight: bold; }
+      a:hover { text-decoration: underline; }
+      h1, h2, h3 { color: #666; }
+      ul { list-style: none; padding: 25px 0; }
+      li {
+        display: inline;
+        margin: 10px 50px 10px 0px;
+      }
+      .logo { display: inline-block; margin-top: 35px; }
+      .logo-img-2x { display: none; }
+      @media
+      only screen and (-webkit-min-device-pixel-ratio: 2),
+      only screen and (   min--moz-device-pixel-ratio: 2),
+      only screen and (     -o-min-device-pixel-ratio: 2/1),
+      only screen and (        min-device-pixel-ratio: 2),
+      only screen and (                min-resolution: 192dpi),
+      only screen and (                min-resolution: 2dppx) {
+        .logo-img-1x { display: none; }
+        .logo-img-2x { display: inline-block; }
+      }
+    </style>
+  </head>
+  <body>
 
-$done({body: JSON.stringify(obj)});
+    <div class="container">
+      <h1>Access to this site has been restricted.</h1>
+
+      <p>
+        <br>
+        If you believe this is an error,
+        please contact <a href="https://support.github.com">Support</a>.
+      </p>
+
+      <div id="s">
+        <a href="https://githubstatus.com">GitHub Status</a> &mdash;
+        <a href="https://twitter.com/githubstatus">@githubstatus</a>
+      </div>
+    </div>
+  </body>
+</html>

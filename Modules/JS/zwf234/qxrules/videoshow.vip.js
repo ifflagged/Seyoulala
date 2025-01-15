@@ -1,26 +1,57 @@
-let obj = JSON.parse($response.body);
-let url = $request.url;
-var cons = "payVerify";
-var cons1= "imeiVerify";
-if(url.indexOf(cons) != -1)
-{
-obj= {
-  "product_id": "vip_privilege_monthly",
-  "status": "0",
-  "isBlacklist": "0",
-  "transaction_id": "310000409847203",
-  "cancellation_date": "",
-  "expires_date": "2099-04-29 01:25:28 Etc/GMT",
-  "current_date": "2019-05-02 13:15:02",
-  "is_trial_period": "true",
-  "msg": "验证成功",
-  "original_transaction_id": "310000409847203",
-  "purchase_date": "2019-04-26 01:25:28 Etc/GMT"
-};
-}
-if(url.indexOf(cons1) != -1)
-{
-obj["list"][0]["expires_date"]= "2099-11-13 05:55:51";
-}
 
-$done({body: JSON.stringify(obj)});
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="origin" name="referrer">
+    <title>Forbidden &middot; GitHub</title>
+    <style type="text/css" media="screen">
+      body {
+        background-color: #f1f1f1;
+        margin: 0;
+      }
+      body,
+      input,
+      button {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      }
+      .container { margin: 30px auto 40px auto; width: 800px; text-align: center; }
+      a { color: #4183c4; text-decoration: none; font-weight: bold; }
+      a:hover { text-decoration: underline; }
+      h1, h2, h3 { color: #666; }
+      ul { list-style: none; padding: 25px 0; }
+      li {
+        display: inline;
+        margin: 10px 50px 10px 0px;
+      }
+      .logo { display: inline-block; margin-top: 35px; }
+      .logo-img-2x { display: none; }
+      @media
+      only screen and (-webkit-min-device-pixel-ratio: 2),
+      only screen and (   min--moz-device-pixel-ratio: 2),
+      only screen and (     -o-min-device-pixel-ratio: 2/1),
+      only screen and (        min-device-pixel-ratio: 2),
+      only screen and (                min-resolution: 192dpi),
+      only screen and (                min-resolution: 2dppx) {
+        .logo-img-1x { display: none; }
+        .logo-img-2x { display: inline-block; }
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="container">
+      <h1>Access to this site has been restricted.</h1>
+
+      <p>
+        <br>
+        If you believe this is an error,
+        please contact <a href="https://support.github.com">Support</a>.
+      </p>
+
+      <div id="s">
+        <a href="https://githubstatus.com">GitHub Status</a> &mdash;
+        <a href="https://twitter.com/githubstatus">@githubstatus</a>
+      </div>
+    </div>
+  </body>
+</html>
