@@ -1,8 +1,6 @@
-#规则数量:6
-#不支持的规则数量:1
+#规则数量:10
+#不支持的规则数量:0
 #已排除的规则数量:0
-#不支持的规则:
-#AND,((DOMAIN-SUFFIX,makima.online), (NOT,((DOMAIN,restrict.makima.online))))
 
 #-----------------以下为解析后的规则-----------------#
 
@@ -11,4 +9,8 @@ DOMAIN-SUFFIX,github.site
 DOMAIN-SUFFIX,github.store
 DOMAIN-SUFFIX,coemn.com
 DOMAIN-SUFFIX,carryz.net
+DOMAIN,cinema.makima.online
+DOMAIN,theater.makima.online
+DOMAIN,anime.makima.online
+DOMAIN,celluloid.makima.online
 DOMAIN,jz.mcjoker.xyz 
