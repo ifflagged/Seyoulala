@@ -1,4 +1,4 @@
-#规则数量:10
+#规则数量:6
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -10,8 +10,4 @@ payload:
   - DOMAIN-SUFFIX,github.store
   - DOMAIN-SUFFIX,coemn.com
   - DOMAIN-SUFFIX,carryz.net
-  - DOMAIN,cinema.makima.online
-  - DOMAIN,theater.makima.online
-  - DOMAIN,anime.makima.online
-  - DOMAIN,celluloid.makima.online
   - DOMAIN,jz.mcjoker.xyz 
