@@ -9,5 +9,5 @@ DOMAIN-SUFFIX,github.site
 DOMAIN-SUFFIX,github.store
 DOMAIN-SUFFIX,coemn.com
 DOMAIN-SUFFIX,carryz.net
-DOMAIN-SUFFIX,makima.online
+AND,((DOMAIN-SUFFIX,makima.online), (NOT,((DOMAIN,restrict.makima.online))))
 DOMAIN,jz.mcjoker.xyz 
