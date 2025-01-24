@@ -65,7 +65,7 @@ https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/T/%E5%A4%A9%
 https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/T/%E5%A4%A9%E5%BA%9C%E9%80%9A/rewrite/tft.conf
 https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/W/%E7%BD%91%E4%B8%8A%E5%9B%BD%E7%BD%91/filter/sgcc.list😂https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/W/%E7%BD%91%E4%B8%8A%E5%9B%BD%E7%BD%91/rewrite/sgcc.conf
 https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/X/%E5%B8%8C%E5%B0%94%E9%A1%BF%E8%8D%A3%E8%AA%89%E5%AE%A2%E4%BC%9A/rewrite/hilton.conf
-https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/Y/%E6%98%93%E6%8D%B7%E5%8A%A0%E6%B2%B9/rewrite/ejoy.conf
+https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/Y/%E6%98%93%E6%8D%B7%E5%8A%A0%E6%B2%B9/rewrite/ejoy.conf😂https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/Applet/Wechat/Y/%E6%98%93%E6%8D%B7%E5%8A%A0%E6%B2%B9/rewrite/ejoy.conf
 https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/Y/%E4%BA%91%E9%97%AA%E4%BB%98/filter/unionPay.list😂https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/Y/%E4%BA%91%E9%97%AA%E4%BB%98/rewrite/unionPay.conf
 https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/Z/%E4%B8%AD%E5%9B%BD%E7%A7%BB%E5%8A%A8/filter/10086.list😂https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/Z/%E4%B8%AD%E5%9B%BD%E7%A7%BB%E5%8A%A8/rewrite/10086_general.conf
 https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/Z/%E6%8B%9B%E5%95%86%E9%93%B6%E8%A1%8C/filter/cmb.list😂https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/Z/%E6%8B%9B%E5%95%86%E9%93%B6%E8%A1%8C/rewrite/cmb.conf
