@@ -25,6 +25,9 @@ Modules/Surge/DualSubs/DualSubs.Spotify.sgmodule # Loon,Shadowrocket
 # D #
 Modules/Surge/ddgksf2013/SmzdmAds.sgmodule # Loon,Shadowrocket
 
+# F #
+Modules/Surge/fmz200/weibo.sgmodule # Loon,Shadowrocket
+
 # K #
 Modules/Surge/Kelee/BlockAdvertisers.sgmodule # Loon,Shadowrocket
 Modules/Surge/Kelee/12306_remove_ads.sgmodule # Loon,Shadowrocket
@@ -37,7 +40,6 @@ Modules/Surge/Kelee/JD_remove_ads.sgmodule # Loon,Shadowrocket
 Modules/Shadowrocket/Kelee/MeetYou_remove_ads.srmodule
 Modules/Surge/Kelee/PinDuoDuo_remove_ads.sgmodule # Loon,Shadowrocket
 Modules/Surge/Kelee/RedPaper_remove_ads.sgmodule # Loon,Shadowrocket
-Modules/Surge/Kelee/Weibo_remove_ads.sgmodule # Loon,Shadowrocket
 Modules/Surge/Kelee/Weixin_Official_Accounts_remove_ads.sgmodule # Loon,Shadowrocket
 
 # Y #
