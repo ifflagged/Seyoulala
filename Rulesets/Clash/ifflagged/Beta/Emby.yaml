@@ -1,4 +1,4 @@
-#规则数量:23
+#规则数量:24
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -21,6 +21,7 @@ payload:
   - DOMAIN-SUFFIX,vfing.de
   - DOMAIN-SUFFIX,favoritewife.com
   - DOMAIN-SUFFIX,jingzhe.pro
+  - DOMAIN-SUFFIX,beebi.org
   - DOMAIN-SUFFIX,misty.cx
   - DOMAIN-SUFFIX,hovervan.org
   - DOMAIN-SUFFIX,wenjian.de
