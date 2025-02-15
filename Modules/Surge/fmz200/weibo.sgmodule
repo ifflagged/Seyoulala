@@ -9,7 +9,7 @@
 #!tg-group=https://t.me/lanjieguanggao
 #!tag=去广告, 微博, fmz200
 #!system=ios
-#!date=2025-02-08 21:00:00
+#!date=2025-02-15 21:00:00
 
 [Rule]
 # 收集用户信息，上传用户日志的请求
@@ -36,7 +36,6 @@ DOMAIN-SUFFIX,ads.aws.viber.com,REJECT
 DOMAIN-SUFFIX,alitui.weibo.com,REJECT
 DOMAIN-SUFFIX,dp.im.weibo.cn,REJECT
 DOMAIN-SUFFIX,biz.weibo.com.cn,REJECT
-DOMAIN-SUFFIX,biz.weibo.com,REJECT
 DOMAIN-SUFFIX,click.uve.weibo.com,REJECT
 DOMAIN-SUFFIX,wax.weibo.com,REJECT
 DOMAIN-SUFFIX,wbapp.uve.weibo.com,REJECT
@@ -82,6 +81,8 @@ DOMAIN,adpinpai.video.weibocdn.com,REJECT
 ^https:\/\/api\.weibo\.cn\/2\/!\/huati\/discovery_home_bottom_channels data-type=text data="{}" status-code=200
 
 ^https:\/\/api\.weibo\.cn\/2\/!\/chaohua\/discovery\/home_bottom\/switch data-type=text data="{}" status-code=200
+
+^https:\/\/api\.weibo\.cn\/2\/!\/was\/finder\/searchbarchange\? data-type=text data="{}" status-code=200
 
 [Script]
 # 微博移除发现页广告
