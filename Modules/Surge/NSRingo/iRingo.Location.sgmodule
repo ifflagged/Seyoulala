@@ -1,3 +1,20 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Error><Code>AuthenticationFailed</Code><Message>Server failed to authenticate the request. Make sure the value of Authorization header is formed correctly including the signature.
-RequestId:0494ef08-a01e-0051-4a9c-887cd9000000
-Time:2025-02-26T22:18:34.9994388Z</Message><AuthenticationErrorDetail>Signature not valid in the specified time frame: Start [Wed, 26 Feb 2025 22:18:35 GMT] - Expiry [Wed, 26 Feb 2025 22:48:35 GMT] - Current [Wed, 26 Feb 2025 22:18:34 GMT]</AuthenticationErrorDetail></Error>
+#!name =  iRingo: 📍 Location
+#!desc = 自定义「定位服务」\n通过「基于网络的地区检测」结果始终为用户设置的地区。
+#!openUrl = http://boxjs.com/#/app/iRingo.Location
+#!author = VirgilClyne[https://github.com/VirgilClyne]
+#!homepage = https://NSRingo.github.io/guide/GeoServices/location
+#!icon = https://images.macrumors.com/article-new/2019/07/ios_location_services-250x250.jpg
+#!category =  iRingo
+#!arguments = GeoCountryCode:US
+#!arguments-desc = GeoCountryCode: [地区检测] 地理国家或地区代码
+
+[Rule]
+# 📍 Country Code
+DOMAIN,gspe1-ssl.ls.apple.com,DIRECT
+
+[Script]
+# 📍 Country Code
+📍 Location.pep.gcc.response = type=http-response, pattern=^https?:\/\/gspe1-ssl\.ls\.apple\.com\/pep\/gcc, requires-body=1, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/NSRingo/iRingo.Location/response.bundle.js, argument=PEP.GCC={{{GeoCountryCode}}}
+
+[MITM]
+hostname = %APPEND% gspe1-ssl.ls.apple.com
