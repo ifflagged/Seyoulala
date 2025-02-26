@@ -1,4 +1,4 @@
-#规则数量:23
+#规则数量:24
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -24,6 +24,7 @@ DOMAIN-SUFFIX,beebi.org
 DOMAIN-SUFFIX,misty.cx
 DOMAIN-SUFFIX,nijigem.by
 DOMAIN-SUFFIX,wenjian.de
+DOMAIN-SUFFIX,114514.quest
 DOMAIN,emby3.mcjoker.xyz
 DOMAIN-SUFFIX,aliz.work
 DOMAIN-SUFFIX,reflix.top
