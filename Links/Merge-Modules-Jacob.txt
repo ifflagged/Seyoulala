@@ -57,7 +57,7 @@ Modules/Surge/zirawell/beautycam.sgmodule # Loon,Shadowrocket
 Modules/Surge/zirawell/bydwc.sgmodule # Loon,Shadowrocket
 Modules/Surge/zirawell/ccb.sgmodule # Loon,Shadowrocket
 Modules/Surge/zirawell/cmb.sgmodule # Loon,Shadowrocket
-Modules/Surge/zirawell/dianping.sgmodule # Loon,Shadowrocket
+# Modules/Surge/zirawell/dianping.sgmodule # Loon,Shadowrocket
 Modules/Surge/zirawell/ehaier.sgmodule # Loon,Shadowrocket
 Modules/Surge/zirawell/ejoy.sgmodule # Loon,Shadowrocket
 Modules/Surge/zirawell/eleme.sgmodule # Loon,Shadowrocket
@@ -81,7 +81,7 @@ Modules/Surge/BiliUniverse/BiliBili.ADBlock.sgmodule # Loon,Shadowrocket
 Modules/Surge/BiliUniverse/BiliBili.Enhanced.sgmodule # Loon,Shadowrocket
 Modules/Surge/BiliUniverse/BiliBili.Redirect.sgmodule # Loon,Shadowrocket
 
-Modules/Surge/Yuheng0101/heiliao.sgmodule # Loon,Shadowrocket
+# Modules/Surge/Yuheng0101/heiliao.sgmodule # Loon,Shadowrocket
 
 Modules/Surge/ifflagged/TikTok.sgmodule # Loon,Shadowrocket
 
