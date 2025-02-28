@@ -22,7 +22,7 @@ DOMAIN,httpsdns.baidu.com,REJECT,extended-matching
 DOMAIN,httpdns.baidu.com,REJECT,extended-matching
 # refer: https://bce-cdn.bj.bcebos.com/p3m/pdf/bce-doc/online/HTTPDNS/HTTPDNS.pdf
 DOMAIN,httpdns.baidubce.com,REJECT,extended-matching
-IP-CIDR,186.76.76.200/32,REJECT,no-resolve
+IP-CIDR,180.76.76.200/32,REJECT,no-resolve
 # Bilibili
 DOMAIN,httpdns.bilivideo.com,REJECT,extended-matching
 # KEY_EXT_P2P_HTTPDNS_BILI_IP
@@ -55,11 +55,11 @@ IP-CIDR6,2402:db40:5100:1011::5/128,REJECT,no-resolve
 IP-CIDR,103.224.222.208/32,REJECT,no-resolve
 # Keep
 DOMAIN,httpdns.calorietech.com,REJECT,extended-matching
-# Kuaishou
-DOMAIN,kuaishou.httpdns.pro,REJECT,extended-matching
 # Meituan
 DOMAIN,httpdns.meituan.com,REJECT,extended-matching
 DOMAIN,httpdnsvip.meituan.com,REJECT,extended-matching
+IP-CIDR,202.90.108.13/32,REJECT,no-resolve
+IP-CIDR,202.90.110.46/32,REJECT,no-resolve
 # refer: https://lbs.netease.im/lbs/conf.jsp
 DOMAIN,httpdns.yunxindns.com,REJECT,extended-matching
 DOMAIN,httpdns.n.netease.com,REJECT,extended-matching
@@ -99,10 +99,12 @@ IP-CIDR6,240e:928:1400:10::25/128,REJECT,no-resolve
 IP-CIDR,182.254.116.117/32,REJECT,no-resolve
 IP-CIDR,182.254.118.119/32,REJECT,no-resolve
 # refer: https://github.com/lwd-temp/anti-ip-attribution/issues/24
-IP-CIDR,118.89.204.198/23,REJECT,no-resolve
+IP-CIDR,118.89.204.198/32,REJECT,no-resolve
 IP-CIDR6,2402:4e00:1200:ed00:0:9089:6dac:96b6/128,REJECT,no-resolve
 
 [URL Rewrite]
+# ByteDance
+^https?:\/\/.+\.zijieapi\.com\/get_domains\/ - reject
 # Alipay
 ^https?:\/\/amdc\.alipay\.com\/s?query - reject
 ^https?:\/\/amdc-sibling\.alipay\.com\.cn\/s?query - reject
@@ -172,5 +174,5 @@ IP-CIDR6,2402:4e00:1200:ed00:0:9089:6dac:96b6/128,REJECT,no-resolve
 ^http:\/\/103\.41\.167\.237\/v2\/resolv - reject
 
 [MITM]
-hostname = %APPEND% 119.29.29.98, 119.29.29.99, amdc.alipay.com, amdc-sibling.alipay.com.cn, dns.jd.com, *.httpdns.pro
+hostname = %APPEND% 119.29.29.98, 119.29.29.99, amdc.alipay.com, amdc-sibling.alipay.com.cn, dns.jd.com, *.httpdns.pro, *.zijieapi.com
 

@@ -29,7 +29,7 @@ DOMAIN,httpdns.baidu.com,REJECT,extended-matching
 # BaiduBCE
 # refer: https://bce-cdn.bj.bcebos.com/p3m/pdf/bce-doc/online/HTTPDNS/HTTPDNS.pdf
 DOMAIN,httpdns.baidubce.com,REJECT,extended-matching
-IP-CIDR,186.76.76.200/32,REJECT,no-resolve
+IP-CIDR,180.76.76.200/32,REJECT,no-resolve
 
 # Bilibili
 DOMAIN,httpdns.bilivideo.com,REJECT,extended-matching
@@ -54,6 +54,9 @@ IP-CIDR,116.63.10.31/32,REJECT,no-resolve
 IP-CIDR,112.64.218.119/32,REJECT,no-resolve
 IP-CIDR,112.65.200.117/32,REJECT,no-resolve
 
+# ByteDance
+^https?:\/\/.+\.zijieapi\.com\/get_domains\/ - reject
+
 # Huawei
 DOMAIN,httpdns.c.cdnhwc2.com,REJECT,extended-matching
 
@@ -70,12 +73,11 @@ IP-CIDR,103.224.222.208/32,REJECT,no-resolve
 # Keep
 DOMAIN,httpdns.calorietech.com,REJECT,extended-matching
 
-# Kuaishou
-DOMAIN,kuaishou.httpdns.pro,REJECT,extended-matching
-
 # Meituan
 DOMAIN,httpdns.meituan.com,REJECT,extended-matching
 DOMAIN,httpdnsvip.meituan.com,REJECT,extended-matching
+IP-CIDR,202.90.108.13/32,REJECT,no-resolve
+IP-CIDR,202.90.110.46/32,REJECT,no-resolve
 
 # NetEase
 # refer: https://lbs.netease.im/lbs/conf.jsp
@@ -135,7 +137,7 @@ IP-CIDR,182.254.118.119/32,REJECT,no-resolve
 
 # Zhihu
 # refer: https://github.com/lwd-temp/anti-ip-attribution/issues/24
-IP-CIDR,118.89.204.198/23,REJECT,no-resolve
+IP-CIDR,118.89.204.198/32,REJECT,no-resolve
 IP-CIDR6,2402:4e00:1200:ed00:0:9089:6dac:96b6/128,REJECT,no-resolve
 
 [URL Rewrite]
@@ -227,4 +229,4 @@ IP-CIDR6,2402:4e00:1200:ed00:0:9089:6dac:96b6/128,REJECT,no-resolve
 ^http:\/\/103\.41\.167\.237\/v2\/resolv - reject
 
 [MITM]
-hostname = %APPEND% 119.29.29.98, 119.29.29.99, amdc.alipay.com, amdc-sibling.alipay.com.cn, dns.jd.com, *.httpdns.pro
+hostname = %APPEND% 119.29.29.98, 119.29.29.99, amdc.alipay.com, amdc-sibling.alipay.com.cn, dns.jd.com, *.httpdns.pro, *.zijieapi.com
