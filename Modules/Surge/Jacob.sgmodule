@@ -43,6 +43,7 @@ IP-CIDR, 114.116.215.110/32, REJECT, no-resolve
 IP-CIDR, 116.63.10.31/32, REJECT, no-resolve
 IP-CIDR, 112.64.218.119/32, REJECT, no-resolve
 IP-CIDR, 112.65.200.117/32, REJECT, no-resolve
+^https?:\/\/.+\.zijieapi\.com\/get_domains\/-reject
 DOMAIN, httpdns.c.cdnhwc2.com, REJECT, extended-matching
 DOMAIN, dns.jd.com, REJECT, extended-matching
 IP-CIDR, 101.124.19.122/32, REJECT, no-resolve
@@ -963,7 +964,6 @@ URL-REGEX, "^http:\/\/[\d\.]+:8000\/v1\/resource\/\w{32}-1-SPLASH", REJECT-TINYG
 ^http:\/\/116\.63\.10\.31\/resolve - reject
 ^http:\/\/112\.64\.218\.119\/resolve - reject
 ^http:\/\/112\.65\.200\.117\/resolve - reject
-^https?:\/\/.+\.zijieapi\.com\/get_domains\/ - reject
 ^https:\/\/dns\.jd\.com\/v6\/b - reject
 ^http:\/\/103\.37\.155\.60\/fetch - reject
 ^http:\/\/101\.35\.204\.35\/d - reject
