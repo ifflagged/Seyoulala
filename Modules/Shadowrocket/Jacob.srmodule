@@ -1501,11 +1501,6 @@ upos-sz-upcdntx.bilivideo.com = server:https://doh.pub/dns-query // BiliBili upo
 *.taipei = server:https://dns.twnic.tw/dns-query // TWNIC DNS
 *.he.net = server:https://ordns.he.net/dns-query // HE.net
 
-[SSID Setting]
-# DNS
-SSID:Jacob dns-server=system,encrypted-dns-server=off
-SSID:McDonald's dns-server=system,encrypted-dns-server=off
-
 [Script]
 # iRingo.WeatherKit
 🌤 WeatherKit.api.v1.availability.response = type=http-response, pattern=^https?:\/\/weatherkit\.apple\.com\/api\/v1\/availability\/, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/NSRingo/iRingo.WeatherKit/response.bundle.js, requires-body=true, argument=NextHour.Provider="ColorfulClouds"&AQI.Provider="ColorfulClouds"&AQI.ReplaceProviders="QWeather"&AQI.Local.Scale="WAQI_InstantCast"&AQI.Local.ReplaceScales="HJ6332012"&AQI.Local.ConvertUnits="false"&API.ColorfulClouds.Token="",API.QWeather.Host:"&API.QWeather.Host="{{{API.QWeather.Host}}}"&API.QWeather.Token="",API.WAQI.Token:"&API.WAQI.Token="{{{API.WAQI.Token}}}"&LogLevel="WARN"

@@ -1506,11 +1506,6 @@ upos-sz-upcdntx.bilivideo.com = server:https://doh.pub/dns-query // BiliBili upo
 ^https?:\/\/manga\.bilibili\.com\/twirp\/comic\.v\d\.Comic\/ListFlash data-type=text data="{}" header="application/json"
 ^https?:\/\/api\.live\.bilibili\.com\/xlive\/e-commerce-interface\/v1\/ecommerce-user\/get_shopping_info\? data-type=text data="{}" header="application/json"
 
-[SSID Setting]
-# DNS
-SSID:Jacob dns-server=system,encrypted-dns-server=off
-SSID:McDonald's dns-server=system,encrypted-dns-server=off
-
 [Script]
 # iRingo.WeatherKit
 🌤 WeatherKit.api.v1.availability.response = type=http-response, pattern=^https?:\/\/weatherkit\.apple\.com\/api\/v1\/availability\/, requires-body=1, engine=webview, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/NSRingo/iRingo.WeatherKit/response.bundle.js, argument=NextHour.Provider="{{{NextHour.Provider}}}"&AQI.Provider="{{{AQI.Provider}}}"&AQI.ReplaceProviders="{{{AQI.ReplaceProviders}}}"&AQI.Local.Scale="{{{AQI.Local.Scale}}}"&AQI.Local.ReplaceScales="{{{AQI.Local.ReplaceScales}}}"&AQI.Local.ConvertUnits="{{{AQI.Local.ConvertUnits}}}"&API.ColorfulClouds.Token="{{{API.ColorfulClouds.Token}}}"&API.QWeather.Host="{{{API.QWeather.Host}}}"&API.QWeather.Token="{{{API.QWeather.Token}}}"&API.WAQI.Token="{{{API.WAQI.Token}}}"&LogLevel="{{{LogLevel}}}"
