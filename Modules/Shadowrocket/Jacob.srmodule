@@ -941,7 +941,6 @@ URL-REGEX, "^http:\/\/[\d\.]+:8000\/v1\/resource\/\w{32}-1-SPLASH", REJECT-DICT
 
 [URL Rewrite]
 # HTTPDNS.Block
-^https?:\/\/.+\.zijieapi\.com\/get_domains\/ - reject
 ^https?:\/\/amdc\.alipay\.com\/s?query - reject
 ^https?:\/\/amdc-sibling\.alipay\.com\.cn\/s?query - reject
 ^https?:\/\/110\.76\.8\.150\/squery - reject
@@ -974,6 +973,7 @@ URL-REGEX, "^http:\/\/[\d\.]+:8000\/v1\/resource\/\w{32}-1-SPLASH", REJECT-DICT
 ^http:\/\/116\.63\.10\.31\/resolve - reject
 ^http:\/\/112\.64\.218\.119\/resolve - reject
 ^http:\/\/112\.65\.200\.117\/resolve - reject
+^https?:\/\/.+\.zijieapi\.com\/get_domains\/ - reject
 ^https:\/\/dns\.jd\.com\/v6\/b - reject
 ^http:\/\/103\.37\.155\.60\/fetch - reject
 ^http:\/\/101\.35\.204\.35\/d - reject
