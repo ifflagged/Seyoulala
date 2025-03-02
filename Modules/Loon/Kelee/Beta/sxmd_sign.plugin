@@ -9,7 +9,12 @@
 #!date=2024-10-25 15:16:38
 #!tag=签到
 
+[Argument]
+account=input, "",tag = 账号, desc = 这里需要输入有效的账号
+password=input, "",tag = 密码, desc = 这里需要输入有效的密码
+CRONEXP=input, "0 0 * * *",tag = 定时参数, desc = 这里需要输入符合CRON表达式的参数
+
 [Script]
 # 定时签到
-cron "null" script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/sxmd_sign/sxmd.js, timeout=120, tag=书香门第每日签到, argument="[{account},{password}]"
+cron "{CRONEXP}" script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/sxmd_sign/sxmd.js, timeout=120, tag=书香门第每日签到, argument="[{account},{password}]"
 
