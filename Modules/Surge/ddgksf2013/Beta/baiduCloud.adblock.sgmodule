@@ -41,5 +41,5 @@ baiduCloud.adblock = type=http-response, pattern=^https:\/\/pan\.baidu\.com\/res
 baiduCloud.adblock = type=http-response, pattern=^https:\/\/pan\.baidu\.com\/feed\/cardinfos, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ddgksf2013/baiduCloud.adblock/baiduCloud.adblock.js, requires-body=true, max-size=-1, timeout=60
 
 [MITM]
- = %APPEND% pan.baidu.com, afd.baidu.com
+hostname = %APPEND% pan.baidu.com, afd.baidu.com
 

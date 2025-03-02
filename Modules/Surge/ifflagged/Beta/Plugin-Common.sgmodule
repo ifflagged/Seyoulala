@@ -13,5 +13,5 @@
 ^https:\/\/api\.pinduoduo\.com\/api\/alexa\/cells\/hub\/v3\? data-type=text data="{}" status-code=200
 
 [MITM]
- = %APPEND% api.pinduoduo.com
+hostname = %APPEND% api.pinduoduo.com
 

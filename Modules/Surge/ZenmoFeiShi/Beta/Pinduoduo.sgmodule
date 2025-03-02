@@ -38,5 +38,5 @@ Pinduoduo = type=http-response, pattern=^https:\/\/api\.pinduoduo\.com\/api\/ale
 Pinduoduo = type=http-response, pattern=^https:\/\/api\.pinduoduo\.com\/api\/oak\/integration\/render, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ZenmoFeiShi/Pinduoduo/Pinduoduo.js, requires-body=true, max-size=-1, timeout=60
 
 [MITM]
- = %APPEND% api.pinduoduo.com
+hostname = %APPEND% api.pinduoduo.com
 

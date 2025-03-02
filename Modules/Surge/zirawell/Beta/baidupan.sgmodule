@@ -25,5 +25,5 @@ baiduPan = type=http-response, pattern=^https?:\/\/pan\.baidu\.com\/api\/getsysc
 baiduPan = type=http-response, pattern=^https?:\/\/pan\.baidu\.com\/rest\/\d\.\d\/membership\/user, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/baidupan/baiduPan.js, requires-body=true, max-size=-1, timeout=60
 
 [MITM]
- = %APPEND% pan.baidu.com, ndstatic.cdn.bcebos.com, staticsns.cdn.bcebos.com, issuecdn.baidupcs.com, update.pan.baidu.com, fc-video.cdn.bcebos.com, rp.hpplay.cn
+hostname = %APPEND% pan.baidu.com, ndstatic.cdn.bcebos.com, staticsns.cdn.bcebos.com, issuecdn.baidupcs.com, update.pan.baidu.com, fc-video.cdn.bcebos.com, rp.hpplay.cn
 

@@ -12,5 +12,5 @@
 ^https?:\/\/api\.mcd\.cn\/bff\/portal\/richpop data-type=text data="{}" status-code=200
 
 [MITM]
- = %APPEND% api.mcd.cn
+hostname = %APPEND% api.mcd.cn
 

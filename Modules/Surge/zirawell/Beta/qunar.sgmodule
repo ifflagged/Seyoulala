@@ -14,5 +14,5 @@
 ^https?:\/\/qimgs\.qunarzz\.com\/wpf_newmpic_001\/06c3a131f53cca9a78dd26272e3e4cb3 data-type=tiny-gif status-code=200
 
 [MITM]
- = %APPEND% qde.qunar.com, homefront.qunar.com, client.qunar.com, qimgs.qunarzz.com
+hostname = %APPEND% qde.qunar.com, homefront.qunar.com, client.qunar.com, qimgs.qunarzz.com
 

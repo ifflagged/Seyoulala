@@ -11,5 +11,5 @@
 ^https?:\/\/l[0-9]{1}\.51fanli\.net\/app\/images\/splash\/202\d{1}\/\d{2}\/.*.jpg data-type=text data=" " status-code=200
 
 [MITM]
- = %APPEND% l*.51fanli.net
+hostname = %APPEND% l*.51fanli.net
 

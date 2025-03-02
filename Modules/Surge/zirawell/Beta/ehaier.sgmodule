@@ -36,5 +36,5 @@ haier = type=http-response, pattern=^https?:\/\/oss-zjrs\.haier\.net\/resource\/
 haier = type=http-response, pattern=^https?:\/\/zj\.haier\.net\/omsappapi\/resource\/v\d\/get\/resourceBag$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/ehaier/haier.js, requires-body=true, max-size=-1, timeout=60
 
 [MITM]
- = %APPEND% dualstack*.amap.com, oss-zjrs.haier.net, zj.haier.net
+hostname = %APPEND% dualstack*.amap.com, oss-zjrs.haier.net, zj.haier.net
 

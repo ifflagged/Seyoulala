@@ -7,5 +7,5 @@
 ^https?:\/\/cache\.bydauto\.com\.cn\/dilink_user_upload\/20 data-type=text data=" " status-code=200
 
 [MITM]
- = %APPEND% cache.bydauto.com.cn
+hostname = %APPEND% cache.bydauto.com.cn
 

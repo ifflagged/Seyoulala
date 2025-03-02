@@ -69,5 +69,5 @@ NicegramProCrack = type=http-response, pattern=^https?:\/\/nicegram\.cloud\/api\
 CamscannerProCrack = type=http-response, pattern=^https:\/\/(api|api-cs)\.intsig\.net\/purchase\/cs\/query_property\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ddgksf2013/ForOwnUse/CamscannerProCrack.js, requires-body=true, max-size=-1, timeout=60
 
 [MITM]
- = %APPEND% *appraven.net, *.oracle.bendingspoonsapps.com, *.yangjibao.com, explorer.tratao.com, server.zbisq.com, mobile.flightradar24.com, api4.bybutter.com, wallpaper.soutushenqi.com, api.tipsoon.com, *xiaozujian, lchttpapi.xczim.com, app.yiyan.art, gateway.caixin.com, notability.com, spclient.wg.spotify.com, ticktick.com, ap*.intsig.net, ipadcms.caixin.com, *.aoscdn.com, *.xiuxiu.meitu.com, claritywallpaper.com, api.meiease.cn, nicegram.cloud
+hostname = %APPEND% *appraven.net, *.oracle.bendingspoonsapps.com, *.yangjibao.com, explorer.tratao.com, server.zbisq.com, mobile.flightradar24.com, api4.bybutter.com, wallpaper.soutushenqi.com, api.tipsoon.com, *xiaozujian, lchttpapi.xczim.com, app.yiyan.art, gateway.caixin.com, notability.com, spclient.wg.spotify.com, ticktick.com, ap*.intsig.net, ipadcms.caixin.com, *.aoscdn.com, *.xiuxiu.meitu.com, claritywallpaper.com, api.meiease.cn, nicegram.cloud
 

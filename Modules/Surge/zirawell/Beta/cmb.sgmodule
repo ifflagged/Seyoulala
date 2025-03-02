@@ -16,5 +16,5 @@ DOMAIN,yl.zh.cmbchina.com,REJECT
 ^https?:\/\/mobile\.cmbchina\.com\/dcardmanage\/salary-welfare\/get-recommend data-type=file data="https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/cmb/cmb.json"
 
 [MITM]
- = %APPEND% webappcfg.paas.cmbchina.com, webapp.joyingtrip.com, mobile.cmbchina.com
+hostname = %APPEND% webappcfg.paas.cmbchina.com, webapp.joyingtrip.com, mobile.cmbchina.com
 

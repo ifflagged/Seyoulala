@@ -29,5 +29,5 @@ smzdm = type=http-response, pattern=^https?:\/\/article-api\.smzdm\.com\/publish
 smzdm = type=http-response, pattern=^https?:\/\/qianbao\.smzdm\.com\/v\d\/app\/home, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/smzdm/smzdm.js, requires-body=true, max-size=-1, timeout=60
 
 [MITM]
- = %APPEND% user-api.smzdm.com, app-api.smzdm.com, haojia-api.smzdm.com, homepage-api.smzdm.com, article-api.smzdm.com, qianbao.smzdm.com
+hostname = %APPEND% user-api.smzdm.com, app-api.smzdm.com, haojia-api.smzdm.com, homepage-api.smzdm.com, article-api.smzdm.com, qianbao.smzdm.com
 

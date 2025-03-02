@@ -115,5 +115,5 @@ weibo_json = type=http-response, pattern=^https?:\/\/weibointl\.api\.weibo\.cn\/
 weibo_json = type=http-response, pattern=^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?a=search_topic, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ddgksf2013/Weibo/weibo_json.js, requires-body=true, max-size=-1, timeout=60
 
 [MITM]
- = %APPEND% api.weibo.*, *.api.weibo.*, mapi.weibo.*, *.uve.weibo.com, new.vip.weibo.cn, boot.biz.weibo.com
+hostname = %APPEND% api.weibo.*, *.api.weibo.*, mapi.weibo.*, *.uve.weibo.com, new.vip.weibo.cn, boot.biz.weibo.com
 

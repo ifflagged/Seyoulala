@@ -53,5 +53,5 @@ dianping = type=http-response, pattern=^https?:\/\/img\.meituan\.net\/dpmobile\/
 dianping = type=http-response, pattern=^https?:\/\/ddplus\.meituan\.net\/v\d\/mss_\w+\/picassovc, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/dianping/dianping.js, requires-body=true, max-size=-1, timeout=60
 
 [MITM]
- = %APPEND% 103.37.155.60, *.dianping.com, img.meituan.net, p.meituan.com, rms.meituan.com, www.dpfile.com, awp-assets.meituan.net, s3plus.meituan.net, p*.meituan.net, ddplus.meituan.net, mars.meituan.com, mapi.dianping.com, m.dianping.com
+hostname = %APPEND% 103.37.155.60, *.dianping.com, img.meituan.net, p.meituan.com, rms.meituan.com, www.dpfile.com, awp-assets.meituan.net, s3plus.meituan.net, p*.meituan.net, ddplus.meituan.net, mars.meituan.com, mapi.dianping.com, m.dianping.com
 

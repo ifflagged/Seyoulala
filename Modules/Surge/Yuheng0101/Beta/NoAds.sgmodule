@@ -25,5 +25,5 @@ NoAds = type=http-response, pattern=^https?:\/\/h\.app\.coc\.10086\.cn\/biz-oran
 NoAds = type=http-response, pattern=^https?:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/DN\/friendShake\/getShakeList, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Yuheng0101/NoAds/NoAds.js, requires-body=true, max-size=-1, timeout=60
 
 [MITM]
- = %APPEND% client.app.coc.10086.cn, h.app.coc.10086.cn
+hostname = %APPEND% client.app.coc.10086.cn, h.app.coc.10086.cn
 
