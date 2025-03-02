@@ -2,13 +2,13 @@
 #!desc=去除烦人的广告
 #!category=Jacob
 
-#!date=2025-03-02 08:11:25
+#!date=2025-03-02 12:15:27
 
 [Script]
-黑料去广告 = type=http-response, pattern=^https?:\/\/(18hlw\.com|6tqys\.kivaxqt\.cc|jnwda\.khbovjs\.cc|www\.mzkfgjf\.cc|d2k85ep699qvgb\.cloudfront\.net).*, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Yuheng0101/heiliao/web.js, requires-body=true, max-size=0, timeout=60
+黑料去广告 = type=http-response, pattern=^https?:\/\/(18hlw\.com|1urlm\.kkyzzcwf\.xyz|6tqys\.kivaxqt\.cc|www\.mzkfgjf\.cc|d2k85ep699qvgb\.cloudfront\.net).*, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Yuheng0101/heiliao/web.js, requires-body=true, max-size=0, timeout=60
 
 黑料App去广告 = type=http-response, pattern=^https:\/\/api(\d+)?.hlwapi(\d+)?\.com\/api\.php\/api\/index\/(config|userInfo|index|detail), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Yuheng0101/heiliao/app.js, requires-body=true, max-size=-1, timeout=30
 
 [MITM]
-hostname = %APPEND% 18hlw.com, 6tqys.kivaxqt.cc, jnwda.khbovjs.cc, www.mzkfgjf.cc, d2k85ep699qvgb.cloudfront.net, api*.hlwapi*.com
+hostname = %APPEND% 18hlw.com, 1urlm.kkyzzcwf.xyz, 6tqys.kivaxqt.cc, www.mzkfgjf.cc, d2k85ep699qvgb.cloudfront.net, api*.hlwapi*.com
 
