@@ -30,5 +30,5 @@ Smzdm = type=http-response, pattern=^https:\/\/s3\.zdmimg\.com\/third\/index, sc
 Smzdm = type=http-response, pattern=^https:\/\/post\.m\.smzdm\.com\/ajax_app\/ajax_get_footer_list, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ZenmoFeiShi/Smzdm/Smzdm.js, requires-body=true, max-size=-1, timeout=60
 
 [MITM]
-hostname = %APPEND% haojia-api.smzdm.com, homepage-api.smzdm.com, app-api.smzdm.com, user-api.smzdm.com, article-api.smzdm.com, qianbao.smzdm.com, s3.zdmimg.com, post.m.smzdm.com, haojia.m.smzdm.com
+ = %APPEND% haojia-api.smzdm.com, homepage-api.smzdm.com, app-api.smzdm.com, user-api.smzdm.com, article-api.smzdm.com, qianbao.smzdm.com, s3.zdmimg.com, post.m.smzdm.com, haojia.m.smzdm.com
 

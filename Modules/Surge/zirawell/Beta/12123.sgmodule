@@ -15,5 +15,5 @@ DOMAIN-KEYWORD,in-page-push,REJECT
 ^https?:\/\/gab\.122\.gov\.cn\/eapp\/m\/sysquery\/adver - reject
 
 [MITM]
-hostname = %APPEND% gab.122.gov.cn
+ = %APPEND% gab.122.gov.cn
 

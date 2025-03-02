@@ -39,5 +39,5 @@ IP-CIDR6,2402:db40:5100:1011::5/128,REJECT,no-resolve
 jd = type=http-response, pattern=^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(?>deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/jd/jd.js, requires-body=true, max-size=-1, timeout=60
 
 [MITM]
-hostname = %APPEND% *.jddebug.com, bdsp-x.jd.com, dsp-x.jd.com, api.m.jd.com, storage.360buyimg.com, img*.360buyimg.com
+ = %APPEND% *.jddebug.com, bdsp-x.jd.com, dsp-x.jd.com, api.m.jd.com, storage.360buyimg.com, img*.360buyimg.com
 

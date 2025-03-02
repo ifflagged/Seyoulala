@@ -17,5 +17,5 @@
 ^https?:\/\/fuss10\.elemecdn\.com\/.+?\.mp4 data-type=tiny-gif status-code=200
 
 [MITM]
-hostname = %APPEND% elemecdn.com, fuss10.elemecdn.com, www1.elecfans.com, cube.elemecdn.com, nr-op.elemecdn.com
+ = %APPEND% elemecdn.com, fuss10.elemecdn.com, www1.elecfans.com, cube.elemecdn.com, nr-op.elemecdn.com
 

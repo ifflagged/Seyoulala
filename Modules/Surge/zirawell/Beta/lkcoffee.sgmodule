@@ -22,5 +22,5 @@ replaceBody = type=http-response, pattern=^https?:\/\/m\.lkcoffee\.com\/ecapi\/r
 replaceBody = type=http-response, pattern=^https?:\/\/m\.lkcoffee\.com\/capi\/resource\/m\/growUp\/main, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/lkcoffee/replace-body.js, requires-body=true, max-size=-1, timeout=30, argument=%22popTitle%22%3A%22.%2B%3F%22-%3E%22popTitle%22%3A%22%22
 
 [MITM]
-hostname = %APPEND% capi.lkcoffee.com, ecapi.lkcoffee.com, m.lkcoffee.com, img*.lkcoffee.com
+ = %APPEND% capi.lkcoffee.com, ecapi.lkcoffee.com, m.lkcoffee.com, img*.lkcoffee.com
 

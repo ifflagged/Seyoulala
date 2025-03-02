@@ -100,5 +100,5 @@ cntv = type=http-response, pattern=^https?:\/\/search\.video\.iqiyi\.com\/q\?, s
 cntv = type=http-response, pattern=^https?:\/\/(kjp|t7z)\.cupid\.iqiyi\.com\/mixer\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/iqiyi/cntv.js, requires-body=true, max-size=-1, timeout=60
 
 [MITM]
-hostname = %APPEND% -i.vip.iqiyi.com, *.iqiyi.com
+ = %APPEND% -i.vip.iqiyi.com, *.iqiyi.com
 

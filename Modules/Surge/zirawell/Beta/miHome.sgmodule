@@ -11,5 +11,5 @@ DOMAIN,sdkconfig.ad.xiaomi.com,REJECT
 ^https?:\/\/home\.mi\.com\/cgi-op\/api\/v\d\/recommendation - reject
 
 [MITM]
-hostname = %APPEND% home.mi.com
+ = %APPEND% home.mi.com
 

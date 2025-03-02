@@ -9,5 +9,5 @@
 ^https?:\/\/ocrifs\.ejoy\.sinopec\.com\/advertitfs\/advert\/findAdvertInfo data-type=text data=" " status-code=200
 
 [MITM]
-hostname = %APPEND% a.sinopecsales.com, ocrifs.ejoy.sinopec.com
+ = %APPEND% a.sinopecsales.com, ocrifs.ejoy.sinopec.com
 

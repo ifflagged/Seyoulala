@@ -14,5 +14,5 @@ DOMAIN,tysdk.95516.com,REJECT
 ^https?:\/\/wallet\.95516\.com(:10533)?\/s\/wl\/icon\/large\/1 - reject
 
 [MITM]
-hostname = %APPEND% wallet.95516.com
+ = %APPEND% wallet.95516.com
 

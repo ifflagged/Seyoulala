@@ -19,5 +19,5 @@ DOMAIN,csc-apm.sgcc.com.cn,REJECT
 ^https?:\/\/(?>csc|osg)-service\.sgcc\.com\.cn:\d+\/dtportal-app\/app_api\/selectInfoByCondition data-type=text data="{}" status-code=200
 
 [MITM]
-hostname = %APPEND% csc-service.sgcc.com.cn, osg-service.sgcc.com.cn
+ = %APPEND% csc-service.sgcc.com.cn, osg-service.sgcc.com.cn
 

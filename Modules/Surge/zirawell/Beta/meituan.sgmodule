@@ -54,5 +54,5 @@ DOMAIN-KEYWORD,report.meituan,REJECT
 ^https?:\/\/portal-portm\.meituan\.com\/horn_ios data-type=text data="{}" status-code=200
 
 [MITM]
-hostname = %APPEND% apimobile.meituan.com, img.meituan.net, p*.meituan.net, www.meituan.com, s3plus.meituan.net, flowplus.meituan.net, portal-portm.meituan.com, sqt.meituan.com
+ = %APPEND% apimobile.meituan.com, img.meituan.net, p*.meituan.net, www.meituan.com, s3plus.meituan.net, flowplus.meituan.net, portal-portm.meituan.com, sqt.meituan.com
 

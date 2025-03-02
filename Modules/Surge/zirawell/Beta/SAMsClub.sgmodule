@@ -20,5 +20,5 @@
 ^https?:\/\/api-sams\.walmartmobile\.cn\/api\/v\d\/sams\/configuration\/portal\/beUpdate data-type=text data="{}" status-code=200
 
 [MITM]
-hostname = %APPEND% api-sams.walmartmobile.cn
+ = %APPEND% api-sams.walmartmobile.cn
 

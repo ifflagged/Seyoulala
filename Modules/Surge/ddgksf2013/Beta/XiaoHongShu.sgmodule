@@ -77,5 +77,5 @@ redbook_json = type=http-response, pattern=^https?:\/\/[a-z]+\.xiaohongshu\.com\
 redbook_json = type=http-response, pattern=^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/search\/trending, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ddgksf2013/XiaoHongShu/redbook_json.js, requires-body=true, max-size=-1, timeout=60
 
 [MITM]
-hostname = %APPEND% *.xiaohongshu.com
+ = %APPEND% *.xiaohongshu.com
 

@@ -10,5 +10,5 @@
 黑料App去广告 = type=http-response, pattern=^https:\/\/api(\d+)?.hlwapi(\d+)?\.com\/api\.php\/api\/index\/(config|userInfo|index|detail), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Yuheng0101/heiliao/app.js, requires-body=true, max-size=-1, timeout=30
 
 [MITM]
-hostname = %APPEND% 18hlw.com, jnwda.khbovjs.cc, dt4c5.ekgczaov.cc, www.mzkfgjf.cc, d2k85ep699qvgb.cloudfront.net, api*.hlwapi*.com
+ = %APPEND% 18hlw.com, jnwda.khbovjs.cc, dt4c5.ekgczaov.cc, www.mzkfgjf.cc, d2k85ep699qvgb.cloudfront.net, api*.hlwapi*.com
 

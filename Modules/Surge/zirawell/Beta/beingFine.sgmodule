@@ -11,5 +11,5 @@
 ^https?:\/\/learnywhere\.cn\/api\/activity\/23\/423dsj\/inapp\/bb\/promote data-type=text data="{}" status-code=200
 
 [MITM]
-hostname = %APPEND% hwimg.beingfine.cn, learnywhere.cn
+ = %APPEND% hwimg.beingfine.cn, learnywhere.cn
 
