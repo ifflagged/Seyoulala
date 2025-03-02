@@ -11,11 +11,6 @@
 #!date=2024-11-28 00:00:00
 #!input=APP_ID
 
-[Argument]
-CaptureAccountToken=switch,false,true,tag=捕获账号令牌,desc=此开关控制插件是否捕获账户令牌
-CaptureAppID=switch,false,true,tag=捕获应用ID,desc=此开关控制插件是否捕获应用ID
-TimingParameters=input,"*/1 * * * * *",tag=定时参数,desc=这里需要输入符合CRON表达式的参数
-
 [Rule]
 DOMAIN,testflight.apple.com,PROXY
 
@@ -24,7 +19,7 @@ http-request ^https?:\/\/testflight\.apple\.com\/v3\/accounts\/.*\/apps$ script-
 
 http-request ^https://testflight.apple.com/join/(.*) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Auto_Join_TF/TF_keys.js, tag=应用ID捕获
 
-cron "{TimingParameters}" script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Auto_Join_TF/Auto_join_TF.js, timeout=180, tag=自动加入TF
+cron {TimingParameters} script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Auto_Join_TF/Auto_join_TF.js, timeout=180, tag=自动加入TF
 
 [MITM]
 hostname = testflight.apple.com

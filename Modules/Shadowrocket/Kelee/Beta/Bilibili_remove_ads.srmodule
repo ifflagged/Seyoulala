@@ -1,7 +1,95 @@
-Bilibili_remove_ads%0A：TypeError: Cannot read properties of null (reading '1')
+#!name=哔哩哔哩去广告
+#!desc=过滤哔哩哔哩广告、移除青少年模式弹窗和交互式弹幕、移除无用功能和链接跟踪参数。此插件仅建议iOS 15以上设备使用，且必须启用MitM-over-HTTP/2功能。
+#!author=Maasea[https://github.com/Maasea],kokoryh[https://github.com/kokoryh],RuCu6[https://github.com/RuCu6],可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Bilibili.png
+#!category=Jacob
 
+#!openUrl=https://apps.apple.com/app/id736536022
+#!tag=去广告
+#!system=iOS,iPadOS
+#!system_version=15
+#!loon_version=3.2.4(787)
+#!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
+#!date=2025-02-28 20:00:19
 
+[Rule]
+# 备用域名
+DOMAIN,api.biliapi.com,REJECT
+DOMAIN,api.biliapi.net,REJECT
+DOMAIN,app.biliapi.com,REJECT
+DOMAIN,app.biliapi.net,REJECT
+# 开屏广告
+URL-REGEX,"^http:\/\/upos-sz-static\.bilivideo\.com\/ssaxcode\/\w{2}\/\w{2}\/\w{32}-1-SPLASH",REJECT-DICT
+URL-REGEX,"^http:\/\/[\d\.]+:8000\/v1\/resource\/\w{32}-1-SPLASH",REJECT-DICT
 
+[URL Rewrite]
+# 开屏广告
+^https:\/\/(?:api\.bilibili\.com\/x\/mengqi\/v1\/resource|app\.bilibili\.com\/x\/resource\/peak\/download) - reject-dict
+# 满意度调研
+^https:\/\/api\.bilibili\.com\/x\/v2\/dm\/qoe\/show\? - reject-dict
+# 大会员广告
+^https:\/\/api\.bilibili\.com\/x\/vip\/ads\/materials\? - reject-dict
+# 直播广告
+^https:\/\/api\.live\.bilibili\.com\/xlive\/e-commerce-interface\/v1\/ecommerce-user\/get_shopping_info\? - reject-dict
+# IP请求、地理位置请求
+^https:\/\/api\.bilibili\.com\/x\/web-interface\/zone\?jsonp - reject-dict
+^https:\/\/app\.bilibili\.com\/x\/resource\/ip - reject-dict
+# 首页标签栏热更新
+^https:\/\/app\.bilibili\.com\/x\/resource\/patch\/tab\? - reject-dict
+# 屏蔽默认搜索框关键词
+^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.interface\.v1\.Search\/DefaultWords$ - reject-dict
+# 流量卡推荐
+^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.view\.v1\.View\/TFInfo$ - reject-dict
+# 移除直播间链接跟踪参数
+(^https:\/\/live\.bilibili\.com\/\d+)(?:\/?\?.*) $1 302
+# 移除视频链接跟踪参数
+(^https:\/\/(?:www|m)\.bilibili\.com\/video\/(?:BV\w{10}|av\d{9}))(?:\/?\?.*) $1 302
 
+[Script]
+# 播放页开通会员的横幅
+echoResponse = type=http-request, pattern=^https:\/\/api\.bilibili\.com\/pgc\/activity\/deliver\/material\/receive\?, script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/echo-response.js, timeout=60, argument=text=%7B%22code%22%3A0%2C%22data%22%3A%7B%22closeType%22%3A%22close_win%22%2C%22container%22%3A%5B%5D%2C%22showTime%22%3A%22%22%7D%2C%22message%22%3A%22success%22%7D&status-code=200
 
-Script Hub 重写转换: ❌  可自行翻译错误信息或复制错误信息后点击通知进行反馈
+body_rewrite_44 = type=http-response, pattern=^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\?, script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22json-del%22%2C%5B%22data.common_equip%22%5D%5D%5D
+
+# 移除右上角活动入口
+echoResponse = type=http-request, pattern=^https:\/\/app\.bilibili\.com\/x\/resource\/top\/activity\?, script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/echo-response.js, timeout=60, argument=text=%7B%22code%22%3A-404%2C%22message%22%3A%22%E5%95%A5%E9%83%BD%E6%9C%A8%E6%9C%89%22%2C%22ttl%22%3A1%2C%22data%22%3Anull%7D&status-code=200
+
+# 搜索框填充词
+echoResponse = type=http-request, pattern=^https:\/\/app\.bilibili\.com\/x\/v2\/search\/square\?, script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/echo-response.js, timeout=60, argument=text=%7B%22code%22%3A0%2C%22message%22%3A%220%22%2C%22ttl%22%3A1%2C%22data%22%3A%7B%22type%22%3A%22history%22%2C%22title%22%3A%22%E6%90%9C%E7%B4%A2%E5%8E%86%E5%8F%B2%22%2C%22search_hotword_revision%22%3A2%7D%7D&status-code=200
+
+移除动态页面广告 = type=http-response, pattern=^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.dynamic\.v2\.Dynamic\/DynAll$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Bilibili_remove_ads/Bilibili_proto_kokoryh.js, requires-body=true, binary-body-mode=true, argument=[{showUpList}]
+
+移除青少年模式弹窗 = type=http-response, pattern=^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.interface\.v1\.Teenagers\/ModeStatus$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Bilibili_remove_ads/Bilibili_proto_kokoryh.js, requires-body=true, binary-body-mode=true
+
+移除热门话题 = type=http-response, pattern=^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.show\.v1\.Popular\/Index$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Bilibili_remove_ads/Bilibili_proto_kokoryh.js, requires-body=true, binary-body-mode=true
+
+移除播放页面广告 playview = type=http-response, pattern=^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.playurl\.v1\.PlayURL\/PlayView$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Bilibili_remove_ads/Bilibili_proto_kokoryh.js, requires-body=true, binary-body-mode=true
+
+移除播放页面广告 playerunite = type=http-response, pattern=^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.playerunite\.v1\.Player\/PlayViewUnite$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Bilibili_remove_ads/Bilibili_proto_kokoryh.js, requires-body=true, binary-body-mode=true
+
+移除播放页面广告 view = type=http-response, pattern=^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.view\.v1\.View\/(?:View|ViewProgress)$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Bilibili_remove_ads/Bilibili_proto_kokoryh.js, requires-body=true, binary-body-mode=true
+
+移除播放页面广告 viewunite = type=http-response, pattern=^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.viewunite\.v1\.View\/(?:RelatesFeed|View|ViewProgress)$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Bilibili_remove_ads/Bilibili_proto_kokoryh.js, requires-body=true, binary-body-mode=true
+
+移除交互式弹幕 = type=http-response, pattern=^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.community\.service\.dm\.v1\.DM\/DmView$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Bilibili_remove_ads/Bilibili_proto_kokoryh.js, requires-body=true, binary-body-mode=true
+
+移除评论区广告 = type=http-response, pattern=^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.main\.community\.reply\.v1\.Reply\/MainList$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Bilibili_remove_ads/Bilibili_proto_kokoryh.js, requires-body=true, binary-body-mode=true
+
+移除播放器开通会员横幅 = type=http-response, pattern=^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.pgc\.gateway\.player\.v2\.PlayURL\/PlayView$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Bilibili_remove_ads/Bilibili_proto_kokoryh.js, requires-body=true, binary-body-mode=true
+
+移除搜索结果广告 = type=http-response, pattern=^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.polymer\.app\.search\.v1\.Search\/SearchAll$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Bilibili_remove_ads/Bilibili_proto_kokoryh.js, requires-body=true, binary-body-mode=true
+
+# 移除开屏广告
+移除观影页广告 = type=http-response, pattern=^https:\/\/api\.bilibili\.com\/pgc\/page\/(?:bangumi|cinema\/tab), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Bilibili_remove_ads/Bilibili_remove_ads.js, requires-body=true
+
+移除开屏广告 = type=http-response, pattern=^https:\/\/app\.bilibili\.com\/x\/v2\/splash\/(?:brand\/list|event\/list2|list|show), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Bilibili_remove_ads/Bilibili_remove_ads.js, requires-body=true
+
+精简首页顶部标签 = type=http-response, pattern=^https:\/\/app\.bilibili\.com\/x\/resource\/show\/tab\/v2\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Bilibili_remove_ads/Bilibili_remove_ads.js, requires-body=true
+
+精简我的页面 = type=http-response, pattern=^https:\/\/app\.bilibili\.com\/x\/v2\/account\/(?:mine|myinfo), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Bilibili_remove_ads/Bilibili_remove_ads.js, requires-body=true
+
+移除首页推荐广告 = type=http-response, pattern=^https:\/\/app\.bilibili\.com\/x\/v2\/feed\/index, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Bilibili_remove_ads/Bilibili_remove_ads.js, requires-body=true
+
+[MITM]
+hostname = %APPEND% *live.bilibili.com, ap?.bilibili.com, grpc.biliapi.net, m.bilibili.com, manga.bilibili.com, www.bilibili.com
+

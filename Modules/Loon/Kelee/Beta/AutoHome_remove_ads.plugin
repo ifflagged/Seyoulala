@@ -10,10 +10,6 @@
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
 #!date=2024-11-28 00:00:00
 
-[Argument]
-http-response ^https:\/\/(a\.athm\.cn\/)?cars\.app\.autohome\.com\.cn\/carstreaming\/selectcarportal\/reclist script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/AutoHome_remove_ads/AutoHome_remove_ads.js,requires-body=true,tag=移除直播浮窗
-http-response ^https:\/\/(a\.athm\.cn\/)?cars\.app\.autohome\.com\.cn\/carstreaming\/selectcarportal\/seriestopwithtagscard script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/AutoHome_remove_ads/AutoHome_remove_ads.js,requires-body=true,tag=移除报价页面直播内容
-
 [Rule]
 # 拦截HTTPDNS
 IP-CIDR,119.29.29.98/32,REJECT,no-resolve
