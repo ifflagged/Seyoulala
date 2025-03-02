@@ -18,5 +18,5 @@
 WPS每日签到 = type=cron, cronexp="null", script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/WPS_checkin/WPS_checkin.js, timeout=120, argument="[{AK},{SK},{MAX_RETRIES}]"
 
 [MITM]
-hostname = %APPEND% moapi.wps.cn
+ = %APPEND% moapi.wps.cn
 

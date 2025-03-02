@@ -18,5 +18,5 @@ Sub-Store Simple = type=http-request, pattern=^https?:\/\/sub\.store, script-pat
 Sub-Store Sync = type=cron, cronexp="0 0 1 ? * ?", script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Sub-Store/cron-sync-artifacts.min.js
 
 [MITM]
-hostname = %APPEND% sub.store
+ = %APPEND% sub.store
 
