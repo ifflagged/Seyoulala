@@ -14,5 +14,5 @@
 Loon插件仓库 = type=http-request, pattern=^https?:\/\/xn--ck8h\.com, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/LoonGallery/gallery.js, requires-body=true, timeout=120
 
 [MITM]
- = %APPEND% xn--ck8h.com
+hostname = %APPEND% xn--ck8h.com
 
