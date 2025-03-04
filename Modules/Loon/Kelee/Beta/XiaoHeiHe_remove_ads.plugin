@@ -8,15 +8,12 @@
 #!tag=去广告
 #!loon_version=3.2.4(787)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!date=2024-12-23 11:27:16
+#!date=2025-03-05 01:08:08
 
 [Rewrite]
+^https:\/\/api\.xiaoheihe\.cn\/bbs\/app\/feeds\/news response-body-json-jq '.result.links |= map(if .content_type == 27 then del(.title, .ad_pm, .img_gif, .idea_id, .ad_report, .label, .source, .intranet_only, .ad_cm, .content_type, .protocol, .img, .ad_ratio) else . end)'
 # 开屏广告
 ^https:\/\/api\.xiaoheihe\.cn\/account\/get_ads_info_v2 - reject-dict
-
-[Script]
-# 移除热点板块信息流广告
-http-response ^https:\/\/api\.xiaoheihe\.cn\/bbs\/app\/feeds\/news script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/XiaoHeiHe_remove_ads/XiaoHeiHe_remove_ads.js, requires-body=true, tag=移除热点板块信息流广告
 
 [MITM]
 hostname = api.xiaoheihe.cn

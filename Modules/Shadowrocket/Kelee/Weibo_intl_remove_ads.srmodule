@@ -1,6 +1,6 @@
 #!name=微博轻享版去广告
-#!desc=过滤轻享国际版广告及去除各部分推广模块
-#!author=Keywos[https://github.com/Keywos],kokoryh[https://github.com/kokoryh]
+#!desc=过滤轻享版广告，移除各部分推广模块。
+#!author=kokoryh[https://github.com/kokoryh]
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Weibo_intl.png
 #!category=Jacob
 
@@ -8,21 +8,16 @@
 #!tag=去广告
 #!loon_version=3.2.4(787)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!date=2024-11-28 00:00:00
+#!date=2025-03-05 00:56:01
 
 [URL Rewrite]
-# 热门视频、热推荐
-^https?:\/\/api\.weibo\.cn\/\d\/(cardlist\?v_f=\d|ad\/weibointl\?) - reject-dict
-^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?a=hot_search_users - reject-dict
+^https?:\/\/api\.weibo\.cn\/2\/ad\/weibointl\? - reject-dict
 
 [Script]
-# 趋势页、开屏广告、用户中心、热搜置顶、我的页面、尊享专属、信息流
-微博轻享版去广告 = type=http-response, pattern=^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?(ct=(feed&a=trends|user&a=get_searching_info)|a=(get_coopen_ads|user_center|search_topic|open_app&auth|icon_center)), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Weibo_intl_remove_ads/Weibo_intl_remove_ads.js, requires-body=true
+echoResponse = type=http-request, pattern=^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?a=get_searching_info&, script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/echo-response.js, timeout=60, argument=text=%7B%22retcode%22%3A0%2C%22info%22%3A%22%22%2C%22data%22%3A%7B%22expiration_time%22%3A%2286400%22%2C%22cards%22%3A%5B%7B%22tip%22%3A%22%E6%90%9C%E7%B4%A2%E5%BE%AE%E5%8D%9A%22%2C%22word%22%3A%22%22%7D%5D%7D%7D
 
-微博轻享版去广告 = type=http-response, pattern=^https?:\/\/api\.weibo\.cn\/\d\/statuses\/.*timeline, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Weibo_intl_remove_ads/Weibo_intl_remove_ads.js, requires-body=true
-
-微博轻享版去广告 = type=http-response, pattern=^https?:\/\/sdkapp\.uve\.weibo\.com\/interface\/sdk\/sdkad\.php, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Weibo_intl_remove_ads/Weibo_intl_remove_ads.js, requires-body=true
+echoResponse = type=http-request, pattern=^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?ct=feed&a=search_topic&, script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/echo-response.js, timeout=60, argument=text=%7B%22retcode%22%3A0%2C%22info%22%3A%22%22%2C%22data%22%3A%5B%5D%2C%22ext%22%3A%7B%7D%7D
 
 [MITM]
-hostname = %APPEND% *api.weibo.cn, sdkapp.uve.weibo.com
+hostname = %APPEND% api.weibo.cn, weibointl.api.weibo.cn
 
