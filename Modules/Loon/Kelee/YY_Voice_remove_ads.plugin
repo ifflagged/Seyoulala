@@ -8,7 +8,7 @@
 #!loon_version=3.2.4(787)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/YY_Voice.png
-#!date=2024-11-28 00:00:00
+#!date=2025-03-05 12:42:28
 
 [Rule]
 # 拦截HTTPDNS
@@ -89,11 +89,9 @@ DOMAIN,sdk.beizi.biz,REJECT
 ^https:\/\/yyapp-act-entrance\.yy\.com\/entrance\/list\? reject-dict
 
 # 底栏
-^https:\/\/tab\.yy\.com\/tabs\? response-body-json-del data.tabs[0]
 
-[Script]
-# 我的页面
-http-response ^https:\/\/personal-center\.yy\.com\/personalCenter\/list\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/YY_Voice_remove_ads/YY_Voice_remove_ads.js,requires-body=true,tag=精简我的页面
+
+^https:\/\/personal-center\.yy\.com\/personalCenter\/list\? response-body-json-jq '.data.modules |= map(select(.moduleName != "Banner轮播")) | .data.modules[].entrances |= map(select(.name != "度小满借钱" and .name != "免流量"))'
 
 [MitM]
 hostname=yyapp-act-entrance.yy.com,yyapp-fastnet.yy.com,personal-center.yy.com,tab.yy.com
