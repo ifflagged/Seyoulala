@@ -7,8 +7,8 @@
 #!system_version=
 #!loon_version=3.2.4(787)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Mango_TV.png
-#!date=2024-11-28 00:00:00
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/MangoTV.png
+#!date=2025-03-05 12:02:08
 
 [Rule]
 DOMAIN,credits.bz.mgtv.com,REJECT
