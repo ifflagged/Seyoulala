@@ -1,14 +1,14 @@
 #!name=芒果TV去广告
 #!desc=过滤芒果TV客户端广告
 #!author=RuCu6[https://github.com/RuCu6]
-#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Mango_TV.png
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/MangoTV.png
 #!category=Jacob
 
 #!openUrl=https://apps.apple.com/app/id629774477
 #!tag=去广告
 #!loon_version=3.2.4(787)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!date=2024-11-28 00:00:00
+#!date=2025-03-05 12:02:08
 
 [Rule]
 DOMAIN,credits.bz.mgtv.com,REJECT
