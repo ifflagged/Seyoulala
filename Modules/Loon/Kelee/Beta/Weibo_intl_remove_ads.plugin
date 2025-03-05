@@ -8,7 +8,7 @@
 #!tag=去广告
 #!loon_version=3.2.4(787)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!date=2025-03-05 00:56:01
+#!date=2025-03-05 10:07:41
 
 [Rewrite]
 ^https?:\/\/api\.weibo\.cn\/2\/statuses\/unread_hot_timeline$ response-body-json-jq 'del(.ad, .advertises, .trends) | if .statuses then .statuses |= map(select(((.promotion.type == "ad") or (.mblogtypename | IN("广告", "廣告", "热推", "熱推"))) | not)) end'
@@ -17,8 +17,8 @@
 ^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?a=search_topic& response-body-json-jq 'if .data.search_topic.cards[0].type == "searchtop" then del(.data.search_topic.cards[0]) end'
 ^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?a=user_center& response-body-json-jq 'if .data.cards then .data.cards[].items |= map(select(.type != "personal_vip")) | .data.cards |= map(select((.items | length) > 0)) end'
 ^https?:\/\/api\.weibo\.cn\/2\/ad\/weibointl\? - reject-dict
-^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?a=get_searching_info& mock-response-body data-type=text data="{"retcode":0,"info":"","data":{"expiration_time":"86400","cards":[{"tip":"搜索微博","word":""}]}}"
-^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?ct=feed&a=search_topic& mock-response-body data-type=text data="{"retcode":0,"info":"","data":[],"ext":{}}"
+^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?a=get_searching_info& mock-response-body data-type=html data="{"retcode":0,"info":"","data":{"expiration_time":"86400","cards":[{"tip":"搜索微博","word":""}]}}"
+^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?ct=feed&a=search_topic& mock-response-body data-type=html data="{"retcode":0,"info":"","data":[],"ext":{}}"
 
 [MITM]
 hostname = api.weibo.cn, weibointl.api.weibo.cn
