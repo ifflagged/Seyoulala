@@ -10,7 +10,7 @@
 #!system_version=15
 #!loon_version=3.2.4(787)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!date=2025-02-28 20:00:19
+#!date=2025-03-06 23:23:20
 
 [Rule]
 # 备用域名
@@ -27,6 +27,11 @@ URL-REGEX,"^http:\/\/[\d\.]+:8000\/v1\/resource\/\w{32}-1-SPLASH",REJECT-DICT
 ^https:\/\/api\.live\.bilibili\.com\/xlive\/app-interface\/v2\/index\/feed\? response-body-json-jq 'if .data.card_list then .data.card_list |= map(select(.card_type != "banner_v2")) end'
 ^https:\/\/api\.live\.bilibili\.com\/xlive\/app-room\/v1\/index\/getInfoByRoom\? response-body-json-jq 'del(.data.activity_banner_info) | .data.shopping_info.is_show=0 | .data.show_reserve_status=false | .data.reserve_info.show_reserve_status=false | .data.function_card.wish_list_card=null | .data.function_card.follow_card=null | .data.new_tab_info.outer_list |= if . then map(select(.biz_id != 33)) end'
 ^https:\/\/api\.live\.bilibili\.com\/xlive\/app-room\/v1\/index\/getInfoByUser\? response-body-json-jq 'del(.data.play_together_info, .data.play_together_info_v2)'
+#^https:\/\/api\.bilibili\.com\/pgc\/page\/(?:bangumi|cinema\/tab) response-body-json-jq jq-path="https://kelee.one/Resource/JQLang/Bilibili/Bilibili_remove_ads.jq"
+#^https:\/\/app\.bilibili\.com\/x\/v2\/splash\/(?:brand\/list|event\/list2|list|show) response-body-json-jq jq-path="https://kelee.one/Resource/JQLang/Bilibili/Bilibili_remove_ads.jq"
+#^https:\/\/app\.bilibili\.com\/x\/resource\/show\/tab\/v2\? response-body-json-jq jq-path="https://kelee.one/Resource/JQLang/Bilibili/Bilibili_remove_ads.jq"
+#^https:\/\/app\.bilibili\.com\/x\/v2\/account\/(?:mine|myinfo) response-body-json-jq jq-path="https://kelee.one/Resource/JQLang/Bilibili/Bilibili_remove_ads.jq"
+#^https:\/\/app\.bilibili\.com\/x\/v2\/feed\/index response-body-json-jq jq-path="https://kelee.one/Resource/JQLang/Bilibili/Bilibili_remove_ads.jq"
 # 开屏广告
 ^https:\/\/(?:api\.bilibili\.com\/x\/mengqi\/v1\/resource|app\.bilibili\.com\/x\/resource\/peak\/download) - reject-dict
 # 满意度调研
@@ -80,7 +85,7 @@ http-response ^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.pg
 
 http-response ^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.polymer\.app\.search\.v1\.Search\/SearchAll$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Bilibili_remove_ads/Bilibili_proto_kokoryh.js, requires-body=true, binary-body-mode=true, tag=移除搜索结果广告
 
-# 移除开屏广告
+# 上部为Proto处理，下部为JSON配置处理
 http-response ^https:\/\/api\.bilibili\.com\/pgc\/page\/(?:bangumi|cinema\/tab) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Bilibili_remove_ads/Bilibili_remove_ads.js, requires-body=true, tag=移除观影页广告
 
 http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/splash\/(?:brand\/list|event\/list2|list|show) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Bilibili_remove_ads/Bilibili_remove_ads.js, requires-body=true, tag=移除开屏广告
