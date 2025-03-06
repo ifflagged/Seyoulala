@@ -1036,14 +1036,20 @@ https?:\/\/91porn\.com(\/|)$ https://91porn.com/index.php 302
 ^https:\/\/pan\.baidu\.com\/act\/v2\/welfare\/list reject-dict
 ^https:\/\/pan\.baidu\.com\/rest\/\d\.\d\/pcs\/adv reject-dict
 # DiDi_remove_ads
+^https:\/\/res\.xiaojukeji\.com\/resapi\/activity\/getMulti\? reject-dict
 ^https:\/\/res\.xiaojukeji\.com\/resapi\/activity\/xpget reject-dict
 ^https:\/\/ct\.xiaojukeji\.com\/agent\/v3\/feeds reject-dict
-^https:\/\/daijia\.kuaidadi\.com\/gateway reject-dict
 ^https:\/\/freight\.xiaojukeji\.com\/gateway reject-dict
+^https:\/\/daijia\.kuaidadi\.com:443\/gateway reject-dict
 ^https:\/\/res\.xiaojukeji\.com\/resapi\/activity\/mget reject-dict
 ^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/other\/fast reject-dict
 ^https:\/\/conf\.diditaxi\.com\.cn\/dynamic\/conf reject-dict
 ^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v1\/other\/slow reject-dict
+^https:\/\/common\.diditaxi\.com\.cn\/common\/v\d\/usercenter\/me response-body-json-jq '.data.cards |= map(select(.title != "天天领福利" and .title != "金融服务" and .title != "更多服务" and .title != "企业服务" and .title != "安全中心")) | .data.cards[] |= if .tag == "wallet" then .items |= map(select(.title == "优惠券")) | if .card_type == 4 then .bottom_items |= map(select(.title == "省钱套餐" or .title == "出行里程")) else . end else . end'
+^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/core response-body-json-jq '.data.order_cards.nav_list_card.data |= map(select(.nav_id == "dache_anycar" or .nav_id == "driverservice" or .nav_id == "bike" or .nav_id == "carmate")) | .data.disorder_cards.bottom_nav_list.data |= map(select(.id == "v6x_home" or .id == "home_page" or .id == "user_center"))'
+^https:\/\/api\.udache\.com\/gulfstream\/pre-sale\/v1\/other\/pGetSceneList response-body-json-jq '.data.scene_list |= map(select(.text != "优惠商城")) | .data.show_data[] |= (if .scene_ids then .scene_ids |= map(select(. != "scene_coupon_mall")) else . end)'
+^https:\/\/conf\.diditaxi\.com\.cn\/ota\/na\/yuantu\/infoList response-body-json-jq '.data.disorder_cards.top_banner_card.data |= if .[0].T == "yuentu_top_banner" then .[1:] else . end'
+^https:\/\/api\.udache\.com\/gulfstream\/passenger-center\/v2\/other\/pInTripLayout response-body-json-jq '.data.order_components |= map(select(.name != "passenger_common_casper"))'
 # FleaMarket_remove_ads
 ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.home\.whale\.modulet\/ reject-dict
 ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.item\.recommend\.list\/ reject-dict
@@ -1577,12 +1583,6 @@ http-response ^https:\/\/m5\.amap\.com\/ws\/shield\/search\/nearbyrec_smart\? sc
 http-response ^https:\/\/m5\.amap\.com\/ws\/valueadded\/alimama\/splash_screen\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Amap_remove_ads/Amap_remove_ads.js,requires-body=true,tag=移除开屏广告
 http-response ^https:\/\/m5-zb\.amap\.com\/ws\/boss\/(?:car\/order\/content_info|order_web\/friendly_information) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Amap_remove_ads/Amap_remove_ads.js,requires-body=true,tag=移除打车页推广卡片、弹窗
 http-response ^https:\/\/m5-zb\.amap\.com\/ws\/promotion-web\/resource(\/home)?\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Amap_remove_ads/Amap_remove_ads.js,requires-body=true,tag=移除打车页红点角标、天气图标
-# DiDi_remove_ads
-http-response ^https:\/\/common\.diditaxi\.com\.cn\/common\/v\d\/usercenter\/me script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/DiDi_remove_ads/DiDi_remove_ads.js,requires-body=true,tag=移除广告
-http-response ^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/core script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/DiDi_remove_ads/DiDi_remove_ads.js,requires-body=true,tag=移除广告
-http-response ^https:\/\/api\.udache\.com\/gulfstream\/pre-sale\/v1\/other\/pGetSceneList script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/DiDi_remove_ads/DiDi_remove_ads.js,requires-body=true,tag=移除广告
-http-response ^https:\/\/conf\.diditaxi\.com\.cn\/ota\/na\/yuantu\/infoList script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/DiDi_remove_ads/DiDi_remove_ads.js,requires-body=true,tag=移除广告
-http-response ^https:\/\/api\.udache\.com\/gulfstream\/passenger-center\/v2\/other\/pInTripLayout script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/DiDi_remove_ads/DiDi_remove_ads.js,requires-body=true,tag=移除广告
 # FleaMarket_remove_ads
 http-response ^https:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop\.idle\.user\.page\.my\.adapter\/ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/FleaMarket_remove_ads/FleaMarket_remove_ads.js,requires-body=true,tag=移除我的页面推广
 http-response ^https:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlehome\.home\.nextfresh\/ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/FleaMarket_remove_ads/FleaMarket_remove_ads.js,requires-body=true,tag=移除首页信息流推广
