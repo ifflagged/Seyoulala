@@ -13,7 +13,7 @@ https://b.appsimg.com/upload/momin/ - reject
 
 [Map Local]
 # > Version
-^https?:\/\/2025.03.03/c370/v2.0.570 data-type=text data=" " status-code=200
+^https?:\/\/2025.03.06/c370/v2.0.571 data-type=text data=" " status-code=200
 
 # > 10
 ^https?:\/\/ftapi\.10jqka\.com\.cn\/futgwapi\/api\/om\/v\d\/ad\/common\/transfer data-type=text data=" " status-code=200
@@ -26,7 +26,7 @@ https://b.appsimg.com/upload/momin/ - reject
 # > 58
 ^https?:\/\/app\.58\.com\/api\/home\/(advertising|appadv) data-type=text data=" " status-code=200
 
-^https?:\/\/[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+){1,3}(:\d+)?\/.*?\/v\d\/(version$|notice\?|top_notice\?|advert\?position=[^2]+) data-type=text data=" " status-code=200
+^https?:\/\/[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+){1,4}(:\d+)?\/.*?\/v\d\/(version$|notice\?|top_notice\?|advert\?position=[^2]+) data-type=text data=" " status-code=200
 
 # > 5eplay
 ^https?:\/\/.*5eplay\.com\/.*adv_slot data-type=text data=" " status-code=200
@@ -1178,7 +1178,7 @@ https?:\/\/m\.sd\.10086\.cn\/zapi\/app_common\/homeWelcome\/welcome.do data-type
 dict = type=http-response, pattern=^https?:\/\/api\.369cx\.cn\/v\d\/Splash\/GetSplashAd, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ddgksf2013/StartUp/dict.js, requires-body=true, max-size=-1, timeout=60
 
 # > 555
-555Ad = type=http-response, pattern="^https?:\/\/[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+){1,3}(:\d+)?\/api\/v\d\/movie\/index_recommend", script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ddgksf2013/StartUp/555Ad.js, requires-body=true, max-size=-1, timeout=60
+555Ad = type=http-response, pattern="^https?:\/\/[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+){1,4}(:\d+)?\/api\/v\d\/movie\/index_recommend", script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ddgksf2013/StartUp/555Ad.js, requires-body=true, max-size=-1, timeout=60
 
 123pan = type=http-response, pattern=^https?:\/\/www\.123pan\.com\/s\/[0-9a-zA-Z=_/-]+\.html, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ddgksf2013/StartUp/123pan.js, requires-body=true, max-size=-1, timeout=60
 
