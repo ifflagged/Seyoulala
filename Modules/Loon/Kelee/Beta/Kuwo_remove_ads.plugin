@@ -8,7 +8,7 @@
 #!tag=去广告
 #!loon_version=3.2.4(787)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!date=2024-11-28 00:00:00
+#!date=2025-03-09 03:18:30
 
 [Rule]
 # 拦截HTTPDNS
@@ -57,6 +57,7 @@ URL-REGEX,"^http:\/\/vip\d\.kuwo\.cn\/vip\/v\d\/sysinfo\?op=getRePayAndDoPayBox"
 URL-REGEX,"^http:\/\/wapi\.kuwo\.cn\/openapi\/v\d\/album\/adBar\/",REJECT-DICT
 
 [Rewrite]
+http-response ^http:\/\/wapi\.kuwo\.cn\/openapi\/v\d\/tingshu\/index\/radio response-body-json-jq 'walk(if type == "object" and .type == "stripAdvert" then del(.child) else . end)'
 # DOMAIN,v2.gdt.qq.com,REJECT
 #v.gdt.qq.com,REJECT - reject
 # v.gdt.qq.com,REJECT
@@ -68,10 +69,6 @@ URL-REGEX,"^http:\/\/wapi\.kuwo\.cn\/openapi\/v\d\/album\/adBar\/",REJECT-DICT
 ^https:\/\/tingshu\.kuwo\.cn\/v2\/api\/pay\/user\/info - reject-dict
 # 我的页面横幅
 ^https:\/\/appi\.kuwo\.cn\/kuwopay\/personal\/cells - reject-dict
-
-[Script]
-# 移除听书页面广告
-http-response ^http:\/\/wapi\.kuwo\.cn\/openapi\/v\d\/tingshu\/index\/radio script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Kuwo_remove_ads/Kuwo_remove_ads.js, requires-body=true, tag=移除听书页面广告
 
 [MITM]
 hostname = appi.kuwo.cn, mc.tencentmusic.com, vip*.kuwo.cn, tingshu.kuwo.cn
