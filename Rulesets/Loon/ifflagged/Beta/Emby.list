@@ -1,4 +1,4 @@
-#规则数量:27
+#规则数量:28
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -23,11 +23,12 @@ DOMAIN-SUFFIX,28.al
 DOMAIN-SUFFIX,catlinks.co.uk
 DOMAIN-SUFFIX,jingzhe.pro
 DOMAIN-SUFFIX,beebi.org
+DOMAIN-SUFFIX,saturday.video
 DOMAIN-SUFFIX,misty.cx
 DOMAIN-SUFFIX,nijigem.by
 DOMAIN-SUFFIX,wenjian.de
 DOMAIN-SUFFIX,114514.quest
-DOMAIN,emby3.mcjoker.xyz
-DOMAIN-SUFFIX,aliz.work
 DOMAIN,emby.116168.xyz
+DOMAIN-SUFFIX,aliz.work
+DOMAIN,emby3.mcjoker.xyz
 DOMAIN-SUFFIX,reflix.top
