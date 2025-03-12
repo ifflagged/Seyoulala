@@ -6,7 +6,6 @@
 
 #!openUrl=http://boxjs.com/#/app/iRingo.Location
 #!homepage=https://NSRingo.github.io/guide/GeoServices/location
-#!arguments=GeoCountryCode:US
 #!arguments-desc=GeoCountryCode: [地区检测] 地理国家或地区代码
 
 [Rule]
