@@ -14,9 +14,6 @@
 DOMAIN-SUFFIX,wxs.qq.com,REJECT
 
 [Rewrite]
-# 移除公众号中的推广内容 //mp.weixin.qq.com
-#^http:\/\/\w+\.wxs\.qq\.com\/\d+\/\d+\/(snscosdownload|snssvpdownload)\/(SH|SZ)\/reserved\/\w+ - reject-dict
-# ^http:\/\/\w+\.wxs\.qq\.com\/\d+\/\d+\/(snscosdownload|snssvpdownload)\/(SH|SZ)\/reserved\/\w+ reject-dict
 ^https:\/\/mp\.weixin\.qq\.com\/mp\/(cps_product_info|getappmsgad|jsmonitor|masonryfeed|relatedarticle)\? - reject-dict
 
 [MITM]
