@@ -11,9 +11,7 @@
 #!date=2024-12-13 06:49:26
 
 [Rewrite]
-# 横幅推广
 ^https:\/\/(m|www)\.kookapp\.cn\/api\/v\d\/user\/settings$ response-body-json-del ad_banner advertise_on_off
-# 底栏商城入口
 ^https:\/\/(m|www)\.kookapp\.cn\/api\/v\d\/user\/settings$ response-body-json-replace ios_mall_switch false
 
 [MitM]
