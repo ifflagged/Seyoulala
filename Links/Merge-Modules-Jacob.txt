@@ -40,7 +40,7 @@ Modules/Loon/Kelee/HKDouYin_remove_ads.plugin
 Modules/Surge/Kelee/JD_Price.sgmodule
 Modules/Surge/Kelee/JD_remove_ads.sgmodule # Loon,Shadowrocket
 Modules/Shadowrocket/Kelee/MeetYou_remove_ads.srmodule
-Modules/Surge/Kelee/PinDuoDuo_remove_ads.sgmodule # Loon,Shadowrocket
+# Modules/Surge/Kelee/PinDuoDuo_remove_ads.sgmodule # Loon,Shadowrocket
 Modules/Surge/Kelee/RedPaper_remove_ads.sgmodule # Loon,Shadowrocket
 Modules/Surge/Kelee/Weixin_external_links_unlock.sgmodule # Loon,Shadowrocket
 Modules/Surge/Kelee/Weixin_Official_Accounts_remove_ads.sgmodule # Loon,Shadowrocket
@@ -49,6 +49,7 @@ Modules/Surge/Kelee/Weixin_Official_Accounts_remove_ads.sgmodule # Loon,Shadowro
 Modules/Surge/Yuheng0101/NoAds.sgmodule # Loon,Shadowrocket
 
 # Z #
+Modules/Surge/ZenmoFeiShi/Pinduoduo.sgmodule # Loon,Shadowrocket
 Modules/Surge/ZenmoFeiShi/Smzdm.sgmodule # Loon,Shadowrocket
 Modules/Surge/zirawell/adUnion.sgmodule # Loon,Shadowrocket
 Modules/Surge/zirawell/10086_general.sgmodule # Loon,Shadowrocket
