@@ -8,17 +8,18 @@
 #!loon_version=3.2.4(787)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/TikTok.png
-#!date=2025-03-17 23:36:24
+#!date=2025-03-17 23:55:46
 
-[Rewrite]
+[Rule]
 AND,((IP-CIDR,110.249.199.75/32,no-resolve),(DEST-PORT,6443)),REJECT
 AND,((IP-CIDR,111.225.147.191/32,no-resolve),(DEST-PORT,6443)),REJECT
 AND,((IP-CIDR,111.63.61.101/32,no-resolve),(DEST-PORT,6443)),REJECT
 AND,((IP-CIDR,220.243.141.0/32,no-resolve),(DEST-PORT,6443)),REJECT
 
-^https:\/\/api5-normal-lq\.amemv\.com\/api\/ad\/
-^https:\/\/aweme\.snssdk\.com\/api\/ad\/
-^https:\/\/zlink\.ugsdk\.cn\/ad\/
+[Rewrite]
+^https:\/\/api5-normal-lq\.amemv\.com\/api\/ad\/ reject
+^https:\/\/aweme\.snssdk\.com\/api\/ad\/ reject
+^https:\/\/zlink\.ugsdk\.cn\/ad\/ reject
 
 ^https:\/\/aweme\.snssdk\.com\/aweme\/homepage\/sidebar_data\/\? response-body-json-del data_map.recently_apps data_map.recently_users
 
