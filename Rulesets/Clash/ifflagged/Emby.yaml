@@ -1,4 +1,4 @@
-#规则数量:28
+#规则数量:29
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -11,6 +11,7 @@ payload:
   - DOMAIN-SUFFIX,loseremby.org
   - DOMAIN-SUFFIX,emby.moe
   - DOMAIN-SUFFIX,coemn.com
+  - DOMAIN-SUFFIX,makima.online
   - DOMAIN-SUFFIX,charontv.com
   - DOMAIN-SUFFIX,nanflix.net
   - DOMAIN-SUFFIX,lyrebirdemby.com
