@@ -462,6 +462,7 @@ AND, ((IP-ASN, 45090, no-resolve), (DEST-PORT, 25641), (PROTOCOL, TCP)), REJECT
 AND, ((IP-ASN, 63646, no-resolve), (DEST-PORT, 25641), (PROTOCOL, TCP)), REJECT
 # FleaMarket_remove_ads
 AND, ((URL-REGEX, "^http:\/\/.+\/amdc\/mobileDispatch"), (USER-AGENT, "%E9%97%B2%E9%B1%BC*")), REJECT
+# HKDouYin_remove_ads
 # JD_remove_ads
 URL-REGEX, "^http:\/\/\w{32}\.jddebug\.com\/diagnose\?", REJECT
 # RedPaper_remove_ads
@@ -1064,6 +1065,9 @@ https?:\/\/91porn\.com(\/|)$ https://91porn.com/index.php 302
 ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.item\.search\.activate\/ reject-dict
 ^https:\/\/h5\.m\.goofish\.com\/wow\/moyu\/moyu-project\/[\w-]*search[\w-]*\/pages\/ reject-200
 # HKDouYin_remove_ads
+^https:\/\/api5-normal-lq\.amemv\.com\/api\/ad\/ reject
+^https:\/\/aweme\.snssdk\.com\/api\/ad\/ reject
+^https:\/\/zlink\.ugsdk\.cn\/ad\/ reject
 ^https:\/\/aweme\.snssdk\.com\/aweme\/homepage\/sidebar_data\/\? response-body-json-del data_map.recently_apps data_map.recently_users
 ^https:\/\/aweme\.snssdk\.com\/aweme\/homepage\/render\/\? response-body-json-del data.tab_config
 ^https:\/\/aweme\.snssdk\.com\/aweme\/homepage\/render\/\? response-body-json-jq '.data.tab_list[]? |= (if .extra.side_bar.modules != null then .extra.side_bar.modules[]?.items[]? |= (if .data.first_page_module?.module_title == "常用功能" then .data = {} else . end) else . end) | .data.tab_list |= map(if .extra.tab_list != null then .extra.tab_list |= map(select(.tab_id | IN("homepage_tablive", "homepage_follow", "homepage_hot_container"))) else . end) | .data.tab_list |= map(select(.extra.tab_list != null and (.extra.tab_list | length > 0)))'
