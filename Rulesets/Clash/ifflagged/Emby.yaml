@@ -1,4 +1,4 @@
-#规则数量:29
+#规则数量:30
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -18,6 +18,7 @@ payload:
   - DOMAIN-SUFFIX,bangumi.ca
   - DOMAIN-SUFFIX,mius.uk
   - DOMAIN-SUFFIX,sfcj.org
+  - DOMAIN-SUFFIX,embymv.link
   - DOMAIN-SUFFIX,tdck.fun
   - DOMAIN-SUFFIX,vfing.de
   - DOMAIN-SUFFIX,favoritewife.com
