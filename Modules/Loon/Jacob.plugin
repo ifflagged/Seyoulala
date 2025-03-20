@@ -35,8 +35,8 @@ SiriResponseLanguageVariant = select,"zh_CN","OFF","AUTO","zh_TW","yue_CN","zh_H
 # YouTube.Enhance
 屏蔽上传按钮=switch,true,false,tag=屏蔽上传按钮, desc=屏蔽上传按钮
 屏蔽选段按钮=switch,true,false,tag=屏蔽选段按钮, desc=屏蔽选段按钮
-字幕翻译语言=input,zh-Hans,tag=字幕翻译语言, desc=字幕翻译语言
-歌词翻译语言=input,zh-Hans,tag=歌词翻译语言, desc=歌词翻译语言
+字幕翻译语言=input,off,tag=字幕翻译语言, desc=字幕翻译语言
+歌词翻译语言=input,off,tag=歌词翻译语言, desc=歌词翻译语言
 脚本执行引擎=input,auto,tag=脚本执行引擎, desc=脚本执行引擎
 启用调试模式=switch,false,true,tag=启用调试模式, desc=启用调试模式
 # DualSubs.Spotify
