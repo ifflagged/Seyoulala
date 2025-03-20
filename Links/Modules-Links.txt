@@ -28,6 +28,7 @@ https://github.com/fmz200/wool_scripts/raw/main/Loon/plugin/weibo.plugin
 
 # G #
 https://github.com/githubdulong/Script/raw/master/Surge/TikTok_Surge.sgmodule
+https://github.com/githubdulong/Script/raw/master/Surge/jd_price2.sgmodule
 
 # M #
 https://github.com/Maasea/sgmodule/raw/master/YouTube.Enhance.sgmodule
