@@ -1,17 +1,17 @@
 #!name=京东比价
-#!desc=点击商品详情后以通知的形式推送比价内容
+#!desc=需在商品详情页面查看比价内容
 #!openUrl=https://apps.apple.com/app/id414245413
-#!author=githubdulong[https://github.com/githubdulong]
+#!author=小白脸
 #!tag=功能增强
 #!system=
 #!system_version=
 #!loon_version=3.2.4(787)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/JD.png
-#!date=2024-12-29 00:51:00
+#!date=2025-03-21 22:38:39
 
 [Script]
-http-response ^https:\/\/in\.m\.jd\.com\/product\/graphext\/\d+\.html script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/JD_Price/JD_Price.js,requires-body=true,tag=京东比价
+http-response ^https:\/\/in\.m\.jd\.com\/product\/graphext\/\d+\.html script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/JD_Price/JD_Price.js,requires-body=true,timeout=10,tag=京东比价
   
 [MitM]
 hostname=in.m.jd.com
