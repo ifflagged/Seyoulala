@@ -501,7 +501,6 @@ DOMAIN-SUFFIX,count.video.sina.com.cn,REJECT
 ^https?:\/\/api2\.helper\.qq\.com\/game\/buttons - reject-img
 ^https?:\/\/imgcache\.qq\.com\/qqlive\/ - reject-img
 ^https?:\/\/vv\.video\.qq\.com\/getvmind\? - reject-200
-^https?:\/\/ssl\.kohsocialapp\.qq\.com:\d+\/game\/buttons - reject-200
 ^https?:\/\/qt\.qq\.com\/lua\/mengyou\/get_splash_screen_info - reject-200
 ^https?:\/\/y\.gtimg\.cn\/music\/.*?_Ad/\d+\.png - reject-img
 ^https?:\/\/splashqqlive\.gtimg\.com\/website\/\d{6} - reject-img
@@ -548,5 +547,5 @@ amdc = type=http-response, pattern=^https?:\/\/amdc\.m\.taobao\.com\/amdc\/mobil
 alicdn = type=http-response, pattern=^https?:\/\/g\.alicdn\.com\/.*o2o-ad, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/adUnion/alicdn.js, requires-body=true, max-size=-1, timeout=60
 
 [MITM]
-hostname = %APPEND% api2.helper.qq.com, imgcache.qq.com, mtteve.beacon.qq.com, vv.video.qq.com, ssl.kohsocialapp.qq.com, qt.qq.com, y.gtimg.cn, splashqqlive.gtimg.com, qzonestyle.gtimg.cn, discuz.gtimg.cn, bla.gtimg.com, mmgr.gtimg.com, bk.bingo.qq.com, www.baidu.com, fcvbjbcebos.baidu.com, cover.baidu.com, afd.baidu.com, issuecdn.baidupcs.com, update.pan.baidu.com, video-dsp.pddpic.com, t-dsp.pinduoduo.com, images.pinduoduo.com, amdc.m.taobao.com, gw.alicdn.com, heic.alicdn.com, g.alicdn.com, yixiu-abtest.alicdn.com, img1.126.net, nex.163.com, g1.163.com, c.m.163.com, www.google.com, cdn.api.fotoable.com
+hostname = %APPEND% api2.helper.qq.com, imgcache.qq.com, mtteve.beacon.qq.com, vv.video.qq.com, qt.qq.com, y.gtimg.cn, splashqqlive.gtimg.com, qzonestyle.gtimg.cn, discuz.gtimg.cn, bla.gtimg.com, mmgr.gtimg.com, bk.bingo.qq.com, www.baidu.com, fcvbjbcebos.baidu.com, cover.baidu.com, afd.baidu.com, issuecdn.baidupcs.com, update.pan.baidu.com, video-dsp.pddpic.com, t-dsp.pinduoduo.com, images.pinduoduo.com, amdc.m.taobao.com, gw.alicdn.com, heic.alicdn.com, g.alicdn.com, yixiu-abtest.alicdn.com, img1.126.net, nex.163.com, g1.163.com, c.m.163.com, www.google.com, cdn.api.fotoable.com
 
