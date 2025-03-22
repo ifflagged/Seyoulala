@@ -34,6 +34,7 @@ hostname=api.revenuecat.com, api.rc-backup.com
 
 // ========= 动态ID ========= //
 const mapping = {
+  'Subtracky': ['premium','premium_subtracky_lifetime'],
   'Accountit/': ['spenditPlus','DesignTech.SIA.Spendit.Plus.Lifetime'],
   'Haushaltsbuch': ['full_access','com.fabian.hasse.haushaltsbuch.upgrade.combined'],
   '%E8%BD%A6%E7%A5%A8%E7%A5%A8': ['vip+watch_vip'],
