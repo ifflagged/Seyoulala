@@ -22,6 +22,7 @@ https://gist.githubusercontent.com/ddgksf2013/f43026707830c7818ee3ba624e383c8d/r
 https://gist.githubusercontent.com/ddgksf2013/0b2145e7362964c77af57a0e3402fe21/raw/BaiduPanSpeedBoost.conf
 
 # F #
+https://github.com/fmz200/wool_scripts/raw/main/Loon/plugin/blockAds.plugin
 https://github.com/fmz200/wool_scripts/raw/main/QuantumultX/rewrite/chongxie.txt
 https://github.com/fmz200/wool_scripts/raw/main/QuantumultX/rewrite/cleanup.snippet
 https://github.com/fmz200/wool_scripts/raw/main/Loon/plugin/weibo.plugin
@@ -29,6 +30,9 @@ https://github.com/fmz200/wool_scripts/raw/main/Loon/plugin/weibo.plugin
 # G #
 https://github.com/githubdulong/Script/raw/master/Surge/TikTok_Surge.sgmodule
 https://github.com/githubdulong/Script/raw/master/Surge/jd_price2.sgmodule
+
+# K #
+https://github.com/kokoryh/Sparkle/raw/master/surge/module/missav.sgmodule
 
 # M #
 https://github.com/Maasea/sgmodule/raw/master/YouTube.Enhance.sgmodule
