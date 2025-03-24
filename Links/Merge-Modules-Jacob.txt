@@ -42,7 +42,7 @@ Modules/Surge/Kelee/FleaMarket_remove_ads.sgmodule # Loon,Shadowrocket
 Modules/Loon/Kelee/HKDouYin_remove_ads.plugin
 # Modules/Surge/Kelee/JD_Price.sgmodule
 Modules/Surge/Kelee/JD_remove_ads.sgmodule # Loon,Shadowrocket
-Modules/Surge/Kelee/MeetYou_remove_ads.sgmodule # Loon,Shadowrocket
+Modules/Shadowrocket/Kelee/MeetYou_remove_ads.srmodule
 # Modules/Surge/Kelee/PinDuoDuo_remove_ads.sgmodule # Loon,Shadowrocket
 Modules/Surge/Kelee/RedPaper_remove_ads.sgmodule # Loon,Shadowrocket
 Modules/Surge/Kelee/Weixin_external_links_unlock.sgmodule # Loon,Shadowrocket
