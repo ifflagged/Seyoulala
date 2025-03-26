@@ -255,7 +255,7 @@ watsons = type=http-response, pattern=^https:\/\/mystore-gw\.watsonsvip\.com\.cn
 qingju = type=http-response, pattern=^https:\/\/htwkop\.xiaojukeji\.com\/gateway\?api=hm\.fa\.homeConfig, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/cleanup/qingju.js, requires-body=true, max-size=-1, timeout=60
 
 # > 全家微会员 微信小程序净化
-FamilyMart = type=http-response, pattern=^https:\/\/minifm\.maxxipoint\.com\/banner\/list, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/cleanup/FamilyMart.js, requires-body=true, max-size=-1, timeout=60
+FamilyMart = type=http-response, pattern=^https:\/\/minifm\.maxxipoint\.com\/banner\/list, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/FamilyMart.js, requires-body=true, max-size=-1, timeout=60
 
 # > 苏打校园APP 净化(需要卸载重装）@TEXAS提供
 soda = type=http-response, pattern=^https:\/\/api\.sodalife\.xyz\/v1\/posters\?location=SODA_APP%3AHOME%3ATOP, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/cleanup/soda.js, requires-body=true, max-size=-1, timeout=60

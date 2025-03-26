@@ -1,57 +1,45 @@
 
-<!DOCTYPE html>
 <html>
   <head>
     <meta content="origin" name="referrer">
-    <title>Forbidden &middot; GitHub</title>
+    <title>Rate limit &middot; GitHub</title>
+    <meta name="viewport" content="width=device-width">
     <style type="text/css" media="screen">
       body {
-        background-color: #f1f1f1;
-        margin: 0;
+        background-color: #f6f8fa;
+        color: rgba(0, 0, 0, 0.5);
+        font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+        font-size: 14px;
+        line-height: 1.5;
       }
-      body,
-      input,
-      button {
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-      }
-      .container { margin: 30px auto 40px auto; width: 800px; text-align: center; }
-      a { color: #4183c4; text-decoration: none; font-weight: bold; }
+      .c { margin: 50px auto; max-width: 600px; text-align: center; padding: 0 24px; }
+      a { text-decoration: none; }
       a:hover { text-decoration: underline; }
-      h1, h2, h3 { color: #666; }
-      ul { list-style: none; padding: 25px 0; }
-      li {
-        display: inline;
-        margin: 10px 50px 10px 0px;
-      }
-      .logo { display: inline-block; margin-top: 35px; }
-      .logo-img-2x { display: none; }
-      @media
-      only screen and (-webkit-min-device-pixel-ratio: 2),
-      only screen and (   min--moz-device-pixel-ratio: 2),
-      only screen and (     -o-min-device-pixel-ratio: 2/1),
-      only screen and (        min-device-pixel-ratio: 2),
-      only screen and (                min-resolution: 192dpi),
-      only screen and (                min-resolution: 2dppx) {
-        .logo-img-1x { display: none; }
-        .logo-img-2x { display: inline-block; }
+      h1 { color: #24292e; line-height: 60px; font-size: 48px; font-weight: 300; margin: 0px; }
+      p { margin: 20px 0 40px; }
+      #s { margin-top: 35px; }
+      #s a {
+        color: #666666;
+        font-weight: 200;
+        font-size: 14px;
+        margin: 0 10px;
       }
     </style>
   </head>
   <body>
-
-    <div class="container">
-      <h1>Access to this site has been restricted.</h1>
-
-      <p>
-        <br>
-        If you believe this is an error,
-        please contact <a href="https://support.github.com">Support</a>.
+    <div class="c">
+      <h1>Access has been restricted</h1>
+      <p>You have triggered a rate limit.<br><br>
+         Please wait a few minutes before you try again;<br>
+         in some cases this may take up to an hour.
       </p>
-
       <div id="s">
+        <a href="https://support.github.com">Contact Support</a> &mdash;
         <a href="https://githubstatus.com">GitHub Status</a> &mdash;
         <a href="https://twitter.com/githubstatus">@githubstatus</a>
       </div>
     </div>
   </body>
 </html>
+
+
