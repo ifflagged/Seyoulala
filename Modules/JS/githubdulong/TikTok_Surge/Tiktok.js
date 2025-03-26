@@ -1,45 +1,74 @@
+var watermark = body => {
+    try {
+        body.replace(/\"room_id\":(\d{2,})/g, '"room_id":"$1"');
+        let obj = JSON.parse(body);
+        if (obj.data) obj.data = Follow(obj.data);
+        if (obj.aweme_list) obj.aweme_list = Feed(obj.aweme_list);
+        if (obj.aweme_detail) obj.aweme_detail = Share(obj.aweme_detail);
+        if (obj.aweme_details) obj.aweme_details = Feed(obj.aweme_details);
+        $done({ body: JSON.stringify(obj) });
+} catch (err) {
+        console.log("aaaaa!!!!\n" + err);
+        $done({});
+    }
+}
+watermark($response.body);
 
-<html>
-  <head>
-    <meta content="origin" name="referrer">
-    <title>Rate limit &middot; GitHub</title>
-    <meta name="viewport" content="width=device-width">
-    <style type="text/css" media="screen">
-      body {
-        background-color: #f6f8fa;
-        color: rgba(0, 0, 0, 0.5);
-        font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
-        font-size: 14px;
-        line-height: 1.5;
-      }
-      .c { margin: 50px auto; max-width: 600px; text-align: center; padding: 0 24px; }
-      a { text-decoration: none; }
-      a:hover { text-decoration: underline; }
-      h1 { color: #24292e; line-height: 60px; font-size: 48px; font-weight: 300; margin: 0px; }
-      p { margin: 20px 0 40px; }
-      #s { margin-top: 35px; }
-      #s a {
-        color: #666666;
-        font-weight: 200;
-        font-size: 14px;
-        margin: 0 10px;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="c">
-      <h1>Access has been restricted</h1>
-      <p>You have triggered a rate limit.<br><br>
-         Please wait a few minutes before you try again;<br>
-         in some cases this may take up to an hour.
-      </p>
-      <div id="s">
-        <a href="https://support.github.com">Contact Support</a> &mdash;
-        <a href="https://githubstatus.com">GitHub Status</a> &mdash;
-        <a href="https://twitter.com/githubstatus">@githubstatus</a>
-      </div>
-    </div>
-  </body>
-</html>
+function Follow(data) {
+    if (data && data.length > 0) {
+        for (let i in data) {
+            if (data[i].aweme.video) video_lists(data[i].aweme);
+        }
+    }
+    return data;
+}
+// 电报群：https://t.me/baipiao_666
 
+function Feed(aweme_list) {
+    if (aweme_list && aweme_list.length > 0) {
+        for (let i in aweme_list) {
+            if (aweme_list[i].is_ads == true) {
+                aweme_list.splice(i, 1);
+            } else if (aweme_list[i].video) {
+                video_lists(aweme_list[i]);
+            } else {
+                if (!enabled_live) aweme_list.splice(i, 1);
+            }
+        }
+    }
+    return aweme_list;
+}
 
+function Share(aweme_detail) {
+
+    if (aweme_detail.video) video_lists(aweme_detail);
+    return aweme_detail;
+}
+
+function video_lists(lists) {
+    lists.prevent_download = false;
+    //  lists.music.prevent_download = false;
+    // lists.music.is_commerce_music = false ;
+    //
+    // lists.music.is_original_sound = true;
+    //
+    lists.status.reviewed = 1;
+    lists.video_control.allow_download = true;
+
+    //lists.video_control.allow_music = true;
+
+    lists.video_control.prevent_download_type = 0;
+    delete lists.video.misc_download_addrs;
+    lists.video.download_addr = lists.video.play_addr;
+    lists.video.download_suffix_logo_addr = lists.video.play_addr;
+    lists.aweme_acl.download_general.mute = false;
+    if (lists.aweme_acl.download_general.extra) {
+        delete lists.aweme_acl.download_general.extra;
+        lists.aweme_acl.download_general.code = 0;
+        lists.aweme_acl.download_general.show_type = 2;
+        lists.aweme_acl.download_general.transcode = 3;
+        lists.aweme_acl.download_mask_panel = lists.aweme_acl.download_general;
+        lists.aweme_acl.share_general = lists.aweme_acl.download_general;
+    }
+    return lists;
+}

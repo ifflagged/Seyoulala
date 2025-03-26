@@ -2241,7 +2241,7 @@ http-response ^https:\/\/api\.boohee\.com\/meta-interface\/v1\/index\/plaza\? sc
 http-response ^https:\/\/api\.boohee\.com\/open-interface\/v1\/string\/market_page\?title=metabolism_config$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/bohe_ads.js, requires-body=true, timeout=60, tag=薄荷健康
 
 # > 彩云天气
-http-request ^https?:\/\/wrapper\.cyapi\.cn\/v1\/activity\? script-path=http://127.0.0.1:9100/convert/_start_/https://raw.githubusercontent.com/Keywos/rule/main/mocks/caiyun.json/_end_/caiyun.json?type=mock&target-app=loon-plugin, timeout=60, tag=彩云天气
+http-request ^https?:\/\/wrapper\.cyapi\.cn\/v1\/activity\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/caiyun.json?type=mock&target-app=loon-plugin, timeout=60, tag=彩云天气
 
 # > 菜鸟裹裹
 http-response ^https?:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/header.js, timeout=60, tag=菜鸟裹裹
@@ -2317,7 +2317,7 @@ http-response ^https?:\/\/napi\.ithome\.com\/api\/(news\/index|topmenu\/getfeeds
 http-response ^https?:\/\/yunbusiness\.ccb\.com\/basic_service\/txCtrl\?txcode=A3341AB04 script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/ccbLifeAds.js, requires-body=true, timeout=60, tag=建行生活
 
 # 删除首页+金融+我的多个横幅等乱七八糟的广告
-http-request ^https?:\/\/yunbusiness\.ccb\.com\/basic_service\/txCtrl\?txcode=A3341AB05 script-path=http://127.0.0.1:9100/convert/_start_/https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/ccbLife/A3341AB05.json/_end_/A3341AB05.json?type=mock&target-app=loon-plugin, timeout=60, tag=建行生活
+http-request ^https?:\/\/yunbusiness\.ccb\.com\/basic_service\/txCtrl\?txcode=A3341AB05 script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/A3341AB05.json?type=mock&target-app=loon-plugin, timeout=60, tag=建行生活
 
 # 内置饿了么
 http-response ^https?:\/\/g\.alicdn\.com\/.*o2o-ad script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/alicdn.js, requires-body=true, timeout=60, tag=建行生活内置饿了么
