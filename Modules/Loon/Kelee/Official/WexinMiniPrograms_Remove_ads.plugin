@@ -8,7 +8,7 @@
 #!loon_version=3.2.4(787)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/WeixinMiniPrograms.png
-#!date=2025-03-26 22:40:22
+#!date=2025-03-26 23:21:49
 
 [Rule]
 DOMAIN,wxsnsdy.wxs.qq.com,REJECT
@@ -197,8 +197,10 @@ DOMAIN,e.jparking.cn,REJECT
 
 ^https:\/\/rms\.meituan\.com\/api\/v1\/rmsmina\/c\/queryShopPortalInfo\? response-body-json-del data.popUpWindows
 
-^https:\/\/chong\.qq\.com\/tws\/wxmobile\/GetProduct4App\? response-body-json-jq del(.respInfo.reserveProductList) | .respInfo.shortcut |= map(select(.name != "充流量" and .name != "领话费券"))
-^https:\/\/chong\.qq\.com\/tws\/usernumberinfo\/GetUserInfo\? response-body-json-del data.request.number.markSeat.servicehallOperList data.request.number.servicehallOperList data.request.number.markSeat.servicehallFuncList data.request.number.servicehallFuncList
+^https:\/\/chong\.qq\.com\/tws\/wxmobile\/GetProduct4App\? response-body-json-jq 'del(.respInfo.reserveProductList) | .respInfo.shortcut |= map(select(.name != "充流量" and .name != "领话费券"))'
+^https:\/\/chong\.qq\.com\/tws\/wxmobile4app\/GetSecondProduct\? response-body-json-jq 'del(.respInfo.productList) | .respInfo.shortcut |= map(select(.name != "充流量" and .name != "领话费券"))'
+^https:\/\/chong\.qq\.com\/tws\/usernumberinfo\/GetUserInfo\? response-body-json-jq '.data.request.number.basicList |= map(select(.coupon.title != "领福利"))'
+^https:\/\/chong\.qq\.com\/tws\/usernumberinfo\/GetUserInfo\? response-body-json-del data.request.number.navigatorList data.request.number.cardList data.request.number.hallFuncList
 ^https:\/\/wx\.online-cmcc\.cn\/contactpoint\/customer\/api\/list\? reject-dict
 ^https:\/\/wx\.10086\.cn\/qwhdhub\/activity\/info reject-dict
 
