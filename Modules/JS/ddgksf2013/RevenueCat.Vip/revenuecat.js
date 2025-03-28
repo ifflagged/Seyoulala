@@ -48,7 +48,7 @@ const mapping = {
   'Precious/': ['Pro'],
   'GBA/': ['xGBA.pro'],
   'mark_cup/': ['premiun'],
-  'Wake%20Music': ['premiun','com.OfflineMusic.www.lifetime198'],
+  'Wake%20Music': ['premiun','com.OfflineMusic.www.lifetime298'],
   'Photomator': ['pixelmator_photo_pro_access'],
   'StepUp/': ['premiun'],
   'SleepMaster/': ['premium','sm_14999_lifetime'],
