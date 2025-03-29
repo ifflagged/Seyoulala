@@ -8,6 +8,7 @@
 [Argument]
 屏蔽上传按钮=switch,true,false,tag=屏蔽上传按钮, desc=屏蔽上传按钮
 屏蔽选段按钮=switch,true,false,tag=屏蔽选段按钮, desc=屏蔽选段按钮
+屏蔽Shorts按钮=switch,false,true,tag=屏蔽Shorts按钮, desc=屏蔽Shorts按钮
 字幕翻译语言=input,off,tag=字幕翻译语言, desc=字幕翻译语言
 歌词翻译语言=input,off,tag=歌词翻译语言, desc=歌词翻译语言
 脚本执行引擎=input,auto,tag=脚本执行引擎, desc=脚本执行引擎
@@ -21,7 +22,7 @@ AND,((DOMAIN,youtubei.googleapis.com),(PROTOCOL,UDP)),REJECT
 ^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad mock-response-body data-type=text data="" status-code=502
 
 [Script]
-http-response ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Maasea/YouTube.Enhance/youtube.response.js, requires-body=true, binary-body-mode=true, tag=youtube.response, argument="{"lyricLang":"{歌词翻译语言}","captionLang":"{字幕翻译语言}","blockUpload":{屏蔽上传按钮},"blockImmersive":{屏蔽选段按钮},"debug":{启用调试模式}}"
+http-response ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Maasea/YouTube.Enhance/youtube.response.js, requires-body=true, binary-body-mode=true, tag=youtube.response, argument="{"lyricLang":"{歌词翻译语言}","captionLang":"{字幕翻译语言}","blockUpload":{屏蔽上传按钮},"blockImmersive":{屏蔽选段按钮},"blockShorts":{屏蔽Shorts按钮},"debug":{启用调试模式}}"
 
 [MITM]
 hostname = *.googlevideo.com, youtubei.googleapis.com
