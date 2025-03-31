@@ -1143,6 +1143,8 @@ https?:\/\/m\.sd\.10086\.cn\/zapi\/app_common\/homeWelcome\/welcome.do data-type
 #^https?:\/\/mbs\.boc\.cn\/ubas-mgateway-static\/images\/advertType\/.+.jpg data-type=tiny-gif status-code=200
 
 # > zhongguotianqi
+^https?:\/\/[a-zA-Z0-9_-]+\.admobile.top\/ data-type=text data=" " status-code=200
+
 ^https?:\/\/[a-zA-Z0-9_-]+\.ranfenghd\.com\/ad data-type=text data=" " status-code=200
 
 ^https?:\/\/[a-zA-Z0-9_-]+\.tianmu\.mobi\/ad data-type=text data=" " status-code=200

@@ -738,6 +738,7 @@ https?:\/\/m\.sd\.10086\.cn\/zapi\/app_common\/homeWelcome\/welcome.do - reject-
 # > zhongguoyinhang
 #^https?:\/\/mbs\.boc\.cn\/ubas-mgateway-static\/images\/advertType\/.+.jpg - reject-img
 # > zhongguotianqi
+^https?:\/\/[a-zA-Z0-9_-]+\.admobile.top\/ - reject-200
 ^https?:\/\/[a-zA-Z0-9_-]+\.ranfenghd\.com\/ad - reject-200
 ^https?:\/\/[a-zA-Z0-9_-]+\.tianmu\.mobi\/ad - reject-200
 ^https?:\/\/[a-zA-Z0-9_-]+\.weathercn\.com\/(.*bypage|appindexicon) - reject-200
