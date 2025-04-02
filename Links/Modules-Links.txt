@@ -14,6 +14,7 @@ https://github.com/ddgksf2013/dev/raw/master/ForOwnUse.conf
 https://github.com/ddgksf2013/Modules/raw/main/JD_Price.sgmodule
 https://github.com/ddgksf2013/Modules/raw/main/RevenueCat.Vip.sgmodule
 https://github.com/ddgksf2013/Rewrite/raw/master/AdBlock/Amap.conf
+https://github.com/ddgksf2013/Rewrite/raw/master/AdBlock/BilibiliAds.conf
 https://github.com/ddgksf2013/Rewrite/raw/master/AdBlock/SmzdmAds.conf
 https://github.com/ddgksf2013/Rewrite/raw/master/AdBlock/StartUp.conf
 https://github.com/ddgksf2013/Rewrite/raw/master/AdBlock/XiaoHongShuAds.conf
