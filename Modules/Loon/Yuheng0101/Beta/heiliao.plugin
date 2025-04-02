@@ -3,13 +3,13 @@
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
 #!keyword=Jacob
 
-#!date=2025-04-02 16:12:46
+#!date=2025-04-02 20:11:10
 
 [Script]
-http-response ^https?:\/\/(18hlw\.com|xota1\.vjrszblg\.xyz|6s3v1\.qevoydpt\.xyz|www\.qlxsine\.xyz|d2k85ep699qvgb\.cloudfront\.net).* script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Yuheng0101/heiliao/web.js, requires-body=true, timeout=60, tag=黑料去广告
+http-response ^https?:\/\/(18hlw\.com|mf68l\.vkbcxcya\.xyz|xota1\.vjrszblg\.xyz|www\.qlxsine\.xyz|d2k85ep699qvgb\.cloudfront\.net).* script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Yuheng0101/heiliao/web.js, requires-body=true, timeout=60, tag=黑料去广告
 
 http-response ^https:\/\/api(\d+)?.hlwapi(\d+)?\.com\/api\.php\/api\/index\/(config|userInfo|index|detail) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Yuheng0101/heiliao/app.js, requires-body=true, timeout=30, tag=黑料App去广告
 
 [MITM]
-hostname = 18hlw.com, xota1.vjrszblg.xyz, 6s3v1.qevoydpt.xyz, www.qlxsine.xyz, d2k85ep699qvgb.cloudfront.net, api*.hlwapi*.com
+hostname = 18hlw.com, mf68l.vkbcxcya.xyz, xota1.vjrszblg.xyz, www.qlxsine.xyz, d2k85ep699qvgb.cloudfront.net, api*.hlwapi*.com
 
