@@ -8,7 +8,7 @@
 #!tag=去广告
 #!loon_version=3.2.4(787)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!date=2024-11-28 00:00:00
+#!date=2025-04-04 13:03:05
 
 [Rule]
 DOMAIN,appcloud.zhihu.com,REJECT
@@ -22,6 +22,7 @@ IP-CIDR,118.89.204.198/32,REJECT,no-resolve
 IP-CIDR6,2402:4e00:1200:ed00:0:9089:6dac:96b6/128,REJECT,no-resolve
 
 [Rewrite]
+^https:\/\/api\.zhihu\.com\/questions\/\d+(?:\/answers|\/feeds|\?include=) response-body-json-jq 'del(.ad_info, .data[].ad_info, .query_info) | if (.data | type) == "array" then .data |= map(select(.target?.answer_type?
 ^https:\/\/api\.zhihu\.com\/commercial_api\/ - reject-dict
 ^https:\/\/api\.zhihu\.com\/content-distribution-core\/bubble\/common\/settings - reject-dict
 ^https:\/\/api\.zhihu\.com\/(?:moments\/lastread|drama\/hot-drama-list) - reject-dict
@@ -39,7 +40,7 @@ IP-CIDR6,2402:4e00:1200:ed00:0:9089:6dac:96b6/128,REJECT,no-resolve
 ^https:\/\/api\.zhihu\.com\/ab\/api\/v1\/products\/zhihu\/platforms\/ios\/config - reject-dict
 ^https:\/\/api\.zhihu\.com\/ad-style-service\/request - reject-dict
 ^https:\/\/appcloud2\.zhihu\.com\/v3\/resource\?group_name=mp - reject-dict
-^https:\/\/link\.zhihu\.com\/\?target=(?:https?)?(?:%3A|:)?(?:\/\/|%2F%2F)?(.*) http://$1 307
+^https:\/\/link\.zhihu\.com\/\?target=(?:https?)?(?:%3A|:)?(?:\/\/|%2F%2F)?(.*) http://$1 302
 ^https:\/\/api\.zhihu\.com\/distribute\/rhea\/qa_ad_card\/h5\/recommendation\? - reject-dict
 ^https:\/\/www\.zhihu\.com\/api\/v4\/hot_recommendation - reject-dict
 ^https:\/\/www\.zhihu\.com\/api\/v4\/mcn\/v2\/linkcards\? - reject-dict
@@ -65,8 +66,6 @@ http-response ^https:\/\/api\.zhihu\.com\/root\/tab script-path=https://github.c
 http-response ^https:\/\/api\.zhihu\.com\/v2\/topstory\/hot-lists\/everyone-seeing\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Zhihu_remove_ads/Zhihu_remove_ads.js, requires-body=true, tag=移除热榜信息流推广
 
 http-response ^https:\/\/api\.zhihu\.com\/next-(?:bff|data|render) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Zhihu_remove_ads/Zhihu_remove_ads.js, requires-body=true, tag=移除下一个回答推广、评论区顶部推广
-
-http-response ^https:\/\/api\.zhihu\.com\/questions\/\d+(?:\/answers|\/feeds|\?include=) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Zhihu_remove_ads/Zhihu_remove_ads.js, requires-body=true, tag=移除回答详情页推广
 
 http-response ^https:\/\/www\.zhihu\.com\/api\/v4\/(?:articles|answers)\/\d+\/recommendations?\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Zhihu_remove_ads/Zhihu_remove_ads.js, requires-body=true, tag=移除回答详情页推广
 
