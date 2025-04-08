@@ -17,7 +17,8 @@ https://github.com/ifflagged/Neverflagged/raw/main/Surge/Module/Tools.sgmodule #
 Modules/Surge/ifflagged/Module-Common.sgmodule # Loon,Shadowrocket
 Modules/Surge/ifflagged/Plugin-Common.sgmodule # Loon,Shadowrocket
 
-Modules/Surge/Maasea/YouTube.Enhance.sgmodule # Loon,Shadowrocket
+Modules/Surge/Maasea/YouTube.Enhance.sgmodule # Shadowrocket
+Modules/Loon/ifflagged/YouTube-AD.plugin
 # Modules/Surge/DualSubs/DualSubs.Universal.sgmodule # Loon,Shadowrocket
 Modules/Surge/DualSubs/DualSubs.Spotify.sgmodule # Loon,Shadowrocket
 # Modules/Surge/DualSubs/DualSubs.YouTube.sgmodule # Loon,Shadowrocket
@@ -37,7 +38,7 @@ Modules/Surge/Kelee/12306_remove_ads.sgmodule # Loon,Shadowrocket
 Modules/Surge/Kelee/Amap_remove_ads.sgmodule # Loon,Shadowrocket
 Modules/Surge/Kelee/BaiduNetDisk_remove_ads.sgmodule # Loon,Shadowrocket
 Modules/Loon/Kelee/DiDi_remove_ads.plugin
-Modules/Surge/ifflagged/DiDi.sgmodule # Shadowrocket
+Modules/Surge/ifflagged/DiDi-AD.sgmodule # Shadowrocket
 Modules/Surge/Kelee/FleaMarket_remove_ads.sgmodule # Loon,Shadowrocket
 Modules/Loon/Kelee/HKDouYin_remove_ads.plugin
 # Modules/Surge/Kelee/JD_Price.sgmodule
@@ -90,7 +91,8 @@ Modules/Surge/BiliUniverse/BiliBili.Redirect.sgmodule # Loon,Shadowrocket
 
 # Modules/Surge/Yuheng0101/heiliao.sgmodule # Loon,Shadowrocket
 
-Modules/Surge/ifflagged/TikTok.sgmodule # Loon,Shadowrocket
+Modules/Surge/ifflagged/TikTok.sgmodule # Shadowrocket
+Modules/Loon/ifflagged/Loon-TikTok.plugin
 
 https://github.com/chavyleung/scripts/raw/master/box/rewrite/boxjs.rewrite.surge.sgmodule # Copy
 https://github.com/chavyleung/scripts/raw/master/box/rewrite/boxjs.rewrite.loon.plugin
