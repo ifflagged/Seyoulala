@@ -1,0 +1,20 @@
+#!name=Youtube (Music) Enhance
+#!desc=适用于 Youtube & Youtube Music
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
+#!category=Jacob
+
+#!arguments-desc=- 屏蔽参数：[true, false] \n- 翻译参数：[语言代码, off] \n- 脚本引擎：[auto, jsc, webview]\n\n1. 语言代码遵循 Google Translate Languages Codes, 当填入 off 时关闭翻译\n2. 推荐使用 jsc 引擎，但你仍可以切换成 webview 体验 Surge 新特性\n3. 开启调试模式用于输出更多日志
+
+[Rule]
+AND,((DOMAIN-SUFFIX,googlevideo.com),(PROTOCOL,UDP)),REJECT
+AND,((DOMAIN,youtubei.googleapis.com),(PROTOCOL,UDP)),REJECT
+
+[Map Local]
+^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad data-type=text data="" status-code=502 header="Content-Type:text/plain"
+
+[Script]
+youtube.response = type=http-response, pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/YouTube-AD/youtube.response.js, requires-body=true, binary-body-mode=true, argument="[{lyricLang},{captionLang},{blockUpload},{blockImmersive},{blockShorts},{debug}]"
+
+[MITM]
+hostname = %APPEND% *.googlevideo.com, youtubei.googleapis.com
+
