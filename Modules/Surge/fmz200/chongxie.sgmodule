@@ -1172,12 +1172,6 @@ https://support.you.163.com/appversync/check.do - reject
 # 去开屏广告
 ^https:\/\/ecloud\.tppension\.cntaiping\.com\/fxtpplatform\/common\/anonymous\/common\/page\/queryStartPageNew\?language=zh-CN data-type=text data="{}" status-code=200
 
-# hostname = mobile.cebbank.com, yghsh.cebbank.com
-^https?:\/\/mobile\.cebbank\.com\/cebclient\/ClientNoticeList data-type=text data=" " status-code=200
-
-# > 光大银行 阳光惠生活
-^https?:\/\/yghsh\.cebbank\.com\/static\/picture\/.*.jpg data-type=text data=" " status-code=200
-
 # 如开启可自行添加主机名
 ^https?:\/\/v\.icbc\.com\.cn\/userfiles\/Resources\/WAP\/advertisement\/ data-type=text data=" " status-code=200
 
