@@ -1273,8 +1273,8 @@ https?:\/\/91porn\.com(\/|)$ https://91porn.com/index.php 302
 ^https?:\/\/manga\.bilibili\.com\/twirp\/comic\.v\d\.Comic\/ListFlash - reject-dict
 ^https:\/\/api\.live\.bilibili\.com\/xlive\/e-commerce-interface\/v1\/ecommerce-user\/get_shopping_info\? - reject-dict
 # Loon-TikTok
-^https:\/\/api-va\.tiktokv\.com\/api\/ad\/ reject
-^https:\/\/tnc\d+-platform-\w+\.tiktokv\.com\/get_domains\/ reject
+^https:\/\/api-va\.tiktokv\.com\/api\/ad\/ - reject
+^https:\/\/tnc\d+-platform-\w+\.tiktokv\.com\/get_domains\/ - reject
 
 [Host]
 # DNS
@@ -1529,7 +1529,7 @@ http-request ^https?:\/\/(api-.+)\.smoot\.apple\.com\/apple\.parsec\.spotlight\.
 http-response ^https?:/\/(cn|www)\.pornhub\.com\/($|(view|video).*$) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/Module-Common/pornhub.js, requires-body=true, tag=Pornhub
 http-response https?:\/\/91porn\.com\/(index|view_video|login|search_result)\.php script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/Module-Common/91porn.js, requires-body=true, tag=91Porn
 # YouTube-AD
-http-response ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch) script-path=https://github.com/Maasea/sgmodule/raw/master/Script/Youtube/youtube.response.js, requires-body=true, binary-body-mode=true, tag=youtube.response, argument=[{lyricLang},{captionLang},{blockUpload},{blockImmersive},{blockShorts},{debug}]
+http-response ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Maasea/YouTube.Enhance/youtube.response.js, requires-body=true, binary-body-mode=true, tag=youtube.response, argument=[{lyricLang},{captionLang},{blockUpload},{blockImmersive},{blockShorts},{debug}]
 # DualSubs.Spotify
 http-response ^https?:\/\/api\.spotify\.com\/v1\/tracks\? requires-body=1, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/DualSubs/DualSubs.Spotify/response.bundle.js, tag=🍿️ DualSubs.Spotify.Tracks.response.json, argument=[{Types},{Languages[0]},{Languages[1]},{Vendor},{LrcVendor},{LogLevel}]
 http-request ^https?:\/\/spclient\.wg\.spotify\.com\/color-lyrics\/v2\/track\/(.+)\?(.*)format=json requires-body=1, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/DualSubs/DualSubs.Spotify/request.bundle.js, tag=🍿️ DualSubs.Spotify.Lyrics.request.json, argument=[{Types},{Languages[0]},{Languages[1]},{Vendor},{LrcVendor},{LogLevel}]
@@ -1673,7 +1673,7 @@ http-request ^https?:\/\/[xy0-9]+\.mcdn\.bilivideo\.(cn|com):(4483|9102)\/upgcxc
 http-request ^https?:\/\/(.+):4480\/upgcxcode\/ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/BiliUniverse/BiliBili.Redirect/request.bundle.js, tag=📺 BiliBili.Redirect.PCDN.upgcxcode.m4s, argument=Host.PCDN=upos-sz-mirrorali.bilivideo.com, argument=[{Host.Akamaized},{Host.BStar},{Host.PCDN},{Host.MCDN},{LogLevel}]
 http-request ^https?:\/\/upos-(hz|bstar1)-mirrorakam\.akamaized\.net/upgcxcode\/ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/BiliUniverse/BiliBili.Redirect/request.bundle.js, tag=📺 BiliBili.Redirect.Akamaized.upgcxcode.m4s, argument=Host.Akamaized=upos-sz-mirrorali.bilivideo.com, argument=[{Host.Akamaized},{Host.BStar},{Host.PCDN},{Host.MCDN},{LogLevel}]
 # Loon-TikTok
-http-request https?:\/\/.+.(tiktokv|tiktokcdn).com\/.+(region\d?=CN|&mcc_mnc=\d+)  script-path=https://github.com/ifflagged/Neverflagged/raw/main/Loon/Scripts/TikTok.js, timeout=20, tag=TikTok
+http-request https?:\/\/.+.(tiktokv|tiktokcdn).com\/.+(region\d?=CN|&mcc_mnc=\d+) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/Loon-TikTok/TikTok.js, timeout=20, tag=TikTok
 # boxjs.rewrite.loon
 http-request ^https?:\/\/(.+\.)?boxjs\.(com|net) script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/box/chavy.boxjs.js, requires-body=true, timeout=120, tag=BoxJs
 
