@@ -5,8 +5,8 @@ https://github.com/ifflagged/Neverflagged/raw/main/Surge/Module/TikTok.sgmodule
 https://github.com/ifflagged/Neverflagged/raw/main/Loon/Plugin/bilibili-AD.plugin
 https://github.com/ifflagged/Neverflagged/raw/main/Loon/Plugin/DiDi-AD.plugin
 https://github.com/ifflagged/Neverflagged/raw/main/Loon/Plugin/Plugin-Common.plugin
-https://github.com/ifflagged/Neverflagged/raw/main/Loon/Plugin/Loon-TikTok.plugin
-https://github.com/ifflagged/Neverflagged/raw/main/Loon/Plugin/YouTube-AD.plugin
+# https://github.com/ifflagged/Neverflagged/raw/main/Loon/Plugin/Loon-TikTok.plugin
+# https://github.com/ifflagged/Neverflagged/raw/main/Loon/Plugin/YouTube-AD.plugin
 
 # A #
 https://github.com/Alex0510/Eric/raw/master/surge/Module/revenucar.sgmodule
