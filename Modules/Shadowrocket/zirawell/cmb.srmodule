@@ -13,7 +13,7 @@ DOMAIN,yl.zh.cmbchina.com,REJECT
 ^https?:\/\/webapp\.joyingtrip\.com\/cmbapp\/api\/hotel\/marketing\/adListNew - reject-dict
 
 [Script]
-cmb = type=http-request, pattern=^https?:\/\/mobile\.cmbchina\.com\/dcardmanage\/salary-welfare\/get-recommend, script-path=http://127.0.0.1:9100/convert/_start_/https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/cmb/cmb.json/_end_/cmb.json?type=mock&target-app=shadowrocket-module, timeout=60
+cmb = type=http-request, pattern=^https?:\/\/mobile\.cmbchina\.com\/dcardmanage\/salary-welfare\/get-recommend, script-path=http://127.0.0.1:9100/convert/_start_/https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Data/cmb.json/_end_/cmb.json?type=mock&target-app=shadowrocket-module, timeout=60
 
 [MITM]
 hostname = %APPEND% webappcfg.paas.cmbchina.com, webapp.joyingtrip.com, mobile.cmbchina.com
