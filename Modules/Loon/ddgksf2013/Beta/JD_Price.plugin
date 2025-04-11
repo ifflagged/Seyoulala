@@ -1,18 +1,18 @@
 #!name=京东历史比价
-#!desc=京东应用商品页内嵌历史比价，点击商品标题即可查看
-#!author=wf021325
+#!desc=京东应用商品页内嵌历史比价，点击商品标题或详情即可查看
+#!author=wf021325,mw418,小白脸
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
 #!keyword=Jacob
 
-#!tips=京东版本V13.8.2
 #!tgchannel=https://t.me/ddgksf2021
 #!moduleUrl=https://github.com/ddgksf2013/Modules/raw/main/JD_Price.sgmodule
 #!howtouse=小火箭、Surge用户直接添加模块，QuantumultX用户添加重写时打开解析器
 
 [Script]
-# > 京东比价@wf021325
-http-response ^https?:\/\/api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig|basicConfig) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ddgksf2013/JD_Price/jd_price.js, requires-body=true, timeout=60, tag=JD_Price
+http-response ^https?:\/\/api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig|basicConfig) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ddgksf2013/JD_Price/jd_price.js, requires-body=true, timeout=60, tag=JD_Price1
+
+http-response ^https?:\/\/in\.m\.jd\.com\/product\/graphext\/\d+\.html script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ddgksf2013/JD_Price/jd_price.js, requires-body=true, timeout=60, tag=JD_Price2
 
 [MITM]
-hostname = api.m.jd.com
+hostname = api.m.jd.com, in.m.jd.com
 
