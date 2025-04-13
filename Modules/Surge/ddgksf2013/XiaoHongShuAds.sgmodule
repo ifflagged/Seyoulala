@@ -3,6 +3,9 @@
 #!category=Jacob
 
 [Map Local]
+# > 小红书_搜索广告推荐@ddgksf2013
+^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/search\/notes\/recommend_info\? data-type=text data=" " status-code=200
+
 # > 小红书_通用广告请求@ddgksf2013
 ^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/system_service\/splash data-type=text data=" " status-code=200
 
