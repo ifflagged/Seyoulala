@@ -67,7 +67,7 @@ http-response ^https://app.bilibili.com/x/v2/search/square script-path=https://g
 http-response ^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.(?:app\.(?:interface\.v1\.(?:Teenagers\/ModeStatus|Search\/DefaultWords)|show\.v1\.Popular\/Index|dynamic\.v2\.Dynamic\/DynAll|view(?:unite)?\.v1\.View\/(?:View|ViewProgress|TFInfo|RelatesFeed)|playurl\.v1\.PlayURL\/PlayView|playerunite\.v1\.Player\/PlayViewUnite)|polymer\.app\.search\.v1\.Search\/SearchAll|community\.service\.dm\.v1\.DM\/DmView|main\.community\.reply\.v1\.Reply\/MainList|pgc\.gateway\.player\.v2\.PlayURL\/PlayView) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ddgksf2013/BilibiliAds/bilibili.protobuf.js, requires-body=true, binary-body-mode=true, timeout=60, tag=bilibili.protobuf
 
 # > BiliBili_哔哩哔哩_繁体CC字幕转中文简体[自行启用hostname=aisubtitle.hdslb.com,i0.hdslb.com]@ddgksf2013
-#http-response ^https?:\/\/.*\.hdslb\.com\/bfs\/subtitle\/.+\.json script-path=https://github.com/ddgksf2013/Scripts/raw/master/bilibili_cc.js, requires-body=true, timeout=60, tag=bilibili_cc
+#http-response ^https?:\/\/.*\.hdslb\.com\/bfs\/subtitle\/.+\.json script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ddgksf2013/BilibiliAds/bilibili_json.js, requires-body=true, timeout=60, tag=bilibili_json
 
 # > BiliBili_哔哩哔哩_去除统一设置的皮肤[注释留存]@ddgksf2013
 #http-response ^https?:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ddgksf2013/BilibiliAds/bilibili_json.js, requires-body=true, timeout=60, tag=bilibili_json
