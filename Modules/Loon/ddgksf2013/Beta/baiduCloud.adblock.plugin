@@ -1,7 +1,7 @@
 #!name=baiduCloud
 #!desc=baiduCloud
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
-#!keyword=Jacob
+#!tag=Jacob
 
 [Rewrite]
 # > 百度网盘_启动弹窗@ddgksf2013

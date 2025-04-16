@@ -1,7 +1,7 @@
 #!name=🎵 TikTok
 #!desc=TikTok Unlock
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
-#!keyword=Jacob
+#!tag=Jacob
 
 #!arguments-desc=TikTok_Region: 解锁 TikTok 地区的地区码\n美国：US, 台湾：TW, 新加坡：SG, 日本：JP, 韩国：KR\n\nTikTok_Watermark: 脚本名称\n# TikTok Watermark 为禁用
 #!auther=https://github.com/githubdulong/Script/raw/master/Surge/TikTok_Surge.sgmodule

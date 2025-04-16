@@ -2,7 +2,7 @@
 #!desc=去除一些冗余的模块，遇到异常时关闭此配置
 #!author=奶思
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
-#!keyword=Jacob
+#!tag=Jacob
 
 #!homepage=https://github.com/fmz200/wool_scripts
 #!raw-url=https://github.com/fmz200/wool_scripts/raw/main/QuantumultX/rewrite/cleanup.snippet

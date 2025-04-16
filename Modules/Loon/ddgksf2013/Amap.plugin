@@ -1,7 +1,7 @@
 #!name=Amap
 #!desc=Amap
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
-#!keyword=Jacob
+#!tag=Jacob
 
 [Rewrite]
 # > 高德地图_路线规划下方广告@ddgksf2013

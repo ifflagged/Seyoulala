@@ -2,7 +2,7 @@
 #!desc=京东应用商品页内嵌历史比价，点击商品标题或详情即可查看
 #!author=wf021325,mw418,小白脸
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
-#!keyword=Jacob
+#!tag=Jacob
 
 #!tgchannel=https://t.me/ddgksf2021
 #!moduleUrl=https://github.com/ddgksf2013/Modules/raw/main/JD_Price.sgmodule

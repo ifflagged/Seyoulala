@@ -1,7 +1,7 @@
 #!name=functional
 #!desc=functional
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
-#!keyword=Jacob
+#!tag=Jacob
 
 [Rule]
 # > 安全浏览限制解除 - UNLOCKSAFE
