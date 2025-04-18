@@ -20,12 +20,12 @@
 [rewrite_local]
 ^https?:\/\/api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig|basicConfig) url script-response-body https://raw.githubusercontent.com/wf021325/qx/master/js/jd_price.js
 ^https?:\/\/in\.m\.jd\.com\/product\/graphext\/\d+\.html url script-response-body https://raw.githubusercontent.com/wf021325/qx/master/js/jd_price.js
-^https?:\/\/apapia-sqk-weblogic\.manmanbuy\.com\/userOrder\/hasOrderByMmbDevId$ url script-request-body https://raw.githubusercontent.com/wf021325/qx/master/js/jd_price.js
+^https?:\/\/basic-ucenter\.manmanbuy\.com\/v4\/share\/getShareInfo$ url script-request-body https://raw.githubusercontent.com/wf021325/qx/master/js/jd_price.js
 
 # ^https?:\/\/apapia-sqk-weblogic\.manmanbuy\.com\/userOrder\/hasOrderByMmbDevId$ url script-request-body http://192.168.2.170:8080/jd_price.js
 # ^https?:\/\/in\.m\.jd\.com\/product\/graphext\/\d+\.html url script-response-body http://192.168.2.170:8080/jd_price.js
 [mitm]
-hostname = api.m.jd.com, in.m.jd.com, apapia-sqk-weblogic.manmanbuy.com
+hostname = api.m.jd.com, in.m.jd.com, basic-ucenter.manmanbuy.com
 */
 
 const path2 = "wareBusiness";
@@ -45,7 +45,7 @@ if (url.indexOf('/userOrder/hasOrderByMmbDevId') != -1) {
 
 function getck() {
     const ck = $.getdata(manmanbuy_key);
-    if (!ck) return $.msg($.name, '请先打开【慢慢买】APP', '请确保已成功获取ck'), null;
+    if (!ck) return $.msg($.name, '请先打开【慢慢买】APP--我的', '请确保已成功获取ck'), null;
     const c_mmbDevId = parseQueryString(ck)?.c_mmbDevId;
     $.log('慢慢买c_mmbDevId：', c_mmbDevId);
     return c_mmbDevId || ($.msg($.name, '数据异常', '请联系脚本作者检查ck格式'), null);
@@ -216,7 +216,7 @@ function request_history_price(share_url,) {
             "methodName": "getHistoryTrend",
             "p_url": encodeURIComponent(share_url),
             "t": Date.now().toString(),
-            "c_appver": "4.0.10",
+            "c_appver": "4.8.31",
             "c_mmbDevId": getck()
         }
         rest_body.token = md5(encodeURIComponent('3E41D1331F5DDAFCD0A38FE2D52FF66F' + jsonToCustomString(rest_body) + '3E41D1331F5DDAFCD0A38FE2D52FF66F')).toUpperCase();
