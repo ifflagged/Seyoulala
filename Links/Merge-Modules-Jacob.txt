@@ -91,8 +91,8 @@ Modules/Surge/BiliUniverse/BiliBili.Redirect.sgmodule # Loon,Shadowrocket
 
 # Modules/Surge/Yuheng0101/heiliao.sgmodule # Loon,Shadowrocket
 
-Modules/Surge/ifflagged/TikTok.sgmodule # Shadowrocket
-Modules/Loon/ifflagged/Loon-TikTok.plugin
+# Modules/Surge/ifflagged/TikTok.sgmodule # Shadowrocket
+# Modules/Loon/ifflagged/Loon-TikTok.plugin
 
 https://github.com/chavyleung/scripts/raw/master/box/rewrite/boxjs.rewrite.surge.sgmodule # Copy
 https://github.com/chavyleung/scripts/raw/master/box/rewrite/boxjs.rewrite.loon.plugin
