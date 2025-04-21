@@ -1,6 +1,6 @@
 #!name=hilton
 #!desc=hilton
-#!icon=http://103.196.20.192:3355/isous/IconResource/raw/branch/main/App_icon/120px/Loon.png
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
 #!tag=Jacob
 
 [Rewrite]
