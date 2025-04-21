@@ -1,7 +1,7 @@
 #!name=App&小程序净化合集
 #!desc=去除一些冗余的模块，遇到异常时关闭此配置
 #!author=奶思
-#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
+#!icon=http://103.196.20.192:3355/isous/IconResource/raw/branch/main/App_icon/120px/Loon.png
 #!tag=Jacob
 
 #!homepage=https://github.com/fmz200/wool_scripts
