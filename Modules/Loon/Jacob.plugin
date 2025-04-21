@@ -46,7 +46,7 @@ Languages[1] = select,"ZH","ZH-HANS","ZH-HK","ZH-HANT","EN","ES","JA","KO","DE",
 Vendor = select,"Google","Microsoft",tag=[翻译器] 服务商API,desc=请选择翻译器所使用的服务商API，更多翻译选项请使用BoxJs。
 LrcVendor = select,"NeteaseMusic","QQMusic","NeteaseMusicNodeJS",tag=[歌词] 服务商API,desc=请选择外部源所使用的服务商API。
 # jd_price2
-MMMCK_SCRIPT_NAME=input,慢慢买CK,tag=MMMCK_SCRIPT_NAME, desc=MMMCK_SCRIPT_NAME
+MMMCK_SCRIPT=input,慢慢买CK,tag=MMMCK_SCRIPT, desc=MMMCK_SCRIPT
 # Bilibili_remove_ads
 showUpList=select,"auto","true","false",tag=[动态]中[最常访问]的显示方式,desc=auto：仅当列表中存在直播状态时显示；true：始终显示；false：始终隐藏。
 # BiliBili.ADBlock
@@ -1561,8 +1561,8 @@ http-response ^https?:\/\/m?api\.weibo\.c(n|om)\/2\/!\/client\/light_skin script
 http-response ^https?:\/\/new\.vip\.weibo\.c(n|om)\/littleskin\/preview script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/weibo/weibo_main.js, requires-body=true, timeout=60, tag=非会员设置tab皮肤
 http-response ^https?:\/\/new\.vip\.weibo\.c(n|om)\/aj\/appicon\/list script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/weibo/weibo_vip.js, requires-body=true, timeout=60, tag=解锁微博会员APP图标
 # jd_price2
-http-request ^https?:\/\/apapia-sqk-weblogic\.manmanbuy\.com/baoliao\/center\/menu script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/githubdulong/jd_price2/MmmCK.js, requires-body=true, tag={MMMCK_SCRIPT_NAME}
-http-response ^https:\/\/in\.m\.jd\.com\/product\/graphext\/\d+\.html script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/githubdulong/jd_price2/jd_price.js, requires-body=true, timeout=30, tag=京东比价
+http-request ^https?:\/\/apapia-sqk-weblogic\.manmanbuy\.com\/baoliao\/center\/menu$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/githubdulong/jd_price2/jd_price.js, requires-body=true, timeout=60, tag={MMMCK_SCRIPT}
+http-response ^https?:\/\/in\.m\.jd\.com\/product\/graphext\/\d+\.html script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/githubdulong/jd_price2/jd_price.js, requires-body=true, timeout=60, tag=京东比价
 # 12306_remove_ads
 http-request ^https:\/\/ad\.12306\.cn\/ad\/ser\/getAdList$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/12306_remove_ads/12306_remove_splashscreen_ads.js,requires-body=true,tag=移除12306开屏广告
 http-request ^https:\/\/mobile\.12306\.cn\/otsmobile\/app\/mgs\/mgw\.htm$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/12306_remove_ads/12306_remove_ads.js,tag=移除12306应用内广告
