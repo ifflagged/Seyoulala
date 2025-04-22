@@ -1,4 +1,4 @@
-#规则数量:1
+#规则数量:2
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -6,3 +6,4 @@
 
 payload:
   - DOMAIN-SUFFIX,makifx.com
+  - DOMAIN-SUFFIX,nangua.de
