@@ -6,8 +6,8 @@
 #!icon = https://github.com/BiliUniverse/ADBlock/raw/main/src/assets/icon_rounded.png
 #!tag = 🪐 BiliUniverse
 #!system = iOS,iPadOS
-#!date = 2024-12-23 08:07:15
-#!version = 0.6.17
+#!date = 2025-04-22 08:29:13
+#!version = 0.6.18
 #!system_version = 15
 
 [Argument]
