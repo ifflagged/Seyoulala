@@ -1,5 +1,5 @@
 #!name=KOOK去广告
-#!desc=移除房间横幅推广、精简我的页面，移除底栏商城入口。
+#!desc=移除开屏广告、房间横幅推广、精简我的页面，移除底栏商城入口。
 #!openUrl=https://apps.apple.com/app/id1501289327
 #!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 #!tag=去广告
@@ -8,10 +8,13 @@
 #!loon_version=3.2.4(787)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/KOOK.png
-#!date=2024-12-13 06:49:26
+#!date=2025-04-22 14:14:26
 
 [Rewrite]
+^https:\/\/www\.kookapp\.cn\/api\/v3\/ad\/config$ reject-dict
+
 ^https:\/\/(m|www)\.kookapp\.cn\/api\/v\d\/user\/settings$ response-body-json-del ad_banner advertise_on_off
+
 ^https:\/\/(m|www)\.kookapp\.cn\/api\/v\d\/user\/settings$ response-body-json-replace ios_mall_switch false
 
 [MitM]
