@@ -34,7 +34,7 @@ https://github.com/fmz200/wool_scripts/raw/main/Loon/plugin/weibo.plugin
 # G #
 https://github.com/githubdulong/Script/raw/master/Surge/TikTok_Surge.sgmodule
 https://github.com/githubdulong/Script/raw/master/Surge/JD_Helper.sgmodule
-https://github.com/githubdulong/Script/raw/master/Surge/jd_price.sgmodule #折现版
+https://github.com/githubdulong/Script/raw/master/Surge/jd_price.sgmodule
 https://github.com/githubdulong/Script/raw/master/Surge/jd_price2.sgmodule
 
 # K #
