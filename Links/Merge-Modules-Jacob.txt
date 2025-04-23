@@ -30,7 +30,7 @@ Modules/Surge/ddgksf2013/SmzdmAds.sgmodule # Loon,Shadowrocket
 Modules/Surge/fmz200/weibo.sgmodule # Loon,Shadowrocket
 
 # G #
-Modules/Surge/githubdulong/jd_price2.sgmodule # Loon,Shadowrocket
+Modules/Surge/githubdulong/JD_Helper.sgmodule # Loon,Shadowrocket
 
 # K #
 Modules/Surge/Kelee/BlockAdvertisers.sgmodule # Loon,Shadowrocket
