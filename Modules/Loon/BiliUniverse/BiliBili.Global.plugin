@@ -6,8 +6,8 @@
 #!icon = https://github.com/BiliUniverse/Global/raw/main/src/assets/icon_rounded.png
 #!tag = 🪐 BiliUniverse
 #!system = iOS,iPadOS,macOS,tvOS
-#!date = 2024-12-10 07:12:28
-#!version = 0.8.15
+#!date = 2025-04-24 08:29:43
+#!version = 0.8.16
 #!system_version = 15
 
 [Argument]
@@ -26,6 +26,7 @@ http-request ^https?:\/\/(grpc|app)\.bili(bili\.com|api\.net)\/bilibili\.app\.vi
 http-response ^https?:\/\/(grpc|app)\.bili(bili\.com|api\.net)\/bilibili\.app\.viewunite\.v1\.View\/View$ requires-body=1, binary-body-mode=1, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/BiliUniverse/BiliBili.Global/response.bundle.js, tag=📺 BiliBili.Global.viewunite.v1.View.grpc, argument=[{ForceHost},{Locales},{Proxies.CHN},{Proxies.HKG},{Proxies.MAC},{Proxies.TWN},{LogLevel}]
 http-request ^https?:\/\/api\.bili(bili\.com|api\.net)\/pgc\/view\/(v2\/app|web|pc)\/season\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/BiliUniverse/BiliBili.Global/request.bundle.js, tag=📺 BiliBili.Global.season.json, argument=[{ForceHost},{Locales},{Proxies.CHN},{Proxies.HKG},{Proxies.MAC},{Proxies.TWN},{LogLevel}]
 http-response ^https?:\/\/api\.bili(bili\.com|api\.net)\/pgc\/view\/(v2\/app|web|pc)\/season\? requires-body=1, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/BiliUniverse/BiliBili.Global/response.bundle.js, tag=📺 BiliBili.Global.season.json, argument=[{ForceHost},{Locales},{Proxies.CHN},{Proxies.HKG},{Proxies.MAC},{Proxies.TWN},{LogLevel}]
+http-response ^https?:\/\/api\.bili(bili\.com|api\.net)\/pgc\/view\/(v2\/app|web|pc)\/ep\/list\? requires-body=1, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/BiliUniverse/BiliBili.Global/response.bundle.js, tag=📺 BiliBili.Global.ep.list.json, argument=[{ForceHost},{Locales},{Proxies.CHN},{Proxies.HKG},{Proxies.MAC},{Proxies.TWN},{LogLevel}]
 
 http-request ^https?:\/\/(grpc|app)\.bili(bili\.com|api\.net)\/bilibili\.app\.playerunite\.v1\.Player\/PlayViewUnite$ requires-body=1, binary-body-mode=1, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/BiliUniverse/BiliBili.Global/request.bundle.js, tag=📺 BiliBili.Global.playerunite.v1.Player.grpc, argument=[{ForceHost},{Locales},{Proxies.CHN},{Proxies.HKG},{Proxies.MAC},{Proxies.TWN},{LogLevel}]
 http-request ^https?:\/\/(grpc|app)\.bili(bili\.com|api\.net)\/bilibili\.pgc\.gateway\.player\.v2\.PlayURL\/PlayView$ requires-body=1, binary-body-mode=1, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/BiliUniverse/BiliBili.Global/request.bundle.js, tag=📺 BiliBili.Global.player.v2.PlayURL.grpc, argument=[{ForceHost},{Locales},{Proxies.CHN},{Proxies.HKG},{Proxies.MAC},{Proxies.TWN},{LogLevel}]
