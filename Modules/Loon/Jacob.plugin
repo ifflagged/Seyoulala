@@ -519,6 +519,7 @@ DOMAIN-SUFFIX, adsmoloco.com, REJECT
 DOMAIN-SUFFIX, adcanvas.com, REJECT
 DOMAIN-SUFFIX, bianxianmao.com, REJECT
 DOMAIN-SUFFIX, gentags.net, REJECT
+DOMAIN-SUFFIX, dcloud.net.cn, REJECT
 DOMAIN-KEYWORD, ads.g.doubleclick, REJECT
 DOMAIN-KEYWORD, sdk.1rtb.net, REJECT
 DOMAIN-KEYWORD, sensorsdata.cn, REJECT
