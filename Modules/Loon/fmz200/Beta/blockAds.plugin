@@ -10,11 +10,16 @@
 #!tg-group=https://t.me/lanjieguanggao
 #!tag=去广告, fmz200, 奶思
 #!system=iOS, iPadOS
-#!date=2025-04-20 17:39:00
+#!date=2025-04-27 20:11:00
 #!support=支持约511款APP/小程序
 #!remark=下方的所有规则都标注了对应的hostname，可能存在错误或者遗漏，欢迎反馈。对于无法/可选MITM的hostname都特别做了“如开启可自行添加主机名”提示，如果提示后面没有标注主机名则包含所有主机名，否则只包含提示语后面的主机名。
 
 [Rule]
+# > 哔哩哔哩
+DOMAIN,api.biliapi.com,REJECT
+DOMAIN,app.biliapi.com,REJECT
+DOMAIN,api.biliapi.net,REJECT
+DOMAIN,app.biliapi.net,REJECT
 # 开屏广告
 URL-REGEX,"^http:\/\/upos-sz-static\.bilivideo\.com\/ssaxcode\/\w{2}\/\w{2}\/\w{32}-1-SPLASH",REJECT-DICT
 URL-REGEX,"^http:\/\/[\d\.]+:8000\/v1\/resource\/\w{32}-1-SPLASH",REJECT-DICT
@@ -245,6 +250,15 @@ IP-CIDR6,2402:4e00:1200:ed00:0:9089:6dac:96b6/128,REJECT,no-resolve
 #DOMAIN-SUFFIX,admobile.top,REJECT
 
 [Rewrite]
+^https:\/\/api\.bilibili\.com\/pgc\/view\/v2\/app\/season\? response-body-json-jq 'del(.data.payment)'
+^https:\/\/api\.bilibili\.com\/pgc\/page\/(?:bangumi|cinema\/tab)\? response-body-json-jq '.result.modules |= if . then map(if (.style | startswith("tip")) or (.module_id | IN(241, 1283, 1441, 1284)) then .items = [] elif .style | startswith("banner") then .items |= if . then map(select(.link | contains("play"))) else [] end elif .style | startswith("function") then .items |= if . then map(select(.blink | startswith("bilibili"))) else [] end end) end'
+^https:\/\/api\.live\.bilibili\.com\/xlive\/(?:app-interface\/v2\/index\/feed|app-room\/v1\/index\/getInfoBy(?:Room|User))\? response-body-json-jq '.data |= (del(.play_together_info, .play_together_info_v2, .activity_banner_info) | if .function_card then .function_card[] = null end | if .new_tab_info.outer_list then .new_tab_info.outer_list |= map(select(.biz_id != 33)) end | if .card_list then .card_list |= map(select(.card_type != "banner_v2")) end | reduce ([["show_reserve_status"], false], [["reserve_info", "show_reserve_status"], false], [["shopping_info", "is_show"], 0]) as [$path, $value] (.; if getpath($path) then setpath($path; $value) end))'
+^https:\/\/app\.bilibili\.com\/x\/resource\/show\/tab\/v2\? response-body-json-jq jq-path="https://raw.githubusercontent.com/kokoryh/Sparkle/refs/heads/master/jq/bilibili.tab.jq"
+^https:\/\/app\.bilibili\.com\/x\/v2\/splash\/(?:list|show|event\/list2)\? response-body-json-jq '.data |= with_entries(if .key | IN("show", "event_list") then .value = [] else . end)'
+^https:\/\/app\.bilibili\.com\/x\/v2\/feed\/index\? response-body-json-jq 'if .data.items then .data.items |= map(select((.banner_item == null) and (.ad_info == null) and (.card_goto == "av") and (.card_type | IN("small_cover_v2", "large_cover_single_v9", "large_cover_v1")))) end'
+^https:\/\/app\.bilibili\.com\/x\/v2\/feed\/index\/story\? response-body-json-jq 'if .data.items then .data.items |= map(select((.ad_info == null) and (.card_goto | startswith("ad") | not)) | del(.story_cart_icon)) end'
+^https:\/\/app\.bilibili\.com\/x\/v2\/account\/mine(?:\/ipad)?\? response-body-json-jq jq-path="https://raw.githubusercontent.com/kokoryh/Sparkle/refs/heads/master/jq/bilibili.mine.jq"
+^https:\/\/app\.bilibili\.com\/x\/v2\/account\/myinfo\? response-body-json-jq '.data.vip |= if . != null and .status == 0 then . + { status: 1, type: 2, due_date: 9005270400000, role: 15 } else . end'
 http:\/\/dili.sqcosmos.com\/jiekou\/mains\/p\d+.html response-body-json-jq '.album |= map(select(.id != "4154" and .id != "4165"))'
 # hostname = gab.122.gov.cn
 #^https?:\/\/gab\.122\.gov\.cn\/eapp\/m\/sysquery - reject
@@ -402,25 +416,8 @@ http:\/\/dili.sqcosmos.com\/jiekou\/mains\/p\d+.html response-body-json-jq '.alb
 ^https?:\/\/www.baidu.com\/?action=static&ms=1&version=css_page_2@0.*? - reject
 # hostname = mres.aibank.com
 ^https?:\/\/mres\.aibank\.com\/app\/resource\/cim\/cim0000001\/.+\.jpg - reject-200
-# 开屏广告
-^https:\/\/(?:api\.bilibili\.com\/x\/mengqi\/v1\/resource|app\.bilibili\.com\/x\/resource\/peak\/download) - reject-dict
-# 满意度调研
-^https:\/\/api\.bilibili\.com\/x\/v2\/dm\/qoe\/show\? - reject-dict
-# 大会员广告
-^https:\/\/api\.bilibili\.com\/x\/vip\/ads\/materials\? - reject-dict
-# 直播广告
+# hostname = app.bilibili.com, api.bilibili.com, api.live.bilibili.com, grpc.biliapi.net
 ^https:\/\/api\.live\.bilibili\.com\/xlive\/e-commerce-interface\/v1\/ecommerce-user\/get_shopping_info\? - reject-dict
-# 屏蔽默认搜索框关键词
-^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.interface\.v1\.Search\/DefaultWords - reject-dict
-# 流量卡推荐
-^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.view\.v1\.View\/TFInfo - reject-dict
-# IP请求、地理位置请求 //api.bilibili.com
-^https:\/\/app\.bilibili\.com\/x\/resource\/ip - reject-dict
-^https:\/\/api\.bilibili\.com\/x\/web-interface\/zone\?jsonp - reject-dict
-# 移除视频链接跟踪参数
-(^https:\/\/(?:www|m)\.bilibili\.com\/video\/(?:BV\w{10}|av\d{9}))(\/?\?.*) $1 302
-# 移除直播间链接跟踪参数
-(^https:\/\/live\.bilibili\.com\/\d+)(\/?\?.*) $1 302
 # hostname = manga.bilibili.com, i*.hdslb.com
 ^https?:\/\/i\d\.hdslb\.com\/bfs\/fawkes - reject-dict
 ^https?:\/\/i\d\.hdslb\.com\/bfs\/manga-static\/\w+\.(jpg|png)$ - reject-200
@@ -2186,75 +2183,79 @@ https://mgesq.api.mgtv.com/v2/user/center/icon - reject-dict
 # hostname = beehiveapi.58.com
 ^https?:\/\/beehiveapi\.58\.com\/adplace\/zcm - reject-dict
 ^https?:\/\/(?:ipv4|interface\d?)\.music\.163\.com\/e?api\/(?:batch|v\d\/resource\/comment\/floor\/get|homepage\/block\/page|link\/page\/rcmd\/resource\/show|user\/follow\/users\/mixed\/get) header-del 'x-aeapi'
+^https:\/\/ap[ip]\.bilibili\.com\/x\/(?:resource\/(?:top\/activity|patch\/tab)|v2\/search\/square|vip\/ads\/materials)\? mock-response-body data-type=text data="{"code":-404,"message":"-404","ttl":1,"data":null}" status-code=200
+^https:\/\/api\.bilibili\.com\/pgc\/activity\/deliver\/material\/receive\? mock-response-body data-type=text data="{"code":0,"data":{"closeType":"close_win","container":[],"showTime":""},"message":"success"}" status-code=200
 # 首页领券悬浮红包
 ^https?:\/\/mall\.meituan\.com\/api\/c\/homepage\/bubble\/operate\/info mock-response-body data-type=json data="{"code": 0}"
 
 [Script]
-http-response ^https?:\/\/beta-api\.crunchyroll\.com\/cms script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_672, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22offset_ms%5C%22%3A%5C%5Cd%2B%22%2C%22offset_ms%5C%22%3A99999999999999%22%5D%5D%5D%5D
+http-response ^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_579, argument=%5B%5B%22json-del%22%2C%5B%22data.common_equip%22%5D%5D%5D
 
-http-response ^https?:\/\/adservice\.sigmob\.cn\/extconfig script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_746, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22false%22%2C%22true%22%5D%5D%5D%5D
+http-response ^https?:\/\/beta-api\.crunchyroll\.com\/cms script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_673, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22offset_ms%5C%22%3A%5C%5Cd%2B%22%2C%22offset_ms%5C%22%3A99999999999999%22%5D%5D%5D%5D
 
-http-response ^https?:\/\/maicai\.api\.ddxq\.mobi\/homeApi\/newDetails script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_808, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22suspension%22%2C%22fmz200%22%5D%5D%5D%5D
+http-response ^https?:\/\/adservice\.sigmob\.cn\/extconfig script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_747, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22false%22%2C%22true%22%5D%5D%5D%5D
 
-http-response ^https?:\/\/47\.100\.65\.202\/api\/mobile\/index\.php\?version=\d&mobile=yes&module=basicdata&type=forumlist script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_912, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22adv%22%2C%22fmz200%22%5D%5D%5D%5D
+http-response ^https?:\/\/maicai\.api\.ddxq\.mobi\/homeApi\/newDetails script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_809, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22suspension%22%2C%22fmz200%22%5D%5D%5D%5D
 
-http-response ^https?:\/\/www\.i3zh\.com script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_1175, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22cm-pop-up-banners%22%2C%22fmz200%22%5D%5D%5D%5D
+http-response ^https?:\/\/47\.100\.65\.202\/api\/mobile\/index\.php\?version=\d&mobile=yes&module=basicdata&type=forumlist script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_913, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22adv%22%2C%22fmz200%22%5D%5D%5D%5D
 
-http-response ^https?:\/\/yunbusiness\.ccb\.com\/basic_service\/txCtrl\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_1190, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22%5C%22TAG_AD_INFO%5C%22%22%2C%22%5C%22fmz200%5C%22%22%5D%5D%5D%5D
+http-response ^https?:\/\/www\.i3zh\.com script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_1176, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22cm-pop-up-banners%22%2C%22fmz200%22%5D%5D%5D%5D
 
-http-response ^https?:\/\/waimai-guide\.ele\.me\/\w+\/mtop\.venus\.shopresourceservice\.getshopresource script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_1195, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22posterList%22%2C%22fmz200%22%5D%5D%5D%5D
+http-response ^https?:\/\/yunbusiness\.ccb\.com\/basic_service\/txCtrl\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_1191, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22%5C%22TAG_AD_INFO%5C%22%22%2C%22%5C%22fmz200%5C%22%22%5D%5D%5D%5D
 
-http-response ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=lite_advertising script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_1215, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22jdLiteAdvertisingVO%22%2C%22fmz200%22%5D%5D%5D%5D
+http-response ^https?:\/\/waimai-guide\.ele\.me\/\w+\/mtop\.venus\.shopresourceservice\.getshopresource script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_1196, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22posterList%22%2C%22fmz200%22%5D%5D%5D%5D
 
-http-response ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=lite_SmartPush script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_1216, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22pushData%22%2C%22fmz200%22%5D%5D%5D%5D
+http-response ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=lite_advertising script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_1216, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22jdLiteAdvertisingVO%22%2C%22fmz200%22%5D%5D%5D%5D
 
-http-response ^https?:\/\/p\.kuaidi100\.com\/mobile\/mobileapi\.do$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_1328, argument=%5B%5B%22json-del%22%2C%5B%22adsplash%22%2C%22adIsConsumable%22%2C%22adProductId%22%2C%22nologin_tips%22%2C%22index_banner%22%2C%22me_banner%22%2C%22index_banner_shadow%22%2C%22adshongbao%22%2C%22adsapp_homepage_ticket_pop%22%2C%22adsoptimizationsend%22%2C%22adsapp_activity_ad_array%22%2C%22adbanner%22%2C%22adposition%22%2C%22adShowAgainTime%22%5D%5D%5D
+http-response ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=lite_SmartPush script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_1217, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22pushData%22%2C%22fmz200%22%5D%5D%5D%5D
 
-http-response ^https?:\/\/p\.kuaidi100\.com\/apicenter\/xcx\.dox script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_1329, argument=%5B%5B%22json-del%22%2C%5B%22data.secondMenuList%22%5D%5D%5D
+http-response ^https?:\/\/p\.kuaidi100\.com\/mobile\/mobileapi\.do$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_1329, argument=%5B%5B%22json-del%22%2C%5B%22adsplash%22%2C%22adIsConsumable%22%2C%22adProductId%22%2C%22nologin_tips%22%2C%22index_banner%22%2C%22me_banner%22%2C%22index_banner_shadow%22%2C%22adshongbao%22%2C%22adsapp_homepage_ticket_pop%22%2C%22adsoptimizationsend%22%2C%22adsapp_activity_ad_array%22%2C%22adbanner%22%2C%22adposition%22%2C%22adShowAgainTime%22%5D%5D%5D
 
-http-response #^https?:\/\/www\.pushplus\.plus.* script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_1659, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22(%3Chead%3E)%22%2C%22%241%3Cstyle%22%5D%2C%5B%22type%3D%5C%22text%2Fcss%5C%22%3E%22%2C%22div.container.py-3.text-center%22%5D%2C%5B%22%7Bdisplay%3A%22%2C%22none!%22%5D%2C%5B%22important%7D%22%2C%22%3C%2Fstyle%22%5D%5D%5D%5D
+http-response ^https?:\/\/p\.kuaidi100\.com\/apicenter\/xcx\.dox script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_1330, argument=%5B%5B%22json-del%22%2C%5B%22data.secondMenuList%22%5D%5D%5D
 
-http-response ^https?:\/\/mobile\.yangkeduo\.com\/proxy\/api\/api\/express\/post\/waybill\/red_packet\/goods_list$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_1700, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22%5C%22list%5C%22%3A%5C%5C%5B.%2B%5C%5C%5D%22%2C%22%5C%22list%5C%22%3A%5B%5D%22%5D%5D%5D%5D
+http-response #^https?:\/\/www\.pushplus\.plus.* script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_1660, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22(%3Chead%3E)%22%2C%22%241%3Cstyle%22%5D%2C%5B%22type%3D%5C%22text%2Fcss%5C%22%3E%22%2C%22div.container.py-3.text-center%22%5D%2C%5B%22%7Bdisplay%3A%22%2C%22none!%22%5D%2C%5B%22important%7D%22%2C%22%3C%2Fstyle%22%5D%5D%5D%5D
 
-http-response ^https:\/\/beta-luna\.douyin\.com\/luna\/card\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_1778, argument=%5B%5B%22json-replace%22%2C%5B%5B%22card_items%5B0%5D.priority_display%22%2Cfalse%5D%2C%5B%22card_items%5B0%5D.is_show%22%2Cfalse%5D%2C%5B%22preview_guide%22%2Cnull%5D%5D%5D%5D
+http-response ^https?:\/\/mobile\.yangkeduo\.com\/proxy\/api\/api\/express\/post\/waybill\/red_packet\/goods_list$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_1701, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22%5C%22list%5C%22%3A%5C%5C%5B.%2B%5C%5C%5D%22%2C%22%5C%22list%5C%22%3A%5B%5D%22%5D%5D%5D%5D
 
-http-response ^https:\/\/beta-luna\.douyin\.com\/luna\/more-panel\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_1780, argument=%5B%5B%22json-del%22%2C%5B%22blocks%5B1%5D%22%5D%5D%5D
+http-response ^https:\/\/beta-luna\.douyin\.com\/luna\/card\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_1779, argument=%5B%5B%22json-replace%22%2C%5B%5B%22card_items%5B0%5D.priority_display%22%2Cfalse%5D%2C%5B%22card_items%5B0%5D.is_show%22%2Cfalse%5D%2C%5B%22preview_guide%22%2Cnull%5D%5D%5D%5D
 
-http-response ^https?:\/\/dyncdn\.me\/static\/\d{0,2}\/js\/showads\.js$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_1851, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22true%22%2C%22false%22%5D%5D%5D%5D
+http-response ^https:\/\/beta-luna\.douyin\.com\/luna\/more-panel\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_1781, argument=%5B%5B%22json-del%22%2C%5B%22blocks%5B1%5D%22%5D%5D%5D
 
-http-response ^https?:\/\/capi\.lkcoffee\.com\/resource\/m\/sys\/app\/adposNew script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_1854, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22%5C%5C%7B.%2B%5C%5C%7D%22%2C%22%7B%5C%22status%5C%22%3A%5C%22SUCCESS%5C%22%7D%22%5D%5D%5D%5D
+http-response ^https?:\/\/dyncdn\.me\/static\/\d{0,2}\/js\/showads\.js$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_1852, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22true%22%2C%22false%22%5D%5D%5D%5D
 
-http-response ^https?:\/\/(ec|c)api\.lkcoffee\.com\/resource\/m\/eorder\/product\/popAppTagProductList script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_1855, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22%5C%5C%7B.%2B%5C%5C%7D%22%2C%22%7B%5C%22status%5C%22%3A%5C%22SUCCESS%5C%22%7D%22%5D%5D%5D%5D
+http-response ^https?:\/\/capi\.lkcoffee\.com\/resource\/m\/sys\/app\/adposNew script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_1855, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22%5C%5C%7B.%2B%5C%5C%7D%22%2C%22%7B%5C%22status%5C%22%3A%5C%22SUCCESS%5C%22%7D%22%5D%5D%5D%5D
 
-http-response ^https?:\/\/m\.lkcoffee\.com\/ecapi\/resource\/m\/member\/exchange\/page script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_1856, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22%5C%5C%7B.%2B%5C%5C%7D%22%2C%22%7B%5C%22status%5C%22%3A%5C%22SUCCESS%5C%22%7D%22%5D%5D%5D%5D
+http-response ^https?:\/\/(ec|c)api\.lkcoffee\.com\/resource\/m\/eorder\/product\/popAppTagProductList script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_1856, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22%5C%5C%7B.%2B%5C%5C%7D%22%2C%22%7B%5C%22status%5C%22%3A%5C%22SUCCESS%5C%22%7D%22%5D%5D%5D%5D
 
-http-response ^https?:\/\/m\.lkcoffee\.com\/capi\/resource\/m\/growUp\/main script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_1857, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22%5C%22popTitle%5C%22%3A%5C%22.%2B%3F%5C%22%22%2C%22%5C%22popTitle%5C%22%3A%5C%22%5C%22%22%5D%5D%5D%5D
+http-response ^https?:\/\/m\.lkcoffee\.com\/ecapi\/resource\/m\/member\/exchange\/page script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_1857, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22%5C%5C%7B.%2B%5C%5C%7D%22%2C%22%7B%5C%22status%5C%22%3A%5C%22SUCCESS%5C%22%7D%22%5D%5D%5D%5D
 
-http-request ^https:\/\/testflight\.apple\.com\/v2\/accounts\/.*\/apps\/\d*\/builds\/\d*\/install$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_2044, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22%5C%22storefrontId%5C%22%20%3A%20.*%2C%22%2C%22%5C%22storefrontId%5C%22%3A%5C%22143441-19%2C29%5C%22%2C%22%5D%5D%5D%5D
+http-response ^https?:\/\/m\.lkcoffee\.com\/capi\/resource\/m\/growUp\/main script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_1858, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22%5C%22popTitle%5C%22%3A%5C%22.%2B%3F%5C%22%22%2C%22%5C%22popTitle%5C%22%3A%5C%22%5C%22%22%5D%5D%5D%5D
 
-http-response ^https?:\/\/tft-app\.cdtft\.cn\/gateway-customer\/tftapp\/tft-ams\/api\/appAd script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_2064, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22officialAdvertResultVo%22%2C%22fmz200%22%5D%5D%5D%5D
+http-request ^https:\/\/testflight\.apple\.com\/v2\/accounts\/.*\/apps\/\d*\/builds\/\d*\/install$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_2045, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22%5C%22storefrontId%5C%22%20%3A%20.*%2C%22%2C%22%5C%22storefrontId%5C%22%3A%5C%22143441-19%2C29%5C%22%2C%22%5D%5D%5D%5D
 
-http-response ^https?:\/\/chl\.tf\.cn\/channelmg\/sys\/socso\/order\/queryOrderInfo script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_2071, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22%5C%22imgUrl%5C%22%22%2C%22response-body%22%5D%5D%5D%5D
+http-response ^https?:\/\/tft-app\.cdtft\.cn\/gateway-customer\/tftapp\/tft-ams\/api\/appAd script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_2065, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22officialAdvertResultVo%22%2C%22fmz200%22%5D%5D%5D%5D
 
-http-response ^https?:\/\/client\.tujia\.com\/bnbapp-node\/app\/portal\/getportalconfig\/bnb\/v2 script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_2145, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22%5C%22banners%5C%22%3A%5C%5C%5B.%2B%5C%5C%5D%2C%22%2C%22%5C%22banners%5C%22%3A%5B%5D%2C%22%5D%5D%5D%5D
+http-response ^https?:\/\/chl\.tf\.cn\/channelmg\/sys\/socso\/order\/queryOrderInfo script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_2072, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22%5C%22imgUrl%5C%22%22%2C%22response-body%22%5D%5D%5D%5D
 
-http-response #^https?:\/\/vv\.video\.qq\.com\/getvinfo script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_2173, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22%26sppreviewtype%3D%5C%5Cd(.*)%26spsrt%3D%5C%5Cd%22%2C%22%26sppreviewtype%3D0%241%26spsrt%3D0%22%5D%5D%5D%5D
+http-response ^https?:\/\/client\.tujia\.com\/bnbapp-node\/app\/portal\/getportalconfig\/bnb\/v2 script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_2146, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22%5C%22banners%5C%22%3A%5C%5C%5B.%2B%5C%5C%5D%2C%22%2C%22%5C%22banners%5C%22%3A%5B%5D%2C%22%5D%5D%5D%5D
 
-http-response ^https?:\/\/misc-api-prd-mx\.wandafilm\.com\/commend\/common_banner_batch\.api\?bannerInfos=%5B%7B%22cinemaI script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_2265, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22%5C%22WX_index_mp-%26-boxAD%5C%22%22%2C%22%5C%22fmz200%5C%22%22%5D%5D%5D%5D
+http-response #^https?:\/\/vv\.video\.qq\.com\/getvinfo script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_2174, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22%26sppreviewtype%3D%5C%5Cd(.*)%26spsrt%3D%5C%5Cd%22%2C%22%26sppreviewtype%3D0%241%26spsrt%3D0%22%5D%5D%5D%5D
 
-http-response ^https?:\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_2269, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22advertisement%22%2C%22fmz200%22%5D%5D%5D%5D
+http-response ^https?:\/\/misc-api-prd-mx\.wandafilm\.com\/commend\/common_banner_batch\.api\?bannerInfos=%5B%7B%22cinemaI script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_2266, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22%5C%22WX_index_mp-%26-boxAD%5C%22%22%2C%22%5C%22fmz200%5C%22%22%5D%5D%5D%5D
 
-http-response ^https:\/\/app-conf\.ds\.163\.com\/v\d\/app\/base\/conf\/static\/start-config\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_2323, argument=%5B%5B%22json-del%22%2C%5B%22result.updateConfig%5B2%5D.itemList%5B94%5D.itemList%5B2%5D%22%5D%5D%5D
+http-response ^https?:\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_2270, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22advertisement%22%2C%22fmz200%22%5D%5D%5D%5D
 
-http-response ^https?:\/\/lcen\.xiaote\.net\/api\/graphql script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_2462, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22screenSplashAd%22%2C%22fmz200%22%5D%5D%5D%5D
+http-response ^https:\/\/app-conf\.ds\.163\.com\/v\d\/app\/base\/conf\/static\/start-config\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_2324, argument=%5B%5B%22json-del%22%2C%5B%22result.updateConfig%5B2%5D.itemList%5B94%5D.itemList%5B2%5D%22%5D%5D%5D
 
-http-response ^https:\/\/api\.zhihu\.com\/search\/recommend_query\/v2\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_2971, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22%5C%22recommend_queries%5C%22%3A%5C%5C%7B.%2B%5C%5C%7D%22%2C%22%5C%22recommend_queries%5C%22%3A%7B%7D%22%5D%5D%5D%5D
+http-response ^https?:\/\/lcen\.xiaote\.net\/api\/graphql script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_2463, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22screenSplashAd%22%2C%22fmz200%22%5D%5D%5D%5D
 
-http-response ^https?:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzinfoshow\/getfeedflowinfo\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_3033, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22userRed%22%2C%22fmz200%22%5D%5D%5D%5D
+http-response ^https:\/\/api\.zhihu\.com\/search\/recommend_query\/v2\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_2972, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22%5C%22recommend_queries%5C%22%3A%5C%5C%7B.%2B%5C%5C%7D%22%2C%22%5C%22recommend_queries%5C%22%3A%7B%7D%22%5D%5D%5D%5D
 
-http-response ^https?:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzinfoshow\/getchoicegoodsinfos script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_3035, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22infoData%22%2C%22fmz200%22%5D%5D%5D%5D
+http-response ^https?:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzinfoshow\/getfeedflowinfo\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_3034, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22userRed%22%2C%22fmz200%22%5D%5D%5D%5D
 
-http-response ^https?:\/\/app-izz\.zhengzhou\.gov\.cn:10019\/bizgw\/gateway\.do script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_3048, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22%5C%22imgUrl19_5x9%5C%22%3A%5C%22.%2B%3F%5C%22%22%2C%22%5C%22imgUrl19_5x9%5C%22%3A%5C%22%5C%22%22%5D%5D%5D%5D
+http-response ^https?:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzinfoshow\/getchoicegoodsinfos script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_3036, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22infoData%22%2C%22fmz200%22%5D%5D%5D%5D
+
+http-response ^https?:\/\/app-izz\.zhengzhou\.gov\.cn:10019\/bizgw\/gateway\.do script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_3049, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22%5C%22imgUrl19_5x9%5C%22%3A%5C%22.%2B%3F%5C%22%22%2C%22%5C%22imgUrl19_5x9%5C%22%3A%5C%22%5C%22%22%5D%5D%5D%5D
 
 # > 12306
 http-request ^https?:\/\/ad\.12306\.cn\/ad\/ser\/getAdList script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/12306.js, requires-body=true, timeout=60, tag=12306
@@ -2329,56 +2330,8 @@ http-response ^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/(c\/f\/(frs\/(page|
 
 http-response ^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/c\/f\/(frs\/(page|threadlist|generalTabList)|pb\/page|excellent\/personalized)\?cmd script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/tieba-proto.js, requires-body=true, binary-body-mode=true, timeout=60, tag=百度贴吧广告
 
-# 移除动态页面广告
-http-response ^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.dynamic\.v2\.Dynamic\/DynAll$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/protoC.js, requires-body=true, binary-body-mode=true, tag=哔哩哔哩移除动态页面广告
-
-# 移除青少年模式弹窗
-http-response ^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.interface\.v1\.Teenagers\/ModeStatus script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/protoC.js, requires-body=true, binary-body-mode=true, tag=哔哩哔哩移除青少年模式弹窗
-
-# 移除热门话题
-http-response ^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.show\.v1\.Popular\/Index$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/protoC.js, requires-body=true, binary-body-mode=true, tag=哔哩哔哩移除热门话题
-
-# 移除播放页面视频列表广告
-http-response ^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.(?:view|viewunite)\.v1\.View\/(?:View|ViewProgress)$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/protoC.js, requires-body=true, binary-body-mode=true, tag=哔哩哔哩移除播放页面视频列表广告
-
-# 会员特效弹幕处理
-http-response ^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.community\.service\.dm\.v1\.DM\/DmSegMobile script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/protoC.js, requires-body=true, binary-body-mode=true, tag=哔哩哔哩会员特效弹幕处理
-
-# 移除交互式弹幕
-http-response ^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.community\.service\.dm\.v1\.DM\/DmView script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/protoC.js, requires-body=true, binary-body-mode=true, tag=哔哩哔哩移除交互式弹幕
-
-# 移除评论区广告
-http-response ^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.main\.community\.reply\.v1\.Reply\/MainList script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/protoC.js, requires-body=true, binary-body-mode=true, tag=哔哩哔哩移除评论区广告
-
-# 移除搜索结果广告
-http-response ^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.polymer\.app\.search\.v1\.Search\/SearchAll$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/protoC.js, requires-body=true, binary-body-mode=true, tag=哔哩哔哩移除搜索结果广告
-
-# 移除开屏广告
-http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/splash\/(?:brand\/list|event\/list2|list|show) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/json.js, requires-body=true, tag=哔哩哔哩移除开屏广告
-
-# 移除首页推荐广告
-http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/feed\/index(\/story)?\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/json.js, requires-body=true, tag=哔哩哔哩移除首页推荐广告
-
-# 移除右上角活动入口
-http-response ^https:\/\/app\.bilibili\.com\/x\/resource\/top\/activity\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/json.js, requires-body=true, tag=哔哩哔哩移除右上角活动入口
-
-# 精简首页顶部标签
-http-response ^https:\/\/app\.bilibili\.com\/x\/resource\/show\/tab\/v2\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/json.js, requires-body=true, tag=哔哩哔哩精简首页顶部标签
-
-# 移除热搜广告
-http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/search\/square script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/json.js, requires-body=true, tag=哔哩哔哩移除热搜广告
-
-# 移除观影页广告
-http-response ^https:\/\/api\.bilibili\.com\/pgc\/page\/(?:bangumi|cinema\/tab) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/json.js, requires-body=true, tag=哔哩哔哩移除观影页广告
-
-# 移除直播间广告
-http-response ^https:\/\/api\.live\.bilibili\.com\/xlive\/app-room\/v1\/index\/getInfoByRoom\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/json.js, requires-body=true, tag=哔哩哔哩移除直播间广告
-
-# 移除皮肤推送
-http-response ^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/json.js, requires-body=true, tag=哔哩哔哩移除皮肤推送
-
-# 精简我的页面
-http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/account\/(?:mine(\/ipad)?|myinfo) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/json.js, requires-body=true, tag=哔哩哔哩精简我的页面
+# > 哔哩哔哩
+http-response ^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.(?:app\.(?:interface\.v1\.(?:Teenagers\/ModeStatus|Search\/DefaultWords)|show\.v1\.Popular\/Index|dynamic\.v2\.Dynamic\/DynAll|view(?:unite)?\.v1\.View\/(?:View|ViewProgress|TFInfo|RelatesFeed)|playurl\.v1\.PlayURL\/PlayView|playerunite\.v1\.Player\/PlayViewUnite)|polymer\.app\.search\.v1\.Search\/SearchAll|community\.service\.dm\.v1\.DM\/DmView|main\.community\.reply\.v1\.Reply\/MainList|pgc\.gateway\.player\.v2\.PlayURL\/PlayView)$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/bilibili.protobuf.js, requires-body=true, binary-body-mode=true, tag=哔哩哔哩去广告及增强, argument="[{showUpList}, {filterTopReplies}]"
 
 # > 哔哩哔哩漫画
 http-response ^https?:\/\/manga\.bilibili\.com\/twirp\/user\.v\d\.User\/UCenterConf script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/bilibiliManga.js, requires-body=true, timeout=60, tag=哔哩哔哩漫画
