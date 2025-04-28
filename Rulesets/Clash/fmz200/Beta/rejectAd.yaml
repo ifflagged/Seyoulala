@@ -1,4 +1,4 @@
-#规则数量:9592
+#规则数量:9591
 #不支持的规则数量:1
 #已排除的规则数量:0
 #不支持的规则:
@@ -880,8 +880,7 @@ payload:
   - DOMAIN-SUFFIX,fusion.qq.com
   - DOMAIN-SUFFIX,ios.bugly.qq.com
   - DOMAIN,safebrowsing.urlsec.qq.com
-  - DOMAIN-SUFFIX,oth.str.mdt.qq.com
-  - DOMAIN-SUFFIX,l.qq.com
+  - DOMAIN,oth.str.mdt.qq.com
   - DOMAIN,adsmind.apdcdn.tc.qq.com
   - DOMAIN,adsmind.tc.qq.com
   - DOMAIN,livep.l.t002.ottcn.com
