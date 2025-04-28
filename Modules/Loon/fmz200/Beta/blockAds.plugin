@@ -747,7 +747,7 @@ https?:\/\/awg\.enmonster\.com\/apa\/(advert\/demand\/home\/poster|index\/advert
 # 开屏广告
 ^https?:\/\/guanyu\.longfor\.com\/app-server\/api\/v1\/main\/start - reject
 # hostname = gha.ghac.cn
-^https?:\/\/gha\.ghac\.cn\:8081\/base\/app\/api\/ad\/query\?adType=1 - reject-200
+^https?:\/\/gha\.ghac\.cn\:8081\/base\/app\/api\/ad\/query\?adType=1 - reject-dict
 # hostname = aag.enmonster.com
 ^https?:\/\/aag\.enmonster\.com\/apa\/index\/advert\/skin - reject
 # hostname = yun.tuitiger.com, mi.gdt.qq.com, open.e.kuaishou.com

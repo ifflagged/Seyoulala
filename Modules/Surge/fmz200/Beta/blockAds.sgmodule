@@ -1464,7 +1464,7 @@ https://support.you.163.com/appversync/check.do - reject
 https?:\/\/awg\.enmonster\.com\/apa\/(advert\/demand\/home\/poster|index\/advert\/skin) data-type=text data="{}" status-code=200
 
 # hostname = gha.ghac.cn
-^https?:\/\/gha\.ghac\.cn\:8081\/base\/app\/api\/ad\/query\?adType=1 data-type=text data=" " status-code=200
+^https?:\/\/gha\.ghac\.cn\:8081\/base\/app\/api\/ad\/query\?adType=1 data-type=text data="{}" status-code=200
 
 # hostname = yun.tuitiger.com, mi.gdt.qq.com, open.e.kuaishou.com
 ^https?:\/\/yun\.tuitiger\.com\/mami-media data-type=text data=" " status-code=200
