@@ -5,8 +5,8 @@
 #!homepage = https://Global.BiliUniverse.io
 #!icon = https://github.com/BiliUniverse/Global/raw/main/src/assets/icon_rounded.png
 #!category = 🪐 BiliUniverse
-#!date = 2025-04-24 08:29:43
-#!version = 0.8.16
+#!date = 2025-04-29 03:51:45
+#!version = 0.8.17
 
 [Script]
 📺 BiliBili.Global.bangumi.play.html = type=http-request, pattern=^https?:\/\/www\.bilibili\.com\/bangumi\/play\/(ss|ep)\d+\/?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/BiliUniverse/BiliBili.Global/request.bundle.js, ability=http-client-policy, argument=
