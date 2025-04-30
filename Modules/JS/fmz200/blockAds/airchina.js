@@ -3,8 +3,10 @@ AirChina Remove Ads - Version 1.0
 Please note that you may need to reinstall app for script to work.
 
 QuantumultX rewrite link:
+https://raw.githubusercontent.com/zirawell/R-Store/main/Rule/QuanX/Adblock/App/Z/中国国际航空/rewrite/airchina.conf
 
 ********************************/
+
 const url = $request.url;
 const resp = {};
 const header = $request.headers;
@@ -18,9 +20,9 @@ const blockList = [
   "queryImportantList",
 ];
 
-if(blockList.includes(proc)){
+if (blockList.includes(proc)) {
   resp.headers = $request.headers;
   $done(resp);
-}else{
+} else {
   $done({});
 }
