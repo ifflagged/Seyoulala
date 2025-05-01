@@ -55,6 +55,13 @@ TIMEOUT=input,120,tag=TIMEOUT, desc=TIMEOUT
 MMMCK_SCRIPT=input,慢慢买CK,tag=MMMCK_SCRIPT, desc=MMMCK_SCRIPT
 DISABLE_NOTICE=switch,true,false,tag=DISABLE_NOTICE, desc=DISABLE_NOTICE
 THEME_TIME=input,7-19,tag=THEME_TIME, desc=THEME_TIME
+# bilibili
+动态最常访问=input,auto,tag=动态最常访问, desc=动态最常访问
+创作中心=input,0,tag=创作中心, desc=创作中心
+过滤置顶评论广告=input,1,tag=过滤置顶评论广告, desc=过滤置顶评论广告
+空降助手=input,bilibili.airborne,tag=空降助手, desc=空降助手
+替换鉴权字段=input,#,tag=替换鉴权字段, desc=替换鉴权字段
+Authorization=input,identify_v1 xxx,tag=Authorization, desc=Authorization
 # Bilibili_remove_ads
 showUpList=select,"auto","true","false",tag=[动态]中[最常访问]的显示方式,desc=auto：仅当列表中存在直播状态时显示；true：始终显示；false：始终隐藏。
 filterTopReplies=switch,"true","false",tag=移除评论区置顶广告,desc=移除评论区置顶广告
@@ -981,11 +988,12 @@ DOMAIN, switch.cup.com.cn, REJECT
 DOMAIN, ads.cup.com.cn, REJECT
 DOMAIN, analytics.95516.com, REJECT
 DOMAIN, tysdk.95516.com, REJECT
-# Bilibili_remove_ads
+# bilibili
 DOMAIN, api.biliapi.com, REJECT
-DOMAIN, api.biliapi.net, REJECT
 DOMAIN, app.biliapi.com, REJECT
+DOMAIN, api.biliapi.net, REJECT
 DOMAIN, app.biliapi.net, REJECT
+# Bilibili_remove_ads
 URL-REGEX, "^http:\/\/upos-sz-static\.bilivideo\.com\/ssaxcode\/\w{2}\/\w{2}\/\w{32}-1-SPLASH", REJECT-DICT
 URL-REGEX, "^http:\/\/[\d\.]+:8000\/v1\/resource\/\w{32}-1-SPLASH", REJECT-DICT
 # boxjs.rewrite.loon
@@ -1263,6 +1271,11 @@ https?:\/\/91porn\.com(\/|)$ https://91porn.com/index.php 302
 ^https?:\/\/oss\.umetrip\.com\/fs\/advert\/polite - reject-dict
 # unionPay
 ^https?:\/\/wallet\.95516\.com(:10533)?\/s\/wl\/icon\/large\/1 - reject
+# bilibili
+{替换鉴权字段}ttp-request ^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.(?:playerunite\.v1\.Player\/PlayViewUnite|pgc\.gateway\.player\.v2\.PlayURL\/PlayView)$ header-replace 'authorization' '"{Authorization}"'
+^https:\/\/ap[ip]\.bilibili\.com\/x\/(?:resource\/(?:top\/activity|patch\/tab)|v2\/search\/square|vip\/ads\/materials)\? mock-response-body data-type=text data="{"code":-404,"message":"-404","ttl":1,"data":null}"
+^https:\/\/api\.bilibili\.com\/pgc\/activity\/deliver\/material\/receive\? mock-response-body data-type=text data="{"code":0,"data":{"closeType":"close_win","container":[],"showTime":""},"message":"success"}"
+^https:\/\/api\.live\.bilibili\.com\/xlive\/e-commerce-interface\/v1\/ecommerce-user\/get_shopping_info\? mock-response-body data-type=text data="{}"
 # Bilibili_remove_ads
 ^https:\/\/app\.bilibili\.com\/x\/v2\/splash\/(?:list|show|event\/list2)\? response-body-json-jq '.data |= with_entries(if .key | IN("show", "event_list") then .value = [] else . end)'
 ^https:\/\/app\.bilibili\.com\/x\/resource\/show\/tab\/v2\? response-body-json-jq jq-path="https://kelee.one/Resource/JQLang/Bilibili/tab_Bilibili_remove_ads.jq"
@@ -1658,6 +1671,11 @@ http-response ^https?:\/\/(bkclient|umerp|home)\.umetrip\.com(\.cn){0,1}\/gatewa
 # BiliBili
 http-response ^https:\/\/app\.bilibili\.com\/x\/resource\/show\/tab\/v2\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/BiliBili/BiliBili.js, requires-body=true, tag=精简首页顶部标签
 http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/account\/(?:mine|myinfo) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/BiliBili/BiliBili.js, requires-body=true, tag=BiliBili Mystery Code
+# bilibili
+http-request ^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.playerunite\.v1\.Player\/PlayViewUnite$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/kokoryh/bilibili/bilibili.airborne.js, requires-body=true, binary-body-mode=true, tag={空降助手}
+http-response ^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/kokoryh/bilibili/bili-suit-diy.js, requires-body=true, tag=bilibili.skin
+http-response ^https:\/\/app\.bilibili\.com\/x\/(?:resource\/show\/tab\/v2|v2\/(?:splash\/(?:list|show|event\/list2)|feed\/index(?:\/story)?|account\/(?:mine(?:\/ipad)?|myinfo)))\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/kokoryh/bilibili/bilibili.json.js, requires-body=true, tag=bilibili.json, argument="{"showUperCenter":{创作中心}}"
+http-response ^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.(?:app\.(?:interface\.v1\.(?:Teenagers\/ModeStatus|Search\/DefaultWords)|show\.v1\.Popular\/Index|dynamic\.v2\.Dynamic\/DynAll|view(?:unite)?\.v1\.View\/(?:View|ViewProgress|TFInfo|RelatesFeed)|playurl\.v1\.PlayURL\/PlayView|playerunite\.v1\.Player\/PlayViewUnite)|polymer\.app\.search\.v1\.Search\/SearchAll|community\.service\.dm\.v1\.DM\/DmView|main\.community\.reply\.v1\.Reply\/MainList|pgc\.gateway\.player\.v2\.PlayURL\/PlayView)$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/kokoryh/bilibili/bilibili.protobuf.js, requires-body=true, binary-body-mode=true, tag=bilibili.protobuf, argument="{"showUpList":"{动态最常访问}","filterTopReplies":{过滤置顶评论广告}}"
 # Bilibili_remove_ads
 http-response ^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.(?:app\.(?:interface\.v1\.(?:Teenagers\/ModeStatus|Search\/DefaultWords)|show\.v1\.Popular\/Index|dynamic\.v2\.Dynamic\/DynAll|view(?:unite)?\.v1\.View\/(?:View|ViewProgress|TFInfo|RelatesFeed)|playurl\.v1\.PlayURL\/PlayView|playerunite\.v1\.Player\/PlayViewUnite)|polymer\.app\.search\.v1\.Search\/SearchAll|community\.service\.dm\.v1\.DM\/DmView|main\.community\.reply\.v1\.Reply\/MainList|pgc\.gateway\.player\.v2\.PlayURL\/PlayView)$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Bilibili_remove_ads/Bilibili_proto_kokoryh.js,requires-body=true,binary-body-mode=true,argument=[{showUpList}, {filterTopReplies}],tag=Proto处理
 # BiliBili.ADBlock
