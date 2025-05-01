@@ -83,6 +83,7 @@ Modules/Surge/zirawell/umetrip.sgmodule # Loon,Shadowrocket
 Modules/Surge/zirawell/unionPay.sgmodule # Loon,Shadowrocket
 
 Modules/Surge/ifflagged/BiliBili.sgmodule # Loon,Shadowrocket
+Modules/Surge/kokoryh/bilibili.sgmodule # Loon,Shadowrocket
 Modules/Surge/Kelee/Bilibili_remove_ads.sgmodule # Shadowrocket
 Modules/Loon/Kelee/Bilibili_remove_ads.plugin
 Modules/Surge/BiliUniverse/BiliBili.ADBlock.sgmodule # Loon,Shadowrocket
