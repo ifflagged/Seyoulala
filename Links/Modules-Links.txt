@@ -38,7 +38,7 @@ https://github.com/githubdulong/Script/raw/master/Surge/jd_price.sgmodule
 https://github.com/githubdulong/Script/raw/master/Surge/jd_price2.sgmodule
 
 # K #
-https://github.com/kokoryh/Sparkle/raw/master/surge/module/bilibili.sgmodule
+https://github.com/kokoryh/Sparkle/raw/master/release/surge/module/bilibili.sgmodule
 https://github.com/kokoryh/Sparkle/raw/master/surge/module/missav.sgmodule
 
 # M #
