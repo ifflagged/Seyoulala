@@ -57,6 +57,7 @@ https://github.com/Yuheng0101/Hostname_Monitor/releases/download/Auto_Update/hei
 https://github.com/ZenmoFeiShi/Qx/raw/main/Didichuxing.snippet
 https://github.com/ZenmoFeiShi/Qx/raw/main/Pinduoduo.snippet
 https://github.com/ZenmoFeiShi/Qx/raw/main/Smzdm.snippet
+https://github.com/ZenmoFeiShi/Qx/raw/main/WxPureDominion.snippet
 https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/%23/%E5%8A%9F%E8%83%BD%E7%B1%BB/filter/functional.list😂https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/%23/%E5%8A%9F%E8%83%BD%E7%B1%BB/rewrite/functional.conf
 https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/%23/%E5%B9%BF%E5%91%8A%E8%81%94%E7%9B%9F/filter/adUnion.list😂https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/%23/%E5%B9%BF%E5%91%8A%E8%81%94%E7%9B%9F/rewrite/adUnion.conf
 https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/0-9/12123/filter/12123.list😂https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/0-9/12123/rewrite/12123.conf
