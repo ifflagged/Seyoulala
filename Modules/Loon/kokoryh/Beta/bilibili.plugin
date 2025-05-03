@@ -3,13 +3,14 @@
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
 #!tag=Jacob
 
-#!arguments-desc=动态最常访问: [true, false, auto]\n- true: 始终显示\n- false: 始终隐藏\n- auto: 仅当列表中存在直播状态时显示\n\n创作中心: [1, 0]\n- 1: 显示\n- 0: 隐藏\n\n过滤置顶评论广告: [1, 0]\n- 1: 开启\n- 0: 关闭\n\n空降助手(beta): 默认开启，配置为"#"时关闭\n\n替换鉴权字段: 默认关闭，配置为"h"时开启，需填写Authorization
+#!arguments-desc=动态最常访问: [true, false, auto]\n- true: 始终显示\n- false: 始终隐藏\n- auto: 仅当列表中存在直播状态时显示\n\n创作中心: [1, 0]\n- 1: 显示\n- 0: 隐藏\n\n过滤置顶评论广告: [1, 0]\n- 1: 开启\n- 0: 关闭\n\n空降助手: 默认开启，配置为"#"时关闭\n\n空降助手弹幕版: 默认关闭，需手动开启\n\n替换鉴权字段: 默认关闭，配置为"h"时开启，需填写Authorization
 
 [Argument]
 动态最常访问=input,auto,tag=动态最常访问, desc=动态最常访问
 创作中心=input,0,tag=创作中心, desc=创作中心
 过滤置顶评论广告=input,1,tag=过滤置顶评论广告, desc=过滤置顶评论广告
 空降助手=input,bilibili.airborne,tag=空降助手, desc=空降助手
+空降助手弹幕版=input,#,tag=空降助手弹幕版, desc=空降助手弹幕版
 替换鉴权字段=input,#,tag=替换鉴权字段, desc=替换鉴权字段
 Authorization=input,identify_v1 xxx,tag=Authorization, desc=Authorization
 
@@ -32,6 +33,8 @@ http-response-jq ^https:\/\/api\.live\.bilibili\.com\/xlive\/(?:app-interface\/v
 
 [Script]
 http-request ^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.playerunite\.v1\.Player\/PlayViewUnite$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/kokoryh/bilibili/bilibili.airborne.js, requires-body=true, binary-body-mode=true, tag={空降助手}
+
+http-request ^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.community\.service\.dm\.v1\.DM\/DmSegMobile$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/kokoryh/bilibili/bilibili.airborne.js, requires-body=true, binary-body-mode=true, tag={空降助手弹幕版}
 
 http-response ^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/kokoryh/bilibili/bili-suit-diy.js, requires-body=true, tag=bilibili.skin
 
