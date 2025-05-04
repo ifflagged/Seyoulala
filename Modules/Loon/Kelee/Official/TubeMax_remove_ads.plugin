@@ -11,7 +11,7 @@
 #!date = 2024-11-28 00:00:00
 
 [Rule]
-DOMAIN, app.tubemaxapp.com,PROXY
+DOMAIN, app.tubemaxapp.com, PROXY
 DOMAIN-SUFFIX, adjust.com, REJECT
 DOMAIN-SUFFIX, applvn.com, REJECT
 DOMAIN-SUFFIX, app-measurement.com, REJECT

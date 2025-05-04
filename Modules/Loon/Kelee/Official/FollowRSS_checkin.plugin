@@ -17,3 +17,6 @@ cron=input,"0 1 * * *", tag = 定时参数,desc=这里需要输入符合CRON表�
 
 [Script]
 cron {cron} script-path = https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/FollowRSS_checkin/FollowRSS_checkin.js, tag = Follow每日签到, timeout = 120, argument = [{token},{cookie}]
+
+[MitM]
+hostname = api.follow.is

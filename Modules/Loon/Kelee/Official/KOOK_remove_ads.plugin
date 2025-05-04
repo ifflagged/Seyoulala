@@ -18,4 +18,4 @@
 ^https:\/\/(m|www)\.kookapp\.cn\/api\/v\d\/user\/settings$ response-body-json-replace ios_mall_switch false
 
 [MitM]
-hostname = m.kookapp.cn,www.kookapp.cn
+hostname = m.kookapp.cn, www.kookapp.cn

@@ -46,4 +46,4 @@ DOMAIN, aaid.umeng.com, REJECT
 ^https:\/\/dict\.youdao\.com\/course\/tab\/home\? response-body-json-del data.popup data.tab data.searchSuggestList data.newBanner data.icon.promotionList data.icon.iconList[1].bubble data.icon.iconList[2].bubble data.icon.iconList[8].bubble
 
 [MitM]
-hostname = gorgon.youdao.com,dict.youdao.com
+hostname = gorgon.youdao.com, dict.youdao.com

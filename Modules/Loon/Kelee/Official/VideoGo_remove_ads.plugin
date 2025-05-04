@@ -97,4 +97,4 @@ DOMAIN-SUFFIX, pos.baidu.com, REJECT
 [Script]
 
 [MitM]
-hostname = api.ys7.com,i.ys7.com
+hostname = api.ys7.com, i.ys7.com

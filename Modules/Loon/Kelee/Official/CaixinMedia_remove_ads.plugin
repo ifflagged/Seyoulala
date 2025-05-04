@@ -33,4 +33,4 @@ http-response ^https:\/\/mappsv5\.caixin\.com\/articlev5\/\d+\/\d+\.json$ script
 http-response ^https:\/\/mapps?v5\.caixin\.com\/(channelv5\/list|\/?index_page_v5\/)\w+ script-path = https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/CaixinMedia_remove_ads/CaixinMedia_remove_ads.js, requires-body = true, tag = 移除正文广告
 
 [MitM]
-hostname = e*.caixin.com,g*.caixin.com,m*.caixin.com
+hostname = e*.caixin.com, g*.caixin.com, m*.caixin.com

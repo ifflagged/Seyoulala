@@ -18,4 +18,4 @@
 
 
 [MitM]
-hostname = keapi.fenbi.com,market-api.fenbi.com,tiku.fenbi.com
+hostname = keapi.fenbi.com, market-api.fenbi.com, tiku.fenbi.com

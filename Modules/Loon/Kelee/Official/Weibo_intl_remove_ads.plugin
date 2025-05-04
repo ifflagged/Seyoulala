@@ -21,4 +21,4 @@
 ^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?a=user_center& response-body-json-jq 'if .data.cards then .data.cards[].items |= map(select(.type != "personal_vip")) | .data.cards |= map(select((.items | length) > 0)) end'
 
 [MitM]
-hostname = api.weibo.cn,weibointl.api.weibo.cn
+hostname = api.weibo.cn, weibointl.api.weibo.cn

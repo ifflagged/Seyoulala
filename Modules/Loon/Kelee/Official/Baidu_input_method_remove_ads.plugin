@@ -24,4 +24,4 @@
 http-response ^https?:\/\/mime\.baidu\.com\/(imrobot\/v1\/pub\/relation\/get_robot_list|v5\/custom_page\/(layout|getdata)) script-path = https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Baidu_input_method_remove_ads/Baidu_input_method_remove_ads.js, requires-body = true, tag = 百度输入法去广告
 
 [MitM]
-hostname = imeres.baidu.com,mbd.baidu.com,mime.baidu.com
+hostname = imeres.baidu.com, mbd.baidu.com, mime.baidu.com

@@ -59,4 +59,4 @@ http-request ^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.com
 http-response ^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.(?:app\.(?:interface\.v1\.(?:Teenagers\/ModeStatus|Search\/DefaultWords)|show\.v1\.Popular\/Index|dynamic\.v2\.Dynamic\/DynAll|view(?:unite)?\.v1\.View\/(?:View|ViewProgress|TFInfo|RelatesFeed)|playurl\.v1\.PlayURL\/PlayView|playerunite\.v1\.Player\/PlayViewUnite)|polymer\.app\.search\.v1\.Search\/SearchAll|community\.service\.dm\.v1\.DM\/DmView|main\.community\.reply\.v1\.Reply\/MainList|pgc\.gateway\.player\.v2\.PlayURL\/PlayView)$ script-path = https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Bilibili_remove_ads/Bilibili_proto_kokoryh.js, requires-body = true, binary-body-mode = true, argument = [{showUpList}, {filterTopReplies}], tag = Proto处理
 
 [MitM]
-hostname = grpc.biliapi.net,app.bilibili.com,api.bilibili.com,api.live.bilibili.com
+hostname = grpc.biliapi.net, app.bilibili.com, api.bilibili.com, api.live.bilibili.com

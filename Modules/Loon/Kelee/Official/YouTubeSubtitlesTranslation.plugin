@@ -32,4 +32,4 @@ http-response ^https?:\/\/music\.youtube\.com\/youtubei\/v1\/browse\?(.*)subtype
 http-response ^https?:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/browse\?(.*)subtype=Translate script-path = https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/YouTubeSubtitlesTranslation/YouTube_Subtitles_Translate_response.js, requires-body = true, binary-body-mode = true, tag = Proto·YouTube Music翻译歌词响应, argument = 
 
 [MitM]
-hostname = www.youtube.com,m.youtube.com,tv.youtube.com,music.youtube.com,youtubei.googleapis.com
+hostname = www.youtube.com, m.youtube.com, tv.youtube.com, music.youtube.com, youtubei.googleapis.com

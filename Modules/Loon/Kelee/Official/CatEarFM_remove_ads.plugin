@@ -39,4 +39,4 @@
 ^https:\/\/app\.missevan\.com\/site\/icons\? response-body-json-jq '.info.icons |= (if . == null then null else map(select(.title != "直播" and .title != "周边商城")) end)'
 
 [MitM]
-hostname = app.missevan.com,fm.missevan.com
+hostname = app.missevan.com, fm.missevan.com

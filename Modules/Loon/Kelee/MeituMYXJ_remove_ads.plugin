@@ -138,4 +138,4 @@ DOMAIN, da.mosspf.com, REJECT
 http-response ^https:\/\/api\.meiyan\.com\/operation\/home\.json\? script-path = https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/MeituMYXJ_remove_ads/MeituMYXJ_remove_ads.js, requires-body = true, tag = 精简首页功能栏目并移除美颜推荐
 
 [MitM]
-hostname = api.meiyan.com,video-dsp.pddpic.com,t-dsp.pinduoduo.com,images.pinduoduo.com
+hostname = api.meiyan.com, video-dsp.pddpic.com, t-dsp.pinduoduo.com, images.pinduoduo.com

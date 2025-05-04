@@ -72,4 +72,4 @@ DOMAIN-KEYWORD, asiad.byteactivity, REJECT
 ^https:\/\/api(5-lq)?\.pipix\.com\/bds\/user\/check_in\/ response-body-json-jq '.data.profile_entrances |= map(select(.title != "放心借" and .title != "洋钱罐借款")) | del(.data.pet_interface_message)'
 
 [MitM]
-hostname = api.pipix.com,api5-lq.pipix.com
+hostname = api.pipix.com, api5-lq.pipix.com

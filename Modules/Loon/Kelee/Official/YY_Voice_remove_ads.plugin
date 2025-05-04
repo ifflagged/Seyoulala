@@ -88,4 +88,4 @@ DOMAIN, sdk.beizi.biz, REJECT
 ^https:\/\/personal-center\.yy\.com\/personalCenter\/list\? response-body-json-jq '.data.modules |= map(select(.moduleName != "Banner轮播")) | .data.modules[] |= if .entrances != null then .entrances |= map(select(.name != "度小满借钱" and .name != "手机充值" and .name != "免流量")) else . end'
 
 [MitM]
-hostname = yyapp-act-entrance.yy.com,yyapp-fastnet.yy.com,personal-center.yy.com,tab.yy.com,data.3g.yy.com,yyapp-idx.yy.com
+hostname = yyapp-act-entrance.yy.com, yyapp-fastnet.yy.com, personal-center.yy.com, tab.yy.com, data.3g.yy.com, yyapp-idx.yy.com

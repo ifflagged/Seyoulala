@@ -59,4 +59,4 @@ URL-REGEX, "^http:\/\/log\.stat\.kugou\.com\/mobile\/ad\.html", REJECT
 ^https:\/\/gateway(retry)?\.kugou\.com\/ocean\/v\d\/tab\/list_v\d response-body-json-jq 'def namesToRemove:["AI帮唱","长相思2","K歌","小说","游戏"];def removeParentIfNameMatches:if type=="object"then with_entries(select(.value|(type=="object"and .name as $name|$name|IN(namesToRemove[])|not)))|map_values(removeParentIfNameMatches)else .end;removeParentIfNameMatches'
 
 [MitM]
-hostname = gateway.kugou.com,fx.service.kugou.com,hwstore.kugou.com,ep.kugou.com,gatewayretry.kugou.com,gzacshow.kugou.com,m1fxgroup.kugou.com
+hostname = gateway.kugou.com, fx.service.kugou.com, hwstore.kugou.com, ep.kugou.com, gatewayretry.kugou.com, gzacshow.kugou.com, m1fxgroup.kugou.com

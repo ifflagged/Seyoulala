@@ -27,4 +27,4 @@ http-response ^https:\/\/games\.mobileapi\.hupu\.com\/\d\/\d\.\d\.\d+\/buffer\/h
 http-response ^https:\/\/games\.mobileapi\.hupu\.com\/\d\/\d\.\d\.\d+\/bplapi\/user\/v1\/more script-path = https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/HUPU_remove_ads/HUPU_remove_ads.js, requires-body = true, tag = 移除虎扑广告
   
 [MitM]
-hostname = games.mobileapi.hupu.com,fairy.mobileapi.hupu.com,bbs.mobileapi.hupu.com,goblin.hupu.com
+hostname = games.mobileapi.hupu.com, fairy.mobileapi.hupu.com, bbs.mobileapi.hupu.com, goblin.hupu.com

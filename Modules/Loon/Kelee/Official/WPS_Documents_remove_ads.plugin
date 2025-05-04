@@ -18,4 +18,4 @@
 ^https:\/\/f-api\.kdocs\.cn\/godfather\/api\/thirdparty\/v1\/viewpager\?showLocal=mobileWebIndex reject-dict
 
 [MitM]
-hostname = www.kdocs.cn,f-api.kdocs.cn
+hostname = www.kdocs.cn, f-api.kdocs.cn

@@ -64,4 +64,4 @@ DOMAIN, access.if.iqiyi.com, REJECT
 ^https?:\/\/iface2\.iqiyi\.com\/aggregate\/3\.0\/getMyMenus\? response-body-json-jq '.data |= map(select(.statistic.block != "wd_liebiao_2") | select(all(.menuList[]?.statistic2.block; . != "wd_liebiao_3")))'
 
 [MitM]
-hostname = -i.vip.iqiyi.com,*.iqiyi.com
+hostname = -i.vip.iqiyi.com, *.iqiyi.com

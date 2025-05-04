@@ -34,4 +34,4 @@
 [Script]
 
 [MitM]
-hostname = appc.qixin.com,appc-v6.qixin.com,qxb-minicode-pic-osscache.qixin.com
+hostname = appc.qixin.com, appc-v6.qixin.com, qxb-minicode-pic-osscache.qixin.com

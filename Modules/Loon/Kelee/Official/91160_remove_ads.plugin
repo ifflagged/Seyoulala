@@ -122,4 +122,4 @@ DOMAIN-SUFFIX, igexin.com, REJECT
 ^https:\/\/patientappapi\.91160\.com\/cus_index\.php\?c=adver reject
 
 [MitM]
-hostname = patientgate.91160.com,soapi.91160.com,snsapi.91160.com,msglb.91160.com,patientappapi.91160.com
+hostname = patientgate.91160.com, soapi.91160.com, snsapi.91160.com, msglb.91160.com, patientappapi.91160.com

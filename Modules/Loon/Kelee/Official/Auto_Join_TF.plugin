@@ -17,7 +17,7 @@ CaptureAppID=switch,false,true, tag = 捕获应用ID,desc=此开关控制插件�
 TimingParameters=input,"0 0/2 * * * ?", tag = 定时参数,desc=这里需要输入符合CRON表达式的参数
 
 [Rule]
-DOMAIN, testflight.apple.com,PROXY
+DOMAIN, testflight.apple.com, PROXY
 
 [Script]
 http-request ^https?:\/\/testflight\.apple\.com\/v3\/accounts\/.*\/apps$ script-path = https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Auto_Join_TF/TF_keys.js, tag = 获取账号令牌,enable={CaptureAccountToken}

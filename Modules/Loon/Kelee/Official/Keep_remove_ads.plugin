@@ -67,4 +67,4 @@ IP-CIDR, 47.110.187.87/32, REJECT, no-resolve
 ^https:\/\/api\.gotokeep\.com\/config\/v3\/basic response-body-json-jq '.data.homeTabs |= map(select(.name != "活动")) | .data.homeTabs[1].default = true | .data.homeTabs[2].default = false'
 
 [MitM]
-hostname = api.gotokeep.com,kad.gotokeep.com
+hostname = api.gotokeep.com, kad.gotokeep.com

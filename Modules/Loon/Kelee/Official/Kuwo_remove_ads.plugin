@@ -53,4 +53,4 @@ URL-REGEX, "^http:\/\/wapi\.kuwo\.cn\/openapi\/v\d\/album\/adBar\/", REJECT-DICT
 http-response ^http:\/\/wapi\.kuwo\.cn\/openapi\/v\d\/tingshu\/index\/radio response-body-json-jq 'walk(if type == "object" and .type == "stripAdvert" then del(.child) else . end)'
 
 [MitM]
-hostname = appi.kuwo.cn,mc.tencentmusic.com,vip*.kuwo.cn,tingshu.kuwo.cn
+hostname = appi.kuwo.cn, mc.tencentmusic.com, vip*.kuwo.cn, tingshu.kuwo.cn

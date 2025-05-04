@@ -25,4 +25,4 @@
 ^http:\/\/api\.cc\.163\.com\/v1\/mpopuprecommend\/exit_room_conf$ reject-dict
 
 [MitM]
-hostname = api.cc.163.com,cc.163.com,mshare.cc.163.com,appapi.cc.163.com
+hostname = api.cc.163.com, cc.163.com, mshare.cc.163.com, appapi.cc.163.com

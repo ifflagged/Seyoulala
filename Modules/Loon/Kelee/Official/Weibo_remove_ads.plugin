@@ -64,4 +64,4 @@ http-response ^https:\/\/wbapp\.uve\.weibo\.com\/(?:preload\/get_ad|wbapplua\/wb
 http-response ^https:\/\/new\.vip\.weibo\.cn\/aj\/appicon\/list\? script-path = https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Weibo_remove_ads/Weibo_remove_ads.js, requires-body = true, tag = 会员图标
 
 [MitM]
-hostname = *.weibo.cn,*.weibo.com,weibo.com
+hostname = *.weibo.cn, *.weibo.com, weibo.com

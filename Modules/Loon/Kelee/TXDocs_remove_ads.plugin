@@ -16,4 +16,4 @@
 ^https:\/\/h5\.qzone\.qq\.com\/p\/adboss\/api\/json\/ts_access\/GetAds$ reject-dict
 
 [MitM]
-hostname = tianshu.qq.com,h5.qzone.qq.com
+hostname = tianshu.qq.com, h5.qzone.qq.com

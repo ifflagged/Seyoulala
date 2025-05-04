@@ -97,4 +97,4 @@ DOMAIN, log.umtrack.com, REJECT
 ^https:\/\/cili\.xfuse\.fun\/s\/ reject
 
 [MitM]
-hostname = cili.xfuse.fun,i.micecube.com,img.mofyi.com
+hostname = cili.xfuse.fun, i.micecube.com, img.mofyi.com

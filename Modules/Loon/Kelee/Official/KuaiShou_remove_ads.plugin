@@ -26,4 +26,4 @@
 ^https:\/\/az2-api-js\.gifshow\.com\/rest\/n\/user\/profile\/v2\? response-body-json-del postRecommends
 
 [MitM]
-hostname = az4-api.ksapisrv.com,az4-api-idc.ksapisrv.com,az2-api.ksapisrv.com,az2-api-idc.ksapisrv.com,apissl.gifshow.com,apissl.ksapisrv.com,az2-api-js.gifshow.com,az2-live.ksapisrv.com
+hostname = az4-api.ksapisrv.com, az4-api-idc.ksapisrv.com, az2-api.ksapisrv.com, az2-api-idc.ksapisrv.com, apissl.gifshow.com, apissl.ksapisrv.com, az2-api-js.gifshow.com, az2-live.ksapisrv.com

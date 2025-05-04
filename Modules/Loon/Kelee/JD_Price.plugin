@@ -15,4 +15,4 @@ http-response ^https?:\/\/apapia-sqk-weblogic\.manmanbuy\.com\/baoliao\/center\/
 http-response ^https?:\/\/in\.m\.jd\.com\/product\/graphext\/\d+\.html script-path = https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/JD_Price/JD_Price.js, requires-body = true, timeout = 10, tag = 京东比价
 
 [MitM]
-hostname = in.m.jd.com,apapia-sqk-weblogic.manmanbuy.com
+hostname = in.m.jd.com, apapia-sqk-weblogic.manmanbuy.com
