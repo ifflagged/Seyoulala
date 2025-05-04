@@ -12,7 +12,7 @@
 #!date = 2024-11-28 00:00:00
 
 [Rule]
-AND, ((GEOIP,CN),(DOMAIN, pitaya.bytedance.com)), DIRECT // 此为抖音和TikTok的*.bytedance.com共用域名，仅国外解析结果走代理
+AND, ((GEOIP,CN), (DOMAIN, pitaya.bytedance.com)), DIRECT // 此为抖音和TikTok的*.bytedance.com共用域名，仅国外解析结果走代理
 DOMAIN, api.snapkit.com, PROXY
 DOMAIN, cocacola.co.jp, PROXY
 DOMAIN, courses.snapsolve.com, PROXY

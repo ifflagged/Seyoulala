@@ -24,3 +24,6 @@ http-response ^http:\/\/go\.babytree\.com\/go_pregnancy\/api\/(app_index\/get_ap
 
 http-response ^http:\/\/go\.babytree\.com\/go_search\/api\/mobile_search_new\/search_index script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/BabyTree_remove_ads/BabyTree_remove_ads.js, requires-body=true, tag=移除搜索列表推广
 
+[MITM]
+hostname = api.babytree.com, go.babytree.com
+

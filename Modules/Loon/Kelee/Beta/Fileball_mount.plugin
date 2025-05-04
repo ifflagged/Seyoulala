@@ -13,3 +13,6 @@
 [Script]
 http-request ^http:\/\/(aliyun|quark|pikpak)\.example\.com script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Fileball_mount/Fileball_mount.js, requires-body=true, tag=三合一网盘挂载
 
+[MITM]
+hostname = aliyun.example.com, quark.example.com, pikpak.example.com
+
