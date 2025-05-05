@@ -20,6 +20,6 @@ removeBannerSwitch = switch, "true", "false", tag = 移除轮播图, desc = 移�
 
 [Script]
 http-response ^https:\/\/napi\.ithome\.com\/api\/(?:news\/index|topmenu\/getfeeds\?|api\/douyin\/GetLiveInfo) script-path = https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/IThome_remove_ads/IThome_remove_ads.js, requires-body = true, tag = IT之家去广告, argument = [{removeTopSwitch},{removeBannerSwitch}]
-  
+ 
 [MitM]
 hostname = napi.ithome.com, api.zuihuimai.com, dat.ruanmei.com
