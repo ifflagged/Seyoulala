@@ -98,6 +98,7 @@ DOMAIN,tosv.boe.byted.org,REJECT
 DOMAIN,tosv.byted.org,REJECT
 DOMAIN,mssdk.volces.com,REJECT
 DOMAIN,mssdk-bu.bytedance.com,REJECT
+DOMAIN,volceapplog.com,REJECT
 DOMAIN-SUFFIX,pangle.io,REJECT
 DOMAIN-SUFFIX,ic.snssdk.com,REJECT
 DOMAIN-SUFFIX,analytics.snssdk.com,REJECT
