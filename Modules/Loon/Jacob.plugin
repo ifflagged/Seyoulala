@@ -551,6 +551,7 @@ DOMAIN, effect.snssdk.com, REJECT
 DOMAIN, reading.snssdk.com, REJECT
 DOMAIN, ichannel.snssdk.com, REJECT
 DOMAIN, toutiao-frontier.snssdk.com, REJECT
+DOMAIN, volceapplog.com, REJECT
 DOMAIN-SUFFIX, pangle.io, REJECT
 DOMAIN-SUFFIX, ic.snssdk.com, REJECT
 DOMAIN-SUFFIX, analytics.snssdk.com, REJECT
