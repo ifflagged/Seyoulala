@@ -55,35 +55,35 @@ DOMAIN,adpinpai.video.weibocdn.com,REJECT
 
 [Map Local]
 # 热门视频 | 热推荐
-^https?:\/\/api\.weibo\.c(n|om)\/\d\/(cardlist\?v_f=\d|ad\/weibointl\?) data-type=text data="{}" status-code=200
+^https?:\/\/api\.weibo\.c(n|om)\/\d\/(cardlist\?v_f=\d|ad\/weibointl\?) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/weibointl\.api\.weibo\.c(n|om)\/portal\.php\?a=hot_search_users data-type=text data="{}" status-code=200
+^https?:\/\/weibointl\.api\.weibo\.c(n|om)\/portal\.php\?a=hot_search_users data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 私信中绿洲的擦边诱导推广
-^https?:\/\/weibointl\.api\.weibo\.c(n|om)\/portal\.php\?a=treehole&auth= data-type=text data="{}" status-code=200
+^https?:\/\/weibointl\.api\.weibo\.c(n|om)\/portal\.php\?a=treehole&auth= data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 屏蔽首页左上角每日的弹窗tips
-^https?:\/\/m?api\.weibo\.c(n|om)\/\d/push\/daily data-type=text data="{}" status-code=200
+^https?:\/\/m?api\.weibo\.c(n|om)\/\d/push\/daily data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 超话按钮的提示
-^https?:\/\/api\.weibo\.c(n|om)\/2\/!\/huati\/(discovery_home_bottom_getdotinfo|mobile_discovery_searchchange)\? data-type=text data="{}" status-code=200
+^https?:\/\/api\.weibo\.c(n|om)\/2\/!\/huati\/(discovery_home_bottom_getdotinfo|mobile_discovery_searchchange)\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 开屏广告
-^https?:\/\/bootrealtime\.uve\.weibo\.com\/v\d\/ad\/realtime data-type=text data="{}" status-code=200
+^https?:\/\/bootrealtime\.uve\.weibo\.com\/v\d\/ad\/realtime data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/bootpreload\.uve\.weibo\.com\/v\d\/ad\/preload data-type=text data="{}" status-code=200
+^https?:\/\/bootpreload\.uve\.weibo\.com\/v\d\/ad\/preload data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 微博长文章推广
-^https:\/\/card\.weibo\.com\/article\/m\/aj\/(reward|uvead)\? data-type=text data="{}" status-code=200
+^https:\/\/card\.weibo\.com\/article\/m\/aj\/(reward|uvead)\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/weibo\.com\/ttarticle\/x\/m\/aj\/(reward|uvead)\? data-type=text data="{}" status-code=200
+^https:\/\/weibo\.com\/ttarticle\/x\/m\/aj\/(reward|uvead)\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 微博
-^https:\/\/api\.weibo\.cn\/2\/!\/huati\/discovery_home_bottom_channels data-type=text data="{}" status-code=200
+^https:\/\/api\.weibo\.cn\/2\/!\/huati\/discovery_home_bottom_channels data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/api\.weibo\.cn\/2\/!\/chaohua\/discovery\/home_bottom\/switch data-type=text data="{}" status-code=200
+^https:\/\/api\.weibo\.cn\/2\/!\/chaohua\/discovery\/home_bottom\/switch data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/api\.weibo\.cn\/2\/!\/was\/finder\/searchbarchange\? data-type=text data="{}" status-code=200
+^https:\/\/api\.weibo\.cn\/2\/!\/was\/finder\/searchbarchange\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 [Script]
 # 微博移除发现页广告

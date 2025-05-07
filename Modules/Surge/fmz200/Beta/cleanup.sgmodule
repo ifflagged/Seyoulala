@@ -31,250 +31,250 @@
 
 [Map Local]
 # 首页上方广告
-^https:\/\/member\.alipan\.com\/v2\/activity\/sign_in_info data-type=text data="{}" status-code=200
+^https:\/\/member\.alipan\.com\/v2\/activity\/sign_in_info data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = res.pizzahut.com
-#^https:\/\/res\.pizzahut\.com\.cn\/CRM data-type=text data="{}" status-code=200
+#^https:\/\/res\.pizzahut\.com\.cn\/CRM data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = hwimg.beingfine.cn, learnywhere.cn
-^https:\/\/hwimg\.beingfine\.cn\/float_button data-type=text data="{}" status-code=200
+^https:\/\/hwimg\.beingfine\.cn\/float_button data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/hwimg\.beingfine\.cn\/card data-type=text data="{}" status-code=200
+^https:\/\/hwimg\.beingfine\.cn\/card data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/learnywhere\.cn\/api\/activity\/23\/423dsj\/inapp\/bb\/promote data-type=text data="{}" status-code=200
+^https:\/\/learnywhere\.cn\/api\/activity\/23\/423dsj\/inapp\/bb\/promote data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = minicap.caocaokeji.cn
-^https:\/\/minicap\.caocaokeji\.cn\/advert-bss\/pullAdvert data-type=text data="{}" status-code=200
+^https:\/\/minicap\.caocaokeji\.cn\/advert-bss\/pullAdvert data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = cbd-gateway-service-applets.hualala.com
-^https:\/\/cbd-gateway-service-applets\.hualala\.com\/arch\/api\/banner\/QueryBannerImgList data-type=text data="{}" status-code=200
+^https:\/\/cbd-gateway-service-applets\.hualala\.com\/arch\/api\/banner\/QueryBannerImgList data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = supplier-api.imdada.cn
-^https:\/\/supplier-api\.imdada\.cn\/fe\/public\/ad\/spot\?forwardServiceName=growth-activity data-type=text data="{}" status-code=200
+^https:\/\/supplier-api\.imdada\.cn\/fe\/public\/ad\/spot\?forwardServiceName=growth-activity data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # > 滴滴打车 小程序净化 感谢#豆豆分享
-^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v1\/core data-type=text data="{}" status-code=200
+^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v1\/core data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = 
-^https:\/\/wechat-api\.i-xiaoma\.com\.cn\/app\/v1\/bus\/wechat\/content data-type=text data="{}" status-code=200
+^https:\/\/wechat-api\.i-xiaoma\.com\.cn\/app\/v1\/bus\/wechat\/content data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = www.deppon.com
-^https:\/\/www\.deppon\.com\/gwapi\/memberService\/eco\/member\/grade\/commonInterface data-type=text data="{}" status-code=200
+^https:\/\/www\.deppon\.com\/gwapi\/memberService\/eco\/member\/grade\/commonInterface data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # > 丰巢 微信小程序净化
-^https:\/\/webchatapp\.fcbox\.com\/fcboxactivityweb\/api\/v2\/clientPage data-type=text data="{}" status-code=200
+^https:\/\/webchatapp\.fcbox\.com\/fcboxactivityweb\/api\/v2\/clientPage data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/dsp\.fcbox\.com data-type=text data="{}" status-code=200
+^https:\/\/dsp\.fcbox\.com data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # > 广州地铁乘车码 微信小程序净化
-^https:\/\/apis\.alenable\.com\/mall\/v1\/api\/mall\/skin\/user\/get data-type=text data="{}" status-code=200
+^https:\/\/apis\.alenable\.com\/mall\/v1\/api\/mall\/skin\/user\/get data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/apis\.alenable\.com\/ycx\/v1\/api\/adPut data-type=text data="{}" status-code=200
+^https:\/\/apis\.alenable\.com\/ycx\/v1\/api\/adPut data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # > 花小猪打车 微信小程序净化 api.hongyibo.com.cn,
-#^https:\/\/api\.hongyibo\.com\.cn data-type=text data="{}" status-code=200
+#^https:\/\/api\.hongyibo\.com\.cn data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/res\.hongyibo\.com\.cn\/os\/gs\/resapi\/activity data-type=text data="{}" status-code=200
+^https:\/\/res\.hongyibo\.com\.cn\/os\/gs\/resapi\/activity data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # > 货拉拉 微信小程序净化
-^https:\/\/qapi\.huolala\.cn\/ads data-type=text data="{}" status-code=200
+^https:\/\/qapi\.huolala\.cn\/ads data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/appuser-static\.huolala\.cn\/imgs data-type=text data="{}" status-code=200
+^https:\/\/appuser-static\.huolala\.cn\/imgs data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/qapi\.huolala\.cn\/home_new_user data-type=text data="{}" status-code=200
+^https:\/\/qapi\.huolala\.cn\/home_new_user data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/qapi\.huolala\.cn\/get_service_list data-type=text data="{}" status-code=200
+^https:\/\/qapi\.huolala\.cn\/get_service_list data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # > 哈啰 微信小程序首页弹窗屏蔽
-^https:\/\/api\.hellobike\.com\/api\?adx data-type=text data="{}" status-code=200
+^https:\/\/api\.hellobike\.com\/api\?adx data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # > 华住会 微信小程序净化
-^https:\/\/api-fouth-mem\.huazhu\.com\/api\/rights\/bannerList data-type=text data="{}" status-code=200
+^https:\/\/api-fouth-mem\.huazhu\.com\/api\/rights\/bannerList data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # > 黑科技软件
 ^https:\/\/hkj178.com/wp-json/mp/v2/advert/wechat data-type=text data=" " status-code=200
 
 # > 街电 微信小程序
-^https:\/\/s\.jiediankeji\.com\/adv data-type=text data="{}" status-code=200
+^https:\/\/s\.jiediankeji\.com\/adv data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # > 极兔快递 微信小程序净化
-^https:\/\/applets\.jtexpress\.com\.cn data-type=text data="{}" status-code=200
+^https:\/\/applets\.jtexpress\.com\.cn data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # > 锦江酒店 微信小程序净化
-^https:\/\/wxapp\.bestwehotel\.com\/gw3\/app-mini\/trip-hotel-banner\/activity\/getActivityInfo data-type=text data="{}" status-code=200
+^https:\/\/wxapp\.bestwehotel\.com\/gw3\/app-mini\/trip-hotel-banner\/activity\/getActivityInfo data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # > 肯德基 微信小程序净化
-^https:\/\/orders\.kfc\.com\.cn\/preorder-portal\/api\/v2\/coupon data-type=text data="{}" status-code=200
+^https:\/\/orders\.kfc\.com\.cn\/preorder-portal\/api\/v2\/coupon data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/dynamicad\.kfc\.com\.cn\/api data-type=text data="{}" status-code=200
+^https:\/\/dynamicad\.kfc\.com\.cn\/api data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/res\.kfc\.com\.cn\/CRM\/kfcad\/custom_v2\/wxapp data-type=text data="{}" status-code=200
+^https:\/\/res\.kfc\.com\.cn\/CRM\/kfcad\/custom_v2\/wxapp data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/orders\.kfc\.com\.cn\/preorder-portal\/api\/v2\/activity data-type=text data="{}" status-code=200
+^https:\/\/orders\.kfc\.com\.cn\/preorder-portal\/api\/v2\/activity data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # > 快狗打车搬家 微信小程序净化
-^https:\/\/suyun-guest\.daojia\.com\/api\/kuaigou\/banjia\/review data-type=text data="{}" status-code=200
+^https:\/\/suyun-guest\.daojia\.com\/api\/kuaigou\/banjia\/review data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # > 来电 小程序净化
-^https:\/\/mobile-api\.imlaidian\.com\/api\/args data-type=text data="{}" status-code=200
+^https:\/\/mobile-api\.imlaidian\.com\/api\/args data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # > 罗森点点 微信小程序净化
-^https:\/\/lawsonapi\.yorentown\.com\/area\/sh-lawson\/app\/v1\/mina\/systemSetting data-type=text data="{}" status-code=200
+^https:\/\/lawsonapi\.yorentown\.com\/area\/sh-lawson\/app\/v1\/mina\/systemSetting data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/plt\.yorentown\.com\/pltapp\/v1\/banner data-type=text data="{}" status-code=200
+^https:\/\/plt\.yorentown\.com\/pltapp\/v1\/banner data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # > 老乡鸡 微信小程序净化
-^https:\/\/member\.lxjchina\.com\.cn\/mini-server\/home\/page\/banner data-type=text data="{}" status-code=200
+^https:\/\/member\.lxjchina\.com\.cn\/mini-server\/home\/page\/banner data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # > 美柚 微信小程序净化
-^https:\/\/wxproj\.seeyouyima\.com\/data\/today_tips data-type=text data="{}" status-code=200
+^https:\/\/wxproj\.seeyouyima\.com\/data\/today_tips data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # > 麦当劳 微信小程序净化
-^https:\/\/api\.mcd\.cn\/bff\/portal\/home\/hotActivity data-type=text data="{}" status-code=200
+^https:\/\/api\.mcd\.cn\/bff\/portal\/home\/hotActivity data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # > 蜜雪冰城 微信小程序净化
-^https:\/\/mxsa\.mxbc\.net\/api\/v1\/adinfo\/adplace\/query data-type=text data="{}" status-code=200
+^https:\/\/mxsa\.mxbc\.net\/api\/v1\/adinfo\/adplace\/query data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # > Manner 微信小程序净化(去除首页轮播图以及进入小程序弹窗)
-^https:\/\/triangle\.wearemanner\.com\/mp-api\/v1\/ads data-type=text data="{}" status-code=200
+^https:\/\/triangle\.wearemanner\.com\/mp-api\/v1\/ads data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 弹窗广告+横幅广告 #主机名ad.maoyan.com
-^https:\/\/ad\.maoyan\.com\/api\/position\/detail data-type=text data="{}" status-code=200
+^https:\/\/ad\.maoyan\.com\/api\/position\/detail data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 电竞赛事+热门赛事 #主机名wx.maoyan.com
-^https:\/\/wx\.maoyan\.com\/maoyansh\/api\/mobile\/(hotMatchList|eSportsIps) data-type=text data="{}" status-code=200
+^https:\/\/wx\.maoyan\.com\/maoyansh\/api\/mobile\/(hotMatchList|eSportsIps) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 猫眼放映厅 #主机名vod-movie.maoyan.com
-^https:\/\/vod-movie\.maoyan\.com\/vod\/video\/onlineMovies\.json data-type=text data="{}" status-code=200
+^https:\/\/vod-movie\.maoyan\.com\/vod\/video\/onlineMovies\.json data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 精彩演出
-^https:\/\/wx\.maoyan\.com\/maoyansh\/myshow\/ajax\/movie\/wonderShow data-type=text data="{}" status-code=200
+^https:\/\/wx\.maoyan\.com\/maoyansh\/myshow\/ajax\/movie\/wonderShow data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 七日精选
-^https:\/\/wx\.maoyan\.com\/maoyansh\/myshow\/ajax\/performances\/calendar\/0 data-type=text data="{}" status-code=200
+^https:\/\/wx\.maoyan\.com\/maoyansh\/myshow\/ajax\/performances\/calendar\/0 data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 今日必抢
-^https:\/\/wx\.maoyan\.com\/maoyansh\/myshow\/ajax\/performances\/rob\/main data-type=text data="{}" status-code=200
+^https:\/\/wx\.maoyan\.com\/maoyansh\/myshow\/ajax\/performances\/rob\/main data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 大咖新动态
-^https:\/\/wx\.maoyan\.com\/maoyansh\/myshow\/ajax\/celebrityBasicList\/query data-type=text data="{}" status-code=200
+^https:\/\/wx\.maoyan\.com\/maoyansh\/myshow\/ajax\/celebrityBasicList\/query data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 为你推荐
-^https:\/\/wx\.maoyan\.com\/maoyansh\/myshow\/ajax\/recommend\/performances data-type=text data="{}" status-code=200
+^https:\/\/wx\.maoyan\.com\/maoyansh\/myshow\/ajax\/recommend\/performances data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 首页底部推荐 #主机名api.maoyan.com
-^https:\/\/api\.maoyan\.com\/sns\/common\/feed\/channel\/v2\/list\.json data-type=text data="{}" status-code=200
+^https:\/\/api\.maoyan\.com\/sns\/common\/feed\/channel\/v2\/list\.json data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 演出页面全部拦截
-^https:\/\/wx\.maoyan\.com\/maoyansh\/myshow\/ajax\/ad\/detail data-type=text data="{}" status-code=200
+^https:\/\/wx\.maoyan\.com\/maoyansh\/myshow\/ajax\/ad\/detail data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # > 奈雪 微信小程序净化
-^https:\/\/tm-api\.pin-dao\.cn\/home\/api\/index\/activeConfig\/v2 data-type=text data="{}" status-code=200
+^https:\/\/tm-api\.pin-dao\.cn\/home\/api\/index\/activeConfig\/v2 data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/tm-api\.pin-dao\.cn\/home\/api\/resource\/config\/homeBannerNodes data-type=text data="{}" status-code=200
+^https:\/\/tm-api\.pin-dao\.cn\/home\/api\/resource\/config\/homeBannerNodes data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/webapi\.qmai\.cn\/web\/catering\/advertising\/ad data-type=text data="{}" status-code=200
+^https:\/\/webapi\.qmai\.cn\/web\/catering\/advertising\/ad data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/images\.qmai\.cn\/s214925\/2023 data-type=text data="{}" status-code=200
+^https:\/\/images\.qmai\.cn\/s214925\/2023 data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # > 青桔 微信小程序净化
-^https:\/\/htwkop\.xiaojukeji\.com\/gateway\?api=cms\.htw\.delivery data-type=text data="{}" status-code=200
+^https:\/\/htwkop\.xiaojukeji\.com\/gateway\?api=cms\.htw\.delivery data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/htwkop\.xiaojukeji\.com\/gateway\?api=hm\.fa\.combineHomepageInfo data-type=text data="{}" status-code=200
+^https:\/\/htwkop\.xiaojukeji\.com\/gateway\?api=hm\.fa\.combineHomepageInfo data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/htwkop\.xiaojukeji\.com\/gateway\?api=hm\.fa\.mallRecommend data-type=text data="{}" status-code=200
+^https:\/\/htwkop\.xiaojukeji\.com\/gateway\?api=hm\.fa\.mallRecommend data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # > 申通快递 微信小程序净化
-^https:\/\/customer-app\.sto\.cn\/api\/app\/banner\/banner data-type=text data="{}" status-code=200
+^https:\/\/customer-app\.sto\.cn\/api\/app\/banner\/banner data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/sto-customer-app\.oss-cn-shanghai\.aliyuncs\.com\/images data-type=text data="{}" status-code=200
+^https:\/\/sto-customer-app\.oss-cn-shanghai\.aliyuncs\.com\/images data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/api\.sodalife\.xyz\/v1\/posters\?location=SODA_APP%3AHOME%3ABOTTOM data-type=text data="{}" status-code=200
+^https:\/\/api\.sodalife\.xyz\/v1\/posters\?location=SODA_APP%3AHOME%3ABOTTOM data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/api\.sodalife\.xyz\/v1\/posters\?location=SODA_APP%3AHOME%3ACENTER data-type=text data="{}" status-code=200
+^https:\/\/api\.sodalife\.xyz\/v1\/posters\?location=SODA_APP%3AHOME%3ACENTER data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/api\.sodalife\.xyz\/v1\/posters\?location=SODA_APP%3AMINE%3ABOTTOM data-type=text data="{}" status-code=200
+^https:\/\/api\.sodalife\.xyz\/v1\/posters\?location=SODA_APP%3AMINE%3ABOTTOM data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/api\.sodalife\.xyz\/v1\/goods data-type=text data="{}" status-code=200
+^https:\/\/api\.sodalife\.xyz\/v1\/goods data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/api\.sodalife\.xyz\/v1\/posters\?location=SODA_APP%3AREWARDS%3ACENTER data-type=text data="{}" status-code=200
+^https:\/\/api\.sodalife\.xyz\/v1\/posters\?location=SODA_APP%3AREWARDS%3ACENTER data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # > 搜电充电 微信小程序
-^https:\/\/wxs-weixin\.sd\.zhumanggroup\.com\/api\/v2\/ad data-type=text data="{}" status-code=200
+^https:\/\/wxs-weixin\.sd\.zhumanggroup\.com\/api\/v2\/ad data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # > 神州租车 微信小程序净化
-^https:\/\/apiproxy\.zuche\.com\/resource\/carrctapi\/home\/marketing data-type=text data="{}" status-code=200
+^https:\/\/apiproxy\.zuche\.com\/resource\/carrctapi\/home\/marketing data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/apiproxy\.zuche\.com\/resource\/carrctapi\/home\/page\/advertising data-type=text data="{}" status-code=200
+^https:\/\/apiproxy\.zuche\.com\/resource\/carrctapi\/home\/page\/advertising data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # > 闪送 微信小程序净化
-^https:\/\/miniprogram\.ishansong\.com\/cms\/faq\/query data-type=text data="{}" status-code=200
+^https:\/\/miniprogram\.ishansong\.com\/cms\/faq\/query data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/ads\.ishansong\.com\/advert data-type=text data="{}" status-code=200
+^https:\/\/ads\.ishansong\.com\/advert data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # > 首旅如家 微信小程序净化
-^https:\/\/wx\.bthhotels\.com\/miniapp\/weixin\/v1\/home\/index_banner data-type=text data="{}" status-code=200
+^https:\/\/wx\.bthhotels\.com\/miniapp\/weixin\/v1\/home\/index_banner data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/app\.homeinns\.com\/api\/v6\/indexs data-type=text data="{}" status-code=200
+^https:\/\/app\.homeinns\.com\/api\/v6\/indexs data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/app\.homeinns\.com\/api\/v5\/local data-type=text data="{}" status-code=200
+^https:\/\/app\.homeinns\.com\/api\/v5\/local data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/app\.homeinns\.com\/api\/v5\/index data-type=text data="{}" status-code=200
+^https:\/\/app\.homeinns\.com\/api\/v5\/index data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # > 松果出行 @keywos
-^https:\/\/api\.songguo7\.com\/(\w{3})?mp\/v2\/misc\/(toast|user_operate_info) data-type=text data="{}" status-code=200
+^https:\/\/api\.songguo7\.com\/(\w{3})?mp\/v2\/misc\/(toast|user_operate_info) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # > 首汽约车 微信小程序净化
-^https:\/\/gw-passenger-wap\.01zhuanche\.com\/gw-passenger-wap\/zhuanche-passenger-token\/commonSkipToken\/common\/getAdList data-type=text data="{}" status-code=200
+^https:\/\/gw-passenger-wap\.01zhuanche\.com\/gw-passenger-wap\/zhuanche-passenger-token\/commonSkipToken\/common\/getAdList data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/passenger\.t3go\.cn\/passenger-activity-api\/notoken\/api\/v1\/resource\/getSource data-type=text data="{}" status-code=200
+^https:\/\/passenger\.t3go\.cn\/passenger-activity-api\/notoken\/api\/v1\/resource\/getSource data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 ^https?:\/\/ads\.zhinengxiyifang\.cn\/api\/v1\.1\/ads\/* data-type=text data=" " status-code=200
 
 # > 微快递 微信小程序净化
-^https:\/\/api\.kuaidihelp\.com\/g_order_core\/v2\/mina\/User\/getBannerList data-type=text data="{}" status-code=200
+^https:\/\/api\.kuaidihelp\.com\/g_order_core\/v2\/mina\/User\/getBannerList data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # > 小电充电 微信小程序
-^https:\/\/smarket\.dian\.so data-type=text data="{}" status-code=200
+^https:\/\/smarket\.dian\.so data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/file\.dian\.so\/c\/leto data-type=text data="{}" status-code=200
+^https:\/\/file\.dian\.so\/c\/leto data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # > 星巴克 微信小程序净化
-^https:\/\/3pp\.starbucks\.com\.cn\/wxmem\/popup data-type=text data="{}" status-code=200
+^https:\/\/3pp\.starbucks\.com\.cn\/wxmem\/popup data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/3pp\.starbucks\.com\.cn\/wxmem\/index\/banner data-type=text data="{}" status-code=200
+^https:\/\/3pp\.starbucks\.com\.cn\/wxmem\/index\/banner data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/3pp\.starbucks\.com\.cn\/wxmem\/index\/global data-type=text data="{}" status-code=200
+^https:\/\/3pp\.starbucks\.com\.cn\/wxmem\/index\/global data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # > 享道出行 微信小程序净化
-^https:\/\/passengerapi\.saicmobility\.com\/(ad\/requestAd|pay\/v1\/queryOpenedCouponPackages) data-type=text data="{}" status-code=200
+^https:\/\/passengerapi\.saicmobility\.com\/(ad\/requestAd|pay\/v1\/queryOpenedCouponPackages) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # > 携程旅行 微信小程序净化
-^https:\/\/m\.ctrip\.com\/restapi\/soa2\/13916\/tripAds data-type=text data="{}" status-code=200
+^https:\/\/m\.ctrip\.com\/restapi\/soa2\/13916\/tripAds data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/m\.ctrip\.com\/restapi\/soa2\/12673\/queryWeChatHotEvent data-type=text data="{}" status-code=200
+^https:\/\/m\.ctrip\.com\/restapi\/soa2\/12673\/queryWeChatHotEvent data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # > 悠洗APP 微信小程序净化 由TEXAS和豆豆提供
-^https:\/\/api\.ulife\.group\/signintask\/adServing data-type=text data="{}" status-code=200
+^https:\/\/api\.ulife\.group\/signintask\/adServing data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/api\.ulife\.group\/auth\/account\/getUpgradeStrategy data-type=text data="{}" status-code=200
+^https:\/\/api\.ulife\.group\/auth\/account\/getUpgradeStrategy data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/api\.ulife\.group\/market\/frontEntrance\/getThirdAdvertising\?displayPort=1&type=15 data-type=text data="{}" status-code=200
+^https:\/\/api\.ulife\.group\/market\/frontEntrance\/getThirdAdvertising\?displayPort=1&type=15 data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/api\.ulife\.group\/market\/memberCard\/listMemberCard\?isShowSecondaryCard=1 data-type=text data="{}" status-code=200
+^https:\/\/api\.ulife\.group\/market\/memberCard\/listMemberCard\?isShowSecondaryCard=1 data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/api\.ulife\.group\/auth\/account\/entrance data-type=text data="{}" status-code=200
+^https:\/\/api\.ulife\.group\/auth\/account\/entrance data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/alittle-tea\.oss-cn-shanghai\.aliyuncs\.com\/images\/platform\/alittle data-type=text data="{}" status-code=200
+^https:\/\/alittle-tea\.oss-cn-shanghai\.aliyuncs\.com\/images\/platform\/alittle data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # > 中通快递 微信小程序净化
-^https:\/\/hdgateway\.zto\.com\/getApolloConfig data-type=text data="{}" status-code=200
+^https:\/\/hdgateway\.zto\.com\/getApolloConfig data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/hdgateway\.zto\.com\/track data-type=text data="{}" status-code=200
+^https:\/\/hdgateway\.zto\.com\/track data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/hdgateway\.zto\.com\/getAdInfo data-type=text data="{}" status-code=200
+^https:\/\/hdgateway\.zto\.com\/getAdInfo data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/hdgateway\.zto\.com\/listJumperShow data-type=text data="{}" status-code=200
+^https:\/\/hdgateway\.zto\.com\/listJumperShow data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 [Script]
 # hostname = tan.ipnas.ltd

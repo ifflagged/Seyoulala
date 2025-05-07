@@ -748,10 +748,10 @@ https://support.you.163.com/appversync/check.do - reject
 
 [Map Local]
 # 底下百家号广告 感谢【 🐈‍⬛👮】分享
-^http?:\/\/tianqi\.2345\.com\/api\/content\/getContentFeeds\.php data-type=text data="{}" status-code=200
+^http?:\/\/tianqi\.2345\.com\/api\/content\/getContentFeeds\.php data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 开屏广告 感谢【别怕我又不乱来】分享
-^https?:\/\/ad\.life\.360\.cn\/v2\/app\/advertisement\/config\?sdk_ver= data-type=text data="{}" status-code=200
+^https?:\/\/ad\.life\.360\.cn\/v2\/app\/advertisement\/config\?sdk_ver= data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = vip7.fzwdyy.cn, *.qyfxgd.cn, *.weilai555.com, *.ecoliving168.com
 ^https?:\/\/vip7\.fzwdyy\.cn:8083\/api\/(getAdvertInfo|getGOOGAdvert) data-type=text data=" " status-code=200
@@ -765,51 +765,51 @@ https://support.you.163.com/appversync/check.do - reject
 ^https?:\/\/app\.58\.com\/api\/home\/invite\/popupAdv data-type=text data=" " status-code=200
 
 # hostname = acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com
-^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.fliggy\.crm\.screen\.(allresource|predict) data-type=text data="{}" status-code=200
+^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.fliggy\.crm\.screen\.(allresource|predict) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv data-type=text data="{}" status-code=200
+^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alimama\.etao\.config\.query\/.+?etao_advertise data-type=text data="{}" status-code=200
+^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alimama\.etao\.config\.query\/.+?etao_advertise data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alimusic\.common\.mobileservice\.startinit data-type=text data="{}" status-code=200
+^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alimusic\.common\.mobileservice\.startinit data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.etao\.noah\.query\/.+tao_splash data-type=text data="{}" status-code=200
+^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.etao\.noah\.query\/.+tao_splash data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.film\.mtopadvertiseapi\.queryadvertise data-type=text data="{}" status-code=200
+^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.film\.mtopadvertiseapi\.queryadvertise data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.o2o\.ad\.gateway\.get data-type=text data="{}" status-code=200
+^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.o2o\.ad\.gateway\.get data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.taobao\.idle\.home\.welcome data-type=text data="{}" status-code=200
+^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.taobao\.idle\.home\.welcome data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.trip\.activity\.querytmsresources data-type=text data="{}" status-code=200
+^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.trip\.activity\.querytmsresources data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/heic\.alicdn\.com\/imgextra\/i\d\/\d*\/?[\w!]+-\d-(octopus|tps-1125-1602|tps-1080-1920)\.(jp|pn)g_(1\d{3}|9\d{2})x(1\d{3}|9\d{2})q[59]0 data-type=text data="{}" status-code=200
+^https:\/\/heic\.alicdn\.com\/imgextra\/i\d\/\d*\/?[\w!]+-\d-(octopus|tps-1125-1602|tps-1080-1920)\.(jp|pn)g_(1\d{3}|9\d{2})x(1\d{3}|9\d{2})q[59]0 data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.cainiao\.adx\.flyad\.getad data-type=text data="{}" status-code=200
+^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.cainiao\.adx\.flyad\.getad data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(volvo\.secondfloor\.getconfig|wireless\.home\.newface\.awesome\.get) data-type=text data="{}" status-code=200
+^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(volvo\.secondfloor\.getconfig|wireless\.home\.newface\.awesome\.get) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = api.alipan.com, member.alipan.com
-^https:\/\/api\.alipan\.com\/adrive\/v1\/file\/getTopFolders data-type=text data="{}" status-code=200
+^https:\/\/api\.alipan\.com\/adrive\/v1\/file\/getTopFolders data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/member\.alipan\.com\/v2\/activity\/sign_in_luckyBottle data-type=text data="{}" status-code=200
+^https:\/\/member\.alipan\.com\/v2\/activity\/sign_in_luckyBottle data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 播放页开通会员提示
-^https?:\/\/act\.vip\.iqiyi\.com\/interact\/api\/v2\/show\? data-type=text data="{}" status-code=200
+^https?:\/\/act\.vip\.iqiyi\.com\/interact\/api\/v2\/show\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 播放页多余动效
-^https?:\/\/iface2\.iqiyi\.com\/ivos\/interact\/video\/data\? data-type=text data="{}" status-code=200
+^https?:\/\/iface2\.iqiyi\.com\/ivos\/interact\/video\/data\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 播放页升级白金会员按钮
-^https?:\/\/iface2\.iqiyi\.com\/video\/3\.0\/v_interface_proxy\? data-type=text data="{}" status-code=200
+^https?:\/\/iface2\.iqiyi\.com\/video\/3\.0\/v_interface_proxy\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 青少年弹窗
-^https?:\/\/iface2\.iqiyi\.com\/views_pop\/3\.0\/pop_control\? data-type=text data="{}" status-code=200
+^https?:\/\/iface2\.iqiyi\.com\/views_pop\/3\.0\/pop_control\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = b2baifanfan.baidu.com
 ^https?:\/\/b2baifanfan\.baidu\.com\/crm\/web\/b2b\/im\/common\/getConfigByDeviceNum data-type=text data=" " status-code=200
 
-^https?:\/\/api\.bjxkhc\.com\/index\.php\/app\/ios\/pay/ok$ data-type=text data="{}" status-code=200
+^https?:\/\/api\.bjxkhc\.com\/index\.php\/app\/ios\/pay/ok$ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 开屏广告
 ^https?:\/\/mapi\.txcmapp\.com\/api\/open\/atx2\/ad\.php data-type=text data=" " status-code=200
@@ -818,15 +818,15 @@ https://support.you.163.com/appversync/check.do - reject
 ^https?:\/\/www\.ahzs10000\.com\/palmhall\/client\/base\/newVerson_getStartUp\.action data-type=text data=" " status-code=200
 
 # 开屏广告
-^https?:\/\/www\.onstar\.com\.cn\/mssos\/sos\/social\/v1\/community\/article\/page data-type=text data="{}" status-code=200
+^https?:\/\/www\.onstar\.com\.cn\/mssos\/sos\/social\/v1\/community\/article\/page data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/api\.shanghaionstar\.com\/sos\/contentinfo\/v1\/public\/landingpage data-type=text data="{}" status-code=200
+^https?:\/\/api\.shanghaionstar\.com\/sos\/contentinfo\/v1\/public\/landingpage data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 主页推荐直播 
-^https?:\/\/social\.blued\.cn\/users\/recommend data-type=text data="{}" status-code=200
+^https?:\/\/social\.blued\.cn\/users\/recommend data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 未登录时个人界面广告
-^https?:\/\/social\.blued\.cn\/users\/no_auth\/benefit data-type=text data="{}" status-code=200
+^https?:\/\/social\.blued\.cn\/users\/no_auth\/benefit data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 开屏广告
 ^https?:\/\/www\.banyuetanapp\.com\/byt-api\/ad\/getAdvertList\?adSpaceId=100000002 data-type=text data=" " status-code=200
@@ -842,7 +842,7 @@ https://support.you.163.com/appversync/check.do - reject
 
 ^https?:\/\/go\.babytree\.com\/go_pregnancy\/api\/index_activity\/get_app_index_activity data-type=text data=" " status-code=200
 
-^https?:\/\/go\.babytree\.com\/go_tool\/api\/feeding_record\/get_home_banner_info data-type=text data="{}" status-code=200
+^https?:\/\/go\.babytree\.com\/go_tool\/api\/feeding_record\/get_home_banner_info data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = cdnmobibank.bankofbeijing.com.cn
 ^https?:\/\/cdnmobibank\.bankofbeijing\.com\.cn\/cdn\/MarketingCloud\/.+\/.+\/99_1\/.+\.jpg data-type=text data=" " status-code=200
@@ -860,17 +860,17 @@ https://support.you.163.com/appversync/check.do - reject
 ^https?:\/\/gss0\.bdstatic\.com\/.+?\/static\/wiseindex\/img\/bd_red_packet\.png data-type=tiny-gif status-code=200
 
 # 百度输入法开屏
-^https?:\/\/mime\.baidu\.com\/v5\/start_screen_ads/list data-type=text data="{}" status-code=200
+^https?:\/\/mime\.baidu\.com\/v5\/start_screen_ads/list data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 应用内灵感语录 输入页面推荐里语录
-^https?:\/\/mime\.baidu\.com\/sapi\/v1\/lccorpus\/(applist|pannellist) data-type=text data="{}" status-code=200
+^https?:\/\/mime\.baidu\.com\/sapi\/v1\/lccorpus\/(applist|pannellist) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 输入法点击图标
-^https?:\/\/mime\.baidu\.com\/sapi\/v1\/circle\/joinedlist data-type=text data="{}" status-code=200
+^https?:\/\/mime\.baidu\.com\/sapi\/v1\/circle\/joinedlist data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/mime\.baidu\.com\/commer\/pocket_api\/enterprise_list data-type=text data="{}" status-code=200
+^https?:\/\/mime\.baidu\.com\/commer\/pocket_api\/enterprise_list data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/mbd\.baidu\.com\/ccs\/v1\/start\/confsync\?appname=baidu_input data-type=text data="{}" status-code=200
+^https?:\/\/mbd\.baidu\.com\/ccs\/v1\/start\/confsync\?appname=baidu_input data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = appwk.baidu.com
 ^https?:\/\/appwk\.baidu\.com\/xpage\/interface\/wknaad data-type=text data=" " status-code=200
@@ -890,35 +890,35 @@ https://support.you.163.com/appversync/check.do - reject
 # hostname = mres.aibank.com
 ^https?:\/\/mres\.aibank\.com\/app\/resource\/cim\/cim0000001\/.+\.jpg data-type=text data=" " status-code=200
 
-^https?:\/\/api\.live\.bilibili\.com\/xlive\/e-commerce-interface\/v1\/ecommerce-user\/get_shopping_info\? data-type=text data="{}" status-code=200
+^https?:\/\/api\.live\.bilibili\.com\/xlive\/e-commerce-interface\/v1\/ecommerce-user\/get_shopping_info\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.interface\.v1\.Search\/DefaultWords data-type=text data="{}" status-code=200
+^https?:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.interface\.v1\.Search\/DefaultWords data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 满意度调研
-^https?:\/\/api\.bilibili\.com\/x\/v2\/dm\/qoe\/show\? data-type=text data="{}" status-code=200
+^https?:\/\/api\.bilibili\.com\/x\/v2\/dm\/qoe\/show\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 开屏广告 //app.bilibili.com
-^https?:\/\/[\d\.]+:8000\/v1\/resource\/\w{32}-1-SPLASH data-type=text data="{}" status-code=200
+^https?:\/\/[\d\.]+:8000\/v1\/resource\/\w{32}-1-SPLASH data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/upos-sz-static\.bilivideo\.com\/ssaxcode\/\w{2}\/\w{2}\/\w{32}-1-SPLASH data-type=text data="{}" status-code=200
+^https?:\/\/upos-sz-static\.bilivideo\.com\/ssaxcode\/\w{2}\/\w{2}\/\w{32}-1-SPLASH data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/api\.bilibili\.com\/x\/mengqi\/v1\/resource\? data-type=text data="{}" status-code=200
+^https?:\/\/api\.bilibili\.com\/x\/mengqi\/v1\/resource\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # IP请求,地理位置请求 //api.bilibili.com
-^https?:\/\/api\.bilibili\.com\/x\/web-interface\/zone\?jsonp data-type=text data="{}" status-code=200
+^https?:\/\/api\.bilibili\.com\/x\/web-interface\/zone\?jsonp data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/app\.bilibili\.com\/x\/resource\/ip data-type=text data="{}" status-code=200
+^https?:\/\/app\.bilibili\.com\/x\/resource\/ip data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = manga.bilibili.com, i*.hdslb.com
-^https?:\/\/i\d\.hdslb\.com\/bfs\/fawkes data-type=text data="{}" status-code=200
+^https?:\/\/i\d\.hdslb\.com\/bfs\/fawkes data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 ^https?:\/\/i\d\.hdslb\.com\/bfs\/manga-static\/\w+\.(jpg|png)$ data-type=text data=" " status-code=200
 
 ^https?:\/\/manga\.bilibili\.com\/twirp\/comic\.v\d\.Comic\/(Recommend|Flash|ListFlash|GetBubbles|GetActivityTab|GetCommonBanner|GetComicConfigPicList) data-type=text data=" " status-code=200
 
-^https?:\/\/manga\.bilibili\.com\/twirp\/comic\.v\d\.Shop\/GetShopItems data-type=text data="{}" status-code=200
+^https?:\/\/manga\.bilibili\.com\/twirp\/comic\.v\d\.Shop\/GetShopItems data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/manga\.bilibili\.com\/twirp\/user\.v\d\.SeasonV\d\/GetSeasonInfo data-type=text data="{}" status-code=200
+^https?:\/\/manga\.bilibili\.com\/twirp\/user\.v\d\.SeasonV\d\/GetSeasonInfo data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 ^https?:\/\/manga\.bilibili\.com\/twirp\/user\.v\d\.Read\/ActInfo data-type=text data=" " status-code=200
 
@@ -926,14 +926,14 @@ https://support.you.163.com/appversync/check.do - reject
 ^https:\/\/cache\.bydauto\.com\.cn\/dilink_user_upload\/20 data-type=text data=" " status-code=200
 
 # 开屏广告
-^https?:\/\/www\.(binance|yingwangtech)\.(com|info|net)\/bapi\/composite\/v1\/public\/market\/holiday-atmosphere data-type=text data="{}" status-code=200
+^https?:\/\/www\.(binance|yingwangtech)\.(com|info|net)\/bapi\/composite\/v1\/public\/market\/holiday-atmosphere data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 开屏广告
-^https?:\/\/lens\.leoao\.com\/lens\/conduct\/app\/rpc\/v2\/com\.lefit\.dubbo\.cms\.api\.front\.AppAdvertisingFrontService\/getAppAdvertisingNew data-type=text data="{}" status-code=200
+^https?:\/\/lens\.leoao\.com\/lens\/conduct\/app\/rpc\/v2\/com\.lefit\.dubbo\.cms\.api\.front\.AppAdvertisingFrontService\/getAppAdvertisingNew data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/lens\.leoao\.com\/lens\/conduct\/app\/rpc\/v2\/com\.lefit\.dubbo\.cms\.api\.bff\.ClientFrontFacade\/queryHomeMiddleInfo data-type=text data="{}" status-code=200
+^https?:\/\/lens\.leoao\.com\/lens\/conduct\/app\/rpc\/v2\/com\.lefit\.dubbo\.cms\.api\.bff\.ClientFrontFacade\/queryHomeMiddleInfo data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/lens\.leoao\.com\/lens\/conduct\/app\/rpc\/v2\/com\.lefit\.dubbo\.cms\.api\.front\.AdvertiseConfigFrontService\/getAdvertiseConfigNew data-type=text data="{}" status-code=200
+^https?:\/\/lens\.leoao\.com\/lens\/conduct\/app\/rpc\/v2\/com\.lefit\.dubbo\.cms\.api\.front\.AdvertiseConfigFrontService\/getAdvertiseConfigNew data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = res.pizzahut.com.cn
 ^https?:\/\/res\.pizzahut\.com\.cn\/CRM\/phad\/member\/app\/member data-type=text data=" " status-code=200
@@ -942,62 +942,62 @@ https://support.you.163.com/appversync/check.do - reject
 ^https?:\/\/bp-image\.bestv\.com\.cn\/[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{25}\.jpg data-type=text data=" " status-code=200
 
 # 开屏广告 感谢【林夕】分享
-^https?:\/\/bd-api\.kuwo\.cn\/api\/service\/finds\/module\?moduleId data-type=text data="{}" status-code=200
+^https?:\/\/bd-api\.kuwo\.cn\/api\/service\/finds\/module\?moduleId data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/bd-api\.kuwo\.cn\/api\/service\/banner\/myPage\?uid data-type=text data="{}" status-code=200
+^https?:\/\/bd-api\.kuwo\.cn\/api\/service\/banner\/myPage\?uid data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/bd-api\.kuwo\.cn\/api\/play\/listening\/entrance\/music\?musicId data-type=text data="{}" status-code=200
+^https?:\/\/bd-api\.kuwo\.cn\/api\/play\/listening\/entrance\/music\?musicId data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/h5app\.kuwo\.cn\/m\/kwtemplatePage\/index\.html\?id=1157&app=bodianhdzx data-type=text data="{}" status-code=200
+^https?:\/\/h5app\.kuwo\.cn\/m\/kwtemplatePage\/index\.html\?id=1157&app=bodianhdzx data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/h5app\.kuwo\.cn\/m\/bdvipact2205\/index\.html\?fromsrc=huodong data-type=text data="{}" status-code=200
+^https?:\/\/h5app\.kuwo\.cn\/m\/bdvipact2205\/index\.html\?fromsrc=huodong data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/bodianimgcdn\.kuwo\.cn\/images\/0e83c1821cd2681de08e20bec73d1e75 data-type=text data="{}" status-code=200
+^https?:\/\/bodianimgcdn\.kuwo\.cn\/images\/0e83c1821cd2681de08e20bec73d1e75 data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/bodianimgcdn\.kuwo\.cn\/images\/198c0b313fe9e53b03240c7b30b4acc9 data-type=text data="{}" status-code=200
+^https?:\/\/bodianimgcdn\.kuwo\.cn\/images\/198c0b313fe9e53b03240c7b30b4acc9 data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 记录 - 悬浮部件
-^https:\/\/api\.boohee\.com\/meta-interface\/v1\/index\/page_float_bubbles\? data-type=text data="{}" status-code=200
+^https:\/\/api\.boohee\.com\/meta-interface\/v1\/index\/page_float_bubbles\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 记录 - 发布
-^https:\/\/api\.boohee\.com\/meta-interface\/v1\/index\/tool_buttons\? data-type=text data="{}" status-code=200
+^https:\/\/api\.boohee\.com\/meta-interface\/v1\/index\/tool_buttons\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 记录 - 搜索发现
-^https:\/\/api\.boohee\.com\/app-interface\/v1\/search\/search\? data-type=text data="{}" status-code=200
+^https:\/\/api\.boohee\.com\/app-interface\/v1\/search\/search\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 记录 - 消息 - 通知 - 横幅推广
-^https:\/\/status\.boohee\.com\/api\/v1\/merged_messages$ data-type=text data="{}" status-code=200
+^https:\/\/status\.boohee\.com\/api\/v1\/merged_messages$ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 弹窗配置
-^https:\/\/bohe\.sfo-tx-shanghai-01\.saas\.sensorsdata\.cn\/api\/v2\/sfo\/user_popup_configs\? data-type=text data="{}" status-code=200
+^https:\/\/bohe\.sfo-tx-shanghai-01\.saas\.sensorsdata\.cn\/api\/v2\/sfo\/user_popup_configs\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 绑定设备 - 横幅推广
-^https:\/\/api\.boohee\.com\/meta-interface\/v1\/index\/sensor-banners\? data-type=text data="{}" status-code=200
+^https:\/\/api\.boohee\.com\/meta-interface\/v1\/index\/sensor-banners\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/api\.caiyunapp\.com\/v1\/activity data-type=text data="{}" status-code=200
+^https?:\/\/api\.caiyunapp\.com\/v1\/activity data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 首页 好物推荐,商品推广,底部标签页,快递详情页,问卷调查,主页图标
-^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.adkeyword\.get\.cn data-type=text data="{}" status-code=200
+^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.adkeyword\.get\.cn data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.cncommunity\.my\.station\.query\.cn data-type=text data="{}" status-code=200
+^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.cncommunity\.my\.station\.query\.cn data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.(batch\.show\.v2|index)\.cn data-type=text data="{}" status-code=200
+^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.(batch\.show\.v2|index)\.cn data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.nbopen\.miniapp\.recommend\.cpc\.cn data-type=text data="{}" status-code=200
+^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.nbopen\.miniapp\.recommend\.cpc\.cn data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.nbmensa\.research\.researchservice\.(acquire|event|close)\.cn data-type=text data="{}" status-code=200
+^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.nbmensa\.research\.researchservice\.(acquire|event|close)\.cn data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.nbpresentation\.(homepage\.merge|tabbar\.marketing)\.get\.cn data-type=text data="{}" status-code=200
+^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.nbpresentation\.(homepage\.merge|tabbar\.marketing)\.get\.cn data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 发现页 数字角标 裹裹券
-^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.com\.cainiao\.cnactivitycenter data-type=text data="{}" status-code=200
+^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.com\.cainiao\.cnactivitycenter data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.com\.cainiao\.cncreditmarket\.hit\.getactivityhit\.cn data-type=text data="{}" status-code=200
+^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.com\.cainiao\.cncreditmarket\.hit\.getactivityhit\.cn data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.com\.cainiao\.longquan\.place\.getpageresourcecontent\.cn data-type=text data="{}" status-code=200
+^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.com\.cainiao\.longquan\.place\.getpageresourcecontent\.cn data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 感谢【Joe Joy】分享
-^https?:\/\/fintechappdr\.cgws\.com\/api\/business-operation\/app\/a\/flash\/window\/get\?type=2 data-type=text data="{}" status-code=200
+^https?:\/\/fintechappdr\.cgws\.com\/api\/business-operation\/app\/a\/flash\/window\/get\?type=2 data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = ptmpcap.caocaokeji.cn, cap.caocaokeji.cn
 ^https?:\/\/ptmpcap\.caocaokeji\.cn\/advert-bss\/ data-type=tiny-gif status-code=200
@@ -1007,16 +1007,16 @@ https://support.you.163.com/appversync/check.do - reject
 ^https?:\/\/atrace\.chelaile\.net\.cn\/exhibit\?&adv_image data-type=tiny-gif status-code=200
 
 # 开屏广告 由【jinlvei】分享
-^https?:\/\/182\.92\.244\.70\/d\/json data-type=text data="{}" status-code=200
+^https?:\/\/182\.92\.244\.70\/d\/json data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 开屏广告
-^https?:\/\/ios-api\.lucklyworld\.com\/v6\/api\/config\/startup data-type=text data="{}" status-code=200
+^https?:\/\/ios-api\.lucklyworld\.com\/v6\/api\/config\/startup data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = gw.chuangkit.com
-^https:\/\/gw\.chuangkit\.com\/team\/app\/common\/ad\/ data-type=text data="{}" status-code=200
+^https:\/\/gw\.chuangkit\.com\/team\/app\/common\/ad\/ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 去开屏广告
-^https:\/\/se-api\.djiits\.com\/api\/components\/launch_ad\.json\?abbrv_url=1&country=cn&language=zh-CN data-type=text data="{}" status-code=200
+^https:\/\/se-api\.djiits\.com\/api\/components\/launch_ad\.json\?abbrv_url=1&country=cn&language=zh-CN data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = acs.m.taobao.com, amdc.m.taobao.com
 ^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.damai\.wireless\.home\.welcome data-type=text data=" " status-code=200
@@ -1030,31 +1030,31 @@ https://support.you.163.com/appversync/check.do - reject
 
 ^https?:\/\/sdk\.alibaba\.com\.ailbaba\.me\/(dsx|xgapp)\.php\/v\d\/(top_notice\?|version|advert\?position=[^2]+) data-type=text data=" " status-code=200
 
-#^https?:\/\/img\.meituan\.net\/dpmobile\/.+93241\.png data-type=text data="{}" status-code=200
+#^https?:\/\/img\.meituan\.net\/dpmobile\/.+93241\.png data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 #^https?:\/\/img\.meituan\.net\/dpmobile\/.+93241\.png url reject-dict
 #^https?:\/\/img\.meituan\.net\/dpmobile\/.*.(gif|jpg) data-type=text data=" " status-code=200
 
 # 开屏广告，弹窗广告，首页置顶轮播广告 感谢【T大G】分享
-^https?:\/\/delivery-api\.imdada\.cn\/v2_0\/dada\/promote\/imax\?privacyParam data-type=text data="{}" status-code=200
+^https?:\/\/delivery-api\.imdada\.cn\/v2_0\/dada\/promote\/imax\?privacyParam data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/delivery-api\.imdada\.cn\/v1_0\/transporter\/screen\/ads_list data-type=text data="{}" status-code=200
+^https?:\/\/delivery-api\.imdada\.cn\/v1_0\/transporter\/screen\/ads_list data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/delivery-api\.imdada\.cn\/v1_0\/transporter\/ad data-type=text data="{}" status-code=200
+^https?:\/\/delivery-api\.imdada\.cn\/v1_0\/transporter\/ad data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 开屏广告
-^https?:\/\/ump\.sz\.creditcard\.ecitic\.com\/citiccard\/cm-ump\/ump-gateway\/ump-net-app\/ump-net-app\/adv data-type=text data="{}" status-code=200
+^https?:\/\/ump\.sz\.creditcard\.ecitic\.com\/citiccard\/cm-ump\/ump-gateway\/ump-net-app\/ump-net-app\/adv data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 ^https?:\/\/m\.creditcard\.ecitic\.com\/citiccard\/mbk\/appspace-getway\/getWay\/dkkj-system-web\/system\/v\d\/init-config data-type=text data=" " status-code=200
 
 # 开屏广告 感谢【企鹅】分享
-^https?:\/\/appdmkj\.5idream\.net\/appPic\/homepage data-type=text data="{}" status-code=200
+^https?:\/\/appdmkj\.5idream\.net\/appPic\/homepage data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 更新弹窗 感谢【企鹅】分享
-^https?:\/\/appdmkj\.5idream\.net\/v2\/login\/message\/tip data-type=text data="{}" status-code=200
+^https?:\/\/appdmkj\.5idream\.net\/v2\/login\/message\/tip data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 我的页面广告
-^https?:\/\/appdmkj\.5idream\.net\/v3\/user\/advertising\/list data-type=text data="{}" status-code=200
+^https?:\/\/appdmkj\.5idream\.net\/v3\/user\/advertising\/list data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = img.ddrk.me, ddrk.me
 ^https?:\/\/img\.ddrk\.me\/ad190824 data-type=tiny-gif status-code=200
@@ -1066,11 +1066,11 @@ https://support.you.163.com/appversync/check.do - reject
 ^https?:\/\/ddrk\.me\/wp-content\/plugins\/advanced-floating-content-lite\/public\/images\/close\.png data-type=tiny-gif status-code=200
 
 # 如开启可自行添加主机名 img*.douban.com, frodo.douban.com, erebor.douban.com
-^https?:\/\/api\.douban\.com\/v\d\/app_ads\/ data-type=text data="{}" status-code=200
+^https?:\/\/api\.douban\.com\/v\d\/app_ads\/ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/api\.douban\.com\/b.*\/common_ads\?.* data-type=text data="{}" status-code=200
+^https?:\/\/api\.douban\.com\/b.*\/common_ads\?.* data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/rtbapi\.douyucdn\.cn\/japi\/sign\/app\/getinfo data-type=text data="{}" status-code=200
+^https?:\/\/rtbapi\.douyucdn\.cn\/japi\/sign\/app\/getinfo data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 ^https?:\/\/staticlive\.douyucdn\.cn\/.+?\/getStartSend data-type=tiny-gif status-code=200
 
@@ -1080,7 +1080,7 @@ https://support.you.163.com/appversync/check.do - reject
 
 ^https?:\/\/douyucdn\.cn\/.+?\/appapi\/getinfo data-type=tiny-gif status-code=200
 
-^https?:\/\/maicai\.api\.ddxq\.mobi\/vip\/getVipAd data-type=text data="{}" status-code=200
+^https?:\/\/maicai\.api\.ddxq\.mobi\/vip\/getVipAd data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = img.admobile.top, webcdn.m.qq.com
 ^https?:\/\/img\.admobile\.top\/admobile-adRequest\/.*.(jpg|png) data-type=text data=" " status-code=200
@@ -1090,16 +1090,16 @@ https://support.you.163.com/appversync/check.do - reject
 # hostname = app.ceair.com
 ^https?:\/\/app\.ceair\.com\/customize\/security\/update data-type=text data=" " status-code=200
 
-^https?:\/\/app\.ceair\.com\/customize\/main\/adScreen data-type=text data="{}" status-code=200
+^https?:\/\/app\.ceair\.com\/customize\/main\/adScreen data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 误杀少 解决阿里系的开屏 目前测试咸鱼/钉钉 感谢【zzzzzz】分享
-^https?:\/\/(gw|img)\.alicdn\.com\/imgextra\/.+\/[\w!]+\d+-\d+-.+-\b([8-9]\d{2,}|[1-9]\d{3,})\b-\b([5-9]\d{2,}|[1-9]\d{3,})\b data-type=text data="{}" status-code=200
+^https?:\/\/(gw|img)\.alicdn\.com\/imgextra\/.+\/[\w!]+\d+-\d+-.+-\b([8-9]\d{2,}|[1-9]\d{3,})\b-\b([5-9]\d{2,}|[1-9]\d{3,})\b data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = api.gamer.com.tw
-^https?:\/\/api\.gamer\.com\.tw\/mobile_app\/anime\/v\d\/anime_get_question\.php data-type=text data="{}" status-code=200
+^https?:\/\/api\.gamer\.com\.tw\/mobile_app\/anime\/v\d\/anime_get_question\.php data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = res.xiaojukeji.com, common.diditaxi.com.cn, hd.xiaojukeji.com, freight.xiaojukeji.com, daijia.kuaidadi.com, ct.xiaojukeji.com, conf.diditaxi.com.cn
-^https?:\/\/hd\.xiaojukeji\.com\/d data-type=text data="{}" status-code=200
+^https?:\/\/hd\.xiaojukeji\.com\/d data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = pt-starimg.didistatic.com, omgup*.xiaojukeji.com
 ^https?:\/\/pt-starimg\.didistatic\.com\/static\/starimg\/node\/.*.(jpg|png|gif) data-type=text data=" " status-code=200
@@ -1107,13 +1107,13 @@ https://support.you.163.com/appversync/check.do - reject
 ^https?:\/\/omgup[0-9]{1}\.xiaojukeji\.com\/api data-type=text data=" " status-code=200
 
 # 横幅广告
-^https?:\/\/as\.xiaojukeji\.com\/ep\/as\/conf\?ns=daijia-front&name= data-type=text data="{}" status-code=200
+^https?:\/\/as\.xiaojukeji\.com\/ep\/as\/conf\?ns=daijia-front&name= data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/daijia\.kuaidadi\.com\/gateway\?api=prado\.cms\.delivery\.batch&apiVe data-type=text data="{}" status-code=200
+^https?:\/\/daijia\.kuaidadi\.com\/gateway\?api=prado\.cms\.delivery\.batch&apiVe data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/adx-cn\.anythinktech\.com\/bid data-type=text data="{}" status-code=200
+^https?:\/\/adx-cn\.anythinktech\.com\/bid data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/capis(-?\w*)?\.didapinche\.com\/publish\/api\/upgrade data-type=text data="{}" status-code=200
+^https?:\/\/capis(-?\w*)?\.didapinche\.com\/publish\/api\/upgrade data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 ^https?:\/\/www\.didapinche\.com\/app\/adstat\/ data-type=text data=" " status-code=200
 
@@ -1122,7 +1122,7 @@ https://support.you.163.com/appversync/check.do - reject
 # hostname = app.95598pay.com
 ^https?:\/\/app\.95598pay\.com\/debapi\/adsite\/ data-type=text data=" " status-code=200
 
-^https?:\/\/apphw\.ddpai\.com:\d+\/onroad\/api\/v\d\/\w+\/list data-type=text data="{}" status-code=200
+^https?:\/\/apphw\.ddpai\.com:\d+\/onroad\/api\/v\d\/\w+\/list data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = pic.edaijia.cn
 ^https?:\/\/pic\.edaijia\.cn\/adsplash\/ data-type=text data=" " status-code=200
@@ -1133,27 +1133,27 @@ https://support.you.163.com/appversync/check.do - reject
 ^https?:\/\/fuss10\.elemecdn\.com\/.+?\.mp4 data-type=tiny-gif status-code=200
 
 # hostname = acs.m.taobao.com, gw.alicdn.com
-^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.fliggy\.crm\.screen\.(allresource|predict) data-type=text data="{}" status-code=200
+^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.fliggy\.crm\.screen\.(allresource|predict) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 ^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.trip\.activity\.querytmsresources\/1\.0\?type=originaljson data-type=tiny-gif status-code=200
 
 # hostname = ptf.flyertrip.com, 47.100.65.202, www.flyert.com
 ^https?:\/\/ptf\.flyertrip\.com\/common\/cf\/.*.jpg data-type=text data=" " status-code=200
 
-^https?:\/\/www\.flyert\.com\/.*\.php\?module=advis data-type=text data="{}" status-code=200
+^https?:\/\/www\.flyert\.com\/.*\.php\?module=advis data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/www\.flyert\.com(\.cn)?\/.*\.php\?module=advis data-type=text data="{}" status-code=200
+^https?:\/\/www\.flyert\.com(\.cn)?\/.*\.php\?module=advis data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 开屏 需要卸载重装
-^https:\/\/api\.flydigi\.com\/android\/v2\/ad data-type=text data="{}" status-code=200
+^https:\/\/api\.flydigi\.com\/android\/v2\/ad data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 ^https?:\/\/api\.fengshows\.com\/api\/launchAD data-type=tiny-gif status-code=200
 
 # 我的横幅广告
-^https?:\/\/api\.futunn\.com\/v2\/optimus\/my-homepage-config data-type=text data="{}" status-code=200
+^https?:\/\/api\.futunn\.com\/v2\/optimus\/my-homepage-config data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 账户和交易横幅广告
-^https?:\/\/api\.futunn\.com\/v2\/config\/promote-config data-type=text data="{}" status-code=200
+^https?:\/\/api\.futunn\.com\/v2\/config\/promote-config data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = fm.fenqile.com
 ^https?:\/\/fm\.fenqile\.com\/routev2\/other\/getfloatAd\.json data-type=tiny-gif status-code=200
@@ -1168,12 +1168,12 @@ https://support.you.163.com/appversync/check.do - reject
 ^https?:\/\/l[0-9]{1}\.51fanli\.net\/app\/images\/splash\/202\d{1}\/\d{2}\/.*.jpg data-type=text data=" " status-code=200
 
 # 开屏广告
-^https?:\/\/static\.95508\.com\/mmg\/images\/ads\/.+\/(.+1125?.+2436|.+%.+%|.+_.+_) data-type=text data="{}" status-code=200
+^https?:\/\/static\.95508\.com\/mmg\/images\/ads\/.+\/(.+1125?.+2436|.+%.+%|.+_.+_) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/static\.95508\.com\/mmg\/ciop\/sysabbr\/cmep\/images\/apppopupads data-type=text data="{}" status-code=200
+^https?:\/\/static\.95508\.com\/mmg\/ciop\/sysabbr\/cmep\/images\/apppopupads data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 去开屏广告
-^https:\/\/ecloud\.tppension\.cntaiping\.com\/fxtpplatform\/common\/anonymous\/common\/page\/queryStartPageNew\?language=zh-CN data-type=text data="{}" status-code=200
+^https:\/\/ecloud\.tppension\.cntaiping\.com\/fxtpplatform\/common\/anonymous\/common\/page\/queryStartPageNew\?language=zh-CN data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 如开启可自行添加主机名
 ^https?:\/\/v\.icbc\.com\.cn\/userfiles\/Resources\/WAP\/advertisement\/ data-type=text data=" " status-code=200
@@ -1195,10 +1195,10 @@ https://support.you.163.com/appversync/check.do - reject
 ^https?:\/\/mbank\.grcbank\.com\/ydyh\/resources\/startpage\/.*.(jpg|png) data-type=text data=" " status-code=200
 
 # 开屏广告 感谢【Charlie】分享
-^https?:\/\/gsp\.gacmotor\.com\/gateway\/webapi\/baseinfo\/advertise\/getAdvertiseByPositionCode\?positionCode=1 data-type=text data="{}" status-code=200
+^https?:\/\/gsp\.gacmotor\.com\/gateway\/webapi\/baseinfo\/advertise\/getAdvertiseByPositionCode\?positionCode=1 data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 更新弹窗  感谢【企鹅】分享
-^https?:\/\/gsp\.gacmotor\.com\/gateway\/app-api\/app\/version\/latestupdate\?flatform=2&innerVersion= data-type=text data="{}" status-code=200
+^https?:\/\/gsp\.gacmotor\.com\/gateway\/app-api\/app\/version\/latestupdate\?flatform=2&innerVersion= data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = dl.app.gtja.com, dl*.app.gtja.com
 ^https?:\/\/dl\.app\.gtja\.com\/dzswem\/kvController data-type=text data=" " status-code=200
@@ -1206,7 +1206,7 @@ https://support.you.163.com/appversync/check.do - reject
 #^https?:\/\/dl[0-9]{1}\.app\.gtja\.com\/dzswem\/kvController data-type=text data=" " status-code=200
 
 # hostname = m*.amap.com, optimus-ads.amap.com
-^https?:\/\/m5\.amap\.com\/ws\/shield\/dsp\/app\/startup\/init\? data-type=text data="{}" status-code=200
+^https?:\/\/m5\.amap\.com\/ws\/shield\/dsp\/app\/startup\/init\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 ^https?://optimus-ads.amap.com/uploadimg/[a-zA-Z0-9]+.gif data-type=text data=" " status-code=200
 
@@ -1225,10 +1225,10 @@ https://support.you.163.com/appversync/check.do - reject
 ^https?:\/\/kano\.guahao\.cn\/.+?\?resize=\d{3}-\d{4} data-type=tiny-gif status-code=200
 
 # 开屏广告
-^https?:\/\/gugongmini\.dpm\.org\.cn\/gugong_applet\/open-screen data-type=text data="{}" status-code=200
+^https?:\/\/gugongmini\.dpm\.org\.cn\/gugong_applet\/open-screen data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = awg.enmonster.com
-https?:\/\/awg\.enmonster\.com\/apa\/(advert\/demand\/home\/poster|index\/advert\/skin) data-type=text data="{}" status-code=200
+https?:\/\/awg\.enmonster\.com\/apa\/(advert\/demand\/home\/poster|index\/advert\/skin) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = gha.ghac.cn
 ^https?:\/\/gha\.ghac\.cn\:8081\/base\/app\/api\/ad\/query\?adType=1 data-type=text data=" " status-code=200
@@ -1237,22 +1237,22 @@ https?:\/\/awg\.enmonster\.com\/apa\/(advert\/demand\/home\/poster|index\/advert
 ^https?:\/\/yun\.tuitiger\.com\/mami-media data-type=text data=" " status-code=200
 
 # hostname = cdn.133.cn, jt.rsscc.com, jp.rsscc.com
-^https?:\/\/cdn\.133\.cn\/md\/gtgj\/.+\/.+720x1280 data-type=text data="{}" status-code=200
+^https?:\/\/cdn\.133\.cn\/md\/gtgj\/.+\/.+720x1280 data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = static.creditcard.hxb.com.cn
 ^https?:\/\/static\.creditcard\.hxb\.com\.cn\/mcube\/apps\/group\d\/M00\/00\/2[A-Z0-9]{1}\/amRG7WO.+\.jpg data-type=text data=" " status-code=200
 
 # 开屏广告 感谢【Joe Joy】分享
-^https?:\/\/api-one-wscn\.awtmt\.com\/apiv1\/advertising\/ads\/13424\/materials data-type=text data="{}" status-code=200
+^https?:\/\/api-one-wscn\.awtmt\.com\/apiv1\/advertising\/ads\/13424\/materials data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 ^https?:\/\/cdnfile1\.msstatic\.com\/cdnfile\/appad\/ data-type=tiny-gif status-code=200
 
-^https?://live-ads\.huya\.com/live/getAllEntrance.*$ data-type=text data="{}" status-code=200
+^https?://live-ads\.huya\.com/live/getAllEntrance.*$ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 ^https?:\/\/cmsfile\.wifi8\.com\/uploads\/png\/ data-type=tiny-gif status-code=200
 
 # 开屏
-^https?:\/\/res\.hongyibo\.com\.cn\/os\/gs\/resapi\/activity\/mget\?_t data-type=text data="{}" status-code=200
+^https?:\/\/res\.hongyibo\.com\.cn\/os\/gs\/resapi\/activity\/mget\?_t data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 ^https?:\/\/games\.mobileapi\.hupu\.com\/.+?\/(search|interfaceAdMonitor|status|hupuBbsPm)/(hotkey|init|hupuBbsPm)\. data-type=tiny-gif status-code=200
 
@@ -1269,48 +1269,48 @@ https?:\/\/awg\.enmonster\.com\/apa\/(advert\/demand\/home\/poster|index\/advert
 ^https?:\/\/api\.touker\.com\/v2\/IAdvertisementAPI\.queryStartAdvertisement data-type=text data=" " status-code=200
 
 # 屏蔽升级弹窗 感谢【Charlie】分享
-^https?:\/\/m\.prod\.app\.hsbcfts\.com\.cn\/api\/sapp\/biz\/config\/open\/queryappversion\?channelCode= data-type=text data="{}" status-code=200
+^https?:\/\/m\.prod\.app\.hsbcfts\.com\.cn\/api\/sapp\/biz\/config\/open\/queryappversion\?channelCode= data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 感谢【可莉】分享
-^https?:\/\/hfapp-service\.qweather\.net\/v\d\.\d\/app\/ad\/list\? data-type=text data="{}" status-code=200
+^https?:\/\/hfapp-service\.qweather\.net\/v\d\.\d\/app\/ad\/list\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = promote-trx.helipay.com
 ^https?:\/\/promote-trx\.helipay\.com\/promote-business-client\/pos\/appAdvertisement\/appAdvertisementList data-type=text data=" " status-code=200
 
-^https?:\/\/acs(\.|-)m\.(taobao|freshippo)\.com\/gw\/mtop\.wdk\.sg\.querysinglescene data-type=text data="{}" status-code=200
+^https?:\/\/acs(\.|-)m\.(taobao|freshippo)\.com\/gw\/mtop\.wdk\.sg\.querysinglescene data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 ^https?:\/\/acs(\.|-)m\.(taobao|freshippo)\.com\/gw\/mtop\.wdk\.render\.querysinglepage data-type=text data=" " status-code=200
 
-^https?:\/\/acs(\.|-)m\.(taobao|freshippo)\.com\/gw\/mtop\.wdk\.fc\.recommend\.feedscommondservice data-type=text data="{}" status-code=200
+^https?:\/\/acs(\.|-)m\.(taobao|freshippo)\.com\/gw\/mtop\.wdk\.fc\.recommend\.feedscommondservice data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/acs(\.|-)m\.(taobao|freshippo)\.com\/gw\/mtop\.wdk\.crm\.platform\.ma\.recommend data-type=text data="{}" status-code=200
+^https?:\/\/acs(\.|-)m\.(taobao|freshippo)\.com\/gw\/mtop\.wdk\.crm\.platform\.ma\.recommend data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/acs(\.|-)m\.(taobao|freshippo)\.com\/gw\/mtop\.wdk\.mimir\.recommend\.after\.purchase\.activity data-type=text data="{}" status-code=200
+^https?:\/\/acs(\.|-)m\.(taobao|freshippo)\.com\/gw\/mtop\.wdk\.mimir\.recommend\.after\.purchase\.activity data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 横幅广告
-^https?:\/\/service\.haiersmarthomes\.com\/management\/banner\/getBannerList\?source=4 data-type=text data="{}" status-code=200
+^https?:\/\/service\.haiersmarthomes\.com\/management\/banner\/getBannerList\?source=4 data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 顶部横幅广告
-^https?:\/\/api\.hengdianfilm\.com\/\/cinema\/queryAvailableBannerInfo\/2\?cid= data-type=text data="{}" status-code=200
+^https?:\/\/api\.hengdianfilm\.com\/\/cinema\/queryAvailableBannerInfo\/2\?cid= data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 中间横幅广告
-^https?:\/\/api\.hengdianfilm\.com\/\/cinema\/queryAvailableBannerInfo\/4\?cid= data-type=text data="{}" status-code=200
+^https?:\/\/api\.hengdianfilm\.com\/\/cinema\/queryAvailableBannerInfo\/4\?cid= data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = 39.98.135.211
-^https?:\/\/39\.98\.135\.211\/admin\/filter\/crowdFunding\/getNewProductData data-type=text data="{}" status-code=200
+^https?:\/\/39\.98\.135\.211\/admin\/filter\/crowdFunding\/getNewProductData data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = cdn.jlbank.com.cn
 ^https?:\/\/cdn\.jlbank\.com\.cn\/jlstaticresource\/APPSTART data-type=text data=" " status-code=200
 
 # 可能导致登录验证码不显示
-^https?:\/\/mbank5\.jsbchina\.cn:443 data-type=text data="{}" status-code=200
+^https?:\/\/mbank5\.jsbchina\.cn:443 data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 首页横幅广告
 ^https?:\/\/yunbusiness\.ccb\.com\/clp_service\/txCtrl\?txcode=A3341A(002|006|009|119|120) data-type=text data=" " status-code=200
 
 ^https?:\/\/yunbusiness\.ccb\.com\/clp_service\/txCtrl\?txcode=A3341C147 data-type=text data=" " status-code=200
 
-^https?:\/\/waimai-guide\.ele\.me\/\w+\/mtop\.alsc\.eleme\.\w+\.trigger\.respond data-type=text data="{}" status-code=200
+^https?:\/\/waimai-guide\.ele\.me\/\w+\/mtop\.alsc\.eleme\.\w+\.trigger\.respond data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = api.tipsoon.com
 ^https?:\/\/api\.tipsoon\.com\/api\/v1\/top\/ad data-type=tiny-gif status-code=200
@@ -1348,7 +1348,7 @@ https?:\/\/awg\.enmonster\.com\/apa\/(advert\/demand\/home\/poster|index\/advert
 ^https?:\/\/smart\.789\.image\.mucang\.cn\/advert data-type=tiny-gif status-code=200
 
 # hostname = api.sogaha.cn
-^https?:\/\/api\.sogaha\.cn\/ssp\/ad\/get\?ip data-type=text data="{}" status-code=200
+^https?:\/\/api\.sogaha\.cn\/ssp\/ad\/get\?ip data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = img.gdoil.cn
 ^https?:\/\/img\.gdoil\.cn\/upload\/ad\/.*.(jpg|png) data-type=text data=" " status-code=200
@@ -1360,10 +1360,10 @@ https?:\/\/awg\.enmonster\.com\/apa\/(advert\/demand\/home\/poster|index\/advert
 #^https?:\/\/jiucaigongshe\.oss-cn-beijing\.aliyuncs\.com\/[A-Z0-9]{8}-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{12}\.png data-type=text data=" " status-code=200
 
 # 开屏广告 感谢【Ava阿檬】分享
-^https?:\/\/www\.gcores\.com\/gapi\/v1\/app-start-pages\?page data-type=text data="{}" status-code=200
+^https?:\/\/www\.gcores\.com\/gapi\/v1\/app-start-pages\?page data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = s.jiediankeji.com
-^https?:\/\/s\.jiediankeji\.com\/adv data-type=text data="{}" status-code=200
+^https?:\/\/s\.jiediankeji\.com\/adv data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = booking.bestwehotel.com
 ^https:\/\/booking\.bestwehotel\.com\/proxy\/trip-hotel-banner\/activity\/getActivityInfo data-type=text data=" " status-code=200
@@ -1377,7 +1377,7 @@ https?:\/\/awg\.enmonster\.com\/apa\/(advert\/demand\/home\/poster|index\/advert
 ^https?:\/\/api\.kkmh\.com\/v\d\/advertisement\/ data-type=text data=" " status-code=200
 
 # 广告
-^https?:\/\/audiobookpay\.kuwo\.cn\/a\.p\?op=get_advertright_endtime data-type=text data="{}" status-code=200
+^https?:\/\/audiobookpay\.kuwo\.cn\/a\.p\?op=get_advertright_endtime data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = cdn.kuaidi100.com, p.kuaidi100.com
 ^https?:\/\/cdn\.kuaidi100\.com\/images\/open\/appads data-type=tiny-gif status-code=200
@@ -1389,15 +1389,15 @@ https?:\/\/awg\.enmonster\.com\/apa\/(advert\/demand\/home\/poster|index\/advert
 ^https?:\/\/pocketuni\.net\/\?app=api&mod=Message&act=ad data-type=text data=" " status-code=200
 
 # hostname = api.gongkaoleida.com
-^https?:\/\/api\.gongkaoleida\.com\/api\/v2\/ad\/info data-type=text data="{}" status-code=200
+^https?:\/\/api\.gongkaoleida\.com\/api\/v2\/ad\/info data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = api.coolapk.com
-^https?:\/\/api\.coolapk\.com\/v6\/search\?.*type=hotSearch data-type=text data="{}" status-code=200
+^https?:\/\/api\.coolapk\.com\/v6\/search\?.*type=hotSearch data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = res.kfc.com.cn
 ^https?:\/\/res\.kfc\.com\.cn\/CRM\/kfcad\/apphome5\/apphome data-type=text data=" " status-code=200
 
-^https?:\/\/res\.kfc\.com\.cn\/CRM\/kfcad\/apphome6\/\w+\.json\? data-type=text data="{}" status-code=200
+^https?:\/\/res\.kfc\.com\.cn\/CRM\/kfcad\/apphome6\/\w+\.json\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = a.line.me, ad.line-scdn.net, buy.line.me, cix.line-apps.com, crs-event.line.me, d.line-scdn.net, gw.line.naver.jp, legy.line-apps.com, nelo2-col.linecorp.com, obs.line-scdn.net, scdn.line-apps.com, sch.line.me, static.line-scdn.net, uts-front.line-apps.com, w.line.me
 https:\/\/a\.line\.me\/er\/lads\/v\d\/ei\? data-type=tiny-gif status-code=200
@@ -1421,16 +1421,16 @@ https:\/\/d\.line-scdn\.net\/lcp-prod-photo\/20.+\.(jpg|jpeg|png) data-type=tiny
 ^https?:\/\/lofter\.lf127\.net\/ad\-material data-type=text data=" " status-code=200
 
 # 首页横幅+进货+借款广告
-^https?:\/\/lamb\.lakala\.com\/lamo\/adv\/access\/queryMaterialUrl data-type=text data="{}" status-code=200
+^https?:\/\/lamb\.lakala\.com\/lamo\/adv\/access\/queryMaterialUrl data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 补贴页面广告
-^https?:\/\/wallet\.lakala\.com\/m\/lama\/mgt\/activity\/bank\/query\/list data-type=text data="{}" status-code=200
+^https?:\/\/wallet\.lakala\.com\/m\/lama\/mgt\/activity\/bank\/query\/list data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 私享定制广告
-^https?:\/\/wallet\.lakala\.com\/m\/a\/lama\/mgt\/activity\/biz\/query\/byMerInfo data-type=text data="{}" status-code=200
+^https?:\/\/wallet\.lakala\.com\/m\/a\/lama\/mgt\/activity\/biz\/query\/byMerInfo data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 最新动态广告
-^https?:\/\/wallet\.lakala\.com\/m\/a\/message\/v\d\/fetchMsgList data-type=text data="{}" status-code=200
+^https?:\/\/wallet\.lakala\.com\/m\/a\/message\/v\d\/fetchMsgList data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = 118.178.214.118, dapis.mting.info, display.wting.info
 ^https?:\/\/118\.178\.214\.118\/yyting\/advertclient\/ClientAdvertList\.action data-type=tiny-gif status-code=200
@@ -1440,10 +1440,10 @@ https:\/\/d\.line-scdn\.net\/lcp-prod-photo\/20.+\.(jpg|jpeg|png) data-type=tiny
 ^https?:\/\/display\.wting\.info\/.*.jpeg data-type=text data=" " status-code=200
 
 # hostname = mobile-api.imlaidian.com
-^https?:\/\/mobile-api\.imlaidian\.com\/api\/args data-type=text data="{}" status-code=200
+^https?:\/\/mobile-api\.imlaidian\.com\/api\/args data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 开屏广告+弹窗广告
-^https?:\/\/tbgapplet\.carlsberg\.asia\/tuborg\/banner\/(loading|index) data-type=text data="{}" status-code=200
+^https?:\/\/tbgapplet\.carlsberg\.asia\/tuborg\/banner\/(loading|index) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = www.iyingdi.cn
 ^https?:\/\/www\.iyingdi\.cn\/ad data-type=text data=" " status-code=200
@@ -1463,43 +1463,43 @@ https:\/\/d\.line-scdn\.net\/lcp-prod-photo\/20.+\.(jpg|jpeg|png) data-type=tiny
 ^https?:\/\/api\.00bang\.cn\/llb\/baseinfo\/advertise\/getAdvertiseByPageCode data-type=text data=" " status-code=200
 
 # hostname = api-ac.liepin.com, api-wanda.liepin.com
-^https?:\/\/api-ac\.liepin\.com\/api\/com\.liepin\.cyclops\.live\.get-ad-cards data-type=text data="{}" status-code=200
+^https?:\/\/api-ac\.liepin\.com\/api\/com\.liepin\.cyclops\.live\.get-ad-cards data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 ^https?:\/\/api-wanda\.liepin\.com\/api\/com\.liepin\.cbp\.baizhong\.op\.v2-show-4app data-type=text data=" " status-code=200
 
 # 去开屏广告
-^https:\/\/order-app-api\.lbdj\.com\/lbdj\/apporder\/ad\/ data-type=text data="{}" status-code=200
+^https:\/\/order-app-api\.lbdj\.com\/lbdj\/apporder\/ad\/ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 开屏广告
-^https?:\/\/qimg\.cdnmama\.com\/rd data-type=text data="{}" status-code=200
+^https?:\/\/qimg\.cdnmama\.com\/rd data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 开屏广告
-^https:\/\/p0\.pipi\.cn\/adAdmin\/\w+\.jpg\?imageMogr2\/quality\/ data-type=text data="{}" status-code=200
+^https:\/\/p0\.pipi\.cn\/adAdmin\/\w+\.jpg\?imageMogr2\/quality\/ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/p0\.pipi\.cn\/adAdmin\/\w+\.(jpg|png)\?imageMogr2\/thumbnail\/(860x0|!165x165|!1049x1169) data-type=text data="{}" status-code=200
+^https:\/\/p0\.pipi\.cn\/adAdmin\/\w+\.(jpg|png)\?imageMogr2\/thumbnail\/(860x0|!165x165|!1049x1169) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # http:\/\/dili.sqcosmos.com\/jiekou\/mains\/p\d+.html response-body-json-jq '.album |= map(select(.id != "4154" and .id != "4165"))'
-http:\/\/dili.sqcosmos.com\/jiekou\/endpage\/ad data-type=text data="{}" status-code=200
+http:\/\/dili.sqcosmos.com\/jiekou\/endpage\/ad data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = img.meituan.net, s3plus.meituan.net, flowplus.meituan.net
-^https?:\/\/wmapi\.meituan\.com\/api\/v7\/(loadInfo|openscreen|startpicture)\? data-type=text data="{}" status-code=200
+^https?:\/\/wmapi\.meituan\.com\/api\/v7\/(loadInfo|openscreen|startpicture)\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/(s3plus|flowplus)\.meituan\.net\/v\d\/\w+\/linglong\/\w+\.(gif|jpg|mp4) data-type=text data="{}" status-code=200
+^https?:\/\/(s3plus|flowplus)\.meituan\.net\/v\d\/\w+\/linglong\/\w+\.(gif|jpg|mp4) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/img\.meituan\.net\/bizad\/bizad_brandCpt_\d+\.jpg data-type=text data="{}" status-code=200
+^https?:\/\/img\.meituan\.net\/bizad\/bizad_brandCpt_\d+\.jpg data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/s3plus\.meituan\.net\/ocean-blk-index\/index\/blk_conf_73\.json data-type=text data="{}" status-code=200
+^https?:\/\/s3plus\.meituan\.net\/ocean-blk-index\/index\/blk_conf_73\.json data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/s3plus\.meituan\.net\/v1\/mss_\w+\/(brandcpt-vedio|waimai-alita)\/\w+\.zip$ data-type=text data="{}" status-code=200
+^https?:\/\/s3plus\.meituan\.net\/v1\/mss_\w+\/(brandcpt-vedio|waimai-alita)\/\w+\.zip$ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 美团订单详情页更多推荐
-^https?:\/\/apimobile\.meituan\.com\/group\/v1\/recommend\/unity\/recommends data-type=text data="{}" status-code=200
+^https?:\/\/apimobile\.meituan\.com\/group\/v1\/recommend\/unity\/recommends data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = peisongapi.meituan.com
 ^https?:\/\/peisongapi\.meituan\.com\/client\/getInitiateImage data-type=text data=" " status-code=200
 
 # hostname = cdb.meituan.com
-^https?:\/\/cdb\.meituan\.com\/marketing\/source\/getPageSlotList data-type=text data="{}" status-code=200
+^https?:\/\/cdb\.meituan\.com\/marketing\/source\/getPageSlotList data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 ^https?:\/\/creditcardapp\.bankcomm\.(com|cn)\/mappweb_interface\/common\/(qryPopAds|qryLaunchAds)\.do data-type=text data=" " status-code=200
 
@@ -1514,35 +1514,35 @@ http:\/\/dili.sqcosmos.com\/jiekou\/endpage\/ad data-type=text data="{}" status-
 ^https?://rs.creditcard.cmbc.com.cn/mmc/img/126f35586ece469aa2daf2e451ba7b4d.jpg data-type=text data=" " status-code=200
 
 # 首页左上角推广
-^https?:\/\/[\d\.]+\/odin\/c1\/(channel\/ads|skin\/config)\? data-type=text data="{}" status-code=200
+^https?:\/\/[\d\.]+\/odin\/c1\/(channel\/ads|skin\/config)\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 底部tab红点
-^https?:\/\/damang\.api\.mgtv\.com\/station\/album\/red\/dot\? data-type=text data="{}" status-code=200
+^https?:\/\/damang\.api\.mgtv\.com\/station\/album\/red\/dot\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 播放器界面
-^https?:\/\/hb-boom\.api\.mgtv\.com\/release\/pullReleaseInfo data-type=text data="{}" status-code=200
+^https?:\/\/hb-boom\.api\.mgtv\.com\/release\/pullReleaseInfo data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 升级弹窗
-^https?:\/\/mobile\.api\.mgtv\.com\/v2\/mobile\/checkUpdate\? data-type=text data="{}" status-code=200
+^https?:\/\/mobile\.api\.mgtv\.com\/v2\/mobile\/checkUpdate\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 搜索框填充词
-^https?:\/\/mobileso\.bz\.mgtv\.com\/spotlight\/search\/v1\? data-type=text data="{}" status-code=200
+^https?:\/\/mobileso\.bz\.mgtv\.com\/spotlight\/search\/v1\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/mapi\.mafengwo\.cn\/system\/update\/check_update data-type=text data="{}" status-code=200
+^https?:\/\/mapi\.mafengwo\.cn\/system\/update\/check_update data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/mapi\.mafengwo\.cn\/system\/config\/(get|mark)_(push|alert)_config data-type=text data="{}" status-code=200
+^https?:\/\/mapi\.mafengwo\.cn\/system\/config\/(get|mark)_(push|alert)_config data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 开屏广告
-^https:\/\/mada-travel\.17u\.cn\/mdapi\/config\/ads data-type=text data="{}" status-code=200
+^https:\/\/mada-travel\.17u\.cn\/mdapi\/config\/ads data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 我的会员中心
-^https:\/\/mada-travel\.17u\.cn\/mdapi\/config\/mine data-type=text data="{}" status-code=200
+^https:\/\/mada-travel\.17u\.cn\/mdapi\/config\/mine data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 首页下方推广
-^https:\/\/mada-travel\.17u\.cn\/mdapi\/config\/tabAct data-type=text data="{}" status-code=200
+^https:\/\/mada-travel\.17u\.cn\/mdapi\/config\/tabAct data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 屏蔽更新
-^http:\/\/ebk\.17u\.cn\/tctrafficappversionadmin\/api\/getLatestVersionApp data-type=text data="{}" status-code=200
+^http:\/\/ebk\.17u\.cn\/tctrafficappversionadmin\/api\/getLatestVersionApp data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = *.cmvideo.cn
 ^https?:\/\/gg\w+?\.cmvideo\.cn\/v\d\/iflyad\/ data-type=text data=" " status-code=200
@@ -1553,7 +1553,7 @@ http:\/\/dili.sqcosmos.com\/jiekou\/endpage\/ad data-type=text data="{}" status-
 
 ^https?:\/\/.+?\/cdn-adn\/ data-type=text data=" " status-code=200
 
-^https?:\/\/adui\.tg\.meitu\.com data-type=text data="{}" status-code=200
+^https?:\/\/adui\.tg\.meitu\.com data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = app.api.versa-ai.com, static01.versa-ai.com
 ^https?:\/\/app\.api\.versa-ai\.com\/launch\/ads\? data-type=text data=" " status-code=200
@@ -1561,26 +1561,26 @@ http:\/\/dili.sqcosmos.com\/jiekou\/endpage\/ad data-type=text data="{}" status-
 ^https?:\/\/static01\.versa-ai\.com\/upload\/ec0ba51d68f9\/.*.jpg data-type=text data=" " status-code=200
 
 # hostname = sfo.mddcloud.com.cn, mob.mddcloud.com.cn, toblog.ctobsnssdk.com, t-dsp.pinduoduo.com, mobads-pre-config.cdn.bcebos.com, sdk1xyajs.data.kuiniuca.com,conf-darwin.xycdn.com,*.ubixioe.com
-^https?:\/\/mob\.mddcloud\.com\.cn\/adApi\/advert\/(first|third)part\/advertList data-type=text data="{}" status-code=200
+^https?:\/\/mob\.mddcloud\.com\.cn\/adApi\/advert\/(first|third)part\/advertList data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 ^https?:\/\/t-dsp\.pinduoduo\.com data-type=text data=" " status-code=200
 
 ^https?:\/\/mobads-pre-config\.cdn\.bcebos\.com\/preload\.php data-type=text data=" " status-code=200
 
-^https?:\/\/sfo\.mddcloud\.com\.cn\/api\/v\d\/sfo\/popup_displays? data-type=text data="{}" status-code=200
+^https?:\/\/sfo\.mddcloud\.com\.cn\/api\/v\d\/sfo\/popup_displays? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 ^https?:\/\/toblog\.ctobsnssdk\.com data-type=text data=" " status-code=200
 
-^https?:\/\/conf-darwin\.xycdn\.com data-type=text data="{}" status-code=200
+^https?:\/\/conf-darwin\.xycdn\.com data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 开屏广告、职位页面横幅
-^https:\/\/(h3\.)?open\.taou\.com\/maimai\/adshow\? data-type=text data="{}" status-code=200
+^https:\/\/(h3\.)?open\.taou\.com\/maimai\/adshow\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 赠送礼物 - 横幅
-^https:\/\/(h3\.)?open\.taou\.com\/maimai\/pay\/v5\/check_gift\? data-type=text data="{}" status-code=200
+^https:\/\/(h3\.)?open\.taou\.com\/maimai\/pay\/v5\/check_gift\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 帖子文末推广卡片
-^https:\/\/(h3\.)?open\.taou\.com\/maimai\/go_gossip_darwin\/external\/v2\/query_flow_cards\? data-type=text data="{}" status-code=200
+^https:\/\/(h3\.)?open\.taou\.com\/maimai\/go_gossip_darwin\/external\/v2\/query_flow_cards\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = api.mcd.cn
 ^https?:\/\/api\.mcd\.cn\/bff\/portal\/home\/splash data-type=text data=" " status-code=200
@@ -1589,7 +1589,7 @@ http:\/\/dili.sqcosmos.com\/jiekou\/endpage\/ad data-type=text data="{}" status-
 ^https?:\/\/blog\.nilbt\.com\/static\/api\/update data-type=text data=" " status-code=200
 
 # hostname = midc.cdn-static.abchina.com.cn, enjoy.cdn-static.abchina.com
-^https?:\/\/midc\.cdn-static\.abchina\.com\.cn\/distributecenterimg\/file\/download\/(?!bbc2|f015|1655|0992|4678|a194|d8e2|c513|e51c|0ee1|166e|05ca|c882|d5b8|22ed|a0dc|a55a|6f89|3bf9|3c71|52ec|5b62|ve7a|001c|923d|accf|4a10|0bd7|be7a|5b62|5dd6|1f24|006c|775d|bd02|b983|5251|806b|d119|db14|43c9|41d3|8570|2c10|85ea|1435|814e|f422|aec7|738c|d7c8|0538|02b4|fd20|7647|f6ef|07c5|885b|e4cb|685b|30aa|c23b|9603|f27f|eaf8|8011|a5eb|409d|724c|3f2a|e07f|6744|60a6|158c|8ce3) data-type=text data="{}" status-code=200
+^https?:\/\/midc\.cdn-static\.abchina\.com\.cn\/distributecenterimg\/file\/download\/(?!bbc2|f015|1655|0992|4678|a194|d8e2|c513|e51c|0ee1|166e|05ca|c882|d5b8|22ed|a0dc|a55a|6f89|3bf9|3c71|52ec|5b62|ve7a|001c|923d|accf|4a10|0bd7|be7a|5b62|5dd6|1f24|006c|775d|bd02|b983|5251|806b|d119|db14|43c9|41d3|8570|2c10|85ea|1435|814e|f422|aec7|738c|d7c8|0538|02b4|fd20|7647|f6ef|07c5|885b|e4cb|685b|30aa|c23b|9603|f27f|eaf8|8011|a5eb|409d|724c|3f2a|e07f|6744|60a6|158c|8ce3) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 ^https?:\/\/enjoy\.cdn-static\.abchina\.com\/yx-engine-web\/file\/download\/(?!7dc2|fe96|cea3|06a8|1b11|d57b|6918|61db|2d58|aa23|) data-type=text data=" " status-code=200
 
@@ -1612,27 +1612,27 @@ http:\/\/dili.sqcosmos.com\/jiekou\/endpage\/ad data-type=text data="{}" status-
 ^https?:\/\/api\.nj\.nbtv\.cn\/v\d\/common\/system-boot-inform\/detail data-type=text data=" " status-code=200
 
 # 首页下方广告
-^https?:\/\/oxadmin\.cp\.com\.cn\/api\/hot\/index data-type=text data="{}" status-code=200
+^https?:\/\/oxadmin\.cp\.com\.cn\/api\/hot\/index data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/oxadmin\.cp\.com\.cn\/api\/advertise\/banner data-type=text data="{}" status-code=200
+^https?:\/\/oxadmin\.cp\.com\.cn\/api\/advertise\/banner data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = gateway.benewtech.cn, ntt-app.benewtech.cn
-^https:\/\/gateway\.benewtech\.cn\/resources-app\/app\/startup\/prepage data-type=text data="{}" status-code=200
+^https:\/\/gateway\.benewtech\.cn\/resources-app\/app\/startup\/prepage data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/ntt-app\.benewtech\.cn\/v6\/user\/\d+\/messages\/event data-type=text data="{}" status-code=200
+^https:\/\/ntt-app\.benewtech\.cn\/v6\/user\/\d+\/messages\/event data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 开屏广告
-^https?:\/\/v3\.wufazhuce\.com:8000\/api\/adpreloadlist data-type=text data="{}" status-code=200
+^https?:\/\/v3\.wufazhuce\.com:8000\/api\/adpreloadlist data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 屏蔽图片广告，但是还有css空白模块, 如开启可自行添加主机名
-#^https?:\/\/image\.pushplus\.plus\/ad.* data-type=text data="{}" status-code=200
+#^https?:\/\/image\.pushplus\.plus\/ad.* data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = image.spdbccc.com.cn
-^https?:\/\/image\.spdbccc\.com\.cn\/group\d\/M00\/[A-Z0-9]{2}\/[A-Z0-9]{2}\/.+(4038|0571|M511|V-008|g549|b0628|fg817|5w501|Jo341|Z4583|oo845|i4905|MY245|YU472|Y401|w428|s000) data-type=text data="{}" status-code=200
+^https?:\/\/image\.spdbccc\.com\.cn\/group\d\/M00\/[A-Z0-9]{2}\/[A-Z0-9]{2}\/.+(4038|0571|M511|V-008|g549|b0628|fg817|5w501|Jo341|Z4583|oo845|i4905|MY245|YU472|Y401|w428|s000) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/j1\.pupuapi\.com\/client\/marketing\/advertisement\/v1\? data-type=text data="{}" status-code=200
+^https?:\/\/j1\.pupuapi\.com\/client\/marketing\/advertisement\/v1\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/54\.222\.159\.138:8053\/^httpdns\/resolve\? data-type=text data="{}" status-code=200
+^https?:\/\/54\.222\.159\.138:8053\/^httpdns\/resolve\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = iobs.pingan.com.cn, hcz-member.pingan.com.cn
 ^https?:\/\/iobs\.pingan\.com\.cn\/download\/bweb-per-sf-prd\/bweb data-type=text data=" " status-code=200
@@ -1643,28 +1643,28 @@ http:\/\/dili.sqcosmos.com\/jiekou\/endpage\/ad data-type=text data="{}" status-
 ^https?:\/\/mobile\.1qianbao\.com\/mtp-web\/ui\/op_common_query_business_yqb\.json data-type=text data=" " status-code=200
 
 # hostname = pacdn.m.stock.pingan.com
-^https?:\/\/pacdn\.m\.stock\.pingan\.com\/images\/ data-type=text data="{}" status-code=200
+^https?:\/\/pacdn\.m\.stock\.pingan\.com\/images\/ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = cdn.sdb.com.cn
 ^https?:\/\/cdn\.sdb\.com\.cn\/widget\/magic-module-sprite\/general-banner data-type=text data=" " status-code=200
 
-^https?:\/\/cdn\.sdb\.com\.cn\/widget\/magic-module-sprite\/dialog-normal data-type=text data="{}" status-code=200
+^https?:\/\/cdn\.sdb\.com\.cn\/widget\/magic-module-sprite\/dialog-normal data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/cdn\.sdb\.com\.cn\/widget\/pb\/pb-plugins-recomend-content data-type=text data="{}" status-code=200
+^https?:\/\/cdn\.sdb\.com\.cn\/widget\/pb\/pb-plugins-recomend-content data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 信用卡-精彩活动模块
-#^https?:\/\/cdn\.sdb\.com\.cn\/widget\/magic-module-sprite\/four-rectangle-grid data-type=text data="{}" status-code=200
+#^https?:\/\/cdn\.sdb\.com\.cn\/widget\/magic-module-sprite\/four-rectangle-grid data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/api\.pinduoduo\.com\/api\/aquarius\/hungary\/global\/homepage\? data-type=text data="{}" status-code=200
+^https?:\/\/api\.pinduoduo\.com\/api\/aquarius\/hungary\/global\/homepage\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = pss.txffp.com
 ^https?:\/\/pss\.txffp\.com\/piaogen\/images\/launchScreen/ data-type=text data=" " status-code=200
 
 # hostname = appapi.caiyicloud.com
-^https:\/\/appapi\.caiyicloud\.com\/cyy_gatewayapi\/home\/pub\/v3\/banners\/app_start_page data-type=text data="{}" status-code=200
+^https:\/\/appapi\.caiyicloud\.com\/cyy_gatewayapi\/home\/pub\/v3\/banners\/app_start_page data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = adapi.izuiyou.com
-^https?:\/\/adapi\.izuiyou\.com\/ad\/fetch_api_ads\? data-type=text data="{}" status-code=200
+^https?:\/\/adapi\.izuiyou\.com\/ad\/fetch_api_ads\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 ^https?:\/\/y\.gtimg\.cn\/music\/common\/\/upload\/kg_ad/.*?\d{4}\.jpg data-type=tiny-gif status-code=200
 
@@ -1674,7 +1674,7 @@ http:\/\/dili.sqcosmos.com\/jiekou\/endpage\/ad data-type=text data="{}" status-
 ^https?:\/\/qde\.qunar\.com\/preload data-type=text data=" " status-code=200
 
 # 开屏广告
-^https?:\/\/homefront\.qunar\.com\/front\/splash\/ad data-type=text data="{}" status-code=200
+^https?:\/\/homefront\.qunar\.com\/front\/splash\/ad data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = qidian.qpic.cn, mage.if.qidian.com, magev6.if.qidian.com
 ^https?:\/\/qidian\.qpic\.cn\/qidian_common data-type=tiny-gif status-code=200
@@ -1682,18 +1682,18 @@ http:\/\/dili.sqcosmos.com\/jiekou\/endpage\/ad data-type=text data="{}" status-
 ^https?:\/\/mage\.if\.qidian\.com\/Atom\.axd\/Api\/Client\/GetConfIOS data-type=tiny-gif status-code=200
 
 # 起点读书投票、章末免费领取章节卡等
-^https?:\/\/magev6\.if\.qidian\.com\/argus\/api\/v1\/adv data-type=text data="{}" status-code=200
+^https?:\/\/magev6\.if\.qidian\.com\/argus\/api\/v1\/adv data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/magev6\.if\.qidian\.com\/argus\/api\/v1\/followsubscribe data-type=text data="{}" status-code=200
+^https?:\/\/magev6\.if\.qidian\.com\/argus\/api\/v1\/followsubscribe data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 我的界面内测推广
-^http[s]?:\/\/magev6\.if\.qidian\.com\/argus\/api\/v1\/bookshelf\/refresh data-type=text data="{}" status-code=200
+^http[s]?:\/\/magev6\.if\.qidian\.com\/argus\/api\/v1\/bookshelf\/refresh data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 书架置顶推广(保留签到移除花哨背景)
-^https?:\/\/magev6\.if\.qidian\.com\/argus\/api\/v1\/bookshelf\/getTopOperation data-type=text data="{}" status-code=200
+^https?:\/\/magev6\.if\.qidian\.com\/argus\/api\/v1\/bookshelf\/getTopOperation data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 发现上面的图标屏蔽
-^https?:\/\/magev6\.if\.qidian\.com\/argus\/api\/v2\/adv\/getadvlistbatch data-type=text data="{}" status-code=200
+^https?:\/\/magev6\.if\.qidian\.com\/argus\/api\/v2\/adv\/getadvlistbatch data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = open.qyer.com, media.qyer.com
 ^https?:\/\/open\.qyer\.com\/qyer\/startpage\/ data-type=text data=" " status-code=200
@@ -1704,36 +1704,36 @@ http:\/\/dili.sqcosmos.com\/jiekou\/endpage\/ad data-type=text data="{}" status-
 ^https?:\/\/app2\.autoimg\.cn\/apppdfs\/ data-type=tiny-gif status-code=200
 
 # 发现页面 - 正在直播
-^https:\/\/webcast-open\.douyin\.com\/webcast\/openapi\/feed\/\? data-type=text data="{}" status-code=200
+^https:\/\/webcast-open\.douyin\.com\/webcast\/openapi\/feed\/\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 开屏广告
-^https:\/\/mobile-consumer-sapp\.chery\.cn\/web\/position\/getShowList\?displayPlatform=1&tabType=0& data-type=text data="{}" status-code=200
+^https:\/\/mobile-consumer-sapp\.chery\.cn\/web\/position\/getShowList\?displayPlatform=1&tabType=0& data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = y.gtimg.cn
 ^https?:\/\/y\.gtimg\.cn\/music\/common\/\/upload\/kg_ad\/.+?\d{3,4}x\d{4} data-type=text data=" " status-code=200
 
 # 感谢【梭哈 All in】分享
-^https?:\/\/mi\.gdt\.qq\.com\/gdt_mview\.fcg\?posid= data-type=text data="{}" status-code=200
+^https?:\/\/mi\.gdt\.qq\.com\/gdt_mview\.fcg\?posid= data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 开屏广告 感谢【Kook】分享
-^https?:\/\/facade-api\.black-unique\.com\/app\/v1\/startScreen\?cityId=102923&channelId=0&width=1170&height=2532 data-type=text data="{}" status-code=200
+^https?:\/\/facade-api\.black-unique\.com\/app\/v1\/startScreen\?cityId=102923&channelId=0&width=1170&height=2532 data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/facade-api\.black-unique\.com\/app\/v1\/startScreen\?.* data-type=text data="{}" status-code=200
+^https?:\/\/facade-api\.black-unique\.com\/app\/v1\/startScreen\?.* data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/facade-api\.black-unique\.com\/advertise\/v1\/get\?cityId=102923&positions=mine_popup data-type=text data="{}" status-code=200
+^https?:\/\/facade-api\.black-unique\.com\/advertise\/v1\/get\?cityId=102923&positions=mine_popup data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/facade-api\.black-unique\.com\/advertise\/v1\/get\?.* data-type=text data="{}" status-code=200
+^https?:\/\/facade-api\.black-unique\.com\/advertise\/v1\/get\?.* data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 ^https?:\/\/adstatic\.peopleapp\.com\/upload\/AppLoad\/.*.(jpg|png) data-type=text data=" " status-code=200
 
 # > RRTV_屏蔽限時彈窗
-https://api.rr.tv/storage/business/rootName/app/homePage\?dataType=JSON data-type=text data="{}" status-code=200
+https://api.rr.tv/storage/business/rootName/app/homePage\?dataType=JSON data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 开屏广告 感谢【Ava阿檬】分享
-^https?:\/\/app\.meruki\.cn\/\?n=Sig\.Front\.AppFront\.GetOpenAdDoorzo data-type=text data="{}" status-code=200
+^https?:\/\/app\.meruki\.cn\/\?n=Sig\.Front\.AppFront\.GetOpenAdDoorzo data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 开屏广告
-^https?:\/\/oneapph5\.dongfeng-nissan\.com\.cn\/mb-gw\/vmsp-discover\/rest\/business-service\/v1\/advert\/advertinfo data-type=text data="{}" status-code=200
+^https?:\/\/oneapph5\.dongfeng-nissan\.com\.cn\/mb-gw\/vmsp-discover\/rest\/business-service\/v1\/advert\/advertinfo data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # https://rarbgmirror.org/torrents.php
 ^https?:\/\/dyncdn\.me\/static\/\d{0,2}\/js\/expla\d{0,4}\.js$ data-type=text data=" " status-code=200
@@ -1746,13 +1746,13 @@ https://api.rr.tv/storage/business/rootName/app/homePage\?dataType=JSON data-typ
 ^https?:\/\/api\d?\.musical\.ly\/api\/ad\/ data-type=tiny-gif status-code=200
 
 # 信息流，帖子详情页等各种广告
-^https?:\/\/ssp\.soulapp\.cn\/api\/q data-type=text data="{}" status-code=200
+^https?:\/\/ssp\.soulapp\.cn\/api\/q data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/ssp\.soulapp\.cn\/api\/ad\/config data-type=text data="{}" status-code=200
+^https?:\/\/ssp\.soulapp\.cn\/api\/ad\/config data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 ^https?:\/\/chat-live\.soulapp\.cn\/live\/planet\/recListV2 data-type=text data=" " status-code=200
 
-^https?:\/\/api-chat\.soulapp\.cn\/chat\/entrance\/first data-type=text data="{}" status-code=200
+^https?:\/\/api-chat\.soulapp\.cn\/chat\/entrance\/first data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 ^https?:\/\/image\.suning\.cn\/uimg\/ma\/ad\/ data-type=text data=" " status-code=200
 
@@ -1760,30 +1760,30 @@ https://api.rr.tv/storage/business/rootName/app/homePage\?dataType=JSON data-typ
 ^https?:\/\/luckman\.suning\.com\/luck-web\/policy\/v\d\/msf\/index\.do data-type=text data=" " status-code=200
 
 # 需卸载重装，有缓存
-^https?:\/\/ad\.shunchangzhixing\.com\/getAd data-type=text data="{}" status-code=200
+^https?:\/\/ad\.shunchangzhixing\.com\/getAd data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/api\.bwton\.com\/bff\/app\/h5\/v1\/station\/goods data-type=text data="{}" status-code=200
+^https?:\/\/api\.bwton\.com\/bff\/app\/h5\/v1\/station\/goods data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 开屏广告 感谢【alist.choc.ga】分享
 ^https?:\/\/api\.bwton\.com\/bas\/ad data-type=text data=" " status-code=200
 
 # 软件内推广广告 感谢【为什么要看头像呢】分享
-^https?:\/\/api\.bwton\.com\/bff\/app\/index\/goods data-type=text data="{}" status-code=200
+^https?:\/\/api\.bwton\.com\/bff\/app\/index\/goods data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/api\.bwton\.com\/bff\/app\/index\/recommend data-type=text data="{}" status-code=200
+^https?:\/\/api\.bwton\.com\/bff\/app\/index\/recommend data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 更新提示 感谢【alist.choc.ga】分享
-^https?:\/\/szdmobile\.suzhou\.gov\.cn\/thirdapp-center\/appUpdate\/update data-type=text data="{}" status-code=200
+^https?:\/\/szdmobile\.suzhou\.gov\.cn\/thirdapp-center\/appUpdate\/update data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/api\.sodalife\.xyz\/v1\/posters\?location=SODA_APP%3AHOME%3ABOTTOM data-type=text data="{}" status-code=200
+^https?:\/\/api\.sodalife\.xyz\/v1\/posters\?location=SODA_APP%3AHOME%3ABOTTOM data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/api\.sodalife\.xyz\/v1\/posters\?location=SODA_APP%3AHOME%3ACENTER data-type=text data="{}" status-code=200
+^https?:\/\/api\.sodalife\.xyz\/v1\/posters\?location=SODA_APP%3AHOME%3ACENTER data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/api\.sodalife\.xyz\/v1\/posters\?location=SODA_APP%3AMINE%3ABOTTOM data-type=text data="{}" status-code=200
+^https?:\/\/api\.sodalife\.xyz\/v1\/posters\?location=SODA_APP%3AMINE%3ABOTTOM data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/api\.sodalife\.xyz\/v1\/goods data-type=text data="{}" status-code=200
+^https?:\/\/api\.sodalife\.xyz\/v1\/goods data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/api\.sodalife\.xyz\/v1\/posters\?location=SODA_APP%3AREWARDS%3ACENTER data-type=text data="{}" status-code=200
+^https?:\/\/api\.sodalife\.xyz\/v1\/posters\?location=SODA_APP%3AREWARDS%3ACENTER data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = service.4gtv.tv
 ^https?:\/\/service\.4gtv\.tv\/4gtv\/Data\/(?>GetAD|ADLog) data-type=text data=" " status-code=200
@@ -1818,33 +1818,33 @@ https://api.rr.tv/storage/business/rootName/app/homePage\?dataType=JSON data-typ
 #^https?:\/\/business-cdn\.shouji\.sogou\.com\/wapdl\/hole\/.+?\.jpg data-type=text data=" " status-code=200
 
 # 屏蔽游戏中心
-^https?:\/\/h5api\.sginput\.qq\.com\/v1\/gcenter\/ios\/homepage data-type=text data="{}" status-code=200
+^https?:\/\/h5api\.sginput\.qq\.com\/v1\/gcenter\/ios\/homepage data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = wxs-weixin.sd.zhumanggroup.com
-^https?:\/\/wxs-weixin\.sd\.zhumanggroup\.com\/api\/v2\/ad data-type=text data="{}" status-code=200
+^https?:\/\/wxs-weixin\.sd\.zhumanggroup\.com\/api\/v2\/ad data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = ecard.shenzhentong.com
 ^https?:\/\/ecard\.shenzhentong\.com\/wxweb\/bwxppub2\/QryAdvertList\.do data-type=text data=" " status-code=200
 
 # APP净化 感谢【怎么肥事】分享
-^https?:\/\/ucmp\.sf-express\.com\/proxy\/esgcempcore\/memberGoods\/pointMallService\/goodsList data-type=text data="{}" status-code=200
+^https?:\/\/ucmp\.sf-express\.com\/proxy\/esgcempcore\/memberGoods\/pointMallService\/goodsList data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/ccsp-egmas\.sf-express\.com\/cx-app-video\/video\/app\/video\/labelClusterList data-type=text data="{}" status-code=200
+^https?:\/\/ccsp-egmas\.sf-express\.com\/cx-app-video\/video\/app\/video\/labelClusterList data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/ccsp-egmas\.sf-express\.com\/cx-app-base\/base\/app\/ad\/queryInfoFlow data-type=text data="{}" status-code=200
+^https?:\/\/ccsp-egmas\.sf-express\.com\/cx-app-base\/base\/app\/ad\/queryInfoFlow data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/ccsp-egmas\.sf-express\.com\/cx-app-base\/base\/app\/bms\/queryRecommend data-type=text data="{}" status-code=200
+^https?:\/\/ccsp-egmas\.sf-express\.com\/cx-app-base\/base\/app\/bms\/queryRecommend data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = mcs-mimp-web.sf-express.com, ucmp.sf-express.com
-^https?:\/\/mcs-mimp-web\.sf-express\.com\/mcs-mimp\/integralPlanet\/getCxAdvertiseList data-type=text data="{}" status-code=200
+^https?:\/\/mcs-mimp-web\.sf-express\.com\/mcs-mimp\/integralPlanet\/getCxAdvertiseList data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/ucmp-static\.sf-express\.com\/proxy\/wxbase\/wxTicket\/wxLiveStreamInfo\?pageNo data-type=text data="{}" status-code=200
+^https?:\/\/ucmp-static\.sf-express\.com\/proxy\/wxbase\/wxTicket\/wxLiveStreamInfo\?pageNo data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/ucmp\.sf-express\.com\/proxy\/operation-platform\/info-flow-adver\/query data-type=text data="{}" status-code=200
+^https?:\/\/ucmp\.sf-express\.com\/proxy\/operation-platform\/info-flow-adver\/query data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/ucmp\.sf-express\.com\/proxy\/esgcempcore\/memberManage\/memberEquity\/queryRecommendEquity data-type=text data="{}" status-code=200
+^https?:\/\/ucmp\.sf-express\.com\/proxy\/esgcempcore\/memberManage\/memberEquity\/queryRecommendEquity data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/ucmp\.sf-express\.com\/proxy\/esgcempcore\/memberActLengthy\/fullGiveActivityService\/fullGiveInfo data-type=text data="{}" status-code=200
+^https?:\/\/ucmp\.sf-express\.com\/proxy\/esgcempcore\/memberActLengthy\/fullGiveActivityService\/fullGiveInfo data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = img01.10101111cdn.com
 ^https?:\/\/img01\.10101111cdn\.com\/adpos\/share\/ data-type=tiny-gif status-code=200
@@ -1865,51 +1865,51 @@ https://api.rr.tv/storage/business/rootName/app/homePage\?dataType=JSON data-typ
 ^https?:\/\/api\.gameplus\.qq\.com\/community\.OnloadSrv\/GetPreloadScreenInfo data-type=text data=" " status-code=200
 
 # 去除ai视频
-^https:\/\/api\.huachenjie\.com\/run-front\/ai\/getAICategory data-type=text data="{}" status-code=200
+^https:\/\/api\.huachenjie\.com\/run-front\/ai\/getAICategory data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 去除顶部横幅
-^https:\/\/api\.huachenjie\.com\/run-front\/home\/sports\/getPopup data-type=text data="{}" status-code=200
+^https:\/\/api\.huachenjie\.com\/run-front\/home\/sports\/getPopup data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 去除首页广告
-^https:\/\/api\.huachenjie\.com\/run-front\/ad data-type=text data="{}" status-code=200
+^https:\/\/api\.huachenjie\.com\/run-front\/ad data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 去除“我”页面下方福袋
-^http:\/\/ad\.shunchangzhixing\.com\/getAd data-type=text data="{}" status-code=200
+^http:\/\/ad\.shunchangzhixing\.com\/getAd data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 去除开屏广告
-^https:\/\/open\.e\.kuaishou\.cn\/rest\/e\/v3\/open data-type=text data="{}" status-code=200
+^https:\/\/open\.e\.kuaishou\.cn\/rest\/e\/v3\/open data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/zlsdk\.1rtb\.net\/sdk\/req_ad\?sdk_version=\d+\.\d+\.\d+\.\d+&device_os=iOS&accept_ad_type=\d+&app_id=\d+&pid=\d+&sdk_version_code=\d+ data-type=text data="{}" status-code=200
+^https:\/\/zlsdk\.1rtb\.net\/sdk\/req_ad\?sdk_version=\d+\.\d+\.\d+\.\d+&device_os=iOS&accept_ad_type=\d+&app_id=\d+&pid=\d+&sdk_version_code=\d+ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/api-sams\.walmartmobile\.cn\/api\/v\d\/sams\/channel\/portal\/AdgroupData data-type=text data="{}" status-code=200
+^https?:\/\/api-sams\.walmartmobile\.cn\/api\/v\d\/sams\/channel\/portal\/AdgroupData data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/api-sams\.walmartmobile\.cn\/api\/v\d\/sams\/configuration\/personCenterEntrance\/query data-type=text data="{}" status-code=200
+^https?:\/\/api-sams\.walmartmobile\.cn\/api\/v\d\/sams\/configuration\/personCenterEntrance\/query data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/api-sams\.walmartmobile\.cn\/api\/v\d\/sams\/trade\/order\/getOftenBuyGoods data-type=text data="{}" status-code=200
+^https?:\/\/api-sams\.walmartmobile\.cn\/api\/v\d\/sams\/trade\/order\/getOftenBuyGoods data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/api-sams\.walmartmobile\.cn\/api\/v\d\/sams\/goods-portal\/spu\/searchRecommendPool data-type=text data="{}" status-code=200
+^https?:\/\/api-sams\.walmartmobile\.cn\/api\/v\d\/sams\/goods-portal\/spu\/searchRecommendPool data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/api-sams\.walmartmobile\.cn\/api\/v\d\/sams\/configuration\/appVersionUpdate\/getAppVersionUpdateInfo data-type=text data="{}" status-code=200
+^https?:\/\/api-sams\.walmartmobile\.cn\/api\/v\d\/sams\/configuration\/appVersionUpdate\/getAppVersionUpdateInfo data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 屏蔽更新
-^https?:\/\/api-sams\.walmartmobile\.cn\/api\/v1\/sams\/configuration\/portal\/beUpdate data-type=text data="{}" status-code=200
+^https?:\/\/api-sams\.walmartmobile\.cn\/api\/v1\/sams\/configuration\/portal\/beUpdate data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = www.1314zhilv.com
-^https?:\/\/www\.1314zhilv\.com\/ltsstnew\/(guideScenic\/getRecentlyUpdatedScenic|city\/getWeatherByCityName) data-type=text data="{}" status-code=200
+^https?:\/\/www\.1314zhilv\.com\/ltsstnew\/(guideScenic\/getRecentlyUpdatedScenic|city\/getWeatherByCityName) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 开屏广告 需要清理缓存
-^https:\/\/www\.ymm56\.com\/short-distance-match-app\/openAppAd data-type=text data="{}" status-code=200
+^https:\/\/www\.ymm56\.com\/short-distance-match-app\/openAppAd data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = alt-r.my.com, imgx.jampp.com
-^https?:\/\/alt-r\.my\.com\/mobile data-type=text data="{}" status-code=200
+^https?:\/\/alt-r\.my\.com\/mobile data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 ^https?:\/\/imgx\.jampp\.com\/imgsrv\/tn data-type=tiny-gif status-code=200
 
 # 开屏广告 个别图片误杀 如开启可自行添加主机名
-^https?:\/\/ga-album-cdnqn\.52tt\.com\/prod-yunying\/.+.jpg data-type=text data="{}" status-code=200
+^https?:\/\/ga-album-cdnqn\.52tt\.com\/prod-yunying\/.+.jpg data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 开屏广告 感谢【TEXAS】分享
-^https?:\/\/api\.taptapdada\.com\/startup-logo\/v\d\/combo\? data-type=text data="{}" status-code=200
+^https?:\/\/api\.taptapdada\.com\/startup-logo\/v\d\/combo\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 注意：生活圈,社区打不开 需要的自己添加主机名
 ^https?:\/\/tfsmy\.chengdu\.gov\.cn\/api\/v5\/core\/version data-type=text data=" " status-code=200
@@ -1917,13 +1917,13 @@ https://api.rr.tv/storage/business/rootName/app/homePage\?dataType=JSON data-typ
 # hostname = cgbank.oss-cn-shenzhen.aliyuncs.com
 ^https?:\/\/cgbank\.oss-cn-shenzhen\.aliyuncs\.com\/visual\/advertisingImg\/.+.jpg data-type=text data=" " status-code=200
 
-^https?:\/\/chl\.tf\.cn\/channelmg\/sys\/socso\/socsonew\/queryIsRealNameAdertInfo data-type=text data="{}" status-code=200
+^https?:\/\/chl\.tf\.cn\/channelmg\/sys\/socso\/socsonew\/queryIsRealNameAdertInfo data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 首页弹窗广告
-^https?:\/\/wechat\.tf\.cn\/mini-financial\/model\/queryPopup data-type=text data="{}" status-code=200
+^https?:\/\/wechat\.tf\.cn\/mini-financial\/model\/queryPopup data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 需卸载重装，因为设置里没有清楚缓存，推荐搭配旧版5.2.0使用 感谢【Leo】分享
-^https?:\/\/ams-cdn\.cdtft\.cn\/prod\/tft-ams\/ data-type=text data="{}" status-code=200
+^https?:\/\/ams-cdn\.cdtft\.cn\/prod\/tft-ams\/ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = www.tsytv.com.cn
 ^https?:\/\/www\.tsytv\.com\.cn\/api\/app\/ios\/ads data-type=tiny-gif status-code=200
@@ -1945,39 +1945,39 @@ https://api.rr.tv/storage/business/rootName/app/homePage\?dataType=JSON data-typ
 ^https?:\/\/api\.ncarzone\.com\/superapi\/canary\/popupDialogFacade\/popupDialogList data-type=text data=" " status-code=200
 
 # 感谢【All in 梭哈】分享
-^https?:\/\/api\.cloud\.189\.cn\/guns\/(img\/recommendedPosition|getOpenscreenBanners) data-type=text data="{}" status-code=200
+^https?:\/\/api\.cloud\.189\.cn\/guns\/(img\/recommendedPosition|getOpenscreenBanners) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = adm.10jqka.com.cn, iphone.ac.qq.com, stat.10jqka.com.cn
 ^https?:\/\/adm\.10jqka\.com\.cn\/interface\/ad\/recommend data-type=text data=" " status-code=200
 
 # 同花顺至尊版 感谢【梭哈 All in】分享
-^https?:\/\/stat\.10jqka\.com\.cn\/q\?ld=mobile&id=ad data-type=text data="{}" status-code=200
+^https?:\/\/stat\.10jqka\.com\.cn\/q\?ld=mobile&id=ad data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/wx\.17u\.cn\/crapi\/query\/getAdImgUrlByCode data-type=text data="{}" status-code=200
+^https?:\/\/wx\.17u\.cn\/crapi\/query\/getAdImgUrlByCode data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/tcmobileapi\.17usoft\.com\/appindexnew\/index\/openscreen data-type=text data="{}" status-code=200
+^https:\/\/tcmobileapi\.17usoft\.com\/appindexnew\/index\/openscreen data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/tcmobileapi\.17usoft\.com\/appindexnew\/index\/getindexlayoutcelllist data-type=text data="{}" status-code=200
+^https:\/\/tcmobileapi\.17usoft\.com\/appindexnew\/index\/getindexlayoutcelllist data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/tcmobileapi\.17usoft\.com\/appindexnew\/index\/gethotrecommend data-type=text data="{}" status-code=200
+^https:\/\/tcmobileapi\.17usoft\.com\/appindexnew\/index\/gethotrecommend data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 景点界面轮播图和右下角悬浮窗
-^https:\/\/mobileapi\.ly\.com\/wlfrontend\/app\/scenicMain data-type=text data="{}" status-code=200
+^https:\/\/mobileapi\.ly\.com\/wlfrontend\/app\/scenicMain data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 租车界面 广告
-^https:\/\/wx\.17u\.cn\/crapi\/query\/ad data-type=text data="{}" status-code=200
+^https:\/\/wx\.17u\.cn\/crapi\/query\/ad data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 酒店界面广告
-^https:\/\/mobilehotelapi\.elong\.com\/appHotel\/adx\/advert\/getAdvert data-type=text data="{}" status-code=200
+^https:\/\/mobilehotelapi\.elong\.com\/appHotel\/adx\/advert\/getAdvert data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = m.tuniu.com
 ^https?:\/\/m\.tuniu\.com\/api\/operation\/splash\/ data-type=text data=" " status-code=200
 
 # 首页悬浮窗广告
-^https?:\/\/mkt-gateway\.tuhu\.cn\/mkt-scene-marketing-service\/api\/scene\/queryScheme data-type=text data="{}" status-code=200
+^https?:\/\/mkt-gateway\.tuhu\.cn\/mkt-scene-marketing-service\/api\/scene\/queryScheme data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 需要卸载重装
-^https?:\/\/client\.tujia\.com\/bnbapp-node data-type=text data="{}" status-code=200
+^https?:\/\/client\.tujia\.com\/bnbapp-node data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = mrobot.pconline.com.cn, mrobot.pcauto.com.cn, agent-count.pconline.com.cn
 ^https?:\/\/mrobot\.pconline\.com\.cn\/s\/onlineinfo\/ad\/ data-type=text data=" " status-code=200
@@ -1986,26 +1986,26 @@ https://api.rr.tv/storage/business/rootName/app/homePage\?dataType=JSON data-typ
 ^https?:\/\/mrobot\.pconline\.com\.cn\/s-900\/onlineinfo\/cms\/launch data-type=text data=" " status-code=200
 
 # hostname = acs.m.taobao.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com
-^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv data-type=text data="{}" status-code=200
+^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alimama\.etao\.config\.query\/.+?etao_advertise data-type=text data="{}" status-code=200
+^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alimama\.etao\.config\.query\/.+?etao_advertise data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alimusic\.common\.mobileservice\.startinit data-type=text data="{}" status-code=200
+^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alimusic\.common\.mobileservice\.startinit data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.etao\.noah\.query\/.+tao_splash data-type=text data="{}" status-code=200
+^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.etao\.noah\.query\/.+tao_splash data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.film\.mtopadvertiseapi\.queryadvertise data-type=text data="{}" status-code=200
+^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.film\.mtopadvertiseapi\.queryadvertise data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.o2o\.ad\.gateway\.get data-type=text data="{}" status-code=200
+^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.o2o\.ad\.gateway\.get data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.taobao\.idle\.home\.welcome data-type=text data="{}" status-code=200
+^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.taobao\.idle\.home\.welcome data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.trip\.activity\.querytmsresources data-type=text data="{}" status-code=200
+^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.trip\.activity\.querytmsresources data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(volvo\.secondfloor\.getconfig|wireless\.home\.newface\.awesome\.get) data-type=text data="{}" status-code=200
+^https?:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(volvo\.secondfloor\.getconfig|wireless\.home\.newface\.awesome\.get) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # ^https?:\/\/apd-\w+\.v\.smtcdns\.com\/(defaultts|omts|vmind\.qqvideo)\.tc\.qq\.com\/\w+ url reject
-#^https?:\/\/vv\.video\.qq\.com\/(diff|get)vmind data-type=text data="{}" status-code=200
+#^https?:\/\/vv\.video\.qq\.com\/(diff|get)vmind data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = 4gimg.map.qq.com
 ^https?:\/\/4gimg\.map\.qq\.com\/mwaSplash\/ data-type=text data=" " status-code=200
@@ -2044,10 +2044,10 @@ https://api.rr.tv/storage/business/rootName/app/homePage\?dataType=JSON data-typ
 
 ^https?:\/\/mmgr\.gtimg\.com\/gjsmall\/qqpim\/public\/ios\/splash\/.+?\/\d{4}_\d{4} data-type=tiny-gif status-code=200
 
-^https?://bk\.bingo\.qq\.com/bk/crx/data/videoAd.*$ data-type=text data="{}" status-code=200
+^https?://bk\.bingo\.qq\.com/bk/crx/data/videoAd.*$ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 去开屏广告 需要重装
-^https?:\/\/m\.pvp\.xoyo\.com\/conf\/server-mapping data-type=text data="{}" status-code=200
+^https?:\/\/m\.pvp\.xoyo\.com\/conf\/server-mapping data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 ^https?:\/\/ads\.zhinengxiyifang\.cn\/api\/v1\.1\/ads\/* data-type=text data=" " status-code=200
 
@@ -2058,19 +2058,19 @@ https://api.rr.tv/storage/business/rootName/app/homePage\?dataType=JSON data-typ
 ^https?:\/\/overseas\.weico\.cc\/portal\.php\?a=get_coopen_ads data-type=text data=" " status-code=200
 
 # 首页弹窗广告
-^https?:\/\/cds\.wifi188\.com\/feeds\.sec data-type=text data="{}" status-code=200
+^https?:\/\/cds\.wifi188\.com\/feeds\.sec data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 移除banner广告
-^https?:\/\/recite\.perfectlingo\.com\/api\/recite\/app-act\/act-list.+ data-type=text data="{}" status-code=200
+^https?:\/\/recite\.perfectlingo\.com\/api\/recite\/app-act\/act-list.+ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 移除底部广告
-^https?:\/\/recite\.perfectlingo\.com\/api\/recite\/content-recommend\/v\d\/get-by-uid.+ data-type=text data="{}" status-code=200
+^https?:\/\/recite\.perfectlingo\.com\/api\/recite\/content-recommend\/v\d\/get-by-uid.+ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 移除悬浮广告
-^https?:\/\/recite\.perfectlingo\.com\/api\/recite\/floating-window\/v\d\/get-show.+ data-type=text data="{}" status-code=200
+^https?:\/\/recite\.perfectlingo\.com\/api\/recite\/floating-window\/v\d\/get-show.+ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 微信公众号去除商品推广
-^https?:\/\/mp\.weixin\.qq\.com\/mp\/cps_product_info\?action data-type=text data="{}" status-code=200
+^https?:\/\/mp\.weixin\.qq\.com\/mp\/cps_product_info\?action data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = c.m.163.com
 ^https?:\/\/c\.m\.163\.com\/nc\/gl\/ data-type=text data=" " status-code=200
@@ -2089,15 +2089,15 @@ https://api.rr.tv/storage/business/rootName/app/homePage\?dataType=JSON data-typ
 ^https?:\/\/sp\.kaola\.com\/api\/openad data-type=text data=" " status-code=200
 
 # hostname = interface.music.163.com, interface?.music.163.com, ipv4.music.163.com
-https?:\/\/(ipv4|interface\d?)\.music\.163.com\/e?api\/ad data-type=text data="{}" status-code=200
+https?:\/\/(ipv4|interface\d?)\.music\.163.com\/e?api\/ad data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-https?:\/\/interface\d?\.music\.163\.com\/w?e?api\/(side-bar\/mini-program\/music-service\/account|delivery\/(batch-deliver|deliver)|moment\/tab\/info\/get|yunbei\/account\/entrance\/get) data-type=text data="{}" status-code=200
+https?:\/\/interface\d?\.music\.163\.com\/w?e?api\/(side-bar\/mini-program\/music-service\/account|delivery\/(batch-deliver|deliver)|moment\/tab\/info\/get|yunbei\/account\/entrance\/get) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-https?:\/\/interface\d?\.music\.163\.com\/eapi\/(resource\/comments?\/musiciansaid|community\/friends\/fans-group\/artist\/group\/get|user\/sub\/artist|music\/songshare\/text\/recommend\/get|mine\/applet\/redpoint|resniche\/position\/play\/new\/get) data-type=text data="{}" status-code=200
+https?:\/\/interface\d?\.music\.163\.com\/eapi\/(resource\/comments?\/musiciansaid|community\/friends\/fans-group\/artist\/group\/get|user\/sub\/artist|music\/songshare\/text\/recommend\/get|mine\/applet\/redpoint|resniche\/position\/play\/new\/get) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-https?:\/\/interface\d?\.music\.163.com\/w?e?api\/(search\/(chart|default|rcmd\/keyword|specialkeyword)|resource-exposure\/|activity\/bonus\/playpage\/time\/query) data-type=text data="{}" status-code=200
+https?:\/\/interface\d?\.music\.163.com\/w?e?api\/(search\/(chart|default|rcmd\/keyword|specialkeyword)|resource-exposure\/|activity\/bonus\/playpage\/time\/query) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-https?:\/\/interface\d?\.music\.163.com\/eapi\/(mlivestream\/entrance\/playpage|link\/(position\/show\/strategy|scene\/show)|ios\/version|v\d\/content\/exposure\/comment\/banner) data-type=text data="{}" status-code=200
+https?:\/\/interface\d?\.music\.163.com\/eapi\/(mlivestream\/entrance\/playpage|link\/(position\/show\/strategy|scene\/show)|ios\/version|v\d\/content\/exposure\/comment\/banner) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = *.music.126.net, img1.126.net, www.icourse163.org, nex.163.com, g1.163.com, client.mail.163.com, c.m.163.com, interface*.music.163.com
 ^https?:\/\/p[^4](c)?\.music\.126\.net\/\w+==\/10995\d{13}\.jpg$ data-type=tiny-gif status-code=200
@@ -2109,33 +2109,33 @@ https?:\/\/interface\d?\.music\.163.com\/eapi\/(mlivestream\/entrance\/playpage|
 ^https?:\/\/interface3?\.music\.163\.com/eapi/(ad|abtest|sp|hot|store|mlog|search/(specialkeyword|defaultkeyword|hot)) data-type=tiny-gif status-code=200
 
 # hostname = god.gameyw.netease.com, ok.166.net
-^https?:\/\/god\.gameyw\.netease\.com\/v\d\/ad data-type=text data="{}" status-code=200
+^https?:\/\/god\.gameyw\.netease\.com\/v\d\/ad data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 ^https?:\/\/ok\.166\.net\/reunionpub\/202[2-9]{1}-[0-9]{2}-[0-9]{2}\/ntesgod_cms\/.*.jpg$ data-type=text data=" " status-code=200
 
 # 翻译广告
-^https?:\/\/dict\.youdao\.com\/course\/tab\/translateTab data-type=text data="{}" status-code=200
+^https?:\/\/dict\.youdao\.com\/course\/tab\/translateTab data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 听读训练
-#^https?:\/\/dict\.youdao\.com\/homepage\/tile data-type=text data="{}" status-code=200
+#^https?:\/\/dict\.youdao\.com\/homepage\/tile data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 首次查词弹窗
-^https?:\/\/api-overmind\.youdao\.com\/openapi\/get\/luna\/dict\/dict-mobile\/prod\/dictCommonConfig data-type=text data="{}" status-code=200
+^https?:\/\/api-overmind\.youdao\.com\/openapi\/get\/luna\/dict\/dict-mobile\/prod\/dictCommonConfig data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 首页弹窗
-^https?:\/\/cdke\.youdao\.com\/course3\/recommend\/dict\/startup data-type=text data="{}" status-code=200
+^https?:\/\/cdke\.youdao\.com\/course3\/recommend\/dict\/startup data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 搜索预想
-^https?:\/\/dict\.youdao\.com\/commonsearch data-type=text data="{}" status-code=200
+^https?:\/\/dict\.youdao\.com\/commonsearch data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 会员优惠券弹窗
-^https?:\/\/dict\.youdao\.com\/vip\/activity\/couponinfo data-type=text data="{}" status-code=200
+^https?:\/\/dict\.youdao\.com\/vip\/activity\/couponinfo data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 首页左上角福利中心
-^https?:\/\/dict\.youdao\.com\/dictusertask\/system data-type=text data="{}" status-code=200
+^https?:\/\/dict\.youdao\.com\/dictusertask\/system data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 会员界面横幅广告
-^https?:\/\/dictvip-business\.youdao\.com\/home\/ad data-type=text data="{}" status-code=200
+^https?:\/\/dictvip-business\.youdao\.com\/home\/ad data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 ^https?:\/\/oimage\w\d\.ydstatic\.com\/image\?.+?=adpublish data-type=tiny-gif status-code=200
 
@@ -2148,7 +2148,7 @@ https?:\/\/interface\d?\.music\.163.com\/eapi\/(mlivestream\/entrance\/playpage|
 #（倒计时还在）
 ^https?:\/\/osg-static\.sgcc\.com\.cn\/omg-static\/.*.jpg data-type=text data=" " status-code=200
 
-^https?:\/\/osg-service\.sgcc\.com\.cn:18600\/emss-pfa-appset-front\/bootpageoutter\/ data-type=text data="{}" status-code=200
+^https?:\/\/osg-service\.sgcc\.com\.cn:18600\/emss-pfa-appset-front\/bootpageoutter\/ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = thor.weidian.com
 ^https?:\/\/thor\.weidian\.com\/ares\/home\.splash data-type=text data=" " status-code=200
@@ -2171,14 +2171,14 @@ https?:\/\/interface\d?\.music\.163.com\/eapi\/(mlivestream\/entrance\/playpage|
 ^https?:\/\/mapi\.appvipshop\.com\/vips-mobile\/rest\/activity\/coupon\/float_entrance\/get\?api_key data-type=text data=" " status-code=200
 
 # hostname = qiye.gaoding.com
-^https:\/\/qiye\.gaoding\.com\/api\/v3\/oc\/v2\/delivery-pits\/ios-splash\/ data-type=text data="{}" status-code=200
+^https:\/\/qiye\.gaoding\.com\/api\/v3\/oc\/v2\/delivery-pits\/ios-splash\/ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = api.51credit.com
-^https?:\/\/api\.51credit\.com\/app\/popup\/appPopup data-type=text data="{}" status-code=200
+^https?:\/\/api\.51credit\.com\/app\/popup\/appPopup data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/api\.51credit\.com\/ks\/a\/list\? data-type=text data="{}" status-code=200
+^https?:\/\/api\.51credit\.com\/ks\/a\/list\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/api\.51credit\.com\/bbs\/app\/api\/v\d\/topic\/chat data-type=text data="{}" status-code=200
+^https?:\/\/api\.51credit\.com\/bbs\/app\/api\/v\d\/topic\/chat data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = shopapi.io.mi.com
 ^https?:\/\/shopapi\.io\.mi\.com\/mtop\/mf\/resource\/homePage\/pageConfig data-type=text data=" " status-code=200
@@ -2187,10 +2187,10 @@ https?:\/\/interface\d?\.music\.163.com\/eapi\/(mlivestream\/entrance\/playpage|
 ^https?:\/\/api-mifit.+?\.huami\.com\/discovery\/mi\/discovery\/.+?_ad\? data-type=text data=" " status-code=200
 
 # 去开屏 感谢【别怕我又不乱来】分享
-^https?:\/\/api-miprint\.hannto\.com\/v1\/c\/res\/app\/ad\/\?app_version data-type=text data="{}" status-code=200
+^https?:\/\/api-miprint\.hannto\.com\/v1\/c\/res\/app\/ad\/\?app_version data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 主页上方广告
-^https?:\/\/api\.indeedpower\.com\/v1\/m\/edu\/module\/homepage_banner\/\?randomStr data-type=text data="{}" status-code=200
+^https?:\/\/api\.indeedpower\.com\/v1\/m\/edu\/module\/homepage_banner\/\?randomStr data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = api.jr.mi.com
 ^https?:\/\/api\.jr\.mi\.com\/v\d\/adv\/ data-type=text data=" " status-code=200
@@ -2198,7 +2198,7 @@ https?:\/\/interface\d?\.music\.163.com\/eapi\/(mlivestream\/entrance\/playpage|
 ^https?:\/\/api\.jr\.mi\.com\/jr\/api\/playScreen data-type=text data=" " status-code=200
 
 # hostname = home.mi.com
-^https?:\/\/home\.mi\.com\/cgi-op\/api\/v1\/recommendation\/(banner|carousel\/banners|myTab|openingBanner) data-type=text data="{}" status-code=200
+^https?:\/\/home\.mi\.com\/cgi-op\/api\/v1\/recommendation\/(banner|carousel\/banners|myTab|openingBanner) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = upload-bbs.mihoyo.com
 ^https?:\/\/upload-bbs\.mihoyo\.com\/upload\/202[2-9]{1}\/[0-9]{2}\/[0-9]{2}\/[a-z0-9]{32}_[a-z0-9]{19}\.(jpg|png)$ data-type=text data=" " status-code=200
@@ -2206,10 +2206,10 @@ https?:\/\/interface\d?\.music\.163.com\/eapi\/(mlivestream\/entrance\/playpage|
 ^https?:\/\/xqimg\.imedao\.com\/[a-z0-9]{24}\.jpg$ data-type=text data=" " status-code=200
 
 # 感谢【Joe Joy】分享
-^https?:\/\/api\.xueqiu\.com\/snowpard\/launch_strategy\/query\.json\? data-type=text data="{}" status-code=200
+^https?:\/\/api\.xueqiu\.com\/snowpard\/launch_strategy\/query\.json\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 去除首页的广告
-^https?:\/\/api.xueqiu.com\/ucprofile\/api\/user\/batchGetUserBasicInfo.json data-type=text data="{}" status-code=200
+^https?:\/\/api.xueqiu.com\/ucprofile\/api\/user\/batchGetUserBasicInfo.json data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 首页会有一小部分图片误杀
 ^https?:\/\/images\.cib\.com\.cn\/commons\/uploads\/commons\/[a-zA-Z0-9]{32}\.jpg\?ver=20221[1-2]{1} data-type=text data=" " status-code=200
@@ -2220,9 +2220,9 @@ https?:\/\/interface\d?\.music\.163.com\/eapi\/(mlivestream\/entrance\/playpage|
 ^https?:\/\/file\.cibfintech\.com\/file\/M0[1-9]{1}\/*\/*\/.*.zip data-type=tiny-gif status-code=200
 
 # 开屏广告 感谢【打豆豆】分享
-^https?:\/\/app\.chinahxzq\.com\.cn:9302\/starway-api\/ad data-type=text data="{}" status-code=200
+^https?:\/\/app\.chinahxzq\.com\.cn:9302\/starway-api\/ad data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/app\.chinahxzq\.com\.cn\/starway\/adShow data-type=text data="{}" status-code=200
+^https?:\/\/app\.chinahxzq\.com\.cn\/starway\/adShow data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 开屏广告+弹窗广告+横幅广告
 ^https?:\/\/operationapi\.fosunhanig\.com\/ad\/v\d\/(PopupAdList|ScreenAdList|BannerList) data-type=text data=" " status-code=200
@@ -2238,9 +2238,9 @@ https?:\/\/interface\d?\.music\.163.com\/eapi\/(mlivestream\/entrance\/playpage|
 ^https?:\/\/portal-xunyou\.qingcdn\.com\/api\/v\d\/ios\/configs\/(?>splash_ad|ad_urls) data-type=text data=" " status-code=200
 
 # hostname = smarket.dian.so, file.dian.so
-^https?:\/\/smarket\.dian\.so data-type=text data="{}" status-code=200
+^https?:\/\/smarket\.dian\.so data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/file\.dian\.so\/c\/leto data-type=text data="{}" status-code=200
+^https?:\/\/file\.dian\.so\/c\/leto data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = xhtz.oss-cn-guangzhou.aliyuncs.com
 ^https?:\/\/xhtz.oss-cn-guangzhou\.aliyuncs\.com\/home\/member\/.+\.png$ data-type=text data=" " status-code=200
@@ -2249,71 +2249,71 @@ https?:\/\/interface\d?\.music\.163.com\/eapi\/(mlivestream\/entrance\/playpage|
 ^https?:\/\/shcss\.suning\.com\/shcss-web\/api\/appImage\/queryAppImage\.do data-type=text data=" " status-code=200
 
 # hostname = api.petkit.cn
-^https?:\/\/api\.petkit\.cn\/6\/\/device\/relatedProductsInfo data-type=text data="{}" status-code=200
+^https?:\/\/api\.petkit\.cn\/6\/\/device\/relatedProductsInfo data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 广告下发
-^https?:\/\/portal-portm\.meituan\.com\/horn_ios\/mergeRequest data-type=text data="{}" status-code=200
+^https?:\/\/portal-portm\.meituan\.com\/horn_ios\/mergeRequest data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 开屏广告
-^https?:\/\/mall\.meituan\.com\/api\/c\/homepage\/splash data-type=text data="{}" status-code=200
+^https?:\/\/mall\.meituan\.com\/api\/c\/homepage\/splash data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 首页领券悬浮红包
-^https?:\/\/mall\.meituan\.com\/api\/c\/homepage\/bubble\/operate\/info data-type=text data="{}" status-code=200
+^https?:\/\/mall\.meituan\.com\/api\/c\/homepage\/bubble\/operate\/info data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 我的页面-猜你喜欢
-^https:\/\/mgesq\.api\.mgtv\.com\/v2\/goods\/guess_you_like data-type=text data="{}" status-code=200
+^https:\/\/mgesq\.api\.mgtv\.com\/v2\/goods\/guess_you_like data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 我的页面-
-https://mgesq.api.mgtv.com/v2/user/center/icon data-type=text data="{}" status-code=200
+https://mgesq.api.mgtv.com/v2/user/center/icon data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 搜索排行榜单
-^https:\/\/mgesq\.api\.mgtv\.com\/search\/goods\/rank data-type=text data="{}" status-code=200
+^https:\/\/mgesq\.api\.mgtv\.com\/search\/goods\/rank data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 底部按钮、我的页面左上角
-^https:\/\/mgesq\.api\.mgtv\.com\/user\/center\/config data-type=text data="{}" status-code=200
+^https:\/\/mgesq\.api\.mgtv\.com\/user\/center\/config data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 去广告（这个域名其实已经在分流中拒绝）
-^https?:\/\/zlsdk\.1rtb\.net\/sdk\/req_ad data-type=text data="{}" status-code=200
+^https?:\/\/zlsdk\.1rtb\.net\/sdk\/req_ad data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 红包推广
-^https:\/\/gw\.xiaocantech\.com\/rpc data-type=text data="{}" status-code=200
+^https:\/\/gw\.xiaocantech\.com\/rpc data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 首页横幅推广
-^https:\/\/web2\.realtech-inc\.com\/oss\/xc-app-assets\/configs\/common\/theme\.json data-type=text data="{}" status-code=200
+^https:\/\/web2\.realtech-inc\.com\/oss\/xc-app-assets\/configs\/common\/theme\.json data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 开屏广告
-^https:\/\/sdk\.1rtb\.net\/sdk\/req_ad\? data-type=text data="{}" status-code=200
+^https:\/\/sdk\.1rtb\.net\/sdk\/req_ad\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 更新弹窗
-^https:\/\/gw\.xiaocantech\.com\/g\/pa data-type=text data="{}" status-code=200
+^https:\/\/gw\.xiaocantech\.com\/g\/pa data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 多余模块
-^https:\/\/xxyx-client-api\.xiaoxiaoyouxuan\.com\/vajra data-type=text data="{}" status-code=200
+^https:\/\/xxyx-client-api\.xiaoxiaoyouxuan\.com\/vajra data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-#^https?:\/\/xxyx-client-api\.xiaoxiaoyouxuan\.com\/newcomer_ad data-type=text data="{}" status-code=200
+#^https?:\/\/xxyx-client-api\.xiaoxiaoyouxuan\.com\/newcomer_ad data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = wcprd.hilton.com.cn
 ^https?:\/\/wcprd\.hilton\.com\.cn\/app-middleware\/graphql\?type=splashAd data-type=text data=" " status-code=200
 
 # 开屏广告 需要卸载重装 感谢【别怕我又不乱来】分享
-^https?:\/\/cstore-en-public-tx\.seewo\.com\/easinote5_public data-type=text data="{}" status-code=200
+^https?:\/\/cstore-en-public-tx\.seewo\.com\/easinote5_public data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = vapp.tmuyun.com
-^https:\/\/vapp\.tmuyun\.com\/api\/app_start_page\/list\/new data-type=text data="{}" status-code=200
+^https:\/\/vapp\.tmuyun\.com\/api\/app_start_page\/list\/new data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/vapp\.tmuyun\.com\/api\/buoy\/list data-type=text data="{}" status-code=200
+^https:\/\/vapp\.tmuyun\.com\/api\/buoy\/list data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = client-api-v2.oray.com
 #^https?:\/\/client-api-v2\.oray\.com\/materials data-type=text data=" " status-code=200
 
 # 开屏广告
-^https?:\/\/client-api-v2\.oray\.com\/materials\/SLCC_IOS_STARTUP data-type=text data="{}" status-code=200
+^https?:\/\/client-api-v2\.oray\.com\/materials\/SLCC_IOS_STARTUP data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 首页文字广告
-^https?:\/\/client-api-v2\.oray\.com\/materials\/SLCC_IOS_DEVICE data-type=text data="{}" status-code=200
+^https?:\/\/client-api-v2\.oray\.com\/materials\/SLCC_IOS_DEVICE data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 发现页广告
-^https?:\/\/client-api-v2\.oray\.com\/materials\/SUNLOGIN_CLIENT_IOS_PROMOTION data-type=text data="{}" status-code=200
+^https?:\/\/client-api-v2\.oray\.com\/materials\/SUNLOGIN_CLIENT_IOS_PROMOTION data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = bgw.xinyue.qq.com
 ^https?:\/\/bgw\.xinyue\.qq\.com\/xyapi\.PageService\/GetIndexPopFlash data-type=text data=" " status-code=200
@@ -2339,38 +2339,38 @@ https://mgesq.api.mgtv.com/v2/user/center/icon data-type=text data="{}" status-c
 ^http:\/\/res1\.hubcloud\.com\.cn data-type=text data=" " status-code=200
 
 # 搜索页面净化
-^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.item\.search\.activate\/ data-type=text data="{}" status-code=200
+^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.item\.search\.activate\/ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.search\.discover\/ data-type=text data="{}" status-code=200
+^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.search\.discover\/ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = edit.sinaapp.com
 ^https?:\/\/edit\.sinaapp\.com\/ua\?t=adv data-type=text data=" " status-code=200
 
 # 惊喜弹窗
-^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/surprisebox\/(get_style|open|submit_action) data-type=text data="{}" status-code=200
+^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/surprisebox\/(get_style|open|submit_action) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/www\.xiaohongshu\.com\/api\/marketing\/box\/trigger\? data-type=text data="{}" status-code=200
+^https?:\/\/www\.xiaohongshu\.com\/api\/marketing\/box\/trigger\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 信息流
-^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/note\/guide\? data-type=text data="{}" status-code=200
+^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/note\/guide\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/guide\/user_banner data-type=text data="{}" status-code=200
+^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/guide\/user_banner data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/www\.xiaohongshu\.com\/api\/sns\/(v\d\/ads\/resource|v\d\/hey\/\w+\/hey_gallery) data-type=text data="{}" status-code=200
+^https?:\/\/www\.xiaohongshu\.com\/api\/sns\/(v\d\/ads\/resource|v\d\/hey\/\w+\/hey_gallery) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 评论区图片水印 (实验功能可能无效)
 ^https?:\/\/ci\.xiaohongshu\.com\/system_config\/watermark data-type=tiny-gif status-code=200
 
 # 播放页广告
-^https:\/\/rr[\w-]+\.googlevideo\.com\/initplayback\? data-type=text data="{}" status-code=200
+^https:\/\/rr[\w-]+\.googlevideo\.com\/initplayback\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = patient-api.suh.cn, userpms-api.suh.cn
-^https:\/\/userpms-api\.suh\.cn\/apt\/api\/bannar\/PageList\?sysSearchKey=sysPat&showSearchKey=advertising&pageIndex=1&pagesize=100&lanSearchValue=1&locationSearchKey=&status=1& data-type=text data="{}" status-code=200
+^https:\/\/userpms-api\.suh\.cn\/apt\/api\/bannar\/PageList\?sysSearchKey=sysPat&showSearchKey=advertising&pageIndex=1&pagesize=100&lanSearchValue=1&locationSearchKey=&status=1& data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/patient-api\.suh\.cn\/apt\/api\/userinfo\/GetNotice\?appname=pmsys&channel=6&device=ios&language=1&source=2&version= data-type=text data="{}" status-code=200
+^https:\/\/patient-api\.suh\.cn\/apt\/api\/userinfo\/GetNotice\?appname=pmsys&channel=6&device=ios&language=1&source=2&version= data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 #^https?:\/\/wallet\.95516\.com\/s\/wl\/icon\/long url reject
-#^https?:\/\/(tysdk|ads)\.95516\.com data-type=text data="{}" status-code=200
+#^https?:\/\/(tysdk|ads)\.95516\.com data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 添加主机名后影响APP正常运行
 ^https?:\/\/static.psbc.com:8090\/mbank_f\/images\/[0-9]+\.png data-type=text data=" " status-code=200
@@ -2381,30 +2381,30 @@ https://mgesq.api.mgtv.com/v2/user/center/icon data-type=text data="{}" status-c
 ^https?:\/\/d\.psbc\.com:9091\/mcc\/resources\/[0-9]+\.(jpg|png|jpeg) data-type=text data=" " status-code=200
 
 # 首页和我的横幅广告
-^https?:\/\/api\.winbull8\.com\/v1\/marketing\/(advert|activity)\/(list|page) data-type=text data="{}" status-code=200
+^https?:\/\/api\.winbull8\.com\/v1\/marketing\/(advert|activity)\/(list|page) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 我的横幅广告
-^https?:\/\/hz\.yxzq\.com\/news-configserver\/api\/v1\/query\/banner_advertisement data-type=text data="{}" status-code=200
+^https?:\/\/hz\.yxzq\.com\/news-configserver\/api\/v1\/query\/banner_advertisement data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 播放页弹窗动图
-^https?:\/\/acs\.youku\.com\/gw\/mtop\.youku\.(pisp\.scripts\.get|xspace\.play\.position\.preload\.query|xspace\.poplayer\.position\.query) data-type=text data="{}" status-code=200
+^https?:\/\/acs\.youku\.com\/gw\/mtop\.youku\.(pisp\.scripts\.get|xspace\.play\.position\.preload\.query|xspace\.poplayer\.position\.query) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 开屏广告,文章顶部广告 感谢【Ava阿檬】分享
-^https?:\/\/app02\.vgtime\.com:8080\/vgtime-app\/api\/v2\/init\/ad\.json$ data-type=text data="{}" status-code=200
+^https?:\/\/app02\.vgtime\.com:8080\/vgtime-app\/api\/v2\/init\/ad\.json$ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = api.yonghuivip.com
 ^https?:\/\/api\.yonghuivip\.com\/web\/shensuan\/ad\/getAd data-type=text data=" " status-code=200
 
 # 净化 感谢【TEXAS】分享
-^https?:\/\/api\.ulife\.group\/signintask\/adServing data-type=text data="{}" status-code=200
+^https?:\/\/api\.ulife\.group\/signintask\/adServing data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/api\.ulife\.group\/auth\/account\/getUpgradeStrategy data-type=text data="{}" status-code=200
+^https?:\/\/api\.ulife\.group\/auth\/account\/getUpgradeStrategy data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/api\.ulife\.group\/market\/frontEntrance\/getThirdAdvertising\?displayPort=1&type=15 data-type=text data="{}" status-code=200
+^https?:\/\/api\.ulife\.group\/market\/frontEntrance\/getThirdAdvertising\?displayPort=1&type=15 data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/api\.ulife\.group\/market\/memberCard\/listMemberCard\?isShowSecondaryCard=1 data-type=text data="{}" status-code=200
+^https?:\/\/api\.ulife\.group\/market\/memberCard\/listMemberCard\?isShowSecondaryCard=1 data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/api\.ulife\.group\/auth\/account\/entrance data-type=text data="{}" status-code=200
+^https?:\/\/api\.ulife\.group\/auth\/account\/entrance data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 开屏广告 感谢【finch.ftm】分享
 ^https?:\/\/one-app-h5\.faw-vw\.com\/prod-api\/mobile\/one-app\/general\/public\/v1\/official_activity\/get_animation_putaway_list\?appkey.* data-type=text data=" " status-code=200
@@ -2424,13 +2424,13 @@ https://mgesq.api.mgtv.com/v2/user/center/icon data-type=text data="{}" status-c
 ^https?:\/\/cheyouapi\.ycapp\.yiche\.com\/appforum\/getusermessagecount data-type=tiny-gif status-code=200
 
 # 底部横幅广告
-^https?:\/\/ocrifs\.ejoy\.sinopec\.com\/advertitfs\/advert\/findAdvertInfo data-type=text data="{}" status-code=200
+^https?:\/\/ocrifs\.ejoy\.sinopec\.com\/advertitfs\/advert\/findAdvertInfo data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 开屏广告
-^https?:\/\/compus\.xiaofubao\.com\/compus\/advertising\/getStartupAdvertising data-type=text data="{}" status-code=200
+^https?:\/\/compus\.xiaofubao\.com\/compus\/advertising\/getStartupAdvertising data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = e-static.aia.com.cn
-^https?:\/\/e-static\.aia\.com\.cn\/kyh\/resourcefolder\/ads data-type=text data="{}" status-code=200
+^https?:\/\/e-static\.aia\.com\.cn\/kyh\/resourcefolder\/ads data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = mobile-api2011.elong.com, webboot.zhangyue.com, saad.ms.zhangyue.net
 ^https?:\/\/mobile-api2011\.elong\.com\/ad(?>v|gateway) data-type=text data=" " status-code=200
@@ -2451,13 +2451,13 @@ https://mgesq.api.mgtv.com/v2/user/center/icon data-type=text data="{}" status-c
 ^https?:\/\/issuecdn\.baidupcs\.com\/issue\/netdisk\/ts_ad\/ data-type=text data=" " status-code=200
 
 # 开屏广告
-^https?:\/\/a\.sinopecsales\.com\/app\/cms data-type=text data="{}" status-code=200
+^https?:\/\/a\.sinopecsales\.com\/app\/cms data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 弹窗广告（APP降级10.66.80版本） 如开启可自行添加主机名 
-^https?:\/\/mapi-app\.bestpay\.com\.cn\/gapi\/appclient\/noEnc\/getAppPopup data-type=text data="{}" status-code=200
+^https?:\/\/mapi-app\.bestpay\.com\.cn\/gapi\/appclient\/noEnc\/getAppPopup data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 开屏广告（APP降级10.66.80版本）
-^https?:\/\/mapi-app\.bestpay\.com\.cn\/gapi\/appClient\/noEnc\/getHomePageAds data-type=text data="{}" status-code=200
+^https?:\/\/mapi-app\.bestpay\.com\.cn\/gapi\/appClient\/noEnc\/getHomePageAds data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = *.yuxueyuan.cn
 ^https?:\/\/.*\.yuxueyuan\.cn\/yxy-api-gateway\/api\/json\/advert\/getsAdStartScreen data-type=text data=" " status-code=200
@@ -2465,32 +2465,32 @@ https://mgesq.api.mgtv.com/v2/user/center/icon data-type=text data="{}" status-c
 # hostname = api-cslp-emt.amazon.cn
 ^https?:\/\/api-cslp-emt\.amazon\.cn\/gateway\/content\/widget\/popup data-type=text data=" " status-code=200
 
-^https?:\/\/api-cslp-emt\.amazon\.cn\/gateway\/recommend data-type=text data="{}" status-code=200
+^https?:\/\/api-cslp-emt\.amazon\.cn\/gateway\/recommend data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = api2.yaduo.com
-^https?:\/\/api2\.yaduo\.com\/atourlife\/activity\/appLaunch data-type=text data="{}" status-code=200
+^https?:\/\/api2\.yaduo\.com\/atourlife\/activity\/appLaunch data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 开屏以及app内弹窗广告
-^https:\/\/api5\.youonbike\.com\/ibike-rest-service\/user\/fun_IBF_GetAdvert data-type=text data="{}" status-code=200
+^https:\/\/api5\.youonbike\.com\/ibike-rest-service\/user\/fun_IBF_GetAdvert data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = web-stable-cdn.ykccn.com, gw3.ykccn.com
 ^https?:\/\/web-stable-cdn\.ykccn\.com\/sp-img-2023\/common\/weCom-open data-type=tiny-gif status-code=200
 
-^https?:\/\/gw3\.ykccn\.com\/api\/omp\/mt\/appAdvertising\/ data-type=text data="{}" status-code=200
+^https?:\/\/gw3\.ykccn\.com\/api\/omp\/mt\/appAdvertising\/ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/gw3\.ykccn\.com\/api\/omp\/mt\/charge\/activity\/package\/newest data-type=text data="{}" status-code=200
+^https?:\/\/gw3\.ykccn\.com\/api\/omp\/mt\/charge\/activity\/package\/newest data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 开屏广告
 ^https?:\/\/webappcfg\.paas\.cmbchina\.com\/v\d\/func\/getmarketconfig data-type=text data=" " status-code=200
 
 # 首页横幅广告
-^https?:\/\/mbmodule-openapi\.paas\.cmbchina\.com\/graphic\/v2\/module\/graphic data-type=text data="{}" status-code=200
+^https?:\/\/mbmodule-openapi\.paas\.cmbchina\.com\/graphic\/v2\/module\/graphic data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 开屏广告
-^https?:\/\/mbasecc\.(bas|bcs)\.cmbchina\.com\/Edge\/api\/mlife\.clientface\.clientservice\.api\.advertiseService\/preCacheAdvertiseSec data-type=text data="{}" status-code=200
+^https?:\/\/mbasecc\.(bas|bcs)\.cmbchina\.com\/Edge\/api\/mlife\.clientface\.clientservice\.api\.advertiseService\/preCacheAdvertiseSec data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 首页随机弹窗
-^https?:\/\/intellicc\.bcs\.cmbchina\.com\/Edge\/api\/mlife\.intelli\.adrender\.api\.AdWork\/getAdsBySlotId data-type=text data="{}" status-code=200
+^https?:\/\/intellicc\.bcs\.cmbchina\.com\/Edge\/api\/mlife\.intelli\.adrender\.api\.AdWork\/getAdsBySlotId data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # > 中国银行 缤纷生活
 ^https?:\/\/mlife\.jf365\.boc\.cn\/AppPrj\/FirstPic\.do\?txnId=2PIC000001 data-type=text data=" " status-code=200
@@ -2498,7 +2498,7 @@ https://mgesq.api.mgtv.com/v2/user/center/icon data-type=text data="{}" status-c
 # hostname = wap.bank.ecitic.com, imcs.citicbank.com
 ^https?:\/\/wap.bank\.ecitic\.com:6443\/NMBFOServer\/cbframework\.do\?act=CUBEPAGEDATA data-type=text data=" " status-code=200
 
-^https?:\/\/imcs\.citicbank\.com\/cloud\/.+(1125.+2436|1242.+2688|750.+1638|563.+1218) data-type=text data="{}" status-code=200
+^https?:\/\/imcs\.citicbank\.com\/cloud\/.+(1125.+2436|1242.+2688|750.+1638|563.+1218) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = mcmm.caiyun.feixin.10086.cn, mrp.mcloud.139.com, ad.mcloud.139.com, middle.yun.139.com
 ^https?:\/\/mcmm\.caiyun\.feixin\.10086\.cn:80\/mcmm\/api\/IAdvert data-type=text data=" " status-code=200
@@ -2507,14 +2507,14 @@ https://mgesq.api.mgtv.com/v2/user/center/icon data-type=text data="{}" status-c
 
 ^https?:\/\/middle\.yun\.139\.com\/openapi\/cardConfig\/queryCardInfoV3 data-type=text data=" " status-code=200
 
-^https?:\/\/ad\.mcloud\.139\.com\/advertapi\/adv-filter\/adv-filter\/AdInfoFilter\/getAdInfos data-type=text data="{}" status-code=200
+^https?:\/\/ad\.mcloud\.139\.com\/advertapi\/adv-filter\/adv-filter\/AdInfoFilter\/getAdInfos data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/mrp\.mcloud\.139\.com\/mc\/mc-client-service\/openapi\/letter\/query data-type=text data="{}" status-code=200
+^https?:\/\/mrp\.mcloud\.139\.com\/mc\/mc-client-service\/openapi\/letter\/query data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = m.client.10010.com, m1.ad.10010.com, res.mall.10010.cn
 ^https?:\/\/m\.client\.10010\.com\/mobileService\/(activity|customer)\/(accountListData|get_client_adv|get_startadv) data-type=tiny-gif status-code=200
 
-^https?:\/\/m\.client\.10010\.com\/mobileService\/customer\/getclientconfig\.htm data-type=text data="{}" status-code=200
+^https?:\/\/m\.client\.10010\.com\/mobileService\/customer\/getclientconfig\.htm data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 ^https?:\/\/m\.client\.10010\.com\/uniAdmsInterface\/(getHomePageAd|getWelcomeAd) data-type=tiny-gif status-code=200
 
@@ -2530,16 +2530,16 @@ https://mgesq.api.mgtv.com/v2/user/center/icon data-type=text data="{}" status-c
 ^https?:\/\/app\.10099\.com\.cn\/contact-web\/api\/version\/getFlashScreenPage data-type=text data=" " status-code=200
 
 # 横幅广告
-^https?:\/\/e\.weather\.com\.cn\/weChat\/typhoonNull\.json data-type=text data="{}" status-code=200
+^https?:\/\/e\.weather\.com\.cn\/weChat\/typhoonNull\.json data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = xyz.cnki.net
 ^https?:\/\/xyz\.cnki\.net\/resourcev7\/api\/manualpush\/SlidsList$ data-type=text data=" " status-code=200
 
 # 启动开屏
-^https?:\/\/zgrb\.epicc\.com\.cn\/G-HAPP\/a\/update\/startupPage\/v data-type=text data="{}" status-code=200
+^https?:\/\/zgrb\.epicc\.com\.cn\/G-HAPP\/a\/update\/startupPage\/v data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 猜你喜欢
-^https?:\/\/zgrb\.epicc\.com\.cn\/G-HAPP\/a\/config\/guessYouLike\/v data-type=text data="{}" status-code=200
+^https?:\/\/zgrb\.epicc\.com\.cn\/G-HAPP\/a\/config\/guessYouLike\/v data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = sichuan.95504.net
 ^https?:\/\/sichuan\.95504\.net\/v\d\/gd\/index\/get data-type=text data=" " status-code=200
@@ -2548,70 +2548,70 @@ https://mgesq.api.mgtv.com/v2/user/center/icon data-type=text data="{}" status-c
 ^https?:\/\/app\.badmintoncn\.com\/mag\/operative\/v\d\/ad\/listNotEndByPlace\?place=first_page data-type=text data=" " status-code=200
 
 # 微信小程序净化
-^https?:\/\/hdgateway\.zto\.com\/getApolloConfig data-type=text data="{}" status-code=200
+^https?:\/\/hdgateway\.zto\.com\/getApolloConfig data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/hdgateway\.zto\.com\/track data-type=text data="{}" status-code=200
+^https?:\/\/hdgateway\.zto\.com\/track data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/hdgateway\.zto\.com\/getAdInfo data-type=text data="{}" status-code=200
+^https?:\/\/hdgateway\.zto\.com\/getAdInfo data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/hdgateway\.zto\.com\/listJumperShow data-type=text data="{}" status-code=200
+^https?:\/\/hdgateway\.zto\.com\/listJumperShow data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 开屏广告 首页弹窗 如开启可自行添加主机名
 ^https?:\/\/openapi\.boc\.cn\/unlogin\/app\/cbsp\/query_ad_list data-type=text data=" " status-code=200
 
 # 弹窗广告
-^https?:\/\/minipro\.95504\.net\/app\/json\/ad\/getPopAdData data-type=text data="{}" status-code=200
+^https?:\/\/minipro\.95504\.net\/app\/json\/ad\/getPopAdData data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 底部横幅广告
-^https?:\/\/minipro\.95504\.net\/app\/json\/ad\/getIndexAdData data-type=text data="{}" status-code=200
+^https?:\/\/minipro\.95504\.net\/app\/json\/ad\/getIndexAdData data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 需要重装
-^https?:\/\/apicloud\.zol\.com\.cn\/Article\/WapLaunchLogo data-type=text data="{}" status-code=200
+^https?:\/\/apicloud\.zol\.com\.cn\/Article\/WapLaunchLogo data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 倒计时还在，点击任意位置跳过开屏动画
 ^https?:\/\/direct\.z-bank\.com\/portal\/AdvertImageDownLoad4Mobile\.do data-type=text data=" " status-code=200
 
 # 开屏广告 弹窗广告
-^https?:\/\/c\.zhangle\.com\/pic\/mktg\/diversity\/.+\.jpg$ data-type=text data="{}" status-code=200
+^https?:\/\/c\.zhangle\.com\/pic\/mktg\/diversity\/.+\.jpg$ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/live\.inst-service\.htsc\.com\/live data-type=text data="{}" status-code=200
+^https?:\/\/live\.inst-service\.htsc\.com\/live data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 ^https?:\/\/geetest\.htsc\.com:8888\/pre_get_token data-type=text data=" " status-code=200
 
 ^https?:\/\/119\.29\.29\.98\/d data-type=text data=" " status-code=200
 
-^https:\/\/api\.zhihu\.com\/commercial_api\/(answer\/\d+\/bottom-v2|article\/\d+\/bottom-v2|banners_v3\/app_topstory_banner|launch_v2|real_time_launch_v2) data-type=text data="{}" status-code=200
+^https:\/\/api\.zhihu\.com\/commercial_api\/(answer\/\d+\/bottom-v2|article\/\d+\/bottom-v2|banners_v3\/app_topstory_banner|launch_v2|real_time_launch_v2) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/api\.zhihu\.com\/content-distribution-core\/bubble\/common\/settings data-type=text data="{}" status-code=200
+^https:\/\/api\.zhihu\.com\/content-distribution-core\/bubble\/common\/settings data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/api\.zhihu\.com\/(moments\/lastread|drama\/hot-drama-list) data-type=text data="{}" status-code=200
+^https:\/\/api\.zhihu\.com\/(moments\/lastread|drama\/hot-drama-list) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/api\.zhihu\.com\/root\/window data-type=text data="{}" status-code=200
+^https:\/\/api\.zhihu\.com\/root\/window data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 会员页面 弹窗,悬浮动图
-^https:\/\/api\.zhihu\.com\/(bazaar\/float_window|market\/popovers_v2) data-type=text data="{}" status-code=200
+^https:\/\/api\.zhihu\.com\/(bazaar\/float_window|market\/popovers_v2) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 我的页面 项目列表,会员卡片
-^https:\/\/api\.zhihu\.com\/me\/guides data-type=text data="{}" status-code=200
+^https:\/\/api\.zhihu\.com\/me\/guides data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 搜索页 关键词,猜你想搜
-^https:\/\/api\.zhihu\.com\/search\/preset_words data-type=text data="{}" status-code=200
+^https:\/\/api\.zhihu\.com\/search\/preset_words data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/www\.zhihu\.com\/api\/v4\/search\/related_queries\/(article|answer)\/\d+ data-type=text data="{}" status-code=200
+^https:\/\/www\.zhihu\.com\/api\/v4\/search\/related_queries\/(article|answer)\/\d+ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 回答详情页,评论区顶部,下一个回答
-^https:\/\/api\.zhihu\.com\/comment_v5\/(articles|answers)\/\d+\/list-headers data-type=text data="{}" status-code=200
+^https:\/\/api\.zhihu\.com\/comment_v5\/(articles|answers)\/\d+\/list-headers data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/api\.zhihu\.com\/prague\/related_suggestion_native\/feed\? data-type=text data="{}" status-code=200
+^https:\/\/api\.zhihu\.com\/prague\/related_suggestion_native\/feed\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/api\.zhihu\.com\/v5\.1\/topics\/answer\/\d+\/relation data-type=text data="{}" status-code=200
+^https:\/\/api\.zhihu\.com\/v5\.1\/topics\/answer\/\d+\/relation data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/api\.zhihu\.com\/ad-style-service\/request data-type=text data="{}" status-code=200
+^https:\/\/api\.zhihu\.com\/ad-style-service\/request data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/appcloud2\.zhihu\.com\/v3\/resource\?group_name=mp data-type=text data="{}" status-code=200
+^https:\/\/appcloud2\.zhihu\.com\/v3\/resource\?group_name=mp data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 网页版去广告
-^https:\/\/api\.zhihu\.com\/distribute\/rhea\/qa_ad_card\/h5\/recommendation\? data-type=text data="{}" status-code=200
+^https:\/\/api\.zhihu\.com\/distribute\/rhea\/qa_ad_card\/h5\/recommendation\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = syh.zybang.com, www.zybang.com
 ^https?:\/\/(syh|www)\.zybang\.com\/adx\/ data-type=text data=" " status-code=200
@@ -2632,7 +2632,7 @@ https://mgesq.api.mgtv.com/v2/user/center/icon data-type=text data="{}" status-c
 ^https?:\/\/quanguo\.mygolbs\.com:8081\/MyBusServer\/servlet\/MyGoServer\.HttpPool\.HttpHandlerServlet data-type=text data=" " status-code=200
 
 # 开屏广告
-^https?:\/\/vapp\.tmuyun\.com\/api\/app_start_page\/list\/new data-type=text data="{}" status-code=200
+^https?:\/\/vapp\.tmuyun\.com\/api\/app_start_page\/list\/new data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = *.pstatp.com, amemv.com, musical.com, snssdk.com, tiktokv.com, dsp.toutiao.com
 #^https?:\/\/.+\.pstatp\.com\/img\/ad data-type=text data=" " status-code=200
@@ -2649,14 +2649,14 @@ https://mgesq.api.mgtv.com/v2/user/center/icon data-type=text data="{}" status-c
 ^https?:\/\/.+\.amemv\.com\/.+stats data-type=tiny-gif status-code=200
 
 # hostname = app.zhuanzhuan.com
-^https?:\/\/app\.zhuanzhuan\.com\/zzx\/transfer\/getConfigInfo data-type=text data="{}" status-code=200
+^https?:\/\/app\.zhuanzhuan\.com\/zzx\/transfer\/getConfigInfo data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/app\.zhuanzhuan\.com\/zzopen\/popwindow\/getallpopwin\? data-type=text data="{}" status-code=200
+^https?:\/\/app\.zhuanzhuan\.com\/zzopen\/popwindow\/getallpopwin\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzlogic\/getOpenScreen data-type=text data="{}" status-code=200
+^https?:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzlogic\/getOpenScreen data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 转转右下角悬浮广告
-^https?:\/\/app\.zhuanzhuan\.com\/zz\/transfer\/userred\?scene=homePage data-type=text data="{}" status-code=200
+^https?:\/\/app\.zhuanzhuan\.com\/zz\/transfer\/userred\?scene=homePage data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 ^https?:\/\/ossweb-img\.qq\.com\/upload\/adw\/image\/[0-9]{3}\/202[0-9]{5}\/[a-z0-9]{32}\.(jpg|jpeg) data-type=text data=" " status-code=200
 
@@ -2670,21 +2670,21 @@ https://mgesq.api.mgtv.com/v2/user/center/icon data-type=text data="{}" status-c
 ^https?:\/\/fastbuyer\.zbj\.com\/configure\/screenAdConfig\/ data-type=text data=" " status-code=200
 
 # 开屏广告 影响携程部分功能正常运行，携程8.40.0以下的版本不受影响。如开启可自行添加主机名
-^https?:\/\/m\.ctrip\.com\/restapi\/soa2\/13916\/scjson\/tripAds data-type=text data="{}" status-code=200
+^https?:\/\/m\.ctrip\.com\/restapi\/soa2\/13916\/scjson\/tripAds data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = ztoread.ziroom.com
-^https?:\/\/ztoread\.ziroom\.com\/foka-card-api\/popup\/v2\/get data-type=text data="{}" status-code=200
+^https?:\/\/ztoread\.ziroom\.com\/foka-card-api\/popup\/v2\/get data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/ztoread\.ziroom\.com\/ymerApi\/v\d\/index\/open data-type=text data="{}" status-code=200
+^https?:\/\/ztoread\.ziroom\.com\/ymerApi\/v\d\/index\/open data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 需卸载重装 感谢【zyu0090】分享
 ^https?:\/\/preprod\.cdzghome\.com:8100\/banner\/bootUp data-type=text data=" " status-code=200
 
 # 去主界面广告
-^https?:\/\/apio\.zhengqi100\.com\/forum\/thread\/listsHome data-type=text data="{}" status-code=200
+^https?:\/\/apio\.zhengqi100\.com\/forum\/thread\/listsHome data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = beehiveapi.58.com
-^https?:\/\/beehiveapi\.58\.com\/adplace\/zcm data-type=text data="{}" status-code=200
+^https?:\/\/beehiveapi\.58\.com\/adplace\/zcm data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = wrapper.cyapi.cn, api.caiyunapp.com
 ^https?:\/\/wrapper\.cyapi\.cn\/v1\/activity\? data-type=file data="https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/chongxie/caiyun.json"

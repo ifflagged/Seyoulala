@@ -11,7 +11,7 @@ DOMAIN,sensors.umetrip.com.cn,REJECT
 ^https?:\/\/(discardrp|startup)\.umetrip\.com\/gateway\/api\/umetrip\/native - reject
 
 [Map Local]
-^https?:\/\/oss\.umetrip\.com\/fs\/advert\/polite data-type=text data="{}" status-code=200
+^https?:\/\/oss\.umetrip\.com\/fs\/advert\/polite data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 [Script]
 # > 航旅纵横 - UMETRIP

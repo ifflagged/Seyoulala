@@ -11,7 +11,7 @@ DOMAIN,yl.zh.cmbchina.com,REJECT
 # > 招商银行 - CMBCHINA
 ^https?:\/\/webappcfg\.paas\.cmbchina\.com\/v\d\/func\/getmarketconfig data-type=text data=" " status-code=200
 
-^https?:\/\/webapp\.joyingtrip\.com\/cmbapp\/api\/hotel\/marketing\/adListNew data-type=text data="{}" status-code=200
+^https?:\/\/webapp\.joyingtrip\.com\/cmbapp\/api\/hotel\/marketing\/adListNew data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 ^https?:\/\/mobile\.cmbchina\.com\/dcardmanage\/salary-welfare\/get-recommend data-type=file data="https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/cmb/cmb.json"
 

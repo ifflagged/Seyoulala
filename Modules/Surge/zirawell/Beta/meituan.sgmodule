@@ -51,7 +51,7 @@ DOMAIN-KEYWORD,report.meituan,REJECT
 
 ^https?:\/\/(s3plus|flowplus)\.meituan\.net\/v\d\/\w+\/linglong\/.+\.(?>gif|jpg|mp4) data-type=tiny-gif status-code=200
 
-^https?:\/\/portal-portm\.meituan\.com\/horn_ios data-type=text data="{}" status-code=200
+^https?:\/\/portal-portm\.meituan\.com\/horn_ios data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 [MITM]
 hostname = %APPEND% apimobile.meituan.com, img.meituan.net, p*.meituan.net, www.meituan.com, s3plus.meituan.net, flowplus.meituan.net, portal-portm.meituan.com, sqt.meituan.com

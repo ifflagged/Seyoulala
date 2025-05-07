@@ -12,9 +12,9 @@
 ^https?:\/\/img0[1-9]{1}\.luckincoffeecdn\.com\/group\d/M00/[A-Z0-9]{2}/[A-Z0-9]{2}/[a-zA-Z0-9]{29}\.(?>jpg|jpeg)_\.webp data-type=text data=" " status-code=200
 
 # > 瑞幸咖啡<微信小程序> - LKCOFFEE
-^https?:\/\/capi\.lkcoffee\.com\/resource\/m\/order\/orderBanner data-type=text data="{}" status-code=200
+^https?:\/\/capi\.lkcoffee\.com\/resource\/m\/order\/orderBanner data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/capi\.lkcoffee\.com\/resource\/market\/receiveCoupon\/receiveCouponPop data-type=text data="{}" status-code=200
+^https?:\/\/capi\.lkcoffee\.com\/resource\/market\/receiveCoupon\/receiveCouponPop data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 [Script]
 replaceBody = type=http-response, pattern=^https?:\/\/m\.lkcoffee\.com\/ecapi\/resource\/m\/member\/exchange\/page, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/lkcoffee/replace-body.js, requires-body=true, max-size=-1, timeout=30, argument=%5C%7B.%2B%5C%7D-%3E%7B%22status%22%3A%22SUCCESS%22%7D

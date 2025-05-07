@@ -20,23 +20,23 @@ AND,((IP-ASN,63646,no-resolve),(DEST-PORT,25641),(PROTOCOL,TCP)),REJECT
 #DOMAIN,img-ys011.didistatic.com,REJECT
 
 [Map Local]
-^https:\/\/res\.xiaojukeji\.com\/resapi\/activity\/getMulti\? data-type=text data="{}" status-code=200
+^https:\/\/res\.xiaojukeji\.com\/resapi\/activity\/getMulti\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/res\.xiaojukeji\.com\/resapi\/activity\/xpget data-type=text data="{}" status-code=200
+^https:\/\/res\.xiaojukeji\.com\/resapi\/activity\/xpget data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/ct\.xiaojukeji\.com\/agent\/v3\/feeds data-type=text data="{}" status-code=200
+^https:\/\/ct\.xiaojukeji\.com\/agent\/v3\/feeds data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/freight\.xiaojukeji\.com\/gateway data-type=text data="{}" status-code=200
+^https:\/\/freight\.xiaojukeji\.com\/gateway data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/daijia\.kuaidadi\.com:443\/gateway data-type=text data="{}" status-code=200
+^https:\/\/daijia\.kuaidadi\.com:443\/gateway data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/res\.xiaojukeji\.com\/resapi\/activity\/mget data-type=text data="{}" status-code=200
+^https:\/\/res\.xiaojukeji\.com\/resapi\/activity\/mget data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/other\/fast data-type=text data="{}" status-code=200
+^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/other\/fast data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/conf\.diditaxi\.com\.cn\/dynamic\/conf data-type=text data="{}" status-code=200
+^https:\/\/conf\.diditaxi\.com\.cn\/dynamic\/conf data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v1\/other\/slow data-type=text data="{}" status-code=200
+^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v1\/other\/slow data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 [Script]
 移除广告 = type=http-response, pattern=^https:\/\/common\.diditaxi\.com\.cn\/common\/v\d\/usercenter\/me, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/DiDi-AD/DiDi.js, requires-body=true

@@ -14,7 +14,7 @@
 
 [Map Local]
 # > 微博_启动感兴趣弹窗@ddgksf2013
-^https?:\/\/api\.weibo\.cn\/.*account\/recommend_interesttags data-type=text data="{}" status-code=200
+^https?:\/\/api\.weibo\.cn\/.*account\/recommend_interesttags data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # > 微博_首页顶部直播推荐Tab@ddgksf2013
 ^https?:\/\/api\.weibo\.cn\/.*\/media_homelist data-type=text data=" " status-code=200
@@ -23,31 +23,31 @@
 ^https?:\/\/api\.weibo\.cn\/.*finder\/searchbarchange data-type=text data=" " status-code=200
 
 # > 微博_AD_Preload@ddgksf2013
-^https?:\/\/api\.weibo\.cn\/\d\/ad\/preload data-type=text data="{}" status-code=200
+^https?:\/\/api\.weibo\.cn\/\d\/ad\/preload data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # > 微博_用户推荐弹窗@ddgksf2013
-^https?:\/\/api\.weibo\.cn\/\d\/profile\/recommend_popuser data-type=text data="{}" status-code=200
+^https?:\/\/api\.weibo\.cn\/\d\/profile\/recommend_popuser data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # > 微博_每日一次的开屏广告请求@ddgksf2013
 ^https?:\/\/boot.*weibo\.com\/v\d\/ad\/realtime data-type=text data=" " status-code=200
 
 # > 微博_去除底部超话栏表层浮icon及tips@ddgksf2013
-^https?:\/\/api\.weibo\.cn\/.*discovery_home_bottom_getdotinfo data-type=text data="{}" status-code=200
+^https?:\/\/api\.weibo\.cn\/.*discovery_home_bottom_getdotinfo data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # > 微博_屏蔽首页左上角每日的弹窗tips@ddgksf2013
-^https?:\/\/m?api\.weibo\.c(n|om)\/\d/push/daily data-type=text data="{}" status-code=200
+^https?:\/\/m?api\.weibo\.c(n|om)\/\d/push/daily data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # > 微博_Spotlight@ddgksf2013
-^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/hot\/hours_spotlight data-type=text data="{}" status-code=200
+^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/hot\/hours_spotlight data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # > 微博国际版_趋势页热门影片@ddgksf2013
-^https?:\/\/api\.weibo\.cn\/\d\/cardlist\?v_f=.*Weibo_intl data-type=text data="{}" status-code=200
+^https?:\/\/api\.weibo\.cn\/\d\/cardlist\?v_f=.*Weibo_intl data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # > 微博国际版_屏蔽hotsearch@ddgksf2013
-^https?:\/\/weibointl\.api\.weibo\.c(n|om)\/portal\.php\?a=hot_search_users data-type=text data="{}" status-code=200
+^https?:\/\/weibointl\.api\.weibo\.c(n|om)\/portal\.php\?a=hot_search_users data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # > 微博国际版_屏蔽热推荐@ddgksf2013
-^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/ad\/weibointl\? data-type=text data="{}" status-code=200
+^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/ad\/weibointl\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 [Script]
 # > 微博_首页顶部homeExtend@ddgksf2013

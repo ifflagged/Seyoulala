@@ -543,7 +543,7 @@ DOMAIN-SUFFIX,count.video.sina.com.cn,REJECT
 
 ^https?:\/\/mmgr\.gtimg\.com\/gjsmall\/qqpim\/public\/ios\/splash\/.+?\/\d{4}_\d{4} data-type=tiny-gif status-code=200
 
-^https?:\/\/bk\.bingo\.qq\.com\/bk\/crx\/data\/videoAd data-type=text data="{}" status-code=200
+^https?:\/\/bk\.bingo\.qq\.com\/bk\/crx\/data\/videoAd data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 ^https?:\/\/afd\.baidu\.com\/afd\/entry data-type=tiny-gif status-code=200
 
@@ -555,16 +555,16 @@ DOMAIN-SUFFIX,count.video.sina.com.cn,REJECT
 
 ^https?:\/\/g\.alicdn\.com\/(?>alilog|trace) data-type=text data=" " status-code=200
 
-^https?:\/\/yixiu-abtest\.alicdn\.com\/ut-abtest\/config data-type=text data="{}" status-code=200
+^https?:\/\/yixiu-abtest\.alicdn\.com\/ut-abtest\/config data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # > 谷歌系 - GOOGLE
-^https?:\/\/www\.google\.com\/ads data-type=text data="{}" status-code=200
+^https?:\/\/www\.google\.com\/ads data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # > 贝塔科技 - FOTOABLE
 ^https?:\/\/cdn\.api\.fotoable\.com\/Advertise\/ data-type=text data=" " status-code=200
 
 # > 蓝卡科技 - BLUECARD
-^https?:\/\/cloud\.bluecardsoft\.com\/yuntingad\/ data-type=text data="{}" status-code=200
+^https?:\/\/cloud\.bluecardsoft\.com\/yuntingad\/ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 [Script]
 # > 阿里系 - ALIBABA

@@ -10,7 +10,7 @@
 
 [Map Local]
 # 拼多多瀑布流
-^https:\/\/api\.pinduoduo\.com\/api\/alexa\/cells\/hub\/v3\? data-type=text data="{}" status-code=200
+^https:\/\/api\.pinduoduo\.com\/api\/alexa\/cells\/hub\/v3\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 [MITM]
 hostname = %APPEND% api.pinduoduo.com

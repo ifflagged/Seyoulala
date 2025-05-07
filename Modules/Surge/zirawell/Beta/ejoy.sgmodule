@@ -4,7 +4,7 @@
 
 [Map Local]
 # > 易捷加油 - EJOY
-^https?:\/\/a\.sinopecsales\.com\/app\/cms data-type=text data="{}" status-code=200
+^https?:\/\/a\.sinopecsales\.com\/app\/cms data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 ^https?:\/\/ocrifs\.ejoy\.sinopec\.com\/advertitfs\/advert\/findAdvertInfo data-type=text data=" " status-code=200
 
