@@ -1487,8 +1487,6 @@ upos-sz-upcdntx.bilivideo.com = server:https://doh.pub/dns-query // BiliBili upo
 ^https?:\/\/img\.meituan\.net\/groceryimages\/\w+\.gif data-type=tiny-gif status-code=200
 ^https?:\/\/img\.meituan\.net\/groceryimages\/\w+\.png@220w_220h_1e_1l data-type=tiny-gif status-code=200
 ^https?:\/\/p\d\.meituan\.net\/movie\/.+?\.jpg\?may_covertWebp data-type=tiny-gif status-code=200
-^https?:\/\/p[1-9]{1}\.meituan\.net\/linglong\/\w+(?!.*%(4088h_88w|40115h_115w)_1e_1l)\.(?>gif|jpg|webp|png)(?!.*@(100w_100h|150w_150h|132w_96h|1284w|1200w_0h)) data-type=tiny-gif status-code=200
-^https?:\/\/p\d\.meituan\.net\/linglong\/(?!88a67c|20ad6b|f084a7|1cc20d|c31784|3f03f8|374276|d1c1f6|5f7e3c|2bc17f|f35609|86c8cd|46c1cf|ad5446|1df9e4)\w+\.png\.webp@1284w_1l$ data-type=tiny-gif status-code=200
 ^https?:\/\/p\d\.meituan\.net\/travelcube\/(?!1d4a663|52e9bfc|29a6227|412c4ac|6ee35c4|13bf0bf|ab8692e|6858b1d).+@100w_100h data-type=tiny-gif status-code=200
 ^https?:\/\/p\d\.meituan\.net\/(\d+\.\d+\.\d+\/)?wmbanner\/(?!fb51b9d|4e9d3c4).+\.gif data-type=tiny-gif status-code=200
 ^https?:\/\/(s3plus|flowplus)\.meituan\.net\/v\d\/\w+\/linglong\/.+\.(?>gif|jpg|mp4) data-type=tiny-gif status-code=200
@@ -1685,6 +1683,8 @@ replaceHeader = type=http-request, pattern=^https?:\/\/(raw|gist)\.githubusercon
 replaceHeader = type=http-request, pattern=^https?:\/\/github\.com\/, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/functional/replace-header.js, timeout=30, argument=(%5Cr%5Cn)Accept-Language%3A.%2B(%5Cr%5Cn)-%3E%241Accept-Language%3A%20en-us%242
 # jd
 jd = type=http-response, pattern=^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(?>deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/jd/jd.js, requires-body=true, max-size=-1, timeout=60
+# meituan
+meituan = type=http-response, pattern=^https?:\/\/p\d\.meituan\.net\/linglong\/, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/meituan/meituan.js, requires-body=true, max-size=-1, timeout=60
 # taobao
 taobao = type=http-response, pattern=^https?:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(cloudvideo\.video\.query|wireless\.home\.splash\.awesome\.get), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/taobao/taobao.js, requires-body=true, max-size=-1, timeout=60
 taobao = type=http-response, pattern=^https?:\/\/poplayer\.template\.alibaba\.com\/\w+\.json, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/taobao/taobao.js, requires-body=true, max-size=-1, timeout=60
