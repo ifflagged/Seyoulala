@@ -18,7 +18,6 @@ DOMAIN,api-p0.yksdks.com,REJECT
 DOMAIN,api.share.mob.com,REJECT
 DOMAIN,api.verify.mob.com,REJECT
 DOMAIN,log-verify.mob.com,REJECT
-DOMAIN,sdk.push.mob.com,REJECT
 DOMAIN,api.adnet.mob.com,REJECT
 DOMAIN,dig.bdurl.net,REJECT
 DOMAIN,g1.tagtic.cn,REJECT
