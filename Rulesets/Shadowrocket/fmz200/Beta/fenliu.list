@@ -1,4 +1,4 @@
-#规则数量:9622
+#规则数量:9625
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -315,6 +315,9 @@ DOMAIN-SUFFIX,bayescom.com
 DOMAIN,track.tiara.daum.net
 DOMAIN,track.tiara.kakao.com
 DOMAIN-SUFFIX,ad.duoduo.link
+DOMAIN,trackercollect.ddxq.mobi
+DOMAIN,ddfs-public.ddimg.mobi
+DOMAIN,rttrack.ddxq.mobi
 DOMAIN-SUFFIX,byteimg.com
 DOMAIN,i.snssdk.com
 DOMAIN,i-lq.snssdk.com

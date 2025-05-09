@@ -1,4 +1,4 @@
-#规则数量:9590
+#规则数量:9593
 #不支持的规则数量:1
 #已排除的规则数量:0
 #不支持的规则:
@@ -318,6 +318,9 @@ payload:
   - DOMAIN,track.tiara.daum.net
   - DOMAIN,track.tiara.kakao.com
   - DOMAIN-SUFFIX,ad.duoduo.link
+  - DOMAIN,trackercollect.ddxq.mobi
+  - DOMAIN,ddfs-public.ddimg.mobi
+  - DOMAIN,rttrack.ddxq.mobi
   - DOMAIN,i.snssdk.com
   - DOMAIN,i-lq.snssdk.com
   - DOMAIN,dig.bdurl.net
