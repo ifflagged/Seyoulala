@@ -20,7 +20,7 @@ DOMAIN,geo2.adobe.com,REJECT
 
 [Rewrite]
 # > 功能类 - FUNCTIONAL
-^https?:\/\/119\.29\.29\.29\/d\?dn - reject-dict
+^https?:\/\/119\.29\.29\.\d+\/d\?dn - reject-200
 
 [Script]
 http-request ^https?:\/\/(raw|gist)\.githubusercontent\.com\/ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/functional/replace-header.js, timeout=30, tag=replaceHeader, argument=(%5Cr%5Cn)Accept-Language%3A.%2B(%5Cr%5Cn)-%3E%241Accept-Language%3A%20en-us%242
@@ -28,5 +28,5 @@ http-request ^https?:\/\/(raw|gist)\.githubusercontent\.com\/ script-path=https:
 http-request ^https?:\/\/github\.com\/ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/functional/replace-header.js, timeout=30, tag=replaceHeader, argument=(%5Cr%5Cn)Accept-Language%3A.%2B(%5Cr%5Cn)-%3E%241Accept-Language%3A%20en-us%242
 
 [MITM]
-hostname = 119.29.29.29, raw.githubusercontent.com, gist.githubusercontent.com, github.com
+hostname = 119.29.29.*, raw.githubusercontent.com, gist.githubusercontent.com, github.com
 
