@@ -1,0 +1,21 @@
+#!name = 小宇宙去广告
+#!desc = 移除开屏广告、搜索框推荐词和AI总结。
+#!openUrl = https://apps.apple.com/app/id1488894313
+#!author = 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+#!tag = 去广告
+#!system = 
+#!system_version = 
+#!loon_version = 3.2.4(787)
+#!homepage = https://github.com/luestr/ProxyResource/blob/main/README.md
+#!icon = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/CosmosPodcast.png
+#!date = 2025-05-09 16:08:47
+
+[Rewrite]
+^https:\/\/api\.xiaoyuzhoufm\.com\/v1\/flash-screen\/list$ reject-dict
+
+
+^https?:\/\/api\.xiaoyuzhoufm\.com\/v1\/search reject-dict
+^https?:\/\/api\.xiaoyuzhoufm\.com\/v1\/category\/list-daily-suggestion$ reject-dict
+
+[MitM]
+hostname = api.xiaoyuzhoufm.com
