@@ -2539,7 +2539,7 @@ https?:\/\/interface\d?\.music\.163.com\/eapi\/(mlivestream\/entrance\/playpage|
 ^https?:\/\/api\.xiaoyuzhoufm\.com\/v\d\/membership\/platform data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 移除小宇宙搜索框内容
-^https?:\/\/api\.xiaoyuzhoufm\.com\/v\d\/search data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https?:\/\/api\.xiaoyuzhoufm\.com\/v\d\/search\/get-(?>preset|express) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 ^https?:\/\/api\.xiaoyuzhoufm\.com\/v\d\/category\/list-daily-suggestion data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
