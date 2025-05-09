@@ -12,8 +12,8 @@ DOMAIN,csc-apm.sgcc.com.cn,REJECT
 ^https?:\/\/(?>csc|osg)-service\.sgcc\.com\.cn:\d+\/emss-pfa-appset-front\/appForceUpdate - reject
 ^https?:\/\/(?>csc|osg)-service\.sgcc\.com\.cn:\d+\/emss-pfa-appset-front\/appSync\/getAppForceUpgrade - reject
 ^https?:\/\/(?>csc|osg)-service\.sgcc\.com\.cn:\d+\/emss-pfa-appset-front\/bootpageoutter\/ - reject-dict
-^https?:\/\/(?>csc|osg)-service\.sgcc\.com\.cn:\d+\/dtportal-app\/app_api\/selectInfoByCondition - reject-dict
-^https?:\/\/(?>csc|osg)-service\.sgcc\.com\.cn:\d+\/osg-omgmt0024\/inner\/cache - reject
+^https?:\/\/(?>csc|osg)-service\.sgcc\.com\.cn:\d+\/.*\/app_api\/selectInfoByCondition - reject-dict
+^https?:\/\/(?>csc|osg)-service\.sgcc\.com\.cn:\d+\/.*\/inner\/cache - reject
 
 [MITM]
 hostname = %APPEND% csc-service.sgcc.com.cn, osg-service.sgcc.com.cn

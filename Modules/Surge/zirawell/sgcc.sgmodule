@@ -11,12 +11,12 @@ DOMAIN,csc-apm.sgcc.com.cn,REJECT
 # > 网上国网 - SGCC
 ^https?:\/\/(?>csc|osg)-service\.sgcc\.com\.cn:\d+\/emss-pfa-appset-front\/appForceUpdate - reject
 ^https?:\/\/(?>csc|osg)-service\.sgcc\.com\.cn:\d+\/emss-pfa-appset-front\/appSync\/getAppForceUpgrade - reject
-^https?:\/\/(?>csc|osg)-service\.sgcc\.com\.cn:\d+\/osg-omgmt0024\/inner\/cache - reject
+^https?:\/\/(?>csc|osg)-service\.sgcc\.com\.cn:\d+\/.*\/inner\/cache - reject
 
 [Map Local]
 ^https?:\/\/(?>csc|osg)-service\.sgcc\.com\.cn:\d+\/emss-pfa-appset-front\/bootpageoutter\/ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/(?>csc|osg)-service\.sgcc\.com\.cn:\d+\/dtportal-app\/app_api\/selectInfoByCondition data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https?:\/\/(?>csc|osg)-service\.sgcc\.com\.cn:\d+\/.*\/app_api\/selectInfoByCondition data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 [MITM]
 hostname = %APPEND% csc-service.sgcc.com.cn, osg-service.sgcc.com.cn
