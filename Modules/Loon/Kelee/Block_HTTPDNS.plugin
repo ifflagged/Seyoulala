@@ -8,7 +8,7 @@
 #!loon_version = 3.2.4(787)
 #!homepage = https://github.com/luestr/ProxyResource/blob/main/README.md
 #!icon = https://raw.githubusercontent.com/luestr/IconResource/main/Other_icon/120px/HTTPDNS.png
-#!date = 2025-05-10 01:16:43
+#!date = 2025-05-10 02:46:59
 
 [Rule]
 DOMAIN, yyapp-httpdns.gslb.yy.com, REJECT
@@ -205,7 +205,7 @@ DOMAIN, hd.xiaojukeji.com, REJECT
 DOMAIN, httpdns.zybang.com, REJECT
 
 [Rewrite]
-^https?:\/\/119\.29\.29\.\d+\/d reject
+^https?:\/\/119\.29\.29\.\d+\/d reject-200
 
 ^https?:\/\/203\.107\.1\.1/\d+/ss reject
 ^https?:\/\/203\.107\.1\.33/\d+/ss reject
