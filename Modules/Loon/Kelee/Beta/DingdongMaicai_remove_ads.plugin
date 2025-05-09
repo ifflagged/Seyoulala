@@ -1,7 +1,28 @@
-DingdongMaicai_remove_ads%0A：Error: Response code 404 (Not Found)
+#!name=叮咚买菜去广告
+#!desc=移除开屏广告、信息流广告、底栏AI入口、会员推广和悬浮广告。
+#!author=zirawell[https://github.com/zirawell], 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
+#!tag=Jacob
 
+#!openUrl=https://apps.apple.com/app/id768082524
+#!tag=去广告
+#!loon_version=3.2.4(787)
+#!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
+#!date=2025-05-10 01:13:25
 
+[Rule]
+DOMAIN,trackercollect.ddxq.mobi,REJECT
+DOMAIN,ddfs-public.ddimg.mobi,REJECT
+DOMAIN,rttrack.ddxq.mobi,REJECT
 
+[Rewrite]
+^https?:\/\/maicai\.api\.ddxq\.mobi\/homeApi\/bottomNavi response-body-json-jq 'del(.data.adId?) | if (.data.bottom_list? | length > 0) then .data.bottom_list |= map(select(.type != "eatwhat")) else . end'
+^https?:\/\/maicai\.api\.ddxq\.mobi\/homeApi\/homeFlowDetail response-body-json-jq '.data.list |= (map(select((.multi_advertise_data_list | length == 0) and (.small_image == null or (.small_image | contains("ddfs-public.ddimg.mobi") | not))))'
+^https?:\/\/119\.29\.29\.\d+\/d - reject
+^https?:\/\/maicai\.api\.ddxq\.mobi\/advert\/ - reject
+^https?:\/\/maicai\.api\.ddxq\.mobi\/homeApi\/getHomeAdPop - reject
+^https?:\/\/maicai\.api\.ddxq\.mobi\/vip\/getVipAd - reject-dict
 
+[MITM]
+hostname = 119.29.29.*, maicai.api.ddxq.mobi
 
-Script Hub 重写转换: ❌  可自行翻译错误信息或复制错误信息后点击通知进行反馈
