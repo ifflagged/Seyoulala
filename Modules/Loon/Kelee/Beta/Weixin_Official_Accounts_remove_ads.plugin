@@ -8,13 +8,14 @@
 #!tag=功能增强
 #!loon_version=3.2.4(787)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!date=2024-11-28 00:00:00
+#!date=2025-05-09 16:52:32
 
 [Rule]
 DOMAIN-SUFFIX,wxs.qq.com,REJECT
 
 [Rewrite]
 ^https:\/\/mp\.weixin\.qq\.com\/mp\/(cps_product_info|getappmsgad|jsmonitor|masonryfeed|relatedarticle)\? - reject-dict
+^https:\/\/mp\.weixin\.qq\.com\/mp\/relatedsearchword - reject-dict
 
 [MITM]
 hostname = mp.weixin.qq.com
