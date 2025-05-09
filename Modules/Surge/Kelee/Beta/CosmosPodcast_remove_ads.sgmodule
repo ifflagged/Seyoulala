@@ -1,6 +1,6 @@
 #!name=小宇宙去广告
 #!desc=移除开屏广告、搜索框推荐词和AI总结。
-#!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+#!author=wish
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/CosmosPodcast.png
 #!category=Jacob
 
@@ -12,6 +12,8 @@
 
 [Map Local]
 ^https:\/\/api\.xiaoyuzhoufm\.com\/v1\/flash-screen\/list$ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+^https:\/\/api\.xiaoyuzhoufm\.com\/v1\/ai-summary data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 ^https?:\/\/api\.xiaoyuzhoufm\.com\/v1\/search data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
