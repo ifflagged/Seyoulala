@@ -1,5 +1,5 @@
 #!name = 叮咚买菜去广告
-#!desc = 移除开屏广告、信息流广告、底栏AI入口、会员推广和悬浮广告。
+#!desc = 移除开屏广告、搜索推荐、信息流广告、底栏AI入口、会员推广、福利中心和悬浮广告。
 #!openUrl = https://apps.apple.com/app/id768082524
 #!author = zirawell[https://github.com/zirawell], 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 #!tag = 去广告
@@ -8,7 +8,7 @@
 #!loon_version = 3.2.4(787)
 #!homepage = https://github.com/luestr/ProxyResource/blob/main/README.md
 #!icon = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/DingdongMaicai.png
-#!date = 2025-05-10 01:13:25
+#!date = 2025-05-10 02:14:06
 
 [Rule]
 DOMAIN, trackercollect.ddxq.mobi, REJECT
@@ -22,13 +22,29 @@ DOMAIN, rttrack.ddxq.mobi, REJECT
 
 ^https?:\/\/maicai\.api\.ddxq\.mobi\/homeApi\/getHomeAdPop reject
 
-^https?:\/\/maicai\.api\.ddxq\.mobi\/vip\/getVipAd reject-dict
+^https:\/\/maicai\.api\.ddxq\.mobi\/vip\/getVipAd\/\? reject-dict
 
-^https?:\/\/maicai\.api\.ddxq\.mobi\/homeApi\/newDetails response-body-json-regex suspension random_body
+^https:\/\/maicai\.api\.ddxq\.mobi\/homeApi\/marketingNotice\? reject-dict
+
+^https:\/\/maicai\.api\.ddxq\.mobi\/search\/rollHotKeyword\? reject-dict
+
+^https:\/\/maicai\.api\.ddxq\.mobi\/search\/rankingList\? reject-dict
+
+^https:\/\/maicai\.api\.ddxq\.mobi\/search\/hotKeyword\? reject-dict
+
+^https:\/\/maicai\.api\.ddxq\.mobi\/order\/getRecommend$ reject-dict
+
+^https:\/\/maicai\.api\.ddxq\.mobi\/homeApi\/userLike\? reject-dict
+
+^https:\/\/user\.api\.ddxq\.mobi\/userportal-service\/api\/v1\/user\/queryMyPage\/\? reject-dict
+
+^https?:\/\/maicai\.api\.ddxq\.mobi\/homeApi\/newDetails\? response-body-json-del data.top_advert_data data.suspension
+
+^https?:\/\/maicai\.api\.ddxq\.mobi\/homeApi\/newDetails\? response-body-json-jq '.data.list |= map(select(has("capsule_freedom_zone") | not))'
 
 ^https?:\/\/maicai\.api\.ddxq\.mobi\/homeApi\/bottomNavi response-body-json-jq 'del(.data.adId?) | if (.data.bottom_list? | length > 0) then .data.bottom_list |= map(select(.type != "eatwhat")) else . end'
 
 ^https?:\/\/maicai\.api\.ddxq\.mobi\/homeApi\/homeFlowDetail response-body-json-jq '.data.list |= (map(select((.multi_advertise_data_list | length == 0) and (.small_image == null or (.small_image | contains("ddfs-public.ddimg.mobi") | not))))'
 
 [MitM]
-hostname= 119.29.29.*, maicai.api.ddxq.mobi
+hostname= 119.29.29.*, maicai.api.ddxq.mobi, user.api.ddxq.mobi
