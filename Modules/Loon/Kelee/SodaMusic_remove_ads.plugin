@@ -8,7 +8,7 @@
 #!loon_version = 3.2.4(787)
 #!homepage = https://github.com/luestr/ProxyResource/blob/main/README.md
 #!icon = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/SodaMusic.png
-#!date = 2025-05-11 00:33:43
+#!date = 2025-05-11 00:58:30
 
 [Rule]
 AND, ((DOMAIN-KEYWORD, api100-core-quic-), (DOMAIN-SUFFIX, amemv.com)), REJECT
@@ -92,8 +92,11 @@ DOMAIN-KEYWORD, asiad.byteactivity, REJECT
 ^https:\/\/beta-luna\.douyin\.com\/luna\/activities\? reject-dict
 
 ^https:\/\/beta-luna\.douyin\.com\/luna\/me\/recently-played-media\? response-body-json-jq '.media |= map(select(.type != "video"))'
+^https:\/\/beta-luna\.douyin\.com\/luna\/feed\/song-tab\? response-body-json-jq 'del(.items[] | select(.type == "video_track_mix"))'
 
-^https:\/\/beta-luna\.douyin\.com\/luna\/card\? response-body-json-jq 'del(.card_items[] | select(has("priority_display"))) | if (.preview_guide.type? // "") == "ad_reward_view_all" then del(.preview_guide) else . end'
+^https:\/\/beta-luna\.douyin\.com\/luna\/card\? response-body-json-del preview_guide
+
+^https:\/\/beta-luna\.douyin\.com\/luna\/card\? response-body-json-jq 'del(.card_items[] | select(has("priority_display")))'
 
 ^https:\/\/beta-luna\.douyin\.com\/luna\/more-panel\? response-body-json-jq '.blocks |= map(select(.type != "related_video"))'
 
