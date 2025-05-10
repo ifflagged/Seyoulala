@@ -8,7 +8,7 @@
 #!loon_version = 3.2.4(787)
 #!homepage = https://github.com/luestr/ProxyResource/blob/main/README.md
 #!icon = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/SodaMusic.png
-#!date = 2025-05-11 00:58:30
+#!date = 2025-05-11 01:31:09
 
 [Rule]
 AND, ((DOMAIN-KEYWORD, api100-core-quic-), (DOMAIN-SUFFIX, amemv.com)), REJECT
@@ -97,6 +97,8 @@ DOMAIN-KEYWORD, asiad.byteactivity, REJECT
 ^https:\/\/beta-luna\.douyin\.com\/luna\/card\? response-body-json-del preview_guide
 
 ^https:\/\/beta-luna\.douyin\.com\/luna\/card\? response-body-json-jq 'del(.card_items[] | select(has("priority_display")))'
+
+^https:\/\/beta-luna\.douyin\.com\/luna\/media_ads\? reject-dict
 
 ^https:\/\/beta-luna\.douyin\.com\/luna\/more-panel\? response-body-json-jq '.blocks |= map(select(.type != "related_video"))'
 
