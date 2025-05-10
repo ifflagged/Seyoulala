@@ -1,5 +1,5 @@
 #!name = 汽水音乐去广告
-#!desc = 移除开屏广告、弹窗广告、播放器推广、歌曲详情界面视频推广，精简首页和我的页面。
+#!desc = 移除开屏广告、弹窗广告、播放器推广、歌曲详情界面视频推广、播放页面的歌曲视频，精简首页和我的页面。
 #!openUrl = https://apps.apple.com/app/id1605585211
 #!author = 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 #!tag = 去广告
@@ -8,7 +8,7 @@
 #!loon_version = 3.2.4(787)
 #!homepage = https://github.com/luestr/ProxyResource/blob/main/README.md
 #!icon = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/SodaMusic.png
-#!date = 2024-11-28 00:00:00
+#!date = 2025-05-11 00:33:43
 
 [Rule]
 AND, ((DOMAIN-KEYWORD, api100-core-quic-), (DOMAIN-SUFFIX, amemv.com)), REJECT
@@ -79,18 +79,27 @@ DOMAIN-KEYWORD, video-cn.snssdk.com, REJECT
 DOMAIN-KEYWORD, asiad.byteactivity, REJECT
 
 [Rewrite]
+^https:\/\/beta-luna\.douyin\.com\/luna\/commerce\/upsells_config\? reject-dict
+
+^https:\/\/api\.qishui\.com\/luna\/ads\/config\? reject-dict
+
 ^https:\/\/webcast-open\.douyin\.com\/webcast\/openapi\/feed\/\? reject-dict
+
+^https:\/\/beta-luna\.douyin\.com\/luna\/treasure\/entrance\/config\? reject-dict
 
 ^https:\/\/beta-luna\.douyin\.com\/luna\/me\? response-body-json-del reward_ad_banner
 
+^https:\/\/beta-luna\.douyin\.com\/luna\/activities\? reject-dict
 
-^https:\/\/beta-luna\.douyin\.com\/luna\/card\? response-body-json-replace card_items[0].priority_display false card_items[0].is_show false preview_guide null
+^https:\/\/beta-luna\.douyin\.com\/luna\/me\/recently-played-media\? response-body-json-jq '.media |= map(select(.type != "video"))'
 
-^https:\/\/beta-luna\.douyin\.com\/luna\/more-panel\? response-body-json-del blocks[1]
+^https:\/\/beta-luna\.douyin\.com\/luna\/card\? response-body-json-jq 'del(.card_items[] | select(has("priority_display"))) | if (.preview_guide.type? // "") == "ad_reward_view_all" then del(.preview_guide) else . end'
+
+^https:\/\/beta-luna\.douyin\.com\/luna\/more-panel\? response-body-json-jq '.blocks |= map(select(.type != "related_video"))'
 
 ^https:\/\/beta-luna\.douyin\.com\/luna\/commerce\/upsells\? reject-dict
 
 ^https:\/\/beta-luna\.douyin\.com\/luna\/commerce\/v2\/commerce_info\? reject-dict
 
 [MitM]
-hostname = webcast-open.douyin.com, beta-luna.douyin.com
+hostname = webcast-open.douyin.com, beta-luna.douyin.com, api.qishui.com
