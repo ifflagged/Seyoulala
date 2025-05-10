@@ -43,6 +43,10 @@
 
 ^https:\/\/a1d5b283e-wx621112590b635086\.sh\.wxgateway\.com\/xcxhomeapi\/home\/screen data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
+^https:\/\/mapi\.dianping\.com\/baymax\/adrec\/getrecads data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+^https:\/\/mapi\.dianping\.com\/baymax\/getSlotAds data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
 ^https:\/\/web\.meituan\.com\/api\/miniprogram\/my\/novelZone data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 ^https:\/\/web\.meituan\.com\/api\/miniprogram\/my\/resources data-type=text data="{}" status-code=200 header="Content-Type:application/json"
@@ -63,5 +67,5 @@ MeiTuanNoAd = type=http-response, pattern=^https:\/\/web\.meituan\.com\/api\/min
 MeiTuanNoAd = type=http-response, pattern=^https:\/\/web\.meituan\.com\/api\/miniprogram\/index\/aggregate, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ZenmoFeiShi/WxPureDominion/MeiTuanNoAd.js, requires-body=true, max-size=-1, timeout=60
 
 [MITM]
-hostname = %APPEND% wx.17u.cn, web.meituan.com, npay.meituan.com, a1d5b283e-wx621112590b635086.sh.wxgateway.com, apimobile.meituan.com
+hostname = %APPEND% wx.17u.cn, web.meituan.com, npay.meituan.com, mapi.dianping.com, a1d5b283e-wx621112590b635086.sh.wxgateway.com, apimobile.meituan.com
 
