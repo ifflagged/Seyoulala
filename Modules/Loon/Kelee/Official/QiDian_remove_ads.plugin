@@ -8,7 +8,7 @@
 #!loon_version = 3.2.4(787)
 #!homepage = https://github.com/luestr/ProxyResource/blob/main/README.md
 #!icon = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/QiDian.png
-#!date = 2025-05-11 17:36:19
+#!date = 2025-05-11 18:12:05
 
 [Rule]
 DOMAIN, adsmind.gdtimg.com, REJECT
@@ -66,7 +66,11 @@ DOMAIN-SUFFIX, jpush.cn, REJECT
 DOMAIN-SUFFIX, jpush.io, REJECT
 
 [Rewrite]
-^https:\/\/magev6\.if\.qidian\.com\/argus\/api\/v1\/client\/getconf$ Data.ActivityPageBackPushNoticeFrequency Data.ActivityIcon Data.ActivityPopup Data.LuckBag
+^https:\/\/magev6\.if\.qidian\.com\/argus\/api\/v1\/client\/getconf$ response-body-json-replace Data.WolfEye 0 Data.CloudSetting.TeenShowFreq 0
+
+^https:\/\/magev6\.if\.qidian\.com\/argus\/api\/v1\/client\/getconf$ response-body-json-del Data.ActivityPageBackPushNoticeFrequency Data.ActivityIcon Data.ActivityPopup Data.LuckBag
+
+^https:\/\/magev6\.if\.qidian\.com\/argus\/api\/v4\/client\/getsplashscreen\? reject-dict
 
 ^https:\/\/magev6\.if\.qidian\.com\/argus\/api\/v1\/adv\/ reject-dict
 
@@ -76,7 +80,7 @@ DOMAIN-SUFFIX, jpush.io, REJECT
 
 ^https:\/\/magev6\.if\.qidian\.com\/argus\/api\/v1\/push\/getdialog\? reject-dict
 
-^https:\/\/magev6\.if\.qidian\.com\/argus\/api\/v2\/dailyrecommend\/getdailyrecommend\? reject-dict
+^https:\/\/magev6\.if\.qidian\.com\/argus\/api\/v2\/dailyrecommend\/getdailyrecommend\? response-body-json-replace Data.Items []
 
 ^https:\/\/magev6\.if\.qidian\.com\/argus\/api\/v1\/message\/getpushedmessagelist$ reject-dict
 
