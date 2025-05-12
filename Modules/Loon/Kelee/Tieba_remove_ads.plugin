@@ -150,4 +150,4 @@ DOMAIN, rpe.xdplt.com, REJECT
 http-response ^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/c\/f\/(frs\/(page|threadlist|generalTabList)|pb\/page|excellent\/personalized)\?cmd script-path = https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Tieba_remove_ads/tieba-proto.js, requires-body = true, binary-body-mode = true, timeout = 10, tag = Proto处理
 
 [MitM]
-hostname = tiebac.baidu.com, tieba.baidu.com, -180.76.76.200
+hostname = tiebac.baidu.com, tieba.baidu.com
