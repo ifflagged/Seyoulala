@@ -449,6 +449,7 @@ DOMAIN-SUFFIX, bridgeoos.com, REJECT
 DOMAIN, ad-evods.tianya.tv, REJECT
 DOMAIN, adx.tuia.cn, REJECT
 DOMAIN-SUFFIX, 66mobi.com, REJECT
+DOMAIN, rpe.xdplt.com, REJECT
 # 12306_remove_ads
 DOMAIN, ad.12306.cn, DIRECT
 # Amap_remove_ads
