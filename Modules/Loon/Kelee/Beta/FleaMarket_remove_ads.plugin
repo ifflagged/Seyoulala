@@ -1,6 +1,6 @@
 #!name=闲鱼去广告
 #!desc=移除开屏广告、商品信息流广告、搜索栏填充词、我的页面推广横幅。
-#!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md], ZenMoFiShi[https://github.com/ZenmoFeiShi], RuCu6[https://github.com/RuCu6]
+#!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
 #!tag=Jacob
 
@@ -8,32 +8,20 @@
 #!tag=去广告
 #!loon_version=3.2.4(787)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!date=2024-11-28 00:00:00
+#!date=2025-05-12 23:30:00
 
 [Rule]
 AND,((URL-REGEX,"^http:\/\/.+\/amdc\/mobileDispatch"),(USER-AGENT,"%E9%97%B2%E9%B1%BC*")),REJECT
 
 [Rewrite]
-^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.home\.whale\.modulet\/ - reject-dict
+^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlehome\.home\.nextfresh\/ response-body-json-jq '.data.homeTopList |= map(select(.template.name != "fish_home_widget_banner_single")) | .data.sections |= map(select(.data.clickParam.args.cardType as $ct | $ct != "homeMultiBanner" and $ct != "mamaAD"))'
+^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlehome\.home\.newitem\.page\/ response-body-json-jq '.data.sections |= map(select(.data.clickParam.args.cardType as $ct | $ct != "banner" and $ct != "mamaAD"))'
+^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.local\.flow\.plat\.section\/ response-body-json-jq '.data.data.components |= map(if .data.template.name == "fish_city_banner" then del(.data) else . end)'
+^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.local\.home\/ response-body-json-jq '.data.sections |= map(select(.template.cardEnum != "ads"))'
+^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.idle\.user\.page\.my\.adapter\/ response-body-json-jq '.data.container.sections |= map(select(.item?.bottom? | not))'
+^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlehome\.home\.circle\.list\/ response-body-json-jq '.data.circleList[].showInfo.titleImage |= (.lightUrl = "" | .url = "" | del(.width, .height))'
 ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.item\.recommend\.list\/ - reject-dict
-^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.item\.resell\.recommendorhotcate\/ - reject-dict
-^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.playboy\.recommend\/ - reject-dict
-^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.topic\.banner\/ - reject-dict
-^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.user\.strategy\.list\/ - reject-dict
-^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlehome\.idle\.coin\.nextfresh\/ - reject-dict
-^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.search\.discover\/ - reject-dict
 ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.search\.shade\/ - reject-dict
-^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.item\.search\.activate\/ - reject-dict
-^https:\/\/h5\.m\.goofish\.com\/wow\/moyu\/moyu-project\/[\w-]*search[\w-]*\/pages\/ - reject-200
-
-[Script]
-http-response ^https:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop\.idle\.user\.page\.my\.adapter\/ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/FleaMarket_remove_ads/FleaMarket_remove_ads.js, requires-body=true, tag=移除我的页面推广
-
-http-response ^https:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlehome\.home\.nextfresh\/ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/FleaMarket_remove_ads/FleaMarket_remove_ads.js, requires-body=true, tag=移除首页信息流推广
-
-http-response ^https:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlehome\.home\.circle\.list\/ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/FleaMarket_remove_ads/FleaMarket_remove_ads.js, requires-body=true, tag=移除首页顶部标签推广
-
-http-response ^https:\/\/g-(g-)?acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.search\/ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/FleaMarket_remove_ads/FleaMarket_remove_ads.js, requires-body=true, tag=移除搜索结果广告
 
 [MITM]
 hostname = acs.m.goofish.com, g-acs.m.goofish.com
