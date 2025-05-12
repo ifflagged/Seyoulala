@@ -2852,6 +2852,9 @@ replaceBody = type=http-response, pattern=^https?:\/\/maicai\.api\.ddxq\.mobi\/h
 # 开屏广告及首页推荐流及底部状态栏优化
 ddxq = type=http-response, pattern=^https?:\/\/maicai\.api\.ddxq\.mobi\/homeApi\/(?>bottomNavi|homeFlowDetail), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/chongxie/ddxq.js, requires-body=true, max-size=-1, timeout=60
 
+# 右下角AI
+ddxq = type=http-response, pattern=^https?:\/\/maicai\.api\.ddxq\.mobi\/tool\/getConfig, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/chongxie/ddxq.js, requires-body=true, max-size=-1, timeout=60
+
 # (黑屏25秒)
 BahamutAnimeAds = type=http-response, pattern=^https?:\/\/api\.gamer\.com\.tw\/mobile_app\/anime\/v\d/(token|m3u8).php\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/chongxie/BahamutAnimeAds.js, requires-body=true, max-size=-1, timeout=60
 

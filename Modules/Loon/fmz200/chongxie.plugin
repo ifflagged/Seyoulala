@@ -2087,6 +2087,9 @@ http-response ^https?:\/\/maicai\.api\.ddxq\.mobi\/homeApi\/newDetails script-pa
 # 开屏广告及首页推荐流及底部状态栏优化
 http-response ^https?:\/\/maicai\.api\.ddxq\.mobi\/homeApi\/(?>bottomNavi|homeFlowDetail) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/chongxie/ddxq.js, requires-body=true, timeout=60, tag=ddxq
 
+# 右下角AI
+http-response ^https?:\/\/maicai\.api\.ddxq\.mobi\/tool\/getConfig script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/chongxie/ddxq.js, requires-body=true, timeout=60, tag=ddxq
+
 # (黑屏25秒)
 http-response ^https?:\/\/api\.gamer\.com\.tw\/mobile_app\/anime\/v\d/(token|m3u8).php\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/chongxie/BahamutAnimeAds.js, requires-body=true, timeout=60, tag=BahamutAnimeAds
 
