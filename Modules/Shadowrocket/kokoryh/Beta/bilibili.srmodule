@@ -23,6 +23,12 @@ echoResponse = type=http-request, pattern=^https:\/\/ap[ip]\.bilibili\.com\/x\/(
 
 echoResponse = type=http-request, pattern=^https:\/\/api\.bilibili\.com\/pgc\/activity\/deliver\/material\/receive\?, script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/echo-response.js, timeout=60, argument=text=%7B%22code%22%3A0%2C%22data%22%3A%7B%22closeType%22%3A%22close_win%22%2C%22container%22%3A%5B%5D%2C%22showTime%22%3A%22%22%7D%2C%22message%22%3A%22success%22%7D
 
+echoResponse = type=http-request, pattern=^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.interface\.v1\.Teenagers\/ModeStatus$, script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/echo-response.js, timeout=60, argument=base64=AAAAABMKEQgCEgl0ZWVuYWdlcnMgAioA
+
+echoResponse = type=http-request, pattern=^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.interface\.v1\.Search\/DefaultWords$, script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/echo-response.js, timeout=60, argument=base64=AAAAACkaHeaQnOe0ouinhumikeOAgeeVquWJp%2BaIlnVw5Li7IgAoAToAQgBKAA%3D%3D
+
+echoResponse = type=http-request, pattern=^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.view\.v1\.View\/TFInfo$, script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/echo-response.js, timeout=60, argument=base64=AAAAAAIIAQ%3D%3D
+
 bilibili.airborne = type=http-request, pattern=^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.playerunite\.v1\.Player\/PlayViewUnite$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/kokoryh/bilibili/bilibili.airborne.js, requires-body=true, binary-body-mode=true, max-size=-1
 
 # = type=http-request, pattern=^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.community\.service\.dm\.v1\.DM\/DmSegMobile$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/kokoryh/bilibili/bilibili.airborne.js, requires-body=true, binary-body-mode=true, max-size=-1
@@ -31,7 +37,7 @@ bilibili.skin = type=http-response, pattern=^https:\/\/app\.bilibili\.com\/x\/re
 
 bilibili.json = type=http-response, pattern=^https:\/\/app\.bilibili\.com\/x\/(?:resource\/show\/tab\/v2|v2\/(?:splash\/(?:list|show|event\/list2)|feed\/index(?:\/story)?|account\/(?:mine(?:\/ipad)?|myinfo)))\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/kokoryh/bilibili/bilibili.json.js, requires-body=true, max-size=-1, argument="{"showUperCenter":0}"
 
-bilibili.protobuf = type=http-response, pattern=^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.(?:app\.(?:interface\.v1\.(?:Teenagers\/ModeStatus|Search\/DefaultWords)|show\.v1\.Popular\/Index|dynamic\.v2\.Dynamic\/DynAll|view(?:unite)?\.v1\.View\/(?:View|ViewProgress|TFInfo|RelatesFeed)|playurl\.v1\.PlayURL\/PlayView|playerunite\.v1\.Player\/PlayViewUnite)|polymer\.app\.search\.v1\.Search\/SearchAll|community\.service\.dm\.v1\.DM\/DmView|main\.community\.reply\.v1\.Reply\/MainList|pgc\.gateway\.player\.v2\.PlayURL\/PlayView)$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/kokoryh/bilibili/bilibili.protobuf.js, requires-body=true, binary-body-mode=true, max-size=-1, argument="{"showUpList":"auto","filterTopReplies":1}"
+bilibili.protobuf = type=http-response, pattern=^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.(?:app\.(?:show\.v1\.Popular\/Index|dynamic\.v2\.Dynamic\/DynAll|view(?:unite)?\.v1\.View\/(?:View|ViewProgress|RelatesFeed)|playurl\.v1\.PlayURL\/PlayView|playerunite\.v1\.Player\/PlayViewUnite)|polymer\.app\.search\.v1\.Search\/SearchAll|community\.service\.dm\.v1\.DM\/DmView|main\.community\.reply\.v1\.Reply\/MainList|pgc\.gateway\.player\.v2\.PlayURL\/PlayView)$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/kokoryh/bilibili/bilibili.protobuf.js, requires-body=true, binary-body-mode=true, max-size=-1, argument="{"showUpList":"auto","filterTopReplies":1}"
 
 [MITM]
 hostname = %APPEND% grpc.biliapi.net, app.bilibili.com, api.bilibili.com, api.live.bilibili.com
