@@ -8,7 +8,7 @@
 #!loon_version = 3.2.4(787)
 #!homepage = https://github.com/luestr/ProxyResource/blob/main/README.md
 #!icon = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/KOOK.png
-#!date = 2025-04-22 14:14:26
+#!date = 2025-05-13 15:17:08
 
 [Rewrite]
 ^https:\/\/www\.kookapp\.cn\/api\/v3\/ad\/config$ reject-dict
