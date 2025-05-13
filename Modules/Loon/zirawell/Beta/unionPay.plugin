@@ -1,19 +1,7 @@
-#!name=unionPay
-#!desc=unionPay
-#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
-#!tag=Jacob
+unionPay%0A：Error: Response code 404 (Not Found)
 
-[Rule]
-# > 云闪付 - 95516
-DOMAIN,switch.cup.com.cn,REJECT
-DOMAIN,ads.cup.com.cn,REJECT
-DOMAIN,analytics.95516.com,REJECT
-DOMAIN,tysdk.95516.com,REJECT
 
-[Rewrite]
-# > 云闪付 - 95516
-^https?:\/\/wallet\.95516\.com(:10533)?\/s\/wl\/icon\/large\/1 - reject
 
-[MITM]
-hostname = wallet.95516.com
 
+
+Script Hub 重写转换: ❌  可自行翻译错误信息或复制错误信息后点击通知进行反馈

@@ -1,15 +1,7 @@
-#!name=miHome
-#!desc=miHome
-#!category=Jacob
+miHome%0A：Error: Response code 404 (Not Found)
 
-[Rule]
-# > 米家 - MIHOME
-DOMAIN,sdkconfig.ad.xiaomi.com,REJECT
 
-[URL Rewrite]
-# > 米家 - MIHOME
-^https?:\/\/home\.mi\.com\/cgi-op\/api\/v\d\/recommendation - reject
 
-[MITM]
-hostname = %APPEND% home.mi.com
 
+
+Script Hub 重写转换: ❌  可自行翻译错误信息或复制错误信息后点击通知进行反馈
