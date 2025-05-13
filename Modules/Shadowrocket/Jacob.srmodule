@@ -167,6 +167,7 @@ DOMAIN, mssdk-bu.bytedance.com, REJECT
 DOMAIN, toblog.ctobsnssdk.com, REJECT
 DOMAIN, mssdk.volces.com, REJECT
 DOMAIN, pangolin.snssdk.com, REJECT
+DOMAIN, lf-cdn-tos.bytescm.com, REJECT
 DOMAIN, gromore.pangolin-sdk-toutiao.com, REJECT
 DOMAIN, ether-pack.pangolin-sdk-toutiao.com, REJECT
 DOMAIN-KEYWORD, -ad-sign.byteimg.com, REJECT
