@@ -1,41 +1,29 @@
 #!name = 什么值得买去广告
-#!desc = 移除开屏广告、首页顶部广告、好价信息顶部广告、信息页广告、红包弹窗、精简我的页面。
+#!desc = 移除开屏广告、信息流广告、各类横幅广告，精简我的页面。
 #!openUrl = https://apps.apple.com/app/id518213356
-#!author = ZenmoFeiShi[https://github.com/ZenmoFeiShi]
+#!author = 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 #!tag = 去广告
 #!system = 
 #!system_version = 
 #!loon_version = 3.2.4(787)
 #!homepage = https://github.com/luestr/ProxyResource/blob/main/README.md
 #!icon = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/smzdm.png
-#!date = 2025-05-13 15:17:08
-
-[Rule]
-DOMAIN, aaid.uyunad.com, REJECT
-DOMAIN, acs4baichuan.m.taobao.com, REJECT
-DOMAIN, adashxgc.ut.taobao.com, REJECT
-DOMAIN, analytics-api.smzdm.com, REJECT
-DOMAIN, baichuan-sdk.alicdn.com, REJECT
-DOMAIN, dgstatic.jd.com, REJECT
-DOMAIN, msg.umengcloud.com, REJECT
-DOMAIN, sec.umeng.com, REJECT
-DOMAIN, ulogs.umeng.com, REJECT
-DOMAIN, ynuf.aliapp.org, REJECT
+#!date = 2025-05-15 03:41:01
 
 [Rewrite]
-^https:\/\/haojia\.m\.smzdm\.com\/detail_modul\/(other_modul|wiki_related_modul)|^https:\/\/s3\.zdmimg\.com\/third\/index|^https:\/\/app-api\.smzdm\.com\/util\/loading reject-dict
+^https:\/\/app-api\.smzdm\.com\/util\/loading\? reject-dict
 
-[Script]
-http-response ^https:\/\/app-api\.smzdm\.com\/util\/loading script-path = https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/smzdm_remove_ads/smzdm_remove_ads.js, requires-body = true, tag = 移除广告
-http-response ^https:\/\/haojia-api\.smzdm\.com\/home\/list script-path = https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/smzdm_remove_ads/smzdm_remove_ads.js, requires-body = true, tag = 移除广告
-http-response ^https:\/\/app-api\.smzdm\.com\/util\/update script-path = https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/smzdm_remove_ads/smzdm_remove_ads.js, requires-body = true, tag = 移除广告
-http-response ^https:\/\/homepage-api\.smzdm\.com\/v3\/home script-path = https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/smzdm_remove_ads/smzdm_remove_ads.js, requires-body = true, tag = 移除广告
-http-response ^https:\/\/user-api\.smzdm\.com\/vip script-path = https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/smzdm_remove_ads/smzdm_remove_ads.js, requires-body = true, tag = 移除广告
-http-response ^https:\/\/user-api\.smzdm\.com\/vip\/bottom_card_list script-path = https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/smzdm_remove_ads/smzdm_remove_ads.js, requires-body = true, tag = 移除广告
-http-response ^https:\/\/article-api\.smzdm\.com\/publish\/get_bubble script-path = https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/smzdm_remove_ads/smzdm_remove_ads.js, requires-body = true, tag = 移除广告
-http-response ^https:\/\/qianbao\.smzdm\.com\/v\d\/app\/home script-path = https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/smzdm_remove_ads/smzdm_remove_ads.js, requires-body = true, tag = 移除广告
-http-response ^https:\/\/s3\.zdmimg\.com\/third\/index script-path = https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/smzdm_remove_ads/smzdm_remove_ads.js, requires-body = true, tag = 移除广告
-http-response ^https:\/\/post\.m\.smzdm\.com\/ajax_app\/ajax_get_footer_list script-path = https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/smzdm_remove_ads/smzdm_remove_ads.js, requires-body = true, tag = 移除广告
+^https:\/\/homepage-api\.smzdm\.com\/v3\/home\? response-body-json-jq jq-path="https://kelee.one/Resource/JQLang/smzdm/home_smzdm_remove_ads.jq"
+
+^https:\/\/h5\.smzdm\.com\/user\/coupon\/coupon_list\? reject
+
+^https:\/\/haojia-api\.smzdm\.com\/home\/list\? response-body-json-jq '.data.banner_v2 |= if type == "array" then map(select(has("hongbao") | not)) else . end | .data.rows |= map(if .ad_campaign_id == null or .ad_campaign_id == "" then . else empty end)'
+
+^https:\/\/haojia\.m\.smzdm\.com\/detail_modul\/user_related_modul\? response-body-json-del data.super_coupon
+
+^https:\/\/user-api\.smzdm\.com\/vip$ response-body-json-del data.big_banner 
+
+^https:\/\/user-api\.smzdm\.com\/vip\/bottom_card_list\? reject-dict
 
 [MitM]
-hostname = haojia-api.smzdm.com, homepage-api.smzdm.com, app-api.smzdm.com, user-api.smzdm.com, article-api.smzdm.com , qianbao.smzdm.com, s3.zdmimg.com
+hostname = app-api.smzdm.com, homepage-api.smzdm.com, haojia-api.smzdm.com, haojia.m.smzdm.com, user-api.smzdm.com
