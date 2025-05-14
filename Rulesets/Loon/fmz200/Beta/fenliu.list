@@ -1,4 +1,4 @@
-#规则数量:9625
+#规则数量:9627
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -564,6 +564,7 @@ DOMAIN-SUFFIX,dreport.meituan.net
 DOMAIN-SUFFIX,d.meituan.net
 DOMAIN,adui.tg.meitu.com
 DOMAIN,aaid.uyunad.com
+DOMAIN,ad.seeyouyima.com
 DOMAIN-SUFFIX,c-hzgt2.getui.com
 DOMAIN-SUFFIX,c-hzgt2.getui.com
 DOMAIN-SUFFIX,gs.getui.com
@@ -1121,6 +1122,7 @@ DOMAIN,data.mistat.xiaomi.com
 DOMAIN,tracking.intl.miui.com
 DOMAIN,39d83s.com
 DOMAIN-KEYWORD,mpos-pic.helipay.com
+DOMAIN,mistat.xiaomi.com
 DOMAIN-SUFFIX,api-htp.beizi.biz
 DOMAIN-SUFFIX,beacon.sina.com.cn
 DOMAIN,u1.img.mobile.sina.cn

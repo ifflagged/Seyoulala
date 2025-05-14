@@ -1,4 +1,4 @@
-#规则数量:9624
+#规则数量:9626
 #不支持的规则数量:1
 #已排除的规则数量:0
 #不支持的规则:
@@ -567,6 +567,7 @@ payload:
   - DOMAIN-SUFFIX,d.meituan.net
   - DOMAIN,adui.tg.meitu.com
   - DOMAIN,aaid.uyunad.com
+  - DOMAIN,ad.seeyouyima.com
   - DOMAIN-SUFFIX,c-hzgt2.getui.com
   - DOMAIN-SUFFIX,c-hzgt2.getui.com
   - DOMAIN-SUFFIX,gs.getui.com
@@ -1124,6 +1125,7 @@ payload:
   - DOMAIN,tracking.intl.miui.com
   - DOMAIN,39d83s.com
   - DOMAIN-KEYWORD,mpos-pic.helipay.com
+  - DOMAIN,mistat.xiaomi.com
   - DOMAIN-SUFFIX,api-htp.beizi.biz
   - DOMAIN-SUFFIX,beacon.sina.com.cn
   - DOMAIN,u1.img.mobile.sina.cn
