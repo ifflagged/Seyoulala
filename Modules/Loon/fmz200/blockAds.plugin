@@ -2283,7 +2283,7 @@ http-response ^https?:\/\/m\.lkcoffee\.com\/ecapi\/resource\/m\/member\/exchange
 
 http-response ^https?:\/\/m\.lkcoffee\.com\/capi\/resource\/m\/growUp\/main script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_1905, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22%5C%22popTitle%5C%22%3A%5C%22.%2B%3F%5C%22%22%2C%22%5C%22popTitle%5C%22%3A%5C%22%5C%22%22%5D%5D%5D%5D
 
-http-request ^https:\/\/testflight\.apple\.com\/v2\/accounts\/.*\/apps\/\d*\/builds\/\d*\/install$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_2089, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22%5C%22storefrontId%5C%22%20%3A%20.*%2C%22%2C%22%5C%22storefrontId%5C%22%3A%5C%22143441-19%2C29%5C%22%2Cenable%3D%7Btf_enable%7D%22%5D%5D%5D%5D
+http-request #^https:\/\/testflight\.apple\.com\/v2\/accounts\/.*\/apps\/\d*\/builds\/\d*\/install$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_2089, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22%5C%22storefrontId%5C%22%20%3A%20.*%2C%22%2C%22%5C%22storefrontId%5C%22%3A%5C%22143441-19%2C29%5C%22%22%5D%5D%5D%5D
 
 http-response ^https://www\.tailgdd\.com/v8/smart/app/config/get$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_2108, argument=%5B%5B%22json-replace%22%2C%5B%5B%22data%22%2C%7B%7D%5D%5D%5D%5D
 
