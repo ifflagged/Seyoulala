@@ -29,9 +29,6 @@
 ^https?:\/\/app\.58\.com\/api\/log\/ - reject
 # hostname = evs.500.com
 ^https?:\/\/evs\.500\.com\/esinfo\/loading\/loading - reject
-# hostname = appapi.51job*.com, cupid.51job*.com
-^https?:\/\/appapi\.51job(app)?\.com\/api\/market\/(adtrace|get_launch|get_prompt) - reject
-^https?:\/\/cupid\.51job(app)?\.com\/open\/index\/recommend-infos - reject
 # hostname = aes.acfun.cn, api-new.app.acfun.cn
 ^https?:\/\/aes\.acfun\.cn\/s\?adzones - reject
 ^https?:\/\/api-new\.app\.acfun\.cn\/rest\/app\/flash\/screen\/ - reject
@@ -466,6 +463,16 @@ https://access.mypikpak.com/access_controller/v1/area_accessible - reject
 ^https?:\/\/fmapp\.chinafamilymart\.com\.cn\/api\/app\/biz\/base\/appversion\/latest - reject
 # 去广告 (需卸载App重装) img01.51jobcdn.com
 ^https:\/\/img01\.51jobcdn\.com\/im\/mkt/(?:tg/((19|20)\d{2})banner/(?!jcgz2/)|\d{4}/bd/\d{4}/).*\.jpg - reject
+# 开屏及营销广告
+^https?:\/\/appapi\.51job(app)?\.com\/api\/market\/(?>adtrace|get_launch|get_prompt) - reject
+# 顶部弹窗
+^https?:\/\/cupid\.51job(app)?\.com\/open\/guide\/home-page-top - reject
+# 首页右上角浮窗及右边浮标
+^https?:\/\/cupid\.51job(app)?\.com\/open\/user-task\/user\/task\/init - reject
+# 弹窗广告
+^https?:\/\/cupid\.51job(app)?\.com\/launch-hub\/open\/noauth\/popUp - reject
+# 推荐流信息广告
+^https?:\/\/cupid\.51job(app)?\.com\/open\/index\/recommend-infos - reject
 # hostname = webapi.qmai.cn, miniapp.qmai.cn
 ^https?:\/\/(?>webapi|miniapp)\.qmai\.cn\/web\/cmk-center\/marketing\/canvas\/advert - reject
 # hostname = app.peopleapp.com, stat.peopleapp.com, adstatic.peopleapp.com
@@ -1742,6 +1749,14 @@ http:\/\/dili.sqcosmos.com\/jiekou\/endpage\/ad data-type=text data="{}" status-
 
 ^https?:\/\/facade-api\.black-unique\.com\/advertise\/v1\/get\?.* data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
+# 屏蔽更新
+^https?:\/\/appapi\.51job(app)?\.com\/api\/util\/get_version data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+^https?:\/\/cupid\.51job(app)?\.com\/open\/noauth\/index\/last-version data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+# 底栏中央活动标
+^https?:\/\/cupid\.51job(app)?\.com\/open\/index\/notice-infos data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
 ^https?:\/\/adstatic\.peopleapp\.com\/upload\/AppLoad\/.*.(jpg|png) data-type=text data=" " status-code=200
 
 # > RRTV_屏蔽限時彈窗
@@ -2736,8 +2751,6 @@ https://mgesq.api.mgtv.com/v2/user/center/icon data-type=text data="{}" status-c
 
 51card = type=http-response, pattern=^https?:\/\/api\.u51\.com\/generic-config-gateway\/api\/v\d\/guanjia\/me-tab2\/config, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/chongxie/51card.js, requires-body=true, max-size=-1, timeout=60
 
-51job = type=http-response, pattern=^https?:\/\/cupid\.51job(app)?\.com\/open\/noauth\/recommend\/job-tab-dynamic, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/chongxie/51job.js, requires-body=true, max-size=-1, timeout=60
-
 cainiao = type=http-response, pattern=^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.mshow, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/chongxie/cainiao.js, requires-body=true, max-size=-1, timeout=60
 
 myBlockAds = type=http-response, pattern=^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(cloudvideo\.video\.query|wireless\.home\.splash\.awesome\.get), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/chongxie/myBlockAds.js, requires-body=true, max-size=-1, timeout=60
@@ -3038,6 +3051,11 @@ qidian = type=http-response, pattern=^https?:\/\/magev6\.if\.qidian\.com\/argus\
 
 # 我的界面及活动按钮
 #Qidian_my = type=http-response, pattern=^https?:\/\/magev6\.if\.qidian\.com\/argus\/api\/(v1\/assembly\/toolbar|v3\/user\/getaccountpage), script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/Qidian_my.js, requires-body=true, max-size=-1, timeout=60
+
+51job = type=http-response, pattern=^https?:\/\/cupid\.51job(app)?\.com\/open\/noauth\/recommend\/job-tab-dynamic, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/chongxie/51job.js, requires-body=true, max-size=-1, timeout=60
+
+# 我的页净化
+51job = type=http-response, pattern=^https?:\/\/cupid\.51job(app)?\.com\/open\/my-page\/, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/chongxie/51job.js, requires-body=true, max-size=-1, timeout=60
 
 # 首页开屏广告 感谢【德克萨斯】分享
 QuDa = type=http-response, pattern=^https?:\/\/iqushangwang\.8quan\.com\/index\.php\/i\/index\/index, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/chongxie/QuDa.js, requires-body=true, max-size=-1, timeout=60
