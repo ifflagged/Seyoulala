@@ -2197,7 +2197,7 @@ http-response ^https?:\/\/api\.m\.jd\.com\/api\?functionId=delivery_show script-
 http-response ^https?:\/\/api\.gotokeep\.com\/athena\/v\d\/people\/my$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/chongxie/keep.js, requires-body=true, timeout=60, tag=keep
 
 # 应用底部栏净化
-http-response ^https?:\/\/api\.gotokeep\.com\/config\/v\d\/basic script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/chongxie/keep.js, requires-body=true, timeout=60, tag=keep
+#http-response ^https?:\/\/api\.gotokeep\.com\/config\/v\d\/basic script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/chongxie/keep.js, requires-body=true, timeout=60, tag=keep
 
 # 发现页处理
 http-response ^https?:\/\/api\.gotokeep\.com\/homepage\/v\d\/tab script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/chongxie/keep.js, requires-body=true, timeout=60, tag=keep

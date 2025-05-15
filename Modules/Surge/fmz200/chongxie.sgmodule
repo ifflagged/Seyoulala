@@ -2966,7 +2966,7 @@ jingxiAd = type=http-response, pattern=^https?:\/\/api\.m\.jd\.com\/api\?functio
 keep = type=http-response, pattern=^https?:\/\/api\.gotokeep\.com\/athena\/v\d\/people\/my$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/chongxie/keep.js, requires-body=true, max-size=-1, timeout=60
 
 # 应用底部栏净化
-keep = type=http-response, pattern=^https?:\/\/api\.gotokeep\.com\/config\/v\d\/basic, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/chongxie/keep.js, requires-body=true, max-size=-1, timeout=60
+#keep = type=http-response, pattern=^https?:\/\/api\.gotokeep\.com\/config\/v\d\/basic, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/chongxie/keep.js, requires-body=true, max-size=-1, timeout=60
 
 # 发现页处理
 keep = type=http-response, pattern=^https?:\/\/api\.gotokeep\.com\/homepage\/v\d\/tab, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/chongxie/keep.js, requires-body=true, max-size=-1, timeout=60
