@@ -8,10 +8,17 @@
 #!loon_version = 3.2.4(787)
 #!homepage = https://github.com/luestr/ProxyResource/blob/main/README.md
 #!icon = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/smzdm.png
-#!date = 2025-05-15 12:10:17
+#!date = 2025-05-15 12:28:53
+
+[Rule]
+DOMAIN, adx-api.zdmimg.com, REJECT
 
 [Rewrite]
 ^https:\/\/app-api\.smzdm\.com\/util\/loading\? reject-dict
+
+^https:\/\/app-api\.smzdm\.com\/util\/update$ response-body-json-replace data.silence_local_push 0 data.baichuan_redirect_switch 0
+
+^https:\/\/app-api\.smzdm\.com\/util\/update$ response-body-json-del data.silence_local_push_msg data.video_cache_num_configs data.haojia_widget
 
 ^https:\/\/homepage-api\.smzdm\.com\/v3\/home\? response-body-json-jq jq-path="https://kelee.one/Resource/JQLang/smzdm/home_smzdm_remove_ads.jq"
 
@@ -27,3 +34,4 @@
 
 [MitM]
 hostname = app-api.smzdm.com, homepage-api.smzdm.com, haojia-api.smzdm.com, haojia.m.smzdm.com, user-api.smzdm.com
+
