@@ -8,7 +8,7 @@
 #!loon_version = 3.2.4(787)
 #!homepage = https://github.com/luestr/ProxyResource/blob/main/README.md
 #!icon = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/smzdm.png
-#!date = 2025-05-15 03:41:01
+#!date = 2025-05-15 12:10:17
 
 [Rewrite]
 ^https:\/\/app-api\.smzdm\.com\/util\/loading\? reject-dict
@@ -17,11 +17,11 @@
 
 ^https:\/\/h5\.smzdm\.com\/user\/coupon\/coupon_list\? reject
 
-^https:\/\/haojia-api\.smzdm\.com\/home\/list\? response-body-json-jq '.data.banner_v2 |= if type == "array" then map(select(has("hongbao") | not)) else . end | .data.rows |= map(if .ad_campaign_id == null or .ad_campaign_id == "" then . else empty end)'
+^https:\/\/haojia-api\.smzdm\.com\/home\/list\? response-body-json-jq '.data.banner_v2 |= map(select(.cell_type != "23003"))'
 
 ^https:\/\/haojia\.m\.smzdm\.com\/detail_modul\/user_related_modul\? response-body-json-del data.super_coupon
 
-^https:\/\/user-api\.smzdm\.com\/vip$ response-body-json-del data.big_banner 
+^https:\/\/user-api\.smzdm\.com\/vip$ response-body-json-del data.big_banner
 
 ^https:\/\/user-api\.smzdm\.com\/vip\/bottom_card_list\? reject-dict
 
