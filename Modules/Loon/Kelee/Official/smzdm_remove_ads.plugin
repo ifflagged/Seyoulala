@@ -1,5 +1,5 @@
 #!name = 什么值得买去广告
-#!desc = 移除开屏广告、信息流广告、各类横幅广告，精简我的页面。
+#!desc = 移除开屏广告、信息流广告、各类横幅广告、搜索页广告，精简我的页面。
 #!openUrl = https://apps.apple.com/app/id518213356
 #!author = 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 #!tag = 去广告
@@ -8,7 +8,7 @@
 #!loon_version = 3.2.4(787)
 #!homepage = https://github.com/luestr/ProxyResource/blob/main/README.md
 #!icon = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/smzdm.png
-#!date = 2025-05-16 03:30:15
+#!date = 2025-05-16 22:37:35
 
 [Rule]
 DOMAIN, adx-api.zdmimg.com, REJECT
@@ -26,7 +26,7 @@ DOMAIN, adx-api.zdmimg.com, REJECT
 
 ^https:\/\/h5\.smzdm\.com\/user\/coupon\/coupon_list\? reject
 
-^https:\/\/haojia-api\.smzdm\.com\/home\/list\? response-body-json-jq '.data.banner_v2 |= map(select(.cell_type != "23003"))'
+^https:\/\/haojia-api\.smzdm\.com\/home\/list\? response-body-json-jq '.data.rows |= map(select(.cell_type == "39001")) | .data.banner_v2 |= map(select(.cell_type == "21028"))'
 
 ^https:\/\/haojia\.m\.smzdm\.com\/detail_modul\/user_related_modul\? response-body-json-del data.super_coupon
 
@@ -37,6 +37,8 @@ DOMAIN, adx-api.zdmimg.com, REJECT
 ^https:\/\/article-api\.smzdm\.com\/publish\/get_bubble\? reject-dict
 
 ^https:\/\/s-api\.smzdm\.com\/sou\/search_default_keyword\? reject-dict
+
+^https:\/\/s-api\.smzdm\.com\/sou\/filter\/tags\/hot_tags\? response-body-json-del data.search_faxian data.tonglan data.hongbao
 
 [MitM]
 hostname = app-api.smzdm.com, homepage-api.smzdm.com, h5.smzdm.com, haojia-api.smzdm.com, haojia.m.smzdm.com, user-api.smzdm.com, article-api.smzdm.com, s-api.smzdm.com
