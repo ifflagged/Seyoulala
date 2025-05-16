@@ -1,10 +1,7 @@
-#!name=meitu
-#!desc=meitu
-#!category=Jacob
+meitu%0A：Error: Response code 429 (Too Many Requests)
 
-[Rule]
-# > 美图秀秀 - MEITU
-DOMAIN,adui.tg.meitu.com,REJECT
-# > 美图秀秀 - MEITU
-DOMAIN,adui.tg.meitu.com,REJECT
 
+
+
+
+Script Hub 重写转换: ❌  可自行翻译错误信息或复制错误信息后点击通知进行反馈
