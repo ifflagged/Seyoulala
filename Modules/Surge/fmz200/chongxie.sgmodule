@@ -2709,9 +2709,6 @@ https://mgesq.api.mgtv.com/v2/user/center/icon data-type=text data="{}" status-c
 
 ^https?:\/\/ossweb-img\.qq\.com\/upload\/adw\/image\/[0-9]{3}\/202[0-9]{5}\/[a-z0-9]{32}\.(jpg|jpeg) data-type=text data=" " status-code=200
 
-# hostname = portal.zjzwfw.gov.cn
-^https?:\/\/portal\.zjzwfw\.gov\.cn\/app_api\/appHome\/selectStartPic data-type=text data=" " status-code=200
-
 # 开屏广告 感谢【Mozart】分享
 ^https?:\/\/z\.onewo\.com\/passer\/api\/ads\/v1\/8\/list data-type=text data=" " status-code=200
 
@@ -3364,6 +3361,9 @@ replaceBody = type=http-response, pattern=^https?:\/\/app\.zhuanzhuan\.com\/zz\/
 zhuanzhuan = type=http-response, pattern=^https?:\/\/app\.zhuanzhuan\.com\/zz\/transfer\/getmyprofilev3, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/chongxie/zhuanzhuan.js, requires-body=true, max-size=-1, timeout=60
 
 replaceBody = type=http-response, pattern=^https?:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzinfoshow\/getchoicegoodsinfos, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/chongxie/replace-body.js, requires-body=true, max-size=-1, timeout=30, argument=infoData-%3Efmz200
+
+# hostname = portal.zjzwfw.gov.cn
+replaceBody = type=http-response, pattern=^https?:\/\/portal\.zjzwfw\.gov\.cn\/app_api\/appHome\/selectStartPic, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/chongxie/replace-body.js, requires-body=true, max-size=-1, timeout=30, argument=%22data%22%3A%5C%7B.%2B%5C%7D-%3E%22data%22%3A%7B%7D
 
 # 去开屏
 replaceBody = type=http-response, pattern=^https?:\/\/app-izz\.zhengzhou\.gov\.cn:10019\/bizgw\/gateway\.do, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/chongxie/replace-body.js, requires-body=true, max-size=-1, timeout=30, argument=%22imgUrl19_5x9%22%3A%22.%2B%3F%22-%3E%22imgUrl19_5x9%22%3A%22%22

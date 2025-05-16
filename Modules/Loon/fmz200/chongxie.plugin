@@ -1946,8 +1946,6 @@ https://mgesq.api.mgtv.com/v2/user/center/icon - reject-dict
 ^https?:\/\/app\.zhuanzhuan\.com\/zz\/transfer\/userred\?scene=homePage - reject-dict
 ^https?:\/\/ossweb-img\.qq\.com\/upload\/adw\/image\/[0-9]{3}\/202[0-9]{5}\/[a-z0-9]{32}\.(jpg|jpeg) - reject-200
 ^https?:\/\/mlol\.qt\.qq\.com\/go\/recommend\/(?!v2\/platactivity.*) - reject
-# hostname = portal.zjzwfw.gov.cn
-^https?:\/\/portal\.zjzwfw\.gov\.cn\/app_api\/appHome\/selectStartPic - reject-200
 # 开屏广告 感谢【Mozart】分享
 ^https?:\/\/z\.onewo\.com\/passer\/api\/ads\/v1\/8\/list - reject-200
 # 开屏广告
@@ -2595,6 +2593,9 @@ http-response ^https?:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzinfoshow\/getfeedflowi
 http-response ^https?:\/\/app\.zhuanzhuan\.com\/zz\/transfer\/getmyprofilev3 script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/chongxie/zhuanzhuan.js, requires-body=true, timeout=60, tag=zhuanzhuan
 
 http-response ^https?:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzinfoshow\/getchoicegoodsinfos script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/chongxie/replace-body.js, requires-body=true, timeout=30, tag=replaceBody, argument=infoData-%3Efmz200
+
+# hostname = portal.zjzwfw.gov.cn
+http-response ^https?:\/\/portal\.zjzwfw\.gov\.cn\/app_api\/appHome\/selectStartPic script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/chongxie/replace-body.js, requires-body=true, timeout=30, tag=replaceBody, argument=%22data%22%3A%5C%7B.%2B%5C%7D-%3E%22data%22%3A%7B%7D
 
 # 去开屏
 http-response ^https?:\/\/app-izz\.zhengzhou\.gov\.cn:10019\/bizgw\/gateway\.do script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/chongxie/replace-body.js, requires-body=true, timeout=30, tag=replaceBody, argument=%22imgUrl19_5x9%22%3A%22.%2B%3F%22-%3E%22imgUrl19_5x9%22%3A%22%22
