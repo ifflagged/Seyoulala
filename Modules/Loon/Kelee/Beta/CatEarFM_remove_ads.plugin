@@ -1,5 +1,5 @@
 #!name=猫耳FM去广告
-#!desc=移除开屏广告、横幅推广、移除青少年模式弹窗，精简首页顶部入口和发现页面。
+#!desc=移除开屏广告、移除青少年模式弹窗，精简首页顶部入口。
 #!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
 #!tag=Jacob
@@ -8,33 +8,19 @@
 #!tag=去广告
 #!loon_version=3.2.4(787)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!date=2025-05-13 15:17:08
+#!date=2025-05-17 04:51:20
 
 [Rewrite]
-^https:\/\/app\.missevan\.com\/you-might-like\/my-favors\? response-body-json-jq '.info.ranks.data|=map(select(.name!="直播榜"))'
-^https:\/\/app\.missevan\.com\/site\/icons\? response-body-json-jq '.info.icons |= (if . == null then null else map(select(.title != "直播" and .title != "周边商城")) end)'
-^https:\/\/fm\.missevan\.com\/api\/v\d\/chatroom\/open\/search-recommend-list$ - reject-dict
-^https:\/\/app\.missevan\.com\/sound\/recommend\? - reject-dict
-^https:\/\/app\.missevan\.com\/drama\/get-recommend-by-id\? - reject-dict
-^https:\/\/fm\.missevan\.com\/api\/v\d\/meta\/banner$ - reject-dict
+^https:\/\/app\.missevan\.com\/site\/config$ response-body-json-jq '.info.cronet |= (fromjson | .quic = false | tojson)'
+^https:\/\/app\.missevan\.com\/site\/launch\? - reject-dict
+^https:\/\/data\.missevan\.com\/site\/ad-track$ - reject-dict
+^https:\/\/app\.missevan\.com\/x\/recommend\/get-popup$ - reject-dict
+^https:\/\/fm\.missevan\.com\/api\/v2\/recommended\/top\? - reject-dict
+^https:\/\/fm\.missevan\.com\/api\/v2\/chatroom\/sound\/recommend\? - reject-dict
 
 [Script]
-http-response ^https:\/\/app\.missevan\.com\/site\/launch\? script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_12, argument=%5B%5B%22json-del%22%2C%5B%22info%22%5D%5D%5D
-
-http-response ^https:\/\/app\.missevan\.com\/site\/config$ script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_13, argument=%5B%5B%22json-del%22%2C%5B%22info.homepage_top_task_button%22%2C%22info.teenager_popup_mode%22%5D%5D%5D
-
-http-response ^https:\/\/app\.missevan\.com\/site\/get-top$ script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_14, argument=%5B%5B%22json-del%22%2C%5B%22info.search_words%22%2C%22info.extra_banners%22%5D%5D%5D
-
-http-response ^https:\/\/app\.missevan\.com\/you-might-like\/my-favors\? script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_15, argument=%5B%5B%22json-del%22%2C%5B%22info.video_card%22%5D%5D%5D
-
-http-response ^https:\/\/fm\.missevan\.com\/api\/v2\/recommended\/top\? script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_17, argument=%5B%5B%22json-del%22%2C%5B%22info%22%5D%5D%5D
-
-http-response ^https:\/\/app\.missevan\.com\/drama\/catalog-homepage\? script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_18, argument=%5B%5B%22json-del%22%2C%5B%22info.extra_banners%22%5D%5D%5D
-
-http-response ^https:\/\/app\.missevan\.com\/catalog\/sound-homepage\? script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_20, argument=%5B%5B%22json-del%22%2C%5B%22info.extra_banners%22%5D%5D%5D
-
-http-response ^https:\/\/fm\.missevan\.com\/api\/v\d\/chatroom\/sound\/recommend\? script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_21, argument=%5B%5B%22json-del%22%2C%5B%22info%22%5D%5D%5D
+http-response ^https:\/\/app\.missevan\.com\/site\/config$ script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_14, argument=%5B%5B%22json-del%22%2C%5B%22info.tab_bar_live%22%2C%220%22%2C%22info.enable_tab_bar_live_notice%22%2C%22false%22%2C%22info.teenager_popup_mode%22%2C%220%22%5D%5D%2C%5B%22json-del%22%2C%5B%22info.httpdns%22%2C%22info.homepage_top_task_button%22%5D%5D%5D
 
 [MITM]
-hostname = app.missevan.com, fm.missevan.com
+hostname = app.missevan.com, data.missevan.com, fm.missevan.com
 
