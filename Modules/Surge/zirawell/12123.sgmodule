@@ -1,7 +1,19 @@
-12123%0A：Error: Response code 429 (Too Many Requests)
+#!name=12123
+#!desc=12123
+#!category=Jacob
 
+[Rule]
+# > 12123 - 12123
+DOMAIN-SUFFIX,v3.fstats.xyz,REJECT
+DOMAIN-SUFFIX,wss.haoyundmn.com,REJECT
+DOMAIN-SUFFIX,new.xiongzhangad.com,REJECT
+DOMAIN-SUFFIX,alexametrics.com,REJECT
+DOMAIN-KEYWORD,in-page-push,REJECT
 
+[URL Rewrite]
+# > 12123 - 12123
+^https?:\/\/gab\.122\.gov\.cn\/eapp\/m\/sysquery\/adver - reject
 
+[MITM]
+hostname = %APPEND% gab.122.gov.cn
 
-
-Script Hub 重写转换: ❌  可自行翻译错误信息或复制错误信息后点击通知进行反馈
