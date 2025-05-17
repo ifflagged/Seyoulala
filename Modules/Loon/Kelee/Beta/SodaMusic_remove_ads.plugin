@@ -8,11 +8,9 @@
 #!tag=去广告
 #!loon_version=3.2.4(787)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!date=2025-05-14 03:12:36
+#!date=2025-05-18 00:48:22
 
 [Rewrite]
-^https:\/\/beta-luna\.douyin\.com\/luna\/me\/recently-played-media\? response-body-json-jq '.media |= map(select(.type != "video"))'
-^https:\/\/beta-luna\.douyin\.com\/luna\/feed\/song-tab\? response-body-json-jq 'del(.items[] | select(.type == "video_track_mix"))'
 ^https:\/\/beta-luna\.douyin\.com\/luna\/card\? response-body-json-jq 'del(.card_items[] | select(has("priority_display")))'
 ^https:\/\/beta-luna\.douyin\.com\/luna\/more-panel\? response-body-json-jq '.blocks |= map(select(.type != "related_video"))'
 ^https:\/\/beta-luna\.douyin\.com\/luna\/commerce\/upsells_config\? - reject-dict
@@ -28,7 +26,11 @@
 [Script]
 http-response ^https:\/\/beta-luna\.douyin\.com\/luna\/me\? script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_17, argument=%5B%5B%22json-del%22%2C%5B%22reward_ad_banner%22%5D%5D%5D
 
-http-response ^https:\/\/beta-luna\.douyin\.com\/luna\/card\? script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_21, argument=%5B%5B%22json-del%22%2C%5B%22preview_guide%22%5D%5D%5D
+http-response ^https:\/\/beta-luna\.douyin\.com\/luna\/card\? script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_19, argument=%5B%5B%22json-del%22%2C%5B%22preview_guide%22%5D%5D%5D
+
+http-response ^https:\/\/beta-luna\.douyin\.com\/luna\/me\/recently-played-media\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/SodaMusic_remove_ads/SodaMusic_remove_ads.js, requires-body=true, tag=移除播放页面视频流
+
+http-response ^https:\/\/beta-luna\.douyin\.com\/luna\/feed\/song-tab\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/SodaMusic_remove_ads/SodaMusic_remove_ads.js, requires-body=true, tag=移除播放页面视频流
 
 [MITM]
 hostname = webcast-open.douyin.com, beta-luna.douyin.com, api.qishui.com

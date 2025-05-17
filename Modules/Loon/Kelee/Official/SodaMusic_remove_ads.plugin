@@ -8,7 +8,7 @@
 #!loon_version = 3.2.4(787)
 #!homepage = https://github.com/luestr/ProxyResource/blob/main/README.md
 #!icon = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/SodaMusic.png
-#!date = 2025-05-18 00:48:22
+#!date = 2025-05-18 01:29:34
 
 [Rewrite]
 ^https:\/\/beta-luna\.douyin\.com\/luna\/commerce\/upsells_config\? reject-dict
@@ -24,6 +24,7 @@
 
 ^https:\/\/beta-luna\.douyin\.com\/luna\/activities\? reject-dict
 
+^https:\/\/beta-luna\.douyin\.com\/luna\/feed\/song-tab\? response-body-json-jq 'del(.items[] | select(.type == "video_track_mix"))'
 
 ^https:\/\/beta-luna\.douyin\.com\/luna\/card\? response-body-json-del preview_guide
 
@@ -39,8 +40,6 @@
 
 [Script]
 http-response ^https:\/\/beta-luna\.douyin\.com\/luna\/me\/recently-played-media\? script-path = https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/SodaMusic_remove_ads/SodaMusic_remove_ads.js, requires-body = true, tag = 移除播放页面视频流
-
-http-response ^https:\/\/beta-luna\.douyin\.com\/luna\/feed\/song-tab\? script-path = https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/SodaMusic_remove_ads/SodaMusic_remove_ads.js, requires-body = true, tag = 移除播放页面视频流
 
 [MitM]
 hostname = webcast-open.douyin.com, beta-luna.douyin.com, api.qishui.com
