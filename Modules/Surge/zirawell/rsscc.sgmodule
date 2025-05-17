@@ -1,7 +1,14 @@
-rsscc%0A：Error: Response code 429 (Too Many Requests)
+#!name=rsscc
+#!desc=rsscc
+#!category=Jacob
 
+[URL Rewrite]
+# > 高铁管家 - GTGJ
+^https?:\/\/[a-z]*\.rsscc\.com\/[a-z]*\/adver - reject
 
+[Map Local]
+^https?:\/\/cdn\.133\.cn\/md\/gtgj\/.+\/.+720x1280 data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
+[MITM]
+hostname = %APPEND% *.rsscc.com, cdn.133.cn
 
-
-Script Hub 重写转换: ❌  可自行翻译错误信息或复制错误信息后点击通知进行反馈
