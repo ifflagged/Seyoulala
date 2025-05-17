@@ -39,7 +39,7 @@ if (url.includes("/homeApi/bottomNavi")) {
 // 我的页猜你喜欢
 } else if (url.includes("/homeApi/userLike")) {
 	if (obj.data?.product_list && obj.data.product_list.length > 0) {
-		obj.data.product_list = [];
+		obj.data.product_list = obj.data.product_list.splice(2);
 		obj.data.slimming = true;
 	}
 
