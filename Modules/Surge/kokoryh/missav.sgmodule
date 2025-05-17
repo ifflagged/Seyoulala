@@ -1,15 +1,7 @@
-#!name=MissAV去广告
-#!desc=适用于 missav.ai, missav.ws
-#!category=Jacob
+missav%0A：Error: Response code 429 (Too Many Requests)
 
-[Rule]
-DOMAIN-SUFFIX,creative.myavlive.com,REJECT,pre-matching
-DOMAIN-SUFFIX,trackwilltrk.com,REJECT,pre-matching
-DOMAIN-SUFFIX,tsyndicate.com,REJECT,pre-matching
 
-[Script]
-missav.html = type=http-response, pattern=^https:\/\/missav\.(?:ai|ws)\/(?!(build|fonts|img|js|api|cdn-cgi)\/)., script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/kokoryh/missav/missav.html.js, requires-body=true, engine=webview, max-size=-1
 
-[MITM]
-hostname = %APPEND% missav.ai, missav.ws
 
+
+Script Hub 重写转换: ❌  可自行翻译错误信息或复制错误信息后点击通知进行反馈
