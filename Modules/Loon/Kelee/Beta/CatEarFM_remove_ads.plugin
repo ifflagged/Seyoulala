@@ -8,14 +8,13 @@
 #!tag=去广告
 #!loon_version=3.2.4(787)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!date=2025-05-17 04:51:20
+#!date=2025-05-17 13:22:26
 
 [Rewrite]
 ^https:\/\/app\.missevan\.com\/site\/config$ response-body-json-jq '.info.cronet |= (fromjson | .quic = false | tojson)'
 ^https:\/\/app\.missevan\.com\/site\/launch\? - reject-dict
 ^https:\/\/data\.missevan\.com\/site\/ad-track$ - reject-dict
 ^https:\/\/app\.missevan\.com\/x\/recommend\/get-popup$ - reject-dict
-^https:\/\/fm\.missevan\.com\/api\/v2\/recommended\/top\? - reject-dict
 ^https:\/\/fm\.missevan\.com\/api\/v2\/chatroom\/sound\/recommend\? - reject-dict
 
 [Script]

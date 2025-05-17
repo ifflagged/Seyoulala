@@ -8,7 +8,7 @@
 #!tag=去广告
 #!loon_version=3.2.4(787)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!date=2025-05-16 22:37:35
+#!date=2025-05-17 13:19:55
 
 [Rule]
 DOMAIN,adx-api.zdmimg.com,REJECT
@@ -17,6 +17,7 @@ DOMAIN,adx-api.zdmimg.com,REJECT
 ^https:\/\/app-api\.smzdm\.com\/util\/update$ response-body-json-jq 'def r: if type=="object" then if has("ad_campaign_name") and (.ad_campaign_name|type=="string") and (.ad_campaign_name|test("\\S")) then empty else . end elif type=="array" then map(r) else . end; .data.operation_float |= map(map(r))'
 ^https:\/\/homepage-api\.smzdm\.com\/v3\/home\? response-body-json-jq jq-path="https://kelee.one/Resource/JQLang/smzdm/home_smzdm_remove_ads.jq"
 ^https:\/\/haojia-api\.smzdm\.com\/home\/list\? response-body-json-jq '.data.rows |= map(select(.cell_type == "39001")) | .data.banner_v2 |= map(select(.cell_type == "21028"))'
+^https:\/\/s-api\.smzdm\.com\/sou\/filter\/tags\/hot_tags\? response-body-json-jq '.data.search_hot.home |= map(if .article_tag?.article_title == "广告" then del(.article_tag) else . end)'
 ^https:\/\/app-api\.smzdm\.com\/util\/loading\? - reject-dict
 ^https:\/\/h5\.smzdm\.com\/user\/coupon\/coupon_list\? - reject
 ^https:\/\/user-api\.smzdm\.com\/vip\/bottom_card_list\? - reject-dict
