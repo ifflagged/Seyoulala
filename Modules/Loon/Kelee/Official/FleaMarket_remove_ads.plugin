@@ -8,7 +8,7 @@
 #!loon_version = 3.2.4(787)
 #!homepage = https://github.com/luestr/ProxyResource/blob/main/README.md
 #!icon = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/FleaMarket.png
-#!date = 2025-05-18 00:40:27
+#!date = 2025-05-18 03:19:19
 
 [Rule]
 AND, ((URL-REGEX, "^http:\/\/.+\/amdc\/mobileDispatch"), (USER-AGENT, "%E9%97%B2%E9%B1%BC*")), REJECT
@@ -30,7 +30,7 @@ AND, ((URL-REGEX, "^http:\/\/.+\/amdc\/mobileDispatch"), (USER-AGENT, "%E9%97%B2
 
 ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.local\.flow\.plat\.section\/ response-body-json-jq 'walk(if type == "object" and has("components") then .components |= map(if .data.template.name == "fish_city_banner" then del(.data.item) else . end) else . end)'
 
-^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.local\.home\/ response-body-json-jq '.data.sections |= map(select(.template.cardEnum != "ads"))'
+^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.local\.home\/ response-body-json-jq '.data.sections |= map(select((.template.cardEnum != "ads") and (.cardType == "common")))'
 
 ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.idle\.user\.page\.my\.adapter\/ response-body-json-jq '.data.container.sections |= map(if .item.tips? then empty else . end) | .data.container.sections |= map(select(.item?.bottom? | not)) | .data.container.sections |= map(if (.template.name | type == "string") and (.template.name | contains("xianyu_home_fish_my_banner_card")) then del(.template) else . end)'
 
