@@ -36,6 +36,13 @@ if (url.includes("/homeApi/bottomNavi")) {
 	if (obj.data?.ai_enter_config){
 		delete obj.data.ai_enter_config;
 	}
+// 我的页猜你喜欢
+} else if (url.includes("/homeApi/userLike")) {
+	if (obj.data?.product_list && obj.data.product_list.length > 0) {
+		obj.data.product_list = [];
+		obj.data.slimming = true;
+	}
+
 }
 body = JSON.stringify(obj);
 $done({body});
