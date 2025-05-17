@@ -9,80 +9,10 @@
 skip-proxy = %INSERT% localhost, *.local, captive.apple.com, e.crashlytics.com, www.baidu.com, passenger.t3go.cn, yunbusiness.ccb.com, wxh.wo.cn, gate.lagou.com, www.abchina.com.cn, login-service.mobile-bank.psbc.com, mobile-bank.psbc.com, 10.0.0.0/8, 127.0.0.1/32, 172.16.0.0/12, 192.168.0.0/16, 192.168.122.1/32, 193.168.0.1/32, ::1/128, fe80::/10
 # General
 always-real-ip = %INSERT% *.lan, *.direct, cable.auth.com, *.msftconnecttest.com, *.msftncsi.com, network-test.debian.org, detectportal.firefox.com, resolver1.opendns.com, *.srv.nintendo.net, *.stun.playstation.net, xbox.*.microsoft.com, *.xboxlive.com, stun.*, global.turn.twilio.com, global.stun.twilio.com, app.yinxiang.com, injections.adguard.org, local.adguard.org, localhost.*.qq.com, localhost.*.weixin.qq.com, *.logon.battlenet.com.cn, *.logon.battle.net, *.blzstatic.cn, music.163.com, *.music.163.com, *.126.net, musicapi.taihe.com, music.taihe.com, songsearch.kugou.com, trackercdn.kugou.com, *.kuwo.cn, api-jooxtt.sanook.com, api.joox.com, joox.com, y.qq.com, *.y.qq.com, streamoc.music.tc.qq.com, mobileoc.music.tc.qq.com, isure.stream.qqmusic.qq.com, dl.stream.qqmusic.qq.com, aqqmusic.tc.qq.com, amobile.music.tc.qq.com, *.xiami.com, *.music.migu.cn, music.migu.cn, proxy.golang.org, *.mcdn.bilivideo.cn, *.cmpassport.com, id6.me, open.e.189.cn, opencloud.wostore.cn, id.mail.wo.cn, mdn.open.wo.cn, hmrz.wo.cn, nishub1.10010.com, enrichgw.10010.com, *.wosms.cn, *.jegotrip.com.cn, *.icitymobile.mobi, *.pingan.com.cn, *.cmbchina.com, *.10099.com.cn, *.microdone.cn, pool.ntp.org, *.pool.ntp.org, ntp.*.com, time.*.com, ntp?.*.com, time?.*.com, time.*.gov, time.*.edu.cn, *.ntp.org.cn, PDC._msDCS.*.*, DC._msDCS.*.*, GC._msDCS.*.*
-# HTTPDNS.Block & # BiliBili.Redirect & # boxjs.rewrite.surge
-force-http-engine-hosts = %APPEND% 119.29.29.29:80, dns.weixin.qq.com:80, dns.weixin.qq.com:8080, dns.weixin.qq.com:443, *:4480, *:4483, *:8000, *:8082, *:9102, boxjs.com, boxjs.net, *.boxjs.com, *.boxjs.net
-# DNS
-use-local-host-item-for-proxy = true
-# DNS
-encrypted-dns-follow-outbound-mode = false
+# Tools & # BiliBili.Redirect & # boxjs.rewrite.surge
+force-http-engine-hosts = %APPEND% router.com, www.router.com, *:4480, *:4483, *:8000, *:8082, *:9102, boxjs.com, boxjs.net, *.boxjs.com, *.boxjs.net
 
 [Rule]
-# HTTPDNS.Block
-DOMAIN, httpdns.alicdn.com, REJECT, extended-matching
-DOMAIN, httpdns-api.aliyuncs.com, REJECT, extended-matching
-DOMAIN, httpdns-sc.aliyuncs.com, REJECT, extended-matching
-IP-CIDR, 203.107.1.0/24, REJECT, no-resolve
-DOMAIN, httpsdns.baidu.com, REJECT, extended-matching
-DOMAIN, httpdns.baidu.com, REJECT, extended-matching
-DOMAIN, httpdns.baidubce.com, REJECT, extended-matching
-IP-CIDR, 180.76.76.200/32, REJECT, no-resolve
-DOMAIN, httpdns.bilivideo.com, REJECT, extended-matching
-IP-CIDR, 47.101.175.206/32, REJECT, no-resolve
-IP-CIDR, 47.100.123.169/32, REJECT, no-resolve
-IP-CIDR, 120.46.169.234/32, REJECT, no-resolve
-IP-CIDR, 121.36.72.124/32, REJECT, no-resolve
-IP-CIDR, 116.63.10.135/32, REJECT, no-resolve
-IP-CIDR, 122.9.7.134/32, REJECT, no-resolve
-IP-CIDR, 117.185.228.108/32, REJECT, no-resolve
-IP-CIDR, 117.144.238.29/32, REJECT, no-resolve
-IP-CIDR, 122.9.13.79/32, REJECT, no-resolve
-IP-CIDR, 122.9.15.129/32, REJECT, no-resolve
-IP-CIDR, 101.91.140.224/32, REJECT, no-resolve
-IP-CIDR, 101.91.140.124/32, REJECT, no-resolve
-IP-CIDR, 114.116.215.110/32, REJECT, no-resolve
-IP-CIDR, 116.63.10.31/32, REJECT, no-resolve
-IP-CIDR, 112.64.218.119/32, REJECT, no-resolve
-IP-CIDR, 112.65.200.117/32, REJECT, no-resolve
-DOMAIN, httpdns.c.cdnhwc2.com, REJECT, extended-matching
-DOMAIN, dns.jd.com, REJECT, extended-matching
-IP-CIDR, 101.124.19.122/32, REJECT, no-resolve
-IP-CIDR6, 2402:db40:5100:1011::5/128, REJECT, no-resolve
-IP-CIDR, 103.224.222.208/32, REJECT, no-resolve
-DOMAIN, httpdns.calorietech.com, REJECT, extended-matching
-DOMAIN, httpdns.meituan.com, REJECT, extended-matching
-DOMAIN, httpdnsvip.meituan.com, REJECT, extended-matching
-IP-CIDR, 202.90.108.13/32, REJECT, no-resolve
-IP-CIDR, 202.90.110.46/32, REJECT, no-resolve
-DOMAIN, httpdns.yunxindns.com, REJECT, extended-matching
-DOMAIN, httpdns.n.netease.com, REJECT, extended-matching
-DOMAIN, httpdns.music.163.com, REJECT, extended-matching
-DOMAIN, music.httpdns.c.163.com, REJECT, extended-matching
-DOMAIN, lofter.httpdns.c.163.com, REJECT, extended-matching
-IP-CIDR, 59.111.239.61/32, REJECT, no-resolve
-IP-CIDR, 59.111.239.62/32, REJECT, no-resolve
-IP-CIDR, 115.236.121.51/32, REJECT, no-resolve
-IP-CIDR, 115.236.121.195/32, REJECT, no-resolve
-DOMAIN, httpdns.push.oppomobile.com, REJECT, extended-matching
-DOMAIN-SUFFIX, httpdns.pro, REJECT, extended-matching
-IP-CIDR, 119.29.29.98/32, REJECT, no-resolve
-IP-CIDR, 119.29.29.99/32, REJECT, no-resolve
-DOMAIN, httpdns.volcengineapi.com, REJECT, extended-matching
-DOMAIN, dns.weibo.cn, REJECT, extended-matching
-IP-CIDR, 39.97.128.148/32, REJECT, no-resolve
-IP-CIDR, 39.97.130.51/32, REJECT, no-resolve
-IP-CIDR, 182.254.116.117/32, REJECT, no-resolve
-IP-CIDR, 182.254.118.119/32, REJECT, no-resolve
-DOMAIN, dns.weixin.qq.com, REJECT, extended-matching
-DOMAIN, dns.weixin.qq.com.cn, REJECT, extended-matching
-IP-CIDR, 42.81.232.18/32, REJECT, no-resolve
-IP-CIDR, 42.187.182.106/32, REJECT, no-resolve
-IP-CIDR, 42.187.182.123/32, REJECT, no-resolve
-IP-CIDR, 42.187.184.154/32, REJECT, no-resolve
-IP-CIDR, 123.151.54.50/32, REJECT, no-resolve
-IP-CIDR6, 2402:4e00:1900:1700:0:9554:1ad9:c3a/128, REJECT, no-resolve
-IP-CIDR6, 240e:928:1400:10::25/128, REJECT, no-resolve
-IP-CIDR, 118.89.204.198/32, REJECT, no-resolve
-IP-CIDR6, 2402:4e00:1200:ed00:0:9089:6dac:96b6/128, REJECT, no-resolve
 # iRingo.WeatherKit
 DOMAIN, weather-analytics-events.apple.com, REJECT-DROP
 DOMAIN-SUFFIX, tthr.apple.com, REJECT-DROP, extended-matching
@@ -420,6 +350,8 @@ DOMAIN, safebrowsing.googleapis.com, REJECT
 DOMAIN, safebrowsing.urlsec.qq.com, REJECT
 DOMAIN-SUFFIX, safebrowsing.apple, REJECT
 DOMAIN-SUFFIX, u3.ucweb.com, REJECT
+IP-CIDR, 119.29.29.98/32, REJECT, no-resolve
+IP-CIDR, 119.29.29.99/32, REJECT, no-resolve
 IP-CIDR, 81.71.61.216/32, REJECT, no-resolve
 DOMAIN, geo2.adobe.com, REJECT
 # jd
@@ -436,6 +368,8 @@ DOMAIN-KEYWORD, kepler.jd.com, REJECT
 DOMAIN-KEYWORD, bdsp.x.jd.com, REJECT
 DOMAIN-KEYWORD, keplerapi.jd.com, REJECT
 DOMAIN-KEYWORD, mapi.m.jd.com, REJECT
+IP-CIDR, 101.124.19.122/32, REJECT, no-resolve
+IP-CIDR6, 2402:db40:5100:1011::5/128, REJECT, no-resolve
 # meituan
 IP-CIDR, 103.37.155.60/32, REJECT, no-resolve
 DOMAIN, flowplus.meituan.net, REJECT
@@ -455,6 +389,35 @@ DOMAIN-KEYWORD, report.meituan, REJECT
 # sgcc
 DOMAIN, mdap.mpaas.cn-hangzhou.aliyuncs.com, REJECT
 DOMAIN, csc-apm.sgcc.com.cn, REJECT
+# taobao
+DOMAIN-SUFFIX, apoll.m.taobao.com, REJECT
+DOMAIN-SUFFIX, w.m.taobao.com, REJECT
+DOMAIN-SUFFIX, re.m.taobao.com, REJECT
+DOMAIN-SUFFIX, re.taobao.com, REJECT
+DOMAIN-SUFFIX, agoodm.m.taobao.com, REJECT
+DOMAIN-SUFFIX, ai.taobao.com, REJECT
+DOMAIN-SUFFIX, api.waptest.taobao.com, REJECT
+DOMAIN-SUFFIX, dsp.simba.taobao.com, REJECT
+DOMAIN-SUFFIX, fav.simba.taobao.com, REJECT
+DOMAIN-SUFFIX, m.simba.taobao.com, REJECT
+DOMAIN-SUFFIX, mclick.simba.taobao.com, REJECT
+DOMAIN-SUFFIX, redirect.simba.taobao.com, REJECT
+DOMAIN-SUFFIX, simba.m.taobao.com, REJECT
+DOMAIN-SUFFIX, srd.simba.taobao.com, REJECT
+DOMAIN-SUFFIX, temai.taobao.com, REJECT
+DOMAIN-SUFFIX, textlink.simba.taobao.com, REJECT
+DOMAIN-SUFFIX, unitacs.m.taobao.com, REJECT
+DOMAIN-SUFFIX, adashx4yt.m.taobao.com, REJECT
+DOMAIN-SUFFIX, tns.simba.taobao.com, REJECT
+DOMAIN-SUFFIX, click.mz.simba.taobao.com, REJECT
+DOMAIN-SUFFIX, click.simba.taobao.com, REJECT
+DOMAIN-SUFFIX, click.tz.simba.taobao.com, REJECT
+DOMAIN-SUFFIX, stat.simba.taobao.com, REJECT
+DOMAIN-SUFFIX, m-adash.m.taobao.com, REJECT
+DOMAIN-SUFFIX, adashbc.m.taobao.com, REJECT
+DOMAIN-SUFFIX, ut.taobao.com, REJECT
+DOMAIN-SUFFIX, tunion-api.m.taobao.com, REJECT
+DOMAIN-SUFFIX, acs4baichuan.m.taobao.com, REJECT
 # umetrip
 DOMAIN, analytics.umetrip.com, REJECT
 DOMAIN, sensors.umetrip.com.cn, REJECT
@@ -463,69 +426,12 @@ DOMAIN, api.biliapi.com, REJECT, pre-matching
 DOMAIN, app.biliapi.com, REJECT, pre-matching
 DOMAIN, api.biliapi.net, REJECT, pre-matching
 DOMAIN, app.biliapi.net, REJECT, pre-matching
-# Bilibili_remove_ads
-DOMAIN, api.biliapi.com, REJECT
-DOMAIN, api.biliapi.net, REJECT
-DOMAIN, app.biliapi.com, REJECT
-DOMAIN, app.biliapi.net, REJECT
-URL-REGEX, "^http:\/\/upos-sz-static\.bilivideo\.com\/ssaxcode\/\w{2}\/\w{2}\/\w{32}-1-SPLASH", REJECT-TINYGIF
-URL-REGEX, "^http:\/\/[\d\.]+:8000\/v1\/resource\/\w{32}-1-SPLASH", REJECT-TINYGIF
 
 [URL Rewrite]
-# HTTPDNS.Block
-^https?:\/\/amdc\.alipay\.com\/s?query - reject
-^https?:\/\/amdc-sibling\.alipay\.com\.cn\/s?query - reject
-^https?:\/\/110\.76\.8\.150\/squery - reject
-^https?:\/\/203\.209\.230\.39\/squery - reject
-^https?:\/\/203\.209\.245\.102\/squery - reject
-^https?:\/\/203\.209\.245\.158\/squery - reject
-^https?:\/\/203\.209\.247\.95\/squery - reject
-^https?:\/\/203\.209\.250\.41\/squery - reject
-^https?:\/\/203\.209\.250\.114\/squery - reject
-^https?:\/\/203\.209\.251\.147\/squery - reject
-^https?:\/\/2400:B180:6001::18F\/squery - reject
-^https?:\/\/2400:B200:1005:3000::155\/squery - reject
-^https?:\/\/2400:B200:1005:3000::1D3\/squery - reject
-^https?:\/\/2400:B200:5000:B000::C8\/squery - reject
-^http:\/\/180\.76\.76\.112\/v4\/resolve - reject
-^http:\/\/180\.76\.76\.220\/v4\/resolve - reject
-^http:\/\/47\.101\.175\.206\/resolve - reject
-^http:\/\/47\.100\.123\.169\/resolve - reject
-^http:\/\/120\.46\.169\.234\/resolve - reject
-^http:\/\/121\.36\.72\.124\/resolve - reject
-^http:\/\/116\.63\.10\.135\/resolve - reject
-^http:\/\/122\.9\.7\.134\/resolve - reject
-^http:\/\/117\.185\.228\.108\/resolve - reject
-^http:\/\/117\.144\.238\.29\/resolve - reject
-^http:\/\/122\.9\.13\.79\/resolve - reject
-^http:\/\/122\.9\.15\.129\/resolve - reject
-^http:\/\/101\.91\.140\.224\/resolve - reject
-^http:\/\/101\.91\.140\.124\/resolve - reject
-^http:\/\/114\.116\.215\.110\/resolve - reject
-^http:\/\/116\.63\.10\.31\/resolve - reject
-^http:\/\/112\.64\.218\.119\/resolve - reject
-^http:\/\/112\.65\.200\.117\/resolve - reject
-^https?:\/\/.+\.zijieapi\.com\/get_domains\/ - reject
-^https:\/\/dns\.jd\.com\/v6\/b - reject
-^http:\/\/103\.37\.155\.60\/fetch - reject
-^http:\/\/101\.35\.204\.35\/d - reject
-^http:\/\/101\.35\.212\.35\/d - reject
-^http:\/\/114\.110\.96\.26\/d - reject
-^http:\/\/114\.110\.97\.97\/d - reject
-^http:\/\/240c:409f::3:0:163\/d - reject
-^http:\/\/240c:409f::3:0:359\/d - reject
-^http:\/\/2402:4e00:1411:201:0:9964:ba21:5a41\/d - reject
-^https?:\/\/119\.29\.29\.29\/d - reject
-^http:\/\/182\.256\.116\.116\/d - reject
-^http:\/\/api\.weibo\.cn\/2\/httpdns\/config - reject
-^http:\/\/api\.weibo\.cn\/httpdns\/config - reject
-^https?:\/\/dns\.weixin\.qq\.com\/cgi-bin\/micromsg-bin\/newgetdns - reject
-^https?:\/\/dns\.weixin\.qq\.com\.cn\/cgi-bin\/micromsg-bin\/newgetdns - reject
-^https?:\/\/short\.weixin\.qq\.com\/cgi-bin\/micromsg-bin\/getcdndns - reject
-^https?:\/\/hkextshort\.weixin\.qq\.com\/cgi-bin\/micromsg-bin\/getcdndns - reject
-^http:\/\/182\.254\.116\.117\/d - reject
-^http:\/\/182\.254\.118\.119\/d - reject
-^http:\/\/103\.41\.167\.237\/v2\/resolv - reject
+# Tools
+^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=lite_advertising - reject
+^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=getWidgetV1052 - reject
+^https?://(|www\.)router\.com http://{{{GATEWAY_ADDRESS}}} 302
 # Module-Common
 ^https:\/\/(cn|www)\.pornhub\.com\/_xa\/ads - reject
 https?:\/\/91porn\.com(\/|)$ https://91porn.com/index.php 302
@@ -568,6 +474,9 @@ https?:\/\/91porn\.com(\/|)$ https://91porn.com/index.php 302
 ^https?:\/\/(?>csc|osg)-service\.sgcc\.com\.cn:\d+\/emss-pfa-appset-front\/appForceUpdate - reject
 ^https?:\/\/(?>csc|osg)-service\.sgcc\.com\.cn:\d+\/emss-pfa-appset-front\/appSync\/getAppForceUpgrade - reject
 ^https?:\/\/(?>csc|osg)-service\.sgcc\.com\.cn:\d+\/.*\/inner\/cache - reject
+# taobao
+^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.etao\.noah\.query\/.+tao_splash - reject
+^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alimama\.etao\.config\.query\/.+?etao_advertise - reject
 # umetrip
 ^https?:\/\/(discardrp|startup)\.umetrip\.com\/gateway\/api\/umetrip\/native - reject
 # BiliBili.ADBlock
@@ -576,234 +485,6 @@ https?:\/\/91porn\.com(\/|)$ https://91porn.com/index.php 302
 [Header Rewrite]
 # bilibili
 {{{替换鉴权字段}}}ttp-request ^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.(?:playerunite\.v1\.Player\/PlayViewUnite|pgc\.gateway\.player\.v2\.PlayURL\/PlayView)$ header-replace authorization "{{{Authorization}}}"
-
-[Host]
-# DNS
-ip6-localhost = ::1 // IPv6 Localhost
-ip6-loopback = ::1 // IPv6 Loopback
-ip6-localnet = fe00::0 // IPv6 Link-Local
-ip6-mcastprefix = ff00::0 // IPv6 Multicast
-ip6-allnodes = ff02::1 // IPv6 All Nodes
-ip6-allrouters = ff02::2 // IPv6 All Routers
-ip6-allhosts = ff02::3 // IPv6 All Hosts
-dns.google = 8.8.8.8, 8.8.4.4, 2001:4860:4860::8888, 2001:4860:4860::8844 // https://dns.google/dns-query
-dns64.dns.google = 2001:4860:4860::6464, 2001:4860:4860::64 // https://dns64.dns.google/dns-query
-cloudflare-dns.com = 104.16.249.249, 104.16.248.249, 2606:4700::6810:f8f9, 2606:4700::6810:f9f9 // https://cloudflare-dns.com/dns-query
-1dot1dot1dot1.cloudflare-dns.com = 1.1.1.1, 1.0.0.1, 2606:4700:4700::1001, 2606:4700:4700::1111 // 1dot1dot1dot1.cloudflare-dns.com:853
-one.one.one.one = 1.1.1.1, 1.0.0.1, 2606:4700:4700::1001, 2606:4700:4700::1111  // one.one.one.one:853
-dns.alidns.com = 223.5.5.5, 223.6.6.6, 2400:3200:baba::1, 2400:3200::1 // https://dns.alidns.com/dns-query
-doh.pub = 1.12.12.12, 120.53.53.53 // https://doh.pub/dns-query
-dot.pub = 1.12.12.12, 120.53.53.53 // dot.pub:853
-doh.360.cn = 23.6.48.18, 112.65.69.15 // https://doh.360.cn/dns-query
-dot.360.cn = 101.198.198.198, 101.198.199.200, 101.198.192.33, 112.65.69.15 // dot.360.cn:853
-dns.twnic.tw = 101.101.101.101, 2001:de4::101, 2001:de4::102 // https://dns.twnic.tw/dns-query
-ordns.he.net = 74.82.42.42, 2001:470:20::2 // https://ordns.he.net/dns-query
-talk.google.com = 108.177.125.188 // Firebase Cloud Messaging
-mtalk.google.com = 108.177.125.188, 2404:6800:4008:c07::bc, 142.250.31.188 // Firebase Cloud Messaging
-alt1-mtalk.google.com = 3.3.3.3, 2607:f8b0:4023:c0b::bc, 64.233.171.188 // Firebase Cloud Messaging
-alt2-mtalk.google.com = 3.3.3.3, 142.250.115.188 // Firebase Cloud Messaging
-alt3-mtalk.google.com = 74.125.200.188, 173.194.77.188 // Firebase Cloud Messaging
-alt4-mtalk.google.com = 74.125.200.188, 173.194.219.188 // Firebase Cloud Messaging
-alt5-mtalk.google.com = 3.3.3.3, 2607:f8b0:4023:1::bc, 142.250.112.188 // Firebase Cloud Messaging
-alt6-mtalk.google.com = 3.3.3.3, 172.217.197.188 // Firebase Cloud Messaging
-alt7-mtalk.google.com = 74.125.200.188, 2607:f8b0:4002:c03::bc, 108.177.12.188 // Firebase Cloud Messaging
-alt8-mtalk.google.com = 3.3.3.3 // Firebase Cloud Messaging
-blog.google = server:119.29.29.29 // Google Blog
-googletraveladservices.com = server:119.29.29.29 // Google Flights
-dl.google.com = server:119.29.29.29 // Google Download
-dl.l.google.com = server:119.29.29.29 // Google Download
-clientservices.googleapis.com = server:119.29.29.29 // Google Chrome
-update.googleapis.com = server:119.29.29.29 // Google Update
-translate.googleapis.com = server:119.29.29.29 // Google Translate
-fonts.googleapis.com = server:119.29.29.29 // Google Fonts
-fonts.gstatic.com = server:119.29.29.29 // Google Fonts
-stun.l.google.com = server:syslib // Google STUN
-stun?.l.google.com = server:syslib // Google STUN
-*.id.ui.direct = server:syslib // Ubiquiti Unifi Network App
-unifi.local = server:syslib // Ubiquiti Unifi OS
-amplifi.lan = server:syslib // Ubiquiti Amplifi Router
-router.synology.com = server:syslib // Synology Router
-sila.razer.com = server:syslib // Razer Sila Router
-router.asus.com = server:syslib // Asus Router
-routerlogin.net = server:syslib // Netgear Router
-orbilogin.com = server:syslib // Netgear Obri Router
-www.LinksysSmartWiFi.com = server:syslib // Linksys Router
-LinksysSmartWiFi.com = server:syslib // Linksys Router
-myrouter.local = server:syslib // Linksys Router
-instant.arubanetworks.com = server:syslib // Aurba Router
-setmeup.arubanetworks.com = server:syslib // Aurba Router
-www.miwifi.com = server:syslib // 小米 Mi WiFi Router
-miwifi.com = server:syslib // 小米 Mi WiFi Router
-mediarouter.home = server:syslib // 华为 Huawei Router
-tplogin.cn = server:syslib // TP-Link Router
-tplinklogin.net = server:syslib // TP-Link Router
-tplinkwifi.net = server:syslib // TP-Link Router
-melogin.cn = server:syslib // 水星 MERCURY Router
-falogin.cn = server:syslib // 迅捷 FAST Router
-tendawifi.com = server:syslib // 腾达 Tenda Router
-leike.cc = server:syslib // 磊科 Netcore Router
-zte.home = server:syslib // 中兴 ZTE Router
-p.to = server:syslib // 斐讯 PHICOMM Router
-phicomm.me = server:syslib // 斐讯 PHICOMM Router
-hiwifi.com = server:syslib // 极路由 HiWiFi Router
-peiluyou.com = server:syslib // 迅雷路由
-_hotspot_.m2m = server:syslib // M2M routers at MiFi Hotspot
-hotspot.cslwifi.com = server:syslib // csl Wi-Fi
-networking.apple = server:https://doh.dns.apple.com/dns-query // Apple
-*.icloud.com = server:https://doh.dns.apple.com/dns-query // iCloud.com
-*.alibaba.cn = server:quic://dns.alidns.com // 阿里巴巴
-*.alibaba.com.cn = server:quic://dns.alidns.com // 阿里巴巴
-*.china.alibaba.com = server:quic://dns.alidns.com // Alibaba 中国
-*.1688.com = server:quic://dns.alidns.com // 1688
-*.taobao.com = server:quic://dns.alidns.com // 淘宝
-*.tbcache.com = server:quic://dns.alidns.com // 淘宝 缓存
-*.tmall.com = server:quic://dns.alidns.com // 天猫
-*.alicdn.com = server:quic://dns.alidns.com // 阿里 CDN
-*.alikunlun.com = server:quic://dns.alidns.com // 阿里昆仑
-*.aliapp.com = server:quic://dns.alidns.com // 云引擎应用平台
-*.aliapp.org = server:quic://dns.alidns.com // 上云平台
-*.alibabausercontent.com = server:quic://dns.alidns.com // 阿里用户上传资料
-*.mmstat.com = server:quic://dns.alidns.com // mmstat 数据统计 广告追踪
-tb.cn = server:quic://dns.alidns.com // 淘宝短网址
-*.aliyun.* = server:quic://dns.alidns.com // 阿里云
-*.aliyuncdn.* = server:quic://dns.alidns.com // 阿里云 CDN
-*.aliyuncs.com = server:quic://dns.alidns.com // 阿里云 API 服务
-*.aliyunddos????.com = server:quic://dns.alidns.com // 阿里云 DDoS防护
-*.aliyundrive.com = server:quic://dns.alidns.com // 阿里云盘
-*.aliyundun.com = server:quic://dns.alidns.com // 阿里云盾
-*.aliyundunwaf.com = server:quic://dns.alidns.com // 阿里云盾 Web 应用防火墙
-*.aliyun-inc.com = server:quic://dns.alidns.com // 阿里云 内部
-*.antgroup.com = server:quic://dns.alidns.com // 蚂蚁集团
-*.antfin.com = server:quic://dns.alidns.com // 蚂蚁金服
-*.antfinancial.com = server:quic://dns.alidns.com // 蚂蚁金服
-*.alipay.com = server:quic://dns.alidns.com // 支付宝
-*.alipay.com.cn = server:quic://dns.alidns.com // 支付宝
-*.alipaydns.com = server:quic://dns.alidns.com // 支付宝 HTTP DNS
-*.alipayeshop.com = server:quic://dns.alidns.com // 支付宝 商家资源
-*.alipaylog.com = server:quic://dns.alidns.com // 支付宝 Mdap
-*.alipayobjects.com = server:quic://dns.alidns.com // 支付宝 静态资源
-*.alipay-eco.com = server:quic://dns.alidns.com // 支付宝 开放技术生态体系
-*.tencent.com = server:https://doh.pub/dns-query // 腾讯
-*.qcloud.com = server:https://doh.pub/dns-query // 腾讯云
-*.qcloudcdn.cn = server:https://doh.pub/dns-query // 腾讯云CDN
-*.qcloudcdn.com = server:https://doh.pub/dns-query // 腾讯云CDN
-*.qcloudcos.com = server:https://doh.pub/dns-query // 腾讯云对象储存
-*.qcloudimg.com = server:https://doh.pub/dns-query // 腾讯云静态资源
-*.qcloudcjgj.com = server:https://doh.pub/dns-query // 腾讯云超级管家
-*.qcloudwzgj.com = server:https://doh.pub/dns-query // 腾讯云网站管家
-*.qcloudzygj.com = server:https://doh.pub/dns-query // 腾讯云主页管家
-*.myqcloud.com = server:https://doh.pub/dns-query // 腾讯开放云
-*.tencent-cloud.net = server:https://doh.pub/dns-query // 腾讯云
-*.tencentcloud-aiot.com = server:https://doh.pub/dns-query // 腾讯云aiot解决方案
-*.tencentcloudapi.com = server:https://doh.pub/dns-query // 腾讯云API
-*.tencentcloudcr.com = server:https://doh.pub/dns-query // 腾讯云容器镜像服务TCR
-*.tencentcloudmarket.com = server:https://doh.pub/dns-query // 腾讯云云市场
-*.qq.com = server:https://doh.pub/dns-query // QQ
-*.qlogo.cn = server:https://doh.pub/dns-query // 腾讯头像
-*.qpic.cn = server:https://doh.pub/dns-query // 腾讯图片
-*.weixin.qq.com = server:https://doh.pub/dns-query // 微信
-*.wx.qq.com = server:https://doh.pub/dns-query // 微信
-*.weixin.com = server:https://doh.pub/dns-query // 微信
-*.weixinbridge.com = server:https://doh.pub/dns-query // 微信公众平台
-*.wechat.com = server:https://doh.pub/dns-query // WeChat
-*.servicewechat.com = server:https://doh.pub/dns-query // 微信小程序
-*.weiyun.com = server:https://doh.pub/dns-query // 微云
-*.gtimg.cn = server:https://doh.pub/dns-query // 腾讯 图片 静态资源
-*.idqqimg.com = server:https://doh.pub/dns-query // 腾讯 图片 静态资源
-*.cdn-go.cn = server:https://doh.pub/dns-query // 腾讯 静态资源 CDN
-*.smtcdns.com = server:https://doh.pub/dns-query // 腾讯云 智能云解析DNS
-*.smtcdns.net = server:https://doh.pub/dns-query // 腾讯云 智能云解析DNS
-url.cn = server:https://doh.pub/dns-query // 腾讯短网址
-*.baidu = server:180.76.76.76 // 百度
-*.baidu.com = server:180.76.76.76 // 百度
-*.bdimg.com = server:180.76.76.76 // 百度 静态资源
-*.bdstatic.com = server:180.76.76.76 // 百度 静态资源
-*.baidupcs.* = server:180.76.76.76 // 百度网盘
-*.baiduyuncdn.* = server:180.76.76.76 // 百度云CDN
-*.baiduyundns.* = server:180.76.76.76 // 百度云DNS
-*.bdydns.* = server:180.76.76.76 // 百度云 DNS
-*.bdycdn.* = server:180.76.76.76 // 百度云 CDN
-*.bdysite.com = server:180.76.76.76 // 百度云 域名
-*.bdysites.com = server:180.76.76.76 // 百度云 域名
-*.baidubce.* = server:180.76.76.76 // 百度智能云
-*.bcedns.* = server:180.76.76.76 // 百度智能云 DNS
-*.bcebos.com = server:180.76.76.76 // 百度智能云 对象存储BOS
-*.bcevod.com = server:180.76.76.76 // 百度智能云 播放器服务
-*.bceimg.com = server:180.76.76.76 // 百度智能云 图片服务
-*.bcehost.com = server:180.76.76.76 // 百度智能云 主机
-*.bcehosts.com = server:180.76.76.76 // 百度智能云 主机
-dwz.cn = server:180.76.76.76 // 百度短网址
-*.360.cn = server:https://doh.360.cn/dns-query // 360安全中心
-*.360safe.com = server:https://doh.360.cn/dns-query // 360安全卫士
-*.360kuai.com = server:https://doh.360.cn/dns-query // 360快资讯
-*.so.com = server:https://doh.360.cn/dns-query // 360搜索
-*.360webcache.com = server:https://doh.360.cn/dns-query // 360网页快照服务
-*.qihuapi.com = server:https://doh.360.cn/dns-query // 奇虎api
-*.qhimg.com = server:https://doh.360.cn/dns-query // 360图床
-*.qhimgs.com = server:https://doh.360.cn/dns-query // 360图床
-*.qhimgs?.com = server:https://doh.360.cn/dns-query // 360图床
-*.qhmsg.com = server:https://doh.360.cn/dns-query // 360
-*.qhres.com = server:https://doh.360.cn/dns-query // 奇虎静态资源
-*.qhres?.com = server:https://doh.360.cn/dns-query // 奇虎静态资源
-*.dhrest.com = server:https://doh.360.cn/dns-query // 导航静态文件
-*.qhupdate.com = server:https://doh.360.cn/dns-query // 360
-*.yunpan.cn = server:https://doh.360.cn/dns-query // 360安全云盘
-*.yunpan.com.cn = server:https://doh.360.cn/dns-query // 360安全云盘
-*.yunpan.com = server:https://doh.360.cn/dns-query // 360安全云盘
-urlqh.cn = server:https://doh.360.cn/dns-query // 360短网址
-*.amemv.com = server:180.184.1.1 // 艾特迷
-*.bdxiguaimg.com = server:180.184.1.1 // 西瓜 图片服务
-*.bdxiguastatic.com = server:180.184.1.1 // 西瓜 静态资源
-*.byted-static.com = server:180.184.1.1 // 字节跳动 UNPKG
-*.bytedance.* = server:180.184.1.1 // 字节跳动
-*.bytedns.net = server:180.184.1.1 // 字节跳动 DNS
-*.bytednsdoc.com = server:180.184.1.1 // 字节跳动 CDN 文件存储
-*.bytegoofy.com = server:180.184.1.1 // 字节跳动 Goofy
-*.byteimg.com = server:180.184.1.1 // 字节跳动 图片服务
-*.bytescm.com = server:180.184.1.1 // 字节跳动 SCM
-*.bytetos.com = server:180.184.1.1 // 字节跳动 TOS
-*.bytexservice.com = server:180.184.1.1 // 飞书企业服务平台
-*.douyin.com = server:180.184.1.1 // 抖音
-*.douyinpic.com = server:180.184.1.1 // 抖音 静态资源
-*.douyinstatic.com = server:180.184.1.1 // 抖音 静态资源
-*.douyinvod.com = server:180.184.1.1 // 抖音 静态资源
-*.feelgood.cn = server:180.184.1.1 // FeelGood平台
-*.feiliao.com = server:180.184.1.1 // 飞聊官网
-*.gifshow.com = server:180.184.1.1 // 快手
-*.huoshan.com = server:180.184.1.1 // 火山网
-*.huoshanzhibo.com = server:180.184.1.1 // 火山直播
-*.ibytedapm.com = server:180.184.1.1 // 抖音 dapm
-*.iesdouyin.com = server:180.184.1.1 // 抖音 CDN
-*.ixigua.com = server:180.184.1.1 // 西瓜视频
-*.kspkg.com = server:180.184.1.1 // 快手
-*.pstatp.com = server:180.184.1.1 // 抖音 静态资源
-*.snssdk.com = server:180.184.1.1 // 今日头条
-*.toutiao.com = server:180.184.1.1 // 今日头条
-*.toutiao13.com = server:180.184.1.1 // 今日头条
-*.toutiao???.??? = server:180.184.1.1 // 今日头条 静态资源
-*.toutiaocloud.cn = server:180.184.1.1 // 头条云
-*.toutiaocloud.com = server:180.184.1.1 // 头条云
-*.toutiaopage.com = server:180.184.1.1 // 今日头条 建站
-*.wukong.com = server:180.184.1.1 // 悟空
-*.zijieapi.com = server:180.184.1.1 // 字节跳动 API
-*.zijieimg.com = server:180.184.1.1 // 字节跳动 图片服务
-*.zjbyte.com = server:180.184.1.1 // 今日头条 网页版
-*.zjcdn.com = server:180.184.1.1 // 字节跳动 CDN
-upos-sz-mirrorali.bilivideo.com = server:quic://dns.alidns.com // BiliBili upos视频服务器（阿里云）
-upos-sz-mirrorali?.bilivideo.com = server:quic://dns.alidns.com // BiliBili upos视频服务器（阿里云）
-upos-sz-mirrorali??.bilivideo.com = server:quic://dns.alidns.com // BiliBili upos视频服务器（阿里云）
-upos-sz-mirrorbos.bilivideo.com = server:180.76.76.76 // BiliBili upos视频服务器（百度云）
-upos-sz-mirrorcos.bilivideo.com = server:https://doh.pub/dns-query // BiliBili upos视频服务器（腾讯云）
-upos-sz-mirrorcos?.bilivideo.com = server:https://doh.pub/dns-query // BiliBili upos视频服务器（腾讯云）
-upos-sz-mirrorcos??.bilivideo.com = server:https://doh.pub/dns-query // BiliBili upos视频服务器（腾讯云）
-upos-sz-upcdnbd??.bilivideo.com = server:180.76.76.76 // BiliBili upos视频服务器（百度云）
-upos-sz-upcdntx.bilivideo.com = server:https://doh.pub/dns-query // BiliBili upos视频服务器（腾讯云）
-*.cht.com.tw = server:https://dns.hinet.net/dns-query // 中华电信
-*.hinet.net = server:https://dns.hinet.net/dns-query // 中华电信HiNet
-*.emome.net = server:https://dns.hinet.net/dns-query // 中华电信emome
-*.tw = server:https://dns.twnic.tw/dns-query // TWNIC DNS
-*.taipei = server:https://dns.twnic.tw/dns-query // TWNIC DNS
-*.he.net = server:https://ordns.he.net/dns-query // HE.net
 
 [Map Local]
 # Plugin-Common
@@ -975,6 +656,13 @@ upos-sz-upcdntx.bilivideo.com = server:https://doh.pub/dns-query // BiliBili upo
 # sgcc
 ^https?:\/\/(?>csc|osg)-service\.sgcc\.com\.cn:\d+\/emss-pfa-appset-front\/bootpageoutter\/ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 ^https?:\/\/(?>csc|osg)-service\.sgcc\.com\.cn:\d+\/.*\/app_api\/selectInfoByCondition data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# taobao
+^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alimusic\.common\.mobileservice\.startinit data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.o2o\.ad\.gateway\.get data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.taobao\.idle\.home\.welcome data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.trip\.activity\.querytmsresources data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https?:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(volvo\.secondfloor\.getconfig|wireless\.home\.newface\.awesome\.get) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 # tfsmy
 ^https?:\/\/tfsmy\.chengdu\.gov\.cn\/api\/v\d\/core\/version data-type=text data=" " status-code=200
 # tft
@@ -988,10 +676,6 @@ upos-sz-upcdntx.bilivideo.com = server:https://doh.pub/dns-query // BiliBili upo
 ^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.interface\.v1\.Teenagers\/ModeStatus$ data-type=base64 data="AAAAABMKEQgCEgl0ZWVuYWdlcnMgAioA" header="content-type: application/grpc"
 ^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.interface\.v1\.Search\/DefaultWords$ data-type=base64 data="AAAAACkaHeaQnOe0ouinhumikeOAgeeVquWJp+aIlnVw5Li7IgAoAToAQgBKAA==" header="content-type: application/grpc"
 ^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.view\.v1\.View\/TFInfo$ data-type=base64 data="AAAAAAIIAQ==" header="content-type: application/grpc"
-# Bilibili_remove_ads
-^https:\/\/api\.live\.bilibili\.com\/xlive\/e-commerce-interface\/v1\/ecommerce-user\/get_shopping_info\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
-^https:\/\/api\.bilibili\.com\/pgc\/activity\/deliver\/material\/receive\? data-type=text data="{"code":0,"data":{"closeType":"close_win","container":[],"showTime":""},"message":"success"}" status-code=200 header="Content-Type:text/plain"
-^https:\/\/ap[ip]\.bilibili\.com\/x\/(?:resource\/(?:top\/activity|patch\/tab)|v2\/search\/square|vip\/ads\/materials)\? data-type=text data="{"code":-404,"message":"-404","ttl":1,"data":null}" status-code=200 header="Content-Type:text/plain"
 # BiliBili.ADBlock
 ^https?:\/\/api\.vc\.bilibili\.com\/search_svr\/v\d\/Search\/recommend_words data-type=text data="{}" header="application/json"
 ^https?:\/\/api\.vc\.bilibili\.com\/topic_svr\/v1\/topic_svr data-type=text data="{}" header="application/json"
@@ -1022,6 +706,8 @@ upos-sz-upcdntx.bilivideo.com = server:https://doh.pub/dns-query // BiliBili upo
 🔍 Visualsearch.VisualSearch.request = type=http-request, pattern=^https?:\/\/(api2|api-.+)\.smoot\.apple\.com\/apple\.parsec\.visualsearch\.v2\.VisualSearch\/VisualSearch, requires-body=1, binary-body-mode=1, engine=webview, debug=1, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/NSRingo/iRingo.Siri/request.bundle.js, argument=CountryCode="{{{CountryCode}}}"&SiriLocale="{{{SiriLocale}}}"&Region="{{{Region}}}"&SiriResponseLanguageVariant="{{{SiriResponseLanguageVariant}}}"&LogLevel="{{{LogLevel}}}"
 🔍 ResponseFramework.Engagement.EngagementSearch.request = type=http-request, pattern=^https?:\/\/(api-.+)\.smoot\.apple\.com\/apple\.parsec\.responseframework\.engagement\.v1alpha\.EngagementSearch\/EngagementSearch, requires-body=1, binary-body-mode=1, engine=webview, debug=1, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/NSRingo/iRingo.Siri/request.bundle.js, argument=CountryCode="{{{CountryCode}}}"&SiriLocale="{{{SiriLocale}}}"&Region="{{{Region}}}"&SiriResponseLanguageVariant="{{{SiriResponseLanguageVariant}}}"&LogLevel="{{{LogLevel}}}"
 🔍 Spotlight.ZkwSuggestService.request = type=http-request, pattern=^https?:\/\/(api-.+)\.smoot\.apple\.com\/apple\.parsec\.spotlight\.v1alpha\.ZkwSuggestService\/Suggest, requires-body=1, binary-body-mode=1, engine=webview, debug=1, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/NSRingo/iRingo.Siri/request.bundle.js, argument=CountryCode="{{{CountryCode}}}"&SiriLocale="{{{SiriLocale}}}"&Region="{{{Region}}}"&SiriResponseLanguageVariant="{{{SiriResponseLanguageVariant}}}"&LogLevel="{{{LogLevel}}}"
+# Tools
+Look directly for Zhihu = type=http-response,pattern=https://(www\.zhihu\.com/question|zhuanlan\.zhihu\.com/p)/,requires-body=1,max-size=0,script-path=https://github.com/id77/QuantumultX/raw/master/Script/zhihu.js
 # Module-Common
 Pornhub = type=http-response, pattern=^https?:/\/(cn|www)\.pornhub\.com\/($|(view|video).*$), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/Module-Common/pornhub.js, requires-body=true, max-size=0, script-update-interval=0
 91Porn = type=http-response, pattern=https?:\/\/91porn\.com\/(index|view_video|login|search_result)\.php, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/Module-Common/91porn.js, requires-body=true, max-size=0, script-update-interval=0
@@ -1148,6 +834,9 @@ replaceHeader = type=http-request, pattern=^https?:\/\/github\.com\/, script-pat
 jd = type=http-response, pattern=^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(?>deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/jd/jd.js, requires-body=true, max-size=-1, timeout=60
 # meituan
 meituan = type=http-response, pattern=^https?:\/\/p\d\.meituan\.net\/linglong\/, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/meituan/meituan.js, requires-body=true, max-size=-1, timeout=60
+# taobao
+taobao = type=http-response, pattern=^https?:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(cloudvideo\.video\.query|wireless\.home\.splash\.awesome\.get), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/taobao/taobao.js, requires-body=true, max-size=-1, timeout=60
+taobao = type=http-response, pattern=^https?:\/\/poplayer\.template\.alibaba\.com\/\w+\.json, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/taobao/taobao.js, requires-body=true, max-size=-1, timeout=60
 # tfsmy
 replaceBody = type=http-response, pattern=^https?:\/\/tft-app\.cdtft\.cn\/gateway-customer\/tftapp\/tft-ams\/api\/appAd, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/tfsmy/replace-body.js, requires-body=true, max-size=-1, timeout=30, argument=officialAdvertResultVo-%3Erandom-response
 # umetrip
@@ -1161,11 +850,6 @@ BiliBili Mystery Code = type=http-response, pattern=^https:\/\/app\.bilibili\.co
 bilibili.skin = type=http-response, pattern=^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/kokoryh/bilibili/bili-suit-diy.js, requires-body=true, engine=webview, max-size=-1
 bilibili.json = type=http-response, pattern=^https:\/\/app\.bilibili\.com\/x\/(?:resource\/show\/tab\/v2|v2\/(?:splash\/(?:list|show|event\/list2)|feed\/index(?:\/story)?|account\/(?:mine(?:\/ipad)?|myinfo)))\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/kokoryh/bilibili/bilibili.json.js, requires-body=true, engine=webview, max-size=-1, argument="{"showUperCenter":{{{创作中心}}}}"
 bilibili.protobuf = type=http-response, pattern=^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.(?:app\.(?:show\.v1\.Popular\/Index|dynamic\.v2\.Dynamic\/DynAll|view(?:unite)?\.v1\.View\/(?:View|ViewProgress|RelatesFeed)|playurl\.v1\.PlayURL\/PlayView|playerunite\.v1\.Player\/PlayViewUnite)|polymer\.app\.search\.v1\.Search\/SearchAll|community\.service\.dm\.v1\.DM\/DmView|main\.community\.reply\.v1\.Reply\/MainList|pgc\.gateway\.player\.v2\.PlayURL\/PlayView)$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/kokoryh/bilibili/bilibili.protobuf.js, requires-body=true, binary-body-mode=true, engine=webview, max-size=-1, argument="{"showUpList":"{{{动态最常访问}}}","filterTopReplies":{{{过滤置顶评论广告}}}}"
-# Bilibili_remove_ads
-body_rewrite_34 = type=http-response, pattern=^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\?, script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22json-del%22%2C%5B%22data.common_equip%22%5D%5D%5D
-空降助手自动版 = type=http-request, pattern=^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.playerunite\.v1\.Player\/PlayViewUnite$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Bilibili_remove_ads/Bilibili_airborne_kokoryh.js, requires-body=true, binary-body-mode=true
-空降助手弹幕版 = type=http-request, pattern=^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.community\.service\.dm\.v1\.DM\/DmSegMobile$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Bilibili_remove_ads/Bilibili_airborne_kokoryh.js, requires-body=true, binary-body-mode=true
-Proto处理 = type=http-response, pattern=^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.(?:app\.(?:interface\.v1\.(?:Teenagers\/ModeStatus|Search\/DefaultWords)|show\.v1\.Popular\/Index|dynamic\.v2\.Dynamic\/DynAll|view(?:unite)?\.v1\.View\/(?:View|ViewProgress|TFInfo|RelatesFeed)|playurl\.v1\.PlayURL\/PlayView|playerunite\.v1\.Player\/PlayViewUnite)|polymer\.app\.search\.v1\.Search\/SearchAll|community\.service\.dm\.v1\.DM\/DmView|main\.community\.reply\.v1\.Reply\/MainList|pgc\.gateway\.player\.v2\.PlayURL\/PlayView)$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Bilibili_remove_ads/Bilibili_proto_kokoryh.js, requires-body=true, binary-body-mode=true, argument="[{showUpList}, {filterTopReplies}]"
 # BiliBili.ADBlock
 📺 BiliBili.ADBlock.feed.index.request.json = type=http-request,pattern=^https?:\/\/app\.bili(bili\.com|api\.net)\/x\/v2\/feed\/index\?, engine=webview, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/BiliUniverse/BiliBili.ADBlock/request.bundle.js, argument=Splash="{{{Splash}}}"&Feed.AD="{{{Feed.AD}}}"&Feed.Activity="{{{Feed.Activity}}}"&Feed.Vertical="{{{Feed.Vertical}}}"&Feed.BlockUpLiveList="{{{Feed.BlockUpLiveList}}}"&Feed.Story="{{{Feed.Story}}}"&Search.AD="{{{Search.AD}}}"&Search.HotSearch="{{{Search.HotSearch}}}"&PGC.AD="{{{PGC.AD}}}"&Xlive.AD="{{{Xlive.AD}}}"&Dynamic.HotTopics="{{{Dynamic.HotTopics}}}"&Dynamic.MostVisited="{{{Dynamic.MostVisited}}}"&Dynamic.AdCard="{{{Dynamic.AdCard}}}"&View.AD="{{{View.AD}}}"&DM.Command="{{{DM.Command}}}"&DM.Colorful="{{{DM.Colorful}}}"&Reply.AD="{{{Reply.AD}}}"&LogLevel="{{{LogLevel}}}"
 📺 BiliBili.ADBlock.response.json = type=http-response, pattern=^https?:\/\/app\.bili(bili\.com|api\.net)\/x\/v2\/(splash\/(brand\/list|event\/list2|list|show)|feed\/index(\/story)?|search\/square), requires-body=1, engine=webview, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/BiliUniverse/BiliBili.ADBlock/response.bundle.js, argument=Splash="{{{Splash}}}"&Feed.AD="{{{Feed.AD}}}"&Feed.Activity="{{{Feed.Activity}}}"&Feed.Vertical="{{{Feed.Vertical}}}"&Feed.BlockUpLiveList="{{{Feed.BlockUpLiveList}}}"&Feed.Story="{{{Feed.Story}}}"&Search.AD="{{{Search.AD}}}"&Search.HotSearch="{{{Search.HotSearch}}}"&PGC.AD="{{{PGC.AD}}}"&Xlive.AD="{{{Xlive.AD}}}"&Dynamic.HotTopics="{{{Dynamic.HotTopics}}}"&Dynamic.MostVisited="{{{Dynamic.MostVisited}}}"&Dynamic.AdCard="{{{Dynamic.AdCard}}}"&View.AD="{{{View.AD}}}"&DM.Command="{{{DM.Command}}}"&DM.Colorful="{{{DM.Colorful}}}"&Reply.AD="{{{Reply.AD}}}"&LogLevel="{{{LogLevel}}}"
@@ -1194,6 +878,6 @@ Proto处理 = type=http-response, pattern=^https:\/\/(?:grpc\.biliapi\.net|app\.
 Rewrite: BoxJs = type=http-request,pattern=^https?:\/\/(.+\.)?boxjs\.(com|net),script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/box/chavy.boxjs.js, requires-body=true, timeout=120
 
 [MITM]
-hostname = %APPEND% *.boxjs.com, *.boxjs.net, *.googlevideo.com, *.httpdns.pro, *.jddebug.com, *.mcdn.bilivideo.cn, *.pornhub.com, *.weibo.cn, *.weibo.com, *.zdmimg.com, -*.facebook.com, -*.instagram.com, -*.pstatp.com, -*.snssdk.com, -*.twitter.com, 112.53.55.225, 116.85.2.*, 116.85.3.*, 119.29.29.*, 119.29.29.98, 119.29.29.99, 120.241.142.*, 120.241.143.*, 123.207.209.*, 139.199.240.84, 162.14.157.*, 91porn.com, a.sinopecsales.com, a1d5b283e-wx621112590b635086.sh.wxgateway.com, acs.m.goofish.com, ad.12306.cn, amdc-sibling.alipay.com.cn, amdc.alipay.com, ams-cdn.cdtft.cn, apapia-sqk-weblogic.manmanbuy.com, api-*.smoot.apple.com, api.biliapi.net, api.bilibili.com, api.live.bilibili.com, api.m.jd.com, api.mcd.cn, api.pinduoduo.com, api.spotify.com, api.udache.com, api.vc.bilibili.com, api2.smoot.apple.com, apimobile.meituan.com, app-api.smzdm.com, app.biliapi.net, app.bilibili.com, article-api.smzdm.com, baike-api.smzdm.com, bdsp-x.jd.com, bkclient.umetrip.com.cn, boxjs.com, boxjs.net, cache.bydauto.com.cn, ci.xiaohongshu.com, client.app.coc.10086.cn, client.qunar.com, common.diditaxi.com.cn, conf.diditaxi.com.cn, configuration.ls.apple.com, csc-service.sgcc.com.cn, ct.xiaojukeji.com, cube.elemecdn.com, daijia.kuaidadi.com, discardrp.umetrip.com, dns.jd.com, dsp-x.jd.com, dualstack*.amap.com, edith.xiaohongshu.com, elemecdn.com, flowplus.meituan.net, freight.xiaojukeji.com, fuss10.elemecdn.com, g-acs.m.goofish.com, gist.githubusercontent.com, github.com, grpc.biliapi.net, gspe1-ssl.ls.apple.com, gspe35-ssl.ls.apple.com, guzzoni.smoot.apple.com, h.app.coc.10086.cn, haojia-api.smzdm.com, haojia.m.smzdm.com, home.umetrip.com, homefront.qunar.com, homepage-api.smzdm.com, images.pinduoduo.com, img*.360buyimg.com, img.meituan.net, in.m.jd.com, l*.51fanli.net, lite-in.m.jd.com, m5-zb.amap.com, m5.amap.com, manga.bilibili.com, mapi.dianping.com, mobile.12306.cn, mobile.cmbchina.com, mp.weixin.qq.com, npay.meituan.com, nr-op.elemecdn.com, ocrifs.ejoy.sinopec.com, osg-service.sgcc.com.cn, oss-zjrs.haier.net, oss.amap.com, oss.umetrip.com, p*.meituan.net, pan.baidu.com, portal-portm.meituan.com, post.m.smzdm.com, qde.qunar.com, qianbao.smzdm.com, qimgs.qunarzz.com, raw.githubusercontent.com, rec.xiaohongshu.com, res.xiaojukeji.com, s-api.smzdm.com, s3.zdmimg.com, s3plus.meituan.net, security.wechat.com, sns.amap.com, spclient.wg.spotify.com, sqt.meituan.com, startup.umetrip.com, storage.360buyimg.com, t-dsp.pinduoduo.com, tfsmy.chengdu.gov.cn, tft-app.cdtft.cn, umerp.umetrip.com, umerp.umetrip.com.cn, upos-*-mirrorakam.akamaized.net, upos-sz-mirror*bstar1.bilivideo.com, user-api.smzdm.com, video-dsp.pddpic.com, wcprd.hilton.com.cn, weatherkit.apple.com, web.meituan.com, webapp.joyingtrip.com, webappcfg.paas.cmbchina.com, weibo.com, weixin110.qq.com, www.meituan.com, www.xiaohongshu.com, www1.elecfans.com, wx.17u.cn, youtubei.googleapis.com, zhiyou.m.smzdm.com, zj.haier.net
+hostname = %APPEND% *.boxjs.com, *.boxjs.net, *.googlevideo.com, *.jddebug.com, *.mcdn.bilivideo.cn, *.pornhub.com, *.weibo.cn, *.weibo.com, *.zdmimg.com, -*.facebook.com, -*.instagram.com, -*.pstatp.com, -*.snssdk.com, -*.twitter.com, 112.53.55.225, 116.85.2.*, 116.85.3.*, 119.29.29.*, 120.241.142.*, 120.241.143.*, 123.207.209.*, 139.199.240.84, 162.14.157.*, 91porn.com, a.sinopecsales.com, a1d5b283e-wx621112590b635086.sh.wxgateway.com, acs.m.goofish.com, acs.m.taobao.com, ad.12306.cn, ams-cdn.cdtft.cn, apapia-sqk-weblogic.manmanbuy.com, api-*.smoot.apple.com, api.biliapi.net, api.bilibili.com, api.live.bilibili.com, api.m.jd.com, api.mcd.cn, api.pinduoduo.com, api.spotify.com, api.udache.com, api.vc.bilibili.com, api2.smoot.apple.com, apimobile.meituan.com, app-api.smzdm.com, app.biliapi.net, app.bilibili.com, article-api.smzdm.com, baike-api.smzdm.com, bdsp-x.jd.com, bkclient.umetrip.com.cn, boxjs.com, boxjs.net, cache.bydauto.com.cn, ci.xiaohongshu.com, client.app.coc.10086.cn, client.qunar.com, common.diditaxi.com.cn, conf.diditaxi.com.cn, configuration.ls.apple.com, csc-service.sgcc.com.cn, ct.xiaojukeji.com, cube.elemecdn.com, daijia.kuaidadi.com, discardrp.umetrip.com, dsp-x.jd.com, dualstack*.amap.com, edith.xiaohongshu.com, elemecdn.com, flowplus.meituan.net, freight.xiaojukeji.com, fuss10.elemecdn.com, g-acs.m.goofish.com, gist.githubusercontent.com, github.com, grpc.biliapi.net, gspe1-ssl.ls.apple.com, gspe35-ssl.ls.apple.com, guide-acs.m.taobao.com, guzzoni.smoot.apple.com, h.app.coc.10086.cn, haojia-api.smzdm.com, haojia.m.smzdm.com, home.umetrip.com, homefront.qunar.com, homepage-api.smzdm.com, images.pinduoduo.com, img*.360buyimg.com, img.meituan.net, in.m.jd.com, l*.51fanli.net, lite-in.m.jd.com, m5-zb.amap.com, m5.amap.com, manga.bilibili.com, mapi.dianping.com, mobile.12306.cn, mobile.cmbchina.com, mp.weixin.qq.com, npay.meituan.com, nr-op.elemecdn.com, ocrifs.ejoy.sinopec.com, osg-service.sgcc.com.cn, oss-zjrs.haier.net, oss.amap.com, oss.umetrip.com, p*.meituan.net, pan.baidu.com, poplayer.template.alibaba.com, portal-portm.meituan.com, post.m.smzdm.com, qde.qunar.com, qianbao.smzdm.com, qimgs.qunarzz.com, raw.githubusercontent.com, rec.xiaohongshu.com, res.xiaojukeji.com, router.com, s-api.smzdm.com, s3.zdmimg.com, s3plus.meituan.net, security.wechat.com, sns.amap.com, spclient.wg.spotify.com, sqt.meituan.com, startup.umetrip.com, storage.360buyimg.com, t-dsp.pinduoduo.com, tfsmy.chengdu.gov.cn, tft-app.cdtft.cn, umerp.umetrip.com, umerp.umetrip.com.cn, upos-*-mirrorakam.akamaized.net, upos-sz-mirror*bstar1.bilivideo.com, user-api.smzdm.com, video-dsp.pddpic.com, wcprd.hilton.com.cn, weatherkit.apple.com, web.meituan.com, webapp.joyingtrip.com, webappcfg.paas.cmbchina.com, weibo.com, weixin110.qq.com, www.meituan.com, www.router.com, www.xiaohongshu.com, www.zhihu.com, www1.elecfans.com, wx.17u.cn, youtubei.googleapis.com, zhiyou.m.smzdm.com, zhuanlan.zhihu.com, zj.haier.net
 hostname-disabled = %INSERT% buy.itunes.apple.com, gateway.icloud.com, gateway.icloud.com.cn, ios.chat.openai.com, weather-data.apple.com
 
