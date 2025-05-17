@@ -1224,8 +1224,8 @@ http-response ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(?>deliver
 # meituan
 http-response ^https?:\/\/p\d\.meituan\.net\/linglong\/ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/meituan/meituan.js, requires-body=true, timeout=60, tag=meituan
 # taobao
-http-response ^https?:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(cloudvideo\.video\.query|wireless\.home\.splash\.awesome\.get) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/taobao/taobao.js, requires-body=true, timeout=60, tag=taobao
-http-response ^https?:\/\/poplayer\.template\.alibaba\.com\/\w+\.json script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/taobao/taobao.js, requires-body=true, timeout=60, tag=taobao
+http-response ^https?:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(cloudvideo\.video\.query|wireless\.home\.splash\.awesome\.get) script-path=https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/taobao.js, requires-body=true, timeout=60, tag=taobao
+http-response ^https?:\/\/poplayer\.template\.alibaba\.com\/\w+\.json script-path=https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/taobao.js, requires-body=true, timeout=60, tag=taobao
 # tfsmy
 http-response ^https?:\/\/tft-app\.cdtft\.cn\/gateway-customer\/tftapp\/tft-ams\/api\/appAd script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/tfsmy/replace-body.js, requires-body=true, timeout=30, tag=replaceBody, argument=officialAdvertResultVo-%3Erandom-response
 # umetrip
