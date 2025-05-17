@@ -19,7 +19,7 @@ DOMAIN,geo2.adobe.com,REJECT
 
 [URL Rewrite]
 # > 功能类 - FUNCTIONAL
-^https?:\/\/119\.29\.29\.\d+\/d\?dn - reject-200
+^https?:\/\/119\.29\.29\.\d+\/d\?dn=[a-z0-9]+&clientip=\d&ttl=\d&query=1&id=\d+&sdk=\d+_\d+\.\d+\.\d+&alg=des http://119.29.29.$0/d?dn=$1&clientip=$2&ttl=$3&query=0&id=$4&sdk=$5_$6.$7.$8&alg=des 302
 
 [Script]
 replaceHeader = type=http-request, pattern=^https?:\/\/(raw|gist)\.githubusercontent\.com\/, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/functional/replace-header.js, timeout=30, argument=(%5Cr%5Cn)Accept-Language%3A.%2B(%5Cr%5Cn)-%3E%241Accept-Language%3A%20en-us%242

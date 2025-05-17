@@ -42,20 +42,8 @@ if (url.includes("/homeApi/bottomNavi")) {
 		delete obj.data.advertList;
 	}
 	if (obj.data?.links?.length > 0) {
-        obj.data.links = obj.data.links.filter(
-            (i) =>
-                ![
-                    "意见与反馈",
-                    "企业采购",
-                    "微信公众号",
-                    "人才招募",
-                    "扫一扫",
-                    "数字码"
-
-                ]?.includes(i?.text)
-        );
+        obj.data.links.splice(10);
     }
-
 }
 body = JSON.stringify(obj);
 $done({body});
