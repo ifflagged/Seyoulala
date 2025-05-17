@@ -8,7 +8,7 @@
 #!loon_version = 3.2.4(787)
 #!homepage = https://github.com/luestr/ProxyResource/blob/main/README.md
 #!icon = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/CatEarFM.png
-#!date = 2025-05-17 04:51:20
+#!date = 2025-05-17 13:22:26
 
 [Rewrite]
 ^https:\/\/app\.missevan\.com\/site\/launch\? reject-dict
@@ -27,7 +27,6 @@
 
 ^https:\/\/app\.missevan\.com\/site\/icons\? esponse-body-json-jq '.info.icons |= map(select(.title as $t | $t == "直播" or $t == "必听剧" or $t == "免费榜" or $t == "夜猫子" or $t == "启动音"))'
 
-^https:\/\/fm\.missevan\.com\/api\/v2\/recommended\/top\? reject-dict
 
 ^https:\/\/fm\.missevan\.com\/api\/v2\/chatroom\/sound\/recommend\? reject-dict
 
