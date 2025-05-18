@@ -17,9 +17,9 @@
 ^https?:\/\/capi\.lkcoffee\.com\/resource\/market\/receiveCoupon\/receiveCouponPop data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 [Script]
-replaceBody = type=http-response, pattern=^https?:\/\/m\.lkcoffee\.com\/ecapi\/resource\/m\/member\/exchange\/page, script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/replace-body.js, requires-body=true, max-size=-1, timeout=30, argument=%5C%7B.%2B%5C%7D-%3E%7B%22status%22%3A%22SUCCESS%22%7D
+replaceBody = type=http-response, pattern=^https?:\/\/m\.lkcoffee\.com\/ecapi\/resource\/m\/member\/exchange\/page, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/lkcoffee/replace-body.js, requires-body=true, max-size=-1, timeout=30, argument=%5C%7B.%2B%5C%7D-%3E%7B%22status%22%3A%22SUCCESS%22%7D
 
-replaceBody = type=http-response, pattern=^https?:\/\/m\.lkcoffee\.com\/capi\/resource\/m\/growUp\/main, script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/replace-body.js, requires-body=true, max-size=-1, timeout=30, argument=%22popTitle%22%3A%22.%2B%3F%22-%3E%22popTitle%22%3A%22%22
+replaceBody = type=http-response, pattern=^https?:\/\/m\.lkcoffee\.com\/capi\/resource\/m\/growUp\/main, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/lkcoffee/replace-body.js, requires-body=true, max-size=-1, timeout=30, argument=%22popTitle%22%3A%22.%2B%3F%22-%3E%22popTitle%22%3A%22%22
 
 [MITM]
 hostname = %APPEND% capi.lkcoffee.com, ecapi.lkcoffee.com, m.lkcoffee.com, img*.lkcoffee.com
