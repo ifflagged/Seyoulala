@@ -1,16 +1,7 @@
-#!name=mcd
-#!desc=mcd
-#!category=Jacob
+mcd%0A：Error: Response code 429 (Too Many Requests)
 
-[Map Local]
-# > 麦当劳 - MCD
-^https?:\/\/api\.mcd\.cn\/bff\/portal\/(home\/splash|richpop) data-type=text data=" " status-code=200
 
-# > 麦当劳<微信小程序> - MCD
-^https?:\/\/api\.mcd\.cn\/bff\/portal\/home\/hotActivity data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/api\.mcd\.cn\/bff\/portal\/richpop data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-[MITM]
-hostname = %APPEND% api.mcd.cn
 
+Script Hub 重写转换: ❌  可自行翻译错误信息或复制错误信息后点击通知进行反馈
