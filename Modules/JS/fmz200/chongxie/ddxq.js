@@ -36,10 +36,13 @@ if (url.includes("/homeApi/bottomNavi")) {
 	if (obj.data?.ai_enter_config){
 		delete obj.data.ai_enter_config;
 	}
-// 我的页-营销栏去除
+// 我的页-营销栏及工具栏简化
 } else if (url.includes("/user/queryMyPage")) {
-	if (obj.data?.advertList?.length > 0){
-		delete obj.data.advertList;
+	if (obj.data?.advertList?.length > 0) {
+		obj.data.advertList = obj.data.advertList.filter(e => e.title?.match(/福利中心|叮咚榜单|查添加剂|好货百科/));
+	}
+	if (obj.data?.links?.length > 0) {
+		obj.data.links.splice(10);
 	}
 }
 body = JSON.stringify(obj);
