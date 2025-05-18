@@ -330,6 +330,7 @@ DOMAIN, info6.video.qq.com, REJECT
 DOMAIN, ios.bugly.qq.com, REJECT
 DOMAIN, pro.bugly.qq.com, REJECT
 DOMAIN, ios.video.mpush.qq.com, REJECT
+DOMAIN, mazu.m.qq.com, REJECT//误杀
 DOMAIN, us.l.qq.com, REJECT
 DOMAIN, mi.gdt.qq.com, REJECT
 DOMAIN, otheve.beacon.qq.com, REJECT
@@ -382,6 +383,7 @@ DOMAIN, plbslog.umeng.com, REJECT
 DOMAIN, log.umtrack.com, REJECT
 DOMAIN, aaid.umeng.com, REJECT
 DOMAIN, log.umsns.com, REJECT
+DOMAIN, ulogs.umengcloud.com, REJECT
 DOMAIN, adtracker.adfunlink.com, REJECT
 DOMAIN, sdk.tianmu.mobi, REJECT
 DOMAIN, tracker.tianmu.mobi, REJECT
@@ -992,7 +994,7 @@ http-response ^https?:\/\/zj\.haier\.net\/omsappapi\/resource\/v\d\/get\/resourc
 http-request ^https?:\/\/(raw|gist)\.githubusercontent\.com\/ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/functional/replace-header.js, timeout=30, tag=replaceHeader, argument=(%5Cr%5Cn)Accept-Language%3A.%2B(%5Cr%5Cn)-%3E%241Accept-Language%3A%20en-us%242
 http-request ^https?:\/\/github\.com\/ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/functional/replace-header.js, timeout=30, tag=replaceHeader, argument=(%5Cr%5Cn)Accept-Language%3A.%2B(%5Cr%5Cn)-%3E%241Accept-Language%3A%20en-us%242
 # jd
-http-response ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(?>deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/jd/jd.js, requires-body=true, timeout=60, tag=jd
+http-response ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(?>deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome) script-path=https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/jd.js, requires-body=true, timeout=60, tag=jd
 # meituan
 http-response ^https?:\/\/p\d\.meituan\.net\/linglong\/ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/meituan/meituan.js, requires-body=true, timeout=60, tag=meituan
 # taobao
@@ -1003,8 +1005,8 @@ http-response ^https?:\/\/tft-app\.cdtft\.cn\/gateway-customer\/tftapp\/tft-ams\
 # umetrip
 http-response ^https?:\/\/(bkclient|umerp|home)\.umetrip\.com(\.cn){0,1}\/gateway\/api\/umetrip\/native script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/umetrip/umetrip.js, timeout=60, tag=umetrip
 # BiliBili
-http-response ^https:\/\/app\.bilibili\.com\/x\/resource\/show\/tab\/v2\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/BiliBili/BiliBili.js, requires-body=true, tag=精简首页顶部标签
-http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/account\/(?:mine|myinfo) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/BiliBili/BiliBili.js, requires-body=true, tag=BiliBili Mystery Code
+http-response ^https:\/\/app\.bilibili\.com\/x\/resource\/show\/tab\/v2\? script-path=https://github.com/ifflagged/Neverflagged/raw/main/Surge/Scripts/BiliBili.js, requires-body=true, tag=精简首页顶部标签
+http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/account\/(?:mine|myinfo) script-path=https://github.com/ifflagged/Neverflagged/raw/main/Surge/Scripts/BiliBili.js, requires-body=true, tag=BiliBili Mystery Code
 # bilibili
 http-request ^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.playerunite\.v1\.Player\/PlayViewUnite$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/kokoryh/bilibili/bilibili.airborne.js, requires-body=true, binary-body-mode=true, tag={空降助手}
 http-request ^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.community\.service\.dm\.v1\.DM\/DmSegMobile$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/kokoryh/bilibili/bilibili.airborne.js, requires-body=true, binary-body-mode=true, tag={空降助手弹幕版}
