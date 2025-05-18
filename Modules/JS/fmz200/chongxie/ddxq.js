@@ -42,7 +42,7 @@ if (url.includes("/homeApi/bottomNavi")) {
 		delete obj.data.advertList;
 	}
 	if (obj.data?.links?.length > 0) {
-        obj.data.links.splice(10);
+        obj.data.links = obj.data.links.slice(10);
     }
 }
 body = JSON.stringify(obj);
