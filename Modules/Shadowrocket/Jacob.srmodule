@@ -1081,7 +1081,7 @@ smzdm_json = type=http-response, pattern=^https?:\/\/zhiyou\.m\.smzdm\.com\/user
 解锁微博会员APP图标 = type=http-response, pattern=^https?:\/\/new\.vip\.weibo\.c(n|om)\/aj\/appicon\/list, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/weibo/weibo_vip.js, requires-body=true, timeout=60
 # JD_Helper
 京东助手 = type=http-response, pattern=^https:\/\/in\.m\.jd\.com\/product\/.+?\.html, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/githubdulong/JD_Helper/jd_price1.js, requires-body=true, max-size=-1, argument=jd_union_id=null&jd_position_id=null&jtt_appid=null&jtt_appkey=null&engine=auto&timeout=120&disable_notice=true&theme_time=7-19
-慢慢买CK = type=http-request, pattern=^https?:\/\/apapia-sqk-weblogic\.manmanbuy\.com/baoliao\/center\/menu, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/githubdulong/JD_Helper/jd_price1.js, requires-body=true, max-size=0
+慢慢买CK = type=http-request, pattern=^https?:\/\/apapia-sqk-weblogic\.manmanbuy\.com/baoliao\/center\/menu, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/githubdulong/JD_Helper/jd_price1.js, requires-body=true, max-size=0, timeout=30
 # 12306_remove_ads
 移除12306开屏广告 = type=http-request, pattern=^https:\/\/ad\.12306\.cn\/ad\/ser\/getAdList$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/12306_remove_ads/12306_remove_splashscreen_ads.js, requires-body=true
 移除12306应用内广告 = type=http-request, pattern=^https:\/\/mobile\.12306\.cn\/otsmobile\/app\/mgs\/mgw\.htm$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/12306_remove_ads/12306_remove_ads.js

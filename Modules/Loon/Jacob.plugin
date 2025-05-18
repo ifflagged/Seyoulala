@@ -1149,7 +1149,7 @@ http-response ^https?:\/\/new\.vip\.weibo\.c(n|om)\/littleskin\/preview script-p
 http-response ^https?:\/\/new\.vip\.weibo\.c(n|om)\/aj\/appicon\/list script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/weibo/weibo_vip.js, requires-body=true, timeout=60, tag=解锁微博会员APP图标
 # JD_Helper
 http-response ^https:\/\/in\.m\.jd\.com\/product\/.+?\.html script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/githubdulong/JD_Helper/jd_price1.js, requires-body=true, tag=京东助手, argument=jd_union_id={JD_UNION_ID}&jd_position_id={JD_POSITION_ID}&jtt_appid={JTT_APPID}&jtt_appkey={JTT_APPKEY}&engine={ENGINE}&timeout={TIMEOUT}&disable_notice={DISABLE_NOTICE}&theme_time={THEME_TIME}
-http-request ^https?:\/\/apapia-sqk-weblogic\.manmanbuy\.com/baoliao\/center\/menu script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/githubdulong/JD_Helper/jd_price1.js, requires-body=true, tag={MMMCK_SCRIPT}
+http-request ^https?:\/\/apapia-sqk-weblogic\.manmanbuy\.com/baoliao\/center\/menu script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/githubdulong/JD_Helper/jd_price1.js, requires-body=true, timeout=30, tag={MMMCK_SCRIPT}
 # 12306_remove_ads
 http-request ^https:\/\/ad\.12306\.cn\/ad\/ser\/getAdList$ script-path = https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/12306_remove_ads/12306_remove_splashscreen_ads.js, requires-body = true, tag = 移除12306开屏广告
 http-request ^https:\/\/mobile\.12306\.cn\/otsmobile\/app\/mgs\/mgw\.htm$ script-path = https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/12306_remove_ads/12306_remove_ads.js, tag = 移除12306应用内广告
@@ -1229,9 +1229,6 @@ http-response ^https?:\/\/poplayer\.template\.alibaba\.com\/\w+\.json script-pat
 http-response ^https?:\/\/tft-app\.cdtft\.cn\/gateway-customer\/tftapp\/tft-ams\/api\/appAd script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/tfsmy/replace-body.js, requires-body=true, timeout=30, tag=replaceBody, argument=officialAdvertResultVo-%3Erandom-response
 # umetrip
 http-response ^https?:\/\/(bkclient|umerp|home)\.umetrip\.com(\.cn){0,1}\/gateway\/api\/umetrip\/native script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/umetrip/umetrip.js, timeout=60, tag=umetrip
-# BiliBili
-http-response ^https:\/\/app\.bilibili\.com\/x\/resource\/show\/tab\/v2\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/BiliBili/BiliBili.js, requires-body=true, tag=精简首页顶部标签
-http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/account\/(?:mine|myinfo) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/BiliBili/BiliBili.js, requires-body=true, tag=BiliBili Mystery Code
 # bilibili
 http-request ^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.playerunite\.v1\.Player\/PlayViewUnite$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/kokoryh/bilibili/bilibili.airborne.js, requires-body=true, binary-body-mode=true, tag={空降助手}
 http-request ^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.community\.service\.dm\.v1\.DM\/DmSegMobile$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/kokoryh/bilibili/bilibili.airborne.js, requires-body=true, binary-body-mode=true, tag={空降助手弹幕版}
