@@ -9,9 +9,9 @@ https?:\/\/91porn\.com(\/|)$ https://91porn.com/index.php 302
 
 [Script]
 # NSFW #
-Pornhub = type=http-response, pattern=^https?:/\/(cn|www)\.pornhub\.com\/($|(view|video).*$), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/Module-Common/pornhub.js, requires-body=true, max-size=0, script-update-interval=0
+Pornhub = type=http-response, pattern=^https?:/\/(cn|www)\.pornhub\.com\/($|(view|video).*$), script-path=https://github.com/ddgksf2013/Scripts/raw/master/pornhub.js, requires-body=true, max-size=0, script-update-interval=0
 
-91Porn = type=http-response, pattern=https?:\/\/91porn\.com\/(index|view_video|login|search_result)\.php, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/Module-Common/91porn.js, requires-body=true, max-size=0, script-update-interval=0
+91Porn = type=http-response, pattern=https?:\/\/91porn\.com\/(index|view_video|login|search_result)\.php, script-path=https://github.com/Yuheng0101/X/raw/main/Scripts/91porn.js, requires-body=true, max-size=0, script-update-interval=0
 
 [MITM]
 hostname = %APPEND% *.pornhub.com, 91porn.com
