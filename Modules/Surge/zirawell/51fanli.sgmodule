@@ -1,7 +1,15 @@
-51fanli%0A：Error: Response code 429 (Too Many Requests)
+#!name=51fanli
+#!desc=51fanli
+#!category=Jacob
 
+[Map Local]
+# > 返利网 - 51FANLI
+^https?:\/\/l[0-9]{1}\.51fanli\.net\/app\/images\/splash\/2022\/0[4-9]{1}\/.*.jpg data-type=text data=" " status-code=200
 
+^https?:\/\/l[0-9]{1}\.51fanli\.net\/app\/images\/splash\/2022\/1[0-2]{1}\/.*.jpg data-type=text data=" " status-code=200
 
+^https?:\/\/l[0-9]{1}\.51fanli\.net\/app\/images\/splash\/202\d{1}\/\d{2}\/.*.jpg data-type=text data=" " status-code=200
 
+[MITM]
+hostname = %APPEND% l*.51fanli.net
 
-Script Hub 重写转换: ❌  可自行翻译错误信息或复制错误信息后点击通知进行反馈
