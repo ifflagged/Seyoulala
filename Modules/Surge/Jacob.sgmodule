@@ -842,6 +842,8 @@ upos-sz-upcdntx.bilivideo.com = server:https://doh.pub/dns-query // BiliBili upo
 *.he.net = server:https://ordns.he.net/dns-query // HE.net
 
 [Map Local]
+# Plugin-Common
+^https:\/\/api\.pinduoduo\.com\/api\/alexa\/cells\/hub\/v3\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 # YouTube.Enhance
 ^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad data-type=text data="" status-code=200
 # SmzdmAds
