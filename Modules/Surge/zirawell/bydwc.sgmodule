@@ -1,7 +1,11 @@
-bydwc%0A：Error: Response code 429 (Too Many Requests)
+#!name=bydwc
+#!desc=bydwc
+#!category=Jacob
 
+[Map Local]
+# > 比亚迪王朝 - BYDWC
+^https?:\/\/cache\.bydauto\.com\.cn\/dilink_user_upload\/20 data-type=text data=" " status-code=200
 
+[MITM]
+hostname = %APPEND% cache.bydauto.com.cn
 
-
-
-Script Hub 重写转换: ❌  可自行翻译错误信息或复制错误信息后点击通知进行反馈
