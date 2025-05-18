@@ -1,17 +1,7 @@
-#!name=Common Tools
-#!desc=Common Tools for All
-#!author=Jacob
-#!icon=wrench
-#!category=Jacob
+Plugin-Common%0A：Error: Response code 429 (Too Many Requests)
 
-#!openUrl=https://github.com/ifflagged/Neverflagged/blob/main/Loon/Plugin/Tools.plugin
-#!tag=Jacob
-#!homepage=https://github.com/ifflagged/Neverflagged/blob/main/Loon/Plugin/Tools.plugin
 
-[Map Local]
-# 拼多多瀑布流
-^https:\/\/api\.pinduoduo\.com\/api\/alexa\/cells\/hub\/v3\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-[MITM]
-hostname = %APPEND% api.pinduoduo.com
 
+
+Script Hub 重写转换: ❌  可自行翻译错误信息或复制错误信息后点击通知进行反馈
