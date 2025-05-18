@@ -864,6 +864,234 @@ https?:\/\/91porn\.com(\/|)$ https://91porn.com/index.php 302
 ^https?:\/\/manga\.bilibili\.com\/twirp\/comic\.v\d\.Comic\/ListFlash - reject-dict
 ^https:\/\/api\.live\.bilibili\.com\/xlive\/e-commerce-interface\/v1\/ecommerce-user\/get_shopping_info\? - reject-dict
 
+[Host]
+# DNS
+ip6-localhost = ::1
+ip6-loopback = ::1
+ip6-localnet = fe00::0
+ip6-mcastprefix = ff00::0
+ip6-allnodes = ff02::1
+ip6-allrouters = ff02::2
+ip6-allhosts = ff02::3
+dns.google = 8.8.8.8
+dns64.dns.google = 2001:4860:4860::6464
+cloudflare-dns.com = 104.16.249.249
+1dot1dot1dot1.cloudflare-dns.com = 1.1.1.1
+one.one.one.one = 1.1.1.1
+dns.alidns.com = 223.5.5.5
+doh.pub = 1.12.12.12
+dot.pub = 1.12.12.12
+doh.360.cn = 23.6.48.18
+dot.360.cn = 101.198.198.198
+dns.twnic.tw = 101.101.101.101
+ordns.he.net = 74.82.42.42
+talk.google.com = 108.177.125.188
+mtalk.google.com = 108.177.125.188
+alt1-mtalk.google.com = 3.3.3.3
+alt2-mtalk.google.com = 3.3.3.3
+alt3-mtalk.google.com = 74.125.200.188
+alt4-mtalk.google.com = 74.125.200.188
+alt5-mtalk.google.com = 3.3.3.3
+alt6-mtalk.google.com = 3.3.3.3
+alt7-mtalk.google.com = 74.125.200.188
+alt8-mtalk.google.com = 3.3.3.3
+blog.google = server:119.29.29.29
+googletraveladservices.com = server:119.29.29.29
+dl.google.com = server:119.29.29.29
+dl.l.google.com = server:119.29.29.29
+clientservices.googleapis.com = server:119.29.29.29
+update.googleapis.com = server:119.29.29.29
+translate.googleapis.com = server:119.29.29.29
+fonts.googleapis.com = server:119.29.29.29
+fonts.gstatic.com = server:119.29.29.29
+stun.l.google.com = server:system
+stun?.l.google.com = server:system
+*.id.ui.direct = server:system
+unifi.local = server:system
+amplifi.lan = server:system
+router.synology.com = server:system
+sila.razer.com = server:system
+router.asus.com = server:system
+routerlogin.net = server:system
+orbilogin.com = server:system
+www.LinksysSmartWiFi.com = server:system
+LinksysSmartWiFi.com = server:system
+myrouter.local = server:system
+instant.arubanetworks.com = server:system
+setmeup.arubanetworks.com = server:system
+www.miwifi.com = server:system
+miwifi.com = server:system
+mediarouter.home = server:system
+tplogin.cn = server:system
+tplinklogin.net = server:system
+tplinkwifi.net = server:system
+melogin.cn = server:system
+falogin.cn = server:system
+tendawifi.com = server:system
+leike.cc = server:system
+zte.home = server:system
+p.to = server:system
+phicomm.me = server:system
+hiwifi.com = server:system
+peiluyou.com = server:system
+_hotspot_.m2m = server:system
+hotspot.cslwifi.com = server:system
+networking.apple = server:https://doh.dns.apple.com/dns-query
+*.icloud.com = server:https://doh.dns.apple.com/dns-query
+*.alibaba.cn = server:https://dns.alidns.com/dns-query
+*.alibaba.com.cn = server:https://dns.alidns.com/dns-query
+*.china.alibaba.com = server:https://dns.alidns.com/dns-query
+*.1688.com = server:https://dns.alidns.com/dns-query
+*.taobao.com = server:https://dns.alidns.com/dns-query
+*.tbcache.com = server:https://dns.alidns.com/dns-query
+*.tmall.com = server:https://dns.alidns.com/dns-query
+*.alicdn.com = server:https://dns.alidns.com/dns-query
+*.alikunlun.com = server:https://dns.alidns.com/dns-query
+*.aliapp.com = server:https://dns.alidns.com/dns-query
+*.aliapp.org = server:https://dns.alidns.com/dns-query
+*.alibabausercontent.com = server:https://dns.alidns.com/dns-query
+*.mmstat.com = server:https://dns.alidns.com/dns-query
+tb.cn = server:https://dns.alidns.com/dns-query
+*.aliyun.* = server:https://dns.alidns.com/dns-query
+*.aliyuncdn.* = server:https://dns.alidns.com/dns-query
+*.aliyuncs.com = server:https://dns.alidns.com/dns-query
+*.aliyunddos????.com = server:https://dns.alidns.com/dns-query
+*.aliyundrive.com = server:https://dns.alidns.com/dns-query
+*.aliyundun.com = server:https://dns.alidns.com/dns-query
+*.aliyundunwaf.com = server:https://dns.alidns.com/dns-query
+*.aliyun-inc.com = server:https://dns.alidns.com/dns-query
+*.antgroup.com = server:https://dns.alidns.com/dns-query
+*.antfin.com = server:https://dns.alidns.com/dns-query
+*.antfinancial.com = server:https://dns.alidns.com/dns-query
+*.alipay.com = server:https://dns.alidns.com/dns-query
+*.alipay.com.cn = server:https://dns.alidns.com/dns-query
+*.alipaydns.com = server:https://dns.alidns.com/dns-query
+*.alipayeshop.com = server:https://dns.alidns.com/dns-query
+*.alipaylog.com = server:https://dns.alidns.com/dns-query
+*.alipayobjects.com = server:https://dns.alidns.com/dns-query
+*.alipay-eco.com = server:https://dns.alidns.com/dns-query
+*.tencent.com = server:https://doh.pub/dns-query
+*.qcloud.com = server:https://doh.pub/dns-query
+*.qcloudcdn.cn = server:https://doh.pub/dns-query
+*.qcloudcdn.com = server:https://doh.pub/dns-query
+*.qcloudcos.com = server:https://doh.pub/dns-query
+*.qcloudimg.com = server:https://doh.pub/dns-query
+*.qcloudcjgj.com = server:https://doh.pub/dns-query
+*.qcloudwzgj.com = server:https://doh.pub/dns-query
+*.qcloudzygj.com = server:https://doh.pub/dns-query
+*.myqcloud.com = server:https://doh.pub/dns-query
+*.tencent-cloud.net = server:https://doh.pub/dns-query
+*.tencentcloud-aiot.com = server:https://doh.pub/dns-query
+*.tencentcloudapi.com = server:https://doh.pub/dns-query
+*.tencentcloudcr.com = server:https://doh.pub/dns-query
+*.tencentcloudmarket.com = server:https://doh.pub/dns-query
+*.qq.com = server:https://doh.pub/dns-query
+*.qlogo.cn = server:https://doh.pub/dns-query
+*.qpic.cn = server:https://doh.pub/dns-query
+*.weixin.qq.com = server:https://doh.pub/dns-query
+*.wx.qq.com = server:https://doh.pub/dns-query
+*.weixin.com = server:https://doh.pub/dns-query
+*.weixinbridge.com = server:https://doh.pub/dns-query
+*.wechat.com = server:https://doh.pub/dns-query
+*.servicewechat.com = server:https://doh.pub/dns-query
+*.weiyun.com = server:https://doh.pub/dns-query
+*.gtimg.cn = server:https://doh.pub/dns-query
+*.idqqimg.com = server:https://doh.pub/dns-query
+*.cdn-go.cn = server:https://doh.pub/dns-query
+*.smtcdns.com = server:https://doh.pub/dns-query
+*.smtcdns.net = server:https://doh.pub/dns-query
+url.cn = server:https://doh.pub/dns-query
+*.baidu = server:180.76.76.76
+*.baidu.com = server:180.76.76.76
+*.bdimg.com = server:180.76.76.76
+*.bdstatic.com = server:180.76.76.76
+*.baidupcs.* = server:180.76.76.76
+*.baiduyuncdn.* = server:180.76.76.76
+*.baiduyundns.* = server:180.76.76.76
+*.bdydns.* = server:180.76.76.76
+*.bdycdn.* = server:180.76.76.76
+*.bdysite.com = server:180.76.76.76
+*.bdysites.com = server:180.76.76.76
+*.baidubce.* = server:180.76.76.76
+*.bcedns.* = server:180.76.76.76
+*.bcebos.com = server:180.76.76.76
+*.bcevod.com = server:180.76.76.76
+*.bceimg.com = server:180.76.76.76
+*.bcehost.com = server:180.76.76.76
+*.bcehosts.com = server:180.76.76.76
+dwz.cn = server:180.76.76.76
+*.360.cn = server:https://doh.360.cn/dns-query
+*.360safe.com = server:https://doh.360.cn/dns-query
+*.360kuai.com = server:https://doh.360.cn/dns-query
+*.so.com = server:https://doh.360.cn/dns-query
+*.360webcache.com = server:https://doh.360.cn/dns-query
+*.qihuapi.com = server:https://doh.360.cn/dns-query
+*.qhimg.com = server:https://doh.360.cn/dns-query
+*.qhimgs.com = server:https://doh.360.cn/dns-query
+*.qhimgs?.com = server:https://doh.360.cn/dns-query
+*.qhmsg.com = server:https://doh.360.cn/dns-query
+*.qhres.com = server:https://doh.360.cn/dns-query
+*.qhres?.com = server:https://doh.360.cn/dns-query
+*.dhrest.com = server:https://doh.360.cn/dns-query
+*.qhupdate.com = server:https://doh.360.cn/dns-query
+*.yunpan.cn = server:https://doh.360.cn/dns-query
+*.yunpan.com.cn = server:https://doh.360.cn/dns-query
+*.yunpan.com = server:https://doh.360.cn/dns-query
+urlqh.cn = server:https://doh.360.cn/dns-query
+*.amemv.com = server:180.184.1.1
+*.bdxiguaimg.com = server:180.184.1.1
+*.bdxiguastatic.com = server:180.184.1.1
+*.byted-static.com = server:180.184.1.1
+*.bytedance.* = server:180.184.1.1
+*.bytedns.net = server:180.184.1.1
+*.bytednsdoc.com = server:180.184.1.1
+*.bytegoofy.com = server:180.184.1.1
+*.byteimg.com = server:180.184.1.1
+*.bytescm.com = server:180.184.1.1
+*.bytetos.com = server:180.184.1.1
+*.bytexservice.com = server:180.184.1.1
+*.douyin.com = server:180.184.1.1
+*.douyinpic.com = server:180.184.1.1
+*.douyinstatic.com = server:180.184.1.1
+*.douyinvod.com = server:180.184.1.1
+*.feelgood.cn = server:180.184.1.1
+*.feiliao.com = server:180.184.1.1
+*.gifshow.com = server:180.184.1.1
+*.huoshan.com = server:180.184.1.1
+*.huoshanzhibo.com = server:180.184.1.1
+*.ibytedapm.com = server:180.184.1.1
+*.iesdouyin.com = server:180.184.1.1
+*.ixigua.com = server:180.184.1.1
+*.kspkg.com = server:180.184.1.1
+*.pstatp.com = server:180.184.1.1
+*.snssdk.com = server:180.184.1.1
+*.toutiao.com = server:180.184.1.1
+*.toutiao13.com = server:180.184.1.1
+*.toutiao???.??? = server:180.184.1.1
+*.toutiaocloud.cn = server:180.184.1.1
+*.toutiaocloud.com = server:180.184.1.1
+*.toutiaopage.com = server:180.184.1.1
+*.wukong.com = server:180.184.1.1
+*.zijieapi.com = server:180.184.1.1
+*.zijieimg.com = server:180.184.1.1
+*.zjbyte.com = server:180.184.1.1
+*.zjcdn.com = server:180.184.1.1
+upos-sz-mirrorali.bilivideo.com = server:https://dns.alidns.com/dns-query
+upos-sz-mirrorali?.bilivideo.com = server:https://dns.alidns.com/dns-query
+upos-sz-mirrorali??.bilivideo.com = server:https://dns.alidns.com/dns-query
+upos-sz-mirrorbos.bilivideo.com = server:180.76.76.76
+upos-sz-mirrorcos.bilivideo.com = server:https://doh.pub/dns-query
+upos-sz-mirrorcos?.bilivideo.com = server:https://doh.pub/dns-query
+upos-sz-mirrorcos??.bilivideo.com = server:https://doh.pub/dns-query
+upos-sz-upcdnbd??.bilivideo.com = server:180.76.76.76
+upos-sz-upcdntx.bilivideo.com = server:https://doh.pub/dns-query
+*.cht.com.tw = server:https://dns.hinet.net/dns-query
+*.hinet.net = server:https://dns.hinet.net/dns-query
+*.emome.net = server:https://dns.hinet.net/dns-query
+*.tw = server:https://dns.twnic.tw/dns-query
+*.taipei = server:https://dns.twnic.tw/dns-query
+*.he.net = server:https://ordns.he.net/dns-query
+
 [Script]
 # iRingo.WeatherKit
 http-response ^https?:\/\/weatherkit\.apple\.com\/api\/v1\/availability\/ requires-body=1, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/NSRingo/iRingo.WeatherKit/response.bundle.js, tag=🌤 WeatherKit.api.v1.availability.response, argument=[{NextHour.Provider},{AQI.Provider},{AQI.ReplaceProviders},{AQI.Local.Scale},{AQI.Local.ReplaceScales},{AQI.Local.ConvertUnits},{API.ColorfulClouds.Token},{API.QWeather.Host},{API.QWeather.Token},{API.WAQI.Token},{LogLevel}]
@@ -994,7 +1222,7 @@ http-response ^https?:\/\/zj\.haier\.net\/omsappapi\/resource\/v\d\/get\/resourc
 http-request ^https?:\/\/(raw|gist)\.githubusercontent\.com\/ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/functional/replace-header.js, timeout=30, tag=replaceHeader, argument=(%5Cr%5Cn)Accept-Language%3A.%2B(%5Cr%5Cn)-%3E%241Accept-Language%3A%20en-us%242
 http-request ^https?:\/\/github\.com\/ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/functional/replace-header.js, timeout=30, tag=replaceHeader, argument=(%5Cr%5Cn)Accept-Language%3A.%2B(%5Cr%5Cn)-%3E%241Accept-Language%3A%20en-us%242
 # jd
-http-response ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(?>deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome) script-path=https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/jd.js, requires-body=true, timeout=60, tag=jd
+http-response ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(?>deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/jd/jd.js, requires-body=true, timeout=60, tag=jd
 # meituan
 http-response ^https?:\/\/p\d\.meituan\.net\/linglong\/ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/meituan/meituan.js, requires-body=true, timeout=60, tag=meituan
 # taobao
@@ -1005,8 +1233,8 @@ http-response ^https?:\/\/tft-app\.cdtft\.cn\/gateway-customer\/tftapp\/tft-ams\
 # umetrip
 http-response ^https?:\/\/(bkclient|umerp|home)\.umetrip\.com(\.cn){0,1}\/gateway\/api\/umetrip\/native script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/umetrip/umetrip.js, timeout=60, tag=umetrip
 # BiliBili
-http-response ^https:\/\/app\.bilibili\.com\/x\/resource\/show\/tab\/v2\? script-path=https://github.com/ifflagged/Neverflagged/raw/main/Surge/Scripts/BiliBili.js, requires-body=true, tag=精简首页顶部标签
-http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/account\/(?:mine|myinfo) script-path=https://github.com/ifflagged/Neverflagged/raw/main/Surge/Scripts/BiliBili.js, requires-body=true, tag=BiliBili Mystery Code
+http-response ^https:\/\/app\.bilibili\.com\/x\/resource\/show\/tab\/v2\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/BiliBili/BiliBili.js, requires-body=true, tag=精简首页顶部标签
+http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/account\/(?:mine|myinfo) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/BiliBili/BiliBili.js, requires-body=true, tag=BiliBili Mystery Code
 # bilibili
 http-request ^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.playerunite\.v1\.Player\/PlayViewUnite$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/kokoryh/bilibili/bilibili.airborne.js, requires-body=true, binary-body-mode=true, tag={空降助手}
 http-request ^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.community\.service\.dm\.v1\.DM\/DmSegMobile$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/kokoryh/bilibili/bilibili.airborne.js, requires-body=true, binary-body-mode=true, tag={空降助手弹幕版}
