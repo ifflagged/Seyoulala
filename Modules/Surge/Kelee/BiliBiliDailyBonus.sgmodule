@@ -1,4 +1,4 @@
-BiliBiliDailyBonus%0A：Error: Response code 429 (Too Many Requests)
+BiliBiliDailyBonus%0A：TypeError: Cannot read properties of null (reading 'entries')
 
 
 
