@@ -1046,8 +1046,8 @@ upos-sz-upcdntx.bilivideo.com = server:https://doh.pub/dns-query // BiliBili upo
 # Tools
 Look directly for Zhihu = type=http-response,pattern=https://(www\.zhihu\.com/question|zhuanlan\.zhihu\.com/p)/,requires-body=1,max-size=0,script-path=https://github.com/id77/QuantumultX/raw/master/Script/zhihu.js
 # Module-Common
-Pornhub = type=http-response, pattern=^https?:/\/(cn|www)\.pornhub\.com\/($|(view|video).*$), script-path=https://github.com/ddgksf2013/Scripts/raw/master/pornhub.js, requires-body=true, max-size=0, script-update-interval=0
-91Porn = type=http-response, pattern=https?:\/\/91porn\.com\/(index|view_video|login|search_result)\.php, script-path=https://github.com/Yuheng0101/X/raw/main/Scripts/91porn.js, requires-body=true, max-size=0, script-update-interval=0
+Pornhub = type=http-response, pattern=^https?:/\/(cn|www)\.pornhub\.com\/($|(view|video).*$), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/Module-Common/pornhub.js, requires-body=true, max-size=0, script-update-interval=0
+91Porn = type=http-response, pattern=https?:\/\/91porn\.com\/(index|view_video|login|search_result)\.php, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/Module-Common/91porn.js, requires-body=true, max-size=0, script-update-interval=0
 # YouTube.Enhance
 youtube.response = type=http-response, pattern=^https:\/\/youtubei\.googleapis\.com\/(youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch))(\?(.*))?$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Maasea/YouTube.Enhance/youtube.response.js, requires-body=true, binary-body-mode=true, max-size=-1, argument="{"lyricLang":"off","captionLang":"off","blockUpload":true,"blockImmersive":true,"blockShorts":false,"debug":false}"
 # DualSubs.Spotify
@@ -1108,11 +1108,11 @@ body_rewrite_31 = type=http-response, pattern=^https:\/\/m5-zb\.amap\.com\/ws\/s
 移除打车页推广卡片、弹窗 = type=http-response, pattern=^https:\/\/m5-zb\.amap\.com\/ws\/boss\/(?:car\/order\/content_info|order_web\/friendly_information), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Amap_remove_ads/Amap_remove_ads.js, requires-body=true
 移除打车页红点角标、天气图标 = type=http-response, pattern=^https:\/\/m5-zb\.amap\.com\/ws\/promotion-web\/resource(\/home)?\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Amap_remove_ads/Amap_remove_ads.js, requires-body=true
 # DiDi-AD
-移除广告 = type=http-response, pattern=^https:\/\/common\.diditaxi\.com\.cn\/common\/v\d\/usercenter\/me, script-path=https://github.com/ifflagged/Neverflagged/raw/main/Loon/Scripts/DiDi.js, requires-body=true
-移除广告 = type=http-response, pattern=^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/core, script-path=https://github.com/ifflagged/Neverflagged/raw/main/Loon/Scripts/DiDi.js, requires-body=true
-移除广告 = type=http-response, pattern=^https:\/\/api\.udache\.com\/gulfstream\/pre-sale\/v1\/other\/pGetSceneList, script-path=https://github.com/ifflagged/Neverflagged/raw/main/Loon/Scripts/DiDi.js, requires-body=true
-移除广告 = type=http-response, pattern=^https:\/\/conf\.diditaxi\.com\.cn\/ota\/na\/yuantu\/infoList, script-path=https://github.com/ifflagged/Neverflagged/raw/main/Loon/Scripts/DiDi.js, requires-body=true
-移除广告 = type=http-response, pattern=^https:\/\/api\.udache\.com\/gulfstream\/passenger-center\/v2\/other\/pInTripLayout, script-path=https://github.com/ifflagged/Neverflagged/raw/main/Loon/Scripts/DiDi.js, requires-body=true
+移除广告 = type=http-response, pattern=^https:\/\/common\.diditaxi\.com\.cn\/common\/v\d\/usercenter\/me, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/DiDi-AD/DiDi.js, requires-body=true
+移除广告 = type=http-response, pattern=^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/core, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/DiDi-AD/DiDi.js, requires-body=true
+移除广告 = type=http-response, pattern=^https:\/\/api\.udache\.com\/gulfstream\/pre-sale\/v1\/other\/pGetSceneList, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/DiDi-AD/DiDi.js, requires-body=true
+移除广告 = type=http-response, pattern=^https:\/\/conf\.diditaxi\.com\.cn\/ota\/na\/yuantu\/infoList, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/DiDi-AD/DiDi.js, requires-body=true
+移除广告 = type=http-response, pattern=^https:\/\/api\.udache\.com\/gulfstream\/passenger-center\/v2\/other\/pInTripLayout, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/DiDi-AD/DiDi.js, requires-body=true
 # JD_remove_ads
 body_rewrite_15 = type=http-response, pattern=^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=basicConfig, script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22json-replace%22%2C%5B%5B%22data.JDMessage.socketmonitor.isSocketEstablishedAhead%22%2C0%5D%2C%5B%22data.JDMessage.socketmonitor.isSocketReport%22%2C0%5D%2C%5B%22data.JDHttpToolKit.httpdns.httpdns%22%2C0%5D%5D%5D%5D
 移除京东广告 = type=http-response, pattern=^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/JD_remove_ads/JD_remove_ads.js, requires-body=true
