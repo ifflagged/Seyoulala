@@ -27,6 +27,8 @@ if (url.includes("/homeApi/bottomNavi")) {
                 return null;
             } else if (item.small_image?.includes("ddfs-public.ddimg.mobi")) {
                 return null;
+            } else if (item.ads?.length > 0) {
+                return null;
             }
             return item;
         }).filter(Boolean);
