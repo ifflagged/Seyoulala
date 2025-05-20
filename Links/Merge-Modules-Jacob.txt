@@ -57,6 +57,7 @@ Modules/Surge/ZenmoFeiShi/Pinduoduo.sgmodule # Loon,Shadowrocket
 Modules/Surge/ZenmoFeiShi/WxPureDominion.sgmodule # Loon,Shadowrocket
 Modules/Surge/ZenmoFeiShi/Smzdm.sgmodule # Loon,Shadowrocket
 Modules/Surge/zirawell/adunion.sgmodule # Loon,Shadowrocket
+Modules/Surge/zirawell/amap.sgmodule # Loon,Shadowrocket
 Modules/Surge/zirawell/10086.sgmodule # Loon,Shadowrocket
 Modules/Surge/zirawell/12123.sgmodule # Loon,Shadowrocket
 Modules/Surge/zirawell/51fanli.sgmodule # Loon,Shadowrocket
