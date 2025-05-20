@@ -1,14 +1,14 @@
-#!name = CC直播去广告
-#!desc = 移除信息流推广和横幅，精简顶部标签。
-#!openUrl = https://apps.apple.com/app/id853008299
-#!author = 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
-#!tag = 去广告
-#!system = 
-#!system_version = 
-#!loon_version = 3.2.4(787)
-#!homepage = https://github.com/luestr/ProxyResource/blob/main/README.md
-#!icon = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/CCLive.png
-#!date = 2025-05-13 15:17:08
+#!name=CC直播去广告
+#!desc=移除信息流推广和横幅，精简顶部标签。
+#!openUrl=https://apps.apple.com/app/id853008299
+#!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+#!tag=去广告
+#!system=
+#!system_version=
+#!loon_version=3.2.4(787)
+#!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/CCLive.png
+#!date=2025-05-13 15:17:08
 
 [Rewrite]
 ^https:\/\/api\.cc\.163\.com\/v\d\/mgamenavigation\/navigation_list\? response-body-json-jq '.data.info_list |= map(select(.name == "关注" or .name == "推荐" or .name == "视频" or .name == "全部"))'
@@ -25,4 +25,4 @@
 ^http:\/\/api\.cc\.163\.com\/v1\/mpopuprecommend\/exit_room_conf$ reject-dict
 
 [MitM]
-hostname = api.cc.163.com, cc.163.com, mshare.cc.163.com, appapi.cc.163.com
+hostname=api.cc.163.com, cc.163.com, mshare.cc.163.com, appapi.cc.163.com

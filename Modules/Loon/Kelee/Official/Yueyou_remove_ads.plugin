@@ -1,14 +1,14 @@
-#!name = 阅友去广告
-#!desc = 移除开屏广告、弹窗广告和阅读页面广告，移除底栏福利按钮。
-#!openUrl = https://apps.apple.com/app/id1066723192
-#!author = 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
-#!tag = 去广告
-#!system = 
-#!system_version = 
-#!loon_version = 3.2.4(787)
-#!homepage = https://github.com/luestr/ProxyResource/blob/main/README.md
-#!icon = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Yueyou.png
-#!date = 2025-05-13 15:17:08
+#!name=阅友去广告
+#!desc=移除开屏广告、弹窗广告和阅读页面广告，移除底栏福利按钮。
+#!openUrl=https://apps.apple.com/app/id1066723192
+#!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+#!tag=去广告
+#!system=
+#!system_version=
+#!loon_version=3.2.4(787)
+#!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Yueyou.png
+#!date=2025-05-13 15:17:08
 
 [Rule]
 DOMAIN, ads.reader.yueyouxs.com, REJECT
@@ -19,4 +19,4 @@ DOMAIN, ads.reader.yueyouxs.com, REJECT
 ^https:\/\/goway\.reader\.yueyouxs\.com\/assemble\/app\/basic\/getAppInfo\? response-body-json-replace data.isAdClosed true 
 
 [MitM]
-hostname = goway.reader.yueyouxs.com
+hostname=goway.reader.yueyouxs.com

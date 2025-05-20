@@ -1,14 +1,14 @@
-#!name = 快手去广告
-#!desc = 移除开屏广告、视频流广告、底栏皮肤、精简我的页面。
-#!openUrl = https://apps.apple.com/app/id440948110
-#!author = 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
-#!tag = 去广告
-#!system = 
-#!system_version = 
-#!loon_version = 3.2.4(787)
-#!homepage = https://github.com/luestr/ProxyResource/blob/main/README.md
-#!icon = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/KuaiShou.png
-#!date = 2025-05-13 15:17:08
+#!name=快手去广告
+#!desc=移除开屏广告、视频流广告、底栏皮肤、精简我的页面。
+#!openUrl=https://apps.apple.com/app/id440948110
+#!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+#!tag=去广告
+#!system=
+#!system_version=
+#!loon_version=3.2.4(787)
+#!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/KuaiShou.png
+#!date=2025-05-13 15:17:08
 
 [Rewrite]
 ^https:\/\/(apissl|az2-api(-js|-idc)?)\.(gifshow|ksapisrv)\.com\/rest\/system\/startup\? response-body-json-del reskinConfig sidebarExSquareStyle.moreList sidebarExSquareStyle.topList
@@ -26,4 +26,4 @@
 ^https:\/\/az2-api-js\.gifshow\.com\/rest\/n\/user\/profile\/v2\? response-body-json-del postRecommends
 
 [MitM]
-hostname = az4-api.ksapisrv.com, az4-api-idc.ksapisrv.com, az2-api.ksapisrv.com, az2-api-idc.ksapisrv.com, apissl.gifshow.com, apissl.ksapisrv.com, az2-api-js.gifshow.com, az2-live.ksapisrv.com
+hostname=az4-api.ksapisrv.com, az4-api-idc.ksapisrv.com, az2-api.ksapisrv.com, az2-api-idc.ksapisrv.com, apissl.gifshow.com, apissl.ksapisrv.com, az2-api-js.gifshow.com, az2-live.ksapisrv.com

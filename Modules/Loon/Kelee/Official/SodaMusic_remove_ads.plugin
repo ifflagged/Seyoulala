@@ -1,14 +1,14 @@
-#!name = 汽水音乐去广告
-#!desc = 移除开屏广告、弹窗广告、播放器推广、歌曲详情界面视频推广、播放页面的歌曲视频，精简首页和我的页面。
-#!openUrl = https://apps.apple.com/app/id1605585211
-#!author = 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
-#!tag = 去广告
-#!system = 
-#!system_version = 
-#!loon_version = 3.2.4(787)
-#!homepage = https://github.com/luestr/ProxyResource/blob/main/README.md
-#!icon = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/SodaMusic.png
-#!date = 2025-05-18 01:29:34
+#!name=汽水音乐去广告
+#!desc=移除开屏广告、弹窗广告、播放器推广、歌曲详情界面视频推广、播放页面的歌曲视频，精简首页和我的页面。
+#!openUrl=https://apps.apple.com/app/id1605585211
+#!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+#!tag=去广告
+#!system=
+#!system_version=
+#!loon_version=3.2.4(787)
+#!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/SodaMusic.png
+#!date=2025-05-18 01:29:34
 
 [Rewrite]
 ^https:\/\/beta-luna\.douyin\.com\/luna\/commerce\/upsells_config\? reject-dict
@@ -39,7 +39,7 @@
 ^https:\/\/beta-luna\.douyin\.com\/luna\/commerce\/v2\/commerce_info\? reject-dict
 
 [Script]
-http-response ^https:\/\/beta-luna\.douyin\.com\/luna\/me\/recently-played-media\? script-path = https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/SodaMusic_remove_ads/SodaMusic_remove_ads.js, requires-body = true, tag = 移除播放页面视频流
+http-response ^https:\/\/beta-luna\.douyin\.com\/luna\/me\/recently-played-media\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/SodaMusic_remove_ads/SodaMusic_remove_ads.js, requires-body=true, tag=移除播放页面视频流
 
 [MitM]
-hostname = webcast-open.douyin.com, beta-luna.douyin.com, api.qishui.com
+hostname=webcast-open.douyin.com, beta-luna.douyin.com, api.qishui.com

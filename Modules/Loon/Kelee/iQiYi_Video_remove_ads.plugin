@@ -1,14 +1,14 @@
-#!name = 爱奇艺去广告
-#!desc = 移除开屏广告、焦点图广告、瀑布流广告、搜索页面广告、移除青少年弹窗，精简底栏和我的页面。
-#!openUrl = https://apps.apple.com/app/id1190755526
-#!author = 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
-#!tag = 去广告
-#!system = 
-#!system_version = 
-#!loon_version = 3.2.4(787)
-#!homepage = https://github.com/luestr/ProxyResource/blob/main/README.md
-#!icon = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/iQiYi_Video.png
-#!date = 2025-05-13 15:17:08
+#!name=爱奇艺去广告
+#!desc=移除开屏广告、焦点图广告、瀑布流广告、搜索页面广告、移除青少年弹窗，精简底栏和我的页面。
+#!openUrl=https://apps.apple.com/app/id1190755526
+#!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+#!tag=去广告
+#!system=
+#!system_version=
+#!loon_version=3.2.4(787)
+#!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/iQiYi_Video.png
+#!date=2025-05-13 15:17:08
 
 [Rule]
 IP-CIDR, 103.44.59.54/32, REJECT, no-resolve
@@ -64,4 +64,4 @@ DOMAIN, access.if.iqiyi.com, REJECT
 ^https?:\/\/iface2\.iqiyi\.com\/aggregate\/3\.0\/getMyMenus\? response-body-json-jq '.data |= map(select(.statistic.block != "wd_liebiao_2") | select(all(.menuList[]?.statistic2.block; . != "wd_liebiao_3")))'
 
 [MitM]
-hostname = -i.vip.iqiyi.com, *.iqiyi.com
+hostname=-i.vip.iqiyi.com, *.iqiyi.com

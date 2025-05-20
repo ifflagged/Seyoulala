@@ -1,14 +1,14 @@
-#!name = 叮咚买菜去广告
-#!desc = 移除开屏广告、弹窗推广、搜索推荐、信息流广告、悬浮广告、各页面购物推荐、精简我的页面，移除底栏和各页面AI入口。
-#!openUrl = https://apps.apple.com/app/id768082524
-#!author = zirawell[https://github.com/zirawell], 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md], wish
-#!tag = 去广告
-#!system = 
-#!system_version = 
-#!loon_version = 3.2.4(787)
-#!homepage = https://github.com/luestr/ProxyResource/blob/main/README.md
-#!icon = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/DingdongMaicai.png
-#!date = 2025-05-13 15:17:08
+#!name=叮咚买菜去广告
+#!desc=移除开屏广告、弹窗推广、搜索推荐、信息流广告、悬浮广告、各页面购物推荐、精简我的页面，移除底栏和各页面AI入口。
+#!openUrl=https://apps.apple.com/app/id768082524
+#!author=zirawell[https://github.com/zirawell], 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md], wish
+#!tag=去广告
+#!system=
+#!system_version=
+#!loon_version=3.2.4(787)
+#!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/DingdongMaicai.png
+#!date=2025-05-13 15:17:08
 
 [Rule]
 DOMAIN, trackercollect.ddxq.mobi, REJECT
