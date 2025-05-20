@@ -1,15 +1,7 @@
-#!name=12306
-#!desc=12306
-#!category=Jacob
+12306%0A：Error: Response code 429 (Too Many Requests)
 
-[Rule]
-# > 12306 - 12306
-DOMAIN,ad.12306.cn,REJECT
 
-[Script]
-# > 12306 - 12306
-12306 = type=http-response, pattern=^https?:\/\/mobile\.12306\.cn\/otsmobile\/app\/mgs\/mgw\.htm$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/12306/12306.js, timeout=60
 
-[MITM]
-hostname = %APPEND% mobile.12306.cn
 
+
+Script Hub 重写转换: ❌  可自行翻译错误信息或复制错误信息后点击通知进行反馈
