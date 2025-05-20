@@ -56,16 +56,15 @@ Modules/Surge/Yuheng0101/NoAds.sgmodule # Loon,Shadowrocket
 Modules/Surge/ZenmoFeiShi/Pinduoduo.sgmodule # Loon,Shadowrocket
 Modules/Surge/ZenmoFeiShi/WxPureDominion.sgmodule # Loon,Shadowrocket
 Modules/Surge/ZenmoFeiShi/Smzdm.sgmodule # Loon,Shadowrocket
-Modules/Surge/zirawell/adUnion.sgmodule # Loon,Shadowrocket
-Modules/Surge/zirawell/10086_general.sgmodule # Loon,Shadowrocket
+Modules/Surge/zirawell/adunion.sgmodule # Loon,Shadowrocket
+Modules/Surge/zirawell/10086.sgmodule # Loon,Shadowrocket
 Modules/Surge/zirawell/51fanli.sgmodule # Loon,Shadowrocket
-Modules/Surge/zirawell/SAMsClub.sgmodule # Loon,Shadowrocket
 Modules/Surge/zirawell/alipay.sgmodule # Loon,Shadowrocket
 Modules/Surge/zirawell/beautycam.sgmodule # Loon,Shadowrocket
 Modules/Surge/zirawell/bydwc.sgmodule # Loon,Shadowrocket
-Modules/Surge/zirawell/ccb.sgmodule # Loon,Shadowrocket
+Modules/Surge/zirawell/ccblife.sgmodule # Loon,Shadowrocket
 Modules/Surge/zirawell/cmb.sgmodule # Loon,Shadowrocket
-# Modules/Surge/zirawell/dianping.sgmodule # Loon,Shadowrocket
+Modules/Surge/zirawell/dianping.sgmodule # Loon,Shadowrocket
 Modules/Surge/zirawell/ehaier.sgmodule # Loon,Shadowrocket
 Modules/Surge/zirawell/ejoy.sgmodule # Loon,Shadowrocket
 Modules/Surge/zirawell/eleme.sgmodule # Loon,Shadowrocket
@@ -74,19 +73,21 @@ Modules/Surge/zirawell/hilton.sgmodule # Loon,Shadowrocket
 Modules/Surge/zirawell/jd.sgmodule # Loon,Shadowrocket
 Modules/Surge/zirawell/mcd.sgmodule # Loon,Shadowrocket
 Modules/Surge/zirawell/meituan.sgmodule # Loon,Shadowrocket
-Modules/Surge/zirawell/miHome.sgmodule # Loon,Shadowrocket
+Modules/Surge/zirawell/mihome.sgmodule # Loon,Shadowrocket
 Modules/Surge/zirawell/qunar.sgmodule # Loon,Shadowrocket
+Modules/Surge/zirawell/samsclub.sgmodule # Loon,Shadowrocket
 Modules/Surge/zirawell/sgcc.sgmodule # Loon,Shadowrocket
 Modules/Surge/zirawell/taobao.sgmodule # Loon,Shadowrocket
+Modules/Surge/zirawell/tfilm.sgmodule # Loon,Shadowrocket
 Modules/Surge/zirawell/tfsmy.sgmodule # Loon,Shadowrocket
 Modules/Surge/zirawell/tft.sgmodule # Loon,Shadowrocket
+Modules/Surge/zirawell/twitter.sgmodule # Loon,Shadowrocket
 Modules/Surge/zirawell/umetrip.sgmodule # Loon,Shadowrocket
-Modules/Surge/zirawell/unionPay.sgmodule # Loon,Shadowrocket
+Modules/Surge/zirawell/unionpay.sgmodule # Loon,Shadowrocket
 
 Modules/Surge/ifflagged/BiliBili.sgmodule # Loon,Shadowrocket
 Modules/Surge/kokoryh/bilibili.sgmodule # Loon,Shadowrocket
-Modules/Surge/Kelee/Bilibili_remove_ads.sgmodule # Shadowrocket
-Modules/Loon/Kelee/Bilibili_remove_ads.plugin
+Modules/Surge/Kelee/Bilibili_remove_ads.sgmodule # Loon,Shadowrocket
 Modules/Surge/BiliUniverse/BiliBili.ADBlock.sgmodule # Loon,Shadowrocket
 Modules/Surge/BiliUniverse/BiliBili.Enhanced.sgmodule # Loon,Shadowrocket
 Modules/Surge/BiliUniverse/BiliBili.Redirect.sgmodule # Loon,Shadowrocket
