@@ -1,7 +1,12 @@
-95504%0A：Error: Response code 404 (Not Found)
+#!name=95504
+#!desc=95504
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
+#!tag=Jacob
 
+[Rewrite]
+^https?:\/\/minipro\.95504\.net\/app\/json\/ad\/get(?>Pop|Index)AdData - reject
+^https?:\/\/sichuan\.95504\.net\/v\d\/gd\/index\/get mock-response-body data-type=text data="" status-code=200
 
+[MITM]
+hostname = sichuan.95504.net, minipro.95504.net
 
-
-
-Script Hub 重写转换: ❌  可自行翻译错误信息或复制错误信息后点击通知进行反馈
