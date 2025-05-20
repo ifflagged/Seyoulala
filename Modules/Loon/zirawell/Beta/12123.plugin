@@ -3,17 +3,9 @@
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
 #!tag=Jacob
 
-[Rule]
-# > 12123 - 12123
-DOMAIN-SUFFIX,v3.fstats.xyz,REJECT
-DOMAIN-SUFFIX,wss.haoyundmn.com,REJECT
-DOMAIN-SUFFIX,new.xiongzhangad.com,REJECT
-DOMAIN-SUFFIX,alexametrics.com,REJECT
-DOMAIN-KEYWORD,in-page-push,REJECT
-
 [Rewrite]
-# > 12123 - 12123
-^https?:\/\/gab\.122\.gov\.cn\/eapp\/m\/sysquery\/adver - reject
+# > 交管12123 - 12123
+^https?:\/\/gab\.122\.gov\.cn\/eapp\/m\/sysquery\/adver$ - reject
 
 [MITM]
 hostname = gab.122.gov.cn

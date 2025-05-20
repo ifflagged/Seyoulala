@@ -1,0 +1,19 @@
+#!name=unionpay
+#!desc=unionpay
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
+#!tag=Jacob
+
+[Rule]
+# > 云闪付 - 95516
+DOMAIN,switch.cup.com.cn,REJECT
+DOMAIN,ads.cup.com.cn,REJECT
+DOMAIN,analytics.95516.com,REJECT
+DOMAIN,tysdk.95516.com,REJECT
+
+[Rewrite]
+# > 云闪付 - 95516
+^https?:\/\/wallet\.95516\.com(:10533)?\/s\/wl\/icon\/large\/1 - reject
+
+[MITM]
+hostname = wallet.95516.com
+

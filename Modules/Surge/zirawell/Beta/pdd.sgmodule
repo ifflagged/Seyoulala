@@ -1,0 +1,84 @@
+#!name=pdd
+#!desc=pdd
+#!category=Jacob
+
+[Rule]
+# > 拼多多 - PDD
+IP-CIDR,81.69.208.12/32,REJECT,no-resolve
+IP-CIDR,81.69.130.131/32,REJECT,no-resolve
+IP-CIDR,81.69.105.56/32,REJECT,no-resolve
+IP-CIDR,101.35.204.35/32,REJECT,no-resolve
+IP-CIDR,101.35.212.35/32,REJECT,no-resolve
+IP-CIDR,111.29.42.213/32,REJECT,no-resolve
+IP-CIDR,114.110.99.5/32,REJECT,no-resolve
+IP-CIDR,117.185.244.212/32,REJECT,no-resolve
+IP-CIDR,121.5.84.85/32,REJECT,no-resolve
+IP-CIDR,175.24.144.100/32,REJECT,no-resolve
+IP-CIDR,180.163.214.155/32,REJECT,no-resolve
+IP-CIDR,49.235.102.0/24,REJECT,no-resolve
+IP-CIDR,114.110.98.0/24,REJECT,no-resolve
+IP-CIDR,114.110.96.0/24,REJECT,no-resolve
+IP-CIDR,114.110.97.0/24,REJECT,no-resolve
+IP-CIDR,101.226.46.0/24,REJECT,no-resolve
+#IP-CIDR,101.226.152.0/24,REJECT
+IP-CIDR,180.97.42.0/24,REJECT,no-resolve
+IP-CIDR,212.129.220.0/24,REJECT,no-resolve
+DOMAIN,titan.pinduoduo.com,REJECT
+DOMAIN,apm.pinduoduo.com,REJECT
+DOMAIN,ta-a.pinduoduo.com,REJECT
+DOMAIN,ta.pinduoduo.com,REJECT
+DOMAIN,th-a.pinduoduo.com,REJECT
+DOMAIN,th-b.pinduoduo.com,REJECT
+DOMAIN,th.pinduoduo.com,REJECT
+DOMAIN,ta.yangkeduo.com,REJECT
+DOMAIN,th.yangkeduo.com,REJECT
+DOMAIN,meta.yangkeduo.com,REJECT
+DOMAIN,meta.pinduoduo.com,REJECT
+DOMAIN,m.pinduoduo.net,REJECT
+DOMAIN,promotion.pddpic.com,REJECT
+DOMAIN,promotion-1.pddpic.com,REJECT
+DOMAIN,promotion-2.pddpic.com,REJECT
+DOMAIN,promotion-3.pddpic.com,REJECT
+
+[URL Rewrite]
+# > 拼多多 - PDD
+^https?:\/\/api\.(pinduoduo|yangkeduo)\.com\/api\/cappuccino\/splash - reject
+^https?:\/\/mobile\.yangkeduo\.com\/layer\/app_upgrade_popup - reject
+^https?:\/\/api\.pinduoduo\.com\/api\/ktt_gateway\/activity\/feeds\/personal_home_page\/ - reject
+^https?:\/\/api\.pinduoduo\.com\/api\/alexa\/goods\/back_up - reject
+
+[Map Local]
+^https?:\/\/api\.pinduoduo\.com\/api\/aquarius\/hungary\/global\/app_popup data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+^https?:\/\/api\.pinduoduo\.com\/api\/flow\/hungary\/window\/global data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+^https?:\/\/api\.pinduoduo\.com\/search_hotquery data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+^https?:\/\/api\.pinduoduo\.com\/api\/zaire_biz\/chat\/resource\/get_list_data data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+^https?:\/\/api\.pinduoduo\.com\/api\/brand-olay\/goods_detail\/bybt_guide data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+^https?:\/\/api\.pinduoduo\.com\/api\/engels\/reviews\/require\/append data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+^https?:\/\/api\.pinduoduo\.com\/api\/caterham\/v\d\/query\/my_order_group data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+^https?:\/\/api\.pinduoduo\.com\/api\/caterham\/v\d\/query\/likes data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+^https?:\/\/api\.pinduoduo\.com\/api\/caterham\/v\d\/query\/personal data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+^https?:\/\/api\.pinduoduo\.com\/api\/caterham\/v\d\/query\/new_chat_group data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+^https?:\/\/api\.yangkeduo\.com\/api\/ant\/entry\/navigate data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+^https?:\/\/api\.pinduoduo\.com\/api\/barrow\/query data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+^https?:\/\/api\.pinduoduo\.com\/api\/pdd_live_moore_main_lego data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+[Script]
+pdd = type=http-response, pattern=^https?:\/\/api\.pinduoduo\.com\/api\/oak\/integration\/render, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/pdd/pdd.js, requires-body=true, max-size=-1, timeout=60
+
+pdd = type=http-response, pattern=^https?:\/\/api\.pinduoduo\.com\/api\/alexa\/\w+\/hub, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/pdd/pdd.js, requires-body=true, max-size=-1, timeout=60
+
+[MITM]
+hostname = %APPEND% api.pinduoduo.com, api.yangkeduo.com, mobile.yangkeduo.com
+

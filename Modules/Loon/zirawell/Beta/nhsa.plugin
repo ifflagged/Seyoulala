@@ -1,0 +1,12 @@
+#!name=nhsa
+#!desc=nhsa
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
+#!tag=Jacob
+
+[Rewrite]
+# > 国家医保服务平台 - NHSA
+^https?:\/\/fuwu\.nhsa\.gov\.cn\/ebus\/fuwu\/api\/base\/cms\/iep\/web\/cms\/hmpgcfg\/queryAppHmpgCfgByApp - reject
+
+[MITM]
+hostname = fuwu.nhsa.gov.cn
+

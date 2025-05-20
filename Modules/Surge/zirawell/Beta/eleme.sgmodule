@@ -12,10 +12,20 @@
 ^https?:\/\/cube\.elemecdn\.com\/[\w\/]+\.jpeg\?x-oss-process=image\/resize,m_fill,w_6\d{2},h_8\d{2}\/format,webp\/ - reject
 ^https?:\/\/cube\.elemecdn\.com\/[\w\/]+\.jpeg\?x-oss-process=image\/resize,m_fill,w_\d{3},h_\d{4}\/format,webp\/ - reject
 ^https?:\/\/(nr-op|cube)\.elemecdn\.com\/.+\.jpeg\?x-oss-process=image\/resize,m_fill,w_\d{4,},h_\d{4,}\/($|format,webp\/$) - reject
+# > 饿了么<支付宝小程序> - ELEME
+^https?:\/\/waimai-guide\.ele\.me\/gw\/mtop\.alsc\.eleme\.trigger\.respond - reject
 
 [Map Local]
 ^https?:\/\/fuss10\.elemecdn\.com\/.+?\.mp4 data-type=tiny-gif status-code=200
 
+# > 饿了么<微信小程序> - ELEME
+^https?:\/\/waimai-guide\.ele\.me\/h5\/mtop\.alsc\.eleme\.homepage\.miniapp\.popup data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+[Script]
+replaceBody = type=http-response, pattern=^https?:\/\/waimai-guide\.ele\.me\/h5\/mtop\.alsc\.eleme\.miniapp\.homepage, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/eleme/replace-body.js, requires-body=true, max-size=-1, timeout=30, argument=wechat_miniapp_scene_card_template-%3Ezirawell
+
+eleme = type=http-response, pattern=^https?:\/\/waimai-guide\.ele\.me\/gw\/mtop\.alsc\.eleme\.miniapp\.homepage, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/eleme/eleme.js, requires-body=true, max-size=-1, timeout=60
+
 [MITM]
-hostname = %APPEND% elemecdn.com, fuss10.elemecdn.com, www1.elecfans.com, cube.elemecdn.com, nr-op.elemecdn.com
+hostname = %APPEND% elemecdn.com, fuss10.elemecdn.com, www1.elecfans.com, cube.elemecdn.com, nr-op.elemecdn.com, waimai-guide.ele.me
 

@@ -1,0 +1,23 @@
+#!name=wechatAppletGeneral
+#!desc=wechatAppletGeneral
+#!category=Jacob
+
+[Rule]
+# > 通用规则<微信小程序> - WechatAppletGeneral
+DOMAIN-SUFFIX,wxsnsdy.wxs.qq.com,REJECT
+DOMAIN-SUFFIX,wxsmsdy.video.qq.com,REJECT
+DOMAIN-SUFFIX,wxsnsdythumb.wxs.qq.com,REJECT
+
+[URL Rewrite]
+# > 通用规则<微信小程序> - WechatAppletGeneral
+^https?:\/\/mp\.weixin\.qq\.com\/wapad\/getaddata\?action=getad - reject-200
+^https?:\/\/mp\.weixin\.qq\.com\/wapad\/reportaddata\?action=exposure_report - reject-200
+# 企迈 - QMAI(包含: 挪瓦咖啡、林里柠檬茶、霸王茶姬、陈香贵)
+^https?:\/\/(?>webapi|miniapp)\.qmai\.cn\/web\/cmk-center\/marketing\/canvas\/advert - reject
+
+[Script]
+qmai = type=http-response, pattern=^https?:\/\/(?>webapi|miniapp)\.qmai\.cn\/web\/catering([0-9]-apiserver)?\/advertising\/ad\/advertiseInfo, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/wechatAppletGeneral/qmai.js, requires-body=true, max-size=-1, timeout=60
+
+[MITM]
+hostname = %APPEND% mp.weixin.qq.com, webapi.qmai.cn, miniapp.qmai.cn
+

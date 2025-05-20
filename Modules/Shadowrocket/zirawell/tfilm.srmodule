@@ -1,0 +1,12 @@
+#!name=tfilm
+#!desc=tfilm
+#!category=Jacob
+
+[URL Rewrite]
+# > 淘票票<支付宝小程序> - TFILM
+^https?:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.film\.life\.(popup|aristotle)\.get - reject-dict
+^https?:\/\/mdn\.alicdn\.com\/imgextra\/i1\/.*-tps-180-180\.gif$ - reject-img
+
+[MITM]
+hostname = %APPEND% guide-acs.m.taobao.com, mdn.alicdn.com
+

@@ -1,0 +1,13 @@
+#!name=dewu
+#!desc=dewu
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
+#!tag=Jacob
+
+[Rewrite]
+# > 得物 - DEWU
+^https?:\/\/app\.dewu\.com\/api\/v\d\/app\/advertisement(?!\/new\/activity\/receiveCoupon) - reject
+^https?:\/\/cdn\.poizon\.com\/node-common\/.*.jpg - reject-200
+
+[MITM]
+hostname = app.dewu.com, cdn.poizon.com
+

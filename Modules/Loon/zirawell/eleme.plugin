@@ -14,7 +14,16 @@
 ^https?:\/\/cube\.elemecdn\.com\/[\w\/]+\.jpeg\?x-oss-process=image\/resize,m_fill,w_6\d{2},h_8\d{2}\/format,webp\/ - reject
 ^https?:\/\/cube\.elemecdn\.com\/[\w\/]+\.jpeg\?x-oss-process=image\/resize,m_fill,w_\d{3},h_\d{4}\/format,webp\/ - reject
 ^https?:\/\/(nr-op|cube)\.elemecdn\.com\/.+\.jpeg\?x-oss-process=image\/resize,m_fill,w_\d{4,},h_\d{4,}\/($|format,webp\/$) - reject
+# > 饿了么<微信小程序> - ELEME
+^https?:\/\/waimai-guide\.ele\.me\/h5\/mtop\.alsc\.eleme\.homepage\.miniapp\.popup - reject-dict
+# > 饿了么<支付宝小程序> - ELEME
+^https?:\/\/waimai-guide\.ele\.me\/gw\/mtop\.alsc\.eleme\.trigger\.respond - reject
+
+[Script]
+http-response ^https?:\/\/waimai-guide\.ele\.me\/h5\/mtop\.alsc\.eleme\.miniapp\.homepage script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/eleme/replace-body.js, requires-body=true, timeout=30, tag=replaceBody, argument=wechat_miniapp_scene_card_template-%3Ezirawell
+
+http-response ^https?:\/\/waimai-guide\.ele\.me\/gw\/mtop\.alsc\.eleme\.miniapp\.homepage script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/eleme/eleme.js, requires-body=true, timeout=60, tag=eleme
 
 [MITM]
-hostname = elemecdn.com, fuss10.elemecdn.com, www1.elecfans.com, cube.elemecdn.com, nr-op.elemecdn.com
+hostname = elemecdn.com, fuss10.elemecdn.com, www1.elecfans.com, cube.elemecdn.com, nr-op.elemecdn.com, waimai-guide.ele.me
 

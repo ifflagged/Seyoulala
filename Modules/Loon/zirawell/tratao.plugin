@@ -1,0 +1,12 @@
+#!name=tratao
+#!desc=tratao
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
+#!tag=Jacob
+
+[Rewrite]
+# > 极简汇率 - TRATAO
+^https?:\/\/explorer\.tratao\.com\/api\/client\/v\d\/xtransfer\/ad\/ - reject
+
+[MITM]
+hostname = explorer.tratao.com
+

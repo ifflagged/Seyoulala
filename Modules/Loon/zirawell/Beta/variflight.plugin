@@ -1,0 +1,20 @@
+#!name=variflight
+#!desc=variflight
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
+#!tag=Jacob
+
+[Rule]
+# > 飞常准 - VARIFLIGHT
+DOMAIN,adv-adlog.variflight.com,REJECT
+DOMAIN,adv-ads.variflight.com,REJECT
+DOMAIN,app-ad.variflight.com,REJECT
+
+[Rewrite]
+# > 飞常准 - VARIFLIGHT
+^https?:\/\/api\.cdmcaac\.com\/ad - reject
+^https?:\/\/app\.variflight\.com(\/v\d)?\/ad - reject
+^https?:\/\/app\.variflight\.com\/flight\/getIosAdToken - reject
+
+[MITM]
+hostname = api.cdmcaac.com, app.variflight.com
+

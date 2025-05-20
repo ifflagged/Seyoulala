@@ -1,0 +1,18 @@
+#!name=10086
+#!desc=10086
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
+#!tag=Jacob
+
+[Rule]
+# > 中国移动 - 10086
+IP-CIDR,120.240.95.37/32,REJECT,no-resolve
+
+[Rewrite]
+# > 中国移动 - 10086
+^https?:\/\/(client\.)?app(\.coc)?\.10086\.cn\/biz-orange\/DN\/init\/startInit - reject
+^https?:\/\/(client\.)?app(\.coc)?\.10086\.cn\/biz-orange\/DN\/explorePage\/getAdverList - reject
+^https?:\/\/(client\.)?app(\.coc)?\.10086\.cn\/biz-orange\/DN\/emotionMarket - reject
+
+[MITM]
+hostname = client.app.coc.10086.cn, app.10086.cn
+
