@@ -13,11 +13,7 @@
 [Script]
 http-response ^https?:\/\/api\.spotify\.com\/v1\/tracks\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Spotify_lyrics_translation/Spotify_response.js, requires-body=true, tag=跟踪响应·JSON
 
-cron "http-response ^https?:\/\/api\.spotify\.com\/v1\/tracks\? requires-body = true,script-path =" script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Spotify_lyrics_translation/Spotify_response.js, timeout=120, tag=跟踪响应·JSON
-
 http-request ^https?:\/\/spclient\.wg\.spotify\.com\/color-lyrics\/v2\/track\/(.+)\?(.*)format=json script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Spotify_lyrics_translation/Spotify_request.js, requires-body=true, tag=歌词请求·JSON
-
-cron "http-request ^https?:\/\/spclient\.wg\.spotify\.com\/color-lyrics\/v2\/track\/(.+)\?(.*)format=json requires-body = true,script-path =" script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Spotify_lyrics_translation/Spotify_request.js, timeout=120, tag=歌词请求·JSON
 
 http-request ^https?:\/\/spclient\.wg\.spotify\.com\/color-lyrics\/v2\/track\/\w+\?(.*) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Spotify_lyrics_translation/Spotify_request.js, requires-body=true, binary-body-mode=true, tag=歌词请求·Proto
 

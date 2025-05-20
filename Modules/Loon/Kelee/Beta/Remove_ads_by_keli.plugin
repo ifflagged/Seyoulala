@@ -36,7 +36,7 @@ DOMAIN,mallapi2.qinlinkeji.com,REJECT
 DOMAIN,open-pixon.ads-pixiv.net,REJECT
 
 [Rewrite]
-^https?:\/\/api\.fenxianglife\.com\/njia\/index\/popup\/v2 response-body-json-jq '.data.list = []'
+^https?:\/\/api\.fenxianglife\.com\/njia\/index\/popup\/v2 response-body-json-jq '.data.list=[]'
 ^https?:\/\/api-access\.pangolin-sdk-toutiao\.com\/api\/ad\/union\/sdk - reject
 ^https:\/\/cdn\.web\.chelaile\.net\.cn\/info-flow\/index\.html - reject
 ^http:\/\/mercury-gateway\.ixiaochuan\.cn\/mercury\/v1\/ad\/ - reject
