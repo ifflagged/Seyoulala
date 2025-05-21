@@ -1,4 +1,4 @@
-#规则数量:9595
+#规则数量:9598
 #不支持的规则数量:1
 #已排除的规则数量:0
 #不支持的规则:
@@ -1097,6 +1097,9 @@ payload:
   - DOMAIN-KEYWORD,mpos-pic.helipay.com
   - DOMAIN,mistat.xiaomi.com
   - DOMAIN-SUFFIX,api-htp.beizi.biz
+  - DOMAIN-SUFFIX,yfanads.com
+  - DOMAIN-SUFFIX,1rtb.net
+  - DOMAIN-SUFFIX,adwangmai.com
   - DOMAIN-SUFFIX,beacon.sina.com.cn
   - DOMAIN,u1.img.mobile.sina.cn
   - DOMAIN,sax.sina.com.cn
