@@ -1344,6 +1344,7 @@ https?:\/\/91porn\.com(\/|)$ https://91porn.com/index.php 302
 ^https:\/\/h5\.smzdm\.com\/user\/coupon\/coupon_list\? reject
 ^https:\/\/haojia-api\.smzdm\.com\/home\/list\? response-body-json-jq '.data.rows |= map(select(.cell_type == "39001")) | .data.banner_v2 |= map(select(.cell_type == "21028"))'
 ^https:\/\/haojia\.m\.smzdm\.com\/detail_modul\/user_related_modul\? response-body-json-del data.super_coupon
+^https:\/\/haojia\.m\.smzdm\.com\/detail_modul\/other_modul\? response-body-json-del data.banner
 ^https:\/\/user-api\.smzdm\.com\/vip$ response-body-json-del data.big_banner
 ^https:\/\/user-api\.smzdm\.com\/vip\/bottom_card_list\? reject-dict
 ^https:\/\/article-api\.smzdm\.com\/publish\/get_bubble\? reject-dict
