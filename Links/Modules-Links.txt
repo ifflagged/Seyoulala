@@ -27,7 +27,7 @@ https://gist.githubusercontent.com/ddgksf2013/0b2145e7362964c77af57a0e3402fe21/r
 
 # F #
 https://github.com/fmz200/wool_scripts/raw/main/Loon/plugin/blockAds.plugin
-https://github.com/fmz200/wool_scripts/raw/main/QuantumultX/rewrite/chongxie.txt
+https://github.com/fmz200/wool_scripts/raw/main/QuantumultX/rewrite/rewrite.snippet
 https://github.com/fmz200/wool_scripts/raw/main/QuantumultX/rewrite/cleanup.snippet
 https://github.com/fmz200/wool_scripts/raw/main/Loon/plugin/weibo.plugin
 
