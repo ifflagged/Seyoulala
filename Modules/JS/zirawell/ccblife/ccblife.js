@@ -13,6 +13,7 @@ let body = $response.body;
 let obj = JSON.parse(body);
 
 const moduleKeys = [
+  "WINNOW_V3_FESTIVAL",           // 精选-顶部背景广告
   "TAG_AD_INFO",                  // 精选-右下角悬浮广告
   "NOTICE_AD_INFO",               // 精选-中间文字推荐
   "PREFERENCE_AD_INFO",           // 精选-本地优惠
