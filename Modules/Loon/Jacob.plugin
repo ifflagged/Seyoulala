@@ -1162,9 +1162,6 @@ https?:\/\/91porn\.com(\/|)$ https://91porn.com/index.php 302
 # bydwc
 ^https?:\/\/cache\.bydauto\.com\.cn\/dilink_user_upload\/20 - reject-200
 # ccblife
-^https?:\/\/yunbusiness\.ccb\.com\/basic_service\/txCtrl\?txcode=A3341SB16 - reject-200
-^https?:\/\/yunbusiness\.ccb\.com\/clp_service\/txCtrl\?txcode=A3341C147 - reject-200
-^https?:\/\/yunbusiness\.ccb\.com\/clp_service\/txCtrl\?txcode=A3341A(?>002|006|009|119) - reject-200
 ^https?:\/\/waimai-guide\.ele\.me\/\w+\/mtop\.alsc\.eleme\.\w+\.trigger\.respond - reject-dict
 ^https?:\/\/waimai-guide\.ele\.me\/\w+\/mtop\.alsc\.wamai\.store\.detail\.miniapp\.popup - reject
 ^https?:\/\/waimai-guide\.ele\.me\/\w+\/mtop\.venus\.shopcouponpopupservice\.getshopcouponspopup - reject
@@ -1771,7 +1768,7 @@ http-request ^https?:\/\/[adbcefxy0-9]+\.mcdn\.bilivideo\.cn:(4483|9102)\/upgcxc
 http-request ^https?:\/\/(.+):4480\/upgcxcode\/ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/BiliUniverse/BiliBili.Redirect/request.bundle.js, tag=📺 BiliBili.Redirect.PCDN.upgcxcode.m4s, argument=[{Host.Akamaized},{Host.BStar},{Host.PCDN},{Host.MCDN},{LogLevel}]
 http-request ^https?:\/\/upos-(hz|bstar1)-mirrorakam\.akamaized\.net/upgcxcode\/ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/BiliUniverse/BiliBili.Redirect/request.bundle.js, tag=📺 BiliBili.Redirect.Akamaized.upgcxcode.m4s, argument=[{Host.Akamaized},{Host.BStar},{Host.PCDN},{Host.MCDN},{LogLevel}]
 # ccblife
-http-response ^https?:\/\/yunbusiness\.ccb\.com\/basic_service\/txCtrl\?txcode=A3341(?>A120|AB03|AB04|A068) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/ccblife/ccblife.js, requires-body=true, timeout=60, tag=ccblife
+http-response ^https?:\/\/yunbusiness\.ccb\.com\/(?>basic_service|clp_service)\/txCtrl\?txcode=A3341(?>SB16|C147|A009|A120|AB03|AB04|A068) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/ccblife/ccblife.js, requires-body=true, timeout=60, tag=ccblife
 http-response ^https?:\/\/waimai-guide\.ele\.me\/\w+\/mtop\.venus\.shopresourceservice\.getshopresource script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/ccblife/replace-body.js, requires-body=true, timeout=30, tag=replaceBody, argument=posterList-%3Erandom_body
 # dianping
 http-response ^https?:\/\/img\.meituan\.net\/dpmobile\/ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/dianping/dianping.js, requires-body=true, timeout=60, tag=dianping
