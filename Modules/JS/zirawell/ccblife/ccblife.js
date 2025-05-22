@@ -13,7 +13,6 @@ let body = $response.body;
 let obj = JSON.parse(body);
 
 const moduleKeys = [
-  "WINNOW_V3_FESTIVAL",           // 精选-顶部背景广告
   "TAG_AD_INFO",                  // 精选-右下角悬浮广告
   "NOTICE_AD_INFO",               // 精选-中间文字推荐
   "PREFERENCE_AD_INFO",           // 精选-本地优惠
@@ -43,7 +42,8 @@ const blockKeys = [
 
 const flowKeys = [
   "A3341A095",                    // 精选-种草推荐
-  "A3341A068"                     // 金融-热门资讯
+  "A3341MB22",                    // 生活-本地优惠
+  "A3341A068",                    // 金融-热门资讯 
 ];
 
 if (containKey(url,blockKeys)) {
@@ -71,6 +71,21 @@ if (containKey(url,blockKeys)) {
 } else if (containKey(url,flowKeys)) {
   if (obj?.data?.data?.recList && obj.data.data.recList.length > 0) {
     delete obj.data.data.recList;
+  }
+  if (obj?.data?.data?.topList && obj.data.data.topList.length > 0) {
+    delete obj.data.data.topList;
+  }
+  if (obj?.data?.MCT_INFO && obj.data.MCT_INFO.length > 0) {
+    delete obj.data.MCT_INFO;
+  }
+// 楼层开关
+} else if (url.includes("A3341AB08")) {
+  if (obj?.data?.STOREY_DISPLAY_INFO && obj.data.STOREY_DISPLAY_INFO.length > 0) {
+    obj.data.STOREY_DISPLAY_INFO.forEach(item => {
+      if (item.STOREY_NM?.match(/广告|热门|轮播|分期|借|我要/)) {
+        item.IS_DISPLAY = "0";
+      }
+    });
   }
 }
 

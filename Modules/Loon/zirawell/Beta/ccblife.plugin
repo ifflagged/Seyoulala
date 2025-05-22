@@ -11,7 +11,7 @@
 
 [Script]
 # 全面广告净化
-http-response ^https?:\/\/yunbusiness\.ccb\.com\/(?>basic_service|clp_service)\/txCtrl\?txcode=A3341(?>SB16|C147|A009|A120|AB03|AB04|A068|A095) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/ccblife/ccblife.js, requires-body=true, timeout=60, tag=ccblife
+http-response ^https?:\/\/yunbusiness\.ccb\.com\/(?>basic_service|clp_service)\/txCtrl\?txcode=A3341(?>SB16|C147|MB22|A009|A120|AB03|AB04|A068|A095|AB08) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/ccblife/ccblife.js, requires-body=true, timeout=60, tag=ccblife
 
 # 店铺横幅广告
 http-response ^https?:\/\/waimai-guide\.ele\.me\/\w+\/mtop\.venus\.shopresourceservice\.getshopresource script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/ccblife/replace-body.js, requires-body=true, timeout=30, tag=replaceBody, argument=posterList-%3Erandom_body
