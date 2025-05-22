@@ -25,12 +25,20 @@ const moduleKeys = [
   
 ];
 
+const blockKeys = [
+  "A3341SB16",                    // 更新提示
+  "A3341C147",                    // 新人礼包
+  "A3341A009",                    // 开屏广告
 
+];
 
-if (url.includes("A3341AB04")) {
+if (containBlockKey(url)) {
+  $done({body: "", headers: "", status: "HTTP/1.1 204 No Content"});
+} else if (url.includes("A3341AB04")) {
   if (obj?.data?.ICON_SKIN_INFO) {
     delete obj.data.ICON_SKIN_INFO;
   }
+// 页面模块内容净化
 } else if (url.includes("A3341AB03")) {
   if (obj?.data) {
     moduleKeys.forEach(key => {
@@ -39,6 +47,7 @@ if (url.includes("A3341AB04")) {
       }
     });
   }
+// 弹窗广告去除
 } else if (url.includes("A3341A120")) {
   if (obj?.data?.POP_AD_INFO) {
     delete obj.data.POP_AD_INFO;
@@ -52,3 +61,8 @@ if (url.includes("A3341AB04")) {
 
 body = JSON.stringify(obj);
 $done({body});
+
+
+function containBlockKey(str) {
+  return blockKeys.some(key => str.includes(key));
+}
