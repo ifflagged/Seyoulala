@@ -68,6 +68,7 @@ Modules/Surge/zirawell/functional.sgmodule # Loon,Shadowrocket
 Modules/Surge/Kelee/FleaMarket_remove_ads.sgmodule # Loon,Shadowrocket
 
 # G #
+Modules/Surge/zirawell/rsscc.sgmodule # Loon,Shadowrocket
 
 # H #
 Modules/Surge/zirawell/hilton.sgmodule # Loon,Shadowrocket
