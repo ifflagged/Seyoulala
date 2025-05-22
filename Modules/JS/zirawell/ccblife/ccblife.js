@@ -25,6 +25,7 @@ const moduleKeys = [
   "LIFE_TOP_ROTATION_INFO_V3",    // 生活-上方轮播图
   "EDITOR_RECOMMEND2_AD",         // 生活-小编推荐
   "LIFE_V3_SCENE_AGGREGATION",    // 生活-分期·好生活
+  "LIFE_LIST",                    // 生活-本地优惠标签
 
   "THROUGH_COLUMN_INFO",          // 金融-中间轮播图
 
@@ -82,7 +83,7 @@ if (containKey(url,blockKeys)) {
 } else if (url.includes("A3341AB08")) {
   if (obj?.data?.STOREY_DISPLAY_INFO && obj.data.STOREY_DISPLAY_INFO.length > 0) {
     obj.data.STOREY_DISPLAY_INFO.forEach(item => {
-      if (item.STOREY_NM?.match(/广告|热门|轮播|分期|借|我要/)) {
+      if (item.STOREY_NM?.match(/广告|热门|轮播|分期|推荐|借|我要/)) {
         item.IS_DISPLAY = "0";
       }
     });
