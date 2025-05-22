@@ -1,5 +1,5 @@
 #!name=Keep去广告
-#!desc=移除开屏广告、应用内广告和弹窗广告。移除首页活动标签、关注推荐、文章相关推荐。修改首页默认标签为推荐页面。
+#!desc=移除开屏广告、应用内广告和弹窗广告，精简底栏入口、首页标签、关注推荐、文章相关推荐，移除信息流中的课程推广。
 #!openUrl=https://apps.apple.com/app/id952694580
 #!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 #!tag=去广告
@@ -8,20 +8,25 @@
 #!loon_version=3.2.4(787)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Keep.png
-#!date=2025-05-13 15:17:08
+#!date=2025-05-23 03:11:34
+
+[Rule]
+DOMAIN, kad.gotokeep.com, REJECT
 
 [Rewrite]
-^https:\/\/api\.gotokeep\.com\/search\/v6\/default\/keyword\/list reject-dict
+^https:\/\/api\.gotokeep\.com\/op-engine-webapp\/v1\/ad\/ reject-dict
 
-^https:\/\/api\.gotokeep\.com\/twins\/v4\/feed\/followPage response-body-json-replace data {}
+^https:\/\/api\.gotokeep\.com\/search\/v6\/default\/keyword\/list\? reject-dict
 
-^https:\/\/kad\.gotokeep\.com\/op-engine-webapp\/v1\/ad reject-dict
+^https:\/\/api\.gotokeep\.com\/twins\/v4\/feed\/followPage\? reject-dict
 
-^https:\/\/api\.gotokeep\.com\/twins\/v4\/feed\/entryDetail response-body-json-replace data {}
+^https:\/\/api\.gotokeep\.com\/twins\/union\/feed\/union_feed_all$ response-body-json-jq '.data.modules |= map(select(.code == "unionFeedEntry"))'
 
-^https:\/\/api\.gotokeep\.com\/guide-webapp\/v1\/popup\/getPopUp reject-dict
+^https:\/\/api\.gotokeep\.com\/twins\/v4\/feed\/entryDetail\? response-body-json-replace data {}
 
-^https:\/\/api\.gotokeep\.com\/config\/v3\/basic response-body-json-jq '.data.homeTabs |= map(select(.name != "活动")) | .data.homeTabs[1].default=true | .data.homeTabs[2].default=false'
+^https:\/\/api\.gotokeep\.com\/guide-webapp\/v1\/popup\/getPopUp\? reject-dict
+
+^https:\/\/api\.gotokeep\.com\/config\/v3\/basic\? response-body-json-jq '.data.bottomBarControl.tabs |= map(select(.tabType | . == "home" or . == "dynamic_sports" or . == "personal")) | .data.homeTabs |= map(select(.type | . == "socialTab" or . == "union_feed_all" or . == "homeRecommend" or . == "suitTab" or . == "union_feed_route"))'
 
 [MitM]
-hostname=api.gotokeep.com, kad.gotokeep.com
+hostname=api.gotokeep.com
