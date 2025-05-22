@@ -43,11 +43,10 @@ https://github.com/kokoryh/Sparkle/raw/master/release/surge/module/missav.sgmodu
 
 # M #
 https://github.com/Maasea/sgmodule/raw/master/YouTube.Enhance.sgmodule
-https://github.com/wf021325/qx/raw/master/js/jd_price.js
 https://github.com/Moli-X/Resources/raw/main/Rewrite/Collections.conf
 
 # W #
-https://github.com/wf021325/qx/raw/master/js/jd_price.js
+https://github.com/wf021325/qx/raw/main/js/jd_price.js
 
 # Y #
 https://github.com/Yuheng0101/X/raw/main/Scripts/ChinaMobile/NoAds.js
