@@ -603,9 +603,6 @@ https?:\/\/awg\.enmonster\.com\/apa\/(advert\/demand\/home\/poster|index\/advert
 ^https?:\/\/cdn\.jlbank\.com\.cn\/jlstaticresource\/APPSTART - reject-200
 # 可能导致登录验证码不显示
 ^https?:\/\/mbank5\.jsbchina\.cn:443 - reject-dict
-# 首页横幅广告
-^https?:\/\/yunbusiness\.ccb\.com\/clp_service\/txCtrl\?txcode=A3341A(002|006|009|119|120) - reject-200
-^https?:\/\/yunbusiness\.ccb\.com\/clp_service\/txCtrl\?txcode=A3341C147 - reject-200
 ^https?:\/\/waimai-guide\.ele\.me\/\w+\/mtop\.alsc\.eleme\.\w+\.trigger\.respond - reject-dict
 ^https?:\/\/waimai-guide\.ele\.me\/\w+\/mtop\.alsc\.wamai\.store\.detail\.miniapp\.popup - reject
 ^https?:\/\/waimai-guide\.ele\.me\/\w+\/mtop\.venus\.shopcouponpopupservice\.getshopcouponspopup - reject
@@ -2157,13 +2154,8 @@ replaceBody = type=http-response, pattern=^https?:\/\/www\.i3zh\.com, script-pat
 # 移除 轮播图 置顶文章 信息流广告
 ithome = type=http-response, pattern=^https?:\/\/napi\.ithome\.com\/api\/(news\/index|topmenu\/getfeeds), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/rewrite/ithome.js, requires-body=true, max-size=-1, timeout=60
 
-ccbLifeAds = type=http-response, pattern=^https?:\/\/yunbusiness\.ccb\.com\/basic_service\/txCtrl\?txcode=A3341AB04, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/rewrite/ccbLifeAds.js, requires-body=true, max-size=-1, timeout=60
-
-# 删除首页+金融+我的多个横幅等乱七八糟的广告
-A3341AB05 = type=http-request, pattern=^https?:\/\/yunbusiness\.ccb\.com\/basic_service\/txCtrl\?txcode=A3341AB05, script-path=http://127.0.0.1:9100/convert/_start_/https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/rewrite/A3341AB05.json/_end_/A3341AB05.json?type=mock&target-app=shadowrocket-module, timeout=60
-
-# 我的页面悬浮广告
-replaceBody = type=http-response, pattern=^https?:\/\/yunbusiness\.ccb\.com\/basic_service\/txCtrl\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/rewrite/replace-body.js, requires-body=true, max-size=-1, timeout=30, argument=%22TAG_AD_INFO%22-%3E%22fmz200%22
+# 全面广告净化
+ccblife = type=http-response, pattern=^https?:\/\/yunbusiness\.ccb\.com\/(?>basic_service|clp_service)\/txCtrl\?txcode=A3341(?>SB16|C147|MB22|A009|A120|AB03|AB04|A068|A095|AB08), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/rewrite/ccblife.js, requires-body=true, max-size=-1, timeout=60
 
 # 内置饿了么
 alicdn = type=http-response, pattern=^https?:\/\/g\.alicdn\.com\/.*o2o-ad, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/rewrite/alicdn.js, requires-body=true, max-size=-1, timeout=60
