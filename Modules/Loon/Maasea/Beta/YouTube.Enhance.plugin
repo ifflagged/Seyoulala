@@ -3,7 +3,7 @@
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
 #!tag=Jacob
 
-#!arguments-desc=- 屏蔽参数：[true, false] \n- 翻译参数：[语言代码, off] \n- 脚本引擎：[auto, jsc, webview]\n\n1. 语言代码遵循 Google Translate Languages Codes, 当填入 off 时关闭翻译\n2. 推荐使用 jsc 引擎，但你仍可以切换成 webview 体验 Surge 新特性\n3. 开启调试模式用于输出更多日志
+#!arguments-desc=- 屏蔽参数：[true, false] \n- 翻译参数：[语言代码, off] \n\n1. 语言代码遵循 Google Translate Languages Codes, 当填入 off 时关闭翻译\n2. 开启调试模式用于输出更多日志
 
 [Argument]
 屏蔽上传按钮=switch,true,false,tag=屏蔽上传按钮, desc=屏蔽上传按钮
@@ -11,7 +11,6 @@
 屏蔽Shorts按钮=switch,false,true,tag=屏蔽Shorts按钮, desc=屏蔽Shorts按钮
 字幕翻译语言=input,off,tag=字幕翻译语言, desc=字幕翻译语言
 歌词翻译语言=input,off,tag=歌词翻译语言, desc=歌词翻译语言
-脚本执行引擎=input,auto,tag=脚本执行引擎, desc=脚本执行引擎
 启用调试模式=switch,false,true,tag=启用调试模式, desc=启用调试模式
 
 [Rule]
