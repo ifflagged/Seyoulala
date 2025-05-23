@@ -1,27 +1,7 @@
-#!name=抖音国际
-#!desc=TikTok解锁区域限制,下载去水印,自定义参数
-#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
-#!tag=Jacob
+TikTok_Surge%0A：Error: 请求超时(20 秒)
 
-#!arguments-desc=[参数设置]\nRULE_SET_ENABLED: 是否启用TikTok 分流规则集(添加注释符号'#'为禁用,默认启用);\nPROXY_NAME: 自定义分流规则对应的策略名称,默认PROXY;\nREGION_CODE: TikTok重定向区域解锁国家简称,JP=日本,US=美国,SG=新加坡,KR=韩国,默认日本;\nWATERMARK_REMOVAL: 是否启用TikTok下载去水印脚本(添加注释符号'#'为禁用,默认启用);
 
-[Argument]
-RULE_SET_ENABLED=input,RULE-SET,tag=RULE_SET_ENABLED, desc=RULE_SET_ENABLED
-PROXY_NAME=input,PROXY,tag=PROXY_NAME, desc=PROXY_NAME
-REGION_CODE=input,JP,tag=REGION_CODE, desc=REGION_CODE
-WATERMARK_REMOVAL=input,下载水印,tag=WATERMARK_REMOVAL, desc=WATERMARK_REMOVAL
 
-[Rewrite]
-# > 区域解锁
-(?<=_region=)CN(?=&) {REGION_CODE} 307
-(^https?:\/\/.*\.tiktokv\.com.*\/v5\/)(.+) $1 302
-(?<=&mcc_mnc=)4 2 307
-(?<=eme\/v)2(?=\/f\w{2}d\/\?.*) 1 302
 
-[Script]
-# > TikTok 去水印
-http-response https?:\/\/.*\.tiktokv\.com\/aweme\/v\d\/(feed|mix\/aweme|aweme\/post|(multi\/)?aweme\/detail|follow\/feed|nearby\/feed|search\/item|general\/search\/single|hot\/search\/video\/list|aweme\/favorite) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/githubdulong/TikTok_Surge/Tiktok.js, requires-body=true, timeout=30, tag={WATERMARK_REMOVAL}
 
-[MITM]
-hostname = *.tiktokv.com, *.byteoversea.com, *.tik-tokapi.com
-
+Script Hub 重写转换: ❌  可自行翻译错误信息或复制错误信息后点击通知进行反馈
