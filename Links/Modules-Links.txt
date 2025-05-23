@@ -83,7 +83,7 @@ https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/H/%E6%B5%B7%
 https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/H/%E7%9B%92%E9%A9%AC/rewrite/freshippo.conf
 https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/H/%E8%88%AA%E6%97%85%E7%BA%B5%E6%A8%AA/filter/umetrip.list😂https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/H/%E8%88%AA%E6%97%85%E7%BA%B5%E6%A8%AA/rewrite/umetrip.conf
 https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/J/%E4%BA%A4%E7%AE%A112123/rewrite/12123.conf
-https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/J/%E4%BA%AC%E4%B8%9C/filter/jd.list😂https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/J/%E4%BA%AC%E4%B8%9C/rewrite/jd.conf😂https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/Applet/Wechat/J/%E4%BA%AC%E4%B8%9C%E8%B4%AD%E7%89%A9/rewrite/jd.conf
+https://github.com/zirawell/R-Store/raw/main/Rule/Surge/Adblock/App/J/%E4%BA%AC%E4%B8%9C/jd.sgmodule😂https://github.com/zirawell/R-Store/raw/main/Rule/Surge/Adblock/App/J/%E4%BA%AC%E5%96%9C/jx.sgmodule😂https://github.com/zirawell/R-Store/raw/main/Rule/Surge/Adblock/Applet/Wechat/J/%E4%BA%AC%E4%B8%9C%E8%B4%AD%E7%89%A9/jd.sgmodule
 https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/J/%E5%BB%BA%E8%A1%8C%E7%94%9F%E6%B4%BB/rewrite/ccblife.conf
 https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/J/%E6%9E%81%E7%AE%80%E6%B1%87%E7%8E%87/rewrite/tratao.conf
 https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/App/M/%E6%85%A2%E6%85%A2%E4%B9%B0/rewrite/manmanbuy.conf
