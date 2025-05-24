@@ -114,6 +114,7 @@ DOMAIN, img.adnyg.com.w.kunlungr.com, REJECT
 DOMAIN, sdownload.stargame.com, REJECT
 DOMAIN, app-analytics-services.com, REJECT
 DOMAIN-SUFFIX, ttayy.cn, REJECT
+DOMAIN-SUFFIX, tobidad.cn, REJECT
 DOMAIN-SUFFIX, zhengxiaoliu.top, REJECT
 DOMAIN-SUFFIX, shuzilm.cn, REJECT
 DOMAIN-SUFFIX, u51.me, REJECT
