@@ -54,6 +54,7 @@ const mapping = {
   'SleepMaster/': ['premium','sm_14999_lifetime'],
   'Notedrafts': ['pro_entitlement'],
   'Photon/': ['photon.paid','photon.bundle.yearly'],
+  'MusicBox/': ['Premium','musicbox_2999_lifetime'],
   'Rats%20Project': ['PandaTracker_Premiumv2','monthly_subscription_discount_idv3'],
   'Grain/': ['gold','lifetimeMembership'],
   'AudioPlayer': ['Pro'],
