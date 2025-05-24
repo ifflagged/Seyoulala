@@ -55,7 +55,8 @@ Modules/Surge/zirawell/cmb.sgmodule # Loon,Shadowrocket
 # D #
 Modules/Loon/Kelee/DiDi_remove_ads.plugin
 Modules/Surge/ifflagged/DiDi-AD.sgmodule # Shadowrocket
-Modules/Surge/zirawell/dianping.sgmodule # Loon,Shadowrocket
+Modules/Surge/zirawell/dianping.sgmodule # Shadowrocket
+Modules/Loon/ifflagged/dianping.plugin
 Modules/Loon/Kelee/HKDouYin_remove_ads.plugin
 
 # E #
