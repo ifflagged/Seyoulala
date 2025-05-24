@@ -791,12 +791,12 @@ DOMAIN, gwp.xiaojukeji.com, REJECT
 AND, ((IP-ASN, 45090, no-resolve), (DEST-PORT, 25641), (PROTOCOL, TCP)), REJECT
 AND, ((IP-ASN, 63646, no-resolve), (DEST-PORT, 25641), (PROTOCOL, TCP)), REJECT
 # dianping
-DOMAIN, r.dianping.com, REJECT, extended-matching
-DOMAIN, tte.meituan.com, REJECT, extended-matching
-DOMAIN, dpmtpush.dianping.com, REJECT, extended-matching
-DOMAIN, dynamicf.sankuai.com, REJECT, extended-matching
-DOMAIN, live-monitor-broker.sankuai.com, REJECT, extended-matching
-DOMAIN-SUFFIX, lx.meituan.net, REJECT, extended-matching
+DOMAIN, r.dianping.com, REJECT
+DOMAIN, tte.meituan.com, REJECT
+DOMAIN, dpmtpush.dianping.com, REJECT
+DOMAIN, dynamicf.sankuai.com, REJECT
+DOMAIN, live-monitor-broker.sankuai.com, REJECT
+DOMAIN-SUFFIX, lx.meituan.net, REJECT
 IP-CIDR, 101.32.16.204/32, REJECT, no-resolve
 IP-CIDR, 119.29.126.137/32, REJECT, no-resolve
 # ehaier
@@ -815,27 +815,24 @@ AND, ((URL-REGEX, "^http:\/\/.+\/amdc\/mobileDispatch"), (USER-AGENT, "%E9%97%B2
 # JD_remove_ads
 URL-REGEX, "^http:\/\/\w{32}\.jddebug\.com\/diagnose\?", REJECT
 # jd
-DOMAIN, waapdg.jd.com, REJECT, extended-matching
-DOMAIN, dsp-x.jd.com, REJECT, extended-matching
-DOMAIN, xlog.jd.com, REJECT, extended-matching
-DOMAIN, janapi.jd.com, REJECT, extended-matching
-DOMAIN, jdqd.jd.com, REJECT, extended-matching
-DOMAIN, dgstatic.jd.com, REJECT, extended-matching
-DOMAIN-SUFFIX, jzt.jd.com, REJECT, extended-matching
-DOMAIN-SUFFIX, img-x.jd.com, REJECT, extended-matching
-DOMAIN-SUFFIX, du.jd.com, REJECT, extended-matching
-DOMAIN-SUFFIX, c-nfa.jd.com, REJECT, extended-matching
-DOMAIN-SUFFIX, cm.jd.com, REJECT, extended-matching
-DOMAIN-KEYWORD, kepler.jd.com, REJECT, extended-matching
-DOMAIN-KEYWORD, bdsp.x.jd.com, REJECT, extended-matching
-DOMAIN-KEYWORD, keplerapi.jd.com, REJECT, extended-matching
-DOMAIN-KEYWORD, mapi.m.jd.com, REJECT, extended-matching
+DOMAIN, dns.jd.com, REJECT
+DOMAIN, waapdg.jd.com, REJECT
+DOMAIN, jdqd.jd.com, REJECT
+DOMAIN, dgstatic.jd.com, REJECT
+DOMAIN-SUFFIX, jzt.jd.com, REJECT
+DOMAIN-SUFFIX, img-x.jd.com, REJECT
+DOMAIN-SUFFIX, du.jd.com, REJECT
+DOMAIN-SUFFIX, c-nfa.jd.com, REJECT
+DOMAIN-SUFFIX, cm.jd.com, REJECT
+DOMAIN-KEYWORD, kepler.jd.com, REJECT
+DOMAIN-KEYWORD, bdsp.x.jd.com, REJECT
+DOMAIN-KEYWORD, keplerapi.jd.com, REJECT
+DOMAIN-KEYWORD, mapi.m.jd.com, REJECT
 # meituan
 IP-CIDR, 103.37.155.60/32, REJECT, no-resolve
 DOMAIN, flowplus.meituan.net, REJECT
 DOMAIN, lx0.meituan.com, REJECT
 DOMAIN, hlx.meituan.com, REJECT
-DOMAIN-SUFFIX, lx.meituan.net, REJECT
 DOMAIN-SUFFIX, httpdns.meituan.com, REJECT
 DOMAIN-SUFFIX, analytics.meituan.net, REJECT
 DOMAIN-SUFFIX, meituan.xn, REJECT
@@ -1007,6 +1004,7 @@ AND, ((DOMAIN, youtubei.googleapis.com), (PROTOCOL, UDP)), REJECT
 ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=getWidgetV1052 - reject
 ^https?://(|www\.)router\.com http://{{{GATEWAY_ADDRESS}}} 302
 # Module-Common
+^https:\/\/api\.m\.jd\.com\/api\?functionId=union_exhibition_bff - reject-dict
 ^https:\/\/spamblocker-api\.zeekstudio\.com\/profile - reject
 ^https:\/\/spamblocker-api\.zeekstudio\.com\/checkVersion - reject
 ^https:\/\/(cn|www)\.pornhub\.com\/_xa\/ads - reject
@@ -1145,21 +1143,21 @@ https?:\/\/91porn\.com(\/|)$ https://91porn.com/index.php 302
 # dianping
 ^https?:\/\/103\.37\.155\.60\/fetch - reject
 ^https?:\/\/mapi\.dianping\.com\/mapi\/operating\/(?>indexopsmodules|loadsplashconfig) - reject
+^https?:\/\/mapi\.dianping\.com\/mapi\/intelliindex - reject-dict
 ^https?:\/\/mapi\.dianping\.com\/wdrpreload\/userprediction - reject
 ^https?:\/\/mapi\.dianping\.com\/adshopping - reject
+^https?:\/\/img\.meituan\.net\/goodsawardpic - reject-img
 ^https?:\/\/p\.meituan\.com\/api\/privacy\/config - reject
+^https?:\/\/rms\.meituan\.com\/api\/v\d\/rmsmina\/c\/queryWechatAdvertisement - reject-dict
 ^https?:\/\/www\.dpfile\.com\/app\/fecommonservice-lottie\/ugc-write-done\/media - reject
 ^https?:\/\/www\.dpfile\.com\/picasso\/picasso-qa\/src\/AnswerList\/AnswerList-bundle - reject
 ^https?:\/\/www\.dpfile\.com\/sc\/indexpromotion - reject
 ^https?:\/\/catfront\.dianping\.com\/api\/metric\?v=\d&p=rn_gcbu_mrn-joy-poidetail - reject
 ^https?:\/\/awp-assets\.meituan\.net\/hfe\/fep\/\w+\.json - reject
 ^https?:\/\/s3plus\.meituan\.net\/ocean-blk-index\/index\/blk_conf - reject
+^https?:\/\/p\d\.meituan\.net\/nrpresourcevenus\/\w+\.gif - reject-img
+^https?:\/\/p\d\.meituan\.net\/travelcube\/(?!c129a661)\w+\.gif - reject-img
 ^https?:\/\/ddplus\.meituan\.net\/v\d\/mss_\w+\/(ehc|titansx|ddblue)\/ - reject
-^https?:\/\/mapi\.dianping\.com\/mapi\/intelliindex - reject-dict
-^https?:\/\/img\.meituan\.net\/goodsawardpic - reject-200
-^https?:\/\/rms\.meituan\.com\/api\/v\d\/rmsmina\/c\/queryWechatAdvertisement - reject-dict
-^https?:\/\/p\d\.meituan\.net\/nrpresourcevenus\/\w+\.gif - reject-200
-^https?:\/\/p\d\.meituan\.net\/travelcube\/(?!c129a661)\w+\.gif - reject-200
 ^https?:\/\/m\.dianping\.com\/an\/gear\/dpmapp\/api\/readLionConfig\/config - reject-dict
 ^https?:\/\/m\.dianping\.com\/mapi\/mgw\/growth\/queryhaima - reject-dict
 ^https?:\/\/m\.dianping\.com\/wxmapi\/shop\/friendslike - reject-dict
@@ -1205,12 +1203,12 @@ https?:\/\/91porn\.com(\/|)$ https://91porn.com/index.php 302
 ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(searchBoxWord|stationPullService|uniformRecommend[06]) - reject-dict
 # jd
 ^https?:\/\/api\.m\.jd\.com\/openUpgrade - reject
+^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(?>searchBoxWord|xview2Config|stationPullService|getWidget|widget|hybrid|jdDiscoveryRedPoint|queryMaterialAdverts) - reject-200
 ^https?:\/\/\w{32}\.jddebug\.com\/diagnose\? - reject
+^https?:\/\/(bdsp-x|dsp-x)\.jd\.com\/adx\/ - reject-200
 ^https?:\/\/storage\.360buyimg\.com\/app\.m\.jd\.com\/lottie - reject
 ^https?:\/\/storage\.360buyimg\.com\/dynamicConfig\/binary - reject
 ^https?:\/\/img\d+\.360buyimg\.com\/jddjadvertise\/ - reject
-^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(?>searchBoxWord|xview2Config|stationPullService|getWidget|widget|hybrid|jdDiscoveryRedPoint|queryMaterialAdverts) - reject-200
-^https?:\/\/(bdsp-x|dsp-x)\.jd\.com\/adx\/ - reject-200
 ^https?:\/\/api\.m\.jd\.com\/\?loginType=11 - reject-dict
 # mcd
 ^https?:\/\/api\.mcd\.cn\/bff\/portal\/(home\/splash|richpop) - reject-200
@@ -1607,6 +1605,7 @@ upos-sz-upcdntx.bilivideo.com = server:https://doh.pub/dns-query // BiliBili upo
 # Tools
 Look directly for Zhihu = type=http-response,pattern=https://(www\.zhihu\.com/question|zhuanlan\.zhihu\.com/p)/,requires-body=1,max-size=0,script-path=https://github.com/id77/QuantumultX/raw/master/Script/zhihu.js
 # Module-Common
+JD-Share = type=http-response, pattern=^https:\/\/api\.m\.jd\.com\/\?functionId=union_exhibition_bff&client=apple&clientVer, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/Module-Common/JD-JF.js, requires-body=true, max-size=0
 Pornhub = type=http-response, pattern=^https?:/\/(cn|www)\.pornhub\.com\/($|(view|video).*$), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/Module-Common/pornhub.js, requires-body=true, max-size=0, script-update-interval=0
 91Porn = type=http-response, pattern=https?:\/\/91porn\.com\/(index|view_video|login|search_result)\.php, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/Module-Common/91porn.js, requires-body=true, max-size=0, script-update-interval=0
 # adunion
@@ -1719,8 +1718,8 @@ cmb = type=http-request, pattern=^https?:\/\/mobile\.cmbchina\.com\/dcardmanage\
 移除广告 = type=http-response, pattern=^https:\/\/conf\.diditaxi\.com\.cn\/ota\/na\/yuantu\/infoList, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/DiDi-AD/DiDi.js, requires-body=true
 移除广告 = type=http-response, pattern=^https:\/\/api\.udache\.com\/gulfstream\/passenger-center\/v2\/other\/pInTripLayout, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/DiDi-AD/DiDi.js, requires-body=true
 # dianping
-dianping = type=type=http-response,pattern=^https?:\/\/img\.meituan\.net\/dpmobile\/,requires-body=1,max-size=0,script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/dianping/dianping.js, pattern=^https?:\/\/img\.meituan\.net\/dpmobile\/, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/dianping/dianping.js, requires-body=true, max-size=0
-dianping = type=type=http-response,pattern=^https?:\/\/ddplus\.meituan\.net\/v\d\/mss_\w+\/picassovc,requires-body=1,max-size=0,script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/dianping/dianping.js, pattern=^https?:\/\/ddplus\.meituan\.net\/v\d\/mss_\w+\/picassovc, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/dianping/dianping.js, requires-body=true, max-size=0
+dianping = type=http-response, pattern=^https?:\/\/img\.meituan\.net\/dpmobile\/, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/dianping/dianping.js, requires-body=true, max-size=-1, timeout=60
+dianping = type=http-response, pattern=^https?:\/\/ddplus\.meituan\.net\/v\d\/mss_\w+\/picassovc, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/dianping/dianping.js, requires-body=true, max-size=-1, timeout=60
 # ehaier
 haier = type=http-response, pattern=^https?:\/\/oss-zjrs\.haier\.net\/resource\/confFile\/\d{22}\.json$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/ehaier/haier.js, requires-body=true, max-size=-1, timeout=60
 haier = type=http-response, pattern=^https?:\/\/zj\.haier\.net\/omsappapi\/resource\/v\d\/get\/resourceBag$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/ehaier/haier.js, requires-body=true, max-size=-1, timeout=60
@@ -1737,8 +1736,7 @@ replaceHeader = type=http-request, pattern=^https?:\/\/github\.com\/, script-pat
 body_rewrite_15 = type=http-response, pattern=^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=basicConfig, script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22json-replace%22%2C%5B%5B%22data.JDMessage.socketmonitor.isSocketEstablishedAhead%22%2C0%5D%2C%5B%22data.JDMessage.socketmonitor.isSocketReport%22%2C0%5D%2C%5B%22data.JDHttpToolKit.httpdns.httpdns%22%2C0%5D%5D%5D%5D
 移除京东广告 = type=http-response, pattern=^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/JD_remove_ads/JD_remove_ads.js, requires-body=true
 # jd
-jd = type=type=http-response,pattern=^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(?>deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome),requires-body=1,max-size=0,script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/jd/jd.js, pattern=^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(?>deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/jd/jd.js, requires-body=true, max-size=0
-jingxi = type=type=http-response,pattern=^https?:\/\/api\.m\.jd\.com\/api\?functionId=delivery_show,requires-body=1,max-size=0,script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/jd/jingxi.js, pattern=^https?:\/\/api\.m\.jd\.com\/api\?functionId=delivery_show, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/jd/jingxi.js, requires-body=true, max-size=0
+jd = type=http-response, pattern=^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(?>deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/jd/jd.js, requires-body=true, max-size=-1, timeout=60
 # meituan
 meituan = type=http-response, pattern=^https?:\/\/p\d\.meituan\.net\/linglong\/, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/meituan/meituan.js, requires-body=true, max-size=-1, timeout=60
 # MeetYou_remove_ads

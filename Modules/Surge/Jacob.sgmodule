@@ -792,14 +792,14 @@ DOMAIN, gwp.xiaojukeji.com, REJECT
 AND, ((IP-ASN, 45090, no-resolve), (DEST-PORT, 25641), (PROTOCOL, TCP)), REJECT
 AND, ((IP-ASN, 63646, no-resolve), (DEST-PORT, 25641), (PROTOCOL, TCP)), REJECT
 # dianping
-DOMAIN, r.dianping.com, REJECT, extended-matching, pre-matching
-DOMAIN, tte.meituan.com, REJECT, extended-matching, pre-matching
-DOMAIN, dpmtpush.dianping.com, REJECT, extended-matching, pre-matching
-DOMAIN, dynamicf.sankuai.com, REJECT, extended-matching, pre-matching
-DOMAIN, live-monitor-broker.sankuai.com, REJECT, extended-matching, pre-matching
-DOMAIN-SUFFIX, lx.meituan.net, REJECT, extended-matching, pre-matching
-IP-CIDR, 101.32.16.204/32, REJECT, no-resolve, pre-matching
-IP-CIDR, 119.29.126.137/32, REJECT, no-resolve, pre-matching
+DOMAIN, r.dianping.com, REJECT
+DOMAIN, tte.meituan.com, REJECT
+DOMAIN, dpmtpush.dianping.com, REJECT
+DOMAIN, dynamicf.sankuai.com, REJECT
+DOMAIN, live-monitor-broker.sankuai.com, REJECT
+DOMAIN-SUFFIX, lx.meituan.net, REJECT
+IP-CIDR, 101.32.16.204/32, REJECT, no-resolve
+IP-CIDR, 119.29.126.137/32, REJECT, no-resolve
 # ehaier
 DOMAIN-SUFFIX, ehaier.com, REJECT
 # functional
@@ -816,30 +816,24 @@ AND, ((URL-REGEX, "^http:\/\/.+\/amdc\/mobileDispatch"), (USER-AGENT, "%E9%97%B2
 # JD_remove_ads
 URL-REGEX, "^http:\/\/\w{32}\.jddebug\.com\/diagnose\?", REJECT
 # jd
-DOMAIN, dns.jd.com, REJECT, extended-matching, pre-matching
-DOMAIN, waapdg.jd.com, REJECT, extended-matching, pre-matching
-DOMAIN, dsp-x.jd.com, REJECT, extended-matching, pre-matching
-DOMAIN, xlog.jd.com, REJECT, extended-matching, pre-matching
-DOMAIN, janapi.jd.com, REJECT, extended-matching, pre-matching
-DOMAIN, jdqd.jd.com, REJECT, extended-matching, pre-matching
-DOMAIN, dgstatic.jd.com, REJECT, extended-matching, pre-matching
-DOMAIN-SUFFIX, jzt.jd.com, REJECT, extended-matching, pre-matching
-DOMAIN-SUFFIX, img-x.jd.com, REJECT, extended-matching, pre-matching
-DOMAIN-SUFFIX, du.jd.com, REJECT, extended-matching, pre-matching
-DOMAIN-SUFFIX, c-nfa.jd.com, REJECT, extended-matching, pre-matching
-DOMAIN-SUFFIX, cm.jd.com, REJECT, extended-matching, pre-matching
-DOMAIN-KEYWORD, kepler.jd.com, REJECT, extended-matching, pre-matching
-DOMAIN-KEYWORD, bdsp.x.jd.com, REJECT, extended-matching, pre-matching
-DOMAIN-KEYWORD, keplerapi.jd.com, REJECT, extended-matching, pre-matching
-DOMAIN-KEYWORD, mapi.m.jd.com, REJECT, extended-matching, pre-matching
-IP-CIDR, 101.124.19.122/32, REJECT, no-resolve, pre-matching
-IP-CIDR6, 2402:db40:5100:1011::5/128, REJECT, no-resolve, pre-matching
+DOMAIN, dns.jd.com, REJECT
+DOMAIN, waapdg.jd.com, REJECT
+DOMAIN, jdqd.jd.com, REJECT
+DOMAIN, dgstatic.jd.com, REJECT
+DOMAIN-SUFFIX, jzt.jd.com, REJECT
+DOMAIN-SUFFIX, img-x.jd.com, REJECT
+DOMAIN-SUFFIX, du.jd.com, REJECT
+DOMAIN-SUFFIX, c-nfa.jd.com, REJECT
+DOMAIN-SUFFIX, cm.jd.com, REJECT
+DOMAIN-KEYWORD, kepler.jd.com, REJECT
+DOMAIN-KEYWORD, bdsp.x.jd.com, REJECT
+DOMAIN-KEYWORD, keplerapi.jd.com, REJECT
+DOMAIN-KEYWORD, mapi.m.jd.com, REJECT
 # meituan
 IP-CIDR, 103.37.155.60/32, REJECT, no-resolve
 DOMAIN, flowplus.meituan.net, REJECT
 DOMAIN, lx0.meituan.com, REJECT
 DOMAIN, hlx.meituan.com, REJECT
-DOMAIN-SUFFIX, lx.meituan.net, REJECT
 DOMAIN-SUFFIX, httpdns.meituan.com, REJECT
 DOMAIN-SUFFIX, analytics.meituan.net, REJECT
 DOMAIN-SUFFIX, meituan.xn, REJECT
@@ -1342,6 +1336,8 @@ upos-sz-upcdntx.bilivideo.com = server:https://doh.pub/dns-query // BiliBili upo
 *.he.net = server:https://ordns.he.net/dns-query // HE.net
 
 [Map Local]
+# Module-Common
+^https:\/\/api\.m\.jd\.com\/api\?functionId=union_exhibition_bff data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 # Plugin-Common
 ^https:\/\/api\.pinduoduo\.com\/api\/alexa\/cells\/hub\/v3\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 ^https?:\/\/api2\.yaduo\.com\/atourlife\/activity\/appLaunch data-type=text data="{}" status-code=200 header="Content-Type:application/json"
@@ -1449,15 +1445,15 @@ upos-sz-upcdntx.bilivideo.com = server:https://doh.pub/dns-query // BiliBili upo
 ^https:\/\/conf\.diditaxi\.com\.cn\/dynamic\/conf data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 ^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v1\/other\/slow data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 # dianping
-^https?:\/\/mapi\.dianping\.com\/mapi\/intelliindex data-type=text data="{}" status-code=200
+^https?:\/\/mapi\.dianping\.com\/mapi\/intelliindex data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 ^https?:\/\/img\.meituan\.net\/goodsawardpic data-type=tiny-gif status-code=200
-^https?:\/\/rms\.meituan\.com\/api\/v\d\/rmsmina\/c\/queryWechatAdvertisement data-type=text data="{}" status-code=200
+^https?:\/\/rms\.meituan\.com\/api\/v\d\/rmsmina\/c\/queryWechatAdvertisement data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 ^https?:\/\/p\d\.meituan\.net\/nrpresourcevenus\/\w+\.gif data-type=tiny-gif status-code=200
 ^https?:\/\/p\d\.meituan\.net\/travelcube\/(?!c129a661)\w+\.gif data-type=tiny-gif status-code=200
-^https?:\/\/m\.dianping\.com\/an\/gear\/dpmapp\/api\/readLionConfig\/config data-type=text data="{}" status-code=200
-^https?:\/\/m\.dianping\.com\/mapi\/mgw\/growth\/queryhaima data-type=text data="{}" status-code=200
-^https?:\/\/m\.dianping\.com\/wxmapi\/shop\/friendslike data-type=text data="{}" status-code=200
-^https?:\/\/mapi\.dianping\.com\/mapi\/mgw\/growth\/clipboardquery data-type=text data="{}" status-code=200
+^https?:\/\/m\.dianping\.com\/an\/gear\/dpmapp\/api\/readLionConfig\/config data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https?:\/\/m\.dianping\.com\/mapi\/mgw\/growth\/queryhaima data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https?:\/\/m\.dianping\.com\/wxmapi\/shop\/friendslike data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https?:\/\/mapi\.dianping\.com\/mapi\/mgw\/growth\/clipboardquery data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 # ehaier
 ^https?:\/\/dualstack-(arestapi|restios)\.amap\.com\/v\d\/iasdkauth\?key= data-type=text data=" " status-code=200
 ^https?:\/\/dualstack-logs\.amap\.com\/ws\/log\/upload\?product data-type=text data=" " status-code=200
@@ -1489,9 +1485,9 @@ upos-sz-upcdntx.bilivideo.com = server:https://doh.pub/dns-query // BiliBili upo
 # JD_remove_ads
 ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(searchBoxWord|stationPullService|uniformRecommend[06]) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 # jd
-^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(?>searchBoxWord|xview2Config|stationPullService|getWidget|widget|hybrid|jdDiscoveryRedPoint|queryMaterialAdverts) data-type=text data="" status-code=200
-^https?:\/\/(bdsp-x|dsp-x)\.jd\.com\/adx\/ data-type=text data="" status-code=200
-^https?:\/\/api\.m\.jd\.com\/\?loginType=11 data-type=text data="{}" status-code=200
+^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(?>searchBoxWord|xview2Config|stationPullService|getWidget|widget|hybrid|jdDiscoveryRedPoint|queryMaterialAdverts) data-type=text data=" " status-code=200
+^https?:\/\/(bdsp-x|dsp-x)\.jd\.com\/adx\/ data-type=text data=" " status-code=200
+^https?:\/\/api\.m\.jd\.com\/\?loginType=11 data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 # mcd
 ^https?:\/\/api\.mcd\.cn\/bff\/portal\/(home\/splash|richpop) data-type=text data=" " status-code=200
 ^https?:\/\/api\.mcd\.cn\/bff\/portal\/home\/hotActivity data-type=text data="{}" status-code=200 header="Content-Type:application/json"
@@ -1633,6 +1629,7 @@ upos-sz-upcdntx.bilivideo.com = server:https://doh.pub/dns-query // BiliBili upo
 # Tools
 Look directly for Zhihu = type=http-response,pattern=https://(www\.zhihu\.com/question|zhuanlan\.zhihu\.com/p)/,requires-body=1,max-size=0,script-path=https://github.com/id77/QuantumultX/raw/master/Script/zhihu.js
 # Module-Common
+JD-Share = type=http-response, pattern=^https:\/\/api\.m\.jd\.com\/\?functionId=union_exhibition_bff&client=apple&clientVer, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/Module-Common/JD-JF.js, requires-body=true, max-size=0
 Pornhub = type=http-response, pattern=^https?:/\/(cn|www)\.pornhub\.com\/($|(view|video).*$), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/Module-Common/pornhub.js, requires-body=true, max-size=0, script-update-interval=0
 91Porn = type=http-response, pattern=https?:\/\/91porn\.com\/(index|view_video|login|search_result)\.php, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/Module-Common/91porn.js, requires-body=true, max-size=0, script-update-interval=0
 # adunion
@@ -1739,8 +1736,8 @@ replaceBody = type=http-response, pattern=^https?:\/\/waimai-guide\.ele\.me\/\w+
 移除广告 = type=http-response, pattern=^https:\/\/conf\.diditaxi\.com\.cn\/ota\/na\/yuantu\/infoList, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/DiDi-AD/DiDi.js, requires-body=true
 移除广告 = type=http-response, pattern=^https:\/\/api\.udache\.com\/gulfstream\/passenger-center\/v2\/other\/pInTripLayout, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/DiDi-AD/DiDi.js, requires-body=true
 # dianping
-dianping = type=type=http-response,pattern=^https?:\/\/img\.meituan\.net\/dpmobile\/,requires-body=1,max-size=0,script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/dianping/dianping.js, pattern=^https?:\/\/img\.meituan\.net\/dpmobile\/, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/dianping/dianping.js, requires-body=true, max-size=0
-dianping = type=type=http-response,pattern=^https?:\/\/ddplus\.meituan\.net\/v\d\/mss_\w+\/picassovc,requires-body=1,max-size=0,script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/dianping/dianping.js, pattern=^https?:\/\/ddplus\.meituan\.net\/v\d\/mss_\w+\/picassovc, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/dianping/dianping.js, requires-body=true, max-size=0
+dianping = type=http-response, pattern=^https?:\/\/img\.meituan\.net\/dpmobile\/, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/dianping/dianping.js, requires-body=true, max-size=-1, timeout=60
+dianping = type=http-response, pattern=^https?:\/\/ddplus\.meituan\.net\/v\d\/mss_\w+\/picassovc, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/dianping/dianping.js, requires-body=true, max-size=-1, timeout=60
 # ehaier
 haier = type=http-response, pattern=^https?:\/\/oss-zjrs\.haier\.net\/resource\/confFile\/\d{22}\.json$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/ehaier/haier.js, requires-body=true, max-size=-1, timeout=60
 haier = type=http-response, pattern=^https?:\/\/zj\.haier\.net\/omsappapi\/resource\/v\d\/get\/resourceBag$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/ehaier/haier.js, requires-body=true, max-size=-1, timeout=60
@@ -1757,8 +1754,7 @@ replaceHeader = type=http-request, pattern=^https?:\/\/github\.com\/, script-pat
 body_rewrite_15 = type=http-response, pattern=^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=basicConfig, script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22json-replace%22%2C%5B%5B%22data.JDMessage.socketmonitor.isSocketEstablishedAhead%22%2C0%5D%2C%5B%22data.JDMessage.socketmonitor.isSocketReport%22%2C0%5D%2C%5B%22data.JDHttpToolKit.httpdns.httpdns%22%2C0%5D%5D%5D%5D
 移除京东广告 = type=http-response, pattern=^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/JD_remove_ads/JD_remove_ads.js, requires-body=true
 # jd
-jd = type=type=http-response,pattern=^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(?>deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome),requires-body=1,max-size=0,script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/jd/jd.js, pattern=^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(?>deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/jd/jd.js, requires-body=true, max-size=0
-jingxi = type=type=http-response,pattern=^https?:\/\/api\.m\.jd\.com\/api\?functionId=delivery_show,requires-body=1,max-size=0,script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/jd/jingxi.js, pattern=^https?:\/\/api\.m\.jd\.com\/api\?functionId=delivery_show, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/jd/jingxi.js, requires-body=true, max-size=0
+jd = type=http-response, pattern=^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(?>deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/jd/jd.js, requires-body=true, max-size=-1, timeout=60
 # meituan
 meituan = type=http-response, pattern=^https?:\/\/p\d\.meituan\.net\/linglong\/, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/meituan/meituan.js, requires-body=true, max-size=-1, timeout=60
 # Pinduoduo
