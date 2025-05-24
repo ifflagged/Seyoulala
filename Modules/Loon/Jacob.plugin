@@ -1188,25 +1188,25 @@ https?:\/\/91porn\.com(\/|)$ https://91porn.com/index.php 302
 # dianping
 ^https?:\/\/103\.37\.155\.60\/fetch - reject
 ^https?:\/\/mapi\.dianping\.com\/mapi\/operating\/(?>indexopsmodules|loadsplashconfig) - reject
-^https?:\/\/mapi\.dianping\.com\/mapi\/intelliindex - reject-dict
 ^https?:\/\/mapi\.dianping\.com\/wdrpreload\/userprediction - reject
 ^https?:\/\/mapi\.dianping\.com\/adshopping - reject
-^https?:\/\/img\.meituan\.net\/goodsawardpic - reject-img
 ^https?:\/\/p\.meituan\.com\/api\/privacy\/config - reject
-^https?:\/\/rms\.meituan\.com\/api\/v\d\/rmsmina\/c\/queryWechatAdvertisement - reject-dict
 ^https?:\/\/www\.dpfile\.com\/app\/fecommonservice-lottie\/ugc-write-done\/media - reject
 ^https?:\/\/www\.dpfile\.com\/picasso\/picasso-qa\/src\/AnswerList\/AnswerList-bundle - reject
 ^https?:\/\/www\.dpfile\.com\/sc\/indexpromotion - reject
 ^https?:\/\/catfront\.dianping\.com\/api\/metric\?v=\d&p=rn_gcbu_mrn-joy-poidetail - reject
 ^https?:\/\/awp-assets\.meituan\.net\/hfe\/fep\/\w+\.json - reject
 ^https?:\/\/s3plus\.meituan\.net\/ocean-blk-index\/index\/blk_conf - reject
-^https?:\/\/p\d\.meituan\.net\/nrpresourcevenus\/\w+\.gif - reject-img
-^https?:\/\/p\d\.meituan\.net\/travelcube\/(?!c129a661)\w+\.gif - reject-img
 ^https?:\/\/ddplus\.meituan\.net\/v\d\/mss_\w+\/(ehc|titansx|ddblue)\/ - reject
-^https?:\/\/m\.dianping\.com\/an\/gear\/dpmapp\/api\/readLionConfig\/config - reject-dict
-^https?:\/\/m\.dianping\.com\/mapi\/mgw\/growth\/queryhaima - reject-dict
-^https?:\/\/m\.dianping\.com\/wxmapi\/shop\/friendslike - reject-dict
-^https?:\/\/mapi\.dianping\.com\/mapi\/mgw\/growth\/clipboardquery - reject-dict
+^https?:\/\/mapi\.dianping\.com\/mapi\/intelliindex mock-response-body data-type=text data="{}" status-code=200
+^https?:\/\/img\.meituan\.net\/goodsawardpic mock-response-body data-type=tiny-gif data="" status-code=200
+^https?:\/\/rms\.meituan\.com\/api\/v\d\/rmsmina\/c\/queryWechatAdvertisement mock-response-body data-type=text data="{}" status-code=200
+^https?:\/\/p\d\.meituan\.net\/nrpresourcevenus\/\w+\.gif mock-response-body data-type=tiny-gif data="" status-code=200
+^https?:\/\/p\d\.meituan\.net\/travelcube\/(?!c129a661)\w+\.gif mock-response-body data-type=tiny-gif data="" status-code=200
+^https?:\/\/m\.dianping\.com\/an\/gear\/dpmapp\/api\/readLionConfig\/config mock-response-body data-type=text data="{}" status-code=200
+^https?:\/\/m\.dianping\.com\/mapi\/mgw\/growth\/queryhaima mock-response-body data-type=text data="{}" status-code=200
+^https?:\/\/m\.dianping\.com\/wxmapi\/shop\/friendslike mock-response-body data-type=text data="{}" status-code=200
+^https?:\/\/mapi\.dianping\.com\/mapi\/mgw\/growth\/clipboardquery mock-response-body data-type=text data="{}" status-code=200
 # HKDouYin_remove_ads
 ^https:\/\/api5-normal-lq\.amemv\.com\/api\/ad\/ reject
 ^https:\/\/(aweme\.snssdk\.com|api5-normal-m\.amemv\.com)\/api\/ad\/ reject
@@ -1772,8 +1772,8 @@ http-request ^https?:\/\/upos-(hz|bstar1)-mirrorakam\.akamaized\.net/upgcxcode\/
 http-response ^https?:\/\/yunbusiness\.ccb\.com\/(?>basic_service|clp_service)\/txCtrl\?txcode=A3341(?>SB16|C147|MB22|A009|A120|AB03|AB04|A068|A095|AB08) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/ccblife/ccblife.js, requires-body=true, timeout=60, tag=ccblife
 http-response ^https?:\/\/waimai-guide\.ele\.me\/\w+\/mtop\.venus\.shopresourceservice\.getshopresource script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/ccblife/replace-body.js, requires-body=true, timeout=30, tag=replaceBody, argument=posterList-%3Erandom_body
 # dianping
-http-response ^https?:\/\/img\.meituan\.net\/dpmobile\/ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/dianping/dianping.js, requires-body=true, timeout=60, tag=dianping
-http-response ^https?:\/\/ddplus\.meituan\.net\/v\d\/mss_\w+\/picassovc script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/dianping/dianping.js, requires-body=true, timeout=60, tag=dianping
+type=http-response,pattern=^https?:\/\/img\.meituan\.net\/dpmobile\/,requires-body=1,max-size=0,script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/dianping/dianping.js ^https?:\/\/img\.meituan\.net\/dpmobile\/ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/dianping/dianping.js, requires-body=true, tag=dianping
+type=http-response,pattern=^https?:\/\/ddplus\.meituan\.net\/v\d\/mss_\w+\/picassovc,requires-body=1,max-size=0,script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/dianping/dianping.js ^https?:\/\/ddplus\.meituan\.net\/v\d\/mss_\w+\/picassovc script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/dianping/dianping.js, requires-body=true, tag=dianping
 # ehaier
 http-response ^https?:\/\/oss-zjrs\.haier\.net\/resource\/confFile\/\d{22}\.json$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/ehaier/haier.js, requires-body=true, timeout=60, tag=haier
 http-response ^https?:\/\/zj\.haier\.net\/omsappapi\/resource\/v\d\/get\/resourceBag$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/ehaier/haier.js, requires-body=true, timeout=60, tag=haier
