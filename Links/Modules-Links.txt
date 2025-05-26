@@ -1,39 +1,37 @@
 # 按字母排序
-https://github.com/ifflagged/Neverflagged/raw/main/Surge/Module/BiliBili.sgmodule
-https://github.com/ifflagged/Neverflagged/raw/main/Surge/Module/Module-Common.sgmodule
-https://github.com/ifflagged/Neverflagged/raw/main/Surge/Module/TikTok.sgmodule
-https://github.com/ifflagged/Neverflagged/raw/main/Loon/Plugin/bilibili-AD.plugin
 https://github.com/ifflagged/Neverflagged/raw/main/Loon/Plugin/DiDi-AD.plugin
 https://github.com/ifflagged/Neverflagged/raw/main/Loon/Plugin/Plugin-Common.plugin
-# https://github.com/ifflagged/Neverflagged/raw/main/Loon/Plugin/Loon-TikTok.plugin
+https://github.com/ifflagged/Neverflagged/raw/main/Loon/Plugin/bilibili-AD.plugin
+https://github.com/ifflagged/Neverflagged/raw/main/Surge/Module/BiliBili.sgmodule
+https://github.com/ifflagged/Neverflagged/raw/main/Surge/Module/Module-Common.sgmodule
 # https://github.com/ifflagged/Neverflagged/raw/main/Loon/Plugin/YouTube-AD.plugin
+
 
 # A #
 https://github.com/Alex0510/Eric/raw/master/surge/Module/revenucar.sgmodule
 https://github.com/Ananaskop/Profile/raw/main/Surge/Modules/Common_remove_ads.sgmodule
 
 # D #
-https://github.com/ifflagged/Darwin/raw/main/Modules/Surge/zirawell/dianping.sgmodule
-https://github.com/ddgksf2013/dev/raw/master/ForOwnUse.conf
 https://github.com/ddgksf2013/Modules/raw/main/JD_Price.sgmodule
 https://github.com/ddgksf2013/Modules/raw/main/RevenueCat.Vip.sgmodule
 https://github.com/ddgksf2013/Rewrite/raw/master/AdBlock/Amap.conf
 https://github.com/ddgksf2013/Rewrite/raw/master/AdBlock/BilibiliAds.conf
 https://github.com/ddgksf2013/Rewrite/raw/master/AdBlock/SmzdmAds.conf
 https://github.com/ddgksf2013/Rewrite/raw/master/AdBlock/StartUp.conf
-https://github.com/ddgksf2013/Rewrite/raw/master/AdBlock/XiaoHongShuAds.conf
 https://github.com/ddgksf2013/Rewrite/raw/master/AdBlock/Weibo.conf
-https://gist.githubusercontent.com/ddgksf2013/f43026707830c7818ee3ba624e383c8d/raw/baiduCloud.adblock.js
+https://github.com/ddgksf2013/Rewrite/raw/master/AdBlock/XiaoHongShuAds.conf
+https://github.com/ddgksf2013/dev/raw/master/ForOwnUse.conf
 https://gist.githubusercontent.com/ddgksf2013/0b2145e7362964c77af57a0e3402fe21/raw/BaiduPanSpeedBoost.conf
+https://gist.githubusercontent.com/ddgksf2013/f43026707830c7818ee3ba624e383c8d/raw/baiduCloud.adblock.js
+
 
 # F #
 https://github.com/fmz200/wool_scripts/raw/main/Loon/plugin/blockAds.plugin
-https://github.com/fmz200/wool_scripts/raw/main/QuantumultX/rewrite/rewrite.snippet
-https://github.com/fmz200/wool_scripts/raw/main/QuantumultX/rewrite/cleanup.snippet
 https://github.com/fmz200/wool_scripts/raw/main/Loon/plugin/weibo.plugin
+https://github.com/fmz200/wool_scripts/raw/main/QuantumultX/rewrite/cleanup.snippet
+https://github.com/fmz200/wool_scripts/raw/main/QuantumultX/rewrite/rewrite.snippet
 
 # G #
-https://github.com/githubdulong/Script/raw/master/Surge/TikTok_Surge.sgmodule
 https://github.com/githubdulong/Script/raw/master/Surge/JD_Helper.sgmodule
 https://github.com/githubdulong/Script/raw/master/Surge/jd_price.sgmodule
 https://github.com/githubdulong/Script/raw/master/Surge/jd_price2.sgmodule
@@ -50,8 +48,8 @@ https://github.com/Moli-X/Resources/raw/main/Rewrite/Collections.conf
 https://github.com/wf021325/qx/raw/main/js/jd_price.js
 
 # Y #
-https://github.com/Yuheng0101/X/raw/main/Scripts/ChinaMobile/NoAds.js
 https://github.com/Yuheng0101/Hostname_Monitor/releases/download/Auto_Update/heiliao.sgmodule
+https://github.com/Yuheng0101/X/raw/main/Scripts/ChinaMobile/NoAds.js
 
 # Z #
 https://github.com/ZenmoFeiShi/Qx/raw/main/Didichuxing.snippet
