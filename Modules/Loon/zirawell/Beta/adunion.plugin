@@ -4,7 +4,6 @@
 #!tag=Jacob
 
 [Rule]
-# > 广告联盟 - ADUNION
 DOMAIN,adtracker.adfunlink.com,REJECT
 DOMAIN,init.supersonicads.com,REJECT
 DOMAIN,ws.tapjoyads.com,REJECT
@@ -64,13 +63,10 @@ DOMAIN-KEYWORD,ads.g.doubleclick,REJECT
 DOMAIN-KEYWORD,iflyad.bj.openstorage.cn,REJECT
 DOMAIN-KEYWORD,bjimp.voiceads.cn,REJECT
 DOMAIN-KEYWORD,sdk.1rtb.net,REJECT
-# > 神策 - SENSORDATA
 DOMAIN-KEYWORD,sensorsdata.cn,REJECT
-# > GozenData - GOZENDATA
 DOMAIN-SUFFIX,gozendata.com,REJECT
 DOMAIN-SUFFIX,gzads.com,REJECT
 DOMAIN-SUFFIX,gz-data.com,REJECT
-# > 字节 - BYTEDANCE
 DOMAIN,dig.zjurl.cn,REJECT
 DOMAIN,ad.zijieapi.com,REJECT
 DOMAIN,applog.zijieapi.com,REJECT
@@ -117,16 +113,13 @@ DOMAIN-KEYWORD,asiad.byteactivity,REJECT
 DOMAIN-KEYWORD,pangolin-sdk-toutiao,REJECT
 DOMAIN-KEYWORD,pangolin.snssdk.com,REJECT
 DOMAIN-KEYWORD,pglstatp-toutiao,REJECT
-# > 快手 - KUAISHOU
 DOMAIN,gdfp.gifshow.com,REJECT
 DOMAIN,open.kuaishou.com,REJECT
 DOMAIN,open.e.kuaishou.com,REJECT
 DOMAIN-SUFFIX,kuaishouzt.com,REJECT
 DOMAIN-SUFFIX,adukwai.com,REJECT
-# > 友盟 - UMENG
 DOMAIN-SUFFIX,umeng.com,REJECT
 DOMAIN-SUFFIX,umengcloud.com,REJECT
-# > 谷歌 - GOOGLE
 DOMAIN-SUFFIX,googleadsserving.cn,REJECT
 DOMAIN-SUFFIX,googleadservices.com,REJECT
 DOMAIN-SUFFIX,googlecommerce.com,REJECT
@@ -139,12 +132,10 @@ DOMAIN-SUFFIX,googletagmanager.com,REJECT
 DOMAIN-SUFFIX,l.google.com,REJECT
 DOMAIN-KEYWORD,pagead2.google,REJECT
 DOMAIN-KEYWORD,ad.google,REJECT
-# > 微软 - MICROSOFT
 DOMAIN-SUFFIX,ads1.msn.com,REJECT
 DOMAIN-SUFFIX,ads2.msn.com,REJECT
 DOMAIN-KEYWORD,ads.msn.com,REJECT
 DOMAIN-KEYWORD,ads.microsoft.com,REJECT
-# > 苹果 - APPLE
 DOMAIN,advertising.apple.com,REJECT
 DOMAIN,api-adservices.apple.com,REJECT
 DOMAIN,apple.comscoreresearch.com,REJECT
@@ -163,7 +154,6 @@ DOMAIN,webproxy-advp.iad-apple.com.akadns.net,REJECT
 DOMAIN-SUFFIX,advp.apple.com,REJECT
 DOMAIN-SUFFIX,iad-apple.com,REJECT
 DOMAIN-SUFFIX,iadsdk.apple.com,REJECT
-# > 雅虎 - YAHOO
 DOMAIN,admarketing.yahoo.net,REJECT
 DOMAIN,ads.auctions.yahoo.com,REJECT
 DOMAIN,ads.finance.yahoo.com,REJECT
@@ -172,15 +162,12 @@ DOMAIN-SUFFIX,adspecs.yahoo.com,REJECT
 DOMAIN-SUFFIX,advertising.yahoo.com,REJECT
 DOMAIN-SUFFIX,gemini.yahoo.com,REJECT
 DOMAIN-KEYWORD,ads.yahoo,REJECT
-# > 个推 - GETUI
 DOMAIN-SUFFIX,mobileservice.cn,REJECT
 DOMAIN-SUFFIX,getui.com,REJECT
 DOMAIN-SUFFIX,getui.net,REJECT
 DOMAIN-SUFFIX,gepush.com,REJECT
 DOMAIN-SUFFIX,igexin.com,REJECT
-# > Unity3d - UNITY3D
 DOMAIN-SUFFIX,unityads.unity3d.com,REJECT
-# > 腾讯 - TENCENT
 DOMAIN,dns.qq.com,REJECT
 DOMAIN,mazu.m.qq.com,REJECT
 DOMAIN,appsupport.qq.com,REJECT
@@ -280,7 +267,6 @@ DOMAIN-KEYWORD,pgdt.gtimg.c,REJECT
 DOMAIN-KEYWORD,trace.qq.com,REJECT
 DOMAIN-KEYWORD,trace.video.qq.com,REJECT
 IP-CIDR,47.110.187.87/32,REJECT,no-resolve
-# > 百度 - BAIDU
 DOMAIN,als.baidu.com,REJECT
 DOMAIN,duclick.baidu.com,REJECT
 DOMAIN,mobads.baidu.com,REJECT
@@ -427,7 +413,6 @@ DOMAIN-SUFFIX,yingxiao.baidu.com,REJECT
 DOMAIN-SUFFIX,znsv.baidu.com,REJECT
 IP-CIDR,180.76.76.112/32,REJECT,no-resolve
 IP-CIDR,180.76.76.200/32,REJECT,no-resolve
-# > 阿里 - ALIBABA
 DOMAIN,o2o-ad-log-gateway.alibaba.com,REJECT
 DOMAIN,eco.taobao.com,REJECT
 DOMAIN,ossgw.alicdn.com,REJECT
@@ -448,7 +433,6 @@ DOMAIN-SUFFIX,nbsdk-baichuan.alicdn.com,REJECT
 DOMAIN-SUFFIX,strip.alicdn.com,REJECT
 DOMAIN-SUFFIX,unidesk.alicdn.com,REJECT
 DOMAIN-KEYWORD,dns.alidns.com,REJECT
-# > 网易 - NETEASE
 DOMAIN,nex.163.com,REJECT
 DOMAIN,iad.g.163.com,REJECT
 DOMAIN,n.3g.163.com,REJECT
@@ -459,7 +443,6 @@ DOMAIN,yt-adp.nosdn.127.net,REJECT
 DOMAIN,yt-adp.ws.126.net,REJECT
 DOMAIN-SUFFIX,analytics.163.com,REJECT
 DOMAIN-SUFFIX,httpdns.n.netease.com,REJECT
-# > 新浪 - SINA
 DOMAIN-SUFFIX,ad.sina.com.cn,REJECT
 DOMAIN-SUFFIX,ad4.sina.com.cn,REJECT
 DOMAIN-SUFFIX,adbox.sina.com.cn,REJECT
@@ -500,56 +483,48 @@ DOMAIN-SUFFIX,motu.p4p.sina.com.cn,REJECT
 DOMAIN-SUFFIX,count.video.sina.com.cn,REJECT
 
 [Rewrite]
-# > 腾讯系 - TENCENT
-^https?:\/\/api2\.helper\.qq\.com\/game\/buttons - reject-img
-^https?:\/\/imgcache\.qq\.com\/qqlive\/ - reject-img
-^https?:\/\/vv\.video\.qq\.com\/getvmind\? - reject-200
-^https?:\/\/qt\.qq\.com\/lua\/mengyou\/get_splash_screen_info - reject-200
-^https?:\/\/y\.gtimg\.cn\/music\/.*?_Ad/\d+\.png - reject-img
-^https?:\/\/splashqqlive\.gtimg\.com\/website\/\d{6} - reject-img
-^https?:\/\/qzonestyle\.gtimg\.cn\/qzone\/biz\/gdt\/mob\/sdk\/ios\/v\d\/ - reject-img
-^https?:\/\/discuz\.gtimg\.cn\/cloud\/scripts\/discuz_tips - reject-img
-^https?:\/\/bla\.gtimg\.com\/qqlive\/\d{6}.+?\.png - reject-img
-^https?:\/\/mmgr\.gtimg\.com\/gjsmall\/qiantu\/upload\/ - reject-img
-^https?:\/\/mmgr\.gtimg\.com\/gjsmall\/qqpim\/public\/ios\/splash\/.+?\/\d{4}_\d{4} - reject-img
-^https?:\/\/bk\.bingo\.qq\.com\/bk\/crx\/data\/videoAd - reject-dict
-# > 百度系 - BAIDU
 ^https?:\/\/fcvbjbcebos\.baidu\.com\/.+.mp4 - reject
 ^https?:\/\/cover\.baidu\.com\/cover\/page\/dspSwitchAds\/ - reject
-^https?:\/\/afd\.baidu\.com\/afd\/entry - reject-img
-^https?:\/\/issuecdn\.baidupcs\.com\/issue\/netdisk\/guanggao\/ - reject-200
-^https?:\/\/[\s\S]*\.baidu\.com/.*?ad[xs]\.php - reject-img
-^https?:\/\/t\d{2}\.baidu\.com - reject-img
 ^https?:\/\/update\.pan\.baidu\.com\/statistics - reject
 ^https?:\/\/log.+?baidu\.com - reject
 ^https?:\/\/www.baidu.com\/?action=static&ms=1&version=css_page_2@0.*? - reject
-# > 拼多多系 - PDD
 ^https?:\/\/video-dsp\.pddpic\.com\/market-dsp-video\/ - reject
 ^https?:\/\/t-dsp\.pinduoduo\.com\/dspcb\/i\/mrk_union - reject
 ^https?:\/\/images\.pinduoduo\.com\/(mrk|marketing_api)\/ - reject
 ^https?:\/\/(gw|heic)\.alicdn\.com\/mt\/ - reject
 ^https?:\/\/(gw|heic)\.alicdn\.com\/t(?>f|p)s\/.+\d{3,4}-\d{4} - reject
 ^https?:\/\/(gw|heic)\.alicdn\.com\/imgextra\/\w{2}\/\w+!+(?!600000000(5412|6148|4021|5802))\d*-\d-tps-(?!1035)\d{3,4}-(?!570)\d{3,4}\.(?>jpg|png)_(1\d{3}|9\d{2})x(1\d{3}|9\d{2})q\d0\.jpg_\.(?>heic|webp) - reject
-^https?:\/\/g\.alicdn\.com\/(?>alilog|trace) - reject-200
-^https?:\/\/yixiu-abtest\.alicdn\.com\/ut-abtest\/config - reject-dict
-# > 网易系 - NETEASE
 ^https?:\/\/img1.126.net\/.+dpi=\w{7,8} - reject
 ^https?:\/\/img1.126.net\/channel14\/ - reject
 ^https?:\/\/nex.163.com\/q - reject
 ^https?:\/\/g1.163.com\/madfeedback - reject
 ^https?:\/\/c\.m\.163\.com\/nc\/gl\/ - reject
-# > 谷歌系 - GOOGLE
-^https?:\/\/www\.google\.com\/ads - reject-dict
-# > 贝塔科技 - FOTOABLE
-^https?:\/\/cdn\.api\.fotoable\.com\/Advertise\/ - reject-200
-# > 蓝卡科技 - BLUECARD
-^https?:\/\/cloud\.bluecardsoft\.com\/yuntingad\/ - reject-dict
+^https?:\/\/api2\.helper\.qq\.com\/game\/buttons mock-response-body data-type=tiny-gif data="" status-code=200
+^https?:\/\/imgcache\.qq\.com\/qqlive\/ mock-response-body data-type=tiny-gif data="" status-code=200
+^https?:\/\/vv\.video\.qq\.com\/getvmind\? mock-response-body data-type=text data="" status-code=200
+^https?:\/\/qt\.qq\.com\/lua\/mengyou\/get_splash_screen_info mock-response-body data-type=text data="" status-code=200
+^https?:\/\/y\.gtimg\.cn\/music\/.*?_Ad/\d+\.png mock-response-body data-type=tiny-gif data="" status-code=200
+^https?:\/\/splashqqlive\.gtimg\.com\/website\/\d{6} mock-response-body data-type=tiny-gif data="" status-code=200
+^https?:\/\/qzonestyle\.gtimg\.cn\/qzone\/biz\/gdt\/mob\/sdk\/ios\/v\d\/ mock-response-body data-type=tiny-gif data="" status-code=200
+^https?:\/\/discuz\.gtimg\.cn\/cloud\/scripts\/discuz_tips mock-response-body data-type=tiny-gif data="" status-code=200
+^https?:\/\/bla\.gtimg\.com\/qqlive\/\d{6}.+?\.png mock-response-body data-type=tiny-gif data="" status-code=200
+^https?:\/\/mmgr\.gtimg\.com\/gjsmall\/qiantu\/upload\/ mock-response-body data-type=tiny-gif data="" status-code=200
+^https?:\/\/mmgr\.gtimg\.com\/gjsmall\/qqpim\/public\/ios\/splash\/.+?\/\d{4}_\d{4} mock-response-body data-type=tiny-gif data="" status-code=200
+^https?:\/\/bk\.bingo\.qq\.com\/bk\/crx\/data\/videoAd mock-response-body data-type=text data="{}" status-code=200
+^https?:\/\/afd\.baidu\.com\/afd\/entry mock-response-body data-type=tiny-gif data="" status-code=200
+^https?:\/\/issuecdn\.baidupcs\.com\/issue\/netdisk\/guanggao\/ mock-response-body data-type=text data="" status-code=200
+^https?:\/\/[\s\S]*\.baidu\.com/.*?ad[xs]\.php mock-response-body data-type=tiny-gif data="" status-code=200
+^https?:\/\/t\d{2}\.baidu\.com mock-response-body data-type=tiny-gif data="" status-code=200
+^https?:\/\/g\.alicdn\.com\/(?>alilog|trace) mock-response-body data-type=text data="" status-code=200
+^https?:\/\/yixiu-abtest\.alicdn\.com\/ut-abtest\/config mock-response-body data-type=text data="{}" status-code=200
+^https?:\/\/www\.google\.com\/ads mock-response-body data-type=text data="{}" status-code=200
+^https?:\/\/cdn\.api\.fotoable\.com\/Advertise\/ mock-response-body data-type=text data="" status-code=200
+^https?:\/\/cloud\.bluecardsoft\.com\/yuntingad\/ mock-response-body data-type=text data="{}" status-code=200
 
 [Script]
-# > 阿里系 - ALIBABA
-http-response ^https?:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/adunion/amdc.js, timeout=60, tag=amdc
+http-response ^https?:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/adunion/amdc.js, tag=adunion
 
-http-response ^https?:\/\/g\.alicdn\.com\/.*o2o-ad script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/adunion/alicdn.js, requires-body=true, timeout=60, tag=alicdn
+http-response ^https?:\/\/g\.alicdn\.com\/.*o2o-ad script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/adunion/alicdn.js, requires-body=true, tag=adunion
 
 [MITM]
 hostname = api2.helper.qq.com, imgcache.qq.com, mtteve.beacon.qq.com, vv.video.qq.com, qt.qq.com, y.gtimg.cn, splashqqlive.gtimg.com, qzonestyle.gtimg.cn, discuz.gtimg.cn, bla.gtimg.com, mmgr.gtimg.com, bk.bingo.qq.com, www.baidu.com, fcvbjbcebos.baidu.com, cover.baidu.com, afd.baidu.com, issuecdn.baidupcs.com, update.pan.baidu.com, video-dsp.pddpic.com, t-dsp.pinduoduo.com, images.pinduoduo.com, amdc.m.taobao.com, gw.alicdn.com, heic.alicdn.com, g.alicdn.com, yixiu-abtest.alicdn.com, img1.126.net, nex.163.com, g1.163.com, c.m.163.com, www.google.com, cdn.api.fotoable.com, cloud.bluecardsoft.com

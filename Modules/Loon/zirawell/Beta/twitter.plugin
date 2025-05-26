@@ -4,7 +4,6 @@
 #!tag=Jacob
 
 [Rule]
-# > twitter - TWITTER
 DOMAIN,analytics.twitter.com,REJECT
 DOMAIN-SUFFIX,ads-twitter.com,REJECT
 DOMAIN-SUFFIX,p.twitter.com,REJECT

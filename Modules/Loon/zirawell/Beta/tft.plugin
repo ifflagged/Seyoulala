@@ -4,8 +4,7 @@
 #!tag=Jacob
 
 [Rewrite]
-# > 天府通 - TFT
-^https?:\/\/ams-cdn\.cdtft\.cn\/prod\/tft-ams - reject-dict
+^https?:\/\/ams-cdn\.cdtft\.cn\/prod\/tft-ams mock-response-body data-type=text data="{}" status-code=200
 
 [MITM]
 hostname = ams-cdn.cdtft.cn

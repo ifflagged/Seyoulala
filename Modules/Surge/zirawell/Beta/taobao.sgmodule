@@ -3,58 +3,56 @@
 #!category=Jacob
 
 [Rule]
-# > 淘宝 - TAOBAO
-DOMAIN-SUFFIX,apoll.m.taobao.com,REJECT
-DOMAIN-SUFFIX,w.m.taobao.com,REJECT
-DOMAIN-SUFFIX,re.m.taobao.com,REJECT
-DOMAIN-SUFFIX,re.taobao.com,REJECT
-DOMAIN-SUFFIX,agoodm.m.taobao.com,REJECT
-DOMAIN-SUFFIX,ai.taobao.com,REJECT
-DOMAIN-SUFFIX,api.waptest.taobao.com,REJECT
-DOMAIN-SUFFIX,dsp.simba.taobao.com,REJECT
-DOMAIN-SUFFIX,fav.simba.taobao.com,REJECT
-DOMAIN-SUFFIX,m.simba.taobao.com,REJECT
-DOMAIN-SUFFIX,mclick.simba.taobao.com,REJECT
-DOMAIN-SUFFIX,redirect.simba.taobao.com,REJECT
-DOMAIN-SUFFIX,simba.m.taobao.com,REJECT
-DOMAIN-SUFFIX,srd.simba.taobao.com,REJECT
-DOMAIN-SUFFIX,temai.taobao.com,REJECT
-DOMAIN-SUFFIX,textlink.simba.taobao.com,REJECT
-DOMAIN-SUFFIX,unitacs.m.taobao.com,REJECT
-DOMAIN-SUFFIX,adashx4yt.m.taobao.com,REJECT
-DOMAIN-SUFFIX,tns.simba.taobao.com,REJECT
-DOMAIN-SUFFIX,click.mz.simba.taobao.com,REJECT
-DOMAIN-SUFFIX,click.simba.taobao.com,REJECT
-DOMAIN-SUFFIX,click.tz.simba.taobao.com,REJECT
-DOMAIN-SUFFIX,stat.simba.taobao.com,REJECT
-DOMAIN-SUFFIX,m-adash.m.taobao.com,REJECT
-DOMAIN-SUFFIX,adashbc.m.taobao.com,REJECT
-DOMAIN-SUFFIX,ut.taobao.com,REJECT
-DOMAIN-SUFFIX,tunion-api.m.taobao.com,REJECT
-DOMAIN-SUFFIX,acs4baichuan.m.taobao.com,REJECT
+DOMAIN-SUFFIX,apoll.m.taobao.com,REJECT,extended-matching,pre-matching
+DOMAIN-SUFFIX,w.m.taobao.com,REJECT,extended-matching,pre-matching
+DOMAIN-SUFFIX,re.m.taobao.com,REJECT,extended-matching,pre-matching
+DOMAIN-SUFFIX,re.taobao.com,REJECT,extended-matching,pre-matching
+DOMAIN-SUFFIX,agoodm.m.taobao.com,REJECT,extended-matching,pre-matching
+DOMAIN-SUFFIX,ai.taobao.com,REJECT,extended-matching,pre-matching
+DOMAIN-SUFFIX,api.waptest.taobao.com,REJECT,extended-matching,pre-matching
+DOMAIN-SUFFIX,dsp.simba.taobao.com,REJECT,extended-matching,pre-matching
+DOMAIN-SUFFIX,fav.simba.taobao.com,REJECT,extended-matching,pre-matching
+DOMAIN-SUFFIX,m.simba.taobao.com,REJECT,extended-matching,pre-matching
+DOMAIN-SUFFIX,mclick.simba.taobao.com,REJECT,extended-matching,pre-matching
+DOMAIN-SUFFIX,redirect.simba.taobao.com,REJECT,extended-matching,pre-matching
+DOMAIN-SUFFIX,simba.m.taobao.com,REJECT,extended-matching,pre-matching
+DOMAIN-SUFFIX,srd.simba.taobao.com,REJECT,extended-matching,pre-matching
+DOMAIN-SUFFIX,temai.taobao.com,REJECT,extended-matching,pre-matching
+DOMAIN-SUFFIX,textlink.simba.taobao.com,REJECT,extended-matching,pre-matching
+DOMAIN-SUFFIX,unitacs.m.taobao.com,REJECT,extended-matching,pre-matching
+DOMAIN-SUFFIX,adashx4yt.m.taobao.com,REJECT,extended-matching,pre-matching
+DOMAIN-SUFFIX,tns.simba.taobao.com,REJECT,extended-matching,pre-matching
+DOMAIN-SUFFIX,click.mz.simba.taobao.com,REJECT,extended-matching,pre-matching
+DOMAIN-SUFFIX,click.simba.taobao.com,REJECT,extended-matching,pre-matching
+DOMAIN-SUFFIX,click.tz.simba.taobao.com,REJECT,extended-matching,pre-matching
+DOMAIN-SUFFIX,stat.simba.taobao.com,REJECT,extended-matching,pre-matching
+DOMAIN-SUFFIX,m-adash.m.taobao.com,REJECT,extended-matching,pre-matching
+DOMAIN-SUFFIX,adashbc.m.taobao.com,REJECT,extended-matching,pre-matching
+DOMAIN-SUFFIX,ut.taobao.com,REJECT,extended-matching,pre-matching
+DOMAIN-SUFFIX,tunion-api.m.taobao.com,REJECT,extended-matching,pre-matching
+DOMAIN-SUFFIX,acs4baichuan.m.taobao.com,REJECT,extended-matching,pre-matching
 
 [URL Rewrite]
-# > 淘宝 - TAOBAO
 ^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.etao\.noah\.query\/.+tao_splash - reject
 ^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alimama\.etao\.config\.query\/.+?etao_advertise - reject
 
 [Map Local]
-^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv data-type=text data="{}" status-code=200
 
-^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alimusic\.common\.mobileservice\.startinit data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alimusic\.common\.mobileservice\.startinit data-type=text data="{}" status-code=200
 
-^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.o2o\.ad\.gateway\.get data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.o2o\.ad\.gateway\.get data-type=text data="{}" status-code=200
 
-^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.taobao\.idle\.home\.welcome data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.taobao\.idle\.home\.welcome data-type=text data="{}" status-code=200
 
-^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.trip\.activity\.querytmsresources data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.trip\.activity\.querytmsresources data-type=text data="{}" status-code=200
 
-^https?:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(volvo\.secondfloor\.getconfig|wireless\.home\.newface\.awesome\.get) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https?:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(volvo\.secondfloor\.getconfig|wireless\.home\.newface\.awesome\.get) data-type=text data="{}" status-code=200
 
 [Script]
-taobao = type=http-response, pattern=^https?:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(cloudvideo\.video\.query|wireless\.home\.splash\.awesome\.get), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/taobao/taobao.js, requires-body=true, max-size=-1, timeout=60
+taobao = type=http-response, pattern=^https?:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(cloudvideo\.video\.query|wireless\.home\.splash\.awesome\.get), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/taobao/taobao.js, requires-body=true, max-size=0
 
-taobao = type=http-response, pattern=^https?:\/\/poplayer\.template\.alibaba\.com\/\w+\.json, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/taobao/taobao.js, requires-body=true, max-size=-1, timeout=60
+taobao = type=http-response, pattern=^https?:\/\/poplayer\.template\.alibaba\.com\/\w+\.json, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/taobao/taobao.js, requires-body=true, max-size=0
 
 [MITM]
 hostname = %APPEND% acs.m.taobao.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com

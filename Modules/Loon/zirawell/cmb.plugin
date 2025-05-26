@@ -4,15 +4,13 @@
 #!tag=Jacob
 
 [Rule]
-# > 招商银行 - CMBCHINA
 DOMAIN,mbads.paas.cmbchina.com,REJECT
 DOMAIN,yl.zh.cmbchina.com,REJECT
 
 [Rewrite]
-# > 招商银行 - CMBCHINA
-^https?:\/\/webappcfg\.paas\.cmbchina\.com\/v\d\/func\/getmarketconfig - reject-200
-^https?:\/\/webapp\.joyingtrip\.com\/cmbapp\/api\/hotel\/marketing\/adListNew - reject-dict
-^https?:\/\/mobile\.cmbchina\.com\/dcardmanage\/salary-welfare\/get-recommend mock-response-body data="undefined"
+^https?:\/\/webappcfg\.paas\.cmbchina\.com\/v\d\/func\/getmarketconfig mock-response-body data-type=text data="" status-code=200
+^https?:\/\/webapp\.joyingtrip\.com\/cmbapp\/api\/hotel\/marketing\/adListNew mock-response-body data-type=text data="{}" status-code=200
+^https?:\/\/mobile\.cmbchina\.com\/dcardmanage\/salary-welfare\/get-recommend mock-response-body data-type=file data="https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/cmb/cmb.json"
 
 [MITM]
 hostname = webappcfg.paas.cmbchina.com, webapp.joyingtrip.com, mobile.cmbchina.com

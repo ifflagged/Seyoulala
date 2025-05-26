@@ -1,0 +1,13 @@
+#!name=qyer
+#!desc=qyer
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
+#!tag=Jacob
+
+[Rewrite]
+^https?:\/\/open\.qyer\.com\/qyer\/config\/get - reject
+^https?:\/\/media\.qyer\.com\/ad\/ - reject
+^https?:\/\/open\.qyer\.com\/qyer\/startpage\/ mock-response-body data-type=text data="" status-code=200
+
+[MITM]
+hostname = open.qyer.com, media.qyer.com
+

@@ -3,11 +3,10 @@
 #!category=Jacob
 
 [Rule]
-# > 携程旅行 - CTRIP
-DOMAIN,sofire.baidu.com,REJECT
-DOMAIN-SUFFIX,cn-shanghai.nlb.aliyuncs.com,REJECT
-DOMAIN-SUFFIX,tcpgateway-ali.ctrip.com,REJECT
-DOMAIN-SUFFIX,volceapplog.com,REJECT
+DOMAIN,sofire.baidu.com,REJECT,extended-matching
+DOMAIN-SUFFIX,cn-shanghai.nlb.aliyuncs.com,REJECT,extended-matching
+DOMAIN-SUFFIX,tcpgateway-ali.ctrip.com,REJECT,extended-matching
+DOMAIN-SUFFIX,volceapplog.com,REJECT,extended-matching
 IP-CIDR,210.13.85.204/32,REJECT,no-resolve
 IP-CIDR,116.196.84.232/32,REJECT,no-resolve
 IP-CIDR,114.80.56.98/32,REJECT,no-resolve
@@ -25,6 +24,8 @@ IP-CIDR,162.14.137.43/32,REJECT,no-resolve
 ^https?:\/\/m\.ctrip\.com\/html5\/webresource\/js\/iscroll\.js$ - reject
 ^https?:\/\/ma-adx\.ctrip\.com\/_ma\.gif - reject
 ^https?:\/\/mbd\.baidu\.com\/newspage\/api\/getmobads\?page\=landingshare - reject
+# ⚠️域名[m.ctrip.com]可能存在无法MITM，请在需要使用时关闭MITM
+^https?:\/\/m\.ctrip\.com\/restapi\/soa\d\/\d+\/(?>tripAds|queryWeChatHotEvent) - reject-dict
 
 [MITM]
 hostname = %APPEND% m.ctrip.com, ma-adx.ctrip.com, mbd.baidu.com

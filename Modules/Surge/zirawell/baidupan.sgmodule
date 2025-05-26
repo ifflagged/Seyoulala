@@ -3,7 +3,6 @@
 #!category=Jacob
 
 [URL Rewrite]
-# > 百度网盘 - BAIDUPAN
 ^https?:\/\/pan\.baidu\.com\/rest\/\d\.\d\/pcs\/ad - reject
 ^https?:\/\/pan\.baidu\.com\/act\/v\d\/(bchannel|welfare)\/list - reject
 ^https?:\/\/pan\.baidu\.com\/act\/api\/activityentry - reject
@@ -19,10 +18,13 @@
 ^https?:\/\/fc-video\.cdn\.bcebos\.com - reject
 ^https?:\/\/rp\.hpplay\.cn\/logouts - reject
 
-[Script]
-baiduPan = type=http-response, pattern=^https?:\/\/pan\.baidu\.com\/api\/getsyscfg\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/baidupan/baiduPan.js, requires-body=true, max-size=-1, timeout=60
+[Map Local]
+^https?:\/\/pan\.baidu\.com\/buy\/ad\/ data-type=text data="" status-code=200
 
-baiduPan = type=http-response, pattern=^https?:\/\/pan\.baidu\.com\/rest\/\d\.\d\/membership\/user, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/baidupan/baiduPan.js, requires-body=true, max-size=-1, timeout=60
+[Script]
+baidupan = type=http-response, pattern=^https?:\/\/pan\.baidu\.com\/api\/getsyscfg\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/baidupan/baiduPan.js, requires-body=true, max-size=0
+
+baidupan = type=http-response, pattern=^https?:\/\/pan\.baidu\.com\/rest\/\d\.\d\/membership\/user, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/baidupan/baiduPan.js, requires-body=true, max-size=0
 
 [MITM]
 hostname = %APPEND% pan.baidu.com, ndstatic.cdn.bcebos.com, staticsns.cdn.bcebos.com, issuecdn.baidupcs.com, update.pan.baidu.com, fc-video.cdn.bcebos.com, rp.hpplay.cn

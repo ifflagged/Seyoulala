@@ -4,8 +4,7 @@
 #!tag=Jacob
 
 [Rewrite]
-# > 慢慢买 - MANMANBUY
-^https?:\/\/apapia-sqk\.manmanbuy\.com\/index_json\.ashx$ - reject-dict
+^https?:\/\/apapia-sqk\.manmanbuy\.com\/index_json\.ashx$ mock-response-body data-type=text data="{}" status-code=200
 
 [MITM]
 hostname = apapia-sqk.manmanbuy.com

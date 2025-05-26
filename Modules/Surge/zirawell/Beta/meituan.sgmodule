@@ -3,25 +3,23 @@
 #!category=Jacob
 
 [Rule]
-# > 美团 - MEITUAN
-IP-CIDR,103.37.155.60/32,REJECT,no-resolve
-DOMAIN,flowplus.meituan.net,REJECT
-DOMAIN,lx0.meituan.com,REJECT
-DOMAIN,hlx.meituan.com,REJECT
-DOMAIN-SUFFIX,lx.meituan.net,REJECT
-DOMAIN-SUFFIX,httpdns.meituan.com,REJECT
-DOMAIN-SUFFIX,analytics.meituan.net,REJECT
-DOMAIN-SUFFIX,meituan.xn,REJECT
-DOMAIN-SUFFIX,meituan.yoga,REJECT
-DOMAIN-SUFFIX,meituangov.cn,REJECT
-DOMAIN-SUFFIX,wmlog.meituan.com,REJECT
-DOMAIN-SUFFIX,ad.e.waimai.sankuai.com,REJECT
-DOMAIN-SUFFIX,mads.meituan.com,REJECT
-DOMAIN-SUFFIX,d.meituan.net,REJECT
-DOMAIN-KEYWORD,report.meituan,REJECT
+IP-CIDR,103.37.155.60/32,REJECT,no-resolve,pre-matching
+DOMAIN,flowplus.meituan.net,REJECT,extended-matching,pre-matching
+DOMAIN,lx0.meituan.com,REJECT,extended-matching,pre-matching
+DOMAIN,hlx.meituan.com,REJECT,extended-matching,pre-matching
+DOMAIN-SUFFIX,lx.meituan.net,REJECT,extended-matching,pre-matching
+DOMAIN-SUFFIX,httpdns.meituan.com,REJECT,extended-matching,pre-matching
+DOMAIN-SUFFIX,analytics.meituan.net,REJECT,extended-matching,pre-matching
+DOMAIN-SUFFIX,meituan.xn,REJECT,extended-matching,pre-matching
+DOMAIN-SUFFIX,meituan.yoga,REJECT,extended-matching,pre-matching
+DOMAIN-SUFFIX,meituangov.cn,REJECT,extended-matching,pre-matching
+DOMAIN-SUFFIX,wmlog.meituan.com,REJECT,extended-matching,pre-matching
+DOMAIN-SUFFIX,ad.e.waimai.sankuai.com,REJECT,extended-matching,pre-matching
+DOMAIN-SUFFIX,mads.meituan.com,REJECT,extended-matching,pre-matching
+DOMAIN-SUFFIX,d.meituan.net,REJECT,extended-matching,pre-matching
+DOMAIN-KEYWORD,report.meituan,REJECT,extended-matching,pre-matching
 
 [URL Rewrite]
-# > 美团 - MEITUAN
 ^https?:\/\/apimobile\.meituan\.com\/appupdate - reject
 ^https?:\/\/img\.meituan\.net\/bizad - reject
 ^https?:\/\/p\d\.meituan\.net\/(display|mmc)\/ - reject
@@ -47,11 +45,13 @@ DOMAIN-KEYWORD,report.meituan,REJECT
 
 ^https?:\/\/(s3plus|flowplus)\.meituan\.net\/v\d\/\w+\/linglong\/.+\.(?>gif|jpg|mp4) data-type=tiny-gif status-code=200
 
-^https?:\/\/portal-portm\.meituan\.com\/horn_ios data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https?:\/\/portal-portm\.meituan\.com\/horn_ios data-type=text data="{}" status-code=200
+
+^https?:\/\/web\.meituan\.com\/api\/miniprogram\/index\/aggregate data-type=file data="https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/meituan/mt_aggregate.json"
 
 [Script]
-meituan = type=http-response, pattern=^https?:\/\/p\d\.meituan\.net\/linglong\/, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/meituan/meituan.js, requires-body=true, max-size=-1, timeout=60
+meituan = type=http-response, pattern=^https?:\/\/p\d\.meituan\.net\/linglong\/, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/meituan/meituan.js, requires-body=true, max-size=0
 
 [MITM]
-hostname = %APPEND% apimobile.meituan.com, img.meituan.net, p*.meituan.net, www.meituan.com, s3plus.meituan.net, flowplus.meituan.net, portal-portm.meituan.com, sqt.meituan.com
+hostname = %APPEND% apimobile.meituan.com, img.meituan.net, p*.meituan.net, www.meituan.com, s3plus.meituan.net, flowplus.meituan.net, portal-portm.meituan.com, sqt.meituan.com, web.meituan.com
 

@@ -1,0 +1,14 @@
+#!name=xiachufang
+#!desc=xiachufang
+#!category=Jacob
+
+[Rule]
+DOMAIN-SUFFIX,baidu-union-js.xiachufang.com,REJECT,extended-matching
+DOMAIN-SUFFIX,baidu-union-pos.xiachufang.com,REJECT,extended-matching
+
+[URL Rewrite]
+^https?:\/\/api\.xiachufang\.com\/v\d\/ad/ - reject
+
+[MITM]
+hostname = %APPEND% api.xiachufang.com
+

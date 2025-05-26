@@ -1,0 +1,18 @@
+#!name=seeYouYiMa
+#!desc=seeYouYiMa
+#!category=Jacob
+
+[Rule]
+DOMAIN,ad.seeyouyima.com,REJECT,extended-matching,pre-matching
+
+[URL Rewrite]
+^https?:\/\/x\.seeyouyima\.com\/adx\/staticstics\? - reject
+^https?:\/\/axxd\.xmseeyouyima\.com\/ad - reject
+^https?:\/\/axxd\.xmseeyouyima\.com\/.*getad\? - reject
+
+[Map Local]
+^https?:\/\/wxproj\.seeyouyima\.com\/data\/today_tips data-type=text data="{}" status-code=200
+
+[MITM]
+hostname = %APPEND% x.seeyouyima.com, axxd.xmseeyouyima.com, wxproj.seeyouyima.com
+

@@ -6,10 +6,9 @@
 ^https?:\/\/client\.qunar\.com\/pitcher-proxy\?qrt=p_splashAd - reject
 
 [Map Local]
-# > 去哪儿 - QUNAR
-^https?:\/\/qde\.qunar\.com\/preload data-type=text data=" " status-code=200
+^https?:\/\/qde\.qunar\.com\/preload data-type=text data="" status-code=200
 
-^https?:\/\/homefront\.qunar\.com\/front\/splash\/ad data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https?:\/\/homefront\.qunar\.com\/front\/splash\/ad data-type=text data="{}" status-code=200
 
 ^https?:\/\/qimgs\.qunarzz\.com\/wpf_newmpic_001\/06c3a131f53cca9a78dd26272e3e4cb3 data-type=tiny-gif status-code=200
 

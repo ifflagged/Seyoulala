@@ -1,0 +1,14 @@
+#!name=baicizhan
+#!desc=baicizhan
+#!category=Jacob
+
+[Rule]
+DOMAIN,advertise.baicizhan.com,REJECT,extended-matching
+DOMAIN,advertise.baicizhan.org,REJECT,extended-matching
+
+[URL Rewrite]
+^https?:\/\/7n\.bczcdn\.com\/launchad\/ - reject-200
+
+[MITM]
+hostname = %APPEND% 7n.bczcdn.com
+

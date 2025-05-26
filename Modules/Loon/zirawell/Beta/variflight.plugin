@@ -4,13 +4,11 @@
 #!tag=Jacob
 
 [Rule]
-# > 飞常准 - VARIFLIGHT
 DOMAIN,adv-adlog.variflight.com,REJECT
 DOMAIN,adv-ads.variflight.com,REJECT
 DOMAIN,app-ad.variflight.com,REJECT
 
 [Rewrite]
-# > 飞常准 - VARIFLIGHT
 ^https?:\/\/api\.cdmcaac\.com\/ad - reject
 ^https?:\/\/app\.variflight\.com(\/v\d)?\/ad - reject
 ^https?:\/\/app\.variflight\.com\/flight\/getIosAdToken - reject

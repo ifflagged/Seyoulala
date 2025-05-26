@@ -4,7 +4,6 @@
 #!tag=Jacob
 
 [Rewrite]
-# > 极简汇率 - TRATAO
 ^https?:\/\/explorer\.tratao\.com\/api\/client\/v\d\/xtransfer\/ad\/ - reject
 
 [MITM]

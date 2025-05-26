@@ -1,0 +1,7 @@
+#!name=chsi
+#!desc=chsi
+#!category=Jacob
+
+[Rule]
+DOMAIN,push.chsi.com.cn,REJECT,extended-matching,pre-matching
+

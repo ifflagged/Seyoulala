@@ -4,7 +4,6 @@
 #!tag=Jacob
 
 [Rule]
-# > 支付宝 - ALIPAY
 DOMAIN,adgw.alipay.com,REJECT
 DOMAIN,amdc.alipay.com,REJECT
 DOMAIN,rtms.alipay.com,REJECT

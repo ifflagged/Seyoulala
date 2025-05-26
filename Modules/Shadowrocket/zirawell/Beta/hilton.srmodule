@@ -3,7 +3,6 @@
 #!category=Jacob
 
 [URL Rewrite]
-# > 希尔顿荣誉客会 - HILTON
 ^https?:\/\/wcprd\.hilton\.com\.cn\/app-middleware\/graphql\?type=splashAd - reject-200
 
 [MITM]

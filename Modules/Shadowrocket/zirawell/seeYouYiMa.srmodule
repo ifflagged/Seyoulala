@@ -1,0 +1,16 @@
+#!name=seeYouYiMa
+#!desc=seeYouYiMa
+#!category=Jacob
+
+[Rule]
+DOMAIN,ad.seeyouyima.com,REJECT,extended-matching
+
+[URL Rewrite]
+^https?:\/\/x\.seeyouyima\.com\/adx\/staticstics\? - reject
+^https?:\/\/axxd\.xmseeyouyima\.com\/ad - reject
+^https?:\/\/axxd\.xmseeyouyima\.com\/.*getad\? - reject
+^https?:\/\/wxproj\.seeyouyima\.com\/data\/today_tips - reject-dict
+
+[MITM]
+hostname = %APPEND% x.seeyouyima.com, axxd.xmseeyouyima.com, wxproj.seeyouyima.com
+

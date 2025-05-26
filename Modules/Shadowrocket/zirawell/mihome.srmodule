@@ -3,11 +3,9 @@
 #!category=Jacob
 
 [Rule]
-# > 米家 - MIHOME
-DOMAIN,sdkconfig.ad.xiaomi.com,REJECT
+DOMAIN,sdkconfig.ad.xiaomi.com,REJECT,extended-matching
 
 [URL Rewrite]
-# > 米家 - MIHOME
 ^https?:\/\/home\.mi\.com\/cgi-op\/api\/v\d\/recommendation - reject
 
 [MITM]

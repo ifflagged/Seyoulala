@@ -1,0 +1,10 @@
+#!name=hellobike
+#!desc=hellobike
+#!category=Jacob
+
+[URL Rewrite]
+^https?:\/\/api\.hellobike\.com\/api\?adx - reject-dict
+
+[MITM]
+hostname = %APPEND% api.hellobike.com
+

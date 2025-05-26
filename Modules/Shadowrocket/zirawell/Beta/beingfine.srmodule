@@ -3,7 +3,6 @@
 #!category=Jacob
 
 [URL Rewrite]
-# > 不背单词 - BEINGFINE
 ^https?:\/\/(img|hwimg)\.beingfine\.cn\/(?>float_button|card) - reject-dict
 ^https?:\/\/hwimg\.beingfine\.cn\/(?>card|Channel) - reject-dict
 ^https?:\/\/learnywhere\.cn\/api\/activity\/23\/423dsj\/inapp\/bb\/promote - reject-dict

@@ -4,7 +4,6 @@
 #!tag=Jacob
 
 [Rule]
-# > 滴滴出行 - DIDITAXI
 DOMAIN,adtrack.xiaojukeji.com,REJECT
 IP-CIDR,123.207.209.39/32,REJECT,no-resolve
 IP-CIDR,123.207.209.60/32,REJECT,no-resolve
@@ -12,34 +11,36 @@ IP-CIDR,139.199.240.12/32,REJECT,no-resolve
 IP-CIDR,139.199.240.15/32,REJECT,no-resolve
 
 [Rewrite]
-# > 滴滴出行 - DIDITAXI
-^https?:\/\/hd\.xiaojukeji\.com\/d - reject-dict
-^https?:\/\/ct\.xiaojukeji\.com\/agent\/v\d\/feeds - reject-dict
-^https?:\/\/res\.xiaojukeji\.com\/resapi\/activity\/(?>m|xp)get - reject-dict
-^https?:\/\/as\.xiaojukeji\.com\/ep\/as\/toggles - reject-dict
-^https?:\/\/freight\.xiaojukeji\.com\/gateway(?!\?api=freight\.p\.personal\.center) - reject-dict
 ^https?:\/\/ut\.xiaojukeji\.com\/ut\/kappa\/api\/owner\/index\/dialog - reject
-^https?:\/\/api\.udache\.com\/gulfstream\/confucius\/api\/privacy\/app\/popList - reject-dict
-^https?:\/\/conf\.diditaxi\.com\.cn\/dynamic\/conf - reject-dict
-^https?:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/other\/fast - reject-dict
-# > 滴滴青桔 - DIDIQJ
-^https?:\/\/pt-starimg\.didistatic\.com\/static\/starimg\/node\/.*.(?>jpg|png|gif) - reject-200
-^https?:\/\/omgup\d?\.xiaojukeji\.com\/api - reject-200
-# > 滴滴出行<微信小程序> - DIDI
 ^https?:\/\/capis(-\d)?\.didapinche\.com\/adbase - reject
-^https?:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/core - reject-dict
+^https?:\/\/hd\.xiaojukeji\.com\/d mock-response-body data-type=text data="{}" status-code=200
+^https?:\/\/ct\.xiaojukeji\.com\/agent\/v\d\/feeds mock-response-body data-type=text data="{}" status-code=200
+^https?:\/\/res\.xiaojukeji\.com\/resapi\/activity\/(?>m|xp)get mock-response-body data-type=text data="{}" status-code=200
+^https?:\/\/as\.xiaojukeji\.com\/ep\/as\/toggles mock-response-body data-type=text data="{}" status-code=200
+^https?:\/\/freight\.xiaojukeji\.com\/gateway(?!\?api=freight\.p\.personal\.center) mock-response-body data-type=text data="{}" status-code=200
+^https?:\/\/api\.udache\.com\/gulfstream\/confucius\/api\/privacy\/app\/popList mock-response-body data-type=text data="{}" status-code=200
+^https?:\/\/conf\.diditaxi\.com\.cn\/dynamic\/conf mock-response-body data-type=text data="{}" status-code=200
+^https?:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/other\/fast mock-response-body data-type=text data="{}" status-code=200
+^https?:\/\/pt-starimg\.didistatic\.com\/static\/starimg\/node\/.*.(?>jpg|png|gif) mock-response-body data-type=text data="" status-code=200
+^https?:\/\/omgup\d?\.xiaojukeji\.com\/api mock-response-body data-type=text data="" status-code=200
+^https?:\/\/htwkop\.xiaojukeji\.com\/gateway\?api=cms\.htw\.delivery mock-response-body data-type=text data="{}" status-code=200
+^https?:\/\/htwkop\.xiaojukeji\.com\/gateway\?api=hm\.fa\.(?>combineHomepageInfo|mallRecommend) mock-response-body data-type=text data="{}" status-code=200
+^https?:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/core mock-response-body data-type=text data="{}" status-code=200
+
+[Body Rewrite]
+http-response ^https?:\/\/ut\.xiaojukeji\.com\/ut\/kappa\/api\/owner\/index banner_items random_body
 
 [Script]
-http-response ^https?:\/\/ut\.xiaojukeji\.com\/ut\/kappa\/api\/owner\/index script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/didi/replace-body.js, requires-body=true, timeout=30, tag=replaceBody, argument=banner_items-%3Erandom_body
+http-response ^https?:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/core script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/didi/didi.js, requires-body=true, tag=diditaxi
 
-http-response ^https?:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/core script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/didi/didi.js, requires-body=true, timeout=60, tag=didi
+http-response ^https?:\/\/conf\.diditaxi\.com\.cn\/ota\/na\/yuantu\/infoList script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/didi/didi.js, requires-body=true, tag=diditaxi
 
-http-response ^https?:\/\/conf\.diditaxi\.com\.cn\/ota\/na\/yuantu\/infoList script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/didi/didi.js, requires-body=true, timeout=60, tag=didi
+http-response ^https?:\/\/common\.diditaxi\.com\.cn\/common\/v\d\/usercenter\/me script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/didi/didi.js, requires-body=true, tag=diditaxi
 
-http-response ^https?:\/\/common\.diditaxi\.com\.cn\/common\/v\d\/usercenter\/me script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/didi/didi.js, requires-body=true, timeout=60, tag=didi
+http-response ^https?:\/\/api\.udache\.com\/gulfstream\/pre-sale\/v\d\/other\/pGetSceneList script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/didi/didi.js, requires-body=true, tag=diditaxi
 
-http-response ^https?:\/\/api\.udache\.com\/gulfstream\/pre-sale\/v\d\/other\/pGetSceneList script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/didi/didi.js, requires-body=true, timeout=60, tag=didi
+http-response ^https?:\/\/htwkop\.xiaojukeji\.com\/gateway\?api=hm\.fa\.homeConfig script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/didi/wechatApplet.js, requires-body=true, tag=didiqj
 
 [MITM]
-hostname = hd.xiaojukeji.com, ct.xiaojukeji.com, res.xiaojukeji.com, as.xiaojukeji.com, freight.xiaojukeji.com, ut.xiaojukeji.com, api.udache.com, conf.diditaxi.com.cn, common.diditaxi.com.cn, pt-starimg.didistatic.com, omgup*.xiaojukeji.com, capis*.didapinche.com
+hostname = hd.xiaojukeji.com, ct.xiaojukeji.com, res.xiaojukeji.com, as.xiaojukeji.com, freight.xiaojukeji.com, ut.xiaojukeji.com, api.udache.com, conf.diditaxi.com.cn, common.diditaxi.com.cn, pt-starimg.didistatic.com, omgup*.xiaojukeji.com, htwkop.xiaojukeji.com, capis*.didapinche.com
 

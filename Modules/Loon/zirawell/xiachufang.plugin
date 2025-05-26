@@ -1,0 +1,15 @@
+#!name=xiachufang
+#!desc=xiachufang
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
+#!tag=Jacob
+
+[Rule]
+DOMAIN-SUFFIX,baidu-union-js.xiachufang.com,REJECT
+DOMAIN-SUFFIX,baidu-union-pos.xiachufang.com,REJECT
+
+[Rewrite]
+^https?:\/\/api\.xiachufang\.com\/v\d\/ad/ - reject
+
+[MITM]
+hostname = api.xiachufang.com
+

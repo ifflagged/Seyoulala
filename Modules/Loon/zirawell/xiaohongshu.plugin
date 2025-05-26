@@ -4,7 +4,6 @@
 #!tag=Jacob
 
 [Rule]
-# > 小红书 - XIAOHONGSHU
 DOMAIN,ads-img-qc.xhscdn.com,REJECT
 DOMAIN,ads-video-al.xhscdn.com,REJECT
 DOMAIN,ads-video-qc.xhscdn.com,REJECT
@@ -12,45 +11,45 @@ DOMAIN,t-ads.xiaohongshu.com,REJECT
 
 [Rewrite]
 # 笔记创作推荐
-^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/guide\/user_banner - reject-dict
+^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/guide\/user_banner mock-response-body data-type=text data="{}" status-code=200
 # 惊喜弹窗
-^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/surprisebox\/(?>get_style|open|submit_action) - reject-dict
-^https?:\/\/www\.xiaohongshu\.com\/api\/marketing\/box\/trigger\? - reject-dict
+^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/surprisebox\/(?>get_style|open|submit_action) mock-response-body data-type=text data="{}" status-code=200
+^https?:\/\/www\.xiaohongshu\.com\/api\/marketing\/box\/trigger\? mock-response-body data-type=text data="{}" status-code=200
 # 信息流
-^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/note\/guide\? - reject-dict
-^https?:\/\/www\.xiaohongshu\.com\/api\/sns\/v\d\/(ads\/resource|hey\/\w+\/hey_gallery) - reject-dict
+^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/note\/guide\? mock-response-body data-type=text data="{}" status-code=200
+^https?:\/\/www\.xiaohongshu\.com\/api\/sns\/v\d\/(ads\/resource|hey\/\w+\/hey_gallery) mock-response-body data-type=text data="{}" status-code=200
 # 评论区图片水印
-^https?:\/\/ci\.xiaohongshu\.com\/system_config\/watermark - reject-img
+^https?:\/\/ci\.xiaohongshu\.com\/system_config\/watermark mock-response-body data-type=tiny-gif data="" status-code=200
 
 [Script]
 # 详情页小部件
-http-response ^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/note\/widgets script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/xiaohongshu/xiaohongshu.js, requires-body=true, timeout=60, tag=xiaohongshu
+http-response ^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/note\/widgets script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/xiaohongshu/xiaohongshu.js, requires-body=true, tag=xiaohongshu
 
 # 关注页感兴趣的人
-http-response ^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/user\/followings\/followfeed script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/xiaohongshu/xiaohongshu.js, requires-body=true, timeout=60, tag=xiaohongshu
+http-response ^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/user\/followings\/followfeed script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/xiaohongshu/xiaohongshu.js, requires-body=true, tag=xiaohongshu
 
 # 搜索页
-http-response ^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/search\/(?>banner|hot)_list script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/xiaohongshu/xiaohongshu.js, requires-body=true, timeout=60, tag=xiaohongshu
+http-response ^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/search\/(?>banner|hot)_list script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/xiaohongshu/xiaohongshu.js, requires-body=true, tag=xiaohongshu
 
-http-response ^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/search\/(?>hint|trending)\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/xiaohongshu/xiaohongshu.js, requires-body=true, timeout=60, tag=xiaohongshu
+http-response ^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/search\/(?>hint|trending)\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/xiaohongshu/xiaohongshu.js, requires-body=true, tag=xiaohongshu
 
-http-response ^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/search\/notes\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/xiaohongshu/xiaohongshu.js, requires-body=true, timeout=60, tag=xiaohongshu
+http-response ^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/search\/notes\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/xiaohongshu/xiaohongshu.js, requires-body=true, tag=xiaohongshu
 
 # 开屏广告
-http-response ^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/system_service\/config\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/xiaohongshu/xiaohongshu.js, requires-body=true, timeout=60, tag=xiaohongshu
+http-response ^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/system_service\/config\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/xiaohongshu/xiaohongshu.js, requires-body=true, tag=xiaohongshu
 
-http-response ^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/system_service\/splash_config script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/xiaohongshu/xiaohongshu.js, requires-body=true, timeout=60, tag=xiaohongshu
+http-response ^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/system_service\/splash_config script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/xiaohongshu/xiaohongshu.js, requires-body=true, tag=xiaohongshu
 
 # 图片水印,视频水印
-http-response ^https?:\/\/(?>edith|rec|www)\.xiaohongshu\.com\/api\/sns\/v\d\/note\/(?>imagefeed|feed|videofeed|(live_photo|video)\/save) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/xiaohongshu/xiaohongshu.js, requires-body=true, timeout=60, tag=xiaohongshu
+http-response ^https?:\/\/(?>edith|rec|www)\.xiaohongshu\.com\/api\/sns\/v\d\/note\/(?>imagefeed|feed|videofeed|(live_photo|video)\/save) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/xiaohongshu/xiaohongshu.js, requires-body=true, tag=xiaohongshu
 
-http-response ^https?:\/\/(?>edith|rec|www)\.xiaohongshu\.com\/api\/sns\/v\d\/(?>followfeed|homefeed)\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/xiaohongshu/xiaohongshu.js, requires-body=true, timeout=60, tag=xiaohongshu
+http-response ^https?:\/\/(?>edith|rec|www)\.xiaohongshu\.com\/api\/sns\/v\d\/(?>followfeed|homefeed)\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/xiaohongshu/xiaohongshu.js, requires-body=true, tag=xiaohongshu
 
-http-response ^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/recommend\/user\/follow_recommend\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/xiaohongshu/xiaohongshu.js, requires-body=true, timeout=60, tag=xiaohongshu
+http-response ^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/recommend\/user\/follow_recommend\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/xiaohongshu/xiaohongshu.js, requires-body=true, tag=xiaohongshu
 
-http-response ^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/note\/comment\/(?>list|sub_comments)\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/xiaohongshu/xiaohongshu.js, requires-body=true, timeout=60, tag=xiaohongshu
+http-response ^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/note\/comment\/(?>list|sub_comments)\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/xiaohongshu/xiaohongshu.js, requires-body=true, tag=xiaohongshu
 
-http-response ^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/interaction\/comment\/video\/download\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/xiaohongshu/xiaohongshu.js, requires-body=true, timeout=60, tag=xiaohongshu
+http-response ^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/interaction\/comment\/video\/download\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/xiaohongshu/xiaohongshu.js, requires-body=true, tag=xiaohongshu
 
 [MITM]
 hostname = edith.xiaohongshu.com, www.xiaohongshu.com, rec.xiaohongshu.com, ci.xiaohongshu.com

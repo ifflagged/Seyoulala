@@ -4,9 +4,8 @@
 #!tag=Jacob
 
 [Rewrite]
-# > 高铁管家 - GTGJ
 ^https?:\/\/[a-z]*\.rsscc\.com\/[a-z]*\/adver - reject
-^https?:\/\/cdn\.133\.cn\/md\/gtgj\/.+\/.+720x1280 - reject-dict
+^https?:\/\/cdn\.133\.cn\/md\/gtgj\/.+\/.+720x1280 mock-response-body data-type=text data="{}" status-code=200
 
 [MITM]
 hostname = *.rsscc.com, cdn.133.cn

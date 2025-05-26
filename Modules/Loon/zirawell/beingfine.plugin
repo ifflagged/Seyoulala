@@ -4,10 +4,9 @@
 #!tag=Jacob
 
 [Rewrite]
-# > 不背单词 - BEINGFINE
-^https?:\/\/(img|hwimg)\.beingfine\.cn\/(?>float_button|card) - reject-dict
-^https?:\/\/hwimg\.beingfine\.cn\/(?>card|Channel) - reject-dict
-^https?:\/\/learnywhere\.cn\/api\/activity\/23\/423dsj\/inapp\/bb\/promote - reject-dict
+^https?:\/\/(img|hwimg)\.beingfine\.cn\/(?>float_button|card) mock-response-body data-type=text data="{}" status-code=200
+^https?:\/\/hwimg\.beingfine\.cn\/(?>card|Channel) mock-response-body data-type=text data="{}" status-code=200
+^https?:\/\/learnywhere\.cn\/api\/activity\/23\/423dsj\/inapp\/bb\/promote mock-response-body data-type=text data="{}" status-code=200
 
 [MITM]
 hostname = hwimg.beingfine.cn, learnywhere.cn

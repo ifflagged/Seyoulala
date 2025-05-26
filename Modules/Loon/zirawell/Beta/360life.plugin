@@ -1,0 +1,14 @@
+#!name=360life
+#!desc=360life
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
+#!tag=Jacob
+
+[Rule]
+DOMAIN,ad.iot.360.cn,REJECT
+
+[Rewrite]
+^https?:\/\/app\.home\.360\.cn\/v\d\/config\/custom_config - reject
+
+[MITM]
+hostname = app.home.360.cn
+

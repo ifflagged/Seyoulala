@@ -3,11 +3,10 @@
 #!category=Jacob
 
 [URL Rewrite]
-# > 得物 - DEWU
 ^https?:\/\/app\.dewu\.com\/api\/v\d\/app\/advertisement(?!\/new\/activity\/receiveCoupon) - reject
 
 [Map Local]
-^https?:\/\/cdn\.poizon\.com\/node-common\/.*.jpg data-type=text data=" " status-code=200
+^https?:\/\/cdn\.poizon\.com\/node-common\/.*.jpg data-type=text data="" status-code=200
 
 [MITM]
 hostname = %APPEND% app.dewu.com, cdn.poizon.com

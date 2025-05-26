@@ -1,0 +1,9 @@
+#!name=outlook
+#!desc=outlook
+#!category=Jacob
+
+[Rule]
+DOMAIN,acdn.adnxs.com,REJECT,extended-matching,pre-matching
+DOMAIN,mediation.adnxs.com,REJECT,extended-matching,pre-matching
+DOMAIN,sin3-ib.adnxs.com,REJECT,extended-matching,pre-matching
+

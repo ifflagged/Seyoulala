@@ -2,8 +2,15 @@
 #!desc=12123
 #!category=Jacob
 
+[Rule]
+DOMAIN-SUFFIX,v3.fstats.xyz,REJECT,extended-matching
+DOMAIN-SUFFIX,wss.haoyundmn.com,REJECT,extended-matching
+DOMAIN-SUFFIX,new.xiongzhangad.com,REJECT,extended-matching
+DOMAIN-SUFFIX,alexametrics.com,REJECT,extended-matching
+DOMAIN-KEYWORD,in-page-push,REJECT,extended-matching
+
 [URL Rewrite]
-# > 交管12123 - 12123
+^https?:\/\/gab\.122\.gov\.cn\/eapp\/m\/sysquery\/adver - reject
 ^https?:\/\/gab\.122\.gov\.cn\/eapp\/m\/sysquery\/adver$ - reject
 
 [MITM]

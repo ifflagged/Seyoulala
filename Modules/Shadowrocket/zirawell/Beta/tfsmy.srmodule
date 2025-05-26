@@ -3,11 +3,10 @@
 #!category=Jacob
 
 [URL Rewrite]
-# > 天府市民云 - TFSMY
 ^https?:\/\/tfsmy\.chengdu\.gov\.cn\/api\/v\d\/core\/version - reject-200
 
-[Script]
-replaceBody = type=http-response, pattern=^https?:\/\/tft-app\.cdtft\.cn\/gateway-customer\/tftapp\/tft-ams\/api\/appAd, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/tfsmy/replace-body.js, requires-body=true, max-size=-1, timeout=30, argument=officialAdvertResultVo-%3Erandom-response
+[Body Rewrite]
+http-response ^https?:\/\/tft-app\.cdtft\.cn\/gateway-customer\/tftapp\/tft-ams\/api\/appAd officialAdvertResultVo random-response
 
 [MITM]
 hostname = %APPEND% tfsmy.chengdu.gov.cn, tft-app.cdtft.cn

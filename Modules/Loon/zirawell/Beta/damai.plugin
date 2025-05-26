@@ -1,0 +1,12 @@
+#!name=damai
+#!desc=damai
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
+#!tag=Jacob
+
+[Rewrite]
+^https?:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch\?appkey=23782110 - reject
+^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.damai\.wireless\.home\.welcome mock-response-body data-type=text data="" status-code=200
+
+[MITM]
+hostname = acs.m.taobao.com, amdc.m.taobao.com
+

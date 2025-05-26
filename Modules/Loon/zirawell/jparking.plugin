@@ -1,0 +1,14 @@
+#!name=jparking
+#!desc=jparking
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
+#!tag=Jacob
+
+[Rewrite]
+^https?:\/\/e\.jparking\.cn\/abTest-gateway\/abTest-api - reject
+^https?:\/\/sytgate\.jslife\.com\.cn\/base-gateway\/config\/queryAppNewVersion - reject
+^https?:\/\/sytgate\.jslife\.com\.cn\/data-report-gateway\/syt-data-report\/receive - reject
+^https?:\/\/e\.jparking\.cn\/ad-api mock-response-body data-type=text data="{}" status-code=200
+
+[MITM]
+hostname = e.jparking.cn, sytgate.jslife.com.cn
+

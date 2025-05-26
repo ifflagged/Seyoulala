@@ -4,8 +4,11 @@
 #!tag=Jacob
 
 [Rule]
-# > 美图秀秀 - MEITU
 DOMAIN,adui.tg.meitu.com,REJECT
-# > 美图秀秀 - MEITU
-DOMAIN,adui.tg.meitu.com,REJECT
+
+[Rewrite]
+^https?:\/\/mea\.meitudata\.com\/kaiping - reject
+
+[MITM]
+hostname = mea.meitudata.com
 

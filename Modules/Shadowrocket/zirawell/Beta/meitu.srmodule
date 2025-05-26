@@ -3,8 +3,11 @@
 #!category=Jacob
 
 [Rule]
-# > 美图秀秀 - MEITU
-DOMAIN,adui.tg.meitu.com,REJECT
-# > 美图秀秀 - MEITU
-DOMAIN,adui.tg.meitu.com,REJECT
+DOMAIN,adui.tg.meitu.com,REJECT,extended-matching
+
+[URL Rewrite]
+^https?:\/\/mea\.meitudata\.com\/kaiping - reject
+
+[MITM]
+hostname = %APPEND% mea.meitudata.com
 

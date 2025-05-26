@@ -3,7 +3,6 @@
 #!category=Jacob
 
 [Rule]
-# > 美颜相机 - BEAUTYCAM
-DOMAIN,aaid.uyunad.com,REJECT
-DOMAIN,adui.tg.meitu.com,REJECT
+DOMAIN,aaid.uyunad.com,REJECT,extended-matching,pre-matching
+DOMAIN,adui.tg.meitu.com,REJECT,extended-matching,pre-matching
 

@@ -3,7 +3,6 @@
 #!category=Jacob
 
 [URL Rewrite]
-# > 易捷加油 - EJOY
 ^https?:\/\/a\.sinopecsales\.com\/app\/cms - reject-dict
 ^https?:\/\/ocrifs\.ejoy\.sinopec\.com\/advertitfs\/advert\/findAdvertInfo - reject-200
 

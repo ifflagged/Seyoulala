@@ -1,0 +1,11 @@
+#!name=manner
+#!desc=manner
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
+#!tag=Jacob
+
+[Script]
+http-response ^https?:\/\/triangle\.wearemanner\.com\/mp-api\/v\d\/ads script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/manner/manner.js, requires-body=true, tag=manner
+
+[MITM]
+hostname = triangle.wearemanner.com
+

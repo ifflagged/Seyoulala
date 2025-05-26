@@ -3,8 +3,7 @@
 #!category=Jacob
 
 [Map Local]
-# > 天府通 - TFT
-^https?:\/\/ams-cdn\.cdtft\.cn\/prod\/tft-ams data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https?:\/\/ams-cdn\.cdtft\.cn\/prod\/tft-ams data-type=text data="{}" status-code=200
 
 [MITM]
 hostname = %APPEND% ams-cdn.cdtft.cn

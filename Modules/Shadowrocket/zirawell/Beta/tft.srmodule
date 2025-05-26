@@ -3,7 +3,6 @@
 #!category=Jacob
 
 [URL Rewrite]
-# > 天府通 - TFT
 ^https?:\/\/ams-cdn\.cdtft\.cn\/prod\/tft-ams - reject-dict
 
 [MITM]

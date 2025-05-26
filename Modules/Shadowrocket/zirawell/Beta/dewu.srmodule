@@ -3,7 +3,6 @@
 #!category=Jacob
 
 [URL Rewrite]
-# > 得物 - DEWU
 ^https?:\/\/app\.dewu\.com\/api\/v\d\/app\/advertisement(?!\/new\/activity\/receiveCoupon) - reject
 ^https?:\/\/cdn\.poizon\.com\/node-common\/.*.jpg - reject-200
 

@@ -3,14 +3,12 @@
 #!category=Jacob
 
 [Rule]
-# > 云闪付 - 95516
-DOMAIN,switch.cup.com.cn,REJECT
-DOMAIN,ads.cup.com.cn,REJECT
-DOMAIN,analytics.95516.com,REJECT
-DOMAIN,tysdk.95516.com,REJECT
+DOMAIN,switch.cup.com.cn,REJECT,extended-matching
+DOMAIN,ads.cup.com.cn,REJECT,extended-matching
+DOMAIN,analytics.95516.com,REJECT,extended-matching
+DOMAIN,tysdk.95516.com,REJECT,extended-matching
 
 [URL Rewrite]
-# > 云闪付 - 95516
 ^https?:\/\/wallet\.95516\.com(:10533)?\/s\/wl\/icon\/large\/1 - reject
 
 [MITM]

@@ -3,12 +3,10 @@
 #!category=Jacob
 
 [Rule]
-# > 招商银行 - CMBCHINA
-DOMAIN,mbads.paas.cmbchina.com,REJECT
-DOMAIN,yl.zh.cmbchina.com,REJECT
+DOMAIN,mbads.paas.cmbchina.com,REJECT,extended-matching
+DOMAIN,yl.zh.cmbchina.com,REJECT,extended-matching
 
 [URL Rewrite]
-# > 招商银行 - CMBCHINA
 ^https?:\/\/webappcfg\.paas\.cmbchina\.com\/v\d\/func\/getmarketconfig - reject-200
 ^https?:\/\/webapp\.joyingtrip\.com\/cmbapp\/api\/hotel\/marketing\/adListNew - reject-dict
 

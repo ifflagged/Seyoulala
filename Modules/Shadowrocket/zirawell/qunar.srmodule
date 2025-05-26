@@ -3,11 +3,10 @@
 #!category=Jacob
 
 [URL Rewrite]
-# > 去哪儿 - QUNAR
+^https?:\/\/client\.qunar\.com\/pitcher-proxy\?qrt=p_splashAd - reject
 ^https?:\/\/qde\.qunar\.com\/preload - reject-200
 ^https?:\/\/homefront\.qunar\.com\/front\/splash\/ad - reject-dict
-^https?:\/\/client\.qunar\.com\/pitcher-proxy\?qrt=p_splashAd - reject
-^https?:\/\/qimgs\.qunarzz\.com\/wpf_newmpic_001\/06c3a131f53cca9a78dd26272e3e4cb3 - reject-img
+^https?:\/\/qimgs\.qunarzz\.com\/wpf_newmpic_001\/06c3a131f53cca9a78dd26272e3e4cb3 - reject-200
 
 [MITM]
 hostname = %APPEND% qde.qunar.com, homefront.qunar.com, client.qunar.com, qimgs.qunarzz.com

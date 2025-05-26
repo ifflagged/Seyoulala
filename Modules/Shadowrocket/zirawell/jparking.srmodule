@@ -1,0 +1,13 @@
+#!name=jparking
+#!desc=jparking
+#!category=Jacob
+
+[URL Rewrite]
+^https?:\/\/e\.jparking\.cn\/abTest-gateway\/abTest-api - reject
+^https?:\/\/sytgate\.jslife\.com\.cn\/base-gateway\/config\/queryAppNewVersion - reject
+^https?:\/\/sytgate\.jslife\.com\.cn\/data-report-gateway\/syt-data-report\/receive - reject
+^https?:\/\/e\.jparking\.cn\/ad-api - reject-dict
+
+[MITM]
+hostname = %APPEND% e.jparking.cn, sytgate.jslife.com.cn
+

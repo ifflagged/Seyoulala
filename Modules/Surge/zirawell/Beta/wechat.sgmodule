@@ -1,0 +1,18 @@
+#!name=wechat
+#!desc=wechat
+#!category=Jacob
+
+[Rule]
+DOMAIN,badjs.weixinbridge.com,REJECT,extended-matching,pre-matching
+DOMAIN,dns.weixin.qq.com.cn,REJECT,extended-matching,pre-matching
+DOMAIN-SUFFIX,wxs.qq.com,REJECT,extended-matching,pre-matching
+
+[Map Local]
+^https?:\/\/mp\.weixin\.qq\.com\/mp\/(?>ad_|advertisement|getappmsgad|cps_product_info|masonryfeed|relatedarticle|relatedsearchword) data-type=text data="{}" status-code=200
+
+[Script]
+wechat = type=http-response, pattern=^https?:\/\/(weixin110\.qq|security.wechat)\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/wechat/Wechat_Unblock_URL.js, requires-body=true, max-size=0
+
+[MITM]
+hostname = %APPEND% mp.weixin.qq.com, weixin110.qq.com, security.wechat.com
+
