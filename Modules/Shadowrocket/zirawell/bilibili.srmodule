@@ -7,7 +7,7 @@ DOMAIN,ptom.caohua.com,REJECT,extended-matching
 DOMAIN,tracking.leiting.com,REJECT,extended-matching
 DOMAIN,ads.games.laohu.com,REJECT,extended-matching
 DOMAIN,shark-tracer.netease.com,REJECT,extended-matching
-IP-CIDR,203.107.1.1/24,REJECT
+IP-CIDR,203.107.1.1/24,REJECT,no-resolve
 DOMAIN-KEYWORD,api.sobot.com,REJECT,extended-matching
 DOMAIN-SUFFIX,cm.ad.bilibili.com,REJECT,extended-matching
 DOMAIN-SUFFIX,cm.adcommon.bilibili.com,REJECT,extended-matching

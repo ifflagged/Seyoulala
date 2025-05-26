@@ -10,9 +10,9 @@ DOMAIN,safebrowsing.googleapis.com,REJECT
 DOMAIN,safebrowsing.urlsec.qq.com,REJECT
 DOMAIN-SUFFIX,safebrowsing.apple,REJECT
 DOMAIN-SUFFIX,u3.ucweb.com,REJECT
-IP-CIDR,119.29.29.98/32,REJECT
-IP-CIDR,119.29.29.99/32,REJECT
-IP-CIDR,81.71.61.216/32,REJECT
+IP-CIDR,119.29.29.98/32,REJECT,no-resolve
+IP-CIDR,119.29.29.99/32,REJECT,no-resolve
+IP-CIDR,81.71.61.216/32,REJECT,no-resolve
 DOMAIN,geo2.adobe.com,REJECT
 
 [Rewrite]
