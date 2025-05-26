@@ -4,7 +4,6 @@
 #!tag=Jacob
 
 [Rule]
-# > 京东 - JD
 DOMAIN,dns.jd.com,REJECT
 DOMAIN,waapdg.jd.com,REJECT
 DOMAIN,dsp-x.jd.com,REJECT
@@ -27,17 +26,22 @@ IP-CIDR6,2402:db40:5100:1011::5/128,REJECT,no-resolve
 [Rewrite]
 # 屏蔽强制更新
 ^https?:\/\/api\.m\.jd\.com\/openUpgrade - reject
-^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(?>searchBoxWord|xview2Config|stationPullService|getWidget|widget|hybrid|jdDiscoveryRedPoint|queryMaterialAdverts) - reject-200
 ^https?:\/\/\w{32}\.jddebug\.com\/diagnose\? - reject
-^https?:\/\/(bdsp-x|dsp-x)\.jd\.com\/adx\/ - reject-200
 ^https?:\/\/storage\.360buyimg\.com\/app\.m\.jd\.com\/lottie - reject
 ^https?:\/\/storage\.360buyimg\.com\/dynamicConfig\/binary - reject
 ^https?:\/\/img\d+\.360buyimg\.com\/jddjadvertise\/ - reject
-# > 京东购物<微信小程序> - JD
-^https?:\/\/api\.m\.jd\.com\/\?loginType=11 - reject-dict
+^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(?>searchBoxWord|xview2Config|stationPullService|getWidget|widget|hybrid|jdDiscoveryRedPoint|queryMaterialAdverts) mock-response-body data-type=text data="" status-code=200
+^https?:\/\/(bdsp-x|dsp-x)\.jd\.com\/adx\/ mock-response-body data-type=text data="" status-code=200
+^https?:\/\/api\.m\.jd\.com\/\?loginType=11 mock-response-body data-type=text data="{}" status-code=200
+
+[Body Rewrite]
+http-response ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=lite_advertising jdLiteAdvertisingVO random_body
+http-response ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=lite_SmartPush pushData random_body
 
 [Script]
-http-response ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(?>deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/jd/jd.js, requires-body=true, timeout=60, tag=jd
+http-response ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(?>deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/jd/jd.js, requires-body=true, tag=jd
+
+http-response ^https?:\/\/api\.m\.jd\.com\/api\?functionId=delivery_show script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/jd/jingxi.js, requires-body=true, tag=jx
 
 [MITM]
 hostname = api.m.jd.com, *.jddebug.com, bdsp-x.jd.com, dsp-x.jd.com, storage.360buyimg.com, img*.360buyimg.com
