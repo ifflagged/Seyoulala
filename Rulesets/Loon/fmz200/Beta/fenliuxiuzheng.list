@@ -64,5 +64,5 @@ DOMAIN,msg.umeng.com
 DOMAIN,msg.umengcloud.com
 DOMAIN-KEYWORD,aw-s.tripcdn.com
 DOMAIN-KEYWORD,trip.com
-IP-CIDR,192.168.0.1/24,no-resolve
-IP-CIDR,192.168.1.1/24,no-resolve
+IP-CIDR,192.168.0.1/24
+IP-CIDR,192.168.1.1/24

@@ -17,7 +17,7 @@ DOMAIN,vs6.bj2ct.u3.ucweb.com
 DOMAIN-SUFFIX,safebrowsing.apple
 DOMAIN-SUFFIX,u3.ucweb.com
 DOMAIN-SUFFIX,pos.baidu.com
-IP-CIDR,180.76.76.200/32,no-resolve
+IP-CIDR,180.76.76.200/32
 DOMAIN,o33249.ingest.sentry.io
 DOMAIN,api.helloclue.com
 DOMAIN,brahe.apptimize.com
