@@ -828,6 +828,12 @@ DOMAIN-SUFFIX, 66mobi.com, REJECT
 DOMAIN, rpe.xdplt.com, REJECT
 # 10086
 IP-CIDR, 120.240.95.37/32, REJECT, no-resolve
+# 12123
+DOMAIN-SUFFIX, v3.fstats.xyz, REJECT
+DOMAIN-SUFFIX, wss.haoyundmn.com, REJECT
+DOMAIN-SUFFIX, new.xiongzhangad.com, REJECT
+DOMAIN-SUFFIX, alexametrics.com, REJECT
+DOMAIN-KEYWORD, in-page-push, REJECT
 # 12306_remove_ads
 DOMAIN, ad.12306.cn, DIRECT
 # Amap_remove_ads
@@ -1040,24 +1046,8 @@ https?:\/\/91porn\.com(\/|)$ https://91porn.com/index.php 302
 ^https:\/\/api\.pinduoduo\.com\/api\/alexa\/cells\/hub\/v3\? - reject-dict
 ^https?:\/\/api2\.yaduo\.com\/atourlife\/activity\/appLaunch - reject-dict
 # adunion
-^https?:\/\/api2\.helper\.qq\.com\/game\/buttons - reject-img
-^https?:\/\/imgcache\.qq\.com\/qqlive\/ - reject-img
-^https?:\/\/vv\.video\.qq\.com\/getvmind\? - reject-200
-^https?:\/\/qt\.qq\.com\/lua\/mengyou\/get_splash_screen_info - reject-200
-^https?:\/\/y\.gtimg\.cn\/music\/.*?_Ad/\d+\.png - reject-img
-^https?:\/\/splashqqlive\.gtimg\.com\/website\/\d{6} - reject-img
-^https?:\/\/qzonestyle\.gtimg\.cn\/qzone\/biz\/gdt\/mob\/sdk\/ios\/v\d\/ - reject-img
-^https?:\/\/discuz\.gtimg\.cn\/cloud\/scripts\/discuz_tips - reject-img
-^https?:\/\/bla\.gtimg\.com\/qqlive\/\d{6}.+?\.png - reject-img
-^https?:\/\/mmgr\.gtimg\.com\/gjsmall\/qiantu\/upload\/ - reject-img
-^https?:\/\/mmgr\.gtimg\.com\/gjsmall\/qqpim\/public\/ios\/splash\/.+?\/\d{4}_\d{4} - reject-img
-^https?:\/\/bk\.bingo\.qq\.com\/bk\/crx\/data\/videoAd - reject-dict
 ^https?:\/\/fcvbjbcebos\.baidu\.com\/.+.mp4 - reject
 ^https?:\/\/cover\.baidu\.com\/cover\/page\/dspSwitchAds\/ - reject
-^https?:\/\/afd\.baidu\.com\/afd\/entry - reject-img
-^https?:\/\/issuecdn\.baidupcs\.com\/issue\/netdisk\/guanggao\/ - reject-200
-^https?:\/\/[\s\S]*\.baidu\.com/.*?ad[xs]\.php - reject-img
-^https?:\/\/t\d{2}\.baidu\.com - reject-img
 ^https?:\/\/update\.pan\.baidu\.com\/statistics - reject
 ^https?:\/\/log.+?baidu\.com - reject
 ^https?:\/\/www.baidu.com\/?action=static&ms=1&version=css_page_2@0.*? - reject
@@ -1067,16 +1057,32 @@ https?:\/\/91porn\.com(\/|)$ https://91porn.com/index.php 302
 ^https?:\/\/(gw|heic)\.alicdn\.com\/mt\/ - reject
 ^https?:\/\/(gw|heic)\.alicdn\.com\/t(?>f|p)s\/.+\d{3,4}-\d{4} - reject
 ^https?:\/\/(gw|heic)\.alicdn\.com\/imgextra\/\w{2}\/\w+!+(?!600000000(5412|6148|4021|5802))\d*-\d-tps-(?!1035)\d{3,4}-(?!570)\d{3,4}\.(?>jpg|png)_(1\d{3}|9\d{2})x(1\d{3}|9\d{2})q\d0\.jpg_\.(?>heic|webp) - reject
-^https?:\/\/g\.alicdn\.com\/(?>alilog|trace) - reject-200
-^https?:\/\/yixiu-abtest\.alicdn\.com\/ut-abtest\/config - reject-dict
 ^https?:\/\/img1.126.net\/.+dpi=\w{7,8} - reject
 ^https?:\/\/img1.126.net\/channel14\/ - reject
 ^https?:\/\/nex.163.com\/q - reject
 ^https?:\/\/g1.163.com\/madfeedback - reject
 ^https?:\/\/c\.m\.163\.com\/nc\/gl\/ - reject
-^https?:\/\/www\.google\.com\/ads - reject-dict
-^https?:\/\/cdn\.api\.fotoable\.com\/Advertise\/ - reject-200
-^https?:\/\/cloud\.bluecardsoft\.com\/yuntingad\/ - reject-dict
+^https?:\/\/api2\.helper\.qq\.com\/game\/buttons mock-response-body data-type=tiny-gif data="" status-code=200
+^https?:\/\/imgcache\.qq\.com\/qqlive\/ mock-response-body data-type=tiny-gif data="" status-code=200
+^https?:\/\/vv\.video\.qq\.com\/getvmind\? mock-response-body data-type=text data="" status-code=200
+^https?:\/\/qt\.qq\.com\/lua\/mengyou\/get_splash_screen_info mock-response-body data-type=text data="" status-code=200
+^https?:\/\/y\.gtimg\.cn\/music\/.*?_Ad/\d+\.png mock-response-body data-type=tiny-gif data="" status-code=200
+^https?:\/\/splashqqlive\.gtimg\.com\/website\/\d{6} mock-response-body data-type=tiny-gif data="" status-code=200
+^https?:\/\/qzonestyle\.gtimg\.cn\/qzone\/biz\/gdt\/mob\/sdk\/ios\/v\d\/ mock-response-body data-type=tiny-gif data="" status-code=200
+^https?:\/\/discuz\.gtimg\.cn\/cloud\/scripts\/discuz_tips mock-response-body data-type=tiny-gif data="" status-code=200
+^https?:\/\/bla\.gtimg\.com\/qqlive\/\d{6}.+?\.png mock-response-body data-type=tiny-gif data="" status-code=200
+^https?:\/\/mmgr\.gtimg\.com\/gjsmall\/qiantu\/upload\/ mock-response-body data-type=tiny-gif data="" status-code=200
+^https?:\/\/mmgr\.gtimg\.com\/gjsmall\/qqpim\/public\/ios\/splash\/.+?\/\d{4}_\d{4} mock-response-body data-type=tiny-gif data="" status-code=200
+^https?:\/\/bk\.bingo\.qq\.com\/bk\/crx\/data\/videoAd mock-response-body data-type=text data="{}" status-code=200
+^https?:\/\/afd\.baidu\.com\/afd\/entry mock-response-body data-type=tiny-gif data="" status-code=200
+^https?:\/\/issuecdn\.baidupcs\.com\/issue\/netdisk\/guanggao\/ mock-response-body data-type=text data="" status-code=200
+^https?:\/\/[\s\S]*\.baidu\.com/.*?ad[xs]\.php mock-response-body data-type=tiny-gif data="" status-code=200
+^https?:\/\/t\d{2}\.baidu\.com mock-response-body data-type=tiny-gif data="" status-code=200
+^https?:\/\/g\.alicdn\.com\/(?>alilog|trace) mock-response-body data-type=text data="" status-code=200
+^https?:\/\/yixiu-abtest\.alicdn\.com\/ut-abtest\/config mock-response-body data-type=text data="{}" status-code=200
+^https?:\/\/www\.google\.com\/ads mock-response-body data-type=text data="{}" status-code=200
+^https?:\/\/cdn\.api\.fotoable\.com\/Advertise\/ mock-response-body data-type=text data="" status-code=200
+^https?:\/\/cloud\.bluecardsoft\.com\/yuntingad\/ mock-response-body data-type=text data="{}" status-code=200
 # BlockAdvertisers
 ^https:\/\/video-dsp\.pddpic\.com\/market-dsp-video\/ reject
 ^https:\/\/t-dsp\.pinduoduo\.com\/dspcb\/i\/mrk_union reject
@@ -1087,13 +1093,14 @@ https?:\/\/91porn\.com(\/|)$ https://91porn.com/index.php 302
 ^https?:\/\/(client\.)?app(\.coc)?\.10086\.cn\/biz-orange\/DN\/explorePage\/getAdverList - reject
 ^https?:\/\/(client\.)?app(\.coc)?\.10086\.cn\/biz-orange\/DN\/emotionMarket - reject
 # 12123
+^https?:\/\/gab\.122\.gov\.cn\/eapp\/m\/sysquery\/adver - reject
 ^https?:\/\/gab\.122\.gov\.cn\/eapp\/m\/sysquery\/adver$ - reject
 # NoAds
 ^https?:\/\/h\.app\.coc\.10086\.cn\/biz-orange\/DH\/popupWindow\/getDetail - reject-200
 # 51fanli
-^https?:\/\/l[0-9]{1}\.51fanli\.net\/app\/images\/splash\/2022\/0[4-9]{1}\/.*.jpg - reject-200
-^https?:\/\/l[0-9]{1}\.51fanli\.net\/app\/images\/splash\/2022\/1[0-2]{1}\/.*.jpg - reject-200
-^https?:\/\/l[0-9]{1}\.51fanli\.net\/app\/images\/splash\/202\d{1}\/\d{2}\/.*.jpg - reject-200
+^https?:\/\/l[0-9]{1}\.51fanli\.net\/app\/images\/splash\/2022\/0[4-9]{1}\/.*.jpg mock-response-body data-type=text data="" status-code=200
+^https?:\/\/l[0-9]{1}\.51fanli\.net\/app\/images\/splash\/2022\/1[0-2]{1}\/.*.jpg mock-response-body data-type=text data="" status-code=200
+^https?:\/\/l[0-9]{1}\.51fanli\.net\/app\/images\/splash\/202\d{1}\/\d{2}\/.*.jpg mock-response-body data-type=text data="" status-code=200
 # Amap_remove_ads
 ^https:\/\/m5\.amap\.com\/ws\/shield\/search\/new_hotword\? reject-dict
 ^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/card-service-(?:car-end|route-plan) reject-dict
@@ -1111,17 +1118,17 @@ https?:\/\/91porn\.com(\/|)$ https://91porn.com/index.php 302
 ^https:\/\/m5-zb\.amap\.com\/ws\/boss\/pay\/web\/paySuccess\/info\/request reject-dict
 ^https:\/\/m5-zb\.amap\.com\/ws\/sharedtrip\/taxi\/order_detail_car_tips\? response-body-json-del data.carTips.data.popupInfo
 # amap
-^https?:\/\/m\d\.amap\.com\/ws\/shield\/dsp\/app\/startup\/init\? - reject-dict
 ^https?:\/\/m\d\.amap\.com\/ws\/valueadded\/ - reject
-^https?:\/\/m\d\.amap\.com\/ws\/faas\/amap-navigation\/card-service-(?>car-end|route-plan) - reject-dict
-^https?:\/\/m\d\.amap\.com\/ws\/shield\/search\/new_hotword\? - reject-dict
-^https?:\/\/m\d\.amap\.com\/ws\/shield\/search_poi\/tips_adv\? - reject-dict
-^https?:\/\/oss\.amap\.com\/ws\/banner\/lists\/\? - reject-dict
-^https?:\/\/m\d\.amap\.com\/ws\/faas\/amap-navigation\/(?>main-page-assets|main-page-location|ridewalk-end-fc) - reject-dict
-^https?:\/\/m\d\.amap\.com\/ws\/(mapapi\/hint_text\/offline_data|message\/notice\/list|shield\/search\/new_hotword) - reject-dict
-^https?:\/\/m\d\.amap\.com\/ws\/shield\/scene\/recommend\? - reject-dict
-^https?:\/\/sns\.amap\.com\/ws\/msgbox\/pull_mp\? - reject-dict
-^https?:\/\/m\d-zb\.amap\.com\/ws\/boss\/(order\/car\/king_toolbox_car_bubble|tips\/onscene_visual_optimization) - reject-dict
+^https?:\/\/m\d\.amap\.com\/ws\/shield\/dsp\/app\/startup\/init\? mock-response-body data-type=text data="{}" status-code=200
+^https?:\/\/m\d\.amap\.com\/ws\/faas\/amap-navigation\/card-service-(?>car-end|route-plan) mock-response-body data-type=text data="{}" status-code=200
+^https?:\/\/m\d\.amap\.com\/ws\/shield\/search\/new_hotword\? mock-response-body data-type=text data="{}" status-code=200
+^https?:\/\/m\d\.amap\.com\/ws\/shield\/search_poi\/tips_adv\? mock-response-body data-type=text data="{}" status-code=200
+^https?:\/\/oss\.amap\.com\/ws\/banner\/lists\/\? mock-response-body data-type=text data="{}" status-code=200
+^https?:\/\/m\d\.amap\.com\/ws\/faas\/amap-navigation\/(?>main-page-assets|main-page-location|ridewalk-end-fc) mock-response-body data-type=text data="{}" status-code=200
+^https?:\/\/m\d\.amap\.com\/ws\/(mapapi\/hint_text\/offline_data|message\/notice\/list|shield\/search\/new_hotword) mock-response-body data-type=text data="{}" status-code=200
+^https?:\/\/m\d\.amap\.com\/ws\/shield\/scene\/recommend\? mock-response-body data-type=text data="{}" status-code=200
+^https?:\/\/sns\.amap\.com\/ws\/msgbox\/pull_mp\? mock-response-body data-type=text data="{}" status-code=200
+^https?:\/\/m\d-zb\.amap\.com\/ws\/boss\/(order\/car\/king_toolbox_car_bubble|tips\/onscene_visual_optimization) mock-response-body data-type=text data="{}" status-code=200
 # BaiduNetDisk_remove_ads
 ^https:\/\/pan\.baidu\.com\/api\/getconfig reject-dict
 ^https:\/\/pan\.baidu\.com\/api\/getsyscfg reject-dict
@@ -1163,15 +1170,15 @@ https?:\/\/91porn\.com(\/|)$ https://91porn.com/index.php 302
 ^https?:\/\/manga\.bilibili\.com\/twirp\/comic\.v\d\.Comic\/ListFlash - reject-dict
 ^https:\/\/api\.live\.bilibili\.com\/xlive\/e-commerce-interface\/v1\/ecommerce-user\/get_shopping_info\? - reject-dict
 # bydwc
-^https?:\/\/cache\.bydauto\.com\.cn\/dilink_user_upload\/20 - reject-200
+^https?:\/\/cache\.bydauto\.com\.cn\/dilink_user_upload\/20 mock-response-body data-type=text data="" status-code=200
 # ccblife
 ^https?:\/\/waimai-guide\.ele\.me\/\w+\/mtop\.alsc\.eleme\.\w+\.trigger\.respond - reject-dict
 ^https?:\/\/waimai-guide\.ele\.me\/\w+\/mtop\.alsc\.wamai\.store\.detail\.miniapp\.popup - reject
 ^https?:\/\/waimai-guide\.ele\.me\/\w+\/mtop\.venus\.shopcouponpopupservice\.getshopcouponspopup - reject
 # cmb
-^https?:\/\/webappcfg\.paas\.cmbchina\.com\/v\d\/func\/getmarketconfig - reject-200
-^https?:\/\/webapp\.joyingtrip\.com\/cmbapp\/api\/hotel\/marketing\/adListNew - reject-dict
-^https?:\/\/mobile\.cmbchina\.com\/dcardmanage\/salary-welfare\/get-recommend mock-response-body data="undefined"
+^https?:\/\/webappcfg\.paas\.cmbchina\.com\/v\d\/func\/getmarketconfig mock-response-body data-type=text data="" status-code=200
+^https?:\/\/webapp\.joyingtrip\.com\/cmbapp\/api\/hotel\/marketing\/adListNew mock-response-body data-type=text data="{}" status-code=200
+^https?:\/\/mobile\.cmbchina\.com\/dcardmanage\/salary-welfare\/get-recommend mock-response-body data-type=file data="https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/cmb/cmb.json"
 # DiDi_remove_ads
 ^https:\/\/res\.xiaojukeji\.com\/resapi\/activity\/getMulti\? reject-dict
 ^https:\/\/res\.xiaojukeji\.com\/resapi\/activity\/xpget reject-dict
@@ -1230,22 +1237,24 @@ https?:\/\/91porn\.com(\/|)$ https://91porn.com/index.php 302
 ^https?:\/\/zj\.haier\.net\/omsappapi\/resource\/v\d\/resBagList$ - reject-200
 ^https?:\/\/zj\.haier\.net\/omssceneapi\/house\/v\d\/recommend\/listByRoom$ - reject-200
 # ejoy
-^https?:\/\/a\.sinopecsales\.com\/app\/cms - reject-dict
-^https?:\/\/ocrifs\.ejoy\.sinopec\.com\/advertitfs\/advert\/findAdvertInfo - reject-200
+^https?:\/\/a\.sinopecsales\.com\/app\/cms mock-response-body data-type=text data="{}" status-code=200
+^https?:\/\/ocrifs\.ejoy\.sinopec\.com\/advertitfs\/advert\/findAdvertInfo mock-response-body data-type=text data="" status-code=200
 # eleme
 ^https?:\/\/elemecdn\.com\/.+\/sitemap - reject
 ^https?:\/\/fuss10\.elemecdn\.com\/.+\/w\/(640|750)\/h\/\d{3,4} - reject
-^https?:\/\/fuss10\.elemecdn\.com\/.+?\.mp4 - reject-img
 ^https?:\/\/www1\.elecfans\.com\/www\/delivery\/ - reject
 ^https?:\/\/cube\.elemecdn\.com\/\w\/\w{2}\/\w+mp4\.mp4\? - reject
 ^https?:\/\/cube\.elemecdn\.com\/[\w\/]+\.jpeg\?x-oss-process=image\/resize,m_fill,w_1\d{3},h_2\d{3}\/format,webp\/ - reject
 ^https?:\/\/cube\.elemecdn\.com\/[\w\/]+\.jpeg\?x-oss-process=image\/resize,m_fill,w_6\d{2},h_8\d{2}\/format,webp\/ - reject
 ^https?:\/\/cube\.elemecdn\.com\/[\w\/]+\.jpeg\?x-oss-process=image\/resize,m_fill,w_\d{3},h_\d{4}\/format,webp\/ - reject
 ^https?:\/\/(nr-op|cube)\.elemecdn\.com\/.+\.jpeg\?x-oss-process=image\/resize,m_fill,w_\d{4,},h_\d{4,}\/($|format,webp\/$) - reject
-^https?:\/\/waimai-guide\.ele\.me\/h5\/mtop\.alsc\.eleme\.homepage\.miniapp\.popup - reject-dict
 ^https?:\/\/waimai-guide\.ele\.me\/gw\/mtop\.alsc\.eleme\.trigger\.respond - reject
+^https?:\/\/fuss10\.elemecdn\.com\/.+?\.mp4 mock-response-body data-type=tiny-gif data="" status-code=200
+^https?:\/\/waimai-guide\.ele\.me\/h5\/mtop\.alsc\.eleme\.homepage\.miniapp\.popup mock-response-body data-type=text data="{}" status-code=200
 # functional
-^https?:\/\/119\.29\.29\.\d+\/d\?dn - reject-200
+http-request ^https?:\/\/github\.com\/ header-replace 'Accept-Language' 'en-us'
+http-request ^https?:\/\/(raw|gist)\.githubusercontent\.com\/ header-replace 'Accept-Language' 'en-us'
+^https?:\/\/119\.29\.29\.\d+\/d\?dn mock-response-body data-type=text data="" status-code=200
 # FleaMarket_remove_ads
 ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlecommerce\.splash\.ads\/ reject-dict
 ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlehome\.home\.nextfresh\/ response-body-json-jq '.data.homeTopList |= map(select(.sectionType == "kingkongDo")) | .data.sections |= map(select(.data.clickParam.args.cardType as $ct | $ct != "homeMultiBanner" and $ct != "mamaAD")) | .data.sections |= map(select(.template.name == "fish_home_content_card" or (.template.name | contains("fish_home_tags_item_card"))))'
@@ -1264,7 +1273,7 @@ https?:\/\/91porn\.com(\/|)$ https://91porn.com/index.php 302
 ^https:\/\/g-acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.search\/ response-body-json-jq '.data.resultList |= map(if .data.item.main.exContent.dislikeFeedback.clickParam.args.bizType == "ad" then empty else . end)'
 ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.item\.search\.activate\/ response-body-json-jq '.data.cardList |= map(if has("cardData") and (.cardData | has("hotwords")) then .cardData |= del(.hotwords) else . end)'
 # hilton
-^https?:\/\/wcprd\.hilton\.com\.cn\/app-middleware\/graphql\?type=splashAd - reject-200
+^https?:\/\/wcprd\.hilton\.com\.cn\/app-middleware\/graphql\?type=splashAd mock-response-body data-type=text data="" status-code=200
 # JD_remove_ads
 ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(searchBoxWord|stationPullService|uniformRecommend[06]) reject-dict
 ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=basicConfig response-body-json-replace data.JDMessage.socketmonitor.isSocketEstablishedAhead 0 data.JDMessage.socketmonitor.isSocketReport 0 data.JDHttpToolKit.httpdns.httpdns 0
@@ -1278,29 +1287,30 @@ https?:\/\/91porn\.com(\/|)$ https://91porn.com/index.php 302
 ^https?:\/\/(bdsp-x|dsp-x)\.jd\.com\/adx\/ mock-response-body data-type=text data="" status-code=200
 ^https?:\/\/api\.m\.jd\.com\/\?loginType=11 mock-response-body data-type=text data="{}" status-code=200
 # manmanbuy
-^https?:\/\/apapia-sqk\.manmanbuy\.com\/index_json\.ashx$ - reject-dict
+^https?:\/\/apapia-sqk\.manmanbuy\.com\/index_json\.ashx$ mock-response-body data-type=text data="{}" status-code=200
 # mcd
-^https?:\/\/api\.mcd\.cn\/bff\/portal\/(home\/splash|richpop) - reject-200
-^https?:\/\/api\.mcd\.cn\/bff\/portal\/home\/hotActivity - reject-dict
-^https?:\/\/api\.mcd\.cn\/bff\/portal\/richpop - reject-dict
+^https?:\/\/api\.mcd\.cn\/bff\/portal\/(home\/splash|richpop) mock-response-body data-type=text data="" status-code=200
+^https?:\/\/api\.mcd\.cn\/bff\/portal\/home\/hotActivity mock-response-body data-type=text data="{}" status-code=200
+^https?:\/\/api\.mcd\.cn\/bff\/portal\/richpop mock-response-body data-type=text data="{}" status-code=200
 # meituan
 ^https?:\/\/apimobile\.meituan\.com\/appupdate - reject
-^https?:\/\/img\.meituan\.net\/(adunion|display|midas)\/.+\.(gif|jpg)\.webp$ - reject-img
-^https?:\/\/img\.meituan\.net\/groceryimages\/\w+\.gif - reject-img
-^https?:\/\/img\.meituan\.net\/groceryimages\/\w+\.png@220w_220h_1e_1l - reject-img
 ^https?:\/\/img\.meituan\.net\/bizad - reject
-^https?:\/\/p\d\.meituan\.net\/movie\/.+?\.jpg\?may_covertWebp - reject-img
-^https?:\/\/p\d\.meituan\.net\/travelcube\/(?!1d4a663|52e9bfc|29a6227|412c4ac|6ee35c4|13bf0bf|ab8692e|6858b1d).+@100w_100h - reject-img
-^https?:\/\/p\d\.meituan\.net\/(\d+\.\d+\.\d+\/)?wmbanner\/(?!fb51b9d|4e9d3c4).+\.gif - reject-img
 ^https?:\/\/p\d\.meituan\.net\/(display|mmc)\/ - reject
 ^https?:\/\/apimobile\.meituan\.com\/appupdate\/mach\/checkUpdate? - reject
 ^https?:\/\/apimobile\.meituan\.com\/group\/v\d\/recommend\/unity\/recommends - reject
 ^https?:\/\/www\.meituan\.com\/api\/v\d\/appstatus\? - reject
-^https?:\/\/(s3plus|flowplus)\.meituan\.net\/v\d\/\w+\/linglong\/.+\.(?>gif|jpg|mp4) - reject-img
 ^https?:\/\/s3plus\.meituan\.net\/v\d\/mss_\w+\/waimai-alita\/\w+\.zip$ - reject
 ^https?:\/\/s3plus\.meituan\.net\/v\d\/mss_\w+\/brandcpt - reject
-^https?:\/\/portal-portm\.meituan\.com\/horn_ios - reject-dict
 ^https?:\/\/sqt\.meituan\.com\/s\/gateway\/mweb\/api\/marketingResource\/show - reject
+^https?:\/\/img\.meituan\.net\/(adunion|display|midas)\/.+\.(gif|jpg)\.webp$ mock-response-body data-type=tiny-gif data="" status-code=200
+^https?:\/\/img\.meituan\.net\/groceryimages\/\w+\.gif mock-response-body data-type=tiny-gif data="" status-code=200
+^https?:\/\/img\.meituan\.net\/groceryimages\/\w+\.png@220w_220h_1e_1l mock-response-body data-type=tiny-gif data="" status-code=200
+^https?:\/\/p\d\.meituan\.net\/movie\/.+?\.jpg\?may_covertWebp mock-response-body data-type=tiny-gif data="" status-code=200
+^https?:\/\/p\d\.meituan\.net\/travelcube\/(?!1d4a663|52e9bfc|29a6227|412c4ac|6ee35c4|13bf0bf|ab8692e|6858b1d).+@100w_100h mock-response-body data-type=tiny-gif data="" status-code=200
+^https?:\/\/p\d\.meituan\.net\/(\d+\.\d+\.\d+\/)?wmbanner\/(?!fb51b9d|4e9d3c4).+\.gif mock-response-body data-type=tiny-gif data="" status-code=200
+^https?:\/\/(s3plus|flowplus)\.meituan\.net\/v\d\/\w+\/linglong\/.+\.(?>gif|jpg|mp4) mock-response-body data-type=tiny-gif data="" status-code=200
+^https?:\/\/portal-portm\.meituan\.com\/horn_ios mock-response-body data-type=text data="{}" status-code=200
+^https?:\/\/web\.meituan\.com\/api\/miniprogram\/index\/aggregate mock-response-body data-type=file data="https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/meituan/mt_aggregate.json"
 # mihome
 ^https?:\/\/home\.mi\.com\/cgi-op\/api\/v\d\/recommendation - reject
 # Pinduoduo
@@ -1316,24 +1326,24 @@ https?:\/\/91porn\.com(\/|)$ https://91porn.com/index.php 302
 ^https:\/\/api\.pinduoduo\.com\/api\/caterham\/v3\/query\/my_order_group - reject-dict
 ^https:\/\/api\.pinduoduo\.com\/api\/caterham\/v3\/query\/likes - reject-dict
 # qunar
-^https?:\/\/qde\.qunar\.com\/preload - reject-200
-^https?:\/\/homefront\.qunar\.com\/front\/splash\/ad - reject-dict
 ^https?:\/\/client\.qunar\.com\/pitcher-proxy\?qrt=p_splashAd - reject
-^https?:\/\/qimgs\.qunarzz\.com\/wpf_newmpic_001\/06c3a131f53cca9a78dd26272e3e4cb3 - reject-img
+^https?:\/\/qde\.qunar\.com\/preload mock-response-body data-type=text data="" status-code=200
+^https?:\/\/homefront\.qunar\.com\/front\/splash\/ad mock-response-body data-type=text data="{}" status-code=200
+^https?:\/\/qimgs\.qunarzz\.com\/wpf_newmpic_001\/06c3a131f53cca9a78dd26272e3e4cb3 mock-response-body data-type=tiny-gif data="" status-code=200
 # samsclub
 ^https?:\/\/api-sams\.walmartmobile\.cn\/api\/v\d\/sams\/sams-user\/(window\/getGoUpPlus|screen_promotion\/get) - reject
-^https?:\/\/api-sams\.walmartmobile\.cn\/api\/v\d\/sams\/channel\/portal\/AdgroupData - reject-dict
-^https?:\/\/api-sams\.walmartmobile\.cn\/api\/v\d\/sams\/configuration\/personCenterEntrance\/query - reject-dict
-^https?:\/\/api-sams\.walmartmobile\.cn\/api\/v\d\/sams\/trade\/order\/getOftenBuyGoods - reject-dict
-^https?:\/\/api-sams\.walmartmobile\.cn\/api\/v\d\/sams\/goods-portal\/spu\/searchRecommendPool - reject-dict
-^https?:\/\/api-sams\.walmartmobile\.cn\/api\/v\d\/sams\/configuration\/appVersionUpdate\/getAppVersionUpdateInfo - reject-dict
-^https?:\/\/api-sams\.walmartmobile\.cn\/api\/v\d\/sams\/configuration\/portal\/beUpdate - reject-dict
+^https?:\/\/api-sams\.walmartmobile\.cn\/api\/v\d\/sams\/channel\/portal\/AdgroupData mock-response-body data-type=text data="{}" status-code=200
+^https?:\/\/api-sams\.walmartmobile\.cn\/api\/v\d\/sams\/configuration\/personCenterEntrance\/query mock-response-body data-type=text data="{}" status-code=200
+^https?:\/\/api-sams\.walmartmobile\.cn\/api\/v\d\/sams\/trade\/order\/getOftenBuyGoods mock-response-body data-type=text data="{}" status-code=200
+^https?:\/\/api-sams\.walmartmobile\.cn\/api\/v\d\/sams\/goods-portal\/spu\/searchRecommendPool mock-response-body data-type=text data="{}" status-code=200
+^https?:\/\/api-sams\.walmartmobile\.cn\/api\/v\d\/sams\/configuration\/appVersionUpdate\/getAppVersionUpdateInfo mock-response-body data-type=text data="{}" status-code=200
+^https?:\/\/api-sams\.walmartmobile\.cn\/api\/v\d\/sams\/configuration\/portal\/beUpdate mock-response-body data-type=text data="{}" status-code=200
 # sgcc
 ^https?:\/\/(?>csc|osg)-service\.sgcc\.com\.cn:\d+\/emss-pfa-appset-front\/appForceUpdate - reject
 ^https?:\/\/(?>csc|osg)-service\.sgcc\.com\.cn:\d+\/emss-pfa-appset-front\/appSync\/getAppForceUpgrade - reject
-^https?:\/\/(?>csc|osg)-service\.sgcc\.com\.cn:\d+\/emss-pfa-appset-front\/bootpageoutter\/ - reject-dict
-^https?:\/\/(?>csc|osg)-service\.sgcc\.com\.cn:\d+\/.*\/app_api\/selectInfoByCondition - reject-dict
 ^https?:\/\/(?>csc|osg)-service\.sgcc\.com\.cn:\d+\/.*\/inner\/cache - reject
+^https?:\/\/(?>csc|osg)-service\.sgcc\.com\.cn:\d+\/emss-pfa-appset-front\/bootpageoutter\/ mock-response-body data-type=text data="{}" status-code=200
+^https?:\/\/(?>csc|osg)-service\.sgcc\.com\.cn:\d+\/.*\/app_api\/selectInfoByCondition mock-response-body data-type=text data="{}" status-code=200
 # SmzdmAds
 ^https?:\/\/haojia\.m\.smzdm\.com\/detail_modul\/other_modul - reject-200
 ^https?:\/\/haojia\.m\.smzdm\.com\/detail_modul\/user_related_modul - reject-200
@@ -1357,22 +1367,24 @@ https?:\/\/91porn\.com(\/|)$ https://91porn.com/index.php 302
 # taobao
 ^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.etao\.noah\.query\/.+tao_splash - reject
 ^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alimama\.etao\.config\.query\/.+?etao_advertise - reject
-^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv - reject-dict
-^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alimusic\.common\.mobileservice\.startinit - reject-dict
-^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.o2o\.ad\.gateway\.get - reject-dict
-^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.taobao\.idle\.home\.welcome - reject-dict
-^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.trip\.activity\.querytmsresources - reject-dict
-^https?:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(volvo\.secondfloor\.getconfig|wireless\.home\.newface\.awesome\.get) - reject-dict
+^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv mock-response-body data-type=text data="{}" status-code=200
+^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alimusic\.common\.mobileservice\.startinit mock-response-body data-type=text data="{}" status-code=200
+^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.o2o\.ad\.gateway\.get mock-response-body data-type=text data="{}" status-code=200
+^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.taobao\.idle\.home\.welcome mock-response-body data-type=text data="{}" status-code=200
+^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.trip\.activity\.querytmsresources mock-response-body data-type=text data="{}" status-code=200
+^https?:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(volvo\.secondfloor\.getconfig|wireless\.home\.newface\.awesome\.get) mock-response-body data-type=text data="{}" status-code=200
 # tfilm
-^https?:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.film\.life\.(popup|aristotle)\.get - reject-dict
-^https?:\/\/mdn\.alicdn\.com\/imgextra\/i1\/.*-tps-180-180\.gif$ - reject-img
+^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.film\.mtopadvertiseapi\.(queryadvertise|queryloadingbanner)\/ - reject
+^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.film\.life\.popup\.get\/ mock-response-body data-type=text data="{}" status-code=200
+^https?:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.film\.life\.(popup|aristotle)\.get mock-response-body data-type=text data="{}" status-code=200
+^https?:\/\/mdn\.alicdn\.com\/imgextra\/i1\/.*-tps-180-180\.gif$ mock-response-body data-type=tiny-gif data="" status-code=200
 # tfsmy
-^https?:\/\/tfsmy\.chengdu\.gov\.cn\/api\/v\d\/core\/version - reject-200
+^https?:\/\/tfsmy\.chengdu\.gov\.cn\/api\/v\d\/core\/version mock-response-body data-type=text data="" status-code=200
 # tft
-^https?:\/\/ams-cdn\.cdtft\.cn\/prod\/tft-ams - reject-dict
+^https?:\/\/ams-cdn\.cdtft\.cn\/prod\/tft-ams mock-response-body data-type=text data="{}" status-code=200
 # umetrip
 ^https?:\/\/(discardrp|startup)\.umetrip\.com\/gateway\/api\/umetrip\/native - reject
-^https?:\/\/oss\.umetrip\.com\/fs\/advert\/polite - reject-dict
+^https?:\/\/oss\.umetrip\.com\/fs\/advert\/polite mock-response-body data-type=text data="{}" status-code=200
 # unionpay
 ^https?:\/\/wallet\.95516\.com(:10533)?\/s\/wl\/icon\/large\/1 - reject
 # weibo
@@ -1424,9 +1436,9 @@ https?:\/\/91porn\.com(\/|)$ https://91porn.com/index.php 302
 ^https:\/\/apimobile\.meituan\.com\/group\/v1\/deal\/searchpage\/defaultword - reject-dict
 ^https:\/\/api\.m\.jd\.com\/\?loginType=11 - reject-dict
 # wechatAppletGeneral
-^https?:\/\/mp\.weixin\.qq\.com\/wapad\/getaddata\?action=getad - reject-200
-^https?:\/\/mp\.weixin\.qq\.com\/wapad\/reportaddata\?action=exposure_report - reject-200
 ^https?:\/\/(?>webapi|miniapp)\.qmai\.cn\/web\/cmk-center\/marketing\/canvas\/advert - reject
+^https?:\/\/mp\.weixin\.qq\.com\/wapad\/getaddata\?action=getad mock-response-body data-type=text data="" status-code=200
+^https?:\/\/mp\.weixin\.qq\.com\/wapad\/reportaddata\?action=exposure_report mock-response-body data-type=text data="" status-code=200
 # RedPaper_remove_ads
 ^https:\/\/ci\.xiaohongshu\.com\/system_config\/watermark reject-img
 ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/surprisebox\/(?:get_style|open|submit_action) reject-dict
@@ -1694,8 +1706,8 @@ http-response ^https:\/\/api\.m\.jd\.com\/\?functionId=union_exhibition_bff&clie
 http-response ^https?:/\/(cn|www)\.pornhub\.com\/($|(view|video).*$) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/Module-Common/pornhub.js, requires-body=true, tag=Pornhub
 http-response https?:\/\/91porn\.com\/(index|view_video|login|search_result)\.php script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/Module-Common/91porn.js, requires-body=true, tag=91Porn
 # adunion
-http-response ^https?:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/adunion/amdc.js, timeout=60, tag=amdc
-http-response ^https?:\/\/g\.alicdn\.com\/.*o2o-ad script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/adunion/alicdn.js, requires-body=true, timeout=60, tag=alicdn
+http-response ^https?:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/adunion/amdc.js, tag=adunion
+http-response ^https?:\/\/g\.alicdn\.com\/.*o2o-ad script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/adunion/alicdn.js, requires-body=true, tag=adunion
 # 12306_remove_ads
 http-request ^https:\/\/ad\.12306\.cn\/ad\/ser\/getAdList$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/12306_remove_ads/12306_remove_splashscreen_ads.js, requires-body=true, tag=移除12306开屏广告
 http-request ^https:\/\/mobile\.12306\.cn\/otsmobile\/app\/mgs\/mgw\.htm$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/12306_remove_ads/12306_remove_ads.js, tag=移除12306应用内广告
@@ -1722,20 +1734,20 @@ http-response ^https:\/\/m5-zb\.amap\.com\/ws\/boss\/(?:car\/order\/content_info
 http-response ^https:\/\/m5-zb\.amap\.com\/ws\/promotion-web\/resource(\/home)?\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Amap_remove_ads/Amap_remove_ads.js, requires-body=true, tag=移除打车页红点角标、天气图标
 http-response ^https:\/\/(?:info|m5)\.amap\.com\/ws\/shield\/search\/(?:common\/coupon\/info|poi\/detail) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Amap_remove_ads/Amap_remove_ads.js, requires-body=true, tag=移除导航详情页推广
 # amap
-http-response ^https?:\/\/m\d\.amap\.com\/ws\/aos\/perception\/publicTravel\/beforeNavi\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/amap/amap.js, requires-body=true, timeout=60, tag=amap
-http-response ^https?:\/\/m\d\.amap\.com\/ws\/bus\/plan\/integrate\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/amap/amap.js, requires-body=true, timeout=60, tag=amap
-http-response ^https?:\/\/m\d\.amap\.com\/ws\/c3frontend\/af-(hotel|launch)\/page\/main\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/amap/amap.js, requires-body=true, timeout=60, tag=amap
-http-response ^https?:\/\/m\d\.amap\.com\/ws\/perception\/drive\/(?>routeInfo|routePlan) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/amap/amap.js, requires-body=true, timeout=60, tag=amap
-http-response ^https?:\/\/m\d\.amap\.com\/ws\/shield\/search\/(common\/coupon\/info|poi\/detail) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/amap/amap.js, requires-body=true, timeout=60, tag=amap
-http-response ^https?:\/\/m\d\.amap\.com\/ws\/shield\/search_business\/process\/marketingOperationStructured\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/amap/amap.js, requires-body=true, timeout=60, tag=amap
-http-response ^https?:\/\/m\d\.amap\.com\/ws\/shield\/search_poi\/(homepage|mps|search\/sp|sug|tips_operation_location) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/amap/amap.js, requires-body=true, timeout=60, tag=amap
-http-response ^https?:\/\/m\d\.amap\.com\/ws\/faas\/amap-navigation\/(?>card-service-plan-home|main-page) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/amap/amap.js, requires-body=true, timeout=60, tag=amap
-http-response ^https?:\/\/m\d\.amap\.com\/ws\/shield\/frogserver\/aocs\/updatable\/1\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/amap/amap.js, requires-body=true, timeout=60, tag=amap
-http-response ^https?:\/\/m\d\.amap\.com\/ws\/shield\/dsp\/profile\/index\/nodefaasv\d\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/amap/amap.js, requires-body=true, timeout=60, tag=amap
-http-response ^https?:\/\/m\d\.amap\.com\/ws\/shield\/search\/nearbyrec_smart\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/amap/amap.js, requires-body=true, timeout=60, tag=amap
-http-response ^https?:\/\/m\d-zb\.amap\.com\/ws\/boss\/(car\/order\/content_info|order_web\/friendly_information) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/amap/amap.js, requires-body=true, timeout=60, tag=amap
-http-response ^https?:\/\/m\d-zb\.amap\.com\/ws\/promotion-web\/resource(\/home)?\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/amap/amap.js, requires-body=true, timeout=60, tag=amap
-http-response ^https?:\/\/m\d-zb\.amap\.com\/ws\/sharedtrip\/taxi\/order_detail_car_tips\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/amap/amap.js, requires-body=true, timeout=60, tag=amap
+http-response ^https?:\/\/m\d\.amap\.com\/ws\/aos\/perception\/publicTravel\/beforeNavi\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/amap/amap.js, requires-body=true, tag=amap
+http-response ^https?:\/\/m\d\.amap\.com\/ws\/bus\/plan\/integrate\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/amap/amap.js, requires-body=true, tag=amap
+http-response ^https?:\/\/m\d\.amap\.com\/ws\/c3frontend\/af-(hotel|launch)\/page\/main\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/amap/amap.js, requires-body=true, tag=amap
+http-response ^https?:\/\/m\d\.amap\.com\/ws\/perception\/drive\/(?>routeInfo|routePlan) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/amap/amap.js, requires-body=true, tag=amap
+http-response ^https?:\/\/m\d\.amap\.com\/ws\/shield\/search\/(common\/coupon\/info|poi\/detail) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/amap/amap.js, requires-body=true, tag=amap
+http-response ^https?:\/\/m\d\.amap\.com\/ws\/shield\/search_business\/process\/marketingOperationStructured\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/amap/amap.js, requires-body=true, tag=amap
+http-response ^https?:\/\/m\d\.amap\.com\/ws\/shield\/search_poi\/(homepage|mps|search\/sp|sug|tips_operation_location) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/amap/amap.js, requires-body=true, tag=amap
+http-response ^https?:\/\/m\d\.amap\.com\/ws\/faas\/amap-navigation\/(?>card-service-plan-home|main-page) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/amap/amap.js, requires-body=true, tag=amap
+http-response ^https?:\/\/m\d\.amap\.com\/ws\/shield\/frogserver\/aocs\/updatable\/1\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/amap/amap.js, requires-body=true, tag=amap
+http-response ^https?:\/\/m\d\.amap\.com\/ws\/shield\/dsp\/profile\/index\/nodefaasv\d\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/amap/amap.js, requires-body=true, tag=amap
+http-response ^https?:\/\/m\d\.amap\.com\/ws\/shield\/search\/nearbyrec_smart\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/amap/amap.js, requires-body=true, tag=amap
+http-response ^https?:\/\/m\d-zb\.amap\.com\/ws\/boss\/(car\/order\/content_info|order_web\/friendly_information) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/amap/amap.js, requires-body=true, tag=amap
+http-response ^https?:\/\/m\d-zb\.amap\.com\/ws\/promotion-web\/resource(\/home)?\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/amap/amap.js, requires-body=true, tag=amap
+http-response ^https?:\/\/m\d-zb\.amap\.com\/ws\/sharedtrip\/taxi\/order_detail_car_tips\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/amap/amap.js, requires-body=true, tag=amap
 # BiliBili
 http-response ^https:\/\/app\.bilibili\.com\/x\/resource\/show\/tab\/v2\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/BiliBili/BiliBili.js, requires-body=true, tag=精简首页顶部标签
 http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/account\/(?:mine|myinfo) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/BiliBili/BiliBili.js, requires-body=true, tag=BiliBili Mystery Code
@@ -1783,11 +1795,7 @@ http-response ^https?:\/\/ddplus\.meituan\.net\/v\d\/mss_\w+\/picassovc script-p
 http-response ^https?:\/\/oss-zjrs\.haier\.net\/resource\/confFile\/\d{22}\.json$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/ehaier/haier.js, requires-body=true, timeout=60, tag=haier
 http-response ^https?:\/\/zj\.haier\.net\/omsappapi\/resource\/v\d\/get\/resourceBag$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/ehaier/haier.js, requires-body=true, timeout=60, tag=haier
 # eleme
-http-response ^https?:\/\/waimai-guide\.ele\.me\/h5\/mtop\.alsc\.eleme\.miniapp\.homepage script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/eleme/replace-body.js, requires-body=true, timeout=30, tag=replaceBody, argument=wechat_miniapp_scene_card_template-%3Ezirawell
-http-response ^https?:\/\/waimai-guide\.ele\.me\/gw\/mtop\.alsc\.eleme\.miniapp\.homepage script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/eleme/eleme.js, requires-body=true, timeout=60, tag=eleme
-# functional
-http-request ^https?:\/\/(raw|gist)\.githubusercontent\.com\/ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/functional/replace-header.js, timeout=30, tag=replaceHeader, argument=(%5Cr%5Cn)Accept-Language%3A.%2B(%5Cr%5Cn)-%3E%241Accept-Language%3A%20en-us%242
-http-request ^https?:\/\/github\.com\/ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/functional/replace-header.js, timeout=30, tag=replaceHeader, argument=(%5Cr%5Cn)Accept-Language%3A.%2B(%5Cr%5Cn)-%3E%241Accept-Language%3A%20en-us%242
+http-response ^https?:\/\/waimai-guide\.ele\.me\/gw\/mtop\.alsc\.eleme\.miniapp\.homepage script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/eleme/eleme.js, requires-body=true, tag=eleme
 # JD_Helper
 http-response ^https:\/\/in\.m\.jd\.com\/product\/.+?\.html script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/githubdulong/JD_Helper/jd_price1.js, requires-body=true, tag=京东助手, argument=jd_union_id={JD_UNION_ID}&jd_position_id={JD_POSITION_ID}&jtt_appid={JTT_APPID}&jtt_appkey={JTT_APPKEY}&engine={ENGINE}&timeout={TIMEOUT}&disable_notice={DISABLE_NOTICE}&theme_time={THEME_TIME}
 http-request ^https?:\/\/apapia-sqk-weblogic\.manmanbuy\.com/baoliao\/center\/menu script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/githubdulong/JD_Helper/jd_price1.js, requires-body=true, timeout=30, tag={MMMCK_SCRIPT}
@@ -1797,7 +1805,7 @@ http-response ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(deliverLay
 http-response ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(?>deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/jd/jd.js, requires-body=true, tag=jd
 http-response ^https?:\/\/api\.m\.jd\.com\/api\?functionId=delivery_show script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/jd/jingxi.js, requires-body=true, tag=jx
 # meituan
-http-response ^https?:\/\/p\d\.meituan\.net\/linglong\/ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/meituan/meituan.js, requires-body=true, timeout=60, tag=meituan
+http-response ^https?:\/\/p\d\.meituan\.net\/linglong\/ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/meituan/meituan.js, requires-body=true, tag=meituan
 # Pinduoduo
 http-response ^https:\/\/api\.pinduoduo\.com\/search script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ZenmoFeiShi/Pinduoduo/Pinduoduo.js, requires-body=true, timeout=60, tag=Pinduoduo
 http-response ^https:\/\/api\.pinduoduo\.com\/api\/philo\/personal\/hub script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ZenmoFeiShi/Pinduoduo/Pinduoduo.js, requires-body=true, timeout=60, tag=Pinduoduo
@@ -1815,22 +1823,20 @@ http-response ^https?:\/\/s-api\.smzdm\.com\/sou\/list_v10 script-path=https://g
 http-response ^https?:\/\/s-api\.smzdm\.com\/sou\/filter\/tags\/hot_tags script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ddgksf2013/SmzdmAds/smzdm_json.js, requires-body=true, timeout=60, tag=smzdm_json
 http-response ^https?:\/\/zhiyou\.m\.smzdm\.com\/user\/vip\/ajax_get_banner script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ddgksf2013/SmzdmAds/smzdm_json.js, requires-body=true, timeout=60, tag=smzdm_json
 # smzdm
-http-response ^https?:\/\/user-api\.smzdm\.com\/vip script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/smzdm/smzdm.js, requires-body=true, timeout=60, tag=smzdm
-http-response ^https?:\/\/user-api\.smzdm\.com\/vip\/bottom_card_list script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/smzdm/smzdm.js, requires-body=true, timeout=60, tag=smzdm
-http-response ^https?:\/\/user-api\.smzdm\.com\/vip\/creator_user_center script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/smzdm/smzdm.js, requires-body=true, timeout=60, tag=smzdm
-http-response ^https?:\/\/app-api\.smzdm\.com\/util\/loading script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/smzdm/smzdm.js, requires-body=true, timeout=60, tag=smzdm
-http-response ^https?:\/\/app-api\.smzdm\.com\/util\/update script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/smzdm/smzdm.js, requires-body=true, timeout=60, tag=smzdm
-http-response ^https?:\/\/haojia-api\.smzdm\.com\/home\/list script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/smzdm/smzdm.js, requires-body=true, timeout=60, tag=smzdm
-http-response ^https?:\/\/homepage-api\.smzdm\.com\/v\d\/home script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/smzdm/smzdm.js, requires-body=true, timeout=60, tag=smzdm
-http-response ^https?:\/\/article-api\.smzdm\.com\/publish\/get_bubble script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/smzdm/smzdm.js, requires-body=true, timeout=60, tag=smzdm
-http-response ^https?:\/\/qianbao\.smzdm\.com\/v\d\/app\/home script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/smzdm/smzdm.js, requires-body=true, timeout=60, tag=smzdm
+http-response ^https?:\/\/user-api\.smzdm\.com\/vip script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/smzdm/smzdm.js, requires-body=true, tag=smzdm
+http-response ^https?:\/\/user-api\.smzdm\.com\/vip\/bottom_card_list script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/smzdm/smzdm.js, requires-body=true, tag=smzdm
+http-response ^https?:\/\/user-api\.smzdm\.com\/vip\/creator_user_center script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/smzdm/smzdm.js, requires-body=true, tag=smzdm
+http-response ^https?:\/\/app-api\.smzdm\.com\/util\/loading script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/smzdm/smzdm.js, requires-body=true, tag=smzdm
+http-response ^https?:\/\/app-api\.smzdm\.com\/util\/update script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/smzdm/smzdm.js, requires-body=true, tag=smzdm
+http-response ^https?:\/\/haojia-api\.smzdm\.com\/home\/list script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/smzdm/smzdm.js, requires-body=true, tag=smzdm
+http-response ^https?:\/\/homepage-api\.smzdm\.com\/v\d\/home script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/smzdm/smzdm.js, requires-body=true, tag=smzdm
+http-response ^https?:\/\/article-api\.smzdm\.com\/publish\/get_bubble script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/smzdm/smzdm.js, requires-body=true, tag=smzdm
+http-response ^https?:\/\/qianbao\.smzdm\.com\/v\d\/app\/home script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/smzdm/smzdm.js, requires-body=true, tag=smzdm
 # taobao
-http-response ^https?:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(cloudvideo\.video\.query|wireless\.home\.splash\.awesome\.get) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/taobao/taobao.js, requires-body=true, timeout=60, tag=taobao
-http-response ^https?:\/\/poplayer\.template\.alibaba\.com\/\w+\.json script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/taobao/taobao.js, requires-body=true, timeout=60, tag=taobao
-# tfsmy
-http-response ^https?:\/\/tft-app\.cdtft\.cn\/gateway-customer\/tftapp\/tft-ams\/api\/appAd script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/tfsmy/replace-body.js, requires-body=true, timeout=30, tag=replaceBody, argument=officialAdvertResultVo-%3Erandom-response
+http-response ^https?:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(cloudvideo\.video\.query|wireless\.home\.splash\.awesome\.get) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/taobao/taobao.js, requires-body=true, tag=taobao
+http-response ^https?:\/\/poplayer\.template\.alibaba\.com\/\w+\.json script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/taobao/taobao.js, requires-body=true, tag=taobao
 # umetrip
-http-response ^https?:\/\/(bkclient|umerp|home)\.umetrip\.com(\.cn){0,1}\/gateway\/api\/umetrip\/native script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/umetrip/umetrip.js, timeout=60, tag=umetrip
+http-response ^https?:\/\/(bkclient|umerp|home)\.umetrip\.com(\.cn){0,1}\/gateway\/api\/umetrip\/native script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/umetrip/umetrip.js, tag=umetrip
 # weibo
 http-response ^https?:\/\/m?api\.weibo\.c(n|om)\/2\/search\/(finder|container_timeline|container_discover)\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/weibo/weibo_ads.js, requires-body=true, timeout=60, tag=微博移除发现页广告
 http-response ^https?:\/\/m?api\.weibo\.c(n|om)\/2\/(page|flowpage)\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/weibo/weibo_ads.js, requires-body=true, timeout=60, tag=微博热搜页面广告
@@ -1852,7 +1858,7 @@ http-response ^https\:\/\/(weixin110\.qq|security.wechat)\.com\/cgi-bin\/mmspams
 http-response ^https:\/\/web\.meituan\.com\/api\/miniprogram\/tabbar\/all\/query script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ZenmoFeiShi/WxPureDominion/MeiTuanNoAd.js, requires-body=true, timeout=60, tag=MeiTuanNoAd
 http-response ^https:\/\/web\.meituan\.com\/api\/miniprogram\/index\/aggregate script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ZenmoFeiShi/WxPureDominion/MeiTuanNoAd.js, requires-body=true, timeout=60, tag=MeiTuanNoAd
 # wechatAppletGeneral
-http-response ^https?:\/\/(?>webapi|miniapp)\.qmai\.cn\/web\/catering([0-9]-apiserver)?\/advertising\/ad\/advertiseInfo script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/wechatAppletGeneral/qmai.js, requires-body=true, timeout=60, tag=qmai
+http-response ^https?:\/\/(?>webapi|miniapp)\.qmai\.cn\/web\/catering([0-9]-apiserver)?\/advertising\/ad\/advertiseInfo script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/wechatAppletGeneral/qmai.js, requires-body=true, tag=wechatAppletGeneral
 # RedPaper_remove_ads
 http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/note\/(?:imagefeed|live_photo\/save) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/RedPaper_remove_ads/RedPaper_remove_ads.js, requires-body=true, tag=移除图片和实况照片水印
 http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/system\/service\/ui\/config\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/RedPaper_remove_ads/RedPaper_remove_ads.js, requires-body=true, tag=移除整体配置 ui
