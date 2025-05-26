@@ -81,12 +81,12 @@ jobs:
             Modules_name=$(basename "$plugin_local_url" .plugin)
             encoded_Modules_name=$(echo "$Modules_name" | jq -sRr @uri)
 
-            Surge_url="http://localhost:9100/file/_start_/${plugin_local_url}/_end_/${encoded_Modules_name}.sgmodule?type=loon-plugin&target=surge-module&category=${encoded_category}"
-            Surge_Beta_url="http://localhost:9101/file/_start_/${plugin_local_url}/_end_/${encoded_Modules_name}.sgmodule?type=loon-plugin&target=surge-module&category=${encoded_category}"
-            Loon_url="http://localhost:9100/file/_start_/${plugin_local_url}/_end_/${encoded_Modules_name}.plugin?type=loon-plugin&target=loon-plugin&category=${encoded_category}&icon=Loon"
-            Loon_Beta_url="http://localhost:9101/file/_start_/${plugin_local_url}/_end_/${encoded_Modules_name}.plugin?type=loon-plugin&target=loon-plugin&category=${encoded_category}&icon=Loon"
-            Shadowrocket_url="http://localhost:9100/file/_start_/${plugin_local_url}/_end_/${encoded_Modules_name}.sgmodule?type=loon-plugin&target=shadowrocket-module&category=${encoded_category}"
-            Shadowrocket_Beta_url="http://localhost:9101/file/_start_/${plugin_local_url}/_end_/${encoded_Modules_name}.sgmodule?type=loon-plugin&target=shadowrocket-module&category=${encoded_category}"
+            Surge_url="http://localhost:9100/file/_start_/${plugin_local_url}/_end_/${encoded_Modules_name}.sgmodule?type=loon-plugin&target=surge-module&category=${encoded_category}&nore=true"
+            Surge_Beta_url="http://localhost:9101/file/_start_/${plugin_local_url}/_end_/${encoded_Modules_name}.sgmodule?type=loon-plugin&target=surge-module&category=${encoded_category}&nore=true"
+            Loon_url="http://localhost:9100/file/_start_/${plugin_local_url}/_end_/${encoded_Modules_name}.plugin?type=loon-plugin&target=loon-plugin&category=${encoded_category}&icon=Loon&nore=true"
+            Loon_Beta_url="http://localhost:9101/file/_start_/${plugin_local_url}/_end_/${encoded_Modules_name}.plugin?type=loon-plugin&target=loon-plugin&category=${encoded_category}&icon=Loon&nore=true"
+            Shadowrocket_url="http://localhost:9100/file/_start_/${plugin_local_url}/_end_/${encoded_Modules_name}.sgmodule?type=loon-plugin&target=shadowrocket-module&category=${encoded_category}&nore=true"
+            Shadowrocket_Beta_url="http://localhost:9101/file/_start_/${plugin_local_url}/_end_/${encoded_Modules_name}.sgmodule?type=loon-plugin&target=shadowrocket-module&category=${encoded_category}&nore=true"
 
             mkdir -p Modules/{Surge,Loon,Shadowrocket}/Kelee/Beta
 
