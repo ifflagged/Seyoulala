@@ -101,18 +101,9 @@ AND, ((DOMAIN-KEYWORD, lf), (DOMAIN-KEYWORD, -short.bytetos.com)), REJECT
 AND, ((DOMAIN-KEYWORD, v), (DOMAIN-KEYWORD, -be-pack.pglstatp-toutiao.com)), REJECT
 AND, ((DOMAIN-KEYWORD, sf), (DOMAIN-KEYWORD, -be-pack.pglstatp-toutiao.com)), REJECT
 AND, ((DOMAIN-KEYWORD, s), (DOMAIN-KEYWORD, -fe-scm.pglstatp-toutiao.com)), REJECT
-AND, ((DOMAIN-KEYWORD, sf), (DOMAIN-KEYWORD, -ttcdn-tos.pstatp.com)), REJECT
-AND, ((DOMAIN-KEYWORD, sf), (DOMAIN-KEYWORD, -fe-tos.pglstatp-toutiao.com)), REJECT
-AND, ((DOMAIN-KEYWORD, sf), (DOMAIN-KEYWORD, -static.i18n-pglstatp.com)), REJECT
 AND, ((DOMAIN-KEYWORD, if), (DOMAIN-KEYWORD, -cdn-tos.bytescm.com)), REJECT
-AND, ((DOMAIN-KEYWORD, if), (DOMAIN-KEYWORD, -analytics.bytescm.com)), REJECT
-AND, ((DOMAIN-KEYWORD, lf), (DOMAIN-KEYWORD, -analytics.bytescm.com)), REJECT
 AND, ((DOMAIN-KEYWORD, ads), (DOMAIN-KEYWORD, normal), (DOMAIN-SUFFIX, zijieapi.com)), REJECT
 AND, ((DOMAIN-KEYWORD, api), (DOMAIN-KEYWORD, -access-), (DOMAIN-SUFFIX, pangle.io)), REJECT
-AND, ((DOMAIN-KEYWORD, api), (DOMAIN-KEYWORD, -log-), (DOMAIN-SUFFIX, pangle.io)), REJECT
-AND, ((DOMAIN-KEYWORD, api), (DOMAIN-KEYWORD, -dual-event-), (DOMAIN-SUFFIX, pangle.io)), REJECT
-AND, ((DOMAIN-KEYWORD, api), (DOMAIN-KEYWORD, pangolin), (DOMAIN-SUFFIX, sgsnssdk.com)), REJECT
-AND, ((DOMAIN-KEYWORD, ads), (DOMAIN-KEYWORD, -normal-lq), (DOMAIN-SUFFIX, zijieapi.com)), REJECT
 URL-REGEX, "^http:\/\/p\d+-be-pack-sign\.pglstatp-toutiao\.com\/(ad-app-package|web\.business\.image)\/", REJECT
 DOMAIN, mon.zijieapi.com, REJECT
 DOMAIN, lf-ad-ies.bytecdn.cn, REJECT
@@ -920,6 +911,7 @@ IP-CIDR, 103.37.155.60/32, REJECT, no-resolve, pre-matching
 DOMAIN, flowplus.meituan.net, REJECT, extended-matching, pre-matching
 DOMAIN, lx0.meituan.com, REJECT, extended-matching, pre-matching
 DOMAIN, hlx.meituan.com, REJECT, extended-matching, pre-matching
+DOMAIN-SUFFIX, lx.meituan.net, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, httpdns.meituan.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, analytics.meituan.net, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, meituan.xn, REJECT, extended-matching, pre-matching
@@ -936,6 +928,7 @@ DOMAIN, adui.tg.meitu.com, REJECT, extended-matching, pre-matching
 DOMAIN, ad.seeyouyima.com, REJECT, extended-matching, pre-matching
 # beautycam
 DOMAIN, aaid.uyunad.com, REJECT, extended-matching, pre-matching
+DOMAIN, adui.tg.meitu.com, REJECT, extended-matching, pre-matching
 # smzdm
 DOMAIN, api.zuihuimai.com, REJECT, extended-matching, pre-matching
 DOMAIN, analytics-api.smzdm.com, REJECT, extended-matching, pre-matching
