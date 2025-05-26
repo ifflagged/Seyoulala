@@ -266,7 +266,7 @@ DOMAIN-SUFFIX,fusion.qq.com,REJECT
 DOMAIN-KEYWORD,pgdt.gtimg.c,REJECT
 DOMAIN-KEYWORD,trace.qq.com,REJECT
 DOMAIN-KEYWORD,trace.video.qq.com,REJECT
-IP-CIDR,47.110.187.87/32,REJECT,no-resolve
+IP-CIDR,47.110.187.87/32,REJECT
 DOMAIN,als.baidu.com,REJECT
 DOMAIN,duclick.baidu.com,REJECT
 DOMAIN,mobads.baidu.com,REJECT
@@ -411,8 +411,8 @@ DOMAIN-SUFFIX,wisepush.video.baidu.com,REJECT
 DOMAIN-SUFFIX,wm.baidu.com,REJECT
 DOMAIN-SUFFIX,yingxiao.baidu.com,REJECT
 DOMAIN-SUFFIX,znsv.baidu.com,REJECT
-IP-CIDR,180.76.76.112/32,REJECT,no-resolve
-IP-CIDR,180.76.76.200/32,REJECT,no-resolve
+IP-CIDR,180.76.76.112/32,REJECT
+IP-CIDR,180.76.76.200/32,REJECT
 DOMAIN,o2o-ad-log-gateway.alibaba.com,REJECT
 DOMAIN,eco.taobao.com,REJECT
 DOMAIN,ossgw.alicdn.com,REJECT
