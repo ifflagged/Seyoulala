@@ -14,7 +14,7 @@
 # ☁️ iCloud
 DOMAIN,gateway.icloud.com,🇺🇸美国
 # 📰 News
-RULE-SET,https://github.com/NSRingo/News/releases/download/v3.2.1/News.list,🇺🇸美国
+RULE-SET,https://github.com/NSRingo/News/releases/download/v3.2.1/News.list,🇺🇸美国,no-resolve
 
 [Script]
 📰 News.v1.configs.request = type=http-request, pattern=^https?:\/\/news(-todayconfig)?-edge\.apple\.com\/v1\/configs, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/NSRingo/iRingo.News/request.bundle.js, requires-body=true, argument=CountryCode="US"&NewsPlusUser="true"&LogLevel="WARN"
