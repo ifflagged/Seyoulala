@@ -63,7 +63,6 @@ https://github.com/zirawell/R-Store/raw/main/Rule/Surge/Adblock/App/%23/%E5%8A%9
 https://github.com/zirawell/R-Store/raw/main/Rule/Surge/Adblock/App/%23/%E5%B9%BF%E5%91%8A%E8%81%94%E7%9B%9F/adunion.sgmodule
 https://github.com/zirawell/R-Store/raw/main/Rule/Surge/Adblock/Applet/Alipay/%23/%E9%80%9A%E7%94%A8%E7%B1%BB/alipayAppletGeneral.sgmodule
 https://github.com/zirawell/R-Store/raw/main/Rule/Surge/Adblock/Applet/Wechat/%23/%E9%80%9A%E7%94%A8%E7%B1%BB/wechatAppletGeneral.sgmodule
-https://github.com/zirawell/R-Store/raw/main/Rule/Surge/Adblock/App/%23/%E5%B9%BF%E5%91%8A%E8%81%94%E7%9B%9F/adunion.sgmodule
 https://github.com/zirawell/R-Store/raw/main/Rule/Surge/Adblock/App/0-9/12123/12123.sgmodule😂https://github.com/zirawell/R-Store/raw/main/Rule/Surge/Adblock/App/J/%E4%BA%A4%E7%AE%A112123/12123.sgmodule
 https://github.com/zirawell/R-Store/raw/main/Rule/Surge/Adblock/App/0-9/12306/12306.sgmodule
 https://github.com/zirawell/R-Store/raw/main/Rule/Surge/Adblock/App/0-9/360%E6%99%BA%E6%85%A7%E7%94%9F%E6%B4%BB/360life.sgmodule
