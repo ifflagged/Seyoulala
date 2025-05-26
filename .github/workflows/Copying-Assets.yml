@@ -295,7 +295,7 @@ jobs:
             encoded_filename=$(echo "$filename_noext" | jq -sRr @uri)
 
             # 构建模块的 URL
-            Shadowrocket_url="http://localhost:9100/file/_start_/${module_link}/_end_/${encoded_filename}.sgmodule?type=surge-module&target=shadowrocket-module&category=${encoded_category}"
+            Shadowrocket_url="http://localhost:9100/file/_start_/${module_link}/_end_/${encoded_filename}.sgmodule?type=surge-module&target=shadowrocket-module&category=${encoded_category}&nore=true"
 
             # 下载各模块文件
             mkdir -p Modules/Shadowrocket/$author
