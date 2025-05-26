@@ -25,7 +25,7 @@ IP-CIDR,203.107.1.0/24,REJECT,no-resolve
 DOMAIN,httpsdns.baidu.com,REJECT,extended-matching
 DOMAIN,httpdns.baidu.com,REJECT,extended-matching
 DOMAIN,httpdns.baidubce.com,REJECT,extended-matching
-IP-CIDR,180.76.76.200/32,REJECT,no-resolve
+IP-CIDR,180.76.76.200/32,REJECT,no-resolve,pre-matching
 DOMAIN,httpdns.bilivideo.com,REJECT,extended-matching
 IP-CIDR,47.101.175.206/32,REJECT,no-resolve
 IP-CIDR,47.100.123.169/32,REJECT,no-resolve
@@ -45,8 +45,8 @@ IP-CIDR,112.64.218.119/32,REJECT,no-resolve
 IP-CIDR,112.65.200.117/32,REJECT,no-resolve
 DOMAIN,httpdns.c.cdnhwc2.com,REJECT,extended-matching
 DOMAIN,dns.jd.com,REJECT,extended-matching,pre-matching
-IP-CIDR,101.124.19.122/32,REJECT,no-resolve
-IP-CIDR6,2402:db40:5100:1011::5/128,REJECT,no-resolve
+IP-CIDR,101.124.19.122/32,REJECT,no-resolve,pre-matching
+IP-CIDR6,2402:db40:5100:1011::5/128,REJECT,no-resolve,pre-matching
 IP-CIDR,103.224.222.208/32,REJECT,no-resolve
 DOMAIN,httpdns.calorietech.com,REJECT,extended-matching
 DOMAIN,httpdns.meituan.com,REJECT,extended-matching
@@ -64,8 +64,8 @@ IP-CIDR,115.236.121.51/32,REJECT,no-resolve
 IP-CIDR,115.236.121.195/32,REJECT,no-resolve
 DOMAIN,httpdns.push.oppomobile.com,REJECT,extended-matching
 DOMAIN-SUFFIX,httpdns.pro,REJECT,extended-matching
-IP-CIDR,119.29.29.98/32,REJECT,no-resolve
-IP-CIDR,119.29.29.99/32,REJECT,no-resolve
+IP-CIDR,119.29.29.98/32,REJECT,no-resolve,pre-matching
+IP-CIDR,119.29.29.99/32,REJECT,no-resolve,pre-matching
 DOMAIN,httpdns.volcengineapi.com,REJECT,extended-matching
 DOMAIN,dns.weibo.cn,REJECT,extended-matching
 IP-CIDR,39.97.128.148/32,REJECT,no-resolve
@@ -248,7 +248,7 @@ DOMAIN-KEYWORD,trace.video.qq.com,REJECT,extended-matching,pre-matching
 DOMAIN-SUFFIX,gdt.qq.com,REJECT,extended-matching,pre-matching
 DOMAIN-SUFFIX,l.qq.com,REJECT,extended-matching,pre-matching
 DOMAIN-SUFFIX,ugdtimg.com,REJECT,extended-matching,pre-matching
-IP-CIDR,47.110.187.87/32,REJECT,no-resolve
+IP-CIDR,47.110.187.87/32,REJECT,no-resolve,pre-matching
 DOMAIN-SUFFIX,openinstall.io,REJECT,extended-matching,pre-matching
 DOMAIN,b-gtc.getui.net,REJECT
 DOMAIN,c-gtc.getui.net,REJECT
@@ -351,7 +351,7 @@ DOMAIN,safebrowsing.googleapis.com,REJECT,extended-matching,pre-matching
 DOMAIN,safebrowsing.urlsec.qq.com,REJECT,extended-matching,pre-matching
 DOMAIN-SUFFIX,safebrowsing.apple,REJECT,extended-matching,pre-matching
 DOMAIN-SUFFIX,u3.ucweb.com,REJECT,extended-matching,pre-matching
-IP-CIDR,81.71.61.216/32,REJECT,pre-matching
+IP-CIDR,81.71.61.216/32,REJECT,no-resolve,pre-matching
 DOMAIN,geo2.adobe.com,REJECT,extended-matching,pre-matching
 # adunion
 DOMAIN,ws.tapjoyads.com,REJECT,extended-matching,pre-matching
@@ -698,7 +698,7 @@ DOMAIN-SUFFIX,wisepush.video.baidu.com,REJECT,extended-matching,pre-matching
 DOMAIN-SUFFIX,wm.baidu.com,REJECT,extended-matching,pre-matching
 DOMAIN-SUFFIX,yingxiao.baidu.com,REJECT,extended-matching,pre-matching
 DOMAIN-SUFFIX,znsv.baidu.com,REJECT,extended-matching,pre-matching
-IP-CIDR,180.76.76.112/32,REJECT,pre-matching
+IP-CIDR,180.76.76.112/32,REJECT,no-resolve,pre-matching
 DOMAIN,o2o-ad-log-gateway.alibaba.com,REJECT,extended-matching,pre-matching
 DOMAIN,eco.taobao.com,REJECT,extended-matching,pre-matching
 DOMAIN,baichuan-sdk.alicdn.com,REJECT,extended-matching,pre-matching
@@ -776,10 +776,10 @@ DOMAIN,api.biliapi.net,REJECT,pre-matching
 DOMAIN,app.biliapi.net,REJECT,pre-matching
 # didi
 DOMAIN,adtrack.xiaojukeji.com,REJECT,extended-matching,pre-matching
-IP-CIDR,123.207.209.39/32,REJECT,pre-matching
-IP-CIDR,123.207.209.60/32,REJECT,pre-matching
-IP-CIDR,139.199.240.12/32,REJECT,pre-matching
-IP-CIDR,139.199.240.15/32,REJECT,pre-matching
+IP-CIDR,123.207.209.39/32,REJECT,no-resolve,pre-matching
+IP-CIDR,123.207.209.60/32,REJECT,no-resolve,pre-matching
+IP-CIDR,139.199.240.12/32,REJECT,no-resolve,pre-matching
+IP-CIDR,139.199.240.15/32,REJECT,no-resolve,pre-matching
 # dianping
 DOMAIN,r.dianping.com,REJECT,extended-matching,pre-matching
 DOMAIN,tte.meituan.com,REJECT,extended-matching,pre-matching
@@ -787,8 +787,8 @@ DOMAIN,dpmtpush.dianping.com,REJECT,extended-matching,pre-matching
 DOMAIN,dynamicf.sankuai.com,REJECT,extended-matching,pre-matching
 DOMAIN,live-monitor-broker.sankuai.com,REJECT,extended-matching,pre-matching
 DOMAIN-SUFFIX,lx.meituan.net,REJECT,extended-matching,pre-matching
-IP-CIDR,101.32.16.204/32,REJECT,pre-matching
-IP-CIDR,119.29.126.137/32,REJECT,pre-matching
+IP-CIDR,101.32.16.204/32,REJECT,no-resolve,pre-matching
+IP-CIDR,119.29.126.137/32,REJECT,no-resolve,pre-matching
 # HKDouYin_remove_ads
 AND,((IP-CIDR,101.126.58.201/32,no-resolve),(DEST-PORT,6443)),REJECT
 AND,((IP-CIDR,110.249.199.75/32,no-resolve),(DEST-PORT,6443)),REJECT
@@ -835,7 +835,7 @@ DOMAIN,mediation.adnxs.com,REJECT,extended-matching,pre-matching
 DOMAIN,sin3-ib.adnxs.com,REJECT,extended-matching,pre-matching
 # mihome
 # meituan
-IP-CIDR,103.37.155.60/32,REJECT,pre-matching
+IP-CIDR,103.37.155.60/32,REJECT,no-resolve,pre-matching
 DOMAIN,flowplus.meituan.net,REJECT,extended-matching,pre-matching
 DOMAIN,lx0.meituan.com,REJECT,extended-matching,pre-matching
 DOMAIN,hlx.meituan.com,REJECT,extended-matching,pre-matching
@@ -953,7 +953,7 @@ DOMAIN,tysdk.95516.com,REJECT,extended-matching,pre-matching
 # ccb
 DOMAIN-KEYWORD,adv.ccb.com,REJECT,extended-matching,pre-matching
 # 10086
-IP-CIDR,120.240.95.37/32,REJECT,pre-matching
+IP-CIDR,120.240.95.37/32,REJECT,no-resolve,pre-matching
 # boc
 DOMAIN,openapi.boc.cn,REJECT,extended-matching,pre-matching
 # cmb
