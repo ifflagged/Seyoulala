@@ -86,6 +86,7 @@ Modules/Surge/zirawell/jd.sgmodule # Loon,Shadowrocket
 # K #
 
 # M #
+Modules/Surge/zirawell/manmanbuy.sgmodule # Loon,Shadowrocket
 Modules/Surge/zirawell/mcd.sgmodule # Loon,Shadowrocket
 Modules/Surge/zirawell/meituan.sgmodule # Loon,Shadowrocket
 Modules/Surge/zirawell/mihome.sgmodule # Loon,Shadowrocket
