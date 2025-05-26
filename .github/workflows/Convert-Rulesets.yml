@@ -60,14 +60,14 @@ jobs:
             mkdir -p Rulesets/{Surge,Loon,Shadowrocket,Clash}/$author/Beta
 
             # 构建模块的 URL
-            Surge_url="http://localhost:9100/file/_start_/${encoded_module_link}/_end_/${encoded_filename}.list?type=rule-set&target=surge-rule-set&nore=true"
-            Surge_Beta_url="http://localhost:9101/file/_start_/${encoded_module_link}/_end_/${encoded_filename}.list?type=rule-set&target=surge-rule-set&nore=true"
-            Loon_url="http://localhost:9100/file/_start_/${encoded_module_link}/_end_/${encoded_filename}.list?type=rule-set&target=loon-rule-set&icon=Loon&nore=true"
-            Loon_Beta_url="http://localhost:9101/file/_start_/${encoded_module_link}/_end_/${encoded_filename}.list?type=rule-set&target=loon-rule-set&icon=Loon&nore=true"
-            Shadowrocket_url="http://localhost:9100/file/_start_/${encoded_module_link}/_end_/${encoded_filename}.list?type=rule-set&target=shadowrocket-rule-set&nore=true"
-            Shadowrocket_Beta_url="http://localhost:9101/file/_start_/${encoded_module_link}/_end_/${encoded_filename}.list?type=rule-set&target=shadowrocket-rule-set&nore=true"
-            Clash_url="http://localhost:9100/file/_start_/${encoded_module_link}/_end_/${encoded_filename}.list?type=rule-set&target=stash-rule-set&nore=true"
-            Clash_Beta_url="http://localhost:9101/file/_start_/${encoded_module_link}/_end_/${encoded_filename}.list?type=rule-set&target=stash-rule-set&nore=true"
+            Surge_url="http://localhost:9100/file/_start_/${encoded_module_link}/_end_/${encoded_filename}.list?type=rule-set&target=surge-rule-set"
+            Surge_Beta_url="http://localhost:9101/file/_start_/${encoded_module_link}/_end_/${encoded_filename}.list?type=rule-set&target=surge-rule-set"
+            Loon_url="http://localhost:9100/file/_start_/${encoded_module_link}/_end_/${encoded_filename}.list?type=rule-set&target=loon-rule-set&icon=Loon"
+            Loon_Beta_url="http://localhost:9101/file/_start_/${encoded_module_link}/_end_/${encoded_filename}.list?type=rule-set&target=loon-rule-set&icon=Loon"
+            Shadowrocket_url="http://localhost:9100/file/_start_/${encoded_module_link}/_end_/${encoded_filename}.list?type=rule-set&target=shadowrocket-rule-set"
+            Shadowrocket_Beta_url="http://localhost:9101/file/_start_/${encoded_module_link}/_end_/${encoded_filename}.list?type=rule-set&target=shadowrocket-rule-set"
+            Clash_url="http://localhost:9100/file/_start_/${encoded_module_link}/_end_/${encoded_filename}.list?type=rule-set&target=stash-rule-set"
+            Clash_Beta_url="http://localhost:9101/file/_start_/${encoded_module_link}/_end_/${encoded_filename}.list?type=rule-set&target=stash-rule-set"
 
             # 下载各模块文件
             echo "Downloading Surge file: $Surge_url"
