@@ -1,21 +1,17 @@
-// 去除首页横幅广告，去除我的广告（只保留设置，个人资料）
 
-if (!$response.body) {
-  $done({});
-}
-const url = $request.url;
-let obj = JSON.parse($response.body);
-
-if (obj?.operationResourceDTO) {
-  obj.operationResourceDTO = [];
-}
-
-if (url.includes("api.u51.com/generic-config-gateway/api")) {
-  if (obj?.meTabConfigExts) {
-    let reserve = ['设置']
-    obj.meTabConfigExts = obj.meTabConfigExts.filter(item => reserve.includes(item.meTabConfigs[0].title));
-  }
-}
-
-body = JSON.stringify(obj);
-$done({body});
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>503 first byte timeout</title>
+  </head>
+  <body>
+    <h1>Error 503 first byte timeout</h1>
+    <p>first byte timeout</p>
+    <h3>Error 54113</h3>
+    <p>Details: cache-iad-kiad7000100-IAD 1748244551 2292583359</p>
+    <hr>
+    <p>Varnish cache server</p>
+  </body>
+</html>
