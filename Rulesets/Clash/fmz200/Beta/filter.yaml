@@ -1,4 +1,4 @@
-#规则数量:9691
+#规则数量:9690
 #不支持的规则数量:1
 #已排除的规则数量:0
 #不支持的规则:
@@ -1213,7 +1213,6 @@ payload:
   - DOMAIN,ads.finance.yahoo.com
   - DOMAIN,ads.yahoo.com
   - DOMAIN,ads.yahoo.de
-  - DOMAIN-SUFFIX,sm.cn
   - DOMAIN-SUFFIX,acz.youku.com
   - DOMAIN-SUFFIX,adx-core.youku.com
   - DOMAIN-SUFFIX,adx-open-service.youku.com

@@ -1,4 +1,4 @@
-#规则数量:9692
+#规则数量:9691
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -1210,7 +1210,6 @@ DOMAIN,ads.auctions.yahoo.com
 DOMAIN,ads.finance.yahoo.com
 DOMAIN,ads.yahoo.com
 DOMAIN,ads.yahoo.de
-DOMAIN-SUFFIX,sm.cn
 DOMAIN-SUFFIX,acz.youku.com
 DOMAIN-SUFFIX,adx-core.youku.com
 DOMAIN-SUFFIX,adx-open-service.youku.com
