@@ -1692,52 +1692,47 @@ upos-sz-upcdntx.bilivideo.com = server:https://doh.pub/dns-query // BiliBili upo
 [Script]
 # iRingo.WeatherKit
 🌤 WeatherKit.api.v1.availability.response = type=http-response, pattern=^https?:\/\/weatherkit\.apple\.com\/api\/v1\/availability\/, requires-body=1, engine=webview, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/NSRingo/iRingo.WeatherKit/response.bundle.js, argument=NextHour.Provider="{{{NextHour.Provider}}}"&AQI.Provider="{{{AQI.Provider}}}"&AQI.ReplaceProviders="{{{AQI.ReplaceProviders}}}"&AQI.Local.Scale="{{{AQI.Local.Scale}}}"&AQI.Local.ReplaceScales="{{{AQI.Local.ReplaceScales}}}"&AQI.Local.ConvertUnits="{{{AQI.Local.ConvertUnits}}}"&API.ColorfulClouds.Token="{{{API.ColorfulClouds.Token}}}"&API.QWeather.Host="{{{API.QWeather.Host}}}"&API.QWeather.Token="{{{API.QWeather.Token}}}"&API.WAQI.Token="{{{API.WAQI.Token}}}"&LogLevel="{{{LogLevel}}}"
+# iRingo.Location
+# iRingo.Maps
+# iRingo.Siri
+# Module-Common
+# adunion
+# 12306_remove_ads
+# NoAds
 # BiliBili
-精简首页顶部标签 = type=http-response, pattern=^https:\/\/app\.bilibili\.com\/x\/resource\/show\/tab\/v2\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/BiliBili/BiliBili.js, requires-body=true
 # bilibili
-{{{空降助手}}} = type=http-request, pattern=^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.playerunite\.v1\.Player\/PlayViewUnite$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/kokoryh/bilibili/bilibili.airborne.js, requires-body=true, binary-body-mode=true, engine=webview, max-size=-1
-{{{空降助手弹幕版}}} = type=http-request, pattern=^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.community\.service\.dm\.v1\.DM\/DmSegMobile$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/kokoryh/bilibili/bilibili.airborne.js, requires-body=true, binary-body-mode=true, engine=webview, max-size=-1
+# BilibiliAds
+# BiliBili.ADBlock
+# BiliBili.Enhanced
+# BiliBili.Redirect
+# didi
+# dianping
+# HKDouYin_remove_ads
+# eleme
 # Amap_remove_ads
-移除路线规划推广 = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/aos\/perception\/publicTravel\/beforeNavi\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Amap_remove_ads/Amap_remove_ads.js, requires-body=true
-移除路线规划、导航结束页推广 = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/bus\/plan\/integrate\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Amap_remove_ads/Amap_remove_ads.js, requires-body=true
-移除导航详情页底部酒店、处理附近页 = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/c3frontend\/(?:af-(?:hotel|launch)\/page\/main|af-nearby\/nearby), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Amap_remove_ads/Amap_remove_ads.js, requires-body=true
-移除路线规划推广 = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/perception\/drive\/(?:routeInfo|routePlan), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Amap_remove_ads/Amap_remove_ads.js, requires-body=true
-移除搜索栏推广 = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/search_bff\/hotword\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Amap_remove_ads/Amap_remove_ads.js, requires-body=true
-移除搜索详情页推广 = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/search_poi\/(?:mps|search\/sp|sug|tips_operation_location), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Amap_remove_ads/Amap_remove_ads.js, requires-body=true
-移除首页推广 = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/(?:card-service-plan-home|main-page), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Amap_remove_ads/Amap_remove_ads.js, requires-body=true
-移除首页推广 = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/frogserver\/aocs\/updatable\/1\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Amap_remove_ads/Amap_remove_ads.js, requires-body=true
-移除我的页面推广 = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/dsp\/profile\/index\/nodefaasv3\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Amap_remove_ads/Amap_remove_ads.js, requires-body=true
-移除附近页推广 = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/search\/nearbyrec_smart\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Amap_remove_ads/Amap_remove_ads.js, requires-body=true
-移除开屏广告 = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/valueadded\/alimama\/splash_screen\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Amap_remove_ads/Amap_remove_ads.js, requires-body=true
-移除打车页推广卡片、弹窗 = type=http-response, pattern=^https:\/\/m5-zb\.amap\.com\/ws\/boss\/(?:car\/order\/content_info|order_web\/friendly_information), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Amap_remove_ads/Amap_remove_ads.js, requires-body=true
-移除打车页红点角标、天气图标 = type=http-response, pattern=^https:\/\/m5-zb\.amap\.com\/ws\/promotion-web\/resource(\/home)?\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Amap_remove_ads/Amap_remove_ads.js, requires-body=true
-移除导航详情页推广 = type=http-response, pattern=^https:\/\/(?:info|m5)\.amap\.com\/ws\/shield\/search\/(?:common\/coupon\/info|poi\/detail), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Amap_remove_ads/Amap_remove_ads.js, requires-body=true
+# amap
+# ehaier
+# umetrip
 # JD_Helper
-京东助手 = type=http-response, pattern=^https:\/\/in\.m\.jd\.com\/product\/.+?\.html, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/githubdulong/JD_Helper/jd_price1.js, requires-body=true, max-size=-1, argument=jd_union_id={{{JD_UNION_ID}}}&jd_position_id={{{JD_POSITION_ID}}}&jtt_appid={{{JTT_APPID}}}&jtt_appkey={{{JTT_APPKEY}}}&engine={{{ENGINE}}}&timeout={{{TIMEOUT}}}&disable_notice={{{DISABLE_NOTICE}}}&theme_time={{{THEME_TIME}}}
 # JD_remove_ads
-移除京东广告 = type=http-response, pattern=^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/JD_remove_ads/JD_remove_ads.js, requires-body=true
+# jd
+# mstand
+# manner
+# meituan
+# Pinduoduo
+# SmzdmAds
+# smzdm
+# taobao
 # weibo
-微博移除发现页广告 = type=http-response, pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/2\/search\/(finder|container_timeline|container_discover)\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/weibo/weibo_ads.js, requires-body=true, timeout=60
-微博热搜页面广告 = type=http-response, pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/2\/(page|flowpage)\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/weibo/weibo_ads.js, requires-body=true, timeout=60
-微博话题页面广告 = type=http-response, pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/2\/searchall\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/weibo/weibo_ads.js, requires-body=true, timeout=60
-微博超话页面广告 = type=http-response, pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/2\/statuses\/container_timeline_topicpage\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/weibo/weibo_ads.js, requires-body=true, timeout=60
-微博详情页面广告 = type=http-response, pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/2\/statuses\/extend\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/weibo/weibo_ads.js, requires-body=true, timeout=60
-微博评论区广告 = type=http-response, pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/2\/comments\/mix_comments\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/weibo/weibo_ads.js, requires-body=true, timeout=60
-微博转发评论区广告 = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/statuses\/repost_timeline\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/weibo/weibo_main.js, requires-body=true, timeout=60
-微博去广告以及去除各部分推广模块 = type=http-response, pattern=^https?:\/\/m?api\.weibo\.c(n|om)/2/(cardlist|searchall|page|messageflow|statuses/(unread_)?friends(/|_)timeline|groups/timeline|statuses/(container_timeline|container_timeline_hot|unread_hot_timeline|extend|video_mixtimeline)|profile/(me|container_timeline)|video/(community_tab|remind_info|tiny_stream_video_list)|checkin/show|\!/live/media_homelist|comments/build_comments|container/get_item), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/weibo/weibo_main.js, requires-body=true, timeout=60
-微博去广告以及去除各部分推广模块 = type=http-response, pattern=^https?:\/\/(sdk|wb)app\.uve\.weibo\.com(/interface/sdk/sdkad.php|/wbapplua/wbpullad.lua), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/weibo/weibo_launch.js, requires-body=true, timeout=60
 # Weixin_external_links_unlock
-微信外部链接解锁 = type=http-response, pattern=^https\:\/\/(weixin110\.qq|security.wechat)\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Weixin_external_links_unlock/Weixin_external_links_unlock.js, requires-body=true
+# WxPureDominion
+# wechatAppletGeneral
+# wechat
 # RedPaper_remove_ads
-移除图片和实况照片水印 = type=http-response, pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/note\/(?:imagefeed|live_photo\/save), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/RedPaper_remove_ads/RedPaper_remove_ads.js, requires-body=true
-移除详情页小部件、关注页感兴趣的人 = type=http-response, pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v2\/(?:note\/widgets|user\/followings\/followfeed), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/RedPaper_remove_ads/RedPaper_remove_ads.js, requires-body=true
-移除信息流广告 = type=http-response, pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v4\/followfeed\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/RedPaper_remove_ads/RedPaper_remove_ads.js, requires-body=true
-移除详情页感兴趣的人 = type=http-response, pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v5\/recommend\/user\/follow_recommend\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/RedPaper_remove_ads/RedPaper_remove_ads.js, requires-body=true
-移除搜索页广告 = type=http-response, pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v10\/search\/notes\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/RedPaper_remove_ads/RedPaper_remove_ads.js, requires-body=true
-移除评论区实况照片水印 = type=http-response, pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/(?:v1\/interaction\/comment\/video\/download|v5\/note\/comment\/list), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/RedPaper_remove_ads/RedPaper_remove_ads.js, requires-body=true
-移除图片和视频水印 = type=http-response, pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/(?:v2\/note\/feed|v3\/note\/videofeed), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/RedPaper_remove_ads/RedPaper_remove_ads.js, requires-body=true
-移除信息流广告 = type=http-response, pattern=^https:\/\/(?:edith|rec)\.xiaohongshu\.com\/api\/sns\/v6\/homefeed\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/RedPaper_remove_ads/RedPaper_remove_ads.js, requires-body=true
-移除视频水印 = type=http-response, pattern=^https:\/\/(?:edith|rec|www)\.xiaohongshu\.com\/api\/sns\/(?:v4\/note\/videofeed|v10\/note\/video\/save), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/RedPaper_remove_ads/RedPaper_remove_ads.js, requires-body=true
+# goofish
+# YouTube.Enhance
+# DualSubs.Spotify
+# boxjs.rewrite.surge
 
 [MITM]
 hostname = %APPEND% *.bili*.*, *.bilibili.*, *.bilibili.com, *.boxjs.com, *.boxjs.net, *.dianping.com, *.googlevideo.com, *.httpdns.pro, *.jddebug.com, *.mcdn.bilivideo.cn, *.pornhub.com, *.weibo.cn, *.weibo.com, *.zdmimg.com, *biliapi.net, -*.facebook.com, -*.instagram.com, -*.pstatp.com, -*.snssdk.com, -*.twitter.com, -*cdn*.biliapi.net, -*tracker*.biliapi.net, -broadcast.chat.bilibili.com, -cm.bilibili.com, 103.37.155.60, 119.29.29.*, 119.29.29.98, 119.29.29.99, 91porn.com, a.sinopecsales.com, a1d5b283e-wx621112590b635086.sh.wxgateway.com, acs.m.goofish.com, acs.m.taobao.com, ad.12306.cn, afd.baidu.com, amdc-sibling.alipay.com.cn, amdc.alipay.com, amdc.m.taobao.com, ams-cdn.cdtft.cn, apapia-sqk-weblogic.manmanbuy.com, apapia-sqk.manmanbuy.com, api-*.smoot.apple.com, api-sams.walmartmobile.cn, api.biliapi.net, api.bilibili.com, api.live.bilibili.com, api.m.jd.com, api.mcd.cn, api.pinduoduo.com, api.prod.dj.mstand.cn, api.spotify.com, api.udache.com, api.vc.bilibili.com, api2.helper.qq.com, api2.smoot.apple.com, api2.yaduo.com, api5-normal-m.amemv.com, apimobile.meituan.com, app-api.smzdm.com, app.10086.cn, app.biliapi.net, app.bilibili.com, article-api.smzdm.com, as.xiaojukeji.com, aweme.snssdk.com, awp-assets.meituan.net, axxd.xmseeyouyima.com, baike-api.smzdm.com, bdsp-x.jd.com, bk.bingo.qq.com, bkclient.umetrip.com.cn, bla.gtimg.com, boxjs.com, boxjs.net, c.m.163.com, cache.bydauto.com.cn, capi.lkcoffee.com, capis*.didapinche.com, cdn.api.fotoable.com, ci.xiaohongshu.com, client.app.coc.10086.cn, client.qunar.com, cloud.bluecardsoft.com, common.diditaxi.com.cn, conf.diditaxi.com.cn, configuration.ls.apple.com, cover.baidu.com, csc-service.sgcc.com.cn, ct.xiaojukeji.com, cube.elemecdn.com, cy.cloud.ccb.com, ddplus.meituan.net, dinamicx.alibabausercontent.com, discardrp.umetrip.com, discuz.gtimg.cn, dns.jd.com, dsp-x.jd.com, dualstack*.amap.com, e.jparking.cn, ecapi.lkcoffee.com, edith.xiaohongshu.com, elemecdn.com, fcvbjbcebos.baidu.com, flowplus.meituan.net, freight.xiaojukeji.com, fuss10.elemecdn.com, g-acs.m.goofish.com, g.alicdn.com, g1.163.com, gab.122.gov.cn, gist.githubusercontent.com, github.com, grpc.biliapi.net, gspe1-ssl.ls.apple.com, gspe35-ssl.ls.apple.com, guide-acs.m.taobao.com, guzzoni.smoot.apple.com, gw.alicdn.com, h.app.coc.10086.cn, h5.m.goofish.com, haojia-api.smzdm.com, haojia.m.smzdm.com, hd.xiaojukeji.com, heic.alicdn.com, home.mi.com, home.umetrip.com, homefront.qunar.com, homepage-api.smzdm.com, htwkop.xiaojukeji.com, image1.ccb.com, imageadv.ccb.com, images.pinduoduo.com, img*.360buyimg.com, img*.lkcoffee.com, img.meituan.net, img1.126.net, imgcache.qq.com, in.m.jd.com, issuecdn.baidupcs.com, l*.51fanli.net, lite-in.m.jd.com, m*.amap.com, m.dianping.com, m.lkcoffee.com, m5-zb.amap.com, m5.amap.com, manga.bilibili.com, mapi.dianping.com, mbs.boc.cn, mdn.alicdn.com, mea.meitudata.com, miniapp.qmai.cn, mmgr.gtimg.com, mobile.12306.cn, mobile.cmbchina.com, mp.weixin.qq.com, mtteve.beacon.qq.com, nex.163.com, npay.meituan.com, nr-op.elemecdn.com, ocrifs.ejoy.sinopec.com, omgup*.xiaojukeji.com, osg-service.sgcc.com.cn, oss-zjrs.haier.net, oss.amap.com, oss.umetrip.com, p*.meituan.net, p.meituan.com, pan.baidu.com, poplayer.template.alibaba.com, portal-portm.meituan.com, pt-starimg.didistatic.com, qde.qunar.com, qianbao.smzdm.com, qimgs.qunarzz.com, qt.qq.com, qzonestyle.gtimg.cn, raw.githubusercontent.com, rec.xiaohongshu.com, res.xiaojukeji.com, rms.meituan.com, router.com, s-api.smzdm.com, s3plus.meituan.net, security.wechat.com, sns.amap.com, spamblocker-api.zeekstudio.com, spclient.wg.spotify.com, splashqqlive.gtimg.com, sqt.meituan.com, startup.umetrip.com, storage.360buyimg.com, sytgate.jslife.com.cn, t-dsp.pinduoduo.com, tfsmy.chengdu.gov.cn, tft-app.cdtft.cn, triangle.wearemanner.com, umerp.umetrip.com, umerp.umetrip.com.cn, update.pan.baidu.com, upos-*-mirrorakam.akamaized.net, upos-sz-mirror*bstar1.bilivideo.com, user-api.smzdm.com, ut.xiaojukeji.com, video-dsp.pddpic.com, vv.video.qq.com, waimai-guide.ele.me, wallet.95516.com, wcprd.hilton.com.cn, weatherkit.apple.com, web.meituan.com, webapi.qmai.cn, webapp.joyingtrip.com, webappcfg.paas.cmbchina.com, weibo.com, weixin110.qq.com, www.baidu.com, www.dpfile.com, www.google.com, www.meituan.com, www.router.com, www.xiaohongshu.com, www1.elecfans.com, wx.17u.cn, wxproj.seeyouyima.com, x.seeyouyima.com, y.gtimg.cn, yixiu-abtest.alicdn.com, youtubei.googleapis.com, zhiyou.m.smzdm.com, zj.haier.net
