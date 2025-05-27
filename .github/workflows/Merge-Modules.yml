@@ -43,7 +43,7 @@ jobs:
       run: |
         # 使用通配符找到所有符合 Merge-Modules-*.txt 的文件并执行远程合并脚本
         for file in Links/Merge-Modules-*.txt; do
-          python ${{ env.REPOSITORY_PATH }}/Scripts/Remote-Merge-Modules.py "$file" --exclude 'Body Rewrite'
+          python ${{ env.REPOSITORY_PATH }}/Scripts/Remote-Merge-Modules.py "$file" --exclude ${{ env.EXCLUDE_SECTIONS }}
         done
 
     - name: Commit and push changes
