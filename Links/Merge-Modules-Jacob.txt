@@ -36,7 +36,6 @@ Modules/Surge/BiliUniverse/BiliBili.ADBlock.sgmodule # Loon,Shadowrocket
 Modules/Surge/kokoryh/bilibili.sgmodule # Loon,Shadowrocket
 Modules/Surge/ddgksf2013/BilibiliAds.sgmodule # Shadowrocket
 Modules/Loon/Kelee/Bilibili_remove_ads.plugin
-https://github.com/ifflagged/Neverflagged/raw/main/Loon/Plugin/bilibili.plugin
 Modules/Surge/BiliUniverse/BiliBili.Enhanced.sgmodule # Loon,Shadowrocket
 Modules/Surge/BiliUniverse/BiliBili.Redirect.sgmodule # Loon,Shadowrocket
 Modules/Surge/zirawell/bydwc.sgmodule # Loon,Shadowrocket
@@ -147,7 +146,8 @@ Modules/Surge/zirawell/boc.sgmodule # Loon,Shadowrocket
 Modules/Surge/zirawell/cmb.sgmodule# Loon,Shadowrocket
 Modules/Surge/zirawell/alipay.sgmodule # Loon,Shadowrocket
 
-
+# Magic #
+https://github.com/ifflagged/Neverflagged/raw/main/Loon/Plugin/Tab.plugin
 
 https://github.com/chavyleung/scripts/raw/master/box/rewrite/boxjs.rewrite.surge.sgmodule # Copy
 https://github.com/chavyleung/scripts/raw/master/box/rewrite/boxjs.rewrite.loon.plugin
