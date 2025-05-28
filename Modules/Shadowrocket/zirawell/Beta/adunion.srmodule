@@ -188,6 +188,10 @@ DOMAIN,adsmind.apdcdn.tc.qq.com,REJECT,extended-matching
 DOMAIN,adsmind.tc.qq.com,REJECT,extended-matching
 DOMAIN,wa.gtimg.com,REJECT,extended-matching
 DOMAIN,livep.l.t002.ottcn.com,REJECT,extended-matching
+DOMAIN,iacc.qq.com,REJECT,extended-matching
+DOMAIN,tux.qq.com,REJECT,extended-matching
+DOMAIN,aegis.qq.com,REJECT,extended-matching
+DOMAIN,rdelivery.qq.com,REJECT,extended-matching
 DOMAIN-SUFFIX,e.qq.com,REJECT,extended-matching
 DOMAIN-SUFFIX,l.qq.com,REJECT,extended-matching
 DOMAIN-SUFFIX,ad.qq.com,REJECT,extended-matching
@@ -222,9 +226,6 @@ DOMAIN-SUFFIX,activeqq.3g.qq.com,REJECT,extended-matching
 DOMAIN-SUFFIX,rqd.qq.com,REJECT,extended-matching
 DOMAIN-SUFFIX,tpns.qq.com,REJECT,extended-matching
 DOMAIN-SUFFIX,tpns.tencent.com,REJECT,extended-matching
-DOMAIN-SUFFIX,tetrack.qq.com,REJECT,extended-matching
-DOMAIN-SUFFIX,ugdtimg.com,REJECT,extended-matching
-DOMAIN-SUFFIX,gdtimg.com,REJECT,extended-matching
 DOMAIN-SUFFIX,gdt.qq.com,REJECT,extended-matching
 DOMAIN-SUFFIX,mdt.qq.com,REJECT,extended-matching
 DOMAIN-SUFFIX,bugly.qq.com,REJECT,extended-matching
@@ -238,6 +239,7 @@ DOMAIN-SUFFIX,mfm.video.qq.com,REJECT,extended-matching
 DOMAIN-SUFFIX,mini2015.qq.com,REJECT,extended-matching
 DOMAIN-SUFFIX,monitor.uu.qq.com,REJECT,extended-matching
 DOMAIN-SUFFIX,mqqad.cs0309.html5.qq.com,REJECT,extended-matching
+DOMAIN-SUFFIX,static-res.qq.com,REJECT,extended-matching
 DOMAIN-SUFFIX,mqqad.html5.qq.com,REJECT,extended-matching
 DOMAIN-SUFFIX,mqqadr.reader.qq.com,REJECT,extended-matching
 DOMAIN-SUFFIX,news.mpush.qq.com,REJECT,extended-matching
@@ -262,8 +264,10 @@ DOMAIN-SUFFIX,pingma.qq.com,REJECT,extended-matching
 DOMAIN-SUFFIX,pingtcss.qq.com,REJECT,extended-matching
 DOMAIN-SUFFIX,tajs.qq.com,REJECT,extended-matching
 DOMAIN-SUFFIX,fusion.qq.com,REJECT,extended-matching
+DOMAIN-KEYWORD,gdtimg.com,REJECT,extended-matching
 DOMAIN-KEYWORD,pgdt.gtimg.c,REJECT,extended-matching
 DOMAIN-KEYWORD,trace.qq.com,REJECT,extended-matching
+DOMAIN-KEYWORD,track.qq.com,REJECT,extended-matching
 DOMAIN-KEYWORD,trace.video.qq.com,REJECT,extended-matching
 IP-CIDR,47.110.187.87/32,REJECT,no-resolve
 DOMAIN,als.baidu.com,REJECT,extended-matching
