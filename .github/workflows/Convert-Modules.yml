@@ -2,7 +2,7 @@ name: Extract and Process Modules
 
 on:
   schedule:
-    - cron: '5,30 * * * *'
+    - cron: '5,35 * * * *'
   workflow_dispatch:
 
 jobs:
