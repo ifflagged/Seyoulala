@@ -10,6 +10,9 @@
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
 #!date=2025-05-13 15:17:08
 
+[Body Rewrite]
+http-response-jq ^https:\/\/newapi\.meishi\.cc\/indexnew\/home_feeds 'if .data.items then .data.items |= map(select(.type | . != "101" and . != "12")) else . end'
+
 [MITM]
 hostname = %APPEND% newapi.meishi.cc
 

@@ -19,6 +19,10 @@ DOMAIN,images.pinduoduo.com,REJECT
 DOMAIN,qh-material.taobao.com,REJECT
 DOMAIN-SUFFIX,admobile.top,REJECT
 
+[Body Rewrite]
+http-response-jq ^https:?\/\/switch.jumpvg.com\/jump\/getlaunchad\/v2$ 'del(.data.adList)|.data.launchAd.showType=0'
+http-response-jq ^https:?\/\/switch.jumpvg.com\/jump\/recommend\/ad_conf$ '.data=[]'
+
 [MITM]
 hostname = %APPEND% switch.jumpvg.com
 
