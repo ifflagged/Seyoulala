@@ -114,7 +114,7 @@ jobs:
             module_folder=$(basename "$plugin_file" .plugin)
             echo "Processing $plugin_file from folder $author for JS links"
 
-            js_links=$(grep -v '#' "$plugin_file" | grep -oP 'https?://[^ ]+\.(json|js)' || echo "")
+            js_links=$(grep -v '#' "$plugin_file" | grep -oP 'https?://[^ ]+\.(json|js|jq)' || echo "")
 
             for js_link in $js_links; do
               js_filename=$(basename "$js_link")
