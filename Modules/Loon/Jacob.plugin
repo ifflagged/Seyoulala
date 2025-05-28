@@ -566,6 +566,10 @@ DOMAIN,adsmind.apdcdn.tc.qq.com,REJECT
 DOMAIN,adsmind.tc.qq.com,REJECT
 DOMAIN,wa.gtimg.com,REJECT
 DOMAIN,livep.l.t002.ottcn.com,REJECT
+DOMAIN,iacc.qq.com,REJECT
+DOMAIN,tux.qq.com,REJECT
+DOMAIN,aegis.qq.com,REJECT
+DOMAIN,rdelivery.qq.com,REJECT
 DOMAIN-SUFFIX,e.qq.com,REJECT
 DOMAIN-SUFFIX,ad.qq.com,REJECT
 DOMAIN-SUFFIX,adping.qq.com,REJECT
@@ -599,8 +603,6 @@ DOMAIN-SUFFIX,activeqq.3g.qq.com,REJECT
 DOMAIN-SUFFIX,rqd.qq.com,REJECT
 DOMAIN-SUFFIX,tpns.qq.com,REJECT
 DOMAIN-SUFFIX,tpns.tencent.com,REJECT
-DOMAIN-SUFFIX,tetrack.qq.com,REJECT
-DOMAIN-SUFFIX,gdtimg.com,REJECT
 DOMAIN-SUFFIX,mdt.qq.com,REJECT
 DOMAIN-SUFFIX,bugly.qq.com,REJECT
 DOMAIN-SUFFIX,omgmta.qq.com,REJECT
@@ -613,6 +615,7 @@ DOMAIN-SUFFIX,mfm.video.qq.com,REJECT
 DOMAIN-SUFFIX,mini2015.qq.com,REJECT
 DOMAIN-SUFFIX,monitor.uu.qq.com,REJECT
 DOMAIN-SUFFIX,mqqad.cs0309.html5.qq.com,REJECT
+DOMAIN-SUFFIX,static-res.qq.com,REJECT
 DOMAIN-SUFFIX,mqqad.html5.qq.com,REJECT
 DOMAIN-SUFFIX,mqqadr.reader.qq.com,REJECT
 DOMAIN-SUFFIX,news.mpush.qq.com,REJECT
@@ -637,7 +640,9 @@ DOMAIN-SUFFIX,pingma.qq.com,REJECT
 DOMAIN-SUFFIX,pingtcss.qq.com,REJECT
 DOMAIN-SUFFIX,tajs.qq.com,REJECT
 DOMAIN-SUFFIX,fusion.qq.com,REJECT
+DOMAIN-KEYWORD,gdtimg.com,REJECT
 DOMAIN-KEYWORD,pgdt.gtimg.c,REJECT
+DOMAIN-KEYWORD,track.qq.com,REJECT
 DOMAIN,duclick.baidu.com,REJECT
 DOMAIN,nsclick.baidu.com,REJECT
 DOMAIN,hmma.baidu.com,REJECT
