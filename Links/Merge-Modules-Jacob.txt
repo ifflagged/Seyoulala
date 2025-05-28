@@ -13,7 +13,7 @@ Modules/Surge/NSRingo/iRingo.Location.sgmodule # Loon,Shadowrocket
 Modules/Surge/NSRingo/iRingo.Maps.sgmodule # Loon,Shadowrocket
 Modules/Surge/NSRingo/iRingo.Siri.sgmodule # Loon,Shadowrocket
 
-https://github.com/ifflagged/Neverflagged/raw/main/Surge/Module/Tools.sgmodule # Loon,Copy
+https://github.com/ifflagged/Neverflagged/raw/main/Surge/Module/Tools.sgmodule
 Modules/Surge/ifflagged/Module-Common.sgmodule # Loon,Shadowrocket
 Modules/Surge/ifflagged/Plugin-Common.sgmodule # Loon,Shadowrocket
 
@@ -35,8 +35,8 @@ Modules/Surge/ifflagged/BiliBili.sgmodule # Loon,Shadowrocket
 Modules/Surge/BiliUniverse/BiliBili.ADBlock.sgmodule # Loon,Shadowrocket
 Modules/Surge/kokoryh/bilibili.sgmodule # Loon,Shadowrocket
 Modules/Surge/ddgksf2013/BilibiliAds.sgmodule # Shadowrocket
-https://github.com/ifflagged/Neverflagged/raw/main/Loon/Plugin/bilibili.plugin
 Modules/Loon/Kelee/Bilibili_remove_ads.plugin
+https://github.com/ifflagged/Neverflagged/raw/main/Loon/Plugin/bilibili.plugin
 Modules/Surge/BiliUniverse/BiliBili.Enhanced.sgmodule # Loon,Shadowrocket
 Modules/Surge/BiliUniverse/BiliBili.Redirect.sgmodule # Loon,Shadowrocket
 Modules/Surge/zirawell/bydwc.sgmodule # Loon,Shadowrocket
