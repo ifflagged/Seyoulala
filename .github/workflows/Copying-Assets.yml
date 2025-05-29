@@ -2,7 +2,7 @@ name: Mirror Release Assets
 
 on:
   schedule:
-    - cron: '5,30 * * * *'
+    - cron: '*/30 * * * *'
   workflow_dispatch:
 
 jobs:
