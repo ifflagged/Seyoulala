@@ -11,7 +11,7 @@ Modules/Surge/VirgilClyne/DNS.sgmodule # Loon,Copy
 Modules/Surge/NSRingo/iRingo.WeatherKit.sgmodule # Loon,Shadowrocket
 Modules/Surge/NSRingo/iRingo.Location.sgmodule # Loon,Shadowrocket
 Modules/Surge/NSRingo/iRingo.Maps.sgmodule # Loon,Shadowrocket
-Modules/Surge/NSRingo/iRingo.Siri.sgmodule # Loon,Shadowrocket
+Modules/Surge/NSRingo/iRingo.Siri.sgmodule # Shadowrocket
 
 # Top #
 https://github.com/ifflagged/Neverflagged/raw/main/Surge/Module/Tools.sgmodule
