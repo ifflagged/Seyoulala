@@ -4,7 +4,7 @@ name: Extract Kelee plugins
 
 on:
   schedule:
-    - cron: '*/30 * * * *'
+    - cron: '0,30 * * * *'  # 每小时的第 0 分钟和第 30 分钟执行
   workflow_dispatch:
 
 jobs:
