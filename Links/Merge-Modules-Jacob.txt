@@ -11,14 +11,14 @@ Modules/Surge/VirgilClyne/DNS.sgmodule # Loon,Copy
 Modules/Surge/NSRingo/iRingo.WeatherKit.sgmodule # Loon,Shadowrocket
 Modules/Surge/NSRingo/iRingo.Location.sgmodule # Loon,Shadowrocket
 Modules/Surge/NSRingo/iRingo.Maps.sgmodule # Loon,Shadowrocket
-Modules/Surge/NSRingo/iRingo.Siri.sgmodule # Shadowrocket
+Modules/Surge/NSRingo/iRingo.Siri.sgmodule # Loon,Shadowrocket
 
 # Top #
 https://github.com/ifflagged/Neverflagged/raw/main/Surge/Module/Tools.sgmodule
 Modules/Surge/Kelee/BlockAdvertisers.sgmodule # Loon,Shadowrocket
 Modules/Surge/zirawell/functional.sgmodule # Loon,Shadowrocket
 Modules/Surge/zirawell/adunion.sgmodule # Loon,Shadowrocket
-Modules/Surge/ifflagged/Module-Top.sgmodule # Loon,Shadowrocket
+Modules/Surge/ifflagged/Module-Top.sgmodule # Shadowrocket
 
 # 1 #
 Modules/Surge/zirawell/12123.sgmodule # Loon,Shadowrocket
