@@ -145,7 +145,7 @@ Modules/Surge/zirawell/cmb.sgmodule# Loon,Shadowrocket
 Modules/Surge/zirawell/alipay.sgmodule # Loon,Shadowrocket
 
 # Bottom #
-Modules/Surge/ifflagged/Plugin-Bottom.plugin
+Modules/Loon/ifflagged/Plugin-Bottom.plugin
 
 https://github.com/chavyleung/scripts/raw/master/box/rewrite/boxjs.rewrite.surge.sgmodule # Copy
 https://github.com/chavyleung/scripts/raw/master/box/rewrite/boxjs.rewrite.loon.plugin
