@@ -4,7 +4,7 @@ name: Extract Kelee plugins
 
 on:
   schedule:
-    - cron: '0,30 * * * *'
+    - cron: '*/30 * * * *'
   workflow_dispatch:
 
 jobs:
