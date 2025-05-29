@@ -2,7 +2,7 @@ name: Extract and Process Rulesets
 
 on:
   schedule:
-    - cron: '5,30 * * * *'
+    - cron: '*/30 * * * *'
   workflow_dispatch:
 
 jobs:
