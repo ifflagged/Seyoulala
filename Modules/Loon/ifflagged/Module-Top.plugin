@@ -7,7 +7,7 @@
 # bilibili
 http-response ^https:\/\/app\.bilibili\.com\/x\/resource\/show\/tab\/v2\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/Module-Top/BiliBili.js, requires-body=true, tag=Tab
 
-http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/account\/(?:mine|myinfo) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/Module-Top/BiliBili.js, requires-body=true, tag=BiliBili Mystery Code
+http-response ^https?:\/\/app\.bilibili\.com\/x\/v\d\/account\/(mine(\/ipad)?|myinfo)\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/Module-Top/BiliBili.js, requires-body=true, tag=BiliBili Mystery Code
 
 # DiDi
 http-response ^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/core script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/Module-Top/DiDi.js, requires-body=true, tag=Tab
