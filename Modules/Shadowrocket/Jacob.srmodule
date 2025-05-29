@@ -818,8 +818,6 @@ DOMAIN-SUFFIX,ehaier.com,REJECT
 # umetrip
 DOMAIN,analytics.umetrip.com,REJECT,extended-matching
 DOMAIN,sensors.umetrip.com.cn,REJECT,extended-matching
-# JD_remove_ads
-URL-REGEX,"^http:\/\/\w{32}\.jddebug\.com\/diagnose\?",REJECT
 # jd
 DOMAIN,waapdg.jd.com,REJECT,extended-matching
 DOMAIN,jdqd.jd.com,REJECT,extended-matching
@@ -1218,8 +1216,6 @@ https?:\/\/91porn\.com(\/|)$ https://91porn.com/index.php 302
 # umetrip
 ^https?:\/\/(discardrp|startup)\.umetrip\.com\/gateway\/api\/umetrip\/native - reject
 ^https?:\/\/oss\.umetrip\.com\/fs\/advert\/polite - reject-dict
-# JD_remove_ads
-^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(searchBoxWord|stationPullService|uniformRecommend[06]) - reject-dict
 # jd
 ^https?:\/\/api\.m\.jd\.com\/openUpgrade - reject
 ^https?:\/\/\w{32}\.jddebug\.com\/diagnose\? - reject
@@ -1802,9 +1798,6 @@ umetrip = type=http-response, pattern=^https?:\/\/(bkclient|umerp|home)\.umetrip
 # JD_Helper
 京东助手 = type=http-response, pattern=^https:\/\/in\.m\.jd\.com\/product\/.+?\.html, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/githubdulong/JD_Helper/jd_price1.js, requires-body=true, max-size=-1, argument=jd_union_id=null&jd_position_id=null&jtt_appid=null&jtt_appkey=null&engine=auto&timeout=120&disable_notice=true&theme_time=7-19
 慢慢买CK = type=http-request, pattern=^https?:\/\/apapia-sqk-weblogic\.manmanbuy\.com/baoliao\/center\/menu, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/githubdulong/JD_Helper/jd_price1.js, requires-body=true, max-size=0, timeout=30
-# JD_remove_ads
-body_rewrite_15 = type=http-response, pattern=^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=basicConfig, script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22json-replace%22%2C%5B%5B%22data.JDMessage.socketmonitor.isSocketEstablishedAhead%22%2C0%5D%2C%5B%22data.JDMessage.socketmonitor.isSocketReport%22%2C0%5D%2C%5B%22data.JDHttpToolKit.httpdns.httpdns%22%2C0%5D%5D%5D%5D
-移除京东广告 = type=http-response, pattern=^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/JD_remove_ads/JD_remove_ads.js, requires-body=true
 # jd
 jd = type=http-response, pattern=^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(?>deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/jd/jd.js, requires-body=true, max-size=0
 jx = type=http-response, pattern=^https?:\/\/api\.m\.jd\.com\/api\?functionId=delivery_show, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/jd/jingxi.js, requires-body=true, max-size=0
