@@ -41,6 +41,7 @@ https://github.com/kokoryh/Sparkle/raw/master/release/surge/module/bilibili.sgmo
 https://github.com/kokoryh/Sparkle/raw/master/release/surge/module/missav.sgmodule
 
 # M #
+https://github.com/Maasea/sgmodule/raw/master/Bilibili.Helper.sgmodule
 https://github.com/Maasea/sgmodule/raw/master/YouTube.Enhance.sgmodule
 https://github.com/Moli-X/Resources/raw/main/Rewrite/Collections.conf
 
