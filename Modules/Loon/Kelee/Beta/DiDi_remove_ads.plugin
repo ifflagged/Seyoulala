@@ -8,13 +8,13 @@
 #!tag=去广告
 #!loon_version=3.2.4(787)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!date=2025-05-29 21:00:12
+#!date=2025-05-29 21:24:42
 
 [Rule]
 DOMAIN,gwp.xiaojukeji.com,REJECT
 
 [Rewrite]
-^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/core response-body-json-jq '.data.order_cards.nav_list_card.data |= map(select(.nav_id | IN("dache_anycar", "carmate", "driverservice", "yuancheng", "bike", "pincheche", "zuche", "nav_more_v3")))'
+^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v1\/core\? response-body-json-jq '.data.disorder_cards.bottom_nav_list.data |= map(select(.id == "home_page" or .id == "user_center")) | .data.order_cards.nav_list_card.data |= map(select(.nav_id == "dache_anycar" or .nav_id == "carmate" or .nav_id == "driverservice" or .nav_id == "zhandianbashi" or .nav_id == "yuancheng" or .nav_id == "pincheche" or .nav_id == "bike" or .nav_id == "special_ride" or .nav_id == "nav_more_v3"))'
 ^https:\/\/common\.diditaxi\.com\.cn\/common\/v5\/usercenter\/layout$ response-body-json-jq '.data.instances.center_wallet_finance_card.data.view_info |= map(select(.title == "优惠卡券" or .title == "余额" or .title == "福利金"))'
 ^https:\/\/res\.xiaojukeji\.com\/resapi\/activity\/mget - reject-dict
 ^https:\/\/lion\.didialift\.com\/broker\/\? - reject-dict
@@ -23,7 +23,7 @@ DOMAIN,gwp.xiaojukeji.com,REJECT
 ^https:\/\/conf\.diditaxi\.com\.cn\/dynamic\/conf - reject-dict
 
 [Script]
-http-response ^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v1\/other\/fast\? script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_18, argument=%5B%5B%22json-del%22%2C%5B%22data.disorder_cards.car_icon%22%2C%22data.disorder_cards.not_login_bottom_bar%22%2C%22data.disorder_cards.riding_code_card%22%2C%22data.order_cards.car_owner_widget_card%22%2C%22data.order_cards.marketing_card%22%2C%22data.order_cards.super_banner_card%22%5D%5D%5D
+http-response ^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v1\/other\/fast\? script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_18, argument=%5B%5B%22json-del%22%2C%5B%22data.disorder_cards.communicate_card%22%2C%22data.disorder_cards.not_login_bottom_bar%22%2C%22data.disorder_cards.riding_code_card%22%2C%22data.order_cards.car_owner_widget_card%22%2C%22data.order_cards.marketing_card%22%2C%22data.order_cards.super_banner_card%22%5D%5D%5D
 
 http-response ^https:\/\/common\.diditaxi\.com\.cn\/common\/v5\/usercenter\/layout$ script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_19, argument=%5B%5B%22json-del%22%2C%5B%22data.instances.center_marketing_card%22%2C%22data.instances.center_widget_list%22%5D%5D%5D
 
