@@ -9,6 +9,9 @@
 #!homepage=https://github.com/ifflagged/Neverflagged/blob/main/Loon/Plugin/Tools.plugin
 
 [Map Local]
+# 高铁管家
+^http:\/\/cdn\.133\.cn\/md\/gtgj\/.+\/.+720x1280 data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
 # 拼多多瀑布流 // api.pinduoduo.com
 ^https:\/\/api\.pinduoduo\.com\/api\/alexa\/cells\/hub\/v3\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
