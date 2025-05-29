@@ -1,9 +1,9 @@
 # 按字母排序
-https://github.com/ifflagged/Neverflagged/raw/main/Loon/Plugin/DiDi-AD.plugin
+https://github.com/ifflagged/Neverflagged/raw/main/Loon/Plugin/Plugin-Bottom.plugin
 https://github.com/ifflagged/Neverflagged/raw/main/Loon/Plugin/Plugin-Common.plugin
-https://github.com/ifflagged/Neverflagged/raw/main/Loon/Plugin/bilibili-AD.plugin
-https://github.com/ifflagged/Neverflagged/raw/main/Surge/Module/BiliBili.sgmodule
+https://github.com/ifflagged/Neverflagged/raw/main/Loon/Plugin/Plugin-Top.plugin
 https://github.com/ifflagged/Neverflagged/raw/main/Surge/Module/Module-Common.sgmodule
+https://github.com/ifflagged/Neverflagged/raw/main/Surge/Module/Module-Top.sgmodule
 # https://github.com/ifflagged/Neverflagged/raw/main/Loon/Plugin/YouTube-AD.plugin
 
 
