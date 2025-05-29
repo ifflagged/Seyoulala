@@ -40,7 +40,7 @@ if (url.includes("/x/resource/show/tab/v2")) {
       if (item?.style) {
         if (item?.style === 1 || item?.style === 2) {
           if (item?.title) {
-            if (item?.title === "创作中心" || item?.title === "推荐服务") {
+            if (item?.title === "推荐服务") {
               // 创作中心 推荐服务
               continue;
             } else if (item?.title === "更多服务") {
