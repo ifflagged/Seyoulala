@@ -1030,11 +1030,6 @@ DOMAIN-SUFFIX,loggw.alipay.com.cn,REJECT,extended-matching,pre-matching
 ^http:\/\/103\.41\.167\.237\/v2\/resolv - reject
 # Tools
 ^https?://(|www\.)router\.com http://{{{GATEWAY_ADDRESS}}} 302
-# Module-Common
-^https:\/\/spamblocker-api\.zeekstudio\.com\/profile - reject
-^https:\/\/spamblocker-api\.zeekstudio\.com\/checkVersion - reject
-^https:\/\/(cn|www)\.pornhub\.com\/_xa\/ads - reject
-https?:\/\/91porn\.com(\/|)$ https://91porn.com/index.php 302
 # BlockAdvertisers
 ^https:\/\/video-dsp\.pddpic\.com\/market-dsp-video\/ - reject
 ^https:\/\/t-dsp\.pinduoduo\.com\/dspcb\/i\/mrk_union - reject
@@ -1062,6 +1057,11 @@ https?:\/\/91porn\.com(\/|)$ https://91porn.com/index.php 302
 ^https?:\/\/gab\.122\.gov\.cn\/eapp\/m\/sysquery\/adver$ - reject
 # BiliBili.ADBlock
 ^https?:\/\/(grpc|app)\.bili(bili\.com|api\.net)\/bilibili\.app\.interface\.v1\.Search\/DefaultWords$ - reject
+# Module-Common
+^https:\/\/spamblocker-api\.zeekstudio\.com\/profile - reject
+^https:\/\/spamblocker-api\.zeekstudio\.com\/checkVersion - reject
+^https:\/\/(cn|www)\.pornhub\.com\/_xa\/ads - reject
+https?:\/\/91porn\.com(\/|)$ https://91porn.com/index.php 302
 # didi
 ^https?:\/\/ut\.xiaojukeji\.com\/ut\/kappa\/api\/owner\/index\/dialog - reject
 ^https?:\/\/capis(-\d)?\.didapinche\.com\/adbase - reject
@@ -1395,11 +1395,6 @@ upos-sz-upcdntx.bilivideo.com = server:https://doh.pub/dns-query // BiliBili upo
 *.he.net = server:https://ordns.he.net/dns-query // HE.net
 
 [Map Local]
-# Module-Common
-^https:\/\/api\.m\.jd\.com\/api\?functionId=union_exhibition_bff data-type=text data="{}" status-code=200 header="Content-Type:application/json"
-# Plugin-Common
-^https:\/\/api\.pinduoduo\.com\/api\/alexa\/cells\/hub\/v3\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
-^https?:\/\/api2\.yaduo\.com\/atourlife\/activity\/appLaunch data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 # functional
 ^https?:\/\/119\.29\.29\.\d+\/d\?dn data-type=text data="" status-code=200
 # adunion
@@ -1461,6 +1456,11 @@ upos-sz-upcdntx.bilivideo.com = server:https://doh.pub/dns-query // BiliBili upo
 ^https?:\/\/api\.live\.bilibili\.com\/xlive\/e-commerce-interface\/v1\/ecommerce-user\/get_shopping_info\? data-type=text data="{}" header="application/json"
 # bydwc
 ^https?:\/\/cache\.bydauto\.com\.cn\/dilink_user_upload\/20 data-type=text data="" status-code=200
+# Module-Common
+^https:\/\/api\.m\.jd\.com\/api\?functionId=union_exhibition_bff data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Plugin-Common
+^https:\/\/api\.pinduoduo\.com\/api\/alexa\/cells\/hub\/v3\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https?:\/\/api2\.yaduo\.com\/atourlife\/activity\/appLaunch data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 # didi
 ^https?:\/\/hd\.xiaojukeji\.com\/d data-type=text data="{}" status-code=200
 ^https?:\/\/ct\.xiaojukeji\.com\/agent\/v\d\/feeds data-type=text data="{}" status-code=200
@@ -1715,13 +1715,13 @@ upos-sz-upcdntx.bilivideo.com = server:https://doh.pub/dns-query // BiliBili upo
 🔍 Visualsearch.VisualSearch.request = type=http-request, pattern=^https?:\/\/(api2|api-.+)\.smoot\.apple\.com\/apple\.parsec\.visualsearch\.v2\.VisualSearch\/VisualSearch, requires-body=1, binary-body-mode=1, engine=webview, debug=1, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/NSRingo/iRingo.Siri/request.bundle.js, argument=CountryCode="{{{CountryCode}}}"&SiriLocale="{{{SiriLocale}}}"&Region="{{{Region}}}"&SiriResponseLanguageVariant="{{{SiriResponseLanguageVariant}}}"&LogLevel="{{{LogLevel}}}"
 🔍 ResponseFramework.Engagement.EngagementSearch.request = type=http-request, pattern=^https?:\/\/(api-.+)\.smoot\.apple\.com\/apple\.parsec\.responseframework\.engagement\.v1alpha\.EngagementSearch\/EngagementSearch, requires-body=1, binary-body-mode=1, engine=webview, debug=1, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/NSRingo/iRingo.Siri/request.bundle.js, argument=CountryCode="{{{CountryCode}}}"&SiriLocale="{{{SiriLocale}}}"&Region="{{{Region}}}"&SiriResponseLanguageVariant="{{{SiriResponseLanguageVariant}}}"&LogLevel="{{{LogLevel}}}"
 🔍 Spotlight.ZkwSuggestService.request = type=http-request, pattern=^https?:\/\/(api-.+)\.smoot\.apple\.com\/apple\.parsec\.spotlight\.v1alpha\.ZkwSuggestService\/Suggest, requires-body=1, binary-body-mode=1, engine=webview, debug=1, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/NSRingo/iRingo.Siri/request.bundle.js, argument=CountryCode="{{{CountryCode}}}"&SiriLocale="{{{SiriLocale}}}"&Region="{{{Region}}}"&SiriResponseLanguageVariant="{{{SiriResponseLanguageVariant}}}"&LogLevel="{{{LogLevel}}}"
-# Module-Common
-JD-Share = type=http-response, pattern=^https:\/\/api\.m\.jd\.com\/\?functionId=union_exhibition_bff&client=apple&clientVer, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/Module-Common/JD-JF.js, requires-body=true, max-size=0
-Pornhub = type=http-response, pattern=^https?:/\/(cn|www)\.pornhub\.com\/($|(view|video).*$), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/Module-Common/pornhub.js, requires-body=true, max-size=0, script-update-interval=0
-91Porn = type=http-response, pattern=https?:\/\/91porn\.com\/(index|view_video|login|search_result)\.php, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/Module-Common/91porn.js, requires-body=true, max-size=0, script-update-interval=0
 # adunion
 adunion = type=http-response, pattern=^https?:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/adunion/amdc.js, max-size=0
 adunion = type=http-response, pattern=^https?:\/\/g\.alicdn\.com\/.*o2o-ad, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/adunion/alicdn.js, requires-body=true, max-size=0
+# Module-Top
+Tab = type=http-response, pattern=^https:\/\/app\.bilibili\.com\/x\/resource\/show\/tab\/v2\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/Module-Top/BiliBili.js, requires-body=true
+BiliBili Mystery Code = type=http-response, pattern=^https:\/\/app\.bilibili\.com\/x\/v2\/account\/(?:mine|myinfo), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/Module-Top/BiliBili.js, requires-body=true
+Tab = type=http-response, pattern=^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/core, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/Module-Top/DiDi.js, requires-body=true
 # 12306_remove_ads
 移除12306开屏广告 = type=http-request, pattern=^https:\/\/ad\.12306\.cn\/ad\/ser\/getAdList$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/12306_remove_ads/12306_remove_splashscreen_ads.js, requires-body=true
 移除12306应用内广告 = type=http-request, pattern=^https:\/\/mobile\.12306\.cn\/otsmobile\/app\/mgs\/mgw\.htm$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/12306_remove_ads/12306_remove_ads.js
@@ -1732,9 +1732,6 @@ NoAds = type=http-response, pattern=^https?:\/\/client\.app\.coc\.10086\.cn\/biz
 NoAds = type=http-response, pattern=^https?:\/\/h\.app\.coc\.10086\.cn\/biz-orange\/DH\/homeArea\/getTopAreaList, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Yuheng0101/NoAds/NoAds.js, requires-body=true, max-size=-1, timeout=60
 NoAds = type=http-response, pattern=^https?:\/\/h\.app\.coc\.10086\.cn\/biz-orange\/DH\/navigation\/getNavigationNewInfo, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Yuheng0101/NoAds/NoAds.js, requires-body=true, max-size=-1, timeout=60
 NoAds = type=http-response, pattern=^https?:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/DN\/friendShake\/getShakeList, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Yuheng0101/NoAds/NoAds.js, requires-body=true, max-size=-1, timeout=60
-# BiliBili
-精简首页顶部标签 = type=http-response, pattern=^https:\/\/app\.bilibili\.com\/x\/resource\/show\/tab\/v2\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/BiliBili/BiliBili.js, requires-body=true
-BiliBili Mystery Code = type=http-response, pattern=^https:\/\/app\.bilibili\.com\/x\/v2\/account\/(?:mine|myinfo), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/BiliBili/BiliBili.js, requires-body=true
 # bilibili
 {{{空降助手}}} = type=http-request, pattern=^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.playerunite\.v1\.Player\/PlayViewUnite$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/kokoryh/bilibili/bilibili.airborne.js, requires-body=true, binary-body-mode=true, engine=webview, max-size=-1
 {{{空降助手弹幕版}}} = type=http-request, pattern=^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.community\.service\.dm\.v1\.DM\/DmSegMobile$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/kokoryh/bilibili/bilibili.airborne.js, requires-body=true, binary-body-mode=true, engine=webview, max-size=-1
@@ -1779,6 +1776,10 @@ bilibili.protobuf = type=http-response, pattern=^https:\/\/(?:grpc\.biliapi\.net
 📺 BiliBili.Redirect.MCDN.upgcxcode.m4s = type=http-request, pattern=^https?:\/\/[adbcefxy0-9]+\.mcdn\.bilivideo\.cn:(4483|9102)\/upgcxcode\/, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/BiliUniverse/BiliBili.Redirect/request.bundle.js, argument=Host.Akamaized="{{{Host.Akamaized}}}"&Host.BStar="{{{Host.BStar}}}"&Host.PCDN="{{{Host.PCDN}}}"&Host.MCDN="{{{Host.MCDN}}}"&LogLevel="{{{LogLevel}}}"
 📺 BiliBili.Redirect.PCDN.upgcxcode.m4s = type=http-request, pattern=^https?:\/\/(.+):4480\/upgcxcode\/, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/BiliUniverse/BiliBili.Redirect/request.bundle.js, argument=Host.Akamaized="{{{Host.Akamaized}}}"&Host.BStar="{{{Host.BStar}}}"&Host.PCDN="{{{Host.PCDN}}}"&Host.MCDN="{{{Host.MCDN}}}"&LogLevel="{{{LogLevel}}}"
 📺 BiliBili.Redirect.Akamaized.upgcxcode.m4s = type=http-request, pattern=^https?:\/\/upos-(hz|bstar1)-mirrorakam\.akamaized\.net/upgcxcode\/, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/BiliUniverse/BiliBili.Redirect/request.bundle.js, argument=Host.Akamaized="{{{Host.Akamaized}}}"&Host.BStar="{{{Host.BStar}}}"&Host.PCDN="{{{Host.PCDN}}}"&Host.MCDN="{{{Host.MCDN}}}"&LogLevel="{{{LogLevel}}}"
+# Module-Common
+JD-Share = type=http-response, pattern=^https:\/\/api\.m\.jd\.com\/\?functionId=union_exhibition_bff&client=apple&clientVer, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/Module-Common/JD-JF.js, requires-body=true, max-size=0
+Pornhub = type=http-response, pattern=^https?:/\/(cn|www)\.pornhub\.com\/($|(view|video).*$), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/Module-Common/pornhub.js, requires-body=true, max-size=0, script-update-interval=0
+91Porn = type=http-response, pattern=https?:\/\/91porn\.com\/(index|view_video|login|search_result)\.php, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/Module-Common/91porn.js, requires-body=true, max-size=0, script-update-interval=0
 # didi
 diditaxi = type=http-response, pattern=^https?:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/core, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/didi/didi.js, requires-body=true, max-size=0
 diditaxi = type=http-response, pattern=^https?:\/\/conf\.diditaxi\.com\.cn\/ota\/na\/yuantu\/infoList, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/didi/didi.js, requires-body=true, max-size=0
