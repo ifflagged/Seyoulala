@@ -2,7 +2,7 @@ name: Merge Modules
 
 on:
   schedule:
-    - cron: '- cron: '7 * * * *'  # 每小时执行一次
+    - cron: '7 * * * *'  # 每小时执行一次
   workflow_dispatch:
 
 jobs:
