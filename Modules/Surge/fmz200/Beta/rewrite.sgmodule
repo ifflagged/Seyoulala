@@ -1340,6 +1340,8 @@ https?:\/\/awg\.enmonster\.com\/apa\/(advert\/demand\/home\/poster|index\/advert
 # hostname = 39.98.135.211
 ^https?:\/\/39\.98\.135\.211\/admin\/filter\/crowdFunding\/getNewProductData data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
+^https?:\/\/39\.98\.135\.211\/admin\/filter\/advert\/getAdvertLists data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
 # hostname = cdn.jlbank.com.cn
 ^https?:\/\/cdn\.jlbank\.com\.cn\/jlstaticresource\/APPSTART data-type=text data=" " status-code=200
 
