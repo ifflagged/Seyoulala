@@ -1683,7 +1683,7 @@ adunion = type=http-response, pattern=^https?:\/\/amdc\.m\.taobao\.com\/amdc\/mo
 adunion = type=http-response, pattern=^https?:\/\/g\.alicdn\.com\/.*o2o-ad, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/adunion/alicdn.js, requires-body=true, max-size=0
 # Module-Top
 Tab = type=http-response, pattern=^https:\/\/app\.bilibili\.com\/x\/resource\/show\/tab\/v2\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/Module-Top/BiliBili.js, requires-body=true
-BiliBili Mystery Code = type=http-response, pattern=^https?:\/\/app\.bilibili\.com\/x\/v\d\/account\/(mine(\/ipad)?|myinfo)\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/Module-Top/BiliBili.js, requires-body=true
+BiliBili Mystery Code = type=http-response, pattern=^https:\/\/app\.bilibili\.com\/x\/v2\/account\/(?:mine|myinfo), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/Module-Top/BiliBili.js, requires-body=true
 Tab = type=http-response, pattern=^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/core, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/Module-Top/DiDi.js, requires-body=true
 # 12306_remove_ads
 移除12306开屏广告 = type=http-request, pattern=^https:\/\/ad\.12306\.cn\/ad\/ser\/getAdList$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/12306_remove_ads/12306_remove_splashscreen_ads.js, requires-body=true
