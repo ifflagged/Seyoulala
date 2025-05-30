@@ -12,16 +12,12 @@
 ^https:\/\/wx\.17u\.cn\/mytourapi\/blankpage\/recommendList - reject-dict
 ^https:\/\/wx\.17u\.cn\/homemarketapi\/aggregator\/index - reject-dict
 ^https:\/\/wx\.17u\.cn\/wxocbdapi\/adService\/getAd - reject-dict
-^https:\/\/wx\.17u\.cn\/wechatmypubapi\/myInfo\/orderRemind - reject-dict
-^https:\/\/wx\.17u\.cn\/wechatmypubapi\/myInfo\/icons - reject-dict
-^https:\/\/wx\.17u\.cn\/wechatmypubapi\/myInfo\/memberShow - reject-dict
 ^https:\/\/wx\.17u\.cn\/xcxhomeapi\/home\/converge - reject-dict
 ^https:\/\/wx\.17u\.cn\/platformpubapi\/customer\/lead\/getInfo - reject-dict
 ^https:\/\/wx\.17u\.cn\/mytourapi\/mytrip\/toptips - reject-dict
 ^https:\/\/wx\.17u\.cn\/vacation\/webapp\/tailor\/miniHomeConfig - reject-dict
-^https:\/\/wx\.17u\.cn\/mytourapi\/recommendation\/arriveCity - reject-dict
-^https:\/\/wx\.17u\.cn\/wechatmypubapi\/myInfo\/memberInfo - reject-dict
 ^https:\/\/wx\.17u\.cn\/wireless\/monitor\/wx\/common\/compressevent - reject-dict
+^https:\/\/wx\.17u\.cn\/wechatmypubapi\/myInfo\/listIcons - reject-dict
 ^https:\/\/a1d5b283e-wx621112590b635086\.sh\.wxgateway\.com\/xcxhomeapi\/home\/screen - reject-dict
 ^https:\/\/mapi\.dianping\.com\/baymax\/adrec\/getrecads - reject-dict
 ^https:\/\/mapi\.dianping\.com\/baymax\/getSlotAds - reject-dict
