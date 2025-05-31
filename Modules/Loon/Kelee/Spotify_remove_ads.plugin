@@ -8,11 +8,11 @@
 #!loon_version=3.2.4(787)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Spotify.png
-#!date=2025-05-31 23:45:13
+#!date=2025-06-01 00:07:47
 
 [Argument]
-tab=switch, "false", "true", tag=底栏创建按钮, desc=此开关控制底栏创建按钮
-useractivity=switch, "false", "true", tag=接力功能, desc=此开关控制接力功能
+tab=switch, "false", "true", tag=移除底栏创建按钮, desc=此开关控制是否移除底栏创建按钮
+useractivity=switch, "false", "true", tag=停用Apple设备接力, desc=此开关控制是否停用Apple设备接力
 
 [Rule]
 AND, ((DOMAIN, spclient.wg.spotify.com), (PROTOCOL, QUIC)), REJECT
