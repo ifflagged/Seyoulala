@@ -155,6 +155,7 @@ DOMAIN,aaid.uyunad.com,REJECT,extended-matching
 DOMAIN,yumao.puata.info,REJECT
 DOMAIN,gdfp.gifshow.com,REJECT,extended-matching
 DOMAIN,open.e.kuaishou.com,REJECT,extended-matching
+DOMAIN,open.e.kuaishou.cn,REJECT
 DOMAIN,adtrack.e.kuaishou.com,REJECT
 DOMAIN-SUFFIX,adukwai.com,REJECT,extended-matching
 DOMAIN,init.supersonicads.com,REJECT,extended-matching
@@ -343,6 +344,11 @@ DOMAIN,ad-evods.tianya.tv,REJECT
 DOMAIN,adx.tuia.cn,REJECT
 DOMAIN-SUFFIX,66mobi.com,REJECT
 DOMAIN,rpe.xdplt.com,REJECT
+DOMAIN-SUFFIX,adjust.com,REJECT,extended-matching
+DOMAIN-SUFFIX,adjust.net.in,REJECT
+DOMAIN,googleads.g.doubleclick-cn.net,REJECT
+DOMAIN-SUFFIX,doubleclick-cn.net,REJECT,extended-matching
+DOMAIN-SUFFIX,googlesyndication-cn.com,REJECT
 # functional
 DOMAIN,lookup.api.bsb.baidu.com,REJECT,extended-matching
 DOMAIN,safebrowsing.g.applimg.com,REJECT,extended-matching
@@ -376,14 +382,12 @@ DOMAIN-SUFFIX,hiaiabc.com,REJECT,extended-matching
 DOMAIN-SUFFIX,uyunad.com,REJECT,extended-matching
 DOMAIN-SUFFIX,beizi.biz,REJECT,extended-matching
 DOMAIN-SUFFIX,fstats.xyz,REJECT,extended-matching
-DOMAIN-SUFFIX,doubleclick-cn.net,REJECT,extended-matching
 DOMAIN-SUFFIX,doubleclick.net,REJECT,extended-matching
 DOMAIN-SUFFIX,ads.vungle.com,REJECT,extended-matching
 DOMAIN-SUFFIX,applovin.com,REJECT,extended-matching
 DOMAIN-SUFFIX,applvn.com,REJECT,extended-matching
 DOMAIN-SUFFIX,appsflyer.com,REJECT,extended-matching
 DOMAIN-SUFFIX,appsflyersdk.com,REJECT,extended-matching
-DOMAIN-SUFFIX,adjust.com,REJECT,extended-matching
 DOMAIN-SUFFIX,ad.gameley.com,REJECT,extended-matching
 DOMAIN-SUFFIX,app-measurement.com,REJECT,extended-matching
 DOMAIN-SUFFIX,anythinktech.com,REJECT,extended-matching
@@ -1031,7 +1035,7 @@ DOMAIN-SUFFIX,loggw.alipay.com.cn,REJECT,extended-matching
 ^http:\/\/103\.41\.167\.237\/v2\/resolv - reject
 # BlockAdvertisers
 ^https:\/\/video-dsp\.pddpic\.com\/market-dsp-video\/ - reject
-^https:\/\/t-dsp\.pinduoduo\.com\/dspcb\/i\/mrk_union - reject
+^https:\/\/t-dsp\.pinduoduo\.com\/dspcb\/i\/mrk_ - reject
 ^https:\/\/images\.pinduoduo\.com\/mrk\/ - reject
 ^https:\/\/images\.pinduoduo\.com\/marketing_api\/ - reject
 # functional

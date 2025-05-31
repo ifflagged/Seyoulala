@@ -229,6 +229,7 @@ DOMAIN, aaid.uyunad.com, REJECT
 DOMAIN, yumao.puata.info, REJECT
 DOMAIN, gdfp.gifshow.com, REJECT
 DOMAIN, open.e.kuaishou.com, REJECT
+DOMAIN, open.e.kuaishou.cn, REJECT
 DOMAIN, adtrack.e.kuaishou.com, REJECT
 DOMAIN-SUFFIX, adukwai.com, REJECT
 DOMAIN, init.supersonicads.com, REJECT
@@ -417,6 +418,11 @@ DOMAIN, ad-evods.tianya.tv, REJECT
 DOMAIN, adx.tuia.cn, REJECT
 DOMAIN-SUFFIX, 66mobi.com, REJECT
 DOMAIN, rpe.xdplt.com, REJECT
+DOMAIN-SUFFIX, adjust.com, REJECT
+DOMAIN-SUFFIX, adjust.net.in, REJECT
+DOMAIN, googleads.g.doubleclick-cn.net, REJECT
+DOMAIN-SUFFIX, doubleclick-cn.net, REJECT
+DOMAIN-SUFFIX, googlesyndication-cn.com, REJECT
 # functional
 DOMAIN,lookup.api.bsb.baidu.com,REJECT
 DOMAIN,safebrowsing.g.applimg.com,REJECT
@@ -450,14 +456,12 @@ DOMAIN-SUFFIX,hiaiabc.com,REJECT
 DOMAIN-SUFFIX,uyunad.com,REJECT
 DOMAIN-SUFFIX,beizi.biz,REJECT
 DOMAIN-SUFFIX,fstats.xyz,REJECT
-DOMAIN-SUFFIX,doubleclick-cn.net,REJECT
 DOMAIN-SUFFIX,doubleclick.net,REJECT
 DOMAIN-SUFFIX,ads.vungle.com,REJECT
 DOMAIN-SUFFIX,applovin.com,REJECT
 DOMAIN-SUFFIX,applvn.com,REJECT
 DOMAIN-SUFFIX,appsflyer.com,REJECT
 DOMAIN-SUFFIX,appsflyersdk.com,REJECT
-DOMAIN-SUFFIX,adjust.com,REJECT
 DOMAIN-SUFFIX,ad.gameley.com,REJECT
 DOMAIN-SUFFIX,app-measurement.com,REJECT
 DOMAIN-SUFFIX,anythinktech.com,REJECT
@@ -1107,7 +1111,7 @@ DOMAIN-SUFFIX,jsdelivr.net,PROXY
 ^http:\/\/103\.41\.167\.237\/v2\/resolv - reject
 # BlockAdvertisers
 ^https:\/\/video-dsp\.pddpic\.com\/market-dsp-video\/ reject
-^https:\/\/t-dsp\.pinduoduo\.com\/dspcb\/i\/mrk_union reject
+^https:\/\/t-dsp\.pinduoduo\.com\/dspcb\/i\/mrk_ reject
 ^https:\/\/images\.pinduoduo\.com\/mrk\/ reject
 ^https:\/\/images\.pinduoduo\.com\/marketing_api\/ reject
 # functional
