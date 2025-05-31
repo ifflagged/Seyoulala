@@ -1,0 +1,11 @@
+#!name=Spotify
+#!desc=AD
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
+#!tag=Jacob
+
+[Script]
+http-response ^https:\/\/spclient\.wg\.spotify\.com\/(?:bootstrap|user-customization-service) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/001ProMax/Spotify/Spotify.Crack.js, requires-body=true, binary-body-mode=true, tag=Spotify.Crack
+
+[MITM]
+hostname = spclient.wg.spotify.com
+
