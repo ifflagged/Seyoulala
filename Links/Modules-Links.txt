@@ -6,6 +6,8 @@ https://github.com/ifflagged/Neverflagged/raw/main/Surge/Module/Module-Common.sg
 https://github.com/ifflagged/Neverflagged/raw/main/Surge/Module/Module-Top.sgmodule
 # https://github.com/ifflagged/Neverflagged/raw/main/Loon/Plugin/YouTube-AD.plugin
 
+# 0 #
+https://github.com/001ProMax/Surge/raw/main/Module/AD/Spotify.sgmodule
 
 # A #
 https://github.com/Alex0510/Eric/raw/master/surge/Module/revenucar.sgmodule
