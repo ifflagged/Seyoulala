@@ -30,7 +30,6 @@ https://gist.githubusercontent.com/ddgksf2013/f43026707830c7818ee3ba624e383c8d/r
 # F #
 https://github.com/fmz200/wool_scripts/raw/main/Loon/plugin/blockAds.plugin
 https://github.com/fmz200/wool_scripts/raw/main/Loon/plugin/weibo.plugin
-https://github.com/fmz200/wool_scripts/raw/main/QuantumultX/rewrite/cleanup.snippet
 https://github.com/fmz200/wool_scripts/raw/main/QuantumultX/rewrite/rewrite.snippet
 
 # G #
