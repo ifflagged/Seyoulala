@@ -1,16 +1,16 @@
 #!name=MissAV去广告
-#!desc=适用于 missav.ai, missav.ws
+#!desc=https://missav.ai
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
 #!tag=Jacob
 
 [Rule]
-DOMAIN-SUFFIX,creative.myavlive.com,REJECT
+DOMAIN,creative.myavlive.com,REJECT
 DOMAIN-SUFFIX,trackwilltrk.com,REJECT
 DOMAIN-SUFFIX,tsyndicate.com,REJECT
 
 [Script]
-http-response ^https:\/\/missav\.(?:ai|ws)\/(?!(build|fonts|img|js|api|cdn-cgi)\/). script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/kokoryh/missav/missav.html.js, requires-body=true, tag=missav.html
+http-response ^https:\/\/missav\.ai\/(?!(build|fonts|img|js|api|cdn-cgi)\/). script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/kokoryh/missav/missav.html.js, requires-body=true, tag=missav.html
 
 [MITM]
-hostname = missav.ai, missav.ws
+hostname = missav.ai
 
