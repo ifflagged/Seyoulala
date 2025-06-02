@@ -11,7 +11,6 @@ https://github.com/001ProMax/Surge/raw/main/Module/AD/Spotify.sgmodule
 
 # A #
 https://github.com/Alex0510/Eric/raw/master/surge/Module/revenucar.sgmodule
-https://github.com/Ananaskop/Profile/raw/main/Surge/Modules/Common_remove_ads.sgmodule
 
 # D #
 https://github.com/ddgksf2013/Modules/raw/main/JD_Price.sgmodule
