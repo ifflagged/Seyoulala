@@ -3,6 +3,11 @@
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
 #!tag=Jacob
 
+[Rule]
+# NB助手
+DOMAIN,api-dsp.8ziben.com,REJECT
+DOMAIN,sdk.zhangyuyidong.cn,REJECT
+
 [Rewrite]
 # 京粉 //api.m.jd.com
 ^https:\/\/api\.m\.jd\.com\/api\?functionId=union_exhibition_bff - reject-dict
