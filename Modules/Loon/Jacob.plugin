@@ -1418,7 +1418,7 @@ http-response ^https?:\/\/m\.lkcoffee\.com\/capi\/resource\/m\/growUp\/main "pop
 ^https:\/\/haojia-api\.smzdm\.com\/home\/list\? response-body-json-jq '.data.rows |= map(select(.cell_type == "39001")) | .data.banner_v2 |= map(select(.cell_type == "21028"))'
 ^https:\/\/haojia\.m\.smzdm\.com\/detail_modul\/user_related_modul\? response-body-json-del data.super_coupon
 ^https:\/\/haojia\.m\.smzdm\.com\/detail_modul\/other_modul\? response-body-json-del data.banner
-^https:\/\/user-api\.smzdm\.com\/vip$ response-body-json-del data.big_banner
+^https:\/\/user-api\.smzdm\.com\/vip$ response-body-json-del data.activity_entrance_info data.big_banner data.top_banner data.banner_switch
 ^https:\/\/user-api\.smzdm\.com\/vip\/bottom_card_list\? reject-dict
 ^https:\/\/article-api\.smzdm\.com\/publish\/get_bubble\? reject-dict
 ^https:\/\/s-api\.smzdm\.com\/sou\/search_default_keyword\? reject-dict
