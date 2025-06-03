@@ -8,7 +8,7 @@
 #!loon_version=3.2.4(787)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/smzdm.png
-#!date=2025-06-02 23:19:49
+#!date=2025-06-03 09:01:17
 
 [Rule]
 DOMAIN, adx-api.zdmimg.com, REJECT
@@ -23,6 +23,8 @@ DOMAIN, adx-api.zdmimg.com, REJECT
 ^https:\/\/app-api\.smzdm\.com\/util\/update$ response-body-json-jq 'def r: if type=="object" then if has("ad_campaign_name") and (.ad_campaign_name|type=="string") and (.ad_campaign_name|test("\\S")) then empty else . end elif type=="array" then map(r) else . end; .data.operation_float |= map(map(r))'
 
 ^https:\/\/homepage-api\.smzdm\.com\/v3\/home\? response-body-json-jq jq-path="https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/smzdm_remove_ads/home_smzdm_remove_ads.jq"
+
+^https:\/\/app-api\.smzdm\.com\/mychannel\/list$ reject-dict
 
 ^https:\/\/h5\.smzdm\.com\/user\/coupon\/coupon_list\? reject
 
