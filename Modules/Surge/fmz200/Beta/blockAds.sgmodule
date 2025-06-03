@@ -10,7 +10,7 @@
 #!tg-group=https://t.me/lanjieguanggao
 #!tag=去广告, fmz200, 奶思
 #!system=ios
-#!date=2025-06-01 14:30:00
+#!date=2025-06-03 21:11:00
 #!support=支持约511款APP/小程序
 #!remark=下方的所有规则都标注了对应的hostname，可能存在错误或者遗漏，欢迎反馈。对于无法/可选MITM的hostname都特别做了“如开启可自行添加主机名”提示，如果提示后面没有标注主机名则包含所有主机名，否则只包含提示语后面的主机名。
 
@@ -863,9 +863,9 @@ https://support.you.163.com/appversync/check.do - reject
 # hostname = b.appsimg.com, mapi.appvipshop.com
 ^https?:\/\/b\.appsimg\.com\/upload\/momin - reject
 ^https?:\/\/mapi\.appvipshop\.com\/vips-mobile\/rest\/iosAdInfo\/report - reject
-# hostname = info.mina.xiaoaisound.com
-^https?:\/\/info\.mina\.xiaoaisound\.com\/advertise(?!\/banner) - reject
-^https?:\/\/info\.mina\.xiaoaisound\.com\/payGuide\/userCenter - reject
+# hostname = info.mina.xiaoaisound.com, marketing-aibox.v.mitvos.com
+^https?:\/\/(info\.mina\.xiaoaisound|marketing-aibox\.v\.mitvos)\.com\/advertise(?!\/banner) - reject
+^https?:\/\/(info\.mina\.xiaoaisound|marketing-aibox\.v\.mitvos)\.com\/payGuide\/userCenter - reject
 # hostname = apiwz.midukanshu.com
 ^https?:\/\/apiwz\.midukanshu\.com\/advert\/getPopup$ - reject
 ^https?:\/\/apiwz\.midukanshu\.com\/advert\/treasureInfo$ - reject
@@ -2588,7 +2588,7 @@ https?:\/\/(ipv4|interface\d?)\.music\.163.com\/e?api\/ad data-type=text data="{
 
 ^https?:\/\/api\.jr\.mi\.com\/jr\/api\/playScreen data-type=text data=" " status-code=200
 
-^https?:\/\/info\.mina\.xiaoaisound\.com\/popup data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https?:\/\/(info\.mina\.xiaoaisound|marketing-aibox\.v\.mitvos)\.com\/popup data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = home.mi.com
 ^https?:\/\/home\.mi\.com\/cgi-op\/api\/v1\/recommendation\/(banner|carousel\/banners|myTab|openingBanner) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
