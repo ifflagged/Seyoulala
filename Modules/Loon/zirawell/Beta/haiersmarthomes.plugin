@@ -1,30 +1,7 @@
-#!name=haiersmarthomes
-#!desc=haiersmarthomes
-#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
-#!tag=Jacob
+haiersmarthomes%0A：Error: 请求超时(20 秒)
 
-[Rule]
-DOMAIN-SUFFIX,ehaier.com,REJECT
 
-[Rewrite]
-^https?:\/\/dualstack-(arestapi|restios)\.amap\.com\/v\d\/iasdkauth\?key= mock-response-body data-type=text data="" status-code=200
-^https?:\/\/dualstack-logs\.amap\.com\/ws\/log\/upload\?product mock-response-body data-type=text data="" status-code=200
-^https?:\/\/oss-zjrs\.haier\.net\/resource\/confFile\/\d{22}\.zip$ mock-response-body data-type=text data="" status-code=200
-^https?:\/\/zj\.haier\.net\/api-gw\/shpmResource\/ad\/ mock-response-body data-type=text data="" status-code=200
-^https?:\/\/zj\.haier\.net\/api-gw\/shpmResource\/servicePage\/start\/advertising\?approach mock-response-body data-type=text data="" status-code=200
-^https?:\/\/zj\.haier\.net\/api-gw\/shpmResource\/servicePage\/visualize\/recommend\?dataType mock-response-body data-type=text data="" status-code=200
-^https?:\/\/zj\.haier\.net\/api-gw\/shpmResource\/servicePage\/weather\/query\?areaId mock-response-body data-type=text data="" status-code=200
-^https?:\/\/zj\.haier\.net\/api-gw\/upmapi\/appmanage\/publish\/getRecommendVersion$ mock-response-body data-type=text data="" status-code=200
-^https?:\/\/zj\.haier\.net\/omsappapi\/ad\/ mock-response-body data-type=text data="" status-code=200
-^https?:\/\/zj\.haier\.net\/omsappapi\/resource\/v\d\/resBagList$ mock-response-body data-type=text data="" status-code=200
-^https?:\/\/zj\.haier\.net\/omssceneapi\/house\/v\d\/recommend\/listByRoom$ mock-response-body data-type=text data="" status-code=200
-^https?:\/\/service\.haiersmarthomes\.com\/management\/banner\/getBannerList\?source=4 mock-response-body data-type=text data="{}" status-code=200
 
-[Script]
-http-response ^https?:\/\/oss-zjrs\.haier\.net\/resource\/confFile\/\d{22}\.json$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/haiersmarthomes/haier.js, requires-body=true, tag=ehaier
 
-http-response ^https?:\/\/zj\.haier\.net\/omsappapi\/resource\/v\d\/get\/resourceBag$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/haiersmarthomes/haier.js, requires-body=true, tag=ehaier
 
-[MITM]
-hostname = dualstack*.amap.com, oss-zjrs.haier.net, zj.haier.net, service.haiersmarthomes.com
-
+Script Hub 重写转换: ❌  可自行翻译错误信息或复制错误信息后点击通知进行反馈

@@ -2709,6 +2709,8 @@ http-response ^https?:\/\/haojia-api\.smzdm\.com\/ranking_list\/articles\? scrip
 
 http-response ^https?:\/\/s-api\.smzdm\.com\/sou\/filter\/tags\/hot_tags\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/smzdm_ads.js, requires-body=true, timeout=60, tag=什么值得买去广告
 
+http-response ^https?:\/\/s-api\.smzdm\.com\/sou\/list_v10\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/smzdm_ads.js, requires-body=true, timeout=60, tag=什么值得买去广告
+
 http-response ^https?:\/\/user-api\.smzdm\.com\/vip\/creator_user_center script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/smzdm_ads.js, requires-body=true, timeout=60, tag=什么值得买去广告
 
 http-response ^https?:\/\/user-api\.smzdm\.com\/vip$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/Smzdm.js, requires-body=true, timeout=60, tag=什么值得买去广告

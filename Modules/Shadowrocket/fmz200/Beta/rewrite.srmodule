@@ -2373,6 +2373,8 @@ smzdm_ads = type=http-response, pattern=^https?:\/\/haojia-api\.smzdm\.com\/rank
 
 smzdm_ads = type=http-response, pattern=^https?:\/\/s-api\.smzdm\.com\/sou\/filter\/tags\/hot_tags\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/rewrite/smzdm_ads.js, requires-body=true, max-size=-1, timeout=60
 
+smzdm_ads = type=http-response, pattern=^https?:\/\/s-api\.smzdm\.com\/sou\/list_v10\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/rewrite/smzdm_ads.js, requires-body=true, max-size=-1, timeout=60
+
 smzdm_ads = type=http-response, pattern=^https?:\/\/user-api\.smzdm\.com\/vip\/creator_user_center, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/rewrite/smzdm_ads.js, requires-body=true, max-size=-1, timeout=60
 
 Smzdm = type=http-response, pattern=^https?:\/\/user-api\.smzdm\.com\/vip$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/rewrite/Smzdm.js, requires-body=true, max-size=-1, timeout=60
