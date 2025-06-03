@@ -8,7 +8,7 @@
 #!tag=去广告
 #!loon_version=3.2.4(787)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!date=2025-06-03 09:01:17
+#!date=2025-06-03 18:12:18
 
 [Rule]
 DOMAIN,adx-api.zdmimg.com,REJECT
@@ -26,7 +26,7 @@ DOMAIN,adx-api.zdmimg.com,REJECT
 ^https:\/\/s-api\.smzdm\.com\/sou\/search_default_keyword\? - reject-dict
 
 [Script]
-http-response ^https:\/\/app-api\.smzdm\.com\/util\/update$ script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_15, argument=%5B%5B%22json-replace%22%2C%5B%5B%22data.silence_local_push%22%2C0%5D%2C%5B%22data.baichuan_redirect_switch%22%2C0%5D%5D%5D%2C%5B%22json-del%22%2C%5B%22data.silence_local_push_msg%22%2C%22data.video_cache_num_configs%22%2C%22data.haojia_widget%22%5D%5D%5D
+http-response ^https:\/\/app-api\.smzdm\.com\/util\/update$ script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_15, argument=%5B%5B%22json-replace%22%2C%5B%5B%22data.silence_local_push%22%2C0%5D%2C%5B%22data.baichuan_redirect_switch%22%2C0%5D%5D%5D%2C%5B%22json-del%22%2C%5B%22data.silence_local_push_msg%22%2C%22data.video_cache_num_configs%22%2C%22data.haojia_widget%22%2C%22data.widget%22%5D%5D%5D
 
 http-response ^https:\/\/haojia\.m\.smzdm\.com\/detail_modul\/user_related_modul\? script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_22, argument=%5B%5B%22json-del%22%2C%5B%22data.super_coupon%22%5D%5D%5D
 
