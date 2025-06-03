@@ -7,6 +7,7 @@
 #!update=2024-02-11 01:02
 
 [Rewrite]
+^https:\/\/haojia\.m\.smzdm\.com\/detail_modul\/other_modul\? - reject-dict
 ^https:\/\/haojia\.m\.smzdm\.com\/detail_modul\/(other_modul|wiki_related_modul)|^https:\/\/s3\.zdmimg\.com\/third\/index|^https:\/\/app-api\.smzdm\.com\/util\/loading - reject-dict
 
 [Script]
@@ -29,6 +30,8 @@ http-response ^https:\/\/article-api\.smzdm\.com\/publish\/get_bubble script-pat
 http-response ^https:\/\/qianbao\.smzdm\.com\/v\d\/app\/home script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ZenmoFeiShi/Smzdm/Smzdm.js, requires-body=true, timeout=60, tag=Smzdm
 
 http-response ^https:\/\/s3\.zdmimg\.com\/third\/index script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ZenmoFeiShi/Smzdm/Smzdm.js, requires-body=true, timeout=60, tag=Smzdm
+
+http-response ^https:\/\/haojia\.m\.smzdm\.com\/detail_modul\/user_related_modul script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ZenmoFeiShi/Smzdm/Smzdm.js, requires-body=true, timeout=60, tag=Smzdm
 
 http-response ^https:\/\/post\.m\.smzdm\.com\/ajax_app\/ajax_get_footer_list script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ZenmoFeiShi/Smzdm/Smzdm.js, requires-body=true, timeout=60, tag=Smzdm
 

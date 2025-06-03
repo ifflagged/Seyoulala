@@ -6,6 +6,8 @@
 #!update=2024-02-11 01:02
 
 [Map Local]
+^https:\/\/haojia\.m\.smzdm\.com\/detail_modul\/other_modul\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
 ^https:\/\/haojia\.m\.smzdm\.com\/detail_modul\/(other_modul|wiki_related_modul)|^https:\/\/s3\.zdmimg\.com\/third\/index|^https:\/\/app-api\.smzdm\.com\/util\/loading data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 [Script]
@@ -28,6 +30,8 @@ Smzdm = type=http-response, pattern=^https:\/\/article-api\.smzdm\.com\/publish\
 Smzdm = type=http-response, pattern=^https:\/\/qianbao\.smzdm\.com\/v\d\/app\/home, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ZenmoFeiShi/Smzdm/Smzdm.js, requires-body=true, max-size=-1, timeout=60
 
 Smzdm = type=http-response, pattern=^https:\/\/s3\.zdmimg\.com\/third\/index, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ZenmoFeiShi/Smzdm/Smzdm.js, requires-body=true, max-size=-1, timeout=60
+
+Smzdm = type=http-response, pattern=^https:\/\/haojia\.m\.smzdm\.com\/detail_modul\/user_related_modul, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ZenmoFeiShi/Smzdm/Smzdm.js, requires-body=true, max-size=-1, timeout=60
 
 Smzdm = type=http-response, pattern=^https:\/\/post\.m\.smzdm\.com\/ajax_app\/ajax_get_footer_list, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ZenmoFeiShi/Smzdm/Smzdm.js, requires-body=true, max-size=-1, timeout=60
 
