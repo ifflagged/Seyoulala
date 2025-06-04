@@ -7,6 +7,11 @@
 # NB助手
 DOMAIN,api-dsp.8ziben.com,REJECT
 DOMAIN,sdk.zhangyuyidong.cn,REJECT
+DOMAIN,open.e.kuaishou.cn,REJECT
+DOMAIN,v66-ad.ndcjl.com,REJECT
+DOMAIN,api-events.8ziben.com,REJECT
+DOMAIN-SUFFIX,yximgs.com,REJECT
+DOMAIN-SUFFIX,adkwai.com,REJECT
 # 微信公众号 //wxa.wxs.qq.com, wximg.wxs.qq.com, wxsmw.wxs.qq.com
 DOMAIN,wxa.wxs.qq.com,REJECT
 DOMAIN,wximg.wxs.qq.com,REJECT
