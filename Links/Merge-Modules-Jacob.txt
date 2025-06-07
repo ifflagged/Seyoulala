@@ -105,7 +105,7 @@ Modules/Surge/zirawell/lkcoffee.sgmodule # Loon,Shadowrocket
 
 # S #
 Modules/Surge/ddgksf2013/SmzdmAds.sgmodule # Loon,Shadowrocket
-Modules/Surge/Kelee/smzdm_remove_ads.sgmodule # Loon,Shadowrocket
+Modules/Loon/Kelee/smzdm_remove_ads.plugin
 Modules/Surge/zirawell/smzdm.sgmodule # Loon,Shadowrocket
 Modules/Surge/zirawell/samsclub.sgmodule # Loon,Shadowrocket
 
