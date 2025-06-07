@@ -2,6 +2,10 @@
 #!desc=Common Tools for All
 #!category=Jacob
 
+[URL Rewrite]
+# SMZDM
+^https:\/\/app-api\.smzdm\.com\/mychannel\/list$ - reject-dict
+
 [Script]
 # bilibili
 Tab = type=http-response, pattern=^https?:\/\/app\.bilibili\.com\/x\/resource\/show\/tab, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/Module-Top/BiliBili.js, requires-body=true
