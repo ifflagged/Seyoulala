@@ -46,6 +46,7 @@ Modules/Surge/ifflagged/Module-Common.sgmodule # Loon,Shadowrocket
 Modules/Surge/ifflagged/Plugin-Common.sgmodule # Loon,Shadowrocket
 
 # D #
+Modules/Surge/zirawell/dewu.sgmodule # Loon,Shadowrocket
 Modules/Surge/ifflagged/DiDi-AD.sgmodule # Shadowrocket
 # Modules/Surge/zirawell/didi.sgmodule # Shadowrocket
 https://github.com/ifflagged/Neverflagged/raw/main/Loon/Plugin/DiDi.plugin
