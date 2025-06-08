@@ -1290,7 +1290,8 @@ upos-sz-upcdntx.bilivideo.com = server:https://doh.pub/dns-query
 *.taipei = server:https://dns.twnic.tw/dns-query
 *.he.net = server:https://ordns.he.net/dns-query
 # Host
-iosapps.itunes.apple.com = iosapps.itunes.apple.com.download.ks-cdn.com, use-in-proxy=true
+iosapps.itunes.apple.com = iosapps.itunes.apple.com.download.ks-cdn.com
+api.twitter.com = 2606:4700:4700::1001, use-in-proxy=true
 
 [Rewrite]
 # HTTPDNS.Block
