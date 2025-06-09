@@ -1661,7 +1661,7 @@ http-response ^https?:\/\/m\.lkcoffee\.com\/capi\/resource\/m\/growUp\/main "pop
 ^https:\/\/user-api\.smzdm\.com\/vip\/bottom_card_list\? reject-dict
 ^https:\/\/article-api\.smzdm\.com\/publish\/get_bubble\? reject-dict
 ^https:\/\/s-api\.smzdm\.com\/sou\/search_default_keyword\? reject-dict
-^https:\/\/s-api\.smzdm\.com\/sou\/list_v10\? response-body-json-jq '.data.rows |= map(select(.model_type != "ads"))'
+^https:\/\/s-api\.smzdm\.com\/sou\/list_v10\? response-body-json-jq '.data.rows |= map(select(.model_type != "ads")) | .data.top_aladdin |= map(select(has("ad") | not))'
 ^https:\/\/s-api\.smzdm\.com\/sou\/filter\/tags\/hot_tags\? response-body-json-del data.search_faxian data.tonglan data.hongbao
 ^https:\/\/s-api\.smzdm\.com\/sou\/filter\/tags\/hot_tags\? response-body-json-jq '.data.search_hot.home |= map(select(.article_tag.article_title != "广告"))'
 # smzdm
