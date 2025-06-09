@@ -2178,7 +2178,7 @@ fenbi = type=http-response, pattern=^https?:\/\/tiku\.fenbi\.com\/activity\/app\
 # hostname = apis.folidaymall.com
 foliday = type=http-response, pattern=^https?:\/\/apis\.folidaymall\.com\/online\/capi\/component\/getPageComponents, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/rewrite/foliday.js, requires-body=true, max-size=-1, timeout=60
 
-Umetrip_remove_ads = type=http-response, pattern=^http?:\/\/(114\.115\.217\.129)|(home\.umetrip\.com)\/gateway\/api\/umetrip\/native$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/rewrite/Umetrip_remove_ads.js, requires-body=true, max-size=-1, timeout=60
+umetrip_ads = type=http-response, pattern=^http?:\/\/(114\.115\.217\.129)|(home\.umetrip\.com)\/gateway\/api\/umetrip\/native$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/rewrite/umetrip_ads.js, requires-body=true, max-size=-1, timeout=60
 
 freshippo = type=http-response, pattern=^https?:\/\/acs(\.|-)m\.(taobao|freshippo)\.com\/gw\/mtop\.wdk\.render\.query(?>indexpage|mypage|tabfeedstream), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/rewrite/freshippo.js, requires-body=true, max-size=-1, timeout=60
 

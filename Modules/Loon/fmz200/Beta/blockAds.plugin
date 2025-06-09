@@ -2532,7 +2532,7 @@ http-response ^https?:\/\/tiku\.fenbi\.com\/activity\/app\/launcher\? script-pat
 http-response ^https?:\/\/apis\.folidaymall\.com\/online\/capi\/component\/getPageComponents script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/foliday.js, requires-body=true, timeout=60, tag=复游会微信小程序
 
 # > 航旅纵横
-http-response ^http?:\/\/(114\.115\.217\.129)|(home\.umetrip\.com)\/gateway\/api\/umetrip\/native$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/Umetrip_remove_ads.js, requires-body=true, timeout=60, tag=航旅纵横
+http-response ^http?:\/\/(114\.115\.217\.129)|(home\.umetrip\.com)\/gateway\/api\/umetrip\/native$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/umetrip_ads.js, requires-body=true, timeout=60, tag=航旅纵横
 
 # > 盒马
 http-response ^https?:\/\/acs(\.|-)m\.(taobao|freshippo)\.com\/gw\/mtop\.wdk\.render\.query(?>indexpage|mypage|tabfeedstream) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/freshippo.js, requires-body=true, timeout=60, tag=盒马
