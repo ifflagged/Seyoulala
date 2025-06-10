@@ -8,7 +8,7 @@
 #!tag=去广告
 #!loon_version=3.2.4(787)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!date=2025-05-13 15:17:08
+#!date=2025-06-11 00:30:29
 
 [Rule]
 AND,((URL-REGEX,"^http:\/\/((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\/d"),(USER-AGENT,"*com.xunmeng.pinduoduo*")),REJECT
@@ -21,6 +21,7 @@ DOMAIN,th-b.pinduoduo.com,REJECT
 DOMAIN,th.pinduoduo.com,REJECT
 
 [Rewrite]
+^https:\/\/api\.pinduoduo\.com\/api\/alexa\/homepage\/hub\? response-body-json-jq '.result.bottom_tabs? |= map(select(.link | IN("index.html", "chat_list.html", "personal.html"))) | .result.buffer_bottom_tabs? |= map(select(.link | IN("index.html", "chat_list.html", "personal.html")))'
 ^https:\/\/api\.(?:pinduoduo|yangkeduo)\.com\/api\/cappuccino\/splash\? - reject-dict
 ^https:\/\/api\.pinduoduo\.com\/api\/alexa\/goods\/back_up\? - reject-dict
 ^https:\/\/api\.pinduoduo\.com\/api\/aquarius\/hungary\/global\/homepage\? - reject-dict
@@ -38,7 +39,7 @@ http-response ^https:\/\/api\.pinduoduo\.com\/api\/philo\/personal\/hub\? script
 
 http-response ^https:\/\/api\.pinduoduo\.com\/search script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_31, argument=%5B%5B%22json-del%22%2C%5B%22expansion%22%5D%5D%5D
 
-http-response ^https:\/\/api\.pinduoduo\.com\/api\/alexa\/homepage\/hub\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/PinDuoDuo_remove_ads/PinDuoDuo_remove_ads.js, requires-body=true, tag=精简首页
+http-response ^https:\/\/api\.pinduoduo\.com\/api\/alexa\/homepage\/hub\? script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_33, argument=%5B%5B%22json-del%22%2C%5B%22result.search_bar_hot_query%22%2C%22result.dy_module.irregular_banner_dy%22%5D%5D%5D
 
 [MITM]
 hostname = api.pinduoduo.com, api.yangkeduo.com
