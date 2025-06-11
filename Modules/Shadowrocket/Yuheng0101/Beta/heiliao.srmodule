@@ -2,13 +2,13 @@
 #!desc=去除烦人的广告
 #!category=Jacob
 
-#!date=2025-06-11 08:14:57
+#!date=2025-06-11 12:21:14
 
 [Script]
-黑料去广告 = type=http-response, pattern=^https?:\/\/(18hlw\.com|21bap\.srikhxa\.xyz|9qu7a\.gpoimzcy\.xyz|apy80\.xyz|url44\.co/7).*, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Yuheng0101/heiliao/web.js, requires-body=true, max-size=0, timeout=60
+黑料去广告 = type=http-response, pattern=^https?:\/\/(18hlw\.com|wr93x\.svntqkw\.xyz|21bap\.srikhxa\.xyz|apy80\.xyz|url44\.co/7).*, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Yuheng0101/heiliao/web.js, requires-body=true, max-size=0, timeout=60
 
 黑料App去广告 = type=http-response, pattern=^https:\/\/api(\d+)?.hlwapi(\d+)?\.com\/api\.php\/api\/index\/(config|userInfo|index|detail), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Yuheng0101/heiliao/app.js, requires-body=true, max-size=-1, timeout=30
 
 [MITM]
-hostname = %APPEND% 18hlw.com, 21bap.srikhxa.xyz, 9qu7a.gpoimzcy.xyz, apy80.xyz, url44.co/7, api*.hlwapi*.com
+hostname = %APPEND% 18hlw.com, wr93x.svntqkw.xyz, 21bap.srikhxa.xyz, apy80.xyz, url44.co/7, api*.hlwapi*.com
 
