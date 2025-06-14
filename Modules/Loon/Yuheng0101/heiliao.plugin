@@ -3,13 +3,13 @@
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
 #!tag=Jacob
 
-#!date=2025-06-14 08:12:36
+#!date=2025-06-14 12:18:02
 
 [Script]
-http-response ^https?:\/\/(18hlw\.com|o3is9\.jtywmig\.xyz|9a4ik\.uiqzcvxs\.xyz|apy81\.xyz|url44\.co/7).* script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Yuheng0101/heiliao/web.js, requires-body=true, timeout=60, tag=黑料去广告
+http-response ^https?:\/\/(18hlw\.com|jwhyc\.jumngudj\.xyz|o3is9\.jtywmig\.xyz|apy81\.xyz|url44\.co/7).* script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Yuheng0101/heiliao/web.js, requires-body=true, timeout=60, tag=黑料去广告
 
 http-response ^https:\/\/api(\d+)?.hlwapi(\d+)?\.com\/api\.php\/api\/index\/(config|userInfo|index|detail) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Yuheng0101/heiliao/app.js, requires-body=true, timeout=30, tag=黑料App去广告
 
 [MITM]
-hostname = 18hlw.com, o3is9.jtywmig.xyz, 9a4ik.uiqzcvxs.xyz, apy81.xyz, url44.co/7, api*.hlwapi*.com
+hostname = 18hlw.com, jwhyc.jumngudj.xyz, o3is9.jtywmig.xyz, apy81.xyz, url44.co/7, api*.hlwapi*.com
 
