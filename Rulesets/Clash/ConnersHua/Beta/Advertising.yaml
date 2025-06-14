@@ -1,4 +1,4 @@
-#规则数量:967
+#规则数量:971
 #不支持的规则数量:1
 #已排除的规则数量:0
 #不支持的规则:
@@ -106,6 +106,7 @@ payload:
   - DOMAIN-SUFFIX,adinall.com
   - DOMAIN-SUFFIX,adintl.cn
   - DOMAIN-SUFFIX,adkernel.com
+  - DOMAIN-SUFFIX,adkwai.com
   - DOMAIN-SUFFIX,ad-locus.com
   - DOMAIN-SUFFIX,adlooxtracking.com
   - DOMAIN-SUFFIX,admarvel.com
@@ -113,6 +114,7 @@ payload:
   - DOMAIN-SUFFIX,ad-maven.com
   - DOMAIN-SUFFIX,admicro.vn
   - DOMAIN-SUFFIX,admob.com
+  - DOMAIN-SUFFIX,admobile.top
   - DOMAIN-SUFFIX,ad-move.jp
   - DOMAIN-SUFFIX,adnetwork.vn
   - DOMAIN-SUFFIX,adnxs.com
@@ -392,6 +394,7 @@ payload:
   - DOMAIN-SUFFIX,quantumgraph.com
   - DOMAIN-SUFFIX,qutaobi.com
   - DOMAIN-SUFFIX,r-ad.ne.jp
+  - DOMAIN-SUFFIX,ranfenghd.com
   - DOMAIN-SUFFIX,rayjump.com
   - DOMAIN-SUFFIX,reachmax.cn
   - DOMAIN-SUFFIX,realsrv.com
@@ -516,6 +519,7 @@ payload:
   - DOMAIN-SUFFIX,themoneytizer.com
   - DOMAIN-SUFFIX,theoremreach.com
   - DOMAIN-SUFFIX,thetrafficstat.net
+  - DOMAIN-SUFFIX,tianmu.mobi
   - DOMAIN-SUFFIX,tidaltv.com
   - DOMAIN-SUFFIX,tjqonline.cn
   - DOMAIN-SUFFIX,tnkfactory.com
