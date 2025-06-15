@@ -2,9 +2,10 @@
 #!desc=spotify
 #!category=Jacob
 
-[URL Rewrite]
-^https?:\/\/api\d?\.musical\.ly\/api\/ad\/ - reject-200
-^https?:\/\/spclient\.wg\.spotify\.com\/(?>ad-logic|ads|.+ad_slot|.+banners|.+canvases|.+cards|.+crashlytics|.+doubleclick.net|.+enabled-tracks|.+event|.+sponsored|.+promoted|.+promoted_offer) - reject-200
+[Map Local]
+^https?:\/\/api\d?\.musical\.ly\/api\/ad\/ data-type=tiny-gif
+
+^https?:\/\/spclient\.wg\.spotify\.com\/(?>ad-logic|ads|.+ad_slot|.+banners|.+canvases|.+cards|.+crashlytics|.+doubleclick.net|.+enabled-tracks|.+event|.+sponsored|.+promoted|.+promoted_offer) data-type=tiny-gif
 
 [Script]
 spotify = type=http-response, pattern=^https?:\/\/spclient\.wg\.spotify\.com\/(bootstrap\/v\d\/bootstrap|user-customization-service\/v\d\/customize)$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/spotify/spotify.js, requires-body=true, max-size=0

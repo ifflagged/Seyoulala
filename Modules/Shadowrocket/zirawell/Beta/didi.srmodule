@@ -11,23 +11,37 @@ IP-CIDR,139.199.240.15/32,REJECT,no-resolve
 
 [URL Rewrite]
 ^https?:\/\/ut\.xiaojukeji\.com\/ut\/kappa\/api\/owner\/index\/dialog - reject
-^https?:\/\/hd\.xiaojukeji\.com\/d - reject-dict
-^https?:\/\/ct\.xiaojukeji\.com\/agent\/v\d\/feeds - reject-dict
-^https?:\/\/res\.xiaojukeji\.com\/resapi\/activity\/(?>m|xp)get - reject-dict
-^https?:\/\/as\.xiaojukeji\.com\/ep\/as\/toggles - reject-dict
-^https?:\/\/freight\.xiaojukeji\.com\/gateway(?!\?api=freight\.p\.personal\.center) - reject-dict
-^https?:\/\/api\.udache\.com\/gulfstream\/confucius\/api\/privacy\/app\/popList - reject-dict
-^https?:\/\/conf\.diditaxi\.com\.cn\/dynamic\/conf - reject-dict
-^https?:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/other\/fast - reject-dict
-^https?:\/\/pt-starimg\.didistatic\.com\/static\/starimg\/node\/.*.(?>jpg|png|gif) - reject-200
-^https?:\/\/omgup\d?\.xiaojukeji\.com\/api - reject-200
-^https?:\/\/htwkop\.xiaojukeji\.com\/gateway\?api=cms\.htw\.delivery - reject-dict
-^https?:\/\/htwkop\.xiaojukeji\.com\/gateway\?api=hm\.fa\.(?>combineHomepageInfo|mallRecommend) - reject-dict
 ^https?:\/\/capis(-\d)?\.didapinche\.com\/adbase - reject
-^https?:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/core - reject-dict
 
 [Body Rewrite]
 http-response ^https?:\/\/ut\.xiaojukeji\.com\/ut\/kappa\/api\/owner\/index banner_items random_body
+
+[Map Local]
+^https?:\/\/hd\.xiaojukeji\.com\/d data-type=text data="{}"
+
+^https?:\/\/ct\.xiaojukeji\.com\/agent\/v\d\/feeds data-type=text data="{}"
+
+^https?:\/\/res\.xiaojukeji\.com\/resapi\/activity\/(?>m|xp)get data-type=text data="{}"
+
+^https?:\/\/as\.xiaojukeji\.com\/ep\/as\/toggles data-type=text data="{}"
+
+^https?:\/\/freight\.xiaojukeji\.com\/gateway(?!\?api=freight\.p\.personal\.center) data-type=text data="{}"
+
+^https?:\/\/api\.udache\.com\/gulfstream\/confucius\/api\/privacy\/app\/popList data-type=text data="{}"
+
+^https?:\/\/conf\.diditaxi\.com\.cn\/dynamic\/conf data-type=text data="{}"
+
+^https?:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/other\/fast data-type=text data="{}"
+
+^https?:\/\/pt-starimg\.didistatic\.com\/static\/starimg\/node\/.*.(?>jpg|png|gif) data-type=text data=""
+
+^https?:\/\/omgup\d?\.xiaojukeji\.com\/api data-type=text data=""
+
+^https?:\/\/htwkop\.xiaojukeji\.com\/gateway\?api=cms\.htw\.delivery data-type=text data="{}"
+
+^https?:\/\/htwkop\.xiaojukeji\.com\/gateway\?api=hm\.fa\.(?>combineHomepageInfo|mallRecommend) data-type=text data="{}"
+
+^https?:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/core data-type=text data="{}"
 
 [Script]
 diditaxi = type=http-response, pattern=^https?:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/core, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/didi/didi.js, requires-body=true, max-size=0

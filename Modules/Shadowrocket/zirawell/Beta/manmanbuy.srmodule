@@ -2,8 +2,8 @@
 #!desc=manmanbuy
 #!category=Jacob
 
-[URL Rewrite]
-^https?:\/\/apapia-sqk\.manmanbuy\.com\/index_json\.ashx$ - reject-dict
+[Map Local]
+^https?:\/\/apapia-sqk\.manmanbuy\.com\/index_json\.ashx$ data-type=text data="{}"
 
 [MITM]
 hostname = %APPEND% apapia-sqk.manmanbuy.com

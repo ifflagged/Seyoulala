@@ -7,8 +7,8 @@ DOMAIN,api.zuihuimai.com,REJECT,extended-matching
 DOMAIN,analytics-api.smzdm.com,REJECT,extended-matching
 DOMAIN,ynuf.aliapp.org,REJECT,extended-matching
 
-[URL Rewrite]
-^https?:\/\/haojia\.m\.smzdm\.com\/detail_modul\/other_modul\? - reject-dict
+[Map Local]
+^https?:\/\/haojia\.m\.smzdm\.com\/detail_modul\/other_modul\? data-type=text data="{}"
 
 [Script]
 smzdm = type=http-response, pattern=^https?:\/\/haojia\.m\.smzdm\.com\/detail_modul\/user_related_modul\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/smzdm/smzdm.js, requires-body=true, max-size=0

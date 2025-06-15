@@ -9,7 +9,9 @@ DOMAIN,ad.seeyouyima.com,REJECT,extended-matching
 ^https?:\/\/x\.seeyouyima\.com\/adx\/staticstics\? - reject
 ^https?:\/\/axxd\.xmseeyouyima\.com\/ad - reject
 ^https?:\/\/axxd\.xmseeyouyima\.com\/.*getad\? - reject
-^https?:\/\/wxproj\.seeyouyima\.com\/data\/today_tips - reject-dict
+
+[Map Local]
+^https?:\/\/wxproj\.seeyouyima\.com\/data\/today_tips data-type=text data="{}"
 
 [MITM]
 hostname = %APPEND% x.seeyouyima.com, axxd.xmseeyouyima.com, wxproj.seeyouyima.com

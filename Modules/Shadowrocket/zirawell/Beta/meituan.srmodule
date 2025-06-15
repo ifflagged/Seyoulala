@@ -29,19 +29,28 @@ DOMAIN-KEYWORD,report.meituan,REJECT,extended-matching
 ^https?:\/\/s3plus\.meituan\.net\/v\d\/mss_\w+\/waimai-alita\/\w+\.zip$ - reject
 ^https?:\/\/s3plus\.meituan\.net\/v\d\/mss_\w+\/brandcpt - reject
 ^https?:\/\/sqt\.meituan\.com\/s\/gateway\/mweb\/api\/marketingResource\/show - reject
-^https?:\/\/img\.meituan\.net\/(adunion|display|midas)\/.+\.(gif|jpg)\.webp$ - reject-200
-^https?:\/\/img\.meituan\.net\/groceryimages\/\w+\.gif - reject-200
-^https?:\/\/img\.meituan\.net\/groceryimages\/\w+\.png@220w_220h_1e_1l - reject-200
-^https?:\/\/p\d\.meituan\.net\/movie\/.+?\.jpg\?may_covertWebp - reject-200
-^https?:\/\/p\d\.meituan\.net\/travelcube\/(?!1d4a663|52e9bfc|29a6227|412c4ac|6ee35c4|13bf0bf|ab8692e|6858b1d).+@100w_100h - reject-200
-^https?:\/\/p\d\.meituan\.net\/(\d+\.\d+\.\d+\/)?wmbanner\/(?!fb51b9d|4e9d3c4).+\.gif - reject-200
-^https?:\/\/(s3plus|flowplus)\.meituan\.net\/v\d\/\w+\/linglong\/.+\.(?>gif|jpg|mp4) - reject-200
-^https?:\/\/portal-portm\.meituan\.com\/horn_ios - reject-dict
+
+[Map Local]
+^https?:\/\/img\.meituan\.net\/(adunion|display|midas)\/.+\.(gif|jpg)\.webp$ data-type=tiny-gif
+
+^https?:\/\/img\.meituan\.net\/groceryimages\/\w+\.gif data-type=tiny-gif
+
+^https?:\/\/img\.meituan\.net\/groceryimages\/\w+\.png@220w_220h_1e_1l data-type=tiny-gif
+
+^https?:\/\/p\d\.meituan\.net\/movie\/.+?\.jpg\?may_covertWebp data-type=tiny-gif
+
+^https?:\/\/p\d\.meituan\.net\/travelcube\/(?!1d4a663|52e9bfc|29a6227|412c4ac|6ee35c4|13bf0bf|ab8692e|6858b1d).+@100w_100h data-type=tiny-gif
+
+^https?:\/\/p\d\.meituan\.net\/(\d+\.\d+\.\d+\/)?wmbanner\/(?!fb51b9d|4e9d3c4).+\.gif data-type=tiny-gif
+
+^https?:\/\/(s3plus|flowplus)\.meituan\.net\/v\d\/\w+\/linglong\/.+\.(?>gif|jpg|mp4) data-type=tiny-gif
+
+^https?:\/\/portal-portm\.meituan\.com\/horn_ios data-type=text data="{}"
+
+^https?:\/\/web\.meituan\.com\/api\/miniprogram\/index\/aggregate data-type=file data="https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/meituan/mt_aggregate.json"
 
 [Script]
 meituan = type=http-response, pattern=^https?:\/\/p\d\.meituan\.net\/linglong\/, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/meituan/meituan.js, requires-body=true, max-size=0
-
-mt_aggregate = type=http-request, pattern=^https?:\/\/web\.meituan\.com\/api\/miniprogram\/index\/aggregate, script-path=http://127.0.0.1:9101/convert/_start_/https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/meituan/mt_aggregate.json/_end_/mt_aggregate.json?type=mock&target-app=shadowrocket-module, timeout=60
 
 [MITM]
 hostname = %APPEND% apimobile.meituan.com, img.meituan.net, p*.meituan.net, www.meituan.com, s3plus.meituan.net, flowplus.meituan.net, portal-portm.meituan.com, sqt.meituan.com, web.meituan.com

@@ -5,8 +5,8 @@
 [Rule]
 DOMAIN,openapi.boc.cn,REJECT,extended-matching
 
-[URL Rewrite]
-^https?:\/\/mbs\.boc\.cn\/ubas-mgateway-static\/images\/advertType\/.+.jpg - reject-200
+[Map Local]
+^https?:\/\/mbs\.boc\.cn\/ubas-mgateway-static\/images\/advertType\/.+.jpg data-type=text data=""
 
 [MITM]
 hostname = %APPEND% mbs.boc.cn

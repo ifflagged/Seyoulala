@@ -17,7 +17,9 @@
 ^https?:\/\/update\.pan\.baidu\.com\/statistics - reject
 ^https?:\/\/fc-video\.cdn\.bcebos\.com - reject
 ^https?:\/\/rp\.hpplay\.cn\/logouts - reject
-^https?:\/\/pan\.baidu\.com\/buy\/ad\/ - reject-200
+
+[Map Local]
+^https?:\/\/pan\.baidu\.com\/buy\/ad\/ data-type=text data=""
 
 [Script]
 baidupan = type=http-response, pattern=^https?:\/\/pan\.baidu\.com\/api\/getsyscfg\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/baidupan/baiduPan.js, requires-body=true, max-size=0

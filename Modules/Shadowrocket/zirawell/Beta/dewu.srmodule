@@ -4,7 +4,9 @@
 
 [URL Rewrite]
 ^https?:\/\/app\.dewu\.com\/api\/v\d\/app\/advertisement(?!\/new\/activity\/receiveCoupon) - reject
-^https?:\/\/cdn\.poizon\.com\/node-common\/.*.jpg - reject-200
+
+[Map Local]
+^https?:\/\/cdn\.poizon\.com\/node-common\/.*.jpg data-type=text data=""
 
 [MITM]
 hostname = %APPEND% app.dewu.com, cdn.poizon.com

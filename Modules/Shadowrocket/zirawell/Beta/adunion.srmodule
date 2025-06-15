@@ -502,27 +502,49 @@ DOMAIN-SUFFIX,count.video.sina.com.cn,REJECT,extended-matching
 ^https?:\/\/nex.163.com\/q - reject
 ^https?:\/\/g1.163.com\/madfeedback - reject
 ^https?:\/\/c\.m\.163\.com\/nc\/gl\/ - reject
-^https?:\/\/api2\.helper\.qq\.com\/game\/buttons - reject-200
-^https?:\/\/imgcache\.qq\.com\/qqlive\/ - reject-200
-^https?:\/\/vv\.video\.qq\.com\/getvmind\? - reject-200
-^https?:\/\/qt\.qq\.com\/lua\/mengyou\/get_splash_screen_info - reject-200
-^https?:\/\/y\.gtimg\.cn\/music\/.*?_Ad/\d+\.png - reject-200
-^https?:\/\/splashqqlive\.gtimg\.com\/website\/\d{6} - reject-200
-^https?:\/\/qzonestyle\.gtimg\.cn\/qzone\/biz\/gdt\/mob\/sdk\/ios\/v\d\/ - reject-200
-^https?:\/\/discuz\.gtimg\.cn\/cloud\/scripts\/discuz_tips - reject-200
-^https?:\/\/bla\.gtimg\.com\/qqlive\/\d{6}.+?\.png - reject-200
-^https?:\/\/mmgr\.gtimg\.com\/gjsmall\/qiantu\/upload\/ - reject-200
-^https?:\/\/mmgr\.gtimg\.com\/gjsmall\/qqpim\/public\/ios\/splash\/.+?\/\d{4}_\d{4} - reject-200
-^https?:\/\/bk\.bingo\.qq\.com\/bk\/crx\/data\/videoAd - reject-dict
-^https?:\/\/afd\.baidu\.com\/afd\/entry - reject-200
-^https?:\/\/issuecdn\.baidupcs\.com\/issue\/netdisk\/guanggao\/ - reject-200
-^https?:\/\/[\s\S]*\.baidu\.com/.*?ad[xs]\.php - reject-200
-^https?:\/\/t\d{2}\.baidu\.com - reject-200
-^https?:\/\/g\.alicdn\.com\/(?>alilog|trace) - reject-200
-^https?:\/\/yixiu-abtest\.alicdn\.com\/ut-abtest\/config - reject-dict
-^https?:\/\/www\.google\.com\/ads - reject-dict
-^https?:\/\/cdn\.api\.fotoable\.com\/Advertise\/ - reject-200
-^https?:\/\/cloud\.bluecardsoft\.com\/yuntingad\/ - reject-dict
+
+[Map Local]
+^https?:\/\/api2\.helper\.qq\.com\/game\/buttons data-type=tiny-gif
+
+^https?:\/\/imgcache\.qq\.com\/qqlive\/ data-type=tiny-gif
+
+^https?:\/\/vv\.video\.qq\.com\/getvmind\? data-type=text data=""
+
+^https?:\/\/qt\.qq\.com\/lua\/mengyou\/get_splash_screen_info data-type=text data=""
+
+^https?:\/\/y\.gtimg\.cn\/music\/.*?_Ad/\d+\.png data-type=tiny-gif
+
+^https?:\/\/splashqqlive\.gtimg\.com\/website\/\d{6} data-type=tiny-gif
+
+^https?:\/\/qzonestyle\.gtimg\.cn\/qzone\/biz\/gdt\/mob\/sdk\/ios\/v\d\/ data-type=tiny-gif
+
+^https?:\/\/discuz\.gtimg\.cn\/cloud\/scripts\/discuz_tips data-type=tiny-gif
+
+^https?:\/\/bla\.gtimg\.com\/qqlive\/\d{6}.+?\.png data-type=tiny-gif
+
+^https?:\/\/mmgr\.gtimg\.com\/gjsmall\/qiantu\/upload\/ data-type=tiny-gif
+
+^https?:\/\/mmgr\.gtimg\.com\/gjsmall\/qqpim\/public\/ios\/splash\/.+?\/\d{4}_\d{4} data-type=tiny-gif
+
+^https?:\/\/bk\.bingo\.qq\.com\/bk\/crx\/data\/videoAd data-type=text data="{}"
+
+^https?:\/\/afd\.baidu\.com\/afd\/entry data-type=tiny-gif
+
+^https?:\/\/issuecdn\.baidupcs\.com\/issue\/netdisk\/guanggao\/ data-type=text data=""
+
+^https?:\/\/[\s\S]*\.baidu\.com/.*?ad[xs]\.php data-type=tiny-gif
+
+^https?:\/\/t\d{2}\.baidu\.com data-type=tiny-gif
+
+^https?:\/\/g\.alicdn\.com\/(?>alilog|trace) data-type=text data=""
+
+^https?:\/\/yixiu-abtest\.alicdn\.com\/ut-abtest\/config data-type=text data="{}"
+
+^https?:\/\/www\.google\.com\/ads data-type=text data="{}"
+
+^https?:\/\/cdn\.api\.fotoable\.com\/Advertise\/ data-type=text data=""
+
+^https?:\/\/cloud\.bluecardsoft\.com\/yuntingad\/ data-type=text data="{}"
 
 [Script]
 adunion = type=http-response, pattern=^https?:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/adunion/amdc.js, max-size=0

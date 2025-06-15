@@ -2,9 +2,10 @@
 #!desc=mstand
 #!category=Jacob
 
-[URL Rewrite]
-^https?:\/\/api\.prod\.dj\.mstand\.cn\/scrm\/app\/mdm\/index\/listAdv\?types - reject-dict
-^https?:\/\/api\.prod\.dj\.mstand\.cn\/system\/dms\/dmsAdSetting\/issue - reject-dict
+[Map Local]
+^https?:\/\/api\.prod\.dj\.mstand\.cn\/scrm\/app\/mdm\/index\/listAdv\?types data-type=text data="{}"
+
+^https?:\/\/api\.prod\.dj\.mstand\.cn\/system\/dms\/dmsAdSetting\/issue data-type=text data="{}"
 
 [Script]
 mstand = type=http-response, pattern=^https?:\/\/api\.prod\.dj\.mstand\.cn\/scrm\/mini\/app\/index\/info, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/mstand/wechatApplet.js, requires-body=true, max-size=0
