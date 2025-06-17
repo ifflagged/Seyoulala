@@ -1,7 +1,13 @@
-dewu%0A：Error: Response code 503 (Service Unavailable)
+#!name=dewu
+#!desc=dewu
+#!category=Jacob
 
+[URL Rewrite]
+^https?:\/\/app\.dewu\.com\/api\/v\d\/app\/advertisement(?!\/new\/activity\/receiveCoupon) - reject
 
+[Map Local]
+^https?:\/\/cdn\.poizon\.com\/node-common\/.*.jpg data-type=text data="" status-code=200
 
+[MITM]
+hostname = %APPEND% app.dewu.com, cdn.poizon.com
 
-
-Script Hub 重写转换: ❌  可自行翻译错误信息或复制错误信息后点击通知进行反馈

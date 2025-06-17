@@ -1,7 +1,12 @@
-dewu%0A：Error: Response code 503 (Service Unavailable)
+#!name=dewu
+#!desc=dewu
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
+#!tag=Jacob
 
+[Rewrite]
+^https?:\/\/app\.dewu\.com\/api\/v\d\/app\/advertisement(?!\/new\/activity\/receiveCoupon) - reject
+^https?:\/\/cdn\.poizon\.com\/node-common\/.*.jpg mock-response-body data-type=text data="" status-code=200
 
+[MITM]
+hostname = app.dewu.com, cdn.poizon.com
 
-
-
-Script Hub 重写转换: ❌  可自行翻译错误信息或复制错误信息后点击通知进行反馈
