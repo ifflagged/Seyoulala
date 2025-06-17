@@ -1,13 +1,7 @@
-#!name=tfilm
-#!desc=tfilm
-#!category=Jacob
+tfilm%0A：Error: 请求超时(20 秒)
 
-[URL Rewrite]
-^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.film\.mtopadvertiseapi\.(queryadvertise|queryloadingbanner)\/ - reject
-^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.film\.life\.popup\.get\/ - reject-dict
-^https?:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.film\.life\.(popup|aristotle)\.get - reject-dict
-^https?:\/\/mdn\.alicdn\.com\/imgextra\/i1\/.*-tps-180-180\.gif$ - reject-200
 
-[MITM]
-hostname = %APPEND% acs.m.taobao.com, guide-acs.m.taobao.com, mdn.alicdn.com
 
+
+
+Script Hub 重写转换: ❌  可自行翻译错误信息或复制错误信息后点击通知进行反馈
