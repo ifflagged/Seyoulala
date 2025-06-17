@@ -22,7 +22,7 @@ AND,((DOMAIN,guc3-spclient.spotify.com),(PROTOCOL,QUIC)),REJECT
 ^https?:\/\/(?:gae2-spclient|guc3-spclient|spclient\.wg)\.spotify\.com\/pendragon\/ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 [Script]
-Protobuf = type=http-response, pattern=^https?:\/\/(?:gae2-spclient|guc3-spclient|spclient\.wg)\.spotify\.com\/(?:bootstrap|user-customization-service), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/001ProMax/Spotify/Spotify.Crack.Dev.js, requires-body=true, binary-body-mode=true, timeout=3, argument="[{tab},{useractivity}]"
+Protobuf = type=http-response, pattern=^https?:\/\/(?:gae2-spclient|guc3-spclient|spclient\.wg)\.spotify\.com\/(?:bootstrap|user-customization-service), script-path=https://raw.githubusercontent.com/001ProMax/Surge/refs/heads/main/Script/Spotify.Crack.Dev.js, requires-body=true, binary-body-mode=true, timeout=3, argument="[{tab},{useractivity}]"
 
 [MITM]
 hostname = %APPEND% gae2-spclient.spotify.com, guc3-spclient.spotify.com, spclient.wg.spotify.com

@@ -1,22 +1,7 @@
-#!name=wechatAppletGeneral
-#!desc=wechatAppletGeneral
-#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
-#!tag=Jacob
+wechatAppletGeneral%0A：Error: Response code 503 (Service Unavailable)
 
-[Rule]
-DOMAIN-SUFFIX,wxsnsdy.wxs.qq.com,REJECT
-DOMAIN-SUFFIX,wxsmsdy.video.qq.com,REJECT
-DOMAIN-SUFFIX,wxsnsdythumb.wxs.qq.com,REJECT
 
-[Rewrite]
-# 企迈 - QMAI(包含: 挪瓦咖啡、林里柠檬茶、霸王茶姬、陈香贵)
-^https?:\/\/(?>webapi|miniapp)\.qmai\.cn\/web\/cmk-center\/marketing\/canvas\/advert - reject
-^https?:\/\/mp\.weixin\.qq\.com\/wapad\/getaddata\?action=getad mock-response-body data-type=text data="" status-code=200
-^https?:\/\/mp\.weixin\.qq\.com\/wapad\/reportaddata\?action=exposure_report mock-response-body data-type=text data="" status-code=200
 
-[Script]
-http-response ^https?:\/\/(?>webapi|miniapp)\.qmai\.cn\/web\/catering([0-9]-apiserver)?\/advertising\/ad\/advertiseInfo script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/wechatAppletGeneral/qmai.js, requires-body=true, tag=wechatAppletGeneral
 
-[MITM]
-hostname = mp.weixin.qq.com, webapi.qmai.cn, miniapp.qmai.cn
 
+Script Hub 重写转换: ❌  可自行翻译错误信息或复制错误信息后点击通知进行反馈
