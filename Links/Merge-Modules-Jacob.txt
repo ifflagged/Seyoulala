@@ -49,8 +49,8 @@ Modules/Surge/ifflagged/Plugin-Common.sgmodule # Loon,Shadowrocket
 Modules/Surge/zirawell/dewu.sgmodule # Loon,Shadowrocket
 Modules/Surge/ifflagged/DiDi-AD.sgmodule # Shadowrocket
 # Modules/Surge/zirawell/didi.sgmodule # Shadowrocket
-Modules/Loon/Kelee/DiDi_remove_ads.plugin
-# https://github.com/ifflagged/Neverflagged/raw/main/Loon/Plugin/DiDi.plugin
+# Modules/Loon/Kelee/DiDi_remove_ads.plugin
+https://github.com/ifflagged/Neverflagged/raw/main/Loon/Plugin/DiDi.plugin
 Modules/Surge/zirawell/dianping.sgmodule # Loon,Shadowrocket
 Modules/Surge/Kelee/HKDouYin_remove_ads.sgmodule # Loon,Shadowrocket
 
