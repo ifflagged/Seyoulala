@@ -1,7 +1,17 @@
-Didichuxing%0A：Error: 请求超时(20 秒)
+#!name=滴滴出行
+#!desc=Didichuxing
+#!author=怎么肥事
+#!category=Jacob
 
+#!update=2024-10-22 21:56
+#!ps=需要分流禁用掉以下ip地址⬇️
 
+[Rule]
+IP-CIDR,123.207.209.39/32,REJECT,no-resolve
+IP-CIDR,123.207.209.60/32,REJECT,no-resolve
+IP-CIDR,139.199.240.12/32,REJECT,no-resolve
+IP-CIDR,116.85.3.37/32,REJECT,no-resolve
+IP-CIDR,162.14.157.2/32,REJECT,no-resolve
+IP-CIDR,162.14.157.24/32,REJECT,no-resolve
+IP-CIDR,139.199.240.15/32,REJECT,no-resolve
 
-
-
-Script Hub 重写转换: ❌  可自行翻译错误信息或复制错误信息后点击通知进行反馈
