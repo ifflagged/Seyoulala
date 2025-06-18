@@ -43,7 +43,11 @@ https://github.com/kokoryh/Sparkle/raw/master/release/surge/module/missav.sgmodu
 # M #
 https://github.com/Maasea/sgmodule/raw/master/Bilibili.Helper.sgmodule
 https://github.com/Maasea/sgmodule/raw/master/YouTube.Enhance.sgmodule
+https://github.com/mist-whisper/Surge/raw/master/Modules/PinDuoDuo_remove_ads.sgmodule
 https://github.com/Moli-X/Resources/raw/main/Rewrite/Collections.conf
+
+# S #
+https://github.com/sooyaaabo/Loon/raw/main/Plugin/MyBlockAds.plugin
 
 # W #
 https://github.com/wf021325/qx/raw/main/js/jd_price.js
