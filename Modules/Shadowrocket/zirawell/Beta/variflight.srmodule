@@ -1,7 +1,17 @@
-variflight%0A：Error: 请求超时(20 秒)
+#!name=variflight
+#!desc=variflight
+#!category=Jacob
 
+[Rule]
+DOMAIN,adv-adlog.variflight.com,REJECT,extended-matching
+DOMAIN,adv-ads.variflight.com,REJECT,extended-matching
+DOMAIN,app-ad.variflight.com,REJECT,extended-matching
 
+[URL Rewrite]
+^https?:\/\/api\.cdmcaac\.com\/ad - reject
+^https?:\/\/app\.variflight\.com(\/v\d)?\/ad - reject
+^https?:\/\/app\.variflight\.com\/flight\/getIosAdToken - reject
 
+[MITM]
+hostname = %APPEND% api.cdmcaac.com, app.variflight.com
 
-
-Script Hub 重写转换: ❌  可自行翻译错误信息或复制错误信息后点击通知进行反馈
