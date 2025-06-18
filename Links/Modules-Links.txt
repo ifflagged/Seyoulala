@@ -4,6 +4,7 @@ https://github.com/ifflagged/Neverflagged/raw/main/Loon/Plugin/Plugin-Common.plu
 https://github.com/ifflagged/Neverflagged/raw/main/Loon/Plugin/Plugin-Top.plugin
 https://github.com/ifflagged/Neverflagged/raw/main/Surge/Module/Module-Common.sgmodule
 https://github.com/ifflagged/Neverflagged/raw/main/Surge/Module/Module-Top.sgmodule
+https://github.com/ifflagged/Neverflagged/raw/main/Loon/Plugin/Plugin-Top.plugin
 # https://github.com/ifflagged/Neverflagged/raw/main/Loon/Plugin/YouTube-AD.plugin
 
 # 0 #
