@@ -1,7 +1,13 @@
-tfsmy%0A：Error: Response code 502 (Bad Gateway or Proxy Error)
+#!name=tfsmy
+#!desc=tfsmy
+#!category=Jacob
 
+[URL Rewrite]
+^https?:\/\/tfsmy\.chengdu\.gov\.cn\/api\/v\d\/core\/version - reject-200
 
+[Body Rewrite]
+http-response ^https?:\/\/tft-app\.cdtft\.cn\/gateway-customer\/tftapp\/tft-ams\/api\/appAd officialAdvertResultVo random-response
 
+[MITM]
+hostname = %APPEND% tfsmy.chengdu.gov.cn, tft-app.cdtft.cn
 
-
-Script Hub 重写转换: ❌  可自行翻译错误信息或复制错误信息后点击通知进行反馈

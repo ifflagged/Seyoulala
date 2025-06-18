@@ -1,7 +1,14 @@
-tfsmy%0A：Error: Response code 502 (Bad Gateway or Proxy Error)
+#!name=tfsmy
+#!desc=tfsmy
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
+#!tag=Jacob
 
+[Rewrite]
+^https?:\/\/tfsmy\.chengdu\.gov\.cn\/api\/v\d\/core\/version mock-response-body data-type=text data="" status-code=200
 
+[Body Rewrite]
+http-response ^https?:\/\/tft-app\.cdtft\.cn\/gateway-customer\/tftapp\/tft-ams\/api\/appAd officialAdvertResultVo random-response
 
+[MITM]
+hostname = tfsmy.chengdu.gov.cn, tft-app.cdtft.cn
 
-
-Script Hub 重写转换: ❌  可自行翻译错误信息或复制错误信息后点击通知进行反馈
