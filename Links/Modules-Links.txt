@@ -52,6 +52,9 @@ https://github.com/sooyaaabo/Loon/raw/main/Plugin/MyBlockAds.plugin
 # W #
 https://github.com/wf021325/qx/raw/main/js/jd_price.js
 
+# X #
+https://github.com/XiangwanGuan/Shadowrocket/raw/main/Rewrite/XiangwanConfig/Bilibili.conf
+
 # Y #
 https://github.com/Yuheng0101/Hostname_Monitor/releases/download/Auto_Update/heiliao.sgmodule
 https://github.com/Yuheng0101/X/raw/main/Scripts/ChinaMobile/NoAds.js
