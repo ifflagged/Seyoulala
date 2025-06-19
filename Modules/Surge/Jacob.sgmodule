@@ -783,6 +783,7 @@ DOMAIN,api.biliapi.com,REJECT,pre-matching
 DOMAIN,app.biliapi.com,REJECT,pre-matching
 DOMAIN,api.biliapi.net,REJECT,pre-matching
 DOMAIN,app.biliapi.net,REJECT,pre-matching
+# Bilibili_remove_ads
 # Module-Common
 DOMAIN,api-dsp.8ziben.com,REJECT
 DOMAIN,sdk.zhangyuyidong.cn,REJECT
@@ -1451,6 +1452,13 @@ http-request ^https?:\/\/(raw|gist)\.githubusercontent\.com\/ header-replace Acc
 ^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.interface\.v1\.Teenagers\/ModeStatus$ data-type=base64 data="AAAAABMKEQgCEgl0ZWVuYWdlcnMgAioA" header="content-type: application/grpc"
 ^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.interface\.v1\.Search\/DefaultWords$ data-type=base64 data="AAAAACkaHeaQnOe0ouinhumikeOAgeeVquWJp+aIlnVw5Li7IgAoAToAQgBKAA==" header="content-type: application/grpc"
 ^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.view\.v1\.View\/TFInfo$ data-type=base64 data="AAAAAAIIAQ==" header="content-type: application/grpc"
+# Bilibili_remove_ads
+^https:\/\/api\.live\.bilibili\.com\/xlive\/e-commerce-interface\/v1\/ecommerce-user\/get_shopping_info\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https:\/\/api\.bilibili\.com\/pgc\/activity\/deliver\/material\/receive\? data-type=text data="{"code":0,"data":{"closeType":"close_win","container":[],"showTime":""},"message":"success"}" status-code=200 header="Content-Type:text/plain"
+^https:\/\/ap[ip]\.bilibili\.com\/x\/(?:resource\/(?:top\/activity|patch\/tab)|v2\/search\/square|vip\/ads\/materials)\? data-type=text data="{"code":-404,"message":"-404","ttl":1,"data":null}" status-code=200 header="Content-Type:text/plain"
+^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.interface\.v1\.Teenagers\/ModeStatus$ data-type=base64 data="AAAAABMKEQgCEgl0ZWVuYWdlcnMgAioA"
+^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.interface\.v1\.Search\/DefaultWords$ data-type=base64 data="AAAAACkaHeaQnOe0ouinhumikeOAgeeVquWJp+aIlnVw5Li7IgAoAToAQgBKAA=="
+^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.view\.v1\.View\/TFInfo$ data-type=base64 data="AAAAAAIIAQ=="
 # BiliBili.ADBlock
 ^https?:\/\/api\.vc\.bilibili\.com\/search_svr\/v\d\/Search\/recommend_words data-type=text data="{}" header="application/json"
 ^https?:\/\/api\.vc\.bilibili\.com\/topic_svr\/v1\/topic_svr data-type=text data="{}" header="application/json"
@@ -1741,6 +1749,7 @@ NoAds = type=http-response, pattern=^https?:\/\/client\.app\.coc\.10086\.cn\/biz
 bilibili.skin = type=http-response, pattern=^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/kokoryh/bilibili/bili-suit-diy.js, requires-body=true, engine=webview, max-size=-1
 bilibili.json = type=http-response, pattern=^https:\/\/app\.bilibili\.com\/x\/(?:resource\/show\/tab\/v2|v2\/(?:splash\/(?:list|show|event\/list2)|feed\/index(?:\/story)?|account\/(?:mine(?:\/ipad)?|myinfo)))\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/kokoryh/bilibili/bilibili.json.js, requires-body=true, engine=webview, max-size=-1, argument="{"showUperCenter":{{{创作中心}}}}"
 bilibili.protobuf = type=http-response, pattern=^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.(?:app\.(?:show\.v1\.Popular\/Index|dynamic\.v2\.Dynamic\/DynAll|view(?:unite)?\.v1\.View\/(?:View|ViewProgress|RelatesFeed)|playurl\.v1\.PlayURL\/PlayView|playerunite\.v1\.Player\/PlayViewUnite)|polymer\.app\.search\.v1\.Search\/SearchAll|community\.service\.dm\.v1\.DM\/DmView|main\.community\.reply\.v1\.Reply\/MainList|pgc\.gateway\.player\.v2\.PlayURL\/PlayView)$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/kokoryh/bilibili/bilibili.protobuf.js, requires-body=true, binary-body-mode=true, engine=webview, max-size=-1, argument="{"showUpList":"{{{动态最常访问}}}","filterTopReplies":{{{过滤置顶评论广告}}},"airborneDm":"{{{空降助手弹幕版}}}"}"
+# Bilibili_remove_ads
 # BiliBili.ADBlock
 📺 BiliBili.ADBlock.feed.index.request.json = type=http-request,pattern=^https?:\/\/app\.bili(bili\.com|api\.net)\/x\/v2\/feed\/index\?, engine=webview, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/BiliUniverse/BiliBili.ADBlock/request.bundle.js, argument=Splash="{{{Splash}}}"&Feed.AD="{{{Feed.AD}}}"&Feed.Activity="{{{Feed.Activity}}}"&Feed.Vertical="{{{Feed.Vertical}}}"&Feed.BlockUpLiveList="{{{Feed.BlockUpLiveList}}}"&Feed.Story="{{{Feed.Story}}}"&Search.AD="{{{Search.AD}}}"&Search.HotSearch="{{{Search.HotSearch}}}"&PGC.AD="{{{PGC.AD}}}"&Xlive.AD="{{{Xlive.AD}}}"&Dynamic.HotTopics="{{{Dynamic.HotTopics}}}"&Dynamic.MostVisited="{{{Dynamic.MostVisited}}}"&Dynamic.AdCard="{{{Dynamic.AdCard}}}"&View.AD="{{{View.AD}}}"&DM.Command="{{{DM.Command}}}"&DM.Colorful="{{{DM.Colorful}}}"&Reply.AD="{{{Reply.AD}}}"&LogLevel="{{{LogLevel}}}"
 📺 BiliBili.ADBlock.response.json = type=http-response, pattern=^https?:\/\/app\.bili(bili\.com|api\.net)\/x\/v2\/(splash\/(brand\/list|event\/list2|list|show)|feed\/index(\/story)?|search\/square), requires-body=1, engine=webview, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/BiliUniverse/BiliBili.ADBlock/response.bundle.js, argument=Splash="{{{Splash}}}"&Feed.AD="{{{Feed.AD}}}"&Feed.Activity="{{{Feed.Activity}}}"&Feed.Vertical="{{{Feed.Vertical}}}"&Feed.BlockUpLiveList="{{{Feed.BlockUpLiveList}}}"&Feed.Story="{{{Feed.Story}}}"&Search.AD="{{{Search.AD}}}"&Search.HotSearch="{{{Search.HotSearch}}}"&PGC.AD="{{{PGC.AD}}}"&Xlive.AD="{{{Xlive.AD}}}"&Dynamic.HotTopics="{{{Dynamic.HotTopics}}}"&Dynamic.MostVisited="{{{Dynamic.MostVisited}}}"&Dynamic.AdCard="{{{Dynamic.AdCard}}}"&View.AD="{{{View.AD}}}"&DM.Command="{{{DM.Command}}}"&DM.Colorful="{{{DM.Colorful}}}"&Reply.AD="{{{Reply.AD}}}"&LogLevel="{{{LogLevel}}}"

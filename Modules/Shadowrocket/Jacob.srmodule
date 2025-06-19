@@ -782,6 +782,7 @@ DOMAIN,api.biliapi.com,REJECT
 DOMAIN,app.biliapi.com,REJECT
 DOMAIN,api.biliapi.net,REJECT
 DOMAIN,app.biliapi.net,REJECT
+# Bilibili_remove_ads
 # Module-Common
 DOMAIN,api-dsp.8ziben.com,REJECT
 DOMAIN,sdk.zhangyuyidong.cn,REJECT
@@ -1335,6 +1336,7 @@ api.twitter.com = 2606:4700:4700::1001
 ^https:\/\/pan\.baidu\.com\/rest\/\d\.\d\/pcs\/adv - reject-dict
 # bilibili
 ^https:\/\/api\.live\.bilibili\.com\/xlive\/e-commerce-interface\/v1\/ecommerce-user\/get_shopping_info\? - reject-dict
+# Bilibili_remove_ads
 # BiliBili.ADBlock
 ^https?:\/\/(grpc|app)\.bili(bili\.com|api\.net)\/bilibili\.app\.interface\.v1\.Search\/DefaultWords$ - reject
 ^https?:\/\/api\.vc\.bilibili\.com\/search_svr\/v\d\/Search\/recommend_words - reject-dict
@@ -1710,6 +1712,8 @@ bilibili.airborne = type=http-request, pattern=^https:\/\/(?:grpc\.biliapi\.net|
 bilibili.skin = type=http-response, pattern=^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/kokoryh/bilibili/bili-suit-diy.js, requires-body=true, max-size=-1
 bilibili.json = type=http-response, pattern=^https:\/\/app\.bilibili\.com\/x\/(?:resource\/show\/tab\/v2|v2\/(?:splash\/(?:list|show|event\/list2)|feed\/index(?:\/story)?|account\/(?:mine(?:\/ipad)?|myinfo)))\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/kokoryh/bilibili/bilibili.json.js, requires-body=true, max-size=-1, argument="{"showUperCenter":0}"
 bilibili.protobuf = type=http-response, pattern=^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.(?:app\.(?:show\.v1\.Popular\/Index|dynamic\.v2\.Dynamic\/DynAll|view(?:unite)?\.v1\.View\/(?:View|ViewProgress|RelatesFeed)|playurl\.v1\.PlayURL\/PlayView|playerunite\.v1\.Player\/PlayViewUnite)|polymer\.app\.search\.v1\.Search\/SearchAll|community\.service\.dm\.v1\.DM\/DmView|main\.community\.reply\.v1\.Reply\/MainList|pgc\.gateway\.player\.v2\.PlayURL\/PlayView)$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/kokoryh/bilibili/bilibili.protobuf.js, requires-body=true, binary-body-mode=true, max-size=-1, argument="{"showUpList":"auto","filterTopReplies":1,"airborneDm":"#"}"
+# Bilibili_remove_ads
+空降助手弹幕版 = type=http-request, pattern=^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.community\.service\.dm\.v1\.DM\/DmSegMobile$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Bilibili_remove_ads/Bilibili_airborne_kokoryh.js, requires-body=true, binary-body-mode=true
 # BiliBili.ADBlock
 📺 BiliBili.ADBlock.feed.index.request.json = type=http-request, pattern=^https?:\/\/app\.bili(bili\.com|api\.net)\/x\/v2\/feed\/index\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/BiliUniverse/BiliBili.ADBlock/request.bundle.js, argument=Splash="true"&Feed.AD="true"&Feed.Activity="false"&Feed.Vertical="false"&Feed.BlockUpLiveList="""&Feed.Story="{Feed.Story}"&Search.AD="{Search.AD}"&Search.HotSearch="{Search.HotSearch}"&PGC.AD="{PGC.AD}"&Xlive.AD="{Xlive.AD}"&Dynamic.HotTopics="{Dynamic.HotTopics}"&Dynamic.MostVisited="{Dynamic.MostVisited}"&Dynamic.AdCard="{Dynamic.AdCard}"&View.AD="{View.AD}"&DM.Command="{DM.Command}"&DM.Colorful="{DM.Colorful}"&Reply.AD="{Reply.AD}"&LogLevel="{LogLevel}"
 📺 BiliBili.ADBlock.response.json = type=http-response, pattern=^https?:\/\/app\.bili(bili\.com|api\.net)\/x\/v2\/(splash\/(brand\/list|event\/list2|list|show)|feed\/index(\/story)?|search\/square), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/BiliUniverse/BiliBili.ADBlock/response.bundle.js, requires-body=true, argument=Splash="true"&Feed.AD="true"&Feed.Activity="false"&Feed.Vertical="false"&Feed.BlockUpLiveList="""&Feed.Story="{Feed.Story}"&Search.AD="{Search.AD}"&Search.HotSearch="{Search.HotSearch}"&PGC.AD="{PGC.AD}"&Xlive.AD="{Xlive.AD}"&Dynamic.HotTopics="{Dynamic.HotTopics}"&Dynamic.MostVisited="{Dynamic.MostVisited}"&Dynamic.AdCard="{Dynamic.AdCard}"&View.AD="{View.AD}"&DM.Command="{DM.Command}"&DM.Colorful="{DM.Colorful}"&Reply.AD="{Reply.AD}"&LogLevel="{LogLevel}"
