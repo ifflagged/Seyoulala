@@ -35,7 +35,6 @@ Modules/Surge/Yuheng0101/NoAds.sgmodule # Loon,Shadowrocket
 # B #
 Modules/Surge/Kelee/BaiduNetDisk_remove_ads.sgmodule # Loon,Shadowrocket
 Modules/Surge/kokoryh/bilibili.sgmodule # Loon
-https://github.com/XiangwanGuan/Shadowrocket/raw/main/Rewrite/XiangwanConfig/Bilibili.conf
 # Modules/Surge/Kelee/Bilibili_remove_ads.sgmodule # Loon,Shadowrocket
 Modules/Surge/BiliUniverse/BiliBili.ADBlock.sgmodule # Loon,Shadowrocket
 Modules/Surge/BiliUniverse/BiliBili.Enhanced.sgmodule # Loon,Shadowrocket
