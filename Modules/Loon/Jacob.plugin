@@ -1654,6 +1654,7 @@ http-response ^https?:\/\/m\.lkcoffee\.com\/capi\/resource\/m\/growUp\/main "pop
 ^https:\/\/homepage-api\.smzdm\.com\/v3\/home\? response-body-json-jq jq-path="https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/smzdm_remove_ads/home_smzdm_remove_ads.jq"
 ^https:\/\/app-api\.smzdm\.com\/mychannel\/list$ reject-dict
 ^https:\/\/h5\.smzdm\.com\/user\/coupon\/coupon_list\? reject
+^https:\/\/haojia-api\.smzdm\.com\/home\/list\? response-body-json-del data.header_operation.theme
 ^https:\/\/haojia-api\.smzdm\.com\/home\/list\? response-body-json-jq '.data.rows |= map(select(.cell_type == "39001")) | .data.banner_v2 |= map(select(.cell_type == "21028"))'
 ^https:\/\/haojia\.m\.smzdm\.com\/detail_modul\/user_related_modul\? response-body-json-del data.super_coupon
 ^https:\/\/haojia\.m\.smzdm\.com\/detail_modul\/other_modul\? response-body-json-del data.banner
