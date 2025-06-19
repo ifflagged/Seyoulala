@@ -32,17 +32,6 @@ CountryCode = select,"US","OFF","AUTO","CN","HK","TW","SG","JP","AU","GB","KR","
 SiriLocale = select,"zh_CN","OFF","AUTO","zh_TW","yue_CN","zh_HK","ja_JP","en_CA","en_SG","en_AU","en_IE","en_US","en_GB","ko_KR",tag=Siri 区域,desc=忽略系统中“Siri”的“语言”设置，强制采用这里的设置。
 Region = select,"OFF","AUTO","CN","HK","TW","SG","US","JP","AU","GB","KR","CA","IE",tag=区域,desc=作用未知，待测试。
 SiriResponseLanguageVariant = select,"zh_CN","OFF","AUTO","zh_TW","yue_CN","zh_HK","ja_JP","en_CA","en_SG","en_AU","en_IE","en_US","en_GB","ko_KR",tag=Siri 响应语言修改,desc=自定义 Siri 回复时使用的语言。
-# bilibili
-动态最常访问=input,auto,tag=动态最常访问, desc=动态最常访问
-创作中心=input,0,tag=创作中心, desc=创作中心
-过滤置顶评论广告=input,1,tag=过滤置顶评论广告, desc=过滤置顶评论广告
-空降助手=input,bilibili.airborne,tag=空降助手, desc=空降助手
-空降助手弹幕版=input,#,tag=空降助手弹幕版, desc=空降助手弹幕版
-# Bilibili_remove_ads
-showUpList=select, "auto", "true", "false", tag=[动态]中[最常访问]的显示方式, desc=auto：仅当列表中存在直播状态时显示；true：始终显示；false：始终隐藏。
-filterTopReplies=switch, "true", "false", tag=移除评论区置顶广告, desc=移除评论区置顶广告
-airbornee=switch, "false", "true", tag=空降助手自动版, desc=空降助手自动版
-airborneDm=switch, "false", "true", tag=空降助手弹幕版, desc=弹幕版仅限iPad版开启
 # BiliBili.ADBlock
 Splash = switch,true,tag=[开屏] 去除广告,desc=是否启用此处修改
 Feed.AD = switch,true,tag=[推荐] 去除广告,desc=是否启用此处修改
@@ -851,11 +840,16 @@ DOMAIN-KEYWORD,in-page-push,REJECT
 # 12306_remove_ads
 DOMAIN, ad.12306.cn, DIRECT
 # bilibili
-DOMAIN,api.biliapi.com,REJECT
-DOMAIN,app.biliapi.com,REJECT
-DOMAIN,api.biliapi.net,REJECT
-DOMAIN,app.biliapi.net,REJECT
-# Bilibili_remove_ads
+DOMAIN,ptom.caohua.com,REJECT
+DOMAIN,tracking.leiting.com,REJECT
+DOMAIN,ads.games.laohu.com,REJECT
+DOMAIN,shark-tracer.netease.com,REJECT
+IP-CIDR,203.107.1.1/24,REJECT,no-resolve
+DOMAIN-KEYWORD,api.sobot.com,REJECT
+DOMAIN-SUFFIX,cm.ad.bilibili.com,REJECT
+DOMAIN-SUFFIX,cm.adcommon.bilibili.com,REJECT
+DOMAIN-SUFFIX,cm.game.bilibili.com,REJECT
+DOMAIN-SUFFIX,cm.track.biligame.bilibili.com,REJECT
 # Module-Common
 DOMAIN,api-dsp.8ziben.com,REJECT
 DOMAIN,sdk.zhangyuyidong.cn,REJECT
@@ -1409,29 +1403,14 @@ http-request ^https?:\/\/(raw|gist)\.githubusercontent\.com\/ header-replace 'Ac
 ^https:\/\/pan\.baidu\.com\/act\/v2\/welfare\/list reject-dict
 ^https:\/\/pan\.baidu\.com\/rest\/\d\.\d\/pcs\/adv reject-dict
 # bilibili
-^https:\/\/ap[ip]\.bilibili\.com\/x\/(?:resource\/(?:top\/activity|patch\/tab)|v2\/search\/square|vip\/ads\/materials)\? mock-response-body data-type=text data="{"code":-404,"message":"-404","ttl":1,"data":null}"
-^https:\/\/api\.bilibili\.com\/pgc\/activity\/deliver\/material\/receive\? mock-response-body data-type=text data="{"code":0,"data":{"closeType":"close_win","container":[],"showTime":""},"message":"success"}"
-^https:\/\/api\.live\.bilibili\.com\/xlive\/e-commerce-interface\/v1\/ecommerce-user\/get_shopping_info\? mock-response-body data-type=text data="{}"
-^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.interface\.v1\.Teenagers\/ModeStatus$ mock-response-body data-type=base64 data="AAAAABMKEQgCEgl0ZWVuYWdlcnMgAioA" mock-data-is-base64=true
-^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.interface\.v1\.Search\/DefaultWords$ mock-response-body data-type=base64 data="AAAAACkaHeaQnOe0ouinhumikeOAgeeVquWJp+aIlnVw5Li7IgAoAToAQgBKAA==" mock-data-is-base64=true
-^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.view\.v1\.View\/TFInfo$ mock-response-body data-type=base64 data="AAAAAAIIAQ==" mock-data-is-base64=true
-http-response-jq ^https:\/\/api\.bilibili\.com\/pgc\/view\/v2\/app\/season\? 'del(.data.payment)'
-http-response-jq ^https:\/\/api\.bilibili\.com\/pgc\/page\/(?:bangumi|cinema\/tab)\? '.result.modules |= if . then map(if (.style | startswith("tip")) or (.module_id | IN(241, 1283, 1441, 1284)) then .items = [] elif .style | startswith("banner") then .items |= if . then map(select(.link | contains("play"))) else [] end elif .style | startswith("function") then .items |= if . then map(select(.blink | startswith("bilibili"))) else [] end end) end'
-http-response-jq ^https:\/\/api\.live\.bilibili\.com\/xlive\/(?:app-interface\/v2\/index\/feed|app-room\/v1\/index\/getInfoBy(?:Room|User))\? '.data |= (del(.play_together_info, .play_together_info_v2, .activity_banner_info) | if .function_card then .function_card[] = null end | if .new_tab_info.outer_list then .new_tab_info.outer_list |= map(select(.biz_id != 33)) end | if .card_list then .card_list |= map(select(.card_type | IN("banner_v2", "activity_card_v1") | not)) end | reduce ([["show_reserve_status"], false], [["reserve_info", "show_reserve_status"], false], [["shopping_info", "is_show"], 0]) as [$path, $value] (.; if getpath($path) then setpath($path; $value) end))'
-# Bilibili_remove_ads
-^https:\/\/app\.bilibili\.com\/x\/v2\/splash\/(?:list|show|event\/list2)\? response-body-json-jq '.data |= with_entries(if .key | IN("show", "event_list") then .value = [] else . end)'
-^https:\/\/app\.bilibili\.com\/x\/resource\/show\/tab\/v2\? response-body-json-jq jq-path="https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Bilibili_remove_ads/tab_Bilibili_remove_ads.jq"
-^https:\/\/app\.bilibili\.com\/x\/v2\/feed\/index\? response-body-json-jq 'if .data.items then .data.items |= map(select((.banner_item == null) and (.ad_info == null) and (.card_goto == "av") and (.card_type | IN("small_cover_v2", "large_cover_single_v9", "large_cover_v1")))) end'
-^https:\/\/api\.bilibili\.com\/pgc\/activity\/deliver\/material\/receive\? mock-response-body data-type=text status-code=200 data="{"code":0,"data":{"closeType":"close_win","container":[],"showTime":""},"message":"success"}"
-^https:\/\/api\.bilibili\.com\/pgc\/view\/v2\/app\/season\? response-body-json-jq 'del(.data.payment)'
-^https:\/\/api\.bilibili\.com\/pgc\/page\/(?:bangumi|cinema\/tab)\? response-body-json-jq '.result.modules |= if . then map(if (.style | startswith("tip")) or (.module_id | IN(241, 1283, 1441, 1284)) then .items = [] elif .style | startswith("banner") then .items |= if . then map(select(.link | contains("play"))) else [] end elif .style | startswith("function") then .items |= if . then map(select(.blink | startswith("bilibili"))) else [] end end) end'
-^https:\/\/app\.bilibili\.com\/x\/v2\/feed\/index\/story\? response-body-json-jq 'if .data.items then .data.items |= map(select((.ad_info == null) and (.card_goto | startswith("ad") | not)) | del(.story_cart_icon, .free_flow_toast)) end'
-^https:\/\/ap[ip]\.bilibili\.com\/x\/(?:resource\/(?:top\/activity|patch\/tab)|v2\/search\/square|vip\/ads\/materials)\? mock-response-body data-type=text status-code=200 data="{"code":-404,"message":"-404","ttl":1,"data":null}"
-^https:\/\/api\.live\.bilibili\.com\/xlive\/(?:app-interface\/v2\/index\/feed|app-room\/v1\/index\/getInfoBy(?:Room|User))\? response-body-json-jq '.data |= (del(.play_together_info, .play_together_info_v2, .activity_banner_info) | if .function_card then .function_card[] = null end | if .new_tab_info.outer_list then .new_tab_info.outer_list |= map(select(.biz_id != 33)) end | if .card_list then .card_list |= map(select(.card_type | IN("banner_v2", "activity_card_v1") | not)) end | reduce ([["show_reserve_status"], false], [["reserve_info", "show_reserve_status"], false], [["shopping_info", "is_show"], 0]) as [$path, $value] (.; if getpath($path) then setpath($path; $value) end))'
-^https:\/\/api\.live\.bilibili\.com\/xlive\/e-commerce-interface\/v1\/ecommerce-user\/get_shopping_info\? reject-dict
-^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\? response-body-json-del data.common_equip
-^https:\/\/app\.bilibili\.com\/x\/v2\/account\/mine(?:\/ipad)?\? response-body-json-jq jq-path="https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Bilibili_remove_ads/mine_Bilibili_remove_ads.jq"
-^https:\/\/app\.bilibili\.com\/x\/v2\/account\/myinfo\? response-body-json-jq '.data.vip |= if . != null and .status == 0 then . + { status: 1, type: 2, due_date: 9005270400000, role: 15 } else . end'
+^https?:\/\/api\.live\.bilibili\.com\/xlive\/e-commerce-interface\/v\d\/ecommerce-user\/get_shopping_info\? mock-response-body data-type=text data="{}" status-code=200
+^https?:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.interface\.v\d\.Search\/DefaultWords mock-response-body data-type=text data="{}" status-code=200
+^https?:\/\/api\.bilibili\.com\/x\/v2\/dm\/qoe\/show\? mock-response-body data-type=text data="{}" status-code=200
+^https?:\/\/[\d\.]+:8000\/v1\/resource\/\w{32}-1-SPLASH mock-response-body data-type=text data="{}" status-code=200
+^https?:\/\/upos-sz-static\.bilivideo\.com\/ssaxcode\/\w{2}\/\w{2}\/\w{32}-1-SPLASH mock-response-body data-type=text data="{}" status-code=200
+^https?:\/\/api\.bilibili\.com\/x\/mengqi\/v\d\/resource\? mock-response-body data-type=text data="{}" status-code=200
+^https?:\/\/api\.bilibili\.com\/x\/web-interface\/zone\?jsonp mock-response-body data-type=text data="{}" status-code=200
+^https?:\/\/app\.bilibili\.com\/x\/resource\/ip mock-response-body data-type=text data="{}" status-code=200
 # BiliBili.ADBlock
 ^https?:\/\/(grpc|app)\.bili(bili\.com|api\.net)\/bilibili\.app\.interface\.v1\.Search\/DefaultWords$ - reject
 ^https?:\/\/api\.vc\.bilibili\.com\/search_svr\/v\d\/Search\/recommend_words - reject-dict
@@ -1853,12 +1832,19 @@ http-response ^https?:\/\/h\.app\.coc\.10086\.cn\/biz-orange\/DH\/homeArea\/getT
 http-response ^https?:\/\/h\.app\.coc\.10086\.cn\/biz-orange\/DH\/navigation\/getNavigationNewInfo script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Yuheng0101/NoAds/NoAds.js, requires-body=true, timeout=60, tag=NoAds
 http-response ^https?:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/DN\/friendShake\/getShakeList script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Yuheng0101/NoAds/NoAds.js, requires-body=true, timeout=60, tag=NoAds
 # bilibili
-http-request ^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.playerunite\.v1\.Player\/PlayViewUnite$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/kokoryh/bilibili/bilibili.airborne.js, requires-body=true, binary-body-mode=true, tag={空降助手}
-http-request ^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.community\.service\.dm\.v1\.DM\/DmSegMobile$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/kokoryh/bilibili/bilibili.airborne.js, requires-body=true, binary-body-mode=true, tag={空降助手弹幕版}
-http-response ^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/kokoryh/bilibili/bili-suit-diy.js, requires-body=true, tag=bilibili.skin
-http-response ^https:\/\/app\.bilibili\.com\/x\/(?:resource\/show\/tab\/v2|v2\/(?:splash\/(?:list|show|event\/list2)|feed\/index(?:\/story)?|account\/(?:mine(?:\/ipad)?|myinfo)))\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/kokoryh/bilibili/bilibili.json.js, requires-body=true, tag=bilibili.json, argument="{"showUperCenter":{创作中心}}"
-http-response ^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.(?:app\.(?:show\.v1\.Popular\/Index|dynamic\.v2\.Dynamic\/DynAll|view(?:unite)?\.v1\.View\/(?:View|ViewProgress|RelatesFeed)|playurl\.v1\.PlayURL\/PlayView|playerunite\.v1\.Player\/PlayViewUnite)|polymer\.app\.search\.v1\.Search\/SearchAll|community\.service\.dm\.v1\.DM\/DmView|main\.community\.reply\.v1\.Reply\/MainList|pgc\.gateway\.player\.v2\.PlayURL\/PlayView)$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/kokoryh/bilibili/bilibili.protobuf.js, requires-body=true, binary-body-mode=true, tag=bilibili.protobuf, argument="{"showUpList":"{动态最常访问}","filterTopReplies":{过滤置顶评论广告},"airborneDm":"{空降助手弹幕版}"}"
-# Bilibili_remove_ads
+http-response ^https?:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.dynamic\.v\d\.Dynamic\/DynAll script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/bilibili/bilibiliProtoA.js, requires-body=true, tag=bilibili
+http-response ^https?:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.interface\.v\d\.Teenagers\/ModeStatus script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/bilibili/bilibiliProtoA.js, requires-body=true, tag=bilibili
+http-response ^https?:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.(view|viewunite)\.v\d\.View\/(?>View|ViewProgress) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/bilibili/bilibiliProtoA.js, requires-body=true, tag=bilibili
+http-response ^https?:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.community\.service\.dm\.v\d\.DM\/DmView script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/bilibili/bilibiliProtoA.js, requires-body=true, tag=bilibili
+http-response ^https?:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.main\.community\.reply\.v\d\.Reply\/MainList script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/bilibili/bilibiliProtoA.js, requires-body=true, tag=bilibili
+http-response ^https?:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.polymer\.app\.search\.v\d\.Search\/SearchAll script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/bilibili/bilibiliProtoA.js, requires-body=true, tag=bilibili
+http-response ^https?:\/\/api\.bilibili\.com\/pgc\/page\/(bangumi|cinema\/tab\?) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/bilibili/bilibiliJson.js, requires-body=true, tag=bilibili
+http-response ^https?:\/\/api\.live\.bilibili\.com\/xlive\/app-room\/v1\/index\/getInfoByRoom\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/bilibili/bilibiliJson.js, requires-body=true, tag=bilibili
+http-response ^https?:\/\/app\.bilibili\.com\/x\/v\d\/(feed\/index(\/story)?|search\/square)\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/bilibili/bilibiliJson.js, requires-body=true, tag=bilibili
+http-response ^https?:\/\/app\.bilibili\.com\/x\/resource\/(top\/activity|show\/tab\/v\d)\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/bilibili/bilibiliJson.js, requires-body=true, tag=bilibili
+http-response ^https?:\/\/app\.bilibili\.com\/x\/v\d\/splash\/(brand\/list|event\/list2|list|show)\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/bilibili/bilibiliJson.js, requires-body=true, tag=bilibili
+http-response ^https?:\/\/app\.bilibili\.com\/x\/v\d\/account\/(mine(\/ipad)?|myinfo)\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/bilibili/bilibiliJson.js, requires-body=true, tag=bilibili
+http-response ^https?:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/bilibili/bilibiliJson.js, requires-body=true, tag=bilibili
 # BiliBili.ADBlock
 http-request ^https?:\/\/app\.bili(bili\.com|api\.net)\/x\/v2\/feed\/index\? requires-body=0, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/BiliUniverse/BiliBili.ADBlock/request.bundle.js, tag=📺 BiliBili.ADBlock.request.json, argument=[{Splash},{Feed.AD},{Feed.Activity},{Feed.Vertical},{Feed.BlockUpLiveList},{Feed.Story},{Search.AD},{Search.HotSearch},{PGC.AD},{Xlive.AD},{Dynamic.HotTopics},{Dynamic.MostVisited},{Dynamic.AdCard},{View.AD},{DM.Command},{DM.Colorful},{Reply.AD},{LogLevel}]
 http-response ^https?:\/\/app\.bili(bili\.com|api\.net)\/x\/v2\/(splash\/(brand\/list|event\/list2|list|show)|feed\/index(\/story)?|search\/square) requires-body=1, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/BiliUniverse/BiliBili.ADBlock/response.bundle.js, tag=📺 BiliBili.ADBlock.response.json, argument=[{Splash},{Feed.AD},{Feed.Activity},{Feed.Vertical},{Feed.BlockUpLiveList},{Feed.Story},{Search.AD},{Search.HotSearch},{PGC.AD},{Xlive.AD},{Dynamic.HotTopics},{Dynamic.MostVisited},{Dynamic.AdCard},{View.AD},{DM.Command},{DM.Colorful},{Reply.AD},{LogLevel}]
