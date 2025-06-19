@@ -24,3 +24,16 @@
     else true end
   )
 )
+
+# 移除首页主题皮肤背景
+# 删除"data.theme"
+| del(.data.theme) |
+
+# 遍历"data.component"数组并安全删除"circular_banner_option"
+.data.component |= map(
+  if .zz_content | type == "object" then
+    .zz_content |= del(.circular_banner_option)
+  else
+    .
+  end
+)

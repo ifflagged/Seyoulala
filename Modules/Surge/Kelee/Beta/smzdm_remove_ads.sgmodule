@@ -1,5 +1,5 @@
 #!name=什么值得买去广告
-#!desc=移除开屏广告、信息流广告、各类横幅广告、搜索页广告，精简我的页面。
+#!desc=移除开屏广告、信息流广告、各类横幅广告、搜索页广告，移除活动皮肤，精简我的页面。
 #!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/smzdm.png
 #!category=Jacob
@@ -8,7 +8,7 @@
 #!tag=去广告
 #!loon_version=3.2.4(787)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!date=2025-06-14 03:41:00
+#!date=2025-06-19 10:28:16
 
 [Rule]
 DOMAIN,adx-api.zdmimg.com,REJECT
@@ -25,7 +25,9 @@ http-response-jq ^https:\/\/app-api\.smzdm\.com\/util\/update$ 'delpaths([["data
 http-response-jq ^https:\/\/app-api\.smzdm\.com\/util\/update$ 'delpaths([["data","widget"]])'
 http-response-jq ^https:\/\/app-api\.smzdm\.com\/util\/update$ 'delpaths([["data","operation_float"]])'
 http-response-jq ^https:\/\/app-api\.smzdm\.com\/util\/update$ 'def r: if type=="object" then if has("ad_campaign_name") and (.ad_campaign_name|type=="string") and (.ad_campaign_name|test("\\S")) then empty else . end elif type=="array" then map(r) else . end; .data.operation_float |= map(map(r))'
+http-response-jq ^https:\/\/homepage-api\.smzdm\.com\/v3\/home\? 'delpaths([["data","theme"]])'
 http-response-jq ^https:\/\/homepage-api\.smzdm\.com\/v3\/home\? '    .data.component |= map(    if (.zz_content | type) == "array" then     .zz_content |= map(       select(         ( (.ad_campaign_id? | type == "string" and length > 0)// false ) or         ( (.tag? | type == "string" and length > 0)// false ) or         ( (.model_type? == "ads" and (type == "string"))// false )         | not       )     )   else . end )  | .data.component |= map(   select(     if has("zz_type") then        .zz_type | IN(["circular_banner", "filter", "list"][])      else true end   ) )'
+http-response-jq ^https:\/\/haojia-api\.smzdm\.com\/home\/list\? 'delpaths([["data","header_operation","theme"]])'
 http-response-jq ^https:\/\/haojia-api\.smzdm\.com\/home\/list\? '.data.rows |= map(select(.cell_type == "39001")) | .data.banner_v2 |= map(select(.cell_type == "21028"))'
 http-response-jq ^https:\/\/haojia\.m\.smzdm\.com\/detail_modul\/user_related_modul\? 'delpaths([["data","super_coupon"]])'
 http-response-jq ^https:\/\/haojia\.m\.smzdm\.com\/detail_modul\/other_modul\? 'delpaths([["data","banner"]])'
