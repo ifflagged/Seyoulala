@@ -1,4 +1,4 @@
-#规则数量:9691
+#规则数量:9692
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -647,11 +647,12 @@ DOMAIN,ads.mojicdn.com
 DOMAIN,v1.log.moji.com
 DOMAIN-SUFFIX,ad.cmvideo.cn
 DOMAIN,ggc.cmvideo.cn
-DOMAIN,ggic03.miguvideo.com
-DOMAIN,ggmk.miguvideo.com
 DOMAIN,ggv.cmvideo.cn
 DOMAIN,ggx.cmvideo.cn
 DOMAIN,ggx03.miguvideo.com
+DOMAIN,ggic03.miguvideo.com
+DOMAIN,ggmk.miguvideo.com
+DOMAIN,ggadoffline.miguvideo.com
 DOMAIN,sdkconfig.ad.xiaomi.com
 DOMAIN,dflow.bz.mgtv.com
 DOMAIN,encounter.bz.mgtv.com
