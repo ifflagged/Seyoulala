@@ -386,13 +386,6 @@ https?:\/\/helper\.2bulu\.com\/(greenPea\/queryTasks|proSpecial\/allData|saveSpl
 ^https?:\/\/mapi\.mafengwo\.cn\/(travelguide\/)?ad - reject
 ^https?:\/\/mapi\.mafengwo\.cn\/widget\/note\/get_widget_note - reject
 ^https?:\/\/mapi\.mafengwo\.cn\/system\/push\/get_local_push_config - reject
-^https?:\/\/public-deliver9\.miguvideo\.com\/deliver\/site\/batchMatch\/mergeSpot\/miguvideo\/ - reject
-^https?:\/\/recommend-dy\.miguvideo\.com\/recommend-dynamic\/dataSource\/v1\/recommend\/merge - reject
-^https?:\/\/app-sc\.miguvideo\.com\/app-management\/v1\/staticcache\/settings\/miguvideo\/SHARE_PIC - reject
-^https?:\/\/common-sc\.miguvideo\.com\/videoActivity\/activityList\/ - reject
-^https?:\/\/display-sc\.miguvideo\.com\/display\/v3\/static\/PERSONAL_CENTER\/ - reject
-^https?:\/\/ggx\d+\.miguvideo\.com\/request\/sdk - reject
-^https?:\/\/ggic\d+.miguvideo\.com\/ad\/ - reject
 # hostname = b-api.ins.miaopai.com
 ^https?:\/\/b-api\.ins\.miaopai\.com\/\d\/ad/ - reject
 # hostname = mea.meitudata.com, adui.tg.meitu.com
@@ -495,7 +488,7 @@ https://access.mypikpak.com/access_controller/v1/area_accessible - reject
 ^https?:\/\/cms\.daydaycook\.com\.cn\/api\/cms\/advertisement\/ - reject
 ^https?:\/\/api\.daydaycook\.com\.cn\/daydaycook\/server\/ad\/ - reject
 # 国际版Soul去广告
-https://api-global.soulapp.me/app/open/get - reject
+^https?:\/\/api-global\.soulapp\.me\/app\/open\/get - reject
 # hostname = mpcs.suning.com, image.suning.com, luckman.suning.com
 ^https?:\/\/mpcs\.suning\.com\/mpcs\/dm\/getDmInfo - reject
 ^https?:\/\/(api|api-bk\d+)\.tv\.sohu\.com\/agg\/api\/app\/config\/bootstrap - reject
@@ -1592,6 +1585,20 @@ http:\/\/dili.sqcosmos.com\/jiekou\/endpage\/ad data-type=text data="{}" status-
 
 # hostname = ggc.miguvideo.com, public-deliver9.miguvideo.com, display*-sc.miguvideo.com, recommend-dy.miguvideo.com, app-sc.miguvideo.com, common-sc.miguvideo.com, ggx*.miguvideo.com, ggic*.miguvideo.com
 ^https?:\/\/ggc\.miguvideo\.com\/v1\/iflyad\/deliverysystem\/direct\/ data-type=tiny-gif status-code=200
+
+^https?:\/\/public-deliver9\.miguvideo\.com\/deliver\/site\/batchMatch\/mergeSpot\/miguvideo\/ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+^https?:\/\/recommend-dy\.miguvideo\.com\/recommend-dynamic\/dataSource\/v1\/recommend\/merge data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+^https?:\/\/app-sc\.miguvideo\.com\/app-management\/v1\/staticcache\/settings\/miguvideo\/SHARE_PIC data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+^https?:\/\/common-sc\.miguvideo\.com\/videoActivity\/activityList\/ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+^https?:\/\/display-sc\.miguvideo\.com\/display\/v3\/static\/PERSONAL_CENTER data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+^https?:\/\/ggx\d+\.miguvideo\.com\/request\/sdk data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+^https?:\/\/ggic\d+.miguvideo\.com\/ad\/ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 ^https?:\/\/adui\.tg\.meitu\.com data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 

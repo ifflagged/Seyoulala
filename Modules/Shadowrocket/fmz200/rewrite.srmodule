@@ -879,13 +879,13 @@ http:\/\/dili.sqcosmos.com\/jiekou\/endpage\/ad - reject-dict
 ^http:\/\/ebk\.17u\.cn\/tctrafficappversionadmin\/api\/getLatestVersionApp - reject-dict
 # hostname = ggc.miguvideo.com, public-deliver9.miguvideo.com, display*-sc.miguvideo.com, recommend-dy.miguvideo.com, app-sc.miguvideo.com, common-sc.miguvideo.com, ggx*.miguvideo.com, ggic*.miguvideo.com
 ^https?:\/\/ggc\.miguvideo\.com\/v1\/iflyad\/deliverysystem\/direct\/ - reject-img
-^https?:\/\/public-deliver9\.miguvideo\.com\/deliver\/site\/batchMatch\/mergeSpot\/miguvideo\/ - reject
-^https?:\/\/recommend-dy\.miguvideo\.com\/recommend-dynamic\/dataSource\/v1\/recommend\/merge - reject
-^https?:\/\/app-sc\.miguvideo\.com\/app-management\/v1\/staticcache\/settings\/miguvideo\/SHARE_PIC - reject
-^https?:\/\/common-sc\.miguvideo\.com\/videoActivity\/activityList\/ - reject
-^https?:\/\/display-sc\.miguvideo\.com\/display\/v3\/static\/PERSONAL_CENTER\/ - reject
-^https?:\/\/ggx\d+\.miguvideo\.com\/request\/sdk - reject
-^https?:\/\/ggic\d+.miguvideo\.com\/ad\/ - reject
+^https?:\/\/public-deliver9\.miguvideo\.com\/deliver\/site\/batchMatch\/mergeSpot\/miguvideo\/ - reject-dict
+^https?:\/\/recommend-dy\.miguvideo\.com\/recommend-dynamic\/dataSource\/v1\/recommend\/merge - reject-dict
+^https?:\/\/app-sc\.miguvideo\.com\/app-management\/v1\/staticcache\/settings\/miguvideo\/SHARE_PIC - reject-dict
+^https?:\/\/common-sc\.miguvideo\.com\/videoActivity\/activityList\/ - reject-dict
+^https?:\/\/display-sc\.miguvideo\.com\/display\/v3\/static\/PERSONAL_CENTER - reject-dict
+^https?:\/\/ggx\d+\.miguvideo\.com\/request\/sdk - reject-dict
+^https?:\/\/ggic\d+.miguvideo\.com\/ad\/ - reject-dict
 # hostname = b-api.ins.miaopai.com
 ^https?:\/\/b-api\.ins\.miaopai\.com\/\d\/ad/ - reject
 # hostname = mea.meitudata.com, adui.tg.meitu.com
@@ -1116,7 +1116,7 @@ https://api.rr.tv/storage/business/rootName/app/homePage\?dataType=JSON - reject
 ^https?:\/\/chat-live\.soulapp\.cn\/live\/planet\/recListV2 - reject-200
 ^https?:\/\/api-chat\.soulapp\.cn\/chat\/entrance\/first - reject-dict
 # 国际版Soul去广告
-https://api-global.soulapp.me/app/open/get - reject
+^https?:\/\/api-global\.soulapp\.me\/app\/open\/get - reject
 # hostname = mpcs.suning.com, image.suning.com, luckman.suning.com
 ^https?:\/\/mpcs\.suning\.com\/mpcs\/dm\/getDmInfo - reject
 ^https?:\/\/image\.suning\.cn\/uimg\/ma\/ad\/ - reject-200
