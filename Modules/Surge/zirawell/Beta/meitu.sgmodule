@@ -1,13 +1,7 @@
-#!name=meitu
-#!desc=meitu
-#!category=Jacob
+meitu%0A：Error: 请求超时(20 秒)
 
-[Rule]
-DOMAIN,adui.tg.meitu.com,REJECT,extended-matching,pre-matching
 
-[URL Rewrite]
-^https?:\/\/mea\.meitudata\.com\/kaiping - reject
 
-[MITM]
-hostname = %APPEND% mea.meitudata.com
 
+
+Script Hub 重写转换: ❌  可自行翻译错误信息或复制错误信息后点击通知进行反馈
