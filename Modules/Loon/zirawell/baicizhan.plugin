@@ -1,7 +1,15 @@
-baicizhan%0A：Error: 请求超时(20 秒)
+#!name=baicizhan
+#!desc=baicizhan
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
+#!tag=Jacob
 
+[Rule]
+DOMAIN,advertise.baicizhan.com,REJECT
+DOMAIN,advertise.baicizhan.org,REJECT
 
+[Rewrite]
+^https?:\/\/7n\.bczcdn\.com\/launchad\/ mock-response-body data-type=text data="" status-code=200
 
+[MITM]
+hostname = 7n.bczcdn.com
 
-
-Script Hub 重写转换: ❌  可自行翻译错误信息或复制错误信息后点击通知进行反馈
