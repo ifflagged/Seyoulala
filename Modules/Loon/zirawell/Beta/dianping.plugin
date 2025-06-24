@@ -9,7 +9,7 @@ DOMAIN,tte.meituan.com,REJECT
 DOMAIN,dpmtpush.dianping.com,REJECT
 DOMAIN,dynamicf.sankuai.com,REJECT
 DOMAIN,live-monitor-broker.sankuai.com,REJECT
-DOMAIN-SUFFIX,lx.meituan.net,REJECT
+#DOMAIN-SUFFIX,lx.meituan.net,REJECT
 IP-CIDR,101.32.16.204/32,REJECT,no-resolve
 IP-CIDR,119.29.126.137/32,REJECT,no-resolve
 
