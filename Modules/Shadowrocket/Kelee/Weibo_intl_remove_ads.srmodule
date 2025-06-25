@@ -13,10 +13,10 @@
 [URL Rewrite]
 ^https?:\/\/api\.weibo\.cn\/2\/ad\/weibointl\? - reject-dict
 
-[Script]
-echoResponse = type=http-request, pattern=^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?a=get_searching_info&, script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/echo-response.js, timeout=60, argument=text=%7B%22retcode%22%3A0%2C%22info%22%3A%22%22%2C%22data%22%3A%7B%22expiration_time%22%3A%2286400%22%2C%22cards%22%3A%5B%7B%22tip%22%3A%22%E6%90%9C%E7%B4%A2%E5%BE%AE%E5%8D%9A%22%2C%22word%22%3A%22%22%7D%5D%7D%7D
+[Map Local]
+^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?a=get_searching_info& data-type=text data="{"retcode":0,"info":"","data":{"expiration_time":"86400","cards":[{"tip":"搜索微博","word":""}]}}" header="Content-Type:text/html"
 
-echoResponse = type=http-request, pattern=^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?ct=feed&a=search_topic&, script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/echo-response.js, timeout=60, argument=text=%7B%22retcode%22%3A0%2C%22info%22%3A%22%22%2C%22data%22%3A%5B%5D%2C%22ext%22%3A%7B%7D%7D
+^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?ct=feed&a=search_topic& data-type=text data="{"retcode":0,"info":"","data":[],"ext":{}}" header="Content-Type:text/html"
 
 [MITM]
 hostname = %APPEND% api.weibo.cn, weibointl.api.weibo.cn
