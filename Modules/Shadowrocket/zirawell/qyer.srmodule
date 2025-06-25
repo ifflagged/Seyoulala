@@ -5,7 +5,9 @@
 [URL Rewrite]
 ^https?:\/\/open\.qyer\.com\/qyer\/config\/get - reject
 ^https?:\/\/media\.qyer\.com\/ad\/ - reject
-^https?:\/\/open\.qyer\.com\/qyer\/startpage\/ - reject-200
+
+[Map Local]
+^https?:\/\/open\.qyer\.com\/qyer\/startpage\/ data-type=text data=""
 
 [MITM]
 hostname = %APPEND% open.qyer.com, media.qyer.com

@@ -3,8 +3,10 @@
 #!category=Jacob
 
 [URL Rewrite]
-^https?:\/\/sichuan\.95504\.net\/v\d\/gd\/index\/get - reject-200
 ^https?:\/\/minipro\.95504\.net\/app\/json\/ad\/get(?>Pop|Index)AdData - reject
+
+[Map Local]
+^https?:\/\/sichuan\.95504\.net\/v\d\/gd\/index\/get data-type=text data=""
 
 [MITM]
 hostname = %APPEND% sichuan.95504.net, minipro.95504.net

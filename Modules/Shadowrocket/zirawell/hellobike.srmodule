@@ -2,8 +2,8 @@
 #!desc=hellobike
 #!category=Jacob
 
-[URL Rewrite]
-^https?:\/\/api\.hellobike\.com\/api\?adx - reject-dict
+[Map Local]
+^https?:\/\/api\.hellobike\.com\/api\?adx data-type=text data="{}"
 
 [MITM]
 hostname = %APPEND% api.hellobike.com

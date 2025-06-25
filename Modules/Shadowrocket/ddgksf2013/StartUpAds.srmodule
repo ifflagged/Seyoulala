@@ -794,6 +794,10 @@ https?:\/\/m\.sd\.10086\.cn\/zapi\/app_common\/homeWelcome\/welcome.do - reject-
 # > zcool
 ^https?:\/\/api\.zcool\.com\.cn\/.*common\/open-screen - reject-200
 
+[Map Local]
+# > dongqiudi
+^https?:\/\/ap\.dongqiudi\.com\/plat\/v4 data-type=file data="https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ddgksf2013/StartUpAds/dongqiudi.js"
+
 [Script]
 # > 369chuxing
 dict = type=http-response, pattern=^https?:\/\/api\.369cx\.cn\/v\d\/Splash\/GetSplashAd, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ddgksf2013/StartUpAds/dict.js, requires-body=true, max-size=-1, timeout=60
@@ -822,9 +826,6 @@ replaceBody = type=http-response, pattern=https://beta-api.crunchyroll.com/cms, 
 
 # > caixin
 caixinads = type=http-response, pattern=^https?:\/\/gg\.caixin\.com\/s\?z=caixin&op=1&c=3362, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ddgksf2013/StartUpAds/caixinads.js, requires-body=true, max-size=-1, timeout=60
-
-# > dongqiudi
-dongqiudi = type=http-request, pattern=^https?:\/\/ap\.dongqiudi\.com\/plat\/v4, script-path=http://127.0.0.1:9100/convert/_start_/https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ddgksf2013/StartUpAds/dongqiudi.js/_end_/dongqiudi.js?type=mock&target-app=shadowrocket-module, timeout=60
 
 #BahamutAnimeAds = type=http-response, pattern=^https:\/\/api\.gamer\.com\.tw\/mobile_app\/anime\/v\d\/(token|m3u8).php\?, script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Bahamut/BahamutAnimeAds.js, requires-body=true, max-size=-1, timeout=60
 

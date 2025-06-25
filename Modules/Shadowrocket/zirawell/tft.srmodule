@@ -2,8 +2,8 @@
 #!desc=tft
 #!category=Jacob
 
-[URL Rewrite]
-^https?:\/\/ams-cdn\.cdtft\.cn\/prod\/tft-ams - reject-dict
+[Map Local]
+^https?:\/\/ams-cdn\.cdtft\.cn\/prod\/tft-ams data-type=text data="{}"
 
 [MITM]
 hostname = %APPEND% ams-cdn.cdtft.cn

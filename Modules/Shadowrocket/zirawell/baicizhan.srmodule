@@ -6,8 +6,8 @@
 DOMAIN,advertise.baicizhan.com,REJECT,extended-matching
 DOMAIN,advertise.baicizhan.org,REJECT,extended-matching
 
-[URL Rewrite]
-^https?:\/\/7n\.bczcdn\.com\/launchad\/ - reject-200
+[Map Local]
+^https?:\/\/7n\.bczcdn\.com\/launchad\/ data-type=text data=""
 
 [MITM]
 hostname = %APPEND% 7n.bczcdn.com

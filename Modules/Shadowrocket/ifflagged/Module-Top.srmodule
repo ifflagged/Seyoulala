@@ -2,9 +2,9 @@
 #!desc=Common Tools for All
 #!category=Jacob
 
-[URL Rewrite]
+[Map Local]
 # SMZDM
-^https:\/\/app-api\.smzdm\.com\/mychannel\/list$ - reject-dict
+^https:\/\/app-api\.smzdm\.com\/mychannel\/list$ data-type=text data="{}" header="Content-Type:application/json"
 
 [Script]
 # bilibili

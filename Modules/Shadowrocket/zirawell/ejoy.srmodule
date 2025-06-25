@@ -2,9 +2,10 @@
 #!desc=ejoy
 #!category=Jacob
 
-[URL Rewrite]
-^https?:\/\/a\.sinopecsales\.com\/app\/cms - reject-dict
-^https?:\/\/ocrifs\.ejoy\.sinopec\.com\/advertitfs\/advert\/findAdvertInfo - reject-200
+[Map Local]
+^https?:\/\/a\.sinopecsales\.com\/app\/cms data-type=text data="{}"
+
+^https?:\/\/ocrifs\.ejoy\.sinopec\.com\/advertitfs\/advert\/findAdvertInfo data-type=text data=""
 
 [MITM]
 hostname = %APPEND% a.sinopecsales.com, ocrifs.ejoy.sinopec.com

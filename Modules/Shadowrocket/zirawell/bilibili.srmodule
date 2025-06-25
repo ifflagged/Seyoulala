@@ -14,18 +14,25 @@ DOMAIN-SUFFIX,cm.adcommon.bilibili.com,REJECT,extended-matching
 DOMAIN-SUFFIX,cm.game.bilibili.com,REJECT,extended-matching
 DOMAIN-SUFFIX,cm.track.biligame.bilibili.com,REJECT,extended-matching
 
-[URL Rewrite]
-^https?:\/\/api\.live\.bilibili\.com\/xlive\/e-commerce-interface\/v\d\/ecommerce-user\/get_shopping_info\? - reject-dict
-^https?:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.interface\.v\d\.Search\/DefaultWords - reject-dict
+[Map Local]
+^https?:\/\/api\.live\.bilibili\.com\/xlive\/e-commerce-interface\/v\d\/ecommerce-user\/get_shopping_info\? data-type=text data="{}"
+
+^https?:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.interface\.v\d\.Search\/DefaultWords data-type=text data="{}"
+
 # 满意度调研
-^https?:\/\/api\.bilibili\.com\/x\/v2\/dm\/qoe\/show\? - reject-dict
+^https?:\/\/api\.bilibili\.com\/x\/v2\/dm\/qoe\/show\? data-type=text data="{}"
+
 # 开屏广告 //app.bilibili.com
-^https?:\/\/[\d\.]+:8000\/v1\/resource\/\w{32}-1-SPLASH - reject-dict
-^https?:\/\/upos-sz-static\.bilivideo\.com\/ssaxcode\/\w{2}\/\w{2}\/\w{32}-1-SPLASH - reject-dict
-^https?:\/\/api\.bilibili\.com\/x\/mengqi\/v\d\/resource\? - reject-dict
+^https?:\/\/[\d\.]+:8000\/v1\/resource\/\w{32}-1-SPLASH data-type=text data="{}"
+
+^https?:\/\/upos-sz-static\.bilivideo\.com\/ssaxcode\/\w{2}\/\w{2}\/\w{32}-1-SPLASH data-type=text data="{}"
+
+^https?:\/\/api\.bilibili\.com\/x\/mengqi\/v\d\/resource\? data-type=text data="{}"
+
 # IP请求,地理位置请求 //api.bilibili.com
-^https?:\/\/api\.bilibili\.com\/x\/web-interface\/zone\?jsonp - reject-dict
-^https?:\/\/app\.bilibili\.com\/x\/resource\/ip - reject-dict
+^https?:\/\/api\.bilibili\.com\/x\/web-interface\/zone\?jsonp data-type=text data="{}"
+
+^https?:\/\/app\.bilibili\.com\/x\/resource\/ip data-type=text data="{}"
 
 [Script]
 # Proto 动态广告,后台播放限制,播放页广告 //app.bilibili.com

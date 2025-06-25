@@ -2,8 +2,8 @@
 #!desc=hilton
 #!category=Jacob
 
-[URL Rewrite]
-^https?:\/\/wcprd\.hilton\.com\.cn\/app-middleware\/graphql\?type=splashAd - reject-200
+[Map Local]
+^https?:\/\/wcprd\.hilton\.com\.cn\/app-middleware\/graphql\?type=splashAd data-type=text data=""
 
 [MITM]
 hostname = %APPEND% wcprd.hilton.com.cn
