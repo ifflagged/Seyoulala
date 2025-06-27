@@ -885,7 +885,7 @@ http:\/\/dili.sqcosmos.com\/jiekou\/endpage\/ad - reject-dict
 ^https?:\/\/common-sc\.miguvideo\.com\/videoActivity\/activityList\/ - reject-dict
 #^https?:\/\/display-sc\.miguvideo\.com\/display\/v3\/static\/PERSONAL_CENTER\/ - reject-dict
 #^https?:\/\/display-sc\.miguvideo\.com\/display\/v3\/static\/PERSONAL_CENTER\/ url reject-dict
-^https?:\/\/ggx\d+\.miguvideo\.com\/request\/sdk - reject-dict
+^https?:\/\/ggx.+\.miguvideo\.com\/request\/sdk.+[^?]*$ - reject-dict
 ^https?:\/\/ggic\d+.miguvideo\.com\/ad\/ - reject-dict
 # hostname = b-api.ins.miaopai.com
 ^https?:\/\/b-api\.ins\.miaopai\.com\/\d\/ad/ - reject
