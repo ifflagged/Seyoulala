@@ -9,7 +9,7 @@
 #!tg-group=https://t.me/lanjieguanggao
 #!tag=去广告, 微博, fmz200
 #!system=ios
-#!date=2025-06-05 11:23:56
+#!date=2025-06-29 21:20:00
 
 [Rule]
 # 收集用户信息，上传用户日志的请求
@@ -109,6 +109,8 @@ DOMAIN,adpinpai.video.weibocdn.com,REJECT
 
 # 微博评论区广告
 微博评论区广告 = type=http-response, pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/2\/comments\/mix_comments\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/weibo/weibo_ads.js, requires-body=true, timeout=60
+
+微博评论区广告 = type=http-response, pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/2\/statuses\/container_detail_comment\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/weibo/weibo_ads.js, requires-body=true, timeout=60
 
 # 微博转发评论区广告
 微博转发评论区广告 = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/statuses\/repost_timeline\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/weibo/weibo_main.js, requires-body=true, timeout=60
