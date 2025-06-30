@@ -15,7 +15,7 @@ jobs:
 
       - name: Find and delete all .lpx files
         run: |
-          find . -type f -name "*\.lpx*" -exec rm -v {} \;
+          find . \( -type f -o -type d \) | grep '\.lpx' | xargs -I{} rm -rfv "{}"
 
       - name: Commit and push deletion
         run: |
