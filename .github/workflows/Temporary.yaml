@@ -1,0 +1,27 @@
+name: Restore Deleted Directory
+
+on:
+  workflow_dispatch:  # 手动触发
+
+jobs:
+  restore-directory:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout current branch
+        uses: actions/checkout@v4
+
+      - name: Fetch full git history
+        run: git fetch --all
+
+      - name: Checkout old commit that still has the folder
+        run: |
+          git checkout 8b590f064ef7c8595d46927c2c0587f464351e39 -- Modules/Loon/Kelee
+
+      - name: Commit and push restored folder
+        run: |
+          git config --global user.name "${GITHUB_ACTOR}"
+          git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+          git add Modules/Loon/Kelee
+          git commit -m "Restore deleted directory Modules/Loon/Kelee"
+          git push
