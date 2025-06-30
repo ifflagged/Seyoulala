@@ -1,37 +1,37 @@
-name: Restore Kelee Directory
+name: Restore Modules
 
 on:
-  workflow_dispatch:
+  workflow_dispatch:  # 手动触发
 
 jobs:
   restore:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Clone full repo history
-        uses: actions/checkout@v4
+      - name: Checkout latest commit
+        uses: actions/checkout@v3
         with:
-          fetch-depth: 0  # 获取完整提交历史
+          fetch-depth: 0  # 保证能访问历史 commit
 
-      - name: Create restore branch
+      - name: Checkout deleted commit as temp
         run: |
-          git checkout -b restore-temp
-
-      - name: Checkout old commit with the deleted directory
-        run: |
+          git fetch origin d28b1d09f335d5513a2aac5beb78007ca13e47c4
           git checkout d28b1d09f335d5513a2aac5beb78007ca13e47c4
-          mkdir -p temp_restore
-          cp -r Modules/Loon/Kelee temp_restore/
 
-      - name: Switch back to main branch
+      - name: Copy Official folder from old commit
         run: |
-          git checkout -
-          cp -r temp_restore/Kelee Modules/Loon/Official
+          mkdir -p temp_restore
+          cp -r Modules/Loon/Kelee/Official temp_restore/
 
-      - name: Commit and push restored folder
+      - name: Checkout back to main branch
+        run: |
+          git checkout main
+          cp -r temp_restore/Official Modules/Loon/Kelee/
+
+      - name: Commit restored files
         run: |
           git config --global user.name "${GITHUB_ACTOR}"
           git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-          git add Modules/Loon/Kelee
-          git commit -m "Restore deleted directory Modules/Loon/Kelee"
+          git add Modules/Loon/Kelee/Official
+          git commit -m "Restore Official folder from deleted commit"
           git push
