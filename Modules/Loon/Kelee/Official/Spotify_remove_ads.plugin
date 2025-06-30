@@ -18,8 +18,10 @@ useractivity=switch, "true", "false", tag=启用Apple设备接力, desc=此开�
 AND, ((DOMAIN, spclient.wg.spotify.com), (PROTOCOL, QUIC)), REJECT
 
 [Rewrite]
+# 播放广告
 ^https:\/\/.+\.spotify\.com\/pendragon\/ reject-dict
 
+# 恢复歌手和专辑列表的正常展示
 ^https:\/\/(.+)\.spotify\.com(:443)?\/(artistview\/v1\/artist|album-entity-view\/v2\/album)\/(.*)platform=iphone header https://$1.spotify.com$2/$3/$4platform=ipad
 
 [Script]

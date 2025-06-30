@@ -11,6 +11,7 @@
 #!date=2025-05-28 21:48:03
 
 [Rewrite]
+# 广告下发
 ^https:\/\/mch\.juhesaas\.com\/api\/advertisement\/ reject-dict
 
 [MitM]
