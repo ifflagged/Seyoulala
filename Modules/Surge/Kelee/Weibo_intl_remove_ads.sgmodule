@@ -1,22 +1,7 @@
-#!name=微博轻享版去广告
-#!desc=过滤轻享版广告，移除各部分推广模块，仅支持到6.6.8版。
-#!author=kokoryh[https://github.com/kokoryh]
-#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Weibo_intl.png
-#!category=Jacob
+Weibo_intl_remove_ads%0A：Error: Response code 404 (Not Found)
 
-#!openUrl=https://apps.apple.com/app/id1215210046
-#!tag=去广告
-#!loon_version=3.2.4(787)
-#!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!date=2025-05-13 15:17:08
 
-[Map Local]
-^https?:\/\/api\.weibo\.cn\/2\/ad\/weibointl\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?a=get_searching_info& data-type=text data="{"retcode":0,"info":"","data":{"expiration_time":"86400","cards":[{"tip":"搜索微博","word":""}]}}" header="Content-Type:text/html"
 
-^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?ct=feed&a=search_topic& data-type=text data="{"retcode":0,"info":"","data":[],"ext":{}}" header="Content-Type:text/html"
 
-[MITM]
-hostname = %APPEND% api.weibo.cn, weibointl.api.weibo.cn
-
+Script Hub 重写转换: ❌  可自行翻译错误信息或复制错误信息后点击通知进行反馈
