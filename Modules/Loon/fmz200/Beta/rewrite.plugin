@@ -2459,7 +2459,7 @@ http-response ^https?:\/\/(news\.ssp\.qq\.com\/app|r\.inews\.qq\.com\/(get(QQNew
 # App去开屏广告(需全新应用). 若要去新闻列表广告需要搭配广告联盟模块
 http-response ^https?:\/\/app02\.vgtime\.com:8080\/vgtime-app\/api\/v2\/init\/ad\.json script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/rewrite/vgtime.js, requires-body=true, timeout=60, tag=vgtime
 
-# 弹窗广告
+# 小程序弹窗广告
 http-response ^https?:\/\/misc-api-prd-mx\.wandafilm\.com\/commend\/common_banner_batch\.api\?bannerInfos=%5B%7B%22cinemaI script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/rewrite/replace-body.js, requires-body=true, timeout=30, tag=replaceBody, argument=%22WX_index_mp-%26-boxAD%22-%3E%22WX_index_mp-%26-boxAD0%22
 
 # 公众号文章下方广告

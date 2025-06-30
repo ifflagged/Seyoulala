@@ -1082,6 +1082,7 @@ http-response ^https?:\/\/tft-app\.cdtft\.cn\/gateway-customer\/tftapp\/tft-ams\
 http-response ^https?:\/\/chl\.tf\.cn\/channelmg\/sys\/socso\/order\/queryOrderInfo "imgUrl" response-body
 http-response ^https?:\/\/client\.tujia\.com\/bnbapp-node\/app\/portal\/getportalconfig\/bnb\/v2 "banners":\[.+\], "banners":[],
 http-response #^https?:\/\/vv\.video\.qq\.com\/getvinfo &sppreviewtype=\d(.*)&spsrt=\d &sppreviewtype=0$1&spsrt=0
+http-response-jq ^https:\/\/misc-api-prd-mx\.wandafilm\.com\/commend\/common_banner_batch\.api '.data.objects["OpenAPP-&-FlashAD"] = [] | .data.objects["InTheaters-&-BoxAD"] = []'
 http-response ^https?:\/\/misc-api-prd-mx\.wandafilm\.com\/commend\/common_banner_batch\.api\?bannerInfos=%5B%7B%22cinemaI "WX_index_mp-&-boxAD" "fmz200"
 http-response ^https?:\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad advertisement fmz200
 http-response-jq ^https:\/\/app-conf\.ds\.163\.com\/v\d\/app\/base\/conf\/static\/start-config\? 'delpaths([["result","updateConfig",2,"itemList",94,"itemList",2]])'
