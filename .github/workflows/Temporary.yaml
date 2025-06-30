@@ -19,7 +19,7 @@ jobs:
 
       - name: Checkout old commit with the deleted directory
         run: |
-          git checkout 8b590f064ef7c8595d46927c2c0587f464351e39
+          git checkout d28b1d09f335d5513a2aac5beb78007ca13e47c4
           mkdir -p temp_restore
           cp -r Modules/Loon/Kelee temp_restore/
 
