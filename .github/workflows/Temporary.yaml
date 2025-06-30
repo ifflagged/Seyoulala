@@ -1,37 +1,33 @@
-name: Restore Modules
+name: Delete .lpx Files
 
 on:
   workflow_dispatch:  # 手动触发
 
 jobs:
-  restore:
+  clean-lpx:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout latest commit
-        uses: actions/checkout@v3
+      - name: Checkout full repo
+        uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # 保证能访问历史 commit
+          fetch-depth: 0
 
-      - name: Checkout deleted commit as temp
+      - name: Find and delete all .lpx files
         run: |
-          git fetch origin d28b1d09f335d5513a2aac5beb78007ca13e47c4
-          git checkout d28b1d09f335d5513a2aac5beb78007ca13e47c4
+          find . -type f -name "*.lpx" -exec rm -v {} \;
 
-      - name: Copy Official folder from old commit
-        run: |
-          mkdir -p temp_restore
-          cp -r Modules/Loon/Kelee/Official temp_restore/
-
-      - name: Checkout back to main branch
-        run: |
-          git checkout main
-          cp -r temp_restore/Official Modules/Loon/Kelee/
-
-      - name: Commit restored files
+      - name: Commit and push deletion
         run: |
           git config --global user.name "${GITHUB_ACTOR}"
           git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-          git add Modules/Loon/Kelee/Official
-          git commit -m "Restore Official folder from deleted commit"
+          git add -u  # stage deletions
+          
+          if git diff --cached --quiet; then
+            echo "✅ No .lpx files found or already deleted. Nothing to commit."
+            exit 0
+          fi
+
+          git commit -m "Delete all .lpx files from repository"
           git push
+  
