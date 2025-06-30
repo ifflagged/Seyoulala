@@ -78,7 +78,7 @@ jobs:
           category="Jacob"
           encoded_category=$(echo "$category" | jq -sRr @uri)
           while read -r plugin_local_url; do
-            Modules_name=$(basename "$plugin_local_url" .plugin)
+            Modules_name=$(basename "$plugin_local_url" .lpx)
             encoded_Modules_name=$(echo "$Modules_name" | jq -sRr @uri)
 
             Surge_url="http://localhost:9100/file/_start_/${plugin_local_url}/_end_/${encoded_Modules_name}.sgmodule?type=loon-plugin&target=surge-module&category=${encoded_category}&nore=true"
