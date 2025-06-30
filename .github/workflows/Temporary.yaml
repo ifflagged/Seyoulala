@@ -21,7 +21,7 @@ jobs:
         run: |
           git checkout d28b1d09f335d5513a2aac5beb78007ca13e47c4
           mkdir -p temp_restore
-          cp -r Modules/Loon/Kelee/Official temp_restore/
+          cp -r Modules/Loon/Kelee temp_restore/
 
       - name: Switch back to main branch
         run: |
