@@ -1,22 +1,32 @@
-name: Restore Deleted Directory
+name: Restore Kelee Directory
 
 on:
-  workflow_dispatch:  # 手动触发
+  workflow_dispatch:
 
 jobs:
-  restore-directory:
+  restore:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout current branch
+      - name: Clone full repo history
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # 获取完整提交历史
 
-      - name: Fetch full git history
-        run: git fetch --all
-
-      - name: Checkout old commit that still has the folder
+      - name: Create restore branch
         run: |
-          git checkout 8b590f064ef7c8595d46927c2c0587f464351e39 -- Modules/Loon/Kelee
+          git checkout -b restore-temp
+
+      - name: Checkout old commit with the deleted directory
+        run: |
+          git checkout 8b590f064ef7c8595d46927c2c0587f464351e39
+          mkdir -p temp_restore
+          cp -r Modules/Loon/Kelee temp_restore/
+
+      - name: Switch back to main branch
+        run: |
+          git checkout -
+          cp -r temp_restore/Kelee Modules/Loon/
 
       - name: Commit and push restored folder
         run: |
