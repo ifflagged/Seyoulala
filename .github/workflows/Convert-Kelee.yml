@@ -53,7 +53,7 @@ jobs:
         run: |
           mkdir -p Modules/{Surge,Loon,Shadowrocket}/Kelee/Official
           while read -r plugin_url; do
-            Modules_name=$(echo "$plugin_url" | sed -E 's/\.plugin$//I' | xargs basename)
+            Modules_name=$(echo "$plugin_url" | sed -E 's/\.lpx$//I' | xargs basename)
             echo "Downloading $plugin_url to Modules/Loon/Kelee/Official/${Modules_name}.plugin"
             mkdir -p "Modules/Loon/Kelee/Official" 
             curl -A "Surge Mac/2985" -L "$plugin_url" -o "Modules/Loon/Kelee/Official/${Modules_name}.plugin" || echo "Failed to download $plugin_url"
