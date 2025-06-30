@@ -53,7 +53,7 @@ jobs:
         run: |
           mkdir -p Modules/{Surge,Loon,Shadowrocket}/Kelee/Official
           while read -r plugin_url; do
-            Modules_name=$(echo "$plugin_url" | sed -E 's/\.lpx$//I' | xargs basename)
+            Modules_name=$(echo "$plugin_url" | sed -E 's/\.(plugin|lpx)$//I' | xargs basename)
             echo "Downloading $plugin_url to Modules/Loon/Kelee/Official/${Modules_name}.plugin"
             mkdir -p "Modules/Loon/Kelee/Official" 
             curl -A "Surge Mac/2985" -L "$plugin_url" -o "Modules/Loon/Kelee/Official/${Modules_name}.plugin" || echo "Failed to download $plugin_url"
@@ -78,7 +78,7 @@ jobs:
           category="Jacob"
           encoded_category=$(echo "$category" | jq -sRr @uri)
           while read -r plugin_local_url; do
-            Modules_name=$(basename "$plugin_local_url" .lpx)
+            Modules_name=$(basename "$plugin_local_url" .plugin)
             encoded_Modules_name=$(echo "$Modules_name" | jq -sRr @uri)
 
             Surge_url="http://localhost:9100/file/_start_/${plugin_local_url}/_end_/${encoded_Modules_name}.sgmodule?type=loon-plugin&target=surge-module&category=${encoded_category}&nore=true"
