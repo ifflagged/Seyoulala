@@ -1,7 +1,33 @@
-KuaiDuiZuoYe_remove_ads%0A：Error: Response code 404 (Not Found)
+#!name=快对去广告
+#!desc=移除开屏广告、横幅推广，精简我的页面。
+#!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
+#!tag=Jacob
 
+#!openUrl=https://apps.apple.com/app/id1330927814
+#!tag=去广告
+#!loon_version=3.2.4(787)
+#!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
+#!date=2025-05-13 15:17:08
 
+[Rule]
+# 广告下发
+DOMAIN,adx.zuoyebang.com,REJECT
 
+[Rewrite]
+# 广告配置
+^https:\/\/www\.kuaiduizuoye\.com\/init\/ad\/ - reject-dict
+# 活动配置
+^https:\/\/www\.kuaiduizuoye\.com\/activity\/init\/checkappconfig$ - reject-dict
+# 首页 - 横幅推广、悬浮窗
+^https:\/\/www\.kuaiduizuoye\.com\/kdapi\/conf\/appbannersv3$ - reject-dict
+^https:\/\/www\.kuaiduizuoye\.com\/kdapi\/conf\/initbanner$ - reject-dict
+# 我的页面
+^https:\/\/apivip\.kuaiduizuoye\.com\/viponline\/scancode\/mycard$ - reject-dict
 
+[Script]
+http-response ^https:\/\/www\.kuaiduizuoye\.com\/codesearch\/aid\/home$ script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_23, argument=%5B%5B%22json-del%22%2C%5B%22data.homeBannerList%22%5D%5D%5D
 
-Script Hub 重写转换: ❌  可自行翻译错误信息或复制错误信息后点击通知进行反馈
+[MITM]
+hostname = www.kuaiduizuoye.com, apivip.kuaiduizuoye.com
+
