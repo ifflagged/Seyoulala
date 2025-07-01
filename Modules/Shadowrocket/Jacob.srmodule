@@ -1210,7 +1210,6 @@ upos-sz-upcdntx.bilivideo.com = server:https://doh.pub/dns-query // BiliBili upo
 *.he.net = server:https://ordns.he.net/dns-query // HE.net
 # Host
 iosapps.itunes.apple.com = iosapps.itunes.apple.com.download.ks-cdn.com
-api.twitter.com = 2606:4700:4700::1001
 
 [URL Rewrite]
 # HTTPDNS.Block
