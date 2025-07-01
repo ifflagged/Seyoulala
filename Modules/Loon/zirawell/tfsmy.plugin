@@ -4,10 +4,8 @@
 #!tag=Jacob
 
 [Rewrite]
+^https?:\/\/tft-app\.cdtft\.cn\/gateway-customer\/tftapp\/tft-ams\/api\/appAd response-body-json-jq officialAdvertResultVo random-response
 ^https?:\/\/tfsmy\.chengdu\.gov\.cn\/api\/v\d\/core\/version mock-response-body data-type=text data="" status-code=200
-
-[Body Rewrite]
-http-response ^https?:\/\/tft-app\.cdtft\.cn\/gateway-customer\/tftapp\/tft-ams\/api\/appAd officialAdvertResultVo random-response
 
 [MITM]
 hostname = tfsmy.chengdu.gov.cn, tft-app.cdtft.cn

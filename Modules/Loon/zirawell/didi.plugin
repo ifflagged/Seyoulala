@@ -13,6 +13,7 @@ IP-CIDR,139.199.240.15/32,REJECT,no-resolve
 [Rewrite]
 ^https?:\/\/ut\.xiaojukeji\.com\/ut\/kappa\/api\/owner\/index\/dialog - reject
 ^https?:\/\/capis(-\d)?\.didapinche\.com\/adbase - reject
+^https?:\/\/ut\.xiaojukeji\.com\/ut\/kappa\/api\/owner\/index response-body-json-jq banner_items random_body
 ^https?:\/\/hd\.xiaojukeji\.com\/d mock-response-body data-type=text data="{}" status-code=200
 ^https?:\/\/ct\.xiaojukeji\.com\/agent\/v\d\/feeds mock-response-body data-type=text data="{}" status-code=200
 ^https?:\/\/res\.xiaojukeji\.com\/resapi\/activity\/(?>m|xp)get mock-response-body data-type=text data="{}" status-code=200
@@ -26,9 +27,6 @@ IP-CIDR,139.199.240.15/32,REJECT,no-resolve
 ^https?:\/\/htwkop\.xiaojukeji\.com\/gateway\?api=cms\.htw\.delivery mock-response-body data-type=text data="{}" status-code=200
 ^https?:\/\/htwkop\.xiaojukeji\.com\/gateway\?api=hm\.fa\.(?>combineHomepageInfo|mallRecommend) mock-response-body data-type=text data="{}" status-code=200
 ^https?:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/core mock-response-body data-type=text data="{}" status-code=200
-
-[Body Rewrite]
-http-response ^https?:\/\/ut\.xiaojukeji\.com\/ut\/kappa\/api\/owner\/index banner_items random_body
 
 [Script]
 http-response ^https?:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/core script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/didi/didi.js, requires-body=true, tag=diditaxi
