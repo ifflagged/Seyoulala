@@ -9,7 +9,7 @@
 #!tg-group=https://t.me/lanjieguanggao
 #!tag=去广告, 微博, fmz200
 #!system=iOS, iPadOS
-#!date=2025-06-29 23:00:00
+#!date=2025-07-02 19:30:17
 
 [Rule]
 # 收集用户信息，上传用户日志的请求
@@ -50,6 +50,7 @@ DOMAIN,datacollection.uve.weibo.com,REJECT
 DOMAIN,adpinpai.video.weibocdn.com,REJECT
 
 [Rewrite]
+^https?:\/\/api\.weibo\.cn\/2\/cardlist\? response-body-json-jq 'del(.items[] | select(.category == "group"))'
 # 热门视频 | 热推荐
 ^https?:\/\/api\.weibo\.c(n|om)\/\d\/(cardlist\?v_f=\d|ad\/weibointl\?) - reject-dict
 ^https?:\/\/weibointl\.api\.weibo\.c(n|om)\/portal\.php\?a=hot_search_users - reject-dict
@@ -67,10 +68,10 @@ DOMAIN,adpinpai.video.weibocdn.com,REJECT
 ^https:\/\/card\.weibo\.com\/article\/m\/aj\/(reward|uvead)\? - reject-dict
 ^https:\/\/weibo\.com\/ttarticle\/x\/m\/aj\/(reward|uvead)\? - reject-dict
 # 微博
-^https:\/\/api\.weibo\.cn\/2\/!\/huati\/discovery_home_bottom_channels - reject-dict
-^https:\/\/api\.weibo\.cn\/2\/!\/chaohua\/discovery\/home_bottom\/switch - reject-dict
-^https:\/\/api\.weibo\.cn\/2\/!\/was\/finder\/searchbarchange\? - reject-dict
-^https:\/\/api\.weibo\.cn\/2\/logservice\/service\? - reject
+^https?:\/\/api\.weibo\.cn\/2\/!\/huati\/discovery_home_bottom_channels - reject-dict
+^https?:\/\/api\.weibo\.cn\/2\/!\/chaohua\/discovery\/home_bottom\/switch - reject-dict
+^https?:\/\/api\.weibo\.cn\/2\/!\/was\/finder\/searchbarchange\? - reject-dict
+^https?:\/\/api\.weibo\.cn\/2\/logservice\/service\? - reject
 
 [Script]
 # 微博移除发现页广告
