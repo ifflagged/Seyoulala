@@ -2309,7 +2309,8 @@ https://.+\.gamersky.com/v1/statisticAd - reject-dict
 ^https?:\/\/oneapp-api\.faw-vw\.com\/content\/booth\/getBoothList\/v1\?.*showPositionCode=VWAPP_(ICE|MEB)_HOME_(OWNER_BANNER|PROSPECTS_BANNER|CUSTOM_BANNER|KONGO|CUSTOM_KONGO) mock-response-body data-type=json data="{"returnStatus":"SUCCEED","hasMore":false,"data":[]}" status-code=200
 ^https?:\/\/oneapp-api\.faw-vw\.com\/content\/(customize\/getCustomizePageName|recommend\/getRecommendInfoFlows)\/v1\?.* mock-response-body data-type=json data="{"returnStatus":"SUCCEED","hasMore":false,"data":[]}" status-code=200
 ^https?:\/\/oneapp-api\.faw-vw\.com\/content\/(activity\/getSquareActivityList|theme\/getThemeList|post\/getPostsByTags)\/v1\?.* mock-response-body data-type=json data="{"returnStatus":"SUCCEED","hasMore":false,"data":[]}" status-code=200
-^https?:\/\/oneapp-api\.faw-vw\.com\/content\/(evaluate\/getEvaluateCards|collection\/getCollectionList)\/v1\?.* mock-response-body data-type=json data="{"returnStatus":"SUCCEED","hasMore":false,"data":{}}" status-code=200
+^https?:\/\/oneapp-api\.faw-vw\.com\/content\/(evaluate\/getEvaluateCards)\/v1\?.* mock-response-body data-type=json data="{"returnStatus":"SUCCEED","hasMore":false,"data":[]}" status-code=200
+^https?:\/\/oneapp-api\.faw-vw\.com\/content\/(collection\/getCollectionList)\/v1\?.* mock-response-body data-type=json data="{"returnStatus":"SUCCEED","hasMore":false,"data":{}}" status-code=200
 
 [Script]
 http-response ^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_617, argument=%5B%5B%22json-del%22%2C%5B%22data.common_equip%22%5D%5D%5D
@@ -2372,15 +2373,15 @@ http-response ^https:\/\/app-conf\.ds\.163\.com\/v\d\/app\/base\/conf\/static\/s
 
 http-response ^https?:\/\/lcen\.xiaote\.net\/api\/graphql script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_2581, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22screenSplashAd%22%2C%22fmz200%22%5D%5D%5D%5D
 
-http-response ^https:\/\/api\.zhihu\.com\/search\/recommend_query\/v2\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_3122, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22%5C%22recommend_queries%5C%22%3A%5C%5C%7B.%2B%5C%5C%7D%22%2C%22%5C%22recommend_queries%5C%22%3A%7B%7D%22%5D%5D%5D%5D
+http-response ^https:\/\/api\.zhihu\.com\/search\/recommend_query\/v2\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_3123, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22%5C%22recommend_queries%5C%22%3A%5C%5C%7B.%2B%5C%5C%7D%22%2C%22%5C%22recommend_queries%5C%22%3A%7B%7D%22%5D%5D%5D%5D
 
-http-response ^https?:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzinfoshow\/getfeedflowinfo\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_3184, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22userRed%22%2C%22fmz200%22%5D%5D%5D%5D
+http-response ^https?:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzinfoshow\/getfeedflowinfo\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_3185, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22userRed%22%2C%22fmz200%22%5D%5D%5D%5D
 
-http-response ^https?:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzinfoshow\/getchoicegoodsinfos script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_3186, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22infoData%22%2C%22fmz200%22%5D%5D%5D%5D
+http-response ^https?:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzinfoshow\/getchoicegoodsinfos script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_3187, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22infoData%22%2C%22fmz200%22%5D%5D%5D%5D
 
-http-response ^https?:\/\/portal\.zjzwfw\.gov\.cn\/app_api\/appHome\/selectStartPic script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_3195, argument=%5B%5B%22json-replace%22%2C%5B%5B%22data%22%2C%7B%7D%5D%5D%5D%5D
+http-response ^https?:\/\/portal\.zjzwfw\.gov\.cn\/app_api\/appHome\/selectStartPic script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_3196, argument=%5B%5B%22json-replace%22%2C%5B%5B%22data%22%2C%7B%7D%5D%5D%5D%5D
 
-http-response ^https?:\/\/app-izz\.zhengzhou\.gov\.cn:10019\/bizgw\/gateway\.do script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_3199, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22%5C%22imgUrl19_5x9%5C%22%3A%5C%22.%2B%3F%5C%22%22%2C%22%5C%22imgUrl19_5x9%5C%22%3A%5C%22%5C%22%22%5D%5D%5D%5D
+http-response ^https?:\/\/app-izz\.zhengzhou\.gov\.cn:10019\/bizgw\/gateway\.do script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_3200, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22%5C%22imgUrl19_5x9%5C%22%3A%5C%22.%2B%3F%5C%22%22%2C%22%5C%22imgUrl19_5x9%5C%22%3A%5C%22%5C%22%22%5D%5D%5D%5D
 
 # > 12306
 http-request ^https?:\/\/ad\.12306\.cn\/ad\/ser\/getAdList script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/12306.js, requires-body=true, timeout=60, tag=12306

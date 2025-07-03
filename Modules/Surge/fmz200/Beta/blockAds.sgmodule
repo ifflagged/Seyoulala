@@ -3164,7 +3164,9 @@ https://.+\.gamersky.com/v1/statisticAd data-type=text data="{}" status-code=200
 
 ^https?:\/\/oneapp-api\.faw-vw\.com\/content\/(activity\/getSquareActivityList|theme\/getThemeList|post\/getPostsByTags)\/v1\?.* data-type=text data="{"returnStatus":"SUCCEED","hasMore":false,"data":[]}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/oneapp-api\.faw-vw\.com\/content\/(evaluate\/getEvaluateCards|collection\/getCollectionList)\/v1\?.* data-type=text data="{"returnStatus":"SUCCEED","hasMore":false,"data":{}}" status-code=200 header="Content-Type:application/json"
+^https?:\/\/oneapp-api\.faw-vw\.com\/content\/(evaluate\/getEvaluateCards)\/v1\?.* data-type=text data="{"returnStatus":"SUCCEED","hasMore":false,"data":[]}" status-code=200 header="Content-Type:application/json"
+
+^https?:\/\/oneapp-api\.faw-vw\.com\/content\/(collection\/getCollectionList)\/v1\?.* data-type=text data="{"returnStatus":"SUCCEED","hasMore":false,"data":{}}" status-code=200 header="Content-Type:application/json"
 
 [Script]
 # > 12306
