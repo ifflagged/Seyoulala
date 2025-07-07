@@ -66,9 +66,9 @@ Modules/Surge/zirawell/amap.sgmodule # Loon,Shadowrocket
 # Modules/Surge/zirawell/rsscc.sgmodule # Loon,Shadowrocket
 
 # H #
+Modules/Surge/Kelee/Umetrip_remove_ads.sgmodule # Loon,Shadowrocket
 # Modules/Surge/Yuheng0101/heiliao.sgmodule # Loon,Shadowrocket
 Modules/Surge/zirawell/ehaier.sgmodule # Loon,Shadowrocket
-# Modules/Surge/zirawell/umetrip.sgmodule # Loon,Shadowrocket
 
 # I #
 
