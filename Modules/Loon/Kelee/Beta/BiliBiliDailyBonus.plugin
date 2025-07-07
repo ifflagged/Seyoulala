@@ -8,7 +8,7 @@
 
 [Script]
 # BiliBili每日等级任务
-cron "30 7 * * *" script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/BiliBiliDailyBonus/BiliBiliDailyBonus.js, timeout=15, tag=B站每日等级任务
+cron "{RunTime}" script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/BiliBiliDailyBonus/BiliBiliDailyBonus.js, timeout=15, tag=B站每日等级任务
 
 http-response ^https?:\/\/app\.bilibili\.com\/x\/resource\/fingerprint\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/BiliBiliDailyBonus/BiliBiliDailyBonus.js, timeout=30, tag=B站Cookie(扫码)
 
