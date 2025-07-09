@@ -11,20 +11,15 @@
 #!date=2025-06-30 23:34:19
 
 [Rewrite]
-# 开屏广告
 ^https:\/\/iphone\.myzaker\.com\/zaker\/cover\.php\? reject-dict
 
-# 文末广告
 ^https:\/\/iphone\.myzaker\.com\/zaker\/article_mongo_sec\.php\? response-body-json-del data.ad_url
 ^https:\/\/ggs\.myzaker\.com\/zk_article_ad\.php\? response-body-json-del data.article_bottom data.recommend_ad
 
-# 订阅 - 置顶轮播图广告
 ^https:\/\/iphone\.myzaker\.com\/zaker\/follow_promote\.php\? response-body-json-jq '.data.list |= map(select(.type != "web"))'
 
-# 汽车 - 置顶轮播图广告
 ^https:\/\/iphone\.myzaker\.com\/zaker\/car_tab\/index\.php\? response-body-json-jq '.data.gallery |= map(select(.type != "web"))'
 
-# 热点 - 信息流广告
 ^https:\/\/iphone\.myzaker\.com\/zaker\/block_top_ad\.php\? reject-dict
 
 [MitM]

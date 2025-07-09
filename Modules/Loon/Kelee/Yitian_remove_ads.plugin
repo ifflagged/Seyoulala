@@ -11,13 +11,10 @@
 #!date=2025-07-04 23:22:46
 
 [Rewrite]
-# 广告下发
 ^https:\/\/(m2u-api\.getkwai|api-m2u\.kuaishou)\.com\/api-server\/api\/v1\/ad\/ reject-dict
 
-# 清理配置
 ^https:\/\/(m2u-api\.getkwai|api-m2u\.kuaishou)\.com\/api-server\/api\/v1\/system\/configs\? response-body-json-del data.shouldUseLMAdFirst data.incentiveCfgList
 
-# 悬浮广告
 ^https:\/\/(m2u-api\.getkwai|api-m2u\.kuaishou)\.com\/api-server\/api\/v4\/op\/actPositions\? reject-dict
 
 [MitM]

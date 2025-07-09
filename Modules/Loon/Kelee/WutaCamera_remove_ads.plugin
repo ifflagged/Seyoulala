@@ -11,9 +11,7 @@
 #!date=2025-07-05 02:22:08
 
 [Rewrite]
-# 配置精简 - 开屏广告、大日子营销、右小角广告、上传图片时的广告、拍摄页面一键去广告推广
 ^https:\/\/api-release\.wuta-cam\.com\/ad_tree$ response-body-json-del regular.splash big_day big_day_overrides regular.home_bottom_right_entry_v2 regular.pic_upload_alert regular.retouching_before_icon
-# 精简底栏
 ^https:\/\/api-release\.wuta-cam\.com\/ad_tree$ response-body-json-jq '.regular.homepage_25_bottom_nav_bar|=map(.button_list|=map(select(.name|IN("home","me"))))'
 
 [MitM]

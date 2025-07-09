@@ -11,13 +11,10 @@
 #!date=2025-06-30 21:53:43
 
 [Rewrite]
-# 右下角悬浮广告
 ^https:\/\/jz\.wacaijizhang\.com\/api\/banners\/ribbon\? reject-dict
 
-# 弹窗广告
 ^https:\/\/jz\.wacaijizhang\.com\/api\/banners\/list\? reject-dict
 
-# 首页 - 横幅推广语
 ^https:\/\/jz\.wacaijizhang\.com\/api\/resource\/universal\/fetch$ reject-dict
 
 [MitM]
