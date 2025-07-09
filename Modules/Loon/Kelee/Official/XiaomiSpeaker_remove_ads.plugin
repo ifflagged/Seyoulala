@@ -8,14 +8,17 @@
 #!loon_version=3.2.4(787)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/XiaomiSpeaker.png
-#!date=2025-07-07 19:51:31
+#!date=2025-07-09 08:04:43
 
 [Rewrite]
 # 开屏广告、首页横幅推广、音源弹窗推广
 ^https:\/\/marketing-aibox\.v\.mitvos\.com\/advertise\/ reject-dict
 
 # 促销弹窗
-^https:\/\/marketing-aibox\.v\.mitvos\.com\/payGuide\/halfScreenMulti\/cache\? reject-dict
+^https:\/\/marketing-aibox\.v\.mitvos\.com\/payGuide\/halfScreenMulti\/(home|cache)\? reject-dict
+
+# 音源标签页 - 促销横幅
+^https:\/\/marketing-aibox\.v\.mitvos\.com\/payGuide\/tabPage\? reject-dict
 
 [MitM]
 hostname=marketing-aibox.v.mitvos.com
