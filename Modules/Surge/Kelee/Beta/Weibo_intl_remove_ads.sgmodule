@@ -1,6 +1,6 @@
 #!name=微博轻享版去广告
-#!desc=过滤轻享版广告，移除各部分推广模块，仅支持到6.6.8版。
-#!author=kokoryh[https://github.com/kokoryh]
+#!desc=移除开屏广告和时间线广告，移除发现页面横幅推广、主页访客及热门视频。
+#!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Weibo_intl.png
 #!category=Jacob
 
@@ -8,22 +8,25 @@
 #!tag=去广告
 #!loon_version=3.2.4(787)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!date=2025-05-13 15:17:08
+#!date=2025-07-09 10:39:05
 
 [Body Rewrite]
-http-response-jq ^https?:\/\/api\.weibo\.cn\/2\/statuses\/unread_hot_timeline$ 'del(.ad, .advertises, .trends) | if .statuses then .statuses |= map(select(((.promotion.type == "ad") or (.mblogtypename | IN("广告", "廣告", "热推", "熱推"))) | not)) end'
-http-response-jq ^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?a=get_coopen_ads& '.data |= . + {"ad_list":[],"pic_ad":[],"gdt_video_ad_ios":[],"display_ad":0,"ad_ios_id":null,"app_ad_ios_id":null,"reserve_ad_ios_id":"","reserve_app_ad_ios_id":"","ad_duration":604800,"ad_cd_interval":604800}'
-http-response-jq ^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?a=trends& 'if .data.order then .data.order=["search_topic"] end'
-http-response-jq ^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?a=search_topic& 'if .data.search_topic.cards[0].type == "searchtop" then del(.data.search_topic.cards[0]) end'
-http-response-jq ^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?a=user_center& 'if .data.cards then .data.cards[].items |= map(select(.type != "personal_vip")) | .data.cards |= map(select((.items | length) > 0)) end'
+http-response-jq ^https:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?a=trends 'delpaths([["data","banner"]])'
+http-response-jq ^https:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?a=trends 'delpaths([["data","profile_accessrecord"]])'
+http-response-jq ^https:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?a=trends 'delpaths([["data","native_content"]])'
+http-response-jq ^https:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?a=trends .data.discover |= map(select(.schema != "尊享会员"))
+http-response-jq ^https:\/\/api\.weibo\.cn\/2\/statuses\/friends\/timeline$ 'delpaths([["advertises"]])'
+http-response-jq ^https:\/\/api\.weibo\.cn\/2\/statuses\/friends\/timeline$ 'delpaths([["ad"]])'
+http-response-jq ^https:\/\/api\.weibo\.cn\/2\/statuses\/friends\/timeline$ 'delpaths([["ad_version_2_weibo"]])'
+http-response-jq ^https:\/\/api\.weibo\.cn\/2\/statuses\/friends\/timeline$ '.statuses|=map(select(.ad_marked!=true))'
+http-response-jq ^https:\/\/api\.weibo\.cn\/2\/statuses\/unread_hot_timeline$ 'delpaths([["ad"]])'
+http-response-jq ^https:\/\/api\.weibo\.cn\/2\/statuses\/unread_hot_timeline$ 'delpaths([["ad_version_2_weibo"]])'
+http-response-jq ^https:\/\/api\.weibo\.cn\/2\/statuses\/unread_hot_timeline$ '.statuses|=map(select(.ad_marked!=true))'
 
 [Map Local]
-^https?:\/\/api\.weibo\.cn\/2\/ad\/weibointl\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
-
-^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?a=get_searching_info& data-type=text data="{"retcode":0,"info":"","data":{"expiration_time":"86400","cards":[{"tip":"搜索微博","word":""}]}}" header="Content-Type:text/html"
-
-^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?ct=feed&a=search_topic& data-type=text data="{"retcode":0,"info":"","data":[],"ext":{}}" header="Content-Type:text/html"
+# 广告投放配置
+^https:\/\/bootpreload\.uve\.weibo\.com\/v1\/ad\/preload$ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 [MITM]
-hostname = %APPEND% api.weibo.cn, weibointl.api.weibo.cn
+hostname = %APPEND% bootpreload.uve.weibo.com, weibointl.api.weibo.cn, api.weibo.cn
 
