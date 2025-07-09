@@ -11,12 +11,10 @@
 #!date=2025-05-13 15:17:08
 
 [Rewrite]
-# 小说底部文案广告
 ^https:\/\/huichuan\.sm\.cn\/nativead$ - reject
 ^https:\/\/stars\.shuqireader\.com\/kkios\/render\/load\/resource\/appConfig$ - reject-dict
 
 [Script]
-# 精简我的页面
 http-response ^https:\/\/open-cms-api\.quark\.cn\/open-cms script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/QuarkBrowser_remove_ads/QuarkBrowser_remove_ads.js, requires-body=true, tag=精简我的页面
 
 [MITM]

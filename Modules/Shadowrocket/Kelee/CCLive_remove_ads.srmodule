@@ -11,12 +11,9 @@
 #!date=2025-05-13 15:17:08
 
 [URL Rewrite]
-# 广告资源
 ^https:\/\/cc\.163\.com\/act\/m\/daily\/ad_ - reject
 ^http:\/\/mshare\.cc\.163\.com\/mshare\/startadv_mobile_v\d\? - reject-dict
-# 悬浮窗
 ^https:\/\/appapi\.cc\.163\.com\/v\d\/mixfloatingwindow\/floating_windows\? - reject-dict
-# 弹窗配置
 ^http:\/\/api\.cc\.163\.com\/v1\/mpopuprecommend\/exit_room_conf$ - reject-dict
 
 [MITM]

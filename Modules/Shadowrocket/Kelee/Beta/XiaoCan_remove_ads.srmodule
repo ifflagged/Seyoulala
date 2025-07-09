@@ -11,11 +11,8 @@
 #!date=2025-05-13 15:17:08
 
 [URL Rewrite]
-# 首页横幅推广
 ^https:\/\/web2\.realtech-inc\.com\/oss\/xc-app-assets\/configs\/common\/theme\.json - reject-dict
-# 开屏广告
 ^https:\/\/sdk\.1rtb\.net\/sdk\/req_ad\? - reject-dict
-# 更新弹窗
 ^https:\/\/gw\.xiaocantech\.com\/g\/pa - reject-dict
 
 [MITM]

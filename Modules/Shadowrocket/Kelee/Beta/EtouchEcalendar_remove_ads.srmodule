@@ -14,12 +14,9 @@
 DOMAIN,sdk.ad.sfys365.com,REJECT
 
 [URL Rewrite]
-# 天气 - 生活服务 - 热门咨询
 ^https:\/\/client-lz\.rili\.cn\/lizhi\/api\/fortune\/question_spots\/panel\? - reject-dict
-# 黄历 - 居家布局、为你推荐
 ^https:\/\/client-lz\.rili\.cn\/lizhi\/api\/jujia\/flow\? - reject-dict
 ^https:\/\/client-lz\.rili\.cn\/lizhi\/api\/album\/hl_card\? - reject-dict
-# 好运 - 快速咨询
 ^https:\/\/client-lz\.rili\.cn\/lizhi\/api\/fortune\/overview\? - reject-dict
 
 [MITM]

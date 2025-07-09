@@ -11,13 +11,9 @@
 #!date=2025-06-01 19:49:56
 
 [URL Rewrite]
-# 开屏广告
 ^https:\/\/api\.17gwx\.com\/v2\/base\/app\/ad\? - reject-dict
-# 弹窗
 ^https:\/\/api\.17gwx\.com\/v2\/growth\/popup\/remind$ - reject-dict
-# 我的 - 品牌全网好价
 ^https:\/\/api\.17gwx\.com\/v2\/recommend\/feed\/list\? - reject-dict
-# 商品 - 相关推荐
 ^https:\/\/api\.17gwx\.com\/v2\/homepage\/feed\/similarList\? - reject-dict
 
 [MITM]

@@ -23,15 +23,11 @@ http-response-jq ^https:\/\/(api|tool)\.xiuxiu\.meitu\.com\/v\d\/tool\/common\/h
 http-response-jq ^https:\/\/(api|tool)\.xiuxiu\.meitu\.com\/v\d\/tool\/common\/home\.json 'delpaths([["data",2,"items",1]])'
 
 [Map Local]
-# 订阅弹窗
 ^https:\/\/(api|tool)\.xiuxiu\.meitu\.com\/v\d\/vip\/sub_popup\.json data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 ^https:\/\/(api|tool)\.xiuxiu\.meitu\.com\/\/v\d\/vip\/popup_show\.json data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 ^https:\/\/api\.posters\.meitu\.com\/homepage\/leaflets\.json\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
-
-# 首页轮播图
-#^https:\/\/(api|tool)\.xiuxiu\.meitu\.com\/v\d\/tool\/common\/home_background\.json data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 [MITM]
 hostname = %APPEND% api.xiuxiu.meitu.com, tool.xiuxiu.meitu.com, api.posters.meitu.com

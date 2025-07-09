@@ -11,13 +11,9 @@
 #!date=2025-05-13 15:17:08
 
 [URL Rewrite]
-# 开屏广告
 ^https:\/\/api\.kmovie\.gifshow\.com\/rest\/n\/kmovie\/app\/resource\/get\? - reject-dict
-# 剪同款 - 横幅推广
 ^https:\/\/api\.kmovie\.gifshow\.com\/rest\/n\/kmovie\/app\/banner\/common\/getBannerByType\? - reject-dict
-# 剪同款 - 信息流广告
 ^https:\/\/api\.kmovie\.gifshow\.com\/rest\/n\/kmovie\/app\/merchant\/ad\/ - reject-dict
-# 悬浮部件 - 多品类模板师招募
 ^https:\/\/api\.kmovie\.gifshow\.com\/rest\/n\/kmovie\/app\/resource\/activity\/pendant\? - reject-dict
 
 [MITM]

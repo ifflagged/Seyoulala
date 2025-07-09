@@ -13,13 +13,9 @@
 [Rewrite]
 ^https:\/\/api\.xiachufang\.com\/v2\/homepage\/paged_waterfall_recommendations\.json$ response-body-json-jq 'del(.multiplex_cells[] | select(.recommendation_cell.impression_sensor_events[]?.properties.target_type? == "ad"))'
 ^https:\/\/api\.xiachufang\.com\/v2\/config\/get\.json$ response-body-json-jq 'del(.content.tab_name[] | select(. == "减脂" or . == "商店" or . == "分类"))'
-# 开屏广告
 ^https:\/\/api\.xiachufang\.com\/v2\/ad\/ - reject-dict
-# 首页 - 关注 - 作品推荐
 ^https:\/\/api\.xiachufang\.com\/v2\/account\/feeds_v7\.json - reject-dict
-# 首页 - 横幅推广
 ^https:\/\/api\.xiachufang\.com\/v2\/homepage1810\/init_page\.json - reject-dict
-# 发布 - 早餐马拉松 - 横幅
 ^https:\/\/api\.xiachufang\.com\/v2\/mark_mission\/get_sticker_info\.json - reject-dict
 
 [MITM]

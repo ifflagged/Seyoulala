@@ -15,10 +15,8 @@ http-response-jq ^https:\/\/(m2u-api\.getkwai|api-m2u\.kuaishou)\.com\/api-serve
 http-response-jq ^https:\/\/(m2u-api\.getkwai|api-m2u\.kuaishou)\.com\/api-server\/api\/v1\/system\/configs\? 'delpaths([["data","incentiveCfgList"]])'
 
 [Map Local]
-# 广告下发
 ^https:\/\/(m2u-api\.getkwai|api-m2u\.kuaishou)\.com\/api-server\/api\/v1\/ad\/ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-# 悬浮广告
 ^https:\/\/(m2u-api\.getkwai|api-m2u\.kuaishou)\.com\/api-server\/api\/v4\/op\/actPositions\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 [MITM]

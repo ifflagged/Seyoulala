@@ -20,19 +20,16 @@ AND,((OR,((DOMAIN-SUFFIX,bytegecko.com),(DOMAIN-SUFFIX,byteeffecttos.com))),(DOM
 
 [Rewrite]
 ^https:\/\/(aweme\.snssdk\.com|api5-normal-m\.amemv\.com)\/aweme\/homepage\/render\/\? response-body-json-jq '.data.tab_list[]? |= (if .extra.side_bar.modules != null then .extra.side_bar.modules[]?.items[]? |= (if .data.first_page_module?.module_title == "常用功能" then .data={} else . end) else . end) | .data.tab_list |= map(if .extra.tab_list != null then .extra.tab_list |= map(select(.tab_id | IN("homepage_tablive", "homepage_follow", "homepage_hot_container"))) else . end) | .data.tab_list |= map(select(.extra.tab_list != null and (.extra.tab_list | length > 0)))'
-# 广告下发
 ^https:\/\/api5-normal-lq\.amemv\.com\/api\/ad\/ - reject
 ^https:\/\/(aweme\.snssdk\.com|api5-normal-m\.amemv\.com)\/api\/ad\/ - reject
 ^https:\/\/zlink\.ugsdk\.cn\/ad\/ - reject
 
 [Script]
-http-response ^https:\/\/((aweme\.snssdk\.com|api5-normal-m\.amemv\.com)|api5-normal-m\.amemv\.com)\/aweme\/homepage\/sidebar_data\/\? script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_26, argument=%5B%5B%22json-del%22%2C%5B%22data_map.recently_apps%22%2C%22data_map.recently_users%22%5D%5D%5D
+http-response ^https:\/\/((aweme\.snssdk\.com|api5-normal-m\.amemv\.com)|api5-normal-m\.amemv\.com)\/aweme\/homepage\/sidebar_data\/\? script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_22, argument=%5B%5B%22json-del%22%2C%5B%22data_map.recently_apps%22%2C%22data_map.recently_users%22%5D%5D%5D
 
-http-response #^https:\/\/(aweme\.snssdk\.com|api5-normal-m\.amemv\.com)\/service\/settings\/v3\/\?need_personal_recommend script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_28, argument=%5B%5B%22json-del%22%2C%5B%22data.key_vids_mp.tab_bar_background_use_server_time%22%2C%22data.key_vids_mp.dynamic_plus_icon_config%22%2C%22data.key_vids_mp.tabbar_config%22%2C%22data.key_vids_mp.homepage_two_session_tab_skin_2025%22%2C%22data.key_vids_mp.homepage_tab_skin_enable%22%5D%5D%5D
+http-response ^https:\/\/(aweme\.snssdk\.com|api5-normal-m\.amemv\.com)\/aweme\/homepage\/render\/\? script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_23, argument=%5B%5B%22json-del%22%2C%5B%22data.tab_config%22%5D%5D%5D
 
-http-response ^https:\/\/(aweme\.snssdk\.com|api5-normal-m\.amemv\.com)\/aweme\/homepage\/render\/\? script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_30, argument=%5B%5B%22json-del%22%2C%5B%22data.tab_config%22%5D%5D%5D
-
-http-response ^https:\/\/(aweme\.snssdk\.com|api5-normal-m\.amemv\.com)\/tfe\/api\/request_combine\/v1\/\?need_personal_recommend script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_34, argument=%5B%5B%22json-replace%22%2C%5B%5B%22data%5B%5C%22%2Fservice%2Fsettings%2Fv3%2F%5C%22%5D.body.data.settings.homepage_two_session_tab_skin_2025%22%2Cfalse%5D%2C%5B%22data%5B%5C%22%2Fservice%2Fsettings%2Fv3%2F%5C%22%5D.body.data.settings.homepage_tab_skin_enable%22%2Cfalse%5D%5D%5D%5D
+http-response ^https:\/\/(aweme\.snssdk\.com|api5-normal-m\.amemv\.com)\/tfe\/api\/request_combine\/v1\/\?need_personal_recommend script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_25, argument=%5B%5B%22json-replace%22%2C%5B%5B%22data%5B%5C%22%2Fservice%2Fsettings%2Fv3%2F%5C%22%5D.body.data.settings.homepage_two_session_tab_skin_2025%22%2Cfalse%5D%2C%5B%22data%5B%5C%22%2Fservice%2Fsettings%2Fv3%2F%5C%22%5D.body.data.settings.homepage_tab_skin_enable%22%2Cfalse%5D%5D%5D%5D
 
 [MITM]
 hostname = aweme.snssdk.com, api5-normal-m.amemv.com

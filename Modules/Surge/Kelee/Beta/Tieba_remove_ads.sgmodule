@@ -32,10 +32,8 @@ http-response-jq ^https:\/\/tiebac\.baidu\.com\/c\/f\/sidebar\/home$ '.tools.sho
 http-response-jq ^https:\/\/tiebac\.baidu\.com\/c\/f\/frs\/frsBottom$ 'delpaths([["card_activity"]])'
 
 [Map Local]
-# 弹窗广告
 ^https:\/\/tieba\.baidu\.com\/c\/f\/member\/getMemberPopups$ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-# 搜索填充词
 ^https:\/\/tiebac\.baidu\.com\/c\/f\/search\/discover$ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 [Script]
