@@ -8,21 +8,23 @@
 #!tag=去广告
 #!loon_version=3.2.4(787)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!date=2025-07-09 10:39:05
+#!date=2025-07-09 10:52:11
 
 [Rewrite]
-^https:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?a=trends response-body-json-jq .data.discover |= map(select(.schema != "尊享会员"))
+^https:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?a=trends response-body-json-jq '.data.discover |= map(select(.schema != "尊享会员"))'
 ^https:\/\/api\.weibo\.cn\/2\/statuses\/friends\/timeline$ response-body-json-jq '.statuses|=map(select(.ad_marked!=true))'
 ^https:\/\/api\.weibo\.cn\/2\/statuses\/unread_hot_timeline$ response-body-json-jq '.statuses|=map(select(.ad_marked!=true))'
 # 广告投放配置
 ^https:\/\/bootpreload\.uve\.weibo\.com\/v1\/ad\/preload$ - reject-dict
+# 发现页面 - 趋势 - 热门视频信息流
+^https:\/\/api\.weibo\.cn\/2\/cardlist\?v_f=2 - reject-dict
 
 [Script]
 http-response ^https:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?a=trends script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_15, argument=%5B%5B%22json-del%22%2C%5B%22data.banner%22%2C%22data.profile_accessrecord%22%2C%22data.native_content%22%5D%5D%5D
 
-http-response ^https:\/\/api\.weibo\.cn\/2\/statuses\/friends\/timeline$ script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_19, argument=%5B%5B%22json-del%22%2C%5B%22advertises%22%2C%22ad%22%2C%22ad_version_2_weibo%22%5D%5D%5D
+http-response ^https:\/\/api\.weibo\.cn\/2\/statuses\/friends\/timeline$ script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_21, argument=%5B%5B%22json-del%22%2C%5B%22advertises%22%2C%22ad%22%2C%22ad_version_2_weibo%22%5D%5D%5D
 
-http-response ^https:\/\/api\.weibo\.cn\/2\/statuses\/unread_hot_timeline$ script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_22, argument=%5B%5B%22json-del%22%2C%5B%22ad%22%2C%22ad_version_2_weibo%22%5D%5D%5D
+http-response ^https:\/\/api\.weibo\.cn\/2\/statuses\/unread_hot_timeline$ script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_24, argument=%5B%5B%22json-del%22%2C%5B%22ad%22%2C%22ad_version_2_weibo%22%5D%5D%5D
 
 [MITM]
 hostname = bootpreload.uve.weibo.com, weibointl.api.weibo.cn, api.weibo.cn

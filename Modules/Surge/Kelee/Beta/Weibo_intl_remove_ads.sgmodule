@@ -8,13 +8,13 @@
 #!tag=去广告
 #!loon_version=3.2.4(787)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!date=2025-07-09 10:39:05
+#!date=2025-07-09 10:52:11
 
 [Body Rewrite]
 http-response-jq ^https:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?a=trends 'delpaths([["data","banner"]])'
 http-response-jq ^https:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?a=trends 'delpaths([["data","profile_accessrecord"]])'
 http-response-jq ^https:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?a=trends 'delpaths([["data","native_content"]])'
-http-response-jq ^https:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?a=trends .data.discover |= map(select(.schema != "尊享会员"))
+http-response-jq ^https:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?a=trends '.data.discover |= map(select(.schema != "尊享会员"))'
 http-response-jq ^https:\/\/api\.weibo\.cn\/2\/statuses\/friends\/timeline$ 'delpaths([["advertises"]])'
 http-response-jq ^https:\/\/api\.weibo\.cn\/2\/statuses\/friends\/timeline$ 'delpaths([["ad"]])'
 http-response-jq ^https:\/\/api\.weibo\.cn\/2\/statuses\/friends\/timeline$ 'delpaths([["ad_version_2_weibo"]])'
@@ -26,6 +26,9 @@ http-response-jq ^https:\/\/api\.weibo\.cn\/2\/statuses\/unread_hot_timeline$ '.
 [Map Local]
 # 广告投放配置
 ^https:\/\/bootpreload\.uve\.weibo\.com\/v1\/ad\/preload$ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+# 发现页面 - 趋势 - 热门视频信息流
+^https:\/\/api\.weibo\.cn\/2\/cardlist\?v_f=2 data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 [MITM]
 hostname = %APPEND% bootpreload.uve.weibo.com, weibointl.api.weibo.cn, api.weibo.cn
