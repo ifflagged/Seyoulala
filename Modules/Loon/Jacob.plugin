@@ -300,6 +300,7 @@ DOMAIN-SUFFIX, getui.com, REJECT
 DOMAIN-SUFFIX, igexin.com, REJECT
 DOMAIN, cnlogs.umeng.com, REJECT
 DOMAIN, errlog.umeng.com, REJECT
+DOMAIN, resolve.umeng.com, REJECT
 DOMAIN, errnewlog.umeng.com, REJECT
 DOMAIN, ucc.umeng.com, REJECT
 DOMAIN, ulogs.umeng.com, REJECT
