@@ -384,6 +384,8 @@ DOMAIN, ad.richmob.cn, REJECT
 DOMAIN-SUFFIX, ad.track.66mobi.com, REJECT
 DOMAIN, ad.shunchangzhixing.com, REJECT
 DOMAIN, redirect.shunchangzhixing.com, REJECT
+DOMAIN, api.touch-moblie.com, REJECT
+DOMAIN-SUFFIX, api.touch-moblie.com, REJECT
 DOMAIN, api.tradplusad.com, REJECT
 DOMAIN, bidder.tradplusad.com, REJECT
 DOMAIN, event.tradplusad.com, REJECT
