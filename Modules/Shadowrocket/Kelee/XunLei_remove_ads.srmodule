@@ -8,10 +8,7 @@
 #!tag=去广告
 #!loon_version=3.2.4(787)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!date=2025-07-10 17:40:54
-
-[URL Rewrite]
-^https:\/\/api-shoulei-ssl\.xunlei\.com\/flowhub\/v1\/slots:batchGet$ - reject-dict
+#!date=2025-07-10 19:52:26
 
 [MITM]
 hostname = %APPEND% api-shoulei-ssl.xunlei.com
