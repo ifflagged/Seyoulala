@@ -22,4 +22,4 @@ https://github.com/fmz200/wool_scripts/raw/main/QuantumultX/filter/fenliuxiuzhen
 # https://github.com/fmz200/wool_scripts/raw/main/Loon/rule/rejectAd.list
 
 # Z #
-https://github.com/zirawell/R-Store/blob/main/Rule/QuanX/Adblock/All/filter/allAdBlock.list
+https://github.com/zirawell/R-Store/raw/main/Rule/QuanX/Adblock/All/filter/allAdBlock.list
