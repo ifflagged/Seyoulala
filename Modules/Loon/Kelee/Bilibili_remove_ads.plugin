@@ -16,11 +16,12 @@ filterTopReplies=switch, "true", "false", tag=移除评论区置顶广告, desc=
 airborne=switch, "false", "true", tag=空降助手, desc=用于跳过视频中的广告
 
 [Rule]
-DOMAIN, api.biliapi.com, REJECT
-DOMAIN, api.biliapi.net, REJECT
-DOMAIN, app.biliapi.com, REJECT
-DOMAIN, app.biliapi.net, REJECT
-DOMAIN-SUFFIX, chat.bilibili.com, REJECT
+DOMAIN,api.biliapi.com,REJECT
+DOMAIN,app.biliapi.com,REJECT
+DOMAIN,api.biliapi.net,REJECT
+DOMAIN,app.biliapi.net,REJECT
+DOMAIN,line3-h5-mobile-api.biligame.com,REJECT
+DOMAIN-SUFFIX,chat.bilibili.com,REJECT
 
 [Rewrite]
 ^https:\/\/app\.bilibili\.com\/x\/v2\/splash\/(list|show|event\/list2)\? response-body-json-jq '.data |= with_entries(if .key | IN("show", "event_list") then .value = [] else . end)'
