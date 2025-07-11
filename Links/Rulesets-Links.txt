@@ -20,3 +20,6 @@ https://github.com/ConnersHua/RuleGo/raw/master/Surge/Ruleset/Extra/Reject/Track
 https://github.com/fmz200/wool_scripts/raw/main/QuantumultX/filter/filter.list
 https://github.com/fmz200/wool_scripts/raw/main/QuantumultX/filter/fenliuxiuzheng.list
 # https://github.com/fmz200/wool_scripts/raw/main/Loon/rule/rejectAd.list
+
+# Z #
+https://github.com/zirawell/R-Store/blob/main/Rule/QuanX/Adblock/All/filter/allAdBlock.list
