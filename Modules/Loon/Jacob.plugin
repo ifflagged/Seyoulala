@@ -42,6 +42,7 @@ SiriResponseLanguageVariant = select,"zh_CN","OFF","AUTO","zh_TW","yue_CN","zh_H
 showUpList=select, "auto", "show", "hide", tag=[动态]中[最常访问]的显示方式, desc=auto：仅当列表中存在直播状态时显示；show：始终显示；hide：始终隐藏。
 filterTopReplies=switch, "true", "false", tag=移除评论区置顶广告, desc=移除评论区置顶广告
 airborne=switch, "false", "true", tag=空降助手, desc=用于跳过视频中的广告
+logLevel=select, "off", "error", "warn", "info", "debug", tag=日志等级, desc=脚本的日志输出等级
 # BiliBili.ADBlock
 Splash = switch,true,tag=[开屏] 去除广告,desc=是否启用此处修改
 Feed.AD = switch,true,tag=[推荐] 去除广告,desc=是否启用此处修改
@@ -1335,6 +1336,7 @@ http-request ^https?:\/\/(raw|gist)\.githubusercontent\.com\/ header-replace 'Ac
 ^https:\/\/api\.bilibili\.com\/pgc\/activity\/deliver\/material\/receive\? mock-response-body data-type=text status-code=200 data="{"code":0,"data":{"closeType":"close_win","container":[],"showTime":""},"message":"success"}"
 ^https:\/\/app\.bilibili\.com\/x\/v2\/feed\/index\/story\? response-body-json-jq 'if .data.items then .data.items |= map(select((.ad_info == null) and (.card_goto | startswith("ad") | not)) | del(.story_cart_icon, .free_flow_toast)) end'
 ^https:\/\/ap[ip]\.bilibili\.com\/x\/(resource\/(top\/activity|patch\/tab)|v2\/search\/square|vip\/ads\/materials)\? mock-response-body data-type=text status-code=200 data="{"code":-404,"message":"-404","ttl":1,"data":null}"
+^https:\/\/line3-h5-mobile-api\.biligame\.com\/game\/live\/large_card_material\? mock-response-body data-type=text status-code=200 data="{"code":0,"message":"success"}"
 ^https:\/\/api\.live\.bilibili\.com\/xlive\/e-commerce-interface\/v1\/ecommerce-user\/get_shopping_info\? reject-dict
 ^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\? response-body-json-del data.common_equip
 ^https:\/\/app\.bilibili\.com\/x\/v2\/account\/mine(\/ipad)?\? response-body-json-jq jq-path="https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Bilibili_remove_ads/mine_Bilibili_remove_ads.jq"
