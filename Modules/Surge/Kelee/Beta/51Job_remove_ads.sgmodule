@@ -8,7 +8,7 @@
 #!tag=去广告
 #!loon_version=3.2.4(787)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!date=2025-07-11 17:37:08
+#!date=2025-07-11 17:40:27
 
 [Body Rewrite]
 http-response-jq ^https:\/\/cupid\.51jobapp\.com\/open\/noauth\/recommend\/job-tab-dynamic\? 'delpaths([["resultbody","adsTabFeeds"]])'
@@ -29,6 +29,8 @@ http-response-jq ^https:\/\/cupid\.51jobapp\.com\/open\/tab\/good-job\/modules\?
 ^https:\/\/cupid\.51jobapp\.com\/open\/resume\/strategy\/resume-build\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 ^https:\/\/cupid\.51jobapp\.com\/launch-hub\/open\/noauth\/popUp\/ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+^https:\/\/cupid\.51jobapp\.com\/launch-hub\/open\/noauth\/popUp\/getHomePagePopUp\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 [MITM]
 hostname = %APPEND% appapi.51jobapp.com, cupid.51jobapp.com
