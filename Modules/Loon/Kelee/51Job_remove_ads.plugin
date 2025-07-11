@@ -8,7 +8,7 @@
 #!loon_version=3.2.4(787)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/51Job.png
-#!date=2025-07-11 17:37:08
+#!date=2025-07-11 17:40:27
 
 [Rewrite]
 ^https:\/\/appapi\.51jobapp\.com\/api\/market\/get_launch\.php\? reject-dict
@@ -29,6 +29,7 @@
 ^https:\/\/cupid\.51jobapp\.com\/open\/resume\/strategy\/resume-build\? reject-dict
 
 ^https:\/\/cupid\.51jobapp\.com\/launch-hub\/open\/noauth\/popUp\/ reject-dict
+^https:\/\/cupid\.51jobapp\.com\/launch-hub\/open\/noauth\/popUp\/getHomePagePopUp\? reject-dict
 
 ^https:\/\/cupid\.51jobapp\.com\/open\/tab\/good-job\/modules\? response-body-json-del resultbody.bannerList
 
