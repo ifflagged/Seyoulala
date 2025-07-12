@@ -1,4 +1,4 @@
-#规则数量:9681
+#规则数量:9677
 #不支持的规则数量:1
 #已排除的规则数量:0
 #不支持的规则:
@@ -9327,7 +9327,6 @@ payload:
   - DOMAIN-SUFFIX,tns-counter.ru
   - DOMAIN-SUFFIX,winlinebet.ru
   - DOMAIN-SUFFIX,yadro.ru
-  - DOMAIN-SUFFIX,yandex.ru
   - DOMAIN-SUFFIX,ad.3dnews.ru
   - DOMAIN-SUFFIX,rtb.com.ru
   - DOMAIN-SUFFIX,dmg.digitaltarget.ru
@@ -9349,9 +9348,6 @@ payload:
   - DOMAIN-SUFFIX,ad.xmovies8.ru
   - DOMAIN-SUFFIX,counter.yadro.ru
   - DOMAIN-SUFFIX,mg.yadro.ru
-  - DOMAIN-SUFFIX,an.yandex.ru
-  - DOMAIN-SUFFIX,mc.yandex.ru
-  - DOMAIN-SUFFIX,mc.yandex.ru
   - DOMAIN-SUFFIX,spb.bid.run
   - DOMAIN-SUFFIX,adrotator.se
   - DOMAIN-SUFFIX,ingest.sentry
