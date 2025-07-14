@@ -10,7 +10,7 @@
 #!system_version=15
 #!loon_version=3.2.9(837)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!date=2025-07-12 00:57:50
+#!date=2025-07-14 22:29:43
 
 [Rule]
 DOMAIN,api.biliapi.com,REJECT
@@ -21,6 +21,7 @@ DOMAIN,line3-h5-mobile-api.biligame.com,REJECT
 DOMAIN-SUFFIX,chat.bilibili.com,REJECT
 
 [Rewrite]
+^https:\/\/api\.bilibili\.com\/x\/pd-proxy\/tracker\? response-body-json-jq '.data[][]?="chat.bilibili.com:3478"'
 ^https:\/\/app\.bilibili\.com\/x\/v2\/splash\/(list|show|event\/list2)\? response-body-json-jq '.data |= with_entries(if .key | IN("show", "event_list") then .value = [] else . end)'
 ^https:\/\/app\.bilibili\.com\/x\/resource\/show\/tab\/v2\? response-body-json-jq jq-path="https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Bilibili_remove_ads/tab_Bilibili_remove_ads.jq"
 ^https:\/\/app\.bilibili\.com\/x\/v2\/feed\/index\? response-body-json-jq 'if .data.items then .data.items |= map(select((.banner_item == null) and (.ad_info == null) and (.card_goto == "av") and (.card_type | IN("small_cover_v2", "large_cover_single_v9", "large_cover_v1")))) end'
@@ -39,7 +40,7 @@ DOMAIN-SUFFIX,chat.bilibili.com,REJECT
 ^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.view\.v1\.View\/TFInfo$ mock-response-body data-type=base64 data="AAAAAAIIAQ==" mock-data-is-base64=true
 
 [Script]
-http-response ^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\? script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_35, argument=%5B%5B%22json-del%22%2C%5B%22data.common_equip%22%5D%5D%5D
+http-response ^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\? script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_36, argument=%5B%5B%22json-del%22%2C%5B%22data.common_equip%22%5D%5D%5D
 
 http-request ^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.community\.service\.dm\.v1\.DM\/DmSegMobile$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Bilibili_remove_ads/Bilibili_airborne_kokoryh.js, requires-body=true, binary-body-mode=true, tag=空降助手, argument=[{logLevel}]
 
