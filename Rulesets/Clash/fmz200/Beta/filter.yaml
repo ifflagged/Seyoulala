@@ -1,4 +1,4 @@
-#规则数量:9677
+#规则数量:9686
 #不支持的规则数量:1
 #已排除的规则数量:0
 #不支持的规则:
@@ -9503,6 +9503,15 @@ payload:
   - DOMAIN-SUFFIX,banner.itweb.co.za
   - DOMAIN-SUFFIX,banners.itweb.co.za
   - DOMAIN-SUFFIX,xn--3bs795g.zone
+  - DOMAIN-SUFFIX,ppezijkacga.com
+  - DOMAIN-SUFFIX,kreopbkabsit.com
+  - DOMAIN-SUFFIX,admiitad.com
+  - DOMAIN-SUFFIX,thelifeandmore.com
+  - DOMAIN-SUFFIX,fractionfridgejudiciary.com
+  - DOMAIN-SUFFIX,ocponcphaafb.com
+  - DOMAIN-SUFFIX,tapwhigwy.com
+  - DOMAIN-SUFFIX,ahqovxli.com
+  - DOMAIN-SUFFIX,fipabtomqok.com
   - IP-CIDR,117.177.248.17/32,no-resolve
   - IP-CIDR,117.177.248.41/32,no-resolve
   - IP-CIDR,223.87.176.139/32,no-resolve
