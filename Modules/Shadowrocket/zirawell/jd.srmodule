@@ -54,7 +54,7 @@ http-response ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=lite_Smart
 [Script]
 jd = type=http-response, pattern=^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(?>deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/jd/jd.js, requires-body=true, max-size=0
 
-jx = type=http-response, pattern=^https?:\/\/api\.m\.jd\.com\/api\?functionId=delivery_show, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/jd/jingxi.js, requires-body=true, max-size=0
+jx = type=http-response, pattern=^https?:\/\/api\.m\.jd\.com\/api\?functionId=delivery_show, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/jd/jx.js, requires-body=true, max-size=0
 
 [MITM]
 hostname = %APPEND% api.m.jd.com, *.jddebug.com, bdsp-x.jd.com, dsp-x.jd.com, storage.360buyimg.com, img*.360buyimg.com

@@ -2,13 +2,13 @@
 #!desc=去除烦人的广告
 #!category=Jacob
 
-#!date=2025-07-14 04:32:46
+#!date=2025-07-14 08:17:03
 
 [Script]
-黑料去广告 = type=http-response, pattern=^https?:\/\/(18hlw\.com|f1gcp\.gmrfmboo\.cc|7efyw\.gfacewb\.cc|upu62\.cc|dlj4chrttcutc\.cloudfront\.net).*, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Yuheng0101/heiliao/web.js, requires-body=true, max-size=0, timeout=60
+黑料去广告 = type=http-response, pattern=^https?:\/\/(18hlw\.com|hfs6i\.tivxhma\.cc|f1gcp\.gmrfmboo\.cc|upu62\.cc|dlj4chrttcutc\.cloudfront\.net).*, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Yuheng0101/heiliao/web.js, requires-body=true, max-size=0, timeout=60
 
 黑料App去广告 = type=http-response, pattern=^https:\/\/api(\d+)?.hlwapi(\d+)?\.com\/api\.php\/api\/index\/(config|userInfo|index|detail), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Yuheng0101/heiliao/app.js, requires-body=true, max-size=-1, timeout=30
 
 [MITM]
-hostname = %APPEND% 18hlw.com, f1gcp.gmrfmboo.cc, 7efyw.gfacewb.cc, upu62.cc, dlj4chrttcutc.cloudfront.net, api*.hlwapi*.com
+hostname = %APPEND% 18hlw.com, hfs6i.tivxhma.cc, f1gcp.gmrfmboo.cc, upu62.cc, dlj4chrttcutc.cloudfront.net, api*.hlwapi*.com
 
