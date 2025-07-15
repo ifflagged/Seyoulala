@@ -1579,6 +1579,7 @@ http-request ^https?:\/\/(raw|gist)\.githubusercontent\.com\/ header-replace Acc
 ^https?:\/\/(?>csc|osg)-service\.sgcc\.com\.cn:\d+\/.*\/app_api\/selectInfoByCondition data-type=text data="{}" status-code=200
 # FleaMarket_remove_ads
 ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlecommerce\.splash\.ads\/ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.user\.strategy\.list\/ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.item\.recommend\.list\/ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.local\.near\.by\.corner\.info\/ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.item\.buy\.feeds\/ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
