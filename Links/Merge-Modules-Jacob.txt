@@ -147,7 +147,7 @@ Modules/Surge/zirawell/ejoy.sgmodule # Loon,Shadowrocket
 
 # Z #
 Modules/Surge/zirawell/ccb.sgmodule # Loon,Shadowrocket
-Modules/Surge/zirawell/10086.sgmodule # Loon,Shadowrocket
+# Modules/Surge/zirawell/10086.sgmodule # Loon,Shadowrocket
 Modules/Surge/zirawell/boc.sgmodule # Loon,Shadowrocket
 Modules/Surge/zirawell/cmb.sgmodule# Loon,Shadowrocket
 Modules/Surge/zirawell/alipay.sgmodule # Loon,Shadowrocket
