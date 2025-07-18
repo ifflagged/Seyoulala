@@ -1,11 +1,7 @@
-#!name=bydwc
-#!desc=bydwc
-#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
-#!tag=Jacob
+bydwc%0A：Error: Response code 404 (Not Found)
 
-[Rewrite]
-^https?:\/\/cache\.bydauto\.com\.cn\/dilink_user_upload\/20 mock-response-body data-type=text data="" status-code=200
 
-[MITM]
-hostname = cache.bydauto.com.cn
 
+
+
+Script Hub 重写转换: ❌  可自行翻译错误信息或复制错误信息后点击通知进行反馈
