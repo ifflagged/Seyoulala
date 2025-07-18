@@ -73,7 +73,8 @@ Modules/Surge/zirawell/ehaier.sgmodule # Loon,Shadowrocket
 # I #
 
 # J #
-Modules/Surge/githubdulong/JD_Helper.sgmodule # Loon,Shadowrocket
+# Modules/Surge/githubdulong/JD_Helper.sgmodule # Loon,Shadowrocket
+Modules/Surge/githubdulong/jd_price2.sgmodule # Loon,Shadowrocket
 # Modules/Surge/Kelee/JD_Price.sgmodule
 Modules/Surge/Kelee/JD_remove_ads.sgmodule # Loon,Shadowrocket
 Modules/Surge/zirawell/jd.sgmodule # Loon,Shadowrocket
