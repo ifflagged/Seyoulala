@@ -2,7 +2,7 @@
 #!desc=去除烦人的广告
 #!category=Jacob
 
-#!date=2025-07-18 00:56:23
+#!date=2025-07-18 04:31:09
 
 [Script]
 黑料去广告 = type=http-response, pattern=^https?:\/\/(18hlw\.com|3kivz\.jdwwfzr\.cc|fu3mk\.jatmdgqr\.cc|upu62\.cc|dlj4chrttcutc\.cloudfront\.net).*, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Yuheng0101/heiliao/web.js, requires-body=true, max-size=0, timeout=60
