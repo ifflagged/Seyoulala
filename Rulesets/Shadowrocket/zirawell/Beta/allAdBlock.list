@@ -1,4 +1,4 @@
-#规则数量:1321
+#规则数量:1318
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -569,7 +569,6 @@ DOMAIN-SUFFIX,adbehavior.wsa.ximalaya.com
 DOMAIN-SUFFIX,adbox.sina.com.cn
 DOMAIN-SUFFIX,adbs.ximalaya.com
 DOMAIN-SUFFIX,adcanvas.com
-DOMAIN-SUFFIX,adfile.wifi8.com
 DOMAIN-SUFFIX,adimg.uve.weibo.com
 DOMAIN-SUFFIX,adimg.vue.weibo.com
 DOMAIN-SUFFIX,adiu.amap.com
@@ -579,7 +578,6 @@ DOMAIN-SUFFIX,adm.baidu.com
 DOMAIN-SUFFIX,adm.leju.sina.com.cn
 DOMAIN-SUFFIX,admobile.top
 DOMAIN-SUFFIX,adnet.sohu.com
-DOMAIN-SUFFIX,adnew.wifi8.com
 DOMAIN-SUFFIX,adping.qq.com
 DOMAIN-SUFFIX,adpm.app.qq.com
 DOMAIN-SUFFIX,adrdir.qq.com
@@ -736,7 +734,6 @@ DOMAIN-SUFFIX,cm.kwad.com
 DOMAIN-SUFFIX,cm.passport.iqiyi.com
 DOMAIN-SUFFIX,cm.track.biligame.bilibili.com
 DOMAIN-SUFFIX,cmop.mgtv.com
-DOMAIN-SUFFIX,cmsapi.wifi8.com
 DOMAIN-SUFFIX,cmx.autohome.com.cn
 DOMAIN-SUFFIX,cn-shanghai.nlb.aliyuncs.com
 DOMAIN-SUFFIX,conv.youdao.com
