@@ -1,4 +1,4 @@
-#规则数量:9686
+#规则数量:9625
 #不支持的规则数量:1
 #已排除的规则数量:0
 #不支持的规则:
@@ -7,68 +7,6 @@
 #-----------------以下为解析后的规则-----------------#
 
 payload:
-  - DOMAIN,ad.12306.cn
-  - DOMAIN-KEYWORD,anti-ad.net
-  - DOMAIN,log.mmstat.com
-  - DOMAIN,sycm.mmstat.com
-  - DOMAIN,static.jssp.tv
-  - DOMAIN,lain.bgm.tv
-  - DOMAIN,tiao.cjkypo.com
-  - DOMAIN,ok.zuidapic.com
-  - DOMAIN,ts.thefilehosting.com
-  - DOMAIN,deo.shopeemobile.com
-  - DOMAIN,m3u8.255tv.tk
-  - DOMAIN,m3u8.mstopq.com
-  - DOMAIN,ain.bgm.tv
-  - DOMAIN-KEYWORD,vip.lz-cdn
-  - DOMAIN-KEYWORD,ax1x.com
-  - DOMAIN-KEYWORD,o.lencr.org
-  - DOMAIN-KEYWORD,ttcdn-tos.kkimg.cc
-  - DOMAIN,sdk.alibaba.com.ailbaba.me
-  - DOMAIN,img.ffzypic.com
-  - DOMAIN,img.liangzipic.com
-  - DOMAIN,img.bfzypic.com
-  - DOMAIN,img.kuaikanzy.net
-  - DOMAIN,vip.imgffzy.com
-  - DOMAIN,vip.ffzyread.com
-  - DOMAIN,cdn.jsdelivr.net
-  - DOMAIN,image.maimn.com
-  - DOMAIN-KEYWORD,bfzycdn.com
-  - DOMAIN-KEYWORD,vip.kuaikan-cdn
-  - DOMAIN-KEYWORD,vip.ffzy-play
-  - DOMAIN-KEYWORD,vip.ffzy-online
-  - DOMAIN-KEYWORD,push.apple.com
-  - DOMAIN,time.apple.com
-  - DOMAIN-KEYWORD,weather-edge.apple.com
-  - DOMAIN-KEYWORD,weather-adge.apple.com
-  - DOMAIN-SUFFIX,weather-data.apple.com
-  - DOMAIN-SUFFIX,weather-map.apple.com
-  - DOMAIN-SUFFIX,weather-analytics-events.apple.com
-  - DOMAIN-KEYWORD,buy.itunes.apple.com
-  - DOMAIN-KEYWORD,icloud.com
-  - DOMAIN-KEYWORD,api.smoot.apple.com
-  - DOMAIN-KEYWORD,api.smoot.apple.cn
-  - DOMAIN,init.ess.apple.com
-  - DOMAIN-KEYWORD,ssl.apple.com
-  - DOMAIN-KEYWORD,humb.apple.com
-  - DOMAIN,smp-device-content.apple.com
-  - DOMAIN-KEYWORD,api-adservices.apple.com
-  - DOMAIN-KEYWORD,ls.apple.com
-  - DOMAIN-KEYWORD,gsa.apple.com
-  - DOMAIN-KEYWORD,ess.apple.com
-  - DOMAIN,itunes.apple.com
-  - DOMAIN-KEYWORD,ctc.qzs.qzone.qq.com
-  - DOMAIN,analytics.strava.com
-  - DOMAIN,fairplay.l.qq.com
-  - DOMAIN,livew.l.qq.com
-  - DOMAIN,vd.l.qq.com
-  - DOMAIN,vi.l.qq.com
-  - DOMAIN,msg.umeng.com
-  - DOMAIN,msg.umengcloud.com
-  - DOMAIN-KEYWORD,aw-s.tripcdn.com
-  - DOMAIN-KEYWORD,trip.com
-  - IP-CIDR,192.168.0.1/24,no-resolve
-  - IP-CIDR,192.168.1.1/24,no-resolve
   - DOMAIN-SUFFIX,miaozhen.com
   - DOMAIN-SUFFIX,ad-sign.byteimg.com
   - DOMAIN-SUFFIX,tos.pstatp.com
@@ -327,11 +265,12 @@ payload:
   - DOMAIN,httpdns.baidubce.com
   - DOMAIN,lc.map.baidu.com
   - IP-CIDR,180.76.76.200/32,no-resolve
-  - DOMAIN-KEYWORD,api.sobot.com
-  - DOMAIN-SUFFIX,cm.ad.bilibili.com
-  - DOMAIN-SUFFIX,cm.adcommon.bilibili.com
-  - DOMAIN-SUFFIX,cm.game.bilibili.com
-  - DOMAIN-SUFFIX,cm.track.biligame.bilibili.com
+  - DOMAIN,app.biliapi.net
+  - DOMAIN,api.biliapi.net
+  - DOMAIN,app.biliapi.com
+  - DOMAIN,api.biliapi.com
+  - DOMAIN,line3-h5-mobile-api.biligame.com
+  - DOMAIN-SUFFIX,chat.bilibili.com
   - DOMAIN,advertise.baicizhan.com
   - DOMAIN,advertise.baicizhan.org
   - DOMAIN-SUFFIX,iad.appboy.com

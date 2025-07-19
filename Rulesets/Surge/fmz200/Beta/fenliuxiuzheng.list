@@ -1,4 +1,4 @@
-#规则数量:62
+#规则数量:63
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -54,6 +54,7 @@ DOMAIN-KEYWORD,ls.apple.com
 DOMAIN-KEYWORD,gsa.apple.com
 DOMAIN-KEYWORD,ess.apple.com
 DOMAIN,itunes.apple.com
+DOMAIN-KEYWORD,amp-api.podcasts.apple.com
 DOMAIN-KEYWORD,ctc.qzs.qzone.qq.com
 DOMAIN,analytics.strava.com
 DOMAIN,fairplay.l.qq.com
