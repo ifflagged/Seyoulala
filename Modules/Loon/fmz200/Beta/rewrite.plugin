@@ -9,7 +9,7 @@
 #!tg-group=https://t.me/lanjieguanggao
 #!tag=去广告, 奶思
 #!system=iOS, iPadOS
-#!date=2025-07-17 20:00:00
+#!date=2025-07-19 12:00:00
 #!remark=下方的所有规则都标注了对应的hostname，可能存在错误或者遗漏，欢迎反馈。对于无法/可选MITM的hostname都特别做了“如开启可自行添加主机名”提示，如果提示后面没有标注主机名则包含所有主机名，否则只包含提示语后面的主机名。
 
 [Rewrite]
@@ -169,7 +169,12 @@
 # hostname = mres.aibank.com
 ^https?:\/\/mres\.aibank\.com\/app\/resource\/cim\/cim0000001\/.+\.jpg - reject-200
 # hostname = app.bilibili.com, api.bilibili.com, api.live.bilibili.com, grpc.biliapi.net
-^https:\/\/api\.live\.bilibili\.com\/xlive\/e-commerce-interface\/v1\/ecommerce-user\/get_shopping_info\? - reject-dict
+^http:\/\/[\d\.]+:8000\/v1\/resource\/\w{32}-1-SPLASH - reject-dict
+^http:\/\/upos-sz-static\.bilivideo\.com\/ssaxcode\/\w{2}\/\w{2}\/\w{32}-1-SPLASH - reject-dict
+# 屏蔽默认搜索框关键词
+^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.interface\.v1\.Search\/DefaultWords - reject-dict
+# 视频左下角流量卡推荐
+^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.view\.v1\.View\/TFInfo$ - reject-dict
 # hostname = manga.bilibili.com, i*.hdslb.com
 ^https?:\/\/i\d\.hdslb\.com\/bfs\/fawkes - reject-dict
 ^https?:\/\/i\d\.hdslb\.com\/bfs\/manga-static\/\w+\.(jpg|png)$ - reject-200
@@ -1969,15 +1974,6 @@ https://.+\.gamersky.com/v1/statisticAd - reject-dict
 ^https?:\/\/apio\.zhengqi100\.com\/forum\/thread\/listsHome - reject-dict
 # hostname = beehiveapi.58.com
 ^https?:\/\/beehiveapi\.58\.com\/adplace\/zcm - reject-dict
-#^https:\/\/ap[ip]\.bilibili\.com\/x\/(?:resource\/(?:top\/activity|patch\/tab)|v2\/search\/square|vip\/ads\/materials)\? mock-response-body data-type=text data="{"code":-404,"message":"-404","ttl":1,"data":null}" status-code=200
-#^https:\/\/ap[ip]\.bilibili\.com\/x\/(?:resource\/(?:top\/activity|patch\/tab)|v2\/search\/square|vip\/ads\/materials)\? mock-response-body data-type=text status-code=200 data="{"code":-404,"message":"-404","ttl":1,"data":null}"
-#^https:\/\/api\.bilibili\.com\/pgc\/activity\/deliver\/material\/receive\? mock-response-body data-type=text data="{"code":0,"data":{"closeType":"close_win","container":[],"showTime":""},"message":"success"}" status-code=200
-#^https:\/\/api\.bilibili\.com\/pgc\/activity\/deliver\/material\/receive\? mock-response-body data-type=text status-code=200 data="{"code":0,"data":{"closeType":"close_win","container":[],"showTime":""},"message":"success"}"
-#^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.interface\.v1\.Teenagers\/ModeStatus$ mock-response-body data-type=base64 data="AAAAABMKEQgCEgl0ZWVuYWdlcnMgAioA" mock-data-is-base64=true
-#^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.interface\.v1\.Teenagers\/ModeStatus$ mock-response-body data-type=base64 data="AAAAABMKEQgCEgl0ZWVuYWdlcnMgAioA" mock-data-is-base64=true
-#^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.interface\.v1\.Search\/DefaultWords$ mock-response-body data-type=base64 data="AAAAACkaHeaQnOe0ouinhumikeOAgeeVquWJp+aIlnVw5Li7IgAoAToAQgBKAA==" mock-data-is-base64=true
-#^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.interface\.v1\.Search\/DefaultWords$ mock-response-body data-type=base64 data="AAAAACkaHeaQnOe0ouinhumikeOAgeeVquWJp+aIlnVw5Li7IgAoAToAQgBKAA==" mock-data-is-base64=true
-#^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.view\.v1\.View\/TFInfo$ mock-response-body data-type=base64 data="AAAAAAIIAQ==" mock-data-is-base64=true
 # hostname = wrapper.cyapi.cn, api.caiyunapp.com
 ^https?:\/\/wrapper\.cyapi\.cn\/v1\/activity\? mock-response-body data="undefined"
 #^https:\/\/(m|mwsa)\.ximalaya\.com\/community\/square\/v\d\/stream\? mock-response-body data-type=json data="{"data":{"cards":[{"content":{},"type":"RECOMMENDS"}]},"ret":0}" status-code=200
@@ -2051,11 +2047,55 @@ http-response ^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/(c\/f\/(frs\/(page|
 
 http-response ^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/c\/f\/(frs\/(page|threadlist|generalTabList)|pb\/page|excellent\/personalized)\?cmd script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/rewrite/tieba-proto.js, requires-body=true, binary-body-mode=true, timeout=60, tag=tieba-proto
 
-http-response #^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\? script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_297, argument=%5B%5B%22json-del%22%2C%5B%22data.common_equip%22%5D%5D%5D
+# 青少年模式(不支持
+#http-request ^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.interface\.v1\.Teenagers\/ModeStatus$ script-path=https://klraw.pages.dev/kelv1n1n/script/refs/heads/main/js/bilibili-echo.js?token=209863, requires-body=true, timeout=60, tag=bilibili-echo
 
-http-request ^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.community\.service\.dm\.v1\.DM\/DmSegMobile$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/rewrite/bilibili.protobuf.request.js, requires-body=true, binary-body-mode=true, timeout=60, tag=bilibili.protobuf.request
+# 开屏广告
+http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/splash\/list script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/rewrite/bilibili-ad.js?token=209863, requires-body=true, timeout=60, tag=bilibili-ad
 
-http-response ^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.(app\.(show\.v1\.Popular\/Index|dynamic\.v2\.Dynamic\/DynAll|view(unite)?\.v1\.View\/(View|ViewProgress|RelatesFeed)|playurl\.v1\.PlayURL\/PlayView|playerunite\.v1\.Player\/PlayViewUnite)|polymer\.app\.search\.v1\.Search\/SearchAll|community\.service\.dm\.v1\.DM\/DmView|main\.community\.reply\.v1\.Reply\/MainList|pgc\.gateway\.player\.v2\.PlayURL\/PlayView)$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/rewrite/bilibili.protobuf.response.js, requires-body=true, binary-body-mode=true, timeout=60, tag=bilibili.protobuf.response
+http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/splash\/show script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/rewrite/bilibili-ad.js?token=209863, requires-body=true, timeout=60, tag=bilibili-ad
+
+# 首页视频信息流
+http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/feed\/index\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/rewrite/bilibili-ad.js?token=209863, requires-body=true, timeout=60, tag=bilibili-ad
+
+# 首页顶部右边图标、导航栏列表、底部tab栏目
+http-response ^https:\/\/app\.bilibili\.com\/x\/resource\/show\/tab\/v2 script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/rewrite/bilibili-ad.js?token=209863, requires-body=true, timeout=60, tag=bilibili-ad
+
+# 搜索页推荐
+http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/search\/square script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/rewrite/bilibili-ad.js?token=209863, requires-body=true, timeout=60, tag=bilibili-ad
+
+# 首页右上角活动小图标
+http-response ^https:\/\/app\.bilibili\.com\/x\/resource\/top\/activity\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/rewrite/bilibili-ad.js?token=209863, requires-body=true, timeout=60, tag=bilibili-ad
+
+# 我的页面简化
+http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/account\/mine script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/rewrite/bilibili-ad.js?token=209863, requires-body=true, timeout=60, tag=bilibili-ad
+
+# 直播相关净化
+http-response ^https:\/\/api\.live\.bilibili\.com\/xlive\/(?:app-interface\/v2\/index\/feed|app-room\/v1\/index\/getInfoBy(?:Room|User))\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/rewrite/bilibili-ad.js?token=209863, requires-body=true, timeout=60, tag=bilibili-ad
+
+# 直播tab页面在选择标签后的banner
+http-response ^https:\/\/api\.live\.bilibili\.com\/xlive\/app-interface\/v2\/second\/getList script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/rewrite/bilibili-ad.js?token=209863, requires-body=true, timeout=60, tag=bilibili-ad
+
+# 移除热门话题
+#http-response ^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.show\.v1\.Popular\/Index$ script-path=https://raw.githubusercontent.com/kokoryh/Sparkle/master/dist/bilibili.protobuf.js, requires-body=true, binary-body-mode=true, timeout=60, tag=bilibili.protobuf
+
+# 视频播放详情页广告
+#http-response ^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.viewunite\.v1\.View\/(?:RelatesFeed|View|ViewProgress)$ script-path=https://raw.githubusercontent.com/kokoryh/Sparkle/master/dist/bilibili.protobuf.js, requires-body=true, binary-body-mode=true, timeout=60, tag=bilibili.protobuf
+
+# 动态页广告
+#http-response ^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.dynamic\.v2\.Dynamic\/DynAll$ script-path=https://raw.githubusercontent.com/kokoryh/Sparkle/master/dist/bilibili.protobuf.js, requires-body=true, binary-body-mode=true, timeout=60, tag=bilibili.protobuf
+
+# 搜索结果信息流广告
+#http-response ^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.polymer\.app\.search\.v1\.Search\/SearchAll$ script-path=https://raw.githubusercontent.com/kokoryh/Sparkle/master/dist/bilibili.protobuf.js, requires-body=true, binary-body-mode=true, timeout=60, tag=bilibili.protobuf
+
+# 交互式弹幕
+#http-response ^https:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.community\.service\.dm\.v1\.DM\/DmView script-path=https://raw.githubusercontent.com/kokoryh/Sparkle/master/dist/bilibili.protobuf.js, requires-body=true, binary-body-mode=true, timeout=60, tag=bilibili.protobuf
+
+# 评论区广告
+#http-response ^https:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.main\.community\.reply\.v1\.Reply\/MainList script-path=https://raw.githubusercontent.com/kokoryh/Sparkle/master/dist/bilibili.protobuf.js, requires-body=true, binary-body-mode=true, timeout=60, tag=bilibili.protobuf
+
+#^https:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.main\.community\.reply\.v1\.Reply\/MainList url script-response-body https://raw.githubusercontent.com/kokoryh/Sparkle/master/dist/bilibili.protobuf.js
+http-response ^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.(app\.(show\.v1\.Popular\/Index|dynamic\.v2\.Dynamic\/DynAll|view(unite)?\.v1\.View\/(View|ViewProgress|RelatesFeed)|playurl\.v1\.PlayURL\/PlayView|playerunite\.v1\.Player\/PlayViewUnite)|polymer\.app\.search\.v1\.Search\/SearchAll|community\.service\.dm\.v1\.DM\/(DmView|DmSegMobile)|main\.community\.reply\.v1\.Reply\/MainList|pgc\.gateway\.player\.v2\.PlayURL\/PlayView)$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/rewrite/bilibili.protobuf.js, requires-body=true, binary-body-mode=true, timeout=60, tag=bilibili.protobuf
 
 http-response ^https?:\/\/manga\.bilibili\.com\/twirp\/user\.v\d\.User\/UCenterConf script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/rewrite/bilibiliManga.js, requires-body=true, timeout=60, tag=bilibiliManga
 
@@ -2526,11 +2566,11 @@ http-response ^https?:\/\/(edith|rec|www)\.xiaohongshu\.com\/api\/sns\/(v4\/note
 # 评论区用户id置空 (实验功能可能无效)
 http-response ^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/note\/comment\/list script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/rewrite/replace-body.js, requires-body=true, timeout=30, tag=replaceBody, argument=red_id-%3Efmz200
 
-http-response #^https:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/football-portal\/diff2\/batch\? url script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_2704, argument=%5B%5B%22json-del%22%2C%5B%22json.ad%22%2C%22json.toc%22%5D%5D%5D
+http-response #^https:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/football-portal\/diff2\/batch\? url script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_2724, argument=%5B%5B%22json-del%22%2C%5B%22json.ad%22%2C%22json.toc%22%5D%5D%5D
 
-http-response #^https:\/\/mobwsa\.ximalaya\.com\/mobile-playpage\/playpage\/tabs\/v2\/ url script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_2710, argument=%5B%5B%22json-del%22%2C%5B%22data.playpage.resourceMap.defaultResource%22%2C%22data.playpage.resourceMap.playPageTip%22%5D%5D%5D
+http-response #^https:\/\/mobwsa\.ximalaya\.com\/mobile-playpage\/playpage\/tabs\/v2\/ url script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_2730, argument=%5B%5B%22json-del%22%2C%5B%22data.playpage.resourceMap.defaultResource%22%2C%22data.playpage.resourceMap.playPageTip%22%5D%5D%5D
 
-http-response #^https:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/mobile-user\/v\d\/homePage\/ url script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_2716, argument=%5B%5B%22json-del%22%2C%5B%22data.freeListenV2%22%5D%5D%5D
+http-response #^https:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/mobile-user\/v\d\/homePage\/ url script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_2736, argument=%5B%5B%22json-del%22%2C%5B%22data.freeListenV2%22%5D%5D%5D
 
 # 响应体
 http-response ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/rewrite/youtube.response.js, requires-body=true, binary-body-mode=true, timeout=60, tag=youtube.response
