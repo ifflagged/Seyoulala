@@ -1,4 +1,4 @@
-#规则数量:9625
+#规则数量:9619
 #不支持的规则数量:1
 #已排除的规则数量:0
 #不支持的规则:
@@ -265,12 +265,6 @@ payload:
   - DOMAIN,httpdns.baidubce.com
   - DOMAIN,lc.map.baidu.com
   - IP-CIDR,180.76.76.200/32,no-resolve
-  - DOMAIN,app.biliapi.net
-  - DOMAIN,api.biliapi.net
-  - DOMAIN,app.biliapi.com
-  - DOMAIN,api.biliapi.com
-  - DOMAIN,line3-h5-mobile-api.biligame.com
-  - DOMAIN-SUFFIX,chat.bilibili.com
   - DOMAIN,advertise.baicizhan.com
   - DOMAIN,advertise.baicizhan.org
   - DOMAIN-SUFFIX,iad.appboy.com
