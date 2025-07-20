@@ -10,8 +10,8 @@
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
 #!date=2025-05-13 15:17:08
 
-[Script]
-http-response ^https?:\/\/m\.pvp\.xoyo\.com\/conf\/server-mapping$ script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_12, argument=%5B%5B%22json-del%22%2C%5B%22data.splashConf%22%2C%22data.splashConfNew%22%5D%5D%5D
+[Rewrite]
+^https?:\/\/m\.pvp\.xoyo\.com\/conf\/server-mapping$ response-body-json-del data.splashConf data.splashConfNew
 
 [MITM]
 hostname = m.pvp.xoyo.com

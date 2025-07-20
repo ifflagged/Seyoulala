@@ -19,8 +19,12 @@ DOMAIN,ad.maoyan.com,REJECT
 DOMAIN,e.jparking.cn,REJECT
 
 [Rewrite]
+^https:\/\/mcsp\.cloudpnr\.com\/api\/miniapp\/popular\/T_MINIAPP$ response-body-json-del data
+^https:\/\/saas-ad\.cloudpnr\.com\/huifuad-base-api\/api\/tactics\/ad$ response-body-json-del data[0] data[1] data[2]
+^https:\/\/rms\.meituan\.com\/api\/v1\/rmsmina\/c\/queryShopPortalInfo\? response-body-json-del data.popUpWindows
 ^https:\/\/chong\.qq\.com\/tws\/wxmobile\/GetProduct4App\? response-body-json-jq 'del(.respInfo.reserveProductList) | .respInfo.shortcut |= map(select(.name != "充流量" and .name != "领话费券"))'
 ^https:\/\/chong\.qq\.com\/tws\/wxmobile4app\/GetSecondProduct\? response-body-json-jq 'del(.respInfo.productList) | .respInfo.shortcut |= map(select(.name != "充流量" and .name != "领话费券"))'
+^https:\/\/chong\.qq\.com\/tws\/usernumberinfo\/GetUserInfo\? response-body-json-del data.request.number.markSeat.servicehallOperList data.request.number.servicehallOperList data.request.number.markSeat.servicehallFuncList data.request.number.servicehallFuncList
 ^https:\/\/webapi\.qmai\.cn\/web\/catering\/advertising\/ - reject-dict
 ^https:\/\/webapi\.qmai\.cn\/web\/cmk-center\/marketing\/canvas\/advert-reach - reject
 ^https:\/\/images\.qmai\.cn\/s214925\/2023 - reject-dict
@@ -132,14 +136,6 @@ DOMAIN,e.jparking.cn,REJECT
 ^https:\/\/wx\.10086\.cn\/qwhdhub\/activity\/info - reject-dict
 
 [Script]
-http-response ^https:\/\/mcsp\.cloudpnr\.com\/api\/miniapp\/popular\/T_MINIAPP$ script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_125, argument=%5B%5B%22json-del%22%2C%5B%22data%22%5D%5D%5D
-
-http-response ^https:\/\/saas-ad\.cloudpnr\.com\/huifuad-base-api\/api\/tactics\/ad$ script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_126, argument=%5B%5B%22json-del%22%2C%5B%22data%5B0%5D%22%2C%22data%5B1%5D%22%2C%22data%5B2%5D%22%5D%5D%5D
-
-http-response ^https:\/\/rms\.meituan\.com\/api\/v1\/rmsmina\/c\/queryShopPortalInfo\? script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_128, argument=%5B%5B%22json-del%22%2C%5B%22data.popUpWindows%22%5D%5D%5D
-
-http-response ^https:\/\/chong\.qq\.com\/tws\/usernumberinfo\/GetUserInfo\? script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_131, argument=%5B%5B%22json-del%22%2C%5B%22data.request.number.markSeat.servicehallOperList%22%2C%22data.request.number.servicehallOperList%22%2C%22data.request.number.markSeat.servicehallFuncList%22%2C%22data.request.number.servicehallFuncList%22%5D%5D%5D
-
 http-response ^https:\/\/webapi\.qmai\.cn\/web\/catering\/design\/homePage-Config script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/WexinMiniPrograms_Remove_ads/kff.js, requires-body=true, tag=企迈点单系统去广告
 
 http-response ^https:\/\/ump\.ems\.com\.cn\/new-generation-extend\/redis\/pageInfoByChannel script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/WexinMiniPrograms_Remove_ads/ems.js, requires-body=true, tag=EMS中国邮政物流速递去广告

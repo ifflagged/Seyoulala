@@ -17,6 +17,9 @@ DOMAIN,free-aos-cdn-image.amap.com,REJECT
 DOMAIN-SUFFIX,v.smtcdns.com,REJECT
 
 [Rewrite]
+^https:\/\/m5\.amap\.com\/ws\/shield\/search_business\/process\/marketingOperationStructured\? response-body-json-del data.commonMaterial data.tipsOperationLocation data.resourcePlacement
+^https:\/\/m5\.amap\.com\/ws\/shield\/search_poi\/homepage\? response-body-json-del history_tags
+^https:\/\/m5-zb\.amap\.com\/ws\/sharedtrip\/taxi\/order_detail_car_tips\? response-body-json-del data.carTips.data.popupInfo
 ^https:\/\/m5\.amap\.com\/ws\/shield\/search\/new_hotword\? - reject-dict
 ^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/card-service-(?:car-end|route-plan) - reject-dict
 ^https:\/\/m5\.amap\.com\/ws\/shield\/search_poi\/tips_adv\? - reject-dict
@@ -31,12 +34,6 @@ DOMAIN-SUFFIX,v.smtcdns.com,REJECT
 ^https:\/\/m5-zb\.amap\.com\/ws\/boss\/pay\/web\/paySuccess\/info\/request - reject-dict
 
 [Script]
-http-response ^https:\/\/m5\.amap\.com\/ws\/shield\/search_business\/process\/marketingOperationStructured\? script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_19, argument=%5B%5B%22json-del%22%2C%5B%22data.commonMaterial%22%2C%22data.tipsOperationLocation%22%2C%22data.resourcePlacement%22%5D%5D%5D
-
-http-response ^https:\/\/m5\.amap\.com\/ws\/shield\/search_poi\/homepage\? script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_20, argument=%5B%5B%22json-del%22%2C%5B%22history_tags%22%5D%5D%5D
-
-http-response ^https:\/\/m5-zb\.amap\.com\/ws\/sharedtrip\/taxi\/order_detail_car_tips\? script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_31, argument=%5B%5B%22json-del%22%2C%5B%22data.carTips.data.popupInfo%22%5D%5D%5D
-
 http-response ^https:\/\/m5\.amap\.com\/ws\/aos\/perception\/publicTravel\/beforeNavi\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Amap_remove_ads/Amap_remove_ads.js, requires-body=true, tag=移除路线规划推广
 
 http-response ^https:\/\/m5\.amap\.com\/ws\/bus\/plan\/integrate\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Amap_remove_ads/Amap_remove_ads.js, requires-body=true, tag=移除路线规划、导航结束页推广

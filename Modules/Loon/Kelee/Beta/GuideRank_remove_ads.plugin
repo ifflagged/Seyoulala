@@ -11,6 +11,8 @@
 #!date=2025-05-13 15:17:08
 
 [Rewrite]
+^https:\/\/zone\.guiderank-app\.com\/guiderank-web\/app\/home\/getHomePageV response-body-json-del data.countdownBanner data.newEvaluations data.freeToPayBannerPhotoUrl data.groupBuyingList data.multiCountdownBanner data.banners data.multiPlatformBanner data.specialSaleBannerPhotoUrl data.guide90Evaluation data.insurancePromotions
+^https:\/\/zone\.guiderank-app\.com\/guiderank-web\/app\/common\/getInitData\.do response-body-json-del data.SpecialSalePageMidTabConfig
 ^https:\/\/zone\.guiderank-app\.com\/guiderank-web\/app\/common\/getWeworkPromotionInfoBySceneType - reject-dict
 ^https:\/\/zone\.guiderank-app\.com\/guiderank-web\/app\/popUpAdCollection\/getActiveCollection\.do - reject-dict
 ^https:\/\/zone\.guiderank-app\.com\/guiderank-web\/app\/common\/getWeworkCategoryPromotionInfo - reject-dict
@@ -19,11 +21,6 @@
 ^https:\/\/zone\.guiderank-app\.com\/guiderank-web\/app\/manualOperationGoods\/pageManualOperationGoods - reject-dict
 ^https:\/\/zone\.guiderank-app\.com\/guiderank-web\/app\/specialSale\/listSpecialSalePageBanner - reject-dict
 ^https:\/\/zone\.guiderank-app\.com\/guiderank-web\/app\/personal\/getPersonPageInfo\.do - reject-dict
-
-[Script]
-http-response ^https:\/\/zone\.guiderank-app\.com\/guiderank-web\/app\/home\/getHomePageV script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_16, argument=%5B%5B%22json-del%22%2C%5B%22data.countdownBanner%22%2C%22data.newEvaluations%22%2C%22data.freeToPayBannerPhotoUrl%22%2C%22data.groupBuyingList%22%2C%22data.multiCountdownBanner%22%2C%22data.banners%22%2C%22data.multiPlatformBanner%22%2C%22data.specialSaleBannerPhotoUrl%22%2C%22data.guide90Evaluation%22%2C%22data.insurancePromotions%22%5D%5D%5D
-
-http-response ^https:\/\/zone\.guiderank-app\.com\/guiderank-web\/app\/common\/getInitData\.do script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_18, argument=%5B%5B%22json-del%22%2C%5B%22data.SpecialSalePageMidTabConfig%22%5D%5D%5D
 
 [MITM]
 hostname = zone.guiderank-app.com

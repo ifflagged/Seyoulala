@@ -15,10 +15,8 @@ DOMAIN,ad.seeyouyima.com,REJECT
 DOMAIN,axxd.xmseeyouyima.com,REJECT
 
 [Rewrite]
+^https:\/\/common\.seeyouyima\.com\/v2\/conf_list$ response-body-json-del data.confList.Minor_mode_card
 ^https:\/\/circle\.(xm)?seeyouyima\.com\/v\d\/article_recommend\? - reject
-
-[Script]
-http-response ^https:\/\/common\.seeyouyima\.com\/v2\/conf_list$ script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_16, argument=%5B%5B%22json-del%22%2C%5B%22data.confList.Minor_mode_card%22%5D%5D%5D
 
 [MITM]
 hostname = circle.seeyouyima.com, circle.xmseeyouyima.com, common.seeyouyima.com

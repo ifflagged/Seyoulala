@@ -14,11 +14,10 @@
 URL-REGEX,"^http:\/\/\w{32}\.jddebug\.com\/diagnose\?",REJECT
 
 [Rewrite]
+^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=basicConfig response-body-json-replace data.JDMessage.socketmonitor.isSocketEstablishedAhead 0 data.JDMessage.socketmonitor.isSocketReport 0 data.JDHttpToolKit.httpdns.httpdns 0
 ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(searchBoxWord|stationPullService|uniformRecommend[06]) - reject-dict
 
 [Script]
-http-response ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=basicConfig script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_15, argument=%5B%5B%22json-replace%22%2C%5B%5B%22data.JDMessage.socketmonitor.isSocketEstablishedAhead%22%2C0%5D%2C%5B%22data.JDMessage.socketmonitor.isSocketReport%22%2C0%5D%2C%5B%22data.JDHttpToolKit.httpdns.httpdns%22%2C0%5D%5D%5D%5D
-
 http-response ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/JD_remove_ads/JD_remove_ads.js, requires-body=true, tag=移除京东广告
 
 [MITM]

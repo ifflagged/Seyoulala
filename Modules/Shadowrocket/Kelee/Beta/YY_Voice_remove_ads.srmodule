@@ -20,8 +20,8 @@ DOMAIN,ysad.yy.com,REJECT
 ^https:\/\/data\.3g\.yy\.com\/popup\/topLiveCardPopup\? - reject-dict
 ^https:\/\/yyapp-act-entrance\.yy\.com\/entrance\/list\? - reject-dict
 
-[Script]
-body_rewrite_20 = type=http-response, pattern=^https:\/\/tab\.yy\.com\/tabs\?, script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22json-del%22%2C%5B%22data.tabsForSelect%22%5D%5D%5D
+[Body Rewrite]
+http-response-jq ^https:\/\/tab\.yy\.com\/tabs\? 'delpaths([["data","tabsForSelect"]])'
 
 [MITM]
 hostname = %APPEND% yyapp-act-entrance.yy.com, yyapp-fastnet.yy.com, personal-center.yy.com, tab.yy.com, data.3g.yy.com, yyapp-idx.yy.com

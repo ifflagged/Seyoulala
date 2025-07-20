@@ -11,8 +11,11 @@
 #!date=2025-05-13 15:17:08
 
 [Rewrite]
+^https:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzlogic\/mycontinenthomepage\? response-body-json-del respData.topOpera.leftOpera respData.topOpera.rightOpera2 respData.topActBanner respData.bmArea
+^https:\/\/app\.zhuanzhuan\.com\/zzx\/transfer\/getConfigInfo\? response-body-json-del respData.freeMarketTabLeadPop respData.topOperations
 ^https:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzinfoshow\/getfeedflowinfo\? response-body-json-jq 'if .respData.userRed.campName == "OCD挂件" then del(.respData.userRed) else . end | .respData.infoData |= map(del(.rotateResource,.appRecommendResource,."cargoGroupCardV2"))'
 ^https:\/\/app\.zhuanzhuan\.com\/zz\/transfer\/getmymoretools$ response-body-json-jq 'walk(if type == "object" and .name == "免流量特权" then empty else . end) | del(.respData.groupList[] | select(.groupName == "活动参与" or .groupName == "金融工具"))'
+^https:\/\/app\.zhuanzhuan\.com\/zz\/transfer\/getmyprofilev3$ response-body-json-del respData.bmNewInfo
 ^https:\/\/app\.zhuanzhuan\.com\/zz\/transfer\/getmyprofilev3$ response-body-json-jq 'del(.respData.itemGroupList[].itemList[] | select(.name == "天天赚钱" or .name == "借钱")) | del(.respData.itemGroupList[] | select(.groupType == 15))'
 ^https:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzlogic\/getOpenScreen$ - reject-dict
 ^https:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzinfoshow\/getwindvanecardv2$ - reject-dict
@@ -24,13 +27,6 @@
 ^https:\/\/app\.zhuanzhuan\.com\/zzopen\/ptsimpleshow\/recommendbymyloveinfo\? mock-response-body data-type=json data="{"respCode":0,"errorMsg":"null","errMsg":""}" status-code=200
 ^https:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzinfoshow\/footprintsamerecommend\? mock-response-body data-type=json data="{"respCode":0,"errorMsg":"","errMsg":""}" status-code=200
 ^https:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzinfoshow\/getchoicegoodsinfos\? mock-response-body data-type=json data="{"respCode":0,"respData":{},"errorMsg":"","errMsg":""}" status-code=200
-
-[Script]
-http-response ^https:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzlogic\/mycontinenthomepage\? script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_13, argument=%5B%5B%22json-del%22%2C%5B%22respData.topOpera.leftOpera%22%2C%22respData.topOpera.rightOpera2%22%2C%22respData.topActBanner%22%2C%22respData.bmArea%22%5D%5D%5D
-
-http-response ^https:\/\/app\.zhuanzhuan\.com\/zzx\/transfer\/getConfigInfo\? script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_14, argument=%5B%5B%22json-del%22%2C%5B%22respData.freeMarketTabLeadPop%22%2C%22respData.topOperations%22%5D%5D%5D
-
-http-response ^https:\/\/app\.zhuanzhuan\.com\/zz\/transfer\/getmyprofilev3$ script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_26, argument=%5B%5B%22json-del%22%2C%5B%22respData.bmNewInfo%22%5D%5D%5D
 
 [MITM]
 hostname = app.zhuanzhuan.com

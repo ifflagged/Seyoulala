@@ -47,11 +47,13 @@ IP-CIDR6,2402:4e00:1200:ed00:0:9089:6dac:96b6/128,REJECT,no-resolve
 ^https:\/\/www\.zhihu\.com\/commercial_api\/banners_v3\/mobile_banner - reject-dict
 ^https:\/\/zhuanlan\.zhihu\.com\/api\/articles\/\d+\/recommendation - reject-dict
 
+[Body Rewrite]
+http-response-jq ^https:\/\/api\.zhihu\.com\/bazaar\/vip_tab\/header\? 'delpaths([["activity_banner"]])'
+http-response-jq ^https:\/\/api\.zhihu\.com\/bazaar\/vip_tab\/header\? 'delpaths([["activity_window"]])'
+http-response-jq ^https:\/\/api\.zhihu\.com\/bazaar\/vip_tab\/header\? 'delpaths([["vip_tip"]])'
+http-response ^https:\/\/api\.zhihu\.com\/search\/recommend_query\/v2\? "recommend_queries":\{.+\} "recommend_queries":{}
+
 [Script]
-body_rewrite_27 = type=http-response, pattern=^https:\/\/api\.zhihu\.com\/bazaar\/vip_tab\/header\?, script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22json-del%22%2C%5B%22activity_banner%22%2C%22activity_window%22%2C%22vip_tip%22%5D%5D%5D
-
-body_rewrite_33 = type=http-response, pattern=^https:\/\/api\.zhihu\.com\/search\/recommend_query\/v2\?, script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22%5C%22recommend_queries%5C%22%3A%5C%5C%7B.%2B%5C%5C%7D%22%2C%22%5C%22recommend_queries%5C%22%3A%7B%7D%22%5D%5D%5D%5D
-
 移除回答底部卡片推广 = type=http-response, pattern=^https:\/\/(?:api|page-info)\.zhihu\.com\/(?:answers|articles)\/v2\/\d+, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Zhihu_remove_ads/Zhihu_remove_ads.js, requires-body=true
 
 移除首页悬浮图标 = type=http-response, pattern=^https:\/\/api\.zhihu\.com\/commercial_api\/app_float_layer, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Zhihu_remove_ads/Zhihu_remove_ads.js, requires-body=true

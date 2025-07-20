@@ -10,8 +10,10 @@
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
 #!date=2025-07-10 21:25:29
 
-[Script]
-body_rewrite_12 = type=http-response, pattern=^https:\/\/conf-m-ssl\.xunlei\.com\/external\/, script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22json-del%22%2C%5B%22values.me_config.entrance_list_vertical_enable%22%2C%22values.me_config.common_service_list%22%2C%22values.me_config.banner_service_list%22%5D%5D%5D
+[Body Rewrite]
+http-response-jq ^https:\/\/conf-m-ssl\.xunlei\.com\/external\/ 'delpaths([["values","me_config","entrance_list_vertical_enable"]])'
+http-response-jq ^https:\/\/conf-m-ssl\.xunlei\.com\/external\/ 'delpaths([["values","me_config","common_service_list"]])'
+http-response-jq ^https:\/\/conf-m-ssl\.xunlei\.com\/external\/ 'delpaths([["values","me_config","banner_service_list"]])'
 
 [MITM]
 hostname = %APPEND% conf-m-ssl.xunlei.com, api-shoulei-ssl.xunlei.com

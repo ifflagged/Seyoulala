@@ -17,8 +17,19 @@
 ^https:\/\/op\.ksedt\.com\/jxedtLive\/liveIntroduceResource - reject-dict
 ^https:\/\/richmanrules\.ksedt\.com\/intellectWaterfall\/find$ - reject-dict
 
-[Script]
-body_rewrite_17 = type=http-response, pattern=http-response ^https:\/\/api\.ksedt\.com\/api\/config\/, script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22json-del%22%2C%5B%22result.homead%22%2C%22result.h5_promotion_page%22%2C%22result.advert_interval%22%2C%22result.abtest_h5url%22%2C%22result.launchApp%22%2C%22result.goucheConfig%22%2C%22result.gouche%22%2C%22result.mainLiveConfig%22%2C%22result.discover%22%2C%22result.adSdkSwitch4testPointVideo%22%2C%22result.adSdkSwitch4simulationExam%22%2C%22result.examPageLoadADSwitch%22%5D%5D%5D
+[Body Rewrite]
+http-response-jq http-response ^https:\/\/api\.ksedt\.com\/api\/config\/ 'delpaths([["result","homead"]])'
+http-response-jq http-response ^https:\/\/api\.ksedt\.com\/api\/config\/ 'delpaths([["result","h5_promotion_page"]])'
+http-response-jq http-response ^https:\/\/api\.ksedt\.com\/api\/config\/ 'delpaths([["result","advert_interval"]])'
+http-response-jq http-response ^https:\/\/api\.ksedt\.com\/api\/config\/ 'delpaths([["result","abtest_h5url"]])'
+http-response-jq http-response ^https:\/\/api\.ksedt\.com\/api\/config\/ 'delpaths([["result","launchApp"]])'
+http-response-jq http-response ^https:\/\/api\.ksedt\.com\/api\/config\/ 'delpaths([["result","goucheConfig"]])'
+http-response-jq http-response ^https:\/\/api\.ksedt\.com\/api\/config\/ 'delpaths([["result","gouche"]])'
+http-response-jq http-response ^https:\/\/api\.ksedt\.com\/api\/config\/ 'delpaths([["result","mainLiveConfig"]])'
+http-response-jq http-response ^https:\/\/api\.ksedt\.com\/api\/config\/ 'delpaths([["result","discover"]])'
+http-response-jq http-response ^https:\/\/api\.ksedt\.com\/api\/config\/ 'delpaths([["result","adSdkSwitch4testPointVideo"]])'
+http-response-jq http-response ^https:\/\/api\.ksedt\.com\/api\/config\/ 'delpaths([["result","adSdkSwitch4simulationExam"]])'
+http-response-jq http-response ^https:\/\/api\.ksedt\.com\/api\/config\/ 'delpaths([["result","examPageLoadADSwitch"]])'
 
 [MITM]
 hostname = %APPEND% richmanrules.ksedt.com, gouche.ksedt.com, muses.ksedt.com, op.ksedt.com, api.ksedt.com

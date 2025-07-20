@@ -11,6 +11,9 @@
 #!date=2025-05-13 15:17:08
 
 [Rewrite]
+^https:\/\/api\.boohee\.com\/meta-interface\/v2\/index\? response-body-json-del data.recom_cards data.recom_btns
+^https:\/\/api\.boohee\.com\/meta-interface\/v1\/index\/plaza\? response-body-json-del data.tabs[1].badge data.recommend_ads
+^https:\/\/api\.boohee\.com\/open-interface\/v1\/string\/market_page\?title=metabolism_config$ response-body-json-del top_banner diagnos_config partner_hospital question_answer product brand_story
 ^https:\/\/api\.boohee\.com\/meta-interface\/v1\/index\/page_float_bubbles\? - reject-dict
 ^https:\/\/api\.boohee\.com\/meta-interface\/v1\/index\/tool_buttons\? - reject-dict
 ^https:\/\/api\.boohee\.com\/app-interface\/v1\/search\/search\? - reject-dict
@@ -19,12 +22,6 @@
 ^https:\/\/api\.boohee\.com\/meta-interface\/v1\/index\/sensor-banners\? - reject-dict
 
 [Script]
-http-response ^https:\/\/api\.boohee\.com\/meta-interface\/v2\/index\? script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_12, argument=%5B%5B%22json-del%22%2C%5B%22data.recom_cards%22%2C%22data.recom_btns%22%5D%5D%5D
-
-http-response ^https:\/\/api\.boohee\.com\/meta-interface\/v1\/index\/plaza\? script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_18, argument=%5B%5B%22json-del%22%2C%5B%22data.tabs%5B1%5D.badge%22%2C%22data.recommend_ads%22%5D%5D%5D
-
-http-response ^https:\/\/api\.boohee\.com\/open-interface\/v1\/string\/market_page\?title=metabolism_config$ script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_19, argument=%5B%5B%22json-del%22%2C%5B%22top_banner%22%2C%22diagnos_config%22%2C%22partner_hospital%22%2C%22question_answer%22%2C%22product%22%2C%22brand_story%22%5D%5D%5D
-
 http-response ^https:\/\/api\.boohee\.com\/meta-interface\/v1\/index\/plaza-flow\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/BooHee_remove_ads/BooHee_remove_ads.js, requires-body=true, tag=移除广场推荐页面横幅
 
 [MITM]

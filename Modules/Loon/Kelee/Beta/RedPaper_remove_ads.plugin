@@ -14,6 +14,10 @@
 AND,((PROTOCOL,QUIC),(DOMAIN-SUFFIX,xiaohongshu.com)),REJECT
 
 [Rewrite]
+^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/search\/banner_list$ response-body-json-replace data {}
+^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/search\/hot_list$ response-body-json-replace data.items []
+^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v4\/search\/hint response-body-json-replace data.hint_words []
+^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v4\/search\/trending\? response-body-json-replace data.queries [] data.hint_word {}
 ^https:\/\/ci\.xiaohongshu\.com\/system_config\/watermark - reject-img
 ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/surprisebox\/(?:get_style|open|submit_action) - reject-dict
 ^https:\/\/www\.xiaohongshu\.com\/api\/marketing\/box\/trigger\? - reject-dict
@@ -21,14 +25,6 @@ AND,((PROTOCOL,QUIC),(DOMAIN-SUFFIX,xiaohongshu.com)),REJECT
 ^https:\/\/www\.xiaohongshu\.com\/api\/sns\/(?:v1\/ads\/resource|v2\/hey\/\w+\/hey_gallery) - reject-dict
 
 [Script]
-http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/search\/banner_list$ script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_19, argument=%5B%5B%22json-replace%22%2C%5B%5B%22data%22%2C%7B%7D%5D%5D%5D%5D
-
-http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/search\/hot_list$ script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_20, argument=%5B%5B%22json-replace%22%2C%5B%5B%22data.items%22%2C%5B%5D%5D%5D%5D%5D
-
-http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v4\/search\/hint script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_21, argument=%5B%5B%22json-replace%22%2C%5B%5B%22data.hint_words%22%2C%5B%5D%5D%5D%5D%5D
-
-http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v4\/search\/trending\? script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_22, argument=%5B%5B%22json-replace%22%2C%5B%5B%22data.queries%22%2C%5B%5D%5D%2C%5B%22data.hint_word%22%2C%7B%7D%5D%5D%5D%5D
-
 http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/note\/(?:imagefeed|live_photo\/save) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/RedPaper_remove_ads/RedPaper_remove_ads.js, requires-body=true, tag=移除图片和实况照片水印
 
 http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/system\/service\/ui\/config\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/RedPaper_remove_ads/RedPaper_remove_ads.js, requires-body=true, tag=移除整体配置 ui

@@ -6,6 +6,11 @@
 
 #!homepage=https://github.com/ClydeTime/BiliBili/tree/master
 
+[Argument]
+扫码Cookie=switch,"false","true",tag=[开关] 扫码Cookie,desc=是否启用此处修改
+APPCookie=switch,"true","false",tag=[开关] APPCookie,desc=是否启用此处修改
+bigPoint=switch,"false","true",tag=[开关] 观看剧集大积分,desc=是否启用此处修改
+
 [Script]
 # BiliBili每日等级任务
 cron "30 7 * * *" script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/BiliBiliDailyBonus.plugin/BiliBiliDailyBonus.js, timeout=15, tag=B站每日等级任务

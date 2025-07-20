@@ -10,6 +10,10 @@
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
 #!date=2025-05-13 15:17:08
 
+[Argument]
+removeTopSwitch=switch,"false","true",tag=移除置顶项, desc=移除置顶文章
+removeBannerSwitch=switch,"false","true",tag=移除轮播图, desc=移除轮播图
+
 [Rewrite]
 ^https?:\/\/api\.zuihuimai\.com\/static\/.*\/hongbao - reject
 ^https?:\/\/dat\.ruanmei\.com\/ithome\/money\/acd\.json$ - reject

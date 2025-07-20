@@ -129,15 +129,18 @@ DOMAIN,e.jparking.cn,REJECT
 ^https:\/\/wx\.online-cmcc\.cn\/contactpoint\/customer\/api\/list\? - reject-dict
 ^https:\/\/wx\.10086\.cn\/qwhdhub\/activity\/info - reject-dict
 
+[Body Rewrite]
+http-response-jq ^https:\/\/mcsp\.cloudpnr\.com\/api\/miniapp\/popular\/T_MINIAPP$ 'delpaths([["data"]])'
+http-response-jq ^https:\/\/saas-ad\.cloudpnr\.com\/huifuad-base-api\/api\/tactics\/ad$ 'delpaths([["data",0]])'
+http-response-jq ^https:\/\/saas-ad\.cloudpnr\.com\/huifuad-base-api\/api\/tactics\/ad$ 'delpaths([["data",1]])'
+http-response-jq ^https:\/\/saas-ad\.cloudpnr\.com\/huifuad-base-api\/api\/tactics\/ad$ 'delpaths([["data",2]])'
+http-response-jq ^https:\/\/rms\.meituan\.com\/api\/v1\/rmsmina\/c\/queryShopPortalInfo\? 'delpaths([["data","popUpWindows"]])'
+http-response-jq ^https:\/\/chong\.qq\.com\/tws\/usernumberinfo\/GetUserInfo\? 'delpaths([["data","request","number","markSeat","servicehallOperList"]])'
+http-response-jq ^https:\/\/chong\.qq\.com\/tws\/usernumberinfo\/GetUserInfo\? 'delpaths([["data","request","number","servicehallOperList"]])'
+http-response-jq ^https:\/\/chong\.qq\.com\/tws\/usernumberinfo\/GetUserInfo\? 'delpaths([["data","request","number","markSeat","servicehallFuncList"]])'
+http-response-jq ^https:\/\/chong\.qq\.com\/tws\/usernumberinfo\/GetUserInfo\? 'delpaths([["data","request","number","servicehallFuncList"]])'
+
 [Script]
-body_rewrite_125 = type=http-response, pattern=^https:\/\/mcsp\.cloudpnr\.com\/api\/miniapp\/popular\/T_MINIAPP$, script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22json-del%22%2C%5B%22data%22%5D%5D%5D
-
-body_rewrite_126 = type=http-response, pattern=^https:\/\/saas-ad\.cloudpnr\.com\/huifuad-base-api\/api\/tactics\/ad$, script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22json-del%22%2C%5B%22data%5B0%5D%22%2C%22data%5B1%5D%22%2C%22data%5B2%5D%22%5D%5D%5D
-
-body_rewrite_128 = type=http-response, pattern=^https:\/\/rms\.meituan\.com\/api\/v1\/rmsmina\/c\/queryShopPortalInfo\?, script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22json-del%22%2C%5B%22data.popUpWindows%22%5D%5D%5D
-
-body_rewrite_131 = type=http-response, pattern=^https:\/\/chong\.qq\.com\/tws\/usernumberinfo\/GetUserInfo\?, script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22json-del%22%2C%5B%22data.request.number.markSeat.servicehallOperList%22%2C%22data.request.number.servicehallOperList%22%2C%22data.request.number.markSeat.servicehallFuncList%22%2C%22data.request.number.servicehallFuncList%22%5D%5D%5D
-
 企迈点单系统去广告 = type=http-response, pattern=^https:\/\/webapi\.qmai\.cn\/web\/catering\/design\/homePage-Config, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/WexinMiniPrograms_Remove_ads/kff.js, requires-body=true
 
 EMS中国邮政物流速递去广告 = type=http-response, pattern=^https:\/\/ump\.ems\.com\.cn\/new-generation-extend\/redis\/pageInfoByChannel, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/WexinMiniPrograms_Remove_ads/ems.js, requires-body=true

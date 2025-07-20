@@ -14,14 +14,12 @@
 DOMAIN,adx.zuoyebang.com,REJECT
 
 [Rewrite]
+^https:\/\/www\.kuaiduizuoye\.com\/codesearch\/aid\/home$ response-body-json-del data.homeBannerList
 ^https:\/\/www\.kuaiduizuoye\.com\/init\/ad\/ - reject-dict
 ^https:\/\/www\.kuaiduizuoye\.com\/activity\/init\/checkappconfig$ - reject-dict
 ^https:\/\/www\.kuaiduizuoye\.com\/kdapi\/conf\/appbannersv3$ - reject-dict
 ^https:\/\/www\.kuaiduizuoye\.com\/kdapi\/conf\/initbanner$ - reject-dict
 ^https:\/\/apivip\.kuaiduizuoye\.com\/viponline\/scancode\/mycard$ - reject-dict
-
-[Script]
-http-response ^https:\/\/www\.kuaiduizuoye\.com\/codesearch\/aid\/home$ script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_18, argument=%5B%5B%22json-del%22%2C%5B%22data.homeBannerList%22%5D%5D%5D
 
 [MITM]
 hostname = www.kuaiduizuoye.com, apivip.kuaiduizuoye.com
