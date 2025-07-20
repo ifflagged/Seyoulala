@@ -184,8 +184,16 @@ URL-REGEX,"^http:\/\/\w{32}\.jddebug\.com\/diagnose\?",REJECT
 
 [Rewrite]
 ^https:\/\/(app-v1\.ecoliving168\.com|852b95d36\.xwlpk\.cn)\/api\/v1\/movie\/index_recommend\? response-body-json-jq '.data[].list |= map(select(.type != 3)) | .data |= map(select(.layout != "advert_self"))'
+^https:\/\/tiebac\.baidu\.com\/c\/u\/user\/profile$ response-body-json-del recom_naws_list namoaixud_entry custom_grid duxiaoman_entry finance_tab
+^https:\/\/tiebac\.baidu\.com\/c\/u\/user\/profile$ response-body-json-replace user.shake_ad_switch.is_show 0
 ^https:\/\/tiebac\.baidu\.com\/c\/u\/user\/profile$ response-body-json-jq '.zone_info |= map(select(.type as $t | ["commerce","banner","game"] | index($t) | not))'
+^https:\/\/tiebac\.baidu\.com\/c\/f\/sidebar\/home$ response-body-json-del task_list game_center tools tools.yunying_tools_list tools.show_tools_list
 ^https:\/\/tiebac\.baidu\.com\/c\/f\/sidebar\/home$ response-body-json-jq '.tools.show_tools_list |= map(.tools_list |= map(select(.title != "度小满钱包")))'
+^https:\/\/tiebac\.baidu\.com\/c\/f\/frs\/frsBottom$ response-body-json-del card_activity
+^http:\/\/ad\.5tao5ai\.com\/common\/getReceipt\? response-body-json-del payload.adInfo
+^https:\/\/www\.washpayer\.com\/common\/getReceipt response-body-json-del payload.adInfo
+^https:\/\/emdcadvertise(?:pj)?\.eastmoney\.com\/infoService\/v2 response-body-json-replace data.adpositionidlist []
+^https:\/\/api\.m\.mi\.com\/v1\/order\/expressView response-body-json-del data.bottom.ad_info
 # 555电影 //app-v1.ecoliving168.com, 852b95d36.xwlpk.cn
 #^https:\/\/(app-v1\.ecoliving168\.com|852b95d36\.xwlpk\.cn)\/api\/v1\/advert\/config - reject-dict
 # 交管12123 //gab.122.gov.cn
@@ -298,20 +306,6 @@ URL-REGEX,"^http:\/\/\w{32}\.jddebug\.com\/diagnose\?",REJECT
 ^https:\/\/ecssmobile\.e-chinalife\.com:8082\/ecss\/web\/appupdate\/customization\/getFlashScreenInfo - reject-dict
 
 [Script]
-http-response ^https:\/\/tiebac\.baidu\.com\/c\/u\/user\/profile$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/sooyaaabo/MyBlockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_229, argument=%5B%5B%22json-del%22%2C%5B%22recom_naws_list%22%2C%22namoaixud_entry%22%2C%22custom_grid%22%2C%22duxiaoman_entry%22%2C%22finance_tab%22%5D%5D%2C%5B%22json-replace%22%2C%5B%5B%22user.shake_ad_switch.is_show%22%2C0%5D%5D%5D%5D
-
-http-response ^https:\/\/tiebac\.baidu\.com\/c\/f\/sidebar\/home$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/sooyaaabo/MyBlockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_232, argument=%5B%5B%22json-del%22%2C%5B%22task_list%22%2C%22game_center%22%2C%22tools%22%2C%22tools.yunying_tools_list%22%2C%22tools.show_tools_list%22%5D%5D%5D
-
-http-response ^https:\/\/tiebac\.baidu\.com\/c\/f\/frs\/frsBottom$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/sooyaaabo/MyBlockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_235, argument=%5B%5B%22json-del%22%2C%5B%22card_activity%22%5D%5D%5D
-
-http-response ^http:\/\/ad\.5tao5ai\.com\/common\/getReceipt\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/sooyaaabo/MyBlockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_237, argument=%5B%5B%22json-del%22%2C%5B%22payload.adInfo%22%5D%5D%5D
-
-http-response ^https:\/\/www\.washpayer\.com\/common\/getReceipt script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/sooyaaabo/MyBlockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_239, argument=%5B%5B%22json-del%22%2C%5B%22payload.adInfo%22%5D%5D%5D
-
-http-response ^https:\/\/emdcadvertise(?:pj)?\.eastmoney\.com\/infoService\/v2 script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/sooyaaabo/MyBlockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_256, argument=%5B%5B%22json-replace%22%2C%5B%5B%22data.adpositionidlist%22%2C%5B%5D%5D%5D%5D%5D
-
-http-response ^https:\/\/api\.m\.mi\.com\/v1\/order\/expressView script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/sooyaaabo/MyBlockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_320, argument=%5B%5B%22json-del%22%2C%5B%22data.bottom.ad_info%22%5D%5D%5D
-
 # 百度贴吧 //tiebac.baidu.com
 http-response ^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/c\/f\/(frs\/(page|threadlist|generalTabList)|pb\/page|excellent\/personalized)\?cmd script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/sooyaaabo/MyBlockAds/TB.js, requires-body=true, binary-body-mode=true, timeout=10, tag=[MyBlockAds]百度贴吧
 

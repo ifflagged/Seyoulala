@@ -13,7 +13,7 @@ JTT_APPKEY=input,null,tag=JTT_APPKEY, desc=JTT_APPKEY
 ENGINE=input,auto,tag=ENGINE, desc=ENGINE
 TIMEOUT=input,120,tag=TIMEOUT, desc=TIMEOUT
 MMMCK_SCRIPT=input,慢慢买CK,tag=MMMCK_SCRIPT, desc=MMMCK_SCRIPT
-DISABLE_NOTICE=switch,true,false,tag=DISABLE_NOTICE, desc=DISABLE_NOTICE
+DISABLE_NOTICE=switch,"true","false",tag=DISABLE_NOTICE, desc=DISABLE_NOTICE
 THEME_TIME=input,7-19,tag=THEME_TIME, desc=THEME_TIME
 
 [Script]

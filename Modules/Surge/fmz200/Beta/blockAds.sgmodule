@@ -12,6 +12,7 @@
 #!system=ios
 #!date=2025-07-17 20:00:00
 #!remark=下方的所有规则都标注了对应的hostname，可能存在错误或者遗漏，欢迎反馈。对于无法/可选MITM的hostname都特别做了“如开启可自行添加主机名”提示，如果提示后面没有标注主机名则包含所有主机名，否则只包含提示语后面的主机名。
+#!arguments=12306_enable:true,555_enable:true,51xyk_enable:true,51job_enable:true,albb_enable:true,alyp_enable:true,aiqiyi_enable:true,blued_enable:true,bdduditu_enable:true,bddutpba_enable:true,lawson_enable:true,showUpList:"auto",filterTopReplies:true,airborne:true,logLevel:"info",bilimanhua_enable:true,bohejmkh_enable:true,cdyytmqi_enable:false,cdnngogo_enable:true,cdxb_enable:true,davsdmpk_enable:true,dshxfg_enable:true,didiiuxk_enable:true,dyls_enable:true,ddmc_enable:true,flightradar24_enable:true,fwke_enable:true,ffbi_enable:true,hlzh_enable:true,hema_enable:true,hftx_enable:true,itzj_enable:true,jhsh_enable:true,jkds_enable:true,jkxi_enable:true,keep_enable:true,kkuz_enable:true,kxke_enable:true,kuwoybyt_enable:true,glgclmmg_enable:true,kuan_enable:true,lvtusvuftk_enable:true,mddjba_enable:true,mhgotv_enable:true,mafgwo_enable:true,mdmd_enable:true,meiyou_enable:true,pupuicui_enable:true,51job_enable:true,quda_enable:true,reddit_enable:true,rfrfuipk_enable:true,tab:true,useractivity:true,soul_enable:true,sudaxnyr_enable:true,smzdm_enable:true,tcbc_enable:true,tgxyxbwf_enable:true,vgtime_enable:true,lmjpxmvi_enable:true,MY:true,DT:false,FX:true,PRGG:true,PRRK:false,PRDRD:false,PRSCVPT:false,PRST:false,PRRR:true,HMPR:false,PRMST:true,PRCN:true,whyiyyybyt_enable:true,whyiyzdccidm_enable:true,wfnibovj_enable:true,xnmiuhig_enable:true,xntuisis_enable:true,xnmh_enable:true,xmyu_enable:true,xljnuiyivsuvgo_enable:true,xnhsuu_enable:true,ximalaya_enable:true,youtube_enable:true,yzku_enable:true,yzxiapp_enable:true,vihu_enable:true,vhuhgsjn_enable:true,vrvr_enable:true,vsgogojihhks_enable:true,vsgorfbc_enable:true
 
 [Rule]
 # > 哔哩哔哩
@@ -3237,9 +3238,9 @@ blued登录后个人界面广告 = type=http-response, pattern=^https?:\/\/socia
 百度贴吧广告 = type=http-response, pattern=^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/c\/f\/(frs\/(page|threadlist|generalTabList)|pb\/page|excellent\/personalized)\?cmd, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/tieba-proto.js, requires-body=true, binary-body-mode=true, timeout=60
 
 # > 哔哩哔哩
-bilibili.airborne = type=http-request, pattern=^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.community\.service\.dm\.v1\.DM\/DmSegMobile$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/bilibili.protobuf.request.js, requires-body=true, binary-body-mode=true, argument=[{logLevel}]
+bilibili.airborne = type=http-request, pattern=^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.community\.service\.dm\.v1\.DM\/DmSegMobile$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/bilibili.protobuf.request.js, requires-body=true, binary-body-mode=true, argument=[{{{logLevel}}}]
 
-bilibili.protobuf = type=http-response, pattern=^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.(app\.(show\.v1\.Popular\/Index|dynamic\.v2\.Dynamic\/DynAll|view(unite)?\.v1\.View\/(View|ViewProgress|RelatesFeed)|playurl\.v1\.PlayURL\/PlayView|playerunite\.v1\.Player\/PlayViewUnite)|polymer\.app\.search\.v1\.Search\/SearchAll|community\.service\.dm\.v1\.DM\/DmView|main\.community\.reply\.v1\.Reply\/MainList|pgc\.gateway\.player\.v2\.PlayURL\/PlayView)$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/bilibili.protobuf.response.js, requires-body=true, binary-body-mode=true, argument="[{showUpList}, {filterTopReplies}, {airborne}, {logLevel}]"
+bilibili.protobuf = type=http-response, pattern=^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.(app\.(show\.v1\.Popular\/Index|dynamic\.v2\.Dynamic\/DynAll|view(unite)?\.v1\.View\/(View|ViewProgress|RelatesFeed)|playurl\.v1\.PlayURL\/PlayView|playerunite\.v1\.Player\/PlayViewUnite)|polymer\.app\.search\.v1\.Search\/SearchAll|community\.service\.dm\.v1\.DM\/DmView|main\.community\.reply\.v1\.Reply\/MainList|pgc\.gateway\.player\.v2\.PlayURL\/PlayView)$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/bilibili.protobuf.response.js, requires-body=true, binary-body-mode=true, argument="[{{{showUpList}}}, {{{filterTopReplies}}}, {{{airborne}}}, {{{logLevel}}}]"
 
 # > 哔哩哔哩漫画
 哔哩哔哩漫画 = type=http-response, pattern=^https?:\/\/manga\.bilibili\.com\/twirp\/user\.v\d\.User\/UCenterConf, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/bilibiliManga.js, requires-body=true, timeout=60
@@ -3488,7 +3489,7 @@ rrtv_json = type=http-response, pattern=https://api.rr.tv/watch/v4, script-path=
 rrtv_json = type=http-response, pattern=https://api.rr.tv/user/profile, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/rrtv_json.js, requires-body=true, timeout=60
 
 # > Spotify
-Spotify去广告 = type=http-response, pattern=^https?:\/\/(?:gae2-spclient|guc3-spclient|spclient\.wg)\.spotify\.com(?::443)?\/(?:bootstrap|user-customization-service), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/Spotify.Crack.Dev.js, requires-body=true, binary-body-mode=true, timeout=3, argument="[{tab},{useractivity}]"
+Spotify去广告 = type=http-response, pattern=^https?:\/\/(?:gae2-spclient|guc3-spclient|spclient\.wg)\.spotify\.com(?::443)?\/(?:bootstrap|user-customization-service), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/Spotify.Crack.Dev.js, requires-body=true, binary-body-mode=true, timeout=3, argument="[{{{tab}}},{{{useractivity}}}]"
 
 # 替换信息收集
 req_replace_body = type=http-request, pattern=^https:\/\/data-collector\.soulapp\.cn\/api\/data\/report\/v\d, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/req_replace_body.js, requires-body=true, timeout=60
@@ -3567,10 +3568,10 @@ UnblockURLinWeChat-解除微信链接限制 = type=http-response, pattern=^https
 NetEaseCloudMusic_mian = type=http-response, pattern=^https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/e?api\/(batch|v\d\/resource\/comment\/floor\/get), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/wyres.js, requires-body=true, binary-body-mode=true, timeout=20
 
 # tab
-NetEaseCloudMusic_tab = type=http-response, pattern=^https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/e?api\/link\/home\/framework\/tab, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/wyres.js, requires-body=true, binary-body-mode=true, timeout=20, argument="[{MY},{DT},{FX}]"
+NetEaseCloudMusic_tab = type=http-response, pattern=^https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/e?api\/link\/home\/framework\/tab, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/wyres.js, requires-body=true, binary-body-mode=true, timeout=20, argument="[{{{MY}}},{{{DT}}},{{{FX}}}]"
 
 # 推荐 | home | 主页
-NetEaseCloudMusic_home = type=http-response, pattern=^https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/e?api\/(homepage\/block\/page|link\/page\/rcmd\/(resource\/show|block\/resource\/multi\/refresh)), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/wyres.js, requires-body=true, binary-body-mode=true, timeout=20, argument="[{PRGG},{PRRK},{PRDRD},{PRSCVPT},{PRST},{PRRR},{HMPR},{PRMST},{PRCN}]"
+NetEaseCloudMusic_home = type=http-response, pattern=^https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/e?api\/(homepage\/block\/page|link\/page\/rcmd\/(resource\/show|block\/resource\/multi\/refresh)), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/wyres.js, requires-body=true, binary-body-mode=true, timeout=20, argument="[{{{PRGG}}},{{{PRRK}}},{{{PRDRD}}},{{{PRSCVPT}}},{{{PRST}}},{{{PRRR}}},{{{HMPR}}},{{{PRMST}}},{{{PRCN}}}]"
 
 # 发现
 NetEaseCloudMusic_fx = type=http-response, pattern=^https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/e?api\/link\/page\/discovery\/resource\/show, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/wyres.js, requires-body=true, binary-body-mode=true, timeout=20
