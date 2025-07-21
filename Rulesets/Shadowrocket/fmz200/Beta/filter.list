@@ -1,4 +1,4 @@
-#规则数量:9620
+#规则数量:9624
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -1113,6 +1113,10 @@ DOMAIN-SUFFIX,api-htp.beizi.biz
 DOMAIN-SUFFIX,yfanads.com
 DOMAIN-SUFFIX,1rtb.net
 DOMAIN-SUFFIX,adwangmai.com
+DOMAIN-SUFFIX,yunxinfw.com
+DOMAIN-SUFFIX,bridgeoos.com
+DOMAIN-SUFFIX,cloooud.com
+IP-CIDR,114.132.165.205/32,no-resolve
 DOMAIN-SUFFIX,beacon.sina.com.cn
 DOMAIN,u1.img.mobile.sina.cn
 DOMAIN,sax.sina.com.cn
