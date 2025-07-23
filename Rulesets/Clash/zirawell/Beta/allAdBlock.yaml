@@ -1,4 +1,4 @@
-#规则数量:1320
+#规则数量:1321
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -627,6 +627,7 @@ payload:
   - DOMAIN-SUFFIX,adver.qq.com
   - DOMAIN-SUFFIX,advert.mafengwo.cn
   - DOMAIN-SUFFIX,advertising.yahoo.com
+  - DOMAIN-SUFFIX,adview.cn
   - DOMAIN-SUFFIX,advp.apple.com
   - DOMAIN-SUFFIX,adwangmai.com
   - DOMAIN-SUFFIX,adweb.test.ximalaya.com
