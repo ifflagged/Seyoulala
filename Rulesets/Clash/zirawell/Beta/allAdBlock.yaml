@@ -1,4 +1,4 @@
-#规则数量:1321
+#规则数量:1322
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -315,6 +315,7 @@ payload:
   - DOMAIN,ichannel.snssdk.com
   - DOMAIN,icloud-amap.com
   - DOMAIN,id.hadron.ad.gt
+  - DOMAIN,ifconfig.me
   - DOMAIN,img.adnyg.com
   - DOMAIN,img.adnyg.com.w.kunlungr.com
   - DOMAIN,img.auction-ads.wpscdn.cn
