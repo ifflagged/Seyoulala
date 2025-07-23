@@ -24,7 +24,7 @@ IP-CIDR6,2402:4e00:1200:ed00:0:9089:6dac:96b6/128,REJECT,no-resolve
 [Rewrite]
 ^https:\/\/api\.zhihu\.com\/bazaar\/vip_tab\/header\? response-body-json-del activity_banner activity_window vip_tip
 ^https:\/\/api\.zhihu\.com\/search\/recommend_query\/v2\? response-body-replace-regex "recommend_queries":\{.+\} "recommend_queries":{}
-^https:\/\/api\.zhihu\.com\/questions\/\d+(?:\/answers|\/feeds|\?include=) response-body-json-jq 'del(.ad_info, .data.ad_info?, .query_info) | if (.data | type) == "array" then .data |= map(select(.target?.answer_type?
+^https:\/\/api\.zhihu\.com\/questions\/\d+(?:\/answers|\/feeds|\?include=) response-body-json-jq 'del(.ad_info, .data.ad_info?, .query_info) | if (.data | type) == "array" then .data |= map(select(.target?.answer_type? // "" | tostring | contains("paid") | not)) else . end'
 ^https:\/\/api\.zhihu\.com\/commercial_api\/ - reject-dict
 ^https:\/\/api\.zhihu\.com\/content-distribution-core\/bubble\/common\/settings - reject-dict
 ^https:\/\/api\.zhihu\.com\/(?:moments\/lastread|drama\/hot-drama-list) - reject-dict

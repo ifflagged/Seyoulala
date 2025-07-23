@@ -15,9 +15,9 @@ bigPoint=switch,"false","true",tag=[开关] 观看剧集大积分,desc=是否启
 # BiliBili每日等级任务
 cron "30 7 * * *" script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/BiliBiliDailyBonus.plugin/BiliBiliDailyBonus.js, timeout=15, tag=B站每日等级任务
 
-http-response ^https?:\/\/app\.bilibili\.com\/x\/resource\/fingerprint\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/BiliBiliDailyBonus.plugin/BiliBiliDailyBonus.js, timeout=30, tag=B站Cookie(扫码)
+http-response ^https?:\/\/app\.bilibili\.com\/x\/resource\/fingerprint\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/BiliBiliDailyBonus.plugin/BiliBiliDailyBonus.js, timeout=30, tag=B站Cookie(扫码), enable={扫码Cookie}
 
-http-request ^https?:\/\/app\.bilibili\.com\/x\/resource\/fingerprint\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/BiliBiliDailyBonus.plugin/BiliBiliDailyBonus.js, tag=B站Cookie(APP)
+http-request ^https?:\/\/app\.bilibili\.com\/x\/resource\/fingerprint\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/BiliBiliDailyBonus.plugin/BiliBiliDailyBonus.js, tag=B站Cookie(APP), enable={APPCookie}
 
 [MITM]
 hostname = app.bilibili.com
