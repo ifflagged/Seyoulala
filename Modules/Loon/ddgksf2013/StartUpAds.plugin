@@ -8,6 +8,7 @@
 #DOMAIN-SUFFIX,admobile.top,REJECT-200
 
 [Rewrite]
+^https?:\/\/api\.xiaoyuzhoufm\.com\/v\d\/discovery-feed\/list response-body-json-jq '.data |= map(select(.type != "DISCOVERY_BANNER"))'
 # > Version
 ^https?:\/\/2025.07.19/c387/v2.0.606 - reject-200
 # > 10

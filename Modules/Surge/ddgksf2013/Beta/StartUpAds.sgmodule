@@ -14,6 +14,9 @@
 ^https?:\/\/.*ziben\.com\/api\/.*\/adverts - reject
 https://b.appsimg.com/upload/momin/ - reject
 
+[Body Rewrite]
+http-response-jq ^https?:\/\/api\.xiaoyuzhoufm\.com\/v\d\/discovery-feed\/list '.data |= map(select(.type != "DISCOVERY_BANNER"))'
+
 [Map Local]
 # > Version
 ^https?:\/\/2025.07.19/c387/v2.0.606 data-type=text data=" " status-code=200
