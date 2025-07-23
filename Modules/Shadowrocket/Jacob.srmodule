@@ -285,6 +285,7 @@ DOMAIN,img.adnyg.com,REJECT,extended-matching
 DOMAIN,img.adnyg.com.w.kunlungr.com,REJECT,extended-matching
 DOMAIN,sdownload.stargame.com,REJECT,extended-matching
 DOMAIN,app-analytics-services.com,REJECT,extended-matching
+DOMAIN-SUFFIX,adview.cn,REJECT,extended-matching
 DOMAIN-SUFFIX,ttayy.cn,REJECT,extended-matching
 DOMAIN-SUFFIX,tobidad.cn,REJECT,extended-matching
 DOMAIN-SUFFIX,zhengxiaoliu.top,REJECT,extended-matching
