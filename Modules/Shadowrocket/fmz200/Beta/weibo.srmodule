@@ -73,6 +73,9 @@ DOMAIN,adpinpai.video.weibocdn.com,REJECT
 ^https?:\/\/api\.weibo\.cn\/2\/!\/was\/finder\/searchbarchange\? - reject-dict
 ^https?:\/\/api\.weibo\.cn\/2\/logservice\/service\? - reject
 
+[Body Rewrite]
+http-response-jq ^https?:\/\/api\.weibo\.cn\/2\/cardlist\? 'del(.items[] | select(.category == "group"))'
+
 [Script]
 # 微博移除发现页广告
 微博移除发现页广告 = type=http-response, pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/2\/search\/(finder|container_timeline|container_discover)\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/weibo/weibo_ads.js, requires-body=true, timeout=60

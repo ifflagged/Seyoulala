@@ -28,7 +28,7 @@ DOMAIN,t-ads.xiaohongshu.com,REJECT
 ^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/note\/guide\? mock-response-body data-type=text data="{}" status-code=200
 ^https?:\/\/www\.xiaohongshu\.com\/api\/sns\/v\d\/(ads\/resource|hey\/\w+\/hey_gallery) mock-response-body data-type=text data="{}" status-code=200
 # 评论区图片水印
-^https?:\/\/ci\.xiaohongshu\.com\/system_config\/watermark mock-response-body data-type=tiny-gif data="" status-code=200
+^https?:\/\/ci\.xiaohongshu\.com\/system_config\/watermark mock-response-body data-type=tiny-gif status-code=200
 
 [Script]
 # 详情页小部件

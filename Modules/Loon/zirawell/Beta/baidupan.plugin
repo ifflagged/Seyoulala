@@ -27,7 +27,7 @@
 ^https?:\/\/update\.pan\.baidu\.com\/statistics - reject
 ^https?:\/\/fc-video\.cdn\.bcebos\.com - reject
 ^https?:\/\/rp\.hpplay\.cn\/logouts - reject
-^https?:\/\/pan\.baidu\.com\/buy\/ad\/ mock-response-body data-type=text data="" status-code=200
+^https?:\/\/pan\.baidu\.com\/buy\/ad\/ mock-response-body data-type=text status-code=200
 
 [Script]
 http-response ^https?:\/\/pan\.baidu\.com\/api\/getsyscfg\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/baidupan/baiduPan.js, requires-body=true, tag=baidupan

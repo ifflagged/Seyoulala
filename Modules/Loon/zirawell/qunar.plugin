@@ -14,9 +14,9 @@
 
 [Rewrite]
 ^https?:\/\/client\.qunar\.com\/pitcher-proxy\?qrt=p_splashAd - reject
-^https?:\/\/qde\.qunar\.com\/preload mock-response-body data-type=text data="" status-code=200
+^https?:\/\/qde\.qunar\.com\/preload mock-response-body data-type=text status-code=200
 ^https?:\/\/homefront\.qunar\.com\/front\/splash\/ad mock-response-body data-type=text data="{}" status-code=200
-^https?:\/\/qimgs\.qunarzz\.com\/wpf_newmpic_001\/06c3a131f53cca9a78dd26272e3e4cb3 mock-response-body data-type=tiny-gif data="" status-code=200
+^https?:\/\/qimgs\.qunarzz\.com\/wpf_newmpic_001\/06c3a131f53cca9a78dd26272e3e4cb3 mock-response-body data-type=tiny-gif status-code=200
 
 [MITM]
 hostname = qde.qunar.com, homefront.qunar.com, client.qunar.com, qimgs.qunarzz.com

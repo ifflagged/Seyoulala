@@ -16,7 +16,7 @@
 DOMAIN,openapi.boc.cn,REJECT
 
 [Rewrite]
-^https?:\/\/mbs\.boc\.cn\/ubas-mgateway-static\/images\/advertType\/.+.jpg mock-response-body data-type=text data="" status-code=200
+^https?:\/\/mbs\.boc\.cn\/ubas-mgateway-static\/images\/advertType\/.+.jpg mock-response-body data-type=text status-code=200
 
 [MITM]
 hostname = mbs.boc.cn

@@ -295,17 +295,20 @@ URL-REGEX,"^http:\/\/\w{32}\.jddebug\.com\/diagnose\?",REJECT
 ^https:\/\/ecssmobile\.e-chinalife\.com:8082\/ecss\/web\/appupdate\/customization\/getFlashScreenInfo - reject-dict
 
 [Body Rewrite]
+http-response-jq ^https:\/\/(app-v1\.ecoliving168\.com|852b95d36\.xwlpk\.cn)\/api\/v1\/movie\/index_recommend\? '.data[].list |= map(select(.type != 3)) | .data |= map(select(.layout != "advert_self"))'
 http-response-jq ^https:\/\/tiebac\.baidu\.com\/c\/u\/user\/profile$ 'delpaths([["recom_naws_list"]])'
 http-response-jq ^https:\/\/tiebac\.baidu\.com\/c\/u\/user\/profile$ 'delpaths([["namoaixud_entry"]])'
 http-response-jq ^https:\/\/tiebac\.baidu\.com\/c\/u\/user\/profile$ 'delpaths([["custom_grid"]])'
 http-response-jq ^https:\/\/tiebac\.baidu\.com\/c\/u\/user\/profile$ 'delpaths([["duxiaoman_entry"]])'
 http-response-jq ^https:\/\/tiebac\.baidu\.com\/c\/u\/user\/profile$ 'delpaths([["finance_tab"]])'
 http-response-jq ^https:\/\/tiebac\.baidu\.com\/c\/u\/user\/profile$ 'if (getpath(["user","shake_ad_switch"]) | has("is_show")) then (setpath(["user","shake_ad_switch","is_show"]; 0)) else . end'
+http-response-jq ^https:\/\/tiebac\.baidu\.com\/c\/u\/user\/profile$ '.zone_info |= map(select(.type as $t | ["commerce","banner","game"] | index($t) | not))'
 http-response-jq ^https:\/\/tiebac\.baidu\.com\/c\/f\/sidebar\/home$ 'delpaths([["task_list"]])'
 http-response-jq ^https:\/\/tiebac\.baidu\.com\/c\/f\/sidebar\/home$ 'delpaths([["game_center"]])'
 http-response-jq ^https:\/\/tiebac\.baidu\.com\/c\/f\/sidebar\/home$ 'delpaths([["tools"]])'
 http-response-jq ^https:\/\/tiebac\.baidu\.com\/c\/f\/sidebar\/home$ 'delpaths([["tools","yunying_tools_list"]])'
 http-response-jq ^https:\/\/tiebac\.baidu\.com\/c\/f\/sidebar\/home$ 'delpaths([["tools","show_tools_list"]])'
+http-response-jq ^https:\/\/tiebac\.baidu\.com\/c\/f\/sidebar\/home$ '.tools.show_tools_list |= map(.tools_list |= map(select(.title != "度小满钱包")))'
 http-response-jq ^https:\/\/tiebac\.baidu\.com\/c\/f\/frs\/frsBottom$ 'delpaths([["card_activity"]])'
 http-response-jq ^http:\/\/ad\.5tao5ai\.com\/common\/getReceipt\? 'delpaths([["payload","adInfo"]])'
 http-response-jq ^https:\/\/www\.washpayer\.com\/common\/getReceipt 'delpaths([["payload","adInfo"]])'

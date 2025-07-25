@@ -15,7 +15,7 @@
 [Rewrite]
 ^https?:\/\/.*\.boohee\.(?>cn|com).*(?>notification_template|advertisements|share_contents|app_square|plugins|notifications|start_up_with_ad|float_ad|data_file_entrance) - reject
 ^https?:\/\/api\.boohee\.com\/app-interface\/v\d\/ad\/info - reject
-^https?:\/\/api\.boohee\.com\/meta-interface\/v\d\/index\/record_index response-body-json-jq articles random_body
+^https?:\/\/api\.boohee\.com\/meta-interface\/v\d\/index\/record_index response-body-replace-regex articles random_body
 ^https?:\/\/api\.boohee\.com\/shop-interface\/api\/v\d\/home\/index mock-response-body data-type=text data="{}" status-code=200
 ^https?:\/\/bohe\.sfo-tx-shanghai-01\.saas\.sensorsdata\.cn\/api\/v\d\/sfo\/user_popup_configs mock-response-body data-type=text data="{}" status-code=200
 ^https?:\/\/api\.boohee\.com\/meta-interface\/v\d\/index\/(?>discover_chosen|page_float_bubbles|sensor-banners|tool_buttons) mock-response-body data-type=text data="{}" status-code=200

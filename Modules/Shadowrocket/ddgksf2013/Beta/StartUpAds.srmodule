@@ -800,6 +800,9 @@ https?:\/\/m\.sd\.10086\.cn\/zapi\/app_common\/homeWelcome\/welcome.do - reject-
 # > zcool
 ^https?:\/\/api\.zcool\.com\.cn\/.*common\/open-screen - reject-200
 
+[Body Rewrite]
+http-response-jq ^https?:\/\/api\.xiaoyuzhoufm\.com\/v\d\/discovery-feed\/list '.data |= map(select(.type != "DISCOVERY_BANNER"))'
+
 [Map Local]
 # > dongqiudi
 ^https?:\/\/ap\.dongqiudi\.com\/plat\/v4 data-type=file data="https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ddgksf2013/StartUpAds/dongqiudi.js"

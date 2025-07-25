@@ -35,7 +35,7 @@ IP-CIDR6,2402:4e00:1200:ed00:0:9089:6dac:96b6/128,REJECT,no-resolve
 ^https?:\/\/www\.zhihu\.com\/api\/v\d/(questions|anwsers)\/\d+/related-readings - reject
 ^https?:\/\/www\.zhihu\.com\/commercial_api\/banners_v\d\/mobile_banner - reject
 ^https?:\/\/zhuanlan\.zhihu\.com\/api\/articles\/\d+\/recommendation - reject
-^https?:\/\/api\.zhihu\.com\/search\/recommend_query\/v2\? response-body-json-jq "recommend_queries":\{.+\} "recommend_queries":{}
+^https?:\/\/api\.zhihu\.com\/search\/recommend_query\/v2\? response-body-replace-regex "recommend_queries":\{.+\} "recommend_queries":{}
 ^https?:\/\/api\.zhihu\.com\/commercial_api\/(banners_v\d\/app_topstory_banner|launch_v|real_time_launch_v) mock-response-body data-type=text data="{}" status-code=200
 ^https?:\/\/api\.zhihu\.com\/content-distribution-core\/bubble\/common\/settings mock-response-body data-type=text data="{}" status-code=200
 ^https?:\/\/api\.zhihu\.com\/(moments\/lastread|drama\/hot-drama-list) mock-response-body data-type=text data="{}" status-code=200

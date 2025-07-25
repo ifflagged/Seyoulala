@@ -1989,7 +1989,7 @@ https://.+\.gamersky.com/v1/statisticAd - reject-dict
 # hostname = beehiveapi.58.com
 ^https?:\/\/beehiveapi\.58\.com\/adplace\/zcm - reject-dict
 # hostname = wrapper.cyapi.cn, api.caiyunapp.com
-^https?:\/\/wrapper\.cyapi\.cn\/v1\/activity\? mock-response-body data="undefined"
+^https?:\/\/wrapper\.cyapi\.cn\/v1\/activity\? mock-response-body data-type=file data-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/rewrite/caiyun.json
 #^https:\/\/(m|mwsa)\.ximalaya\.com\/community\/square\/v\d\/stream\? mock-response-body data-type=json data="{"data":{"cards":[{"content":{},"type":"RECOMMENDS"}]},"ret":0}" status-code=200
 
 [Script]
