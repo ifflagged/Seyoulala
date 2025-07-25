@@ -36,7 +36,7 @@ http-request ^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.commu
 
 http-response ^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/kokoryh/bilibili/bili-suit-diy.js, requires-body=true, tag=bilibili.skin
 
-http-response ^https:\/\/live\.bilibili\.com\/blackboard/era/.+\.html\?is_live_half_webview=1 script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/kokoryh/bilibili/webpage.bilibili.js, requires-body=true, tag=bilibili.html
+http-response ^https:\/\/live\.bilibili\.com\/blackboard/era/.+\.html\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/kokoryh/bilibili/webpage.bilibili.js, requires-body=true, tag=bilibili.html
 
 http-response ^https:\/\/app\.bilibili\.com\/x\/(resource\/show\/tab\/v2|v2\/(splash\/(list|show|event\/list2)|feed\/index(\/story)?|account\/(mine(\/ipad)?|myinfo)))\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/kokoryh/bilibili/bilibili.json.js, requires-body=true, tag=bilibili.json, argument="{"showCreatorHub":{创作中心}}"
 
