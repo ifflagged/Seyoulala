@@ -4,6 +4,9 @@
 #!tag=Jacob
 
 [Rewrite]
+^https:\/\/gw3\.ykccn\.com\/api\/omp\/mt\/enterpriseWeChatConfig\/app\/queryCityConfig - reject-dict
+^https:\/\/gw3\.ykccn\.com\/api\/omp\/mt\/appAdvertising\/queryAdvertisingByParams - reject-dict
+^https:\/\/gw3\.ykccn\.com\/api\/omp\/mt\/charge\/activity\/package\/newest - reject-dict
 ^https:\/\/wx\.17u\.cn\/xcxhomeapi\/aggregator\/index - reject-dict
 ^https:\/\/wx\.17u\.cn\/mytourapi\/mytrip\/blankflight - reject-dict
 ^https:\/\/wx\.17u\.cn\/membermessageuserapi\/message\/list - reject-dict
@@ -36,5 +39,5 @@ http-response ^https:\/\/web\.meituan\.com\/api\/miniprogram\/tabbar\/all\/query
 http-response ^https:\/\/web\.meituan\.com\/api\/miniprogram\/index\/aggregate script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ZenmoFeiShi/WxPureDominion/MeiTuanNoAd.js, requires-body=true, timeout=60, tag=MeiTuanNoAd
 
 [MITM]
-hostname = wx.17u.cn, web.meituan.com, npay.meituan.com, mapi.dianping.com, a1d5b283e-wx621112590b635086.sh.wxgateway.com, apimobile.meituan.com
+hostname = gw3.ykccn.com, wx.17u.cn, web.meituan.com, npay.meituan.com, mapi.dianping.com, a1d5b283e-wx621112590b635086.sh.wxgateway.com, apimobile.meituan.com
 

@@ -3,6 +3,12 @@
 #!category=Jacob
 
 [Map Local]
+^https:\/\/gw3\.ykccn\.com\/api\/omp\/mt\/enterpriseWeChatConfig\/app\/queryCityConfig data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+^https:\/\/gw3\.ykccn\.com\/api\/omp\/mt\/appAdvertising\/queryAdvertisingByParams data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+^https:\/\/gw3\.ykccn\.com\/api\/omp\/mt\/charge\/activity\/package\/newest data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
 ^https:\/\/wx\.17u\.cn\/xcxhomeapi\/aggregator\/index data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 ^https:\/\/wx\.17u\.cn\/mytourapi\/mytrip\/blankflight data-type=text data="{}" status-code=200 header="Content-Type:application/json"
@@ -59,5 +65,5 @@ MeiTuanNoAd = type=http-response, pattern=^https:\/\/web\.meituan\.com\/api\/min
 MeiTuanNoAd = type=http-response, pattern=^https:\/\/web\.meituan\.com\/api\/miniprogram\/index\/aggregate, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ZenmoFeiShi/WxPureDominion/MeiTuanNoAd.js, requires-body=true, max-size=-1, timeout=60
 
 [MITM]
-hostname = %APPEND% wx.17u.cn, web.meituan.com, npay.meituan.com, mapi.dianping.com, a1d5b283e-wx621112590b635086.sh.wxgateway.com, apimobile.meituan.com
+hostname = %APPEND% gw3.ykccn.com, wx.17u.cn, web.meituan.com, npay.meituan.com, mapi.dianping.com, a1d5b283e-wx621112590b635086.sh.wxgateway.com, apimobile.meituan.com
 
