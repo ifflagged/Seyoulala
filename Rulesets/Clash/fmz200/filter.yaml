@@ -1,4 +1,4 @@
-#规则数量:9623
+#规则数量:9627
 #不支持的规则数量:1
 #已排除的规则数量:0
 #不支持的规则:
@@ -21,6 +21,9 @@ payload:
   - DOMAIN-SUFFIX,igexin.com
   - DOMAIN-SUFFIX,log.aliyuncs.com
   - DOMAIN-SUFFIX,zlsdk.1rtb.net
+  - DOMAIN-SUFFIX,ott.cibntv.net
+  - DOMAIN-SUFFIX,cdntips.net
+  - DOMAIN-SUFFIX,tfogc.com
   - DOMAIN-KEYWORD,volc
   - DOMAIN-KEYWORD,umeng
   - DOMAIN,api.liquidlink.cn
@@ -732,6 +735,7 @@ payload:
   - DOMAIN-SUFFIX,bsiet.husky.sogou.com
   - DOMAIN-SUFFIX,jdqd.jd.com
   - DOMAIN-SUFFIX,shouji.sougou.com
+  - DOMAIN-SUFFIX,push-service-ios.sginput.qq.com
   - DOMAIN-SUFFIX,wxsnsdythumb.wxs.qq.com
   - DOMAIN,ads-shopping.shouqianba.com
   - DOMAIN,aaid.uyunad.com
