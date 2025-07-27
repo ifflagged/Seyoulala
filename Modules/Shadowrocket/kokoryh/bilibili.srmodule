@@ -3,7 +3,7 @@
 #!category=Jacob
 
 #!arguments-desc=动态最常访问: [auto, show, hide]\n- auto: 仅当列表中存在直播状态时显示\n- show: 始终显示\n- hide: 始终隐藏\n\n创作中心: [1, 0]\n- 1: 显示\n- 0: 隐藏\n\n过滤置顶评论广告: [1, 0]\n- 1: 开启\n- 0: 关闭\n\n空降助手: 默认开启，配置为"#"时关闭\n\n日志等级: [off, error, warn, info, debug]
-#!arguments=动态最常访问:auto,创作中心:0,过滤置顶评论广告:1,空降助手:bilibili.airborne,日志等级:info
+#!arguments=动态最常访问:auto,创作中心:0,过滤置顶评论广告:1,空降助手:bilibili.airborne,净化内嵌网页:bilibili.webpage,日志等级:info
 
 [Rule]
 DOMAIN,api.biliapi.com,REJECT
@@ -35,9 +35,9 @@ http-response-jq ^https:\/\/api\.live\.bilibili\.com\/xlive\/(app-interface\/v2\
 [Script]
 {{{空降助手}}} = type=http-request, pattern=^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.community\.service\.dm\.v1\.DM\/DmSegMobile$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/kokoryh/bilibili/bilibili.protobuf.request.js, requires-body=true, binary-body-mode=true, max-size=-1, argument="{"logLevel":"{{{日志等级}}}"}"
 
-bilibili.skin = type=http-response, pattern=^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/kokoryh/bilibili/bili-suit-diy.js, requires-body=true, max-size=-1
+{{{净化内嵌网页}}} = type=http-response, pattern=^https:\/\/live\.bilibili\.com\/blackboard/era/.+\.html\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/kokoryh/bilibili/webpage.bilibili.js, requires-body=true, max-size=-1
 
-bilibili.html = type=http-response, pattern=^https:\/\/live\.bilibili\.com\/blackboard/era/.+\.html\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/kokoryh/bilibili/webpage.bilibili.js, requires-body=true, max-size=-1
+bilibili.skin = type=http-response, pattern=^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/kokoryh/bilibili/bili-suit-diy.js, requires-body=true, max-size=-1
 
 bilibili.json = type=http-response, pattern=^https:\/\/app\.bilibili\.com\/x\/(resource\/show\/tab\/v2|v2\/(splash\/(list|show|event\/list2)|feed\/index(\/story)?|account\/(mine(\/ipad)?|myinfo)))\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/kokoryh/bilibili/bilibili.json.js, requires-body=true, max-size=-1, argument="{"showCreatorHub":{{{创作中心}}}}"
 
