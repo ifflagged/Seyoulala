@@ -3,6 +3,10 @@
 #!category=Jacob
 
 [URL Rewrite]
+^https:\/\/energy\.xiaojukeji\.com\/mission\/api\/page\/activityInfo - reject-dict
+^https:\/\/energy\.xiaojukeji\.com\/mission\/api\/page\/getPageDetail - reject-dict
+^https:\/\/energy\.xiaojukeji\.com\/energy\/hummer\/api\/resource\/display - reject-dict
+^https:\/\/energy\.xiaojukeji\.com\/am\/marketing\/api\/member\/facade\/charge\/personal\/center - reject-dict
 ^https:\/\/gw3\.ykccn\.com\/api\/omp\/mt\/enterpriseWeChatConfig\/app\/queryCityConfig - reject-dict
 ^https:\/\/gw3\.ykccn\.com\/api\/omp\/mt\/appAdvertising\/queryAdvertisingByParams - reject-dict
 ^https:\/\/gw3\.ykccn\.com\/api\/omp\/mt\/charge\/activity\/package\/newest - reject-dict
@@ -38,5 +42,5 @@ MeiTuanNoAd = type=http-response, pattern=^https:\/\/web\.meituan\.com\/api\/min
 MeiTuanNoAd = type=http-response, pattern=^https:\/\/web\.meituan\.com\/api\/miniprogram\/index\/aggregate, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ZenmoFeiShi/WxPureDominion/MeiTuanNoAd.js, requires-body=true, max-size=-1, timeout=60
 
 [MITM]
-hostname = %APPEND% gw3.ykccn.com, wx.17u.cn, web.meituan.com, npay.meituan.com, mapi.dianping.com, a1d5b283e-wx621112590b635086.sh.wxgateway.com, apimobile.meituan.com
+hostname = %APPEND% energy.xiaojukeji.com, gw3.ykccn.com, wx.17u.cn, web.meituan.com, npay.meituan.com, mapi.dianping.com, a1d5b283e-wx621112590b635086.sh.wxgateway.com, apimobile.meituan.com
 
