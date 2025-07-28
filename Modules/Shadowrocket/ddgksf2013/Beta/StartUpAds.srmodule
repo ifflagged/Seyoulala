@@ -3,13 +3,15 @@
 #!category=Jacob
 
 [Rule]
+# > 12306
+DOMAIN,ad.12306.cn,DIRECT
 # > liangBulU
 #DOMAIN-SUFFIX,admobile.top,REJECT-200
 DOMAIN-SUFFIX,iyes.youku.com,REJECT
 
 [URL Rewrite]
 # > Version
-^https?:\/\/2025.07.26/c388/v2.0.608 - reject-200
+^https?:\/\/2025.07.28/c388/v2.0.609 - reject-200
 # > 10
 ^https?:\/\/ftapi\.10jqka\.com\.cn\/futgwapi\/api\/om\/v\d\/ad\/common\/transfer - reject-200
 # > 139mail
@@ -819,7 +821,6 @@ dict = type=http-response, pattern=^https?:\/\/api\.369cx\.cn\/v\d\/Splash\/GetS
 
 123pan = type=http-response, pattern=^https?:\/\/www\.123pan\.com\/s\/[0-9a-zA-Z=_/-]+\.html, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ddgksf2013/StartUpAds/123pan.js, requires-body=true, max-size=-1, timeout=60
 
-# > 12306
 12306 = type=http-request, pattern=^https?:\/\/ad\.12306\.cn\/ad\/ser\/getAdList, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ddgksf2013/StartUpAds/12306.js, requires-body=true, max-size=-1, timeout=60
 
 # > amdc
