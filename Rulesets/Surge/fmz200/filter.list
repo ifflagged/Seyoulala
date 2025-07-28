@@ -1,4 +1,4 @@
-#规则数量:9628
+#规则数量:9632
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -1120,6 +1120,10 @@ DOMAIN-SUFFIX,adwangmai.com
 DOMAIN-SUFFIX,yunxinfw.com
 DOMAIN-SUFFIX,bridgeoos.com
 DOMAIN-SUFFIX,cloooud.com
+DOMAIN-SUFFIX,baihemob.com
+DOMAIN-SUFFIX,ad.bwton.com
+DOMAIN-SUFFIX,api.wxcjgg.cn
+DOMAIN-SUFFIX,shunchangzhixing.com
 IP-CIDR,114.132.165.205/32,no-resolve
 DOMAIN-SUFFIX,beacon.sina.com.cn
 DOMAIN,u1.img.mobile.sina.cn
