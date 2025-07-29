@@ -6,11 +6,11 @@
 #!arguments=动态最常访问:auto,创作中心:0,过滤置顶评论广告:1,空降助手:bilibili.airborne,净化内嵌网页:bilibili.webpage,日志等级:info
 
 [Rule]
-DOMAIN,api.biliapi.com,REJECT,pre-matching
-DOMAIN,app.biliapi.com,REJECT,pre-matching
-DOMAIN,api.biliapi.net,REJECT,pre-matching
-DOMAIN,app.biliapi.net,REJECT,pre-matching
-DOMAIN-SUFFIX,chat.bilibili.com,REJECT,pre-matching
+DOMAIN,api.biliapi.com,REJECT,extended-matching,pre-matching
+DOMAIN,app.biliapi.com,REJECT,extended-matching,pre-matching
+DOMAIN,api.biliapi.net,REJECT,extended-matching,pre-matching
+DOMAIN,app.biliapi.net,REJECT,extended-matching,pre-matching
+DOMAIN-SUFFIX,chat.bilibili.com,REJECT,extended-matching,pre-matching
 
 [Body Rewrite]
 http-response-jq ^https:\/\/api\.bilibili\.com\/x\/pd-proxy\/tracker\? '.data[][]?="chat.bilibili.com:3478"'
