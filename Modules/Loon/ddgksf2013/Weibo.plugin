@@ -4,8 +4,8 @@
 #!tag=Jacob
 
 [Rule]
-# > 微博_请手动添加以下分流至本地@ddgksf2013
-#DOMAIN,sdkapp.uve.weibo.com,DIRECT
+# > 微博_分流@ddgksf2013
+DOMAIN,sdkapp.uve.weibo.com,DIRECT
 # > 微博国际版_开屏拦截@ddgksf2013
 DOMAIN-SUFFIX,api.touch-moblie.com,REJECT
 
