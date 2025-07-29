@@ -11,10 +11,6 @@ skip-proxy = %INSERT% localhost, *.local, captive.apple.com, e.crashlytics.com, 
 always-real-ip = %INSERT% *.lan, *.direct, cable.auth.com, *.msftconnecttest.com, *.msftncsi.com, network-test.debian.org, detectportal.firefox.com, resolver1.opendns.com, *.srv.nintendo.net, *.stun.playstation.net, xbox.*.microsoft.com, *.xboxlive.com, stun.*, global.turn.twilio.com, global.stun.twilio.com, app.yinxiang.com, injections.adguard.org, local.adguard.org, localhost.*.qq.com, localhost.*.weixin.qq.com, *.logon.battlenet.com.cn, *.logon.battle.net, *.blzstatic.cn, music.163.com, *.music.163.com, *.126.net, musicapi.taihe.com, music.taihe.com, songsearch.kugou.com, trackercdn.kugou.com, *.kuwo.cn, api-jooxtt.sanook.com, api.joox.com, joox.com, y.qq.com, *.y.qq.com, streamoc.music.tc.qq.com, mobileoc.music.tc.qq.com, isure.stream.qqmusic.qq.com, dl.stream.qqmusic.qq.com, aqqmusic.tc.qq.com, amobile.music.tc.qq.com, *.xiami.com, *.music.migu.cn, music.migu.cn, proxy.golang.org, *.mcdn.bilivideo.cn, *.cmpassport.com, id6.me, open.e.189.cn, opencloud.wostore.cn, id.mail.wo.cn, mdn.open.wo.cn, hmrz.wo.cn, nishub1.10010.com, enrichgw.10010.com, *.wosms.cn, *.jegotrip.com.cn, *.icitymobile.mobi, *.pingan.com.cn, *.cmbchina.com, *.10099.com.cn, *.microdone.cn, pool.ntp.org, *.pool.ntp.org, ntp.*.com, time.*.com, ntp?.*.com, time?.*.com, time.*.gov, time.*.edu.cn, *.ntp.org.cn, PDC._msDCS.*.*, DC._msDCS.*.*, GC._msDCS.*.*
 # HTTPDNS.Block & # Tools & # BiliBili.Redirect & # boxjs.rewrite.surge
 force-http-engine-hosts = %APPEND% 119.29.29.29:80, dns.weixin.qq.com:80, dns.weixin.qq.com:8080, dns.weixin.qq.com:443, router.com, www.router.com, *:4480, *:4483, *:8000, *:8082, *:9102, boxjs.com, boxjs.net, *.boxjs.com, *.boxjs.net
-# DNS
-use-local-host-item-for-proxy = true
-# DNS
-encrypted-dns-follow-outbound-mode = false
 
 [Rule]
 # HTTPDNS.Block
@@ -695,11 +691,11 @@ DOMAIN-SUFFIX,count.video.sina.com.cn,REJECT,extended-matching,pre-matching
 # 12306_remove_ads
 DOMAIN,ad.12306.cn,DIRECT
 # bilibili
-DOMAIN,api.biliapi.com,REJECT,pre-matching
-DOMAIN,app.biliapi.com,REJECT,pre-matching
-DOMAIN,api.biliapi.net,REJECT,pre-matching
-DOMAIN,app.biliapi.net,REJECT,pre-matching
-DOMAIN-SUFFIX,chat.bilibili.com,REJECT,pre-matching
+DOMAIN,api.biliapi.com,REJECT,extended-matching,pre-matching
+DOMAIN,app.biliapi.com,REJECT,extended-matching,pre-matching
+DOMAIN,api.biliapi.net,REJECT,extended-matching,pre-matching
+DOMAIN,app.biliapi.net,REJECT,extended-matching,pre-matching
+DOMAIN-SUFFIX,chat.bilibili.com,REJECT,extended-matching,pre-matching
 # Bilibili_remove_ads
 DOMAIN,line3-h5-mobile-api.biligame.com,REJECT
 # Module-Common
@@ -906,232 +902,6 @@ DOMAIN-SUFFIX,alipaydns.com,REJECT,extended-matching,pre-matching
 DOMAIN-KEYWORD,loggw.alipay.com,REJECT,extended-matching,pre-matching
 
 [Host]
-# DNS
-ip6-localhost = ::1 // IPv6 Localhost
-ip6-loopback = ::1 // IPv6 Loopback
-ip6-localnet = fe00::0 // IPv6 Link-Local
-ip6-mcastprefix = ff00::0 // IPv6 Multicast
-ip6-allnodes = ff02::1 // IPv6 All Nodes
-ip6-allrouters = ff02::2 // IPv6 All Routers
-ip6-allhosts = ff02::3 // IPv6 All Hosts
-dns.google = 8.8.8.8, 8.8.4.4, 2001:4860:4860::8888, 2001:4860:4860::8844 // https://dns.google/dns-query
-dns64.dns.google = 2001:4860:4860::6464, 2001:4860:4860::64 // https://dns64.dns.google/dns-query
-cloudflare-dns.com = 104.16.249.249, 104.16.248.249, 2606:4700::6810:f8f9, 2606:4700::6810:f9f9 // https://cloudflare-dns.com/dns-query
-1dot1dot1dot1.cloudflare-dns.com = 1.1.1.1, 1.0.0.1, 2606:4700:4700::1001, 2606:4700:4700::1111 // 1dot1dot1dot1.cloudflare-dns.com:853
-one.one.one.one = 1.1.1.1, 1.0.0.1, 2606:4700:4700::1001, 2606:4700:4700::1111  // one.one.one.one:853
-dns.alidns.com = 223.5.5.5, 223.6.6.6, 2400:3200:baba::1, 2400:3200::1 // https://dns.alidns.com/dns-query
-doh.pub = 1.12.12.12, 120.53.53.53 // https://doh.pub/dns-query
-dot.pub = 1.12.12.12, 120.53.53.53 // dot.pub:853
-doh.360.cn = 23.6.48.18, 112.65.69.15 // https://doh.360.cn/dns-query
-dot.360.cn = 101.198.198.198, 101.198.199.200, 101.198.192.33, 112.65.69.15 // dot.360.cn:853
-dns.twnic.tw = 101.101.101.101, 2001:de4::101, 2001:de4::102 // https://dns.twnic.tw/dns-query
-ordns.he.net = 74.82.42.42, 2001:470:20::2 // https://ordns.he.net/dns-query
-talk.google.com = 108.177.125.188 // Firebase Cloud Messaging
-mtalk.google.com = 108.177.125.188, 2404:6800:4008:c07::bc, 142.250.31.188 // Firebase Cloud Messaging
-alt1-mtalk.google.com = 3.3.3.3, 2607:f8b0:4023:c0b::bc, 64.233.171.188 // Firebase Cloud Messaging
-alt2-mtalk.google.com = 3.3.3.3, 142.250.115.188 // Firebase Cloud Messaging
-alt3-mtalk.google.com = 74.125.200.188, 173.194.77.188 // Firebase Cloud Messaging
-alt4-mtalk.google.com = 74.125.200.188, 173.194.219.188 // Firebase Cloud Messaging
-alt5-mtalk.google.com = 3.3.3.3, 2607:f8b0:4023:1::bc, 142.250.112.188 // Firebase Cloud Messaging
-alt6-mtalk.google.com = 3.3.3.3, 172.217.197.188 // Firebase Cloud Messaging
-alt7-mtalk.google.com = 74.125.200.188, 2607:f8b0:4002:c03::bc, 108.177.12.188 // Firebase Cloud Messaging
-alt8-mtalk.google.com = 3.3.3.3 // Firebase Cloud Messaging
-blog.google = server:119.29.29.29 // Google Blog
-googletraveladservices.com = server:119.29.29.29 // Google Flights
-dl.google.com = server:119.29.29.29 // Google Download
-dl.l.google.com = server:119.29.29.29 // Google Download
-clientservices.googleapis.com = server:119.29.29.29 // Google Chrome
-update.googleapis.com = server:119.29.29.29 // Google Update
-translate.googleapis.com = server:119.29.29.29 // Google Translate
-fonts.googleapis.com = server:119.29.29.29 // Google Fonts
-fonts.gstatic.com = server:119.29.29.29 // Google Fonts
-stun.l.google.com = server:syslib // Google STUN
-stun?.l.google.com = server:syslib // Google STUN
-*.id.ui.direct = server:syslib // Ubiquiti Unifi Network App
-unifi.local = server:syslib // Ubiquiti Unifi OS
-amplifi.lan = server:syslib // Ubiquiti Amplifi Router
-router.synology.com = server:syslib // Synology Router
-sila.razer.com = server:syslib // Razer Sila Router
-router.asus.com = server:syslib // Asus Router
-routerlogin.net = server:syslib // Netgear Router
-orbilogin.com = server:syslib // Netgear Obri Router
-www.LinksysSmartWiFi.com = server:syslib // Linksys Router
-LinksysSmartWiFi.com = server:syslib // Linksys Router
-myrouter.local = server:syslib // Linksys Router
-instant.arubanetworks.com = server:syslib // Aurba Router
-setmeup.arubanetworks.com = server:syslib // Aurba Router
-www.miwifi.com = server:syslib // 小米 Mi WiFi Router
-miwifi.com = server:syslib // 小米 Mi WiFi Router
-mediarouter.home = server:syslib // 华为 Huawei Router
-tplogin.cn = server:syslib // TP-Link Router
-tplinklogin.net = server:syslib // TP-Link Router
-tplinkwifi.net = server:syslib // TP-Link Router
-melogin.cn = server:syslib // 水星 MERCURY Router
-falogin.cn = server:syslib // 迅捷 FAST Router
-tendawifi.com = server:syslib // 腾达 Tenda Router
-leike.cc = server:syslib // 磊科 Netcore Router
-zte.home = server:syslib // 中兴 ZTE Router
-p.to = server:syslib // 斐讯 PHICOMM Router
-phicomm.me = server:syslib // 斐讯 PHICOMM Router
-hiwifi.com = server:syslib // 极路由 HiWiFi Router
-peiluyou.com = server:syslib // 迅雷路由
-_hotspot_.m2m = server:syslib // M2M routers at MiFi Hotspot
-hotspot.cslwifi.com = server:syslib // csl Wi-Fi
-networking.apple = server:https://doh.dns.apple.com/dns-query // Apple
-*.icloud.com = server:https://doh.dns.apple.com/dns-query // iCloud.com
-*.alibaba.cn = server:quic://dns.alidns.com // 阿里巴巴
-*.alibaba.com.cn = server:quic://dns.alidns.com // 阿里巴巴
-*.china.alibaba.com = server:quic://dns.alidns.com // Alibaba 中国
-*.1688.com = server:quic://dns.alidns.com // 1688
-*.taobao.com = server:quic://dns.alidns.com // 淘宝
-*.tbcache.com = server:quic://dns.alidns.com // 淘宝 缓存
-*.tmall.com = server:quic://dns.alidns.com // 天猫
-*.alicdn.com = server:quic://dns.alidns.com // 阿里 CDN
-*.alikunlun.com = server:quic://dns.alidns.com // 阿里昆仑
-*.aliapp.com = server:quic://dns.alidns.com // 云引擎应用平台
-*.aliapp.org = server:quic://dns.alidns.com // 上云平台
-*.alibabausercontent.com = server:quic://dns.alidns.com // 阿里用户上传资料
-*.mmstat.com = server:quic://dns.alidns.com // mmstat 数据统计 广告追踪
-tb.cn = server:quic://dns.alidns.com // 淘宝短网址
-*.aliyun.* = server:quic://dns.alidns.com // 阿里云
-*.aliyuncdn.* = server:quic://dns.alidns.com // 阿里云 CDN
-*.aliyuncs.com = server:quic://dns.alidns.com // 阿里云 API 服务
-*.aliyunddos????.com = server:quic://dns.alidns.com // 阿里云 DDoS防护
-*.aliyundrive.com = server:quic://dns.alidns.com // 阿里云盘
-*.aliyundun.com = server:quic://dns.alidns.com // 阿里云盾
-*.aliyundunwaf.com = server:quic://dns.alidns.com // 阿里云盾 Web 应用防火墙
-*.aliyun-inc.com = server:quic://dns.alidns.com // 阿里云 内部
-*.antgroup.com = server:quic://dns.alidns.com // 蚂蚁集团
-*.antfin.com = server:quic://dns.alidns.com // 蚂蚁金服
-*.antfinancial.com = server:quic://dns.alidns.com // 蚂蚁金服
-*.alipay.com = server:quic://dns.alidns.com // 支付宝
-*.alipay.com.cn = server:quic://dns.alidns.com // 支付宝
-*.alipaydns.com = server:quic://dns.alidns.com // 支付宝 HTTP DNS
-*.alipayeshop.com = server:quic://dns.alidns.com // 支付宝 商家资源
-*.alipaylog.com = server:quic://dns.alidns.com // 支付宝 Mdap
-*.alipayobjects.com = server:quic://dns.alidns.com // 支付宝 静态资源
-*.alipay-eco.com = server:quic://dns.alidns.com // 支付宝 开放技术生态体系
-*.tencent.com = server:https://doh.pub/dns-query // 腾讯
-*.qcloud.com = server:https://doh.pub/dns-query // 腾讯云
-*.qcloudcdn.cn = server:https://doh.pub/dns-query // 腾讯云CDN
-*.qcloudcdn.com = server:https://doh.pub/dns-query // 腾讯云CDN
-*.qcloudcos.com = server:https://doh.pub/dns-query // 腾讯云对象储存
-*.qcloudimg.com = server:https://doh.pub/dns-query // 腾讯云静态资源
-*.qcloudcjgj.com = server:https://doh.pub/dns-query // 腾讯云超级管家
-*.qcloudwzgj.com = server:https://doh.pub/dns-query // 腾讯云网站管家
-*.qcloudzygj.com = server:https://doh.pub/dns-query // 腾讯云主页管家
-*.myqcloud.com = server:https://doh.pub/dns-query // 腾讯开放云
-*.tencent-cloud.net = server:https://doh.pub/dns-query // 腾讯云
-*.tencentcloud-aiot.com = server:https://doh.pub/dns-query // 腾讯云aiot解决方案
-*.tencentcloudapi.com = server:https://doh.pub/dns-query // 腾讯云API
-*.tencentcloudcr.com = server:https://doh.pub/dns-query // 腾讯云容器镜像服务TCR
-*.tencentcloudmarket.com = server:https://doh.pub/dns-query // 腾讯云云市场
-*.qq.com = server:https://doh.pub/dns-query // QQ
-*.qlogo.cn = server:https://doh.pub/dns-query // 腾讯头像
-*.qpic.cn = server:https://doh.pub/dns-query // 腾讯图片
-*.weixin.qq.com = server:https://doh.pub/dns-query // 微信
-*.wx.qq.com = server:https://doh.pub/dns-query // 微信
-*.weixin.com = server:https://doh.pub/dns-query // 微信
-*.weixinbridge.com = server:https://doh.pub/dns-query // 微信公众平台
-*.wechat.com = server:https://doh.pub/dns-query // WeChat
-*.servicewechat.com = server:https://doh.pub/dns-query // 微信小程序
-*.weiyun.com = server:https://doh.pub/dns-query // 微云
-*.gtimg.cn = server:https://doh.pub/dns-query // 腾讯 图片 静态资源
-*.idqqimg.com = server:https://doh.pub/dns-query // 腾讯 图片 静态资源
-*.cdn-go.cn = server:https://doh.pub/dns-query // 腾讯 静态资源 CDN
-*.smtcdns.com = server:https://doh.pub/dns-query // 腾讯云 智能云解析DNS
-*.smtcdns.net = server:https://doh.pub/dns-query // 腾讯云 智能云解析DNS
-url.cn = server:https://doh.pub/dns-query // 腾讯短网址
-*.baidu = server:180.76.76.76 // 百度
-*.baidu.com = server:180.76.76.76 // 百度
-*.bdimg.com = server:180.76.76.76 // 百度 静态资源
-*.bdstatic.com = server:180.76.76.76 // 百度 静态资源
-*.baidupcs.* = server:180.76.76.76 // 百度网盘
-*.baiduyuncdn.* = server:180.76.76.76 // 百度云CDN
-*.baiduyundns.* = server:180.76.76.76 // 百度云DNS
-*.bdydns.* = server:180.76.76.76 // 百度云 DNS
-*.bdycdn.* = server:180.76.76.76 // 百度云 CDN
-*.bdysite.com = server:180.76.76.76 // 百度云 域名
-*.bdysites.com = server:180.76.76.76 // 百度云 域名
-*.baidubce.* = server:180.76.76.76 // 百度智能云
-*.bcedns.* = server:180.76.76.76 // 百度智能云 DNS
-*.bcebos.com = server:180.76.76.76 // 百度智能云 对象存储BOS
-*.bcevod.com = server:180.76.76.76 // 百度智能云 播放器服务
-*.bceimg.com = server:180.76.76.76 // 百度智能云 图片服务
-*.bcehost.com = server:180.76.76.76 // 百度智能云 主机
-*.bcehosts.com = server:180.76.76.76 // 百度智能云 主机
-dwz.cn = server:180.76.76.76 // 百度短网址
-*.360.cn = server:https://doh.360.cn/dns-query // 360安全中心
-*.360safe.com = server:https://doh.360.cn/dns-query // 360安全卫士
-*.360kuai.com = server:https://doh.360.cn/dns-query // 360快资讯
-*.so.com = server:https://doh.360.cn/dns-query // 360搜索
-*.360webcache.com = server:https://doh.360.cn/dns-query // 360网页快照服务
-*.qihuapi.com = server:https://doh.360.cn/dns-query // 奇虎api
-*.qhimg.com = server:https://doh.360.cn/dns-query // 360图床
-*.qhimgs.com = server:https://doh.360.cn/dns-query // 360图床
-*.qhimgs?.com = server:https://doh.360.cn/dns-query // 360图床
-*.qhmsg.com = server:https://doh.360.cn/dns-query // 360
-*.qhres.com = server:https://doh.360.cn/dns-query // 奇虎静态资源
-*.qhres?.com = server:https://doh.360.cn/dns-query // 奇虎静态资源
-*.dhrest.com = server:https://doh.360.cn/dns-query // 导航静态文件
-*.qhupdate.com = server:https://doh.360.cn/dns-query // 360
-*.yunpan.cn = server:https://doh.360.cn/dns-query // 360安全云盘
-*.yunpan.com.cn = server:https://doh.360.cn/dns-query // 360安全云盘
-*.yunpan.com = server:https://doh.360.cn/dns-query // 360安全云盘
-urlqh.cn = server:https://doh.360.cn/dns-query // 360短网址
-*.amemv.com = server:180.184.1.1 // 艾特迷
-*.bdxiguaimg.com = server:180.184.1.1 // 西瓜 图片服务
-*.bdxiguastatic.com = server:180.184.1.1 // 西瓜 静态资源
-*.byted-static.com = server:180.184.1.1 // 字节跳动 UNPKG
-*.bytedance.* = server:180.184.1.1 // 字节跳动
-*.bytedns.net = server:180.184.1.1 // 字节跳动 DNS
-*.bytednsdoc.com = server:180.184.1.1 // 字节跳动 CDN 文件存储
-*.bytegoofy.com = server:180.184.1.1 // 字节跳动 Goofy
-*.byteimg.com = server:180.184.1.1 // 字节跳动 图片服务
-*.bytescm.com = server:180.184.1.1 // 字节跳动 SCM
-*.bytetos.com = server:180.184.1.1 // 字节跳动 TOS
-*.bytexservice.com = server:180.184.1.1 // 飞书企业服务平台
-*.douyin.com = server:180.184.1.1 // 抖音
-*.douyinpic.com = server:180.184.1.1 // 抖音 静态资源
-*.douyinstatic.com = server:180.184.1.1 // 抖音 静态资源
-*.douyinvod.com = server:180.184.1.1 // 抖音 静态资源
-*.feelgood.cn = server:180.184.1.1 // FeelGood平台
-*.feiliao.com = server:180.184.1.1 // 飞聊官网
-*.gifshow.com = server:180.184.1.1 // 快手
-*.huoshan.com = server:180.184.1.1 // 火山网
-*.huoshanzhibo.com = server:180.184.1.1 // 火山直播
-*.ibytedapm.com = server:180.184.1.1 // 抖音 dapm
-*.iesdouyin.com = server:180.184.1.1 // 抖音 CDN
-*.ixigua.com = server:180.184.1.1 // 西瓜视频
-*.kspkg.com = server:180.184.1.1 // 快手
-*.pstatp.com = server:180.184.1.1 // 抖音 静态资源
-*.snssdk.com = server:180.184.1.1 // 今日头条
-*.toutiao.com = server:180.184.1.1 // 今日头条
-*.toutiao13.com = server:180.184.1.1 // 今日头条
-*.toutiao???.??? = server:180.184.1.1 // 今日头条 静态资源
-*.toutiaocloud.cn = server:180.184.1.1 // 头条云
-*.toutiaocloud.com = server:180.184.1.1 // 头条云
-*.toutiaopage.com = server:180.184.1.1 // 今日头条 建站
-*.wukong.com = server:180.184.1.1 // 悟空
-*.zijieapi.com = server:180.184.1.1 // 字节跳动 API
-*.zijieimg.com = server:180.184.1.1 // 字节跳动 图片服务
-*.zjbyte.com = server:180.184.1.1 // 今日头条 网页版
-*.zjcdn.com = server:180.184.1.1 // 字节跳动 CDN
-upos-sz-mirrorali.bilivideo.com = server:quic://dns.alidns.com // BiliBili upos视频服务器（阿里云）
-upos-sz-mirrorali?.bilivideo.com = server:quic://dns.alidns.com // BiliBili upos视频服务器（阿里云）
-upos-sz-mirrorali??.bilivideo.com = server:quic://dns.alidns.com // BiliBili upos视频服务器（阿里云）
-upos-sz-mirrorbos.bilivideo.com = server:180.76.76.76 // BiliBili upos视频服务器（百度云）
-upos-sz-mirrorcos.bilivideo.com = server:https://doh.pub/dns-query // BiliBili upos视频服务器（腾讯云）
-upos-sz-mirrorcos?.bilivideo.com = server:https://doh.pub/dns-query // BiliBili upos视频服务器（腾讯云）
-upos-sz-mirrorcos??.bilivideo.com = server:https://doh.pub/dns-query // BiliBili upos视频服务器（腾讯云）
-upos-sz-upcdnbd??.bilivideo.com = server:180.76.76.76 // BiliBili upos视频服务器（百度云）
-upos-sz-upcdntx.bilivideo.com = server:https://doh.pub/dns-query // BiliBili upos视频服务器（腾讯云）
-*.cht.com.tw = server:https://dns.hinet.net/dns-query // 中华电信
-*.hinet.net = server:https://dns.hinet.net/dns-query // 中华电信HiNet
-*.emome.net = server:https://dns.hinet.net/dns-query // 中华电信emome
-*.tw = server:https://dns.twnic.tw/dns-query // TWNIC DNS
-*.taipei = server:https://dns.twnic.tw/dns-query // TWNIC DNS
-*.he.net = server:https://ordns.he.net/dns-query // HE.net
 # Host
 iosapps.itunes.apple.com = iosapps.itunes.apple.com.download.ks-cdn.com
 
@@ -1221,6 +991,8 @@ iosapps.itunes.apple.com = iosapps.itunes.apple.com.download.ks-cdn.com
 ^https:\/\/spamblocker-api\.zeekstudio\.com\/checkVersion - reject
 ^https:\/\/(cn|www)\.pornhub\.com\/_xa\/ads - reject
 https?:\/\/91porn\.com(\/|)$ https://91porn.com/index.php 302
+# dewu
+^https?:\/\/app\.dewu\.com\/api\/v\d\/app\/advertisement(?!\/new\/activity\/receiveCoupon) - reject
 # dianping
 ^https?:\/\/103\.37\.155\.60\/fetch - reject
 ^https?:\/\/mapi\.dianping\.com\/mapi\/operating\/(?>indexopsmodules|loadsplashconfig) - reject
@@ -1375,6 +1147,8 @@ http-request ^https?:\/\/(raw|gist)\.githubusercontent\.com\/ header-replace Acc
 ^http:\/\/cdn\.133\.cn\/md\/gtgj\/.+\/.+720x1280 data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 ^https:\/\/api\.pinduoduo\.com\/api\/alexa\/cells\/hub\/v3\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 ^https?:\/\/api2\.yaduo\.com\/atourlife\/activity\/appLaunch data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# dewu
+^https?:\/\/cdn\.poizon\.com\/node-common\/.*.jpg data-type=text data="" status-code=200
 # DiDi-AD
 ^https:\/\/res\.xiaojukeji\.com\/resapi\/activity\/getMulti\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 ^https:\/\/res\.xiaojukeji\.com\/resapi\/activity\/xpget data-type=text data="{}" status-code=200 header="Content-Type:application/json"
@@ -1836,6 +1610,6 @@ youtube.response = type=http-response, pattern=^https:\/\/youtubei\.googleapis\.
 Rewrite: BoxJs = type=http-request,pattern=^https?:\/\/(.+\.)?boxjs\.(com|net),script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/box/chavy.boxjs.js, requires-body=true, timeout=120
 
 [MITM]
-hostname = %APPEND% *.boxjs.com, *.boxjs.net, *.dianping.com, *.googlevideo.com, *.httpdns.pro, *.mcdn.bilivideo.cn, *.pornhub.com, *.weibo.cn, *.weibo.com, *.zdmimg.com, -*.facebook.com, -*.instagram.com, -*.pstatp.com, -*.snssdk.com, -*.twitter.com, -mobile.12306.cn, 103.37.155.60, 112.53.55.225, 114.115.217.129, 116.85.2.*, 116.85.3.*, 119.29.29.*, 119.29.29.98, 119.29.29.99, 120.241.142.*, 120.241.143.*, 123.207.209.*, 139.199.240.84, 162.14.157.*, 91porn.com, a.sinopecsales.com, a1d5b283e-wx621112590b635086.sh.wxgateway.com, acs.m.goofish.com, acs.m.taobao.com, ad.12306.cn, afd.baidu.com, amdc-sibling.alipay.com.cn, amdc.alipay.com, amdc.m.taobao.com, ams-cdn.cdtft.cn, apapia-sqk-weblogic.manmanbuy.com, apapia-sqk.manmanbuy.com, api-*.smoot.apple.com, api-access.pangolin-sdk-toutiao.com, api-sams.walmartmobile.cn, api.biliapi.net, api.bilibili.com, api.live.bilibili.com, api.m.jd.com, api.mcd.cn, api.pinduoduo.com, api.prod.dj.mstand.cn, api.spotify.com, api.udache.com, api.vc.bilibili.com, api2.helper.qq.com, api2.smoot.apple.com, api2.yaduo.com, api5-normal-m.amemv.com, apimobile.meituan.com, app-api.smzdm.com, app.biliapi.net, app.bilibili.com, article-api.smzdm.com, aweme.snssdk.com, awp-assets.meituan.net, axxd.xmseeyouyima.com, baike-api.smzdm.com, bk.bingo.qq.com, bla.gtimg.com, boxjs.com, boxjs.net, c.m.163.com, capi.lkcoffee.com, cdn.api.fotoable.com, ci.xiaohongshu.com, client.app.coc.10086.cn, client.qunar.com, cloud.bluecardsoft.com, common.diditaxi.com.cn, conf.diditaxi.com.cn, configuration.ls.apple.com, cover.baidu.com, csc-service.sgcc.com.cn, ct.xiaojukeji.com, cube.elemecdn.com, cy.cloud.ccb.com, daijia.kuaidadi.com, ddplus.meituan.net, dinamicx.alibabausercontent.com, discuz.gtimg.cn, dns.jd.com, dualstack*.amap.com, e.jparking.cn, ecapi.lkcoffee.com, edith.xiaohongshu.com, elemecdn.com, energy.xiaojukeji.com, fcvbjbcebos.baidu.com, flowplus.meituan.net, freight.xiaojukeji.com, fuss10.elemecdn.com, g-acs.m.goofish.com, g.alicdn.com, g1.163.com, gist.githubusercontent.com, github.com, grpc.biliapi.net, gspe1-ssl.ls.apple.com, gspe35-ssl.ls.apple.com, guide-acs.m.taobao.com, guzzoni.smoot.apple.com, gw.alicdn.com, gw3.ykccn.com, h.app.coc.10086.cn, h5.m.goofish.com, haojia-api.smzdm.com, haojia.m.smzdm.com, heic.alicdn.com, home.mi.com, home.umetrip.com, homefront.qunar.com, homepage-api.smzdm.com, image1.ccb.com, imageadv.ccb.com, images.pinduoduo.com, img*.lkcoffee.com, img.meituan.net, img1.126.net, imgcache.qq.com, in.m.jd.com, is.snssdk.com, issuecdn.baidupcs.com, l*.51fanli.net, line3-h5-mobile-api.biligame.com, live.bilibili.com, m*.amap.com, m.dianping.com, m.lkcoffee.com, m5-zb.amap.com, m5.amap.com, manga.bilibili.com, mapi.dianping.com, mbs.boc.cn, mdn.alicdn.com, mea.meitudata.com, mi.gdt.qq.com, miniapp.qmai.cn, mmgr.gtimg.com, mobile.12306.cn, mobile.cmbchina.com, mp.weixin.qq.com, mtteve.beacon.qq.com, nex.163.com, npay.meituan.com, nr-op.elemecdn.com, ocrifs.ejoy.sinopec.com, osg-service.sgcc.com.cn, oss-zjrs.haier.net, oss.amap.com, p*.meituan.net, p.meituan.com, pan.baidu.com, poplayer.template.alibaba.com, portal-portm.meituan.com, post.m.smzdm.com, qde.qunar.com, qianbao.smzdm.com, qimgs.qunarzz.com, qt.qq.com, qzonestyle.gtimg.cn, raw.githubusercontent.com, rec.xiaohongshu.com, res.xiaojukeji.com, rms.meituan.com, router.com, s-api.smzdm.com, s3plus.meituan.net, security.wechat.com, sns.amap.com, spamblocker-api.zeekstudio.com, spclient.wg.spotify.com, splashqqlive.gtimg.com, sqt.meituan.com, sytgate.jslife.com.cn, t-dsp.pinduoduo.com, tfsmy.chengdu.gov.cn, tft-app.cdtft.cn, triangle.wearemanner.com, update.pan.baidu.com, upos-*-mirrorakam.akamaized.net, upos-sz-mirror*bstar1.bilivideo.com, user-api.smzdm.com, video-dsp.pddpic.com, vv.video.qq.com, waimai-guide.ele.me, wallet.95516.com, wcprd.hilton.com.cn, weatherkit.apple.com, web.meituan.com, webapi.qmai.cn, webappcfg.paas.cmbchina.com, weibo.com, weixin110.qq.com, www.baidu.com, www.dpfile.com, www.google.com, www.meituan.com, www.router.com, www.xiaohongshu.com, www1.elecfans.com, wx.17u.cn, wxa.wxs.qq.com, wximg.wxs.qq.com, wxproj.seeyouyima.com, wxsmw.wxs.qq.com, x.seeyouyima.com, y.gtimg.cn, yixiu-abtest.alicdn.com, youtubei.googleapis.com, zhiyou.m.smzdm.com, zj.haier.net
+hostname = %APPEND% *.boxjs.com, *.boxjs.net, *.dianping.com, *.googlevideo.com, *.httpdns.pro, *.mcdn.bilivideo.cn, *.pornhub.com, *.weibo.cn, *.weibo.com, *.zdmimg.com, -*.facebook.com, -*.instagram.com, -*.pstatp.com, -*.snssdk.com, -*.twitter.com, -mobile.12306.cn, 103.37.155.60, 112.53.55.225, 114.115.217.129, 116.85.2.*, 116.85.3.*, 119.29.29.*, 119.29.29.98, 119.29.29.99, 120.241.142.*, 120.241.143.*, 123.207.209.*, 139.199.240.84, 162.14.157.*, 91porn.com, a.sinopecsales.com, a1d5b283e-wx621112590b635086.sh.wxgateway.com, acs.m.goofish.com, acs.m.taobao.com, ad.12306.cn, afd.baidu.com, amdc-sibling.alipay.com.cn, amdc.alipay.com, amdc.m.taobao.com, ams-cdn.cdtft.cn, apapia-sqk-weblogic.manmanbuy.com, apapia-sqk.manmanbuy.com, api-*.smoot.apple.com, api-access.pangolin-sdk-toutiao.com, api-sams.walmartmobile.cn, api.biliapi.net, api.bilibili.com, api.live.bilibili.com, api.m.jd.com, api.mcd.cn, api.pinduoduo.com, api.prod.dj.mstand.cn, api.spotify.com, api.udache.com, api.vc.bilibili.com, api2.helper.qq.com, api2.smoot.apple.com, api2.yaduo.com, api5-normal-m.amemv.com, apimobile.meituan.com, app-api.smzdm.com, app.biliapi.net, app.bilibili.com, app.dewu.com, article-api.smzdm.com, aweme.snssdk.com, awp-assets.meituan.net, axxd.xmseeyouyima.com, baike-api.smzdm.com, bk.bingo.qq.com, bla.gtimg.com, boxjs.com, boxjs.net, c.m.163.com, capi.lkcoffee.com, cdn.api.fotoable.com, cdn.poizon.com, ci.xiaohongshu.com, client.app.coc.10086.cn, client.qunar.com, cloud.bluecardsoft.com, common.diditaxi.com.cn, conf.diditaxi.com.cn, configuration.ls.apple.com, cover.baidu.com, csc-service.sgcc.com.cn, ct.xiaojukeji.com, cube.elemecdn.com, cy.cloud.ccb.com, daijia.kuaidadi.com, ddplus.meituan.net, dinamicx.alibabausercontent.com, discuz.gtimg.cn, dns.jd.com, dualstack*.amap.com, e.jparking.cn, ecapi.lkcoffee.com, edith.xiaohongshu.com, elemecdn.com, energy.xiaojukeji.com, fcvbjbcebos.baidu.com, flowplus.meituan.net, freight.xiaojukeji.com, fuss10.elemecdn.com, g-acs.m.goofish.com, g.alicdn.com, g1.163.com, gist.githubusercontent.com, github.com, grpc.biliapi.net, gspe1-ssl.ls.apple.com, gspe35-ssl.ls.apple.com, guide-acs.m.taobao.com, guzzoni.smoot.apple.com, gw.alicdn.com, gw3.ykccn.com, h.app.coc.10086.cn, h5.m.goofish.com, haojia-api.smzdm.com, haojia.m.smzdm.com, heic.alicdn.com, home.mi.com, home.umetrip.com, homefront.qunar.com, homepage-api.smzdm.com, image1.ccb.com, imageadv.ccb.com, images.pinduoduo.com, img*.lkcoffee.com, img.meituan.net, img1.126.net, imgcache.qq.com, in.m.jd.com, is.snssdk.com, issuecdn.baidupcs.com, l*.51fanli.net, line3-h5-mobile-api.biligame.com, live.bilibili.com, m*.amap.com, m.dianping.com, m.lkcoffee.com, m5-zb.amap.com, m5.amap.com, manga.bilibili.com, mapi.dianping.com, mbs.boc.cn, mdn.alicdn.com, mea.meitudata.com, mi.gdt.qq.com, miniapp.qmai.cn, mmgr.gtimg.com, mobile.12306.cn, mobile.cmbchina.com, mp.weixin.qq.com, mtteve.beacon.qq.com, nex.163.com, npay.meituan.com, nr-op.elemecdn.com, ocrifs.ejoy.sinopec.com, osg-service.sgcc.com.cn, oss-zjrs.haier.net, oss.amap.com, p*.meituan.net, p.meituan.com, pan.baidu.com, poplayer.template.alibaba.com, portal-portm.meituan.com, post.m.smzdm.com, qde.qunar.com, qianbao.smzdm.com, qimgs.qunarzz.com, qt.qq.com, qzonestyle.gtimg.cn, raw.githubusercontent.com, rec.xiaohongshu.com, res.xiaojukeji.com, rms.meituan.com, router.com, s-api.smzdm.com, s3plus.meituan.net, security.wechat.com, sns.amap.com, spamblocker-api.zeekstudio.com, spclient.wg.spotify.com, splashqqlive.gtimg.com, sqt.meituan.com, sytgate.jslife.com.cn, t-dsp.pinduoduo.com, tfsmy.chengdu.gov.cn, tft-app.cdtft.cn, triangle.wearemanner.com, update.pan.baidu.com, upos-*-mirrorakam.akamaized.net, upos-sz-mirror*bstar1.bilivideo.com, user-api.smzdm.com, video-dsp.pddpic.com, vv.video.qq.com, waimai-guide.ele.me, wallet.95516.com, wcprd.hilton.com.cn, weatherkit.apple.com, web.meituan.com, webapi.qmai.cn, webappcfg.paas.cmbchina.com, weibo.com, weixin110.qq.com, www.baidu.com, www.dpfile.com, www.google.com, www.meituan.com, www.router.com, www.xiaohongshu.com, www1.elecfans.com, wx.17u.cn, wxa.wxs.qq.com, wximg.wxs.qq.com, wxproj.seeyouyima.com, wxsmw.wxs.qq.com, x.seeyouyima.com, y.gtimg.cn, yixiu-abtest.alicdn.com, youtubei.googleapis.com, zhiyou.m.smzdm.com, zj.haier.net
 hostname-disabled = %INSERT% buy.itunes.apple.com, gateway.icloud.com, gateway.icloud.com.cn, ios.chat.openai.com, weather-data.apple.com
 
