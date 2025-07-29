@@ -41,9 +41,9 @@ DOMAIN-SUFFIX,ehaier.com,REJECT,extended-matching,pre-matching
 ^https?:\/\/service\.haiersmarthomes\.com\/management\/banner\/getBannerList\?source=4 data-type=text data="{}" status-code=200
 
 [Script]
-ehaier = type=http-response, pattern=^https?:\/\/oss-zjrs\.haier\.net\/resource\/confFile\/\d{22}\.json$, script-path=https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/haier.js, requires-body=true, max-size=0
+ehaier = type=http-response, pattern=^https?:\/\/oss-zjrs\.haier\.net\/resource\/confFile\/\d{22}\.json$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/haiersmarthomes/haier.js, requires-body=true, max-size=0
 
-ehaier = type=http-response, pattern=^https?:\/\/zj\.haier\.net\/omsappapi\/resource\/v\d\/get\/resourceBag$, script-path=https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/haier.js, requires-body=true, max-size=0
+ehaier = type=http-response, pattern=^https?:\/\/zj\.haier\.net\/omsappapi\/resource\/v\d\/get\/resourceBag$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/haiersmarthomes/haier.js, requires-body=true, max-size=0
 
 [MITM]
 hostname = %APPEND% dualstack*.amap.com, oss-zjrs.haier.net, zj.haier.net, service.haiersmarthomes.com
