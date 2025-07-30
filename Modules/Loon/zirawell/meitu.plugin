@@ -14,10 +14,18 @@
 
 [Rule]
 DOMAIN,adui.tg.meitu.com,REJECT
+DOMAIN,corp.meitu.com,REJECT
+DOMAIN,gg.meitu.com,REJECT
+DOMAIN,message.meitu.com,REJECT
+DOMAIN,tuiguang.meitu.com,REJECT
+DOMAIN,stat.meitudata.com,REJECT
 
 [Rewrite]
 ^https?:\/\/mea\.meitudata\.com\/kaiping - reject
 
+[Script]
+http-response ^https?:\/\/((h5|api)\.xiuxiu|api-sub|api\.posters)\.meitu\.com\/.+\/(vip|user|h\d|center|home) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/meitu/meitu.js, requires-body=true, tag=meitu
+
 [MITM]
-hostname = mea.meitudata.com
+hostname = mea.meitudata.com, h5.xiuxiu.meitu.com, api.xiuxiu.meitu.com, api-sub.meitu.com, api.posters.meitu.com
 
