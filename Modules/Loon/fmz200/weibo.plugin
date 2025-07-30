@@ -9,7 +9,7 @@
 #!tg-group=https://t.me/lanjieguanggao
 #!tag=去广告, 微博, fmz200
 #!system=iOS, iPadOS
-#!date=2025-07-02 19:30:17
+#!date=2025-07-30 14:30:17
 
 [Argument]
 MainTabFilter=switch,"true","false",tag = 顶部 Tab 过滤,desc = 顶部 Tab 过滤
@@ -115,7 +115,7 @@ http-response ^https?:\/\/m?api\.weibo\.c(n|om)\/2\/groups\/allgroups\/v2 script
 # 微博评论区广告
 http-response ^https?:\/\/m?api\.weibo\.c(n|om)\/2\/comments\/mix_comments\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/weibo/weibo_ads.js, requires-body=true, timeout=60, tag=微博评论区广告, enable={RemoveCommentAds}
 
-http-response ^https?:\/\/m?api\.weibo\.c(n|om)\/2\/statuses\/container_detail_comment\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/weibo/weibo_ads.js, requires-body=true, timeout=60, tag=微博评论区广告, enable={RemoveCommentAds}
+http-response ^https?:\/\/m?api\.weibo\.c(n|om)\/2\/statuses\/(container_detail_comment|container_detail_mix)\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/weibo/weibo_ads.js, requires-body=true, timeout=60, tag=微博评论区广告, enable={RemoveCommentAds}
 
 # 微博转发区广告
 http-response ^https?:\/\/m?api\.weibo\.c(n|om)\/2\/statuses\/container_detail_forward\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/weibo/weibo_ads.js, requires-body=true, timeout=60, tag=微博转发区广告, enable={RemoveRepostAds}

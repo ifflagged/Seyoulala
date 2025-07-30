@@ -9,7 +9,7 @@
 #!tg-group=https://t.me/lanjieguanggao
 #!tag=去广告, 微博, fmz200
 #!system=iOS, iPadOS
-#!date=2025-07-02 19:30:17
+#!date=2025-07-30 14:30:17
 #!arguments=MainTabFilter:true,RemoveDiscoveryAds:true,RemoveHotSearchAds:true,RemoveTopicAds:true,RemoveSuperTopicAds:true,CleanSuperTopicTab:true,RemoveCommentAds:true,RemoveDetailAds:true,RemoveRepostAds:true,FullAdsCleaner:true,CustomTabSkin:true,SetTabSkinWithoutVip:true,UnlockVipIcons:true
 
 [Rule]
@@ -100,7 +100,7 @@ DOMAIN,adpinpai.video.weibocdn.com,REJECT
 # 微博评论区广告
 微博评论区广告 = type=http-response, pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/2\/comments\/mix_comments\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/weibo/weibo_ads.js, requires-body=true, timeout=60
 
-微博评论区广告 = type=http-response, pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/2\/statuses\/container_detail_comment\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/weibo/weibo_ads.js, requires-body=true, timeout=60
+微博评论区广告 = type=http-response, pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/2\/statuses\/(container_detail_comment|container_detail_mix)\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/weibo/weibo_ads.js, requires-body=true, timeout=60
 
 # 微博转发区广告
 微博转发区广告 = type=http-response, pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/2\/statuses\/container_detail_forward\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/weibo/weibo_ads.js, requires-body=true, timeout=60
