@@ -1,4 +1,4 @@
-#规则数量:1322
+#规则数量:1327
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -221,6 +221,7 @@ DOMAIN,collect.xiaopeng.com
 DOMAIN,conf-darwin.xycdn.com
 DOMAIN,config.inmobi.cn
 DOMAIN,content-open.douyin.com
+DOMAIN,corp.meitu.com
 DOMAIN,counter.kingsoft.com
 DOMAIN,counter.ksosoft.com
 DOMAIN,cpush.ctrip.com
@@ -274,6 +275,7 @@ DOMAIN,g1.tagtic.cn
 DOMAIN,g3.letv.com
 DOMAIN,gdfp.gifshow.com
 DOMAIN,geo2.adobe.com
+DOMAIN,gg.meitu.com
 DOMAIN,ggadoffline.miguvideo.com
 DOMAIN,ggc.cmvideo.cn
 DOMAIN,ggic03.miguvideo.com
@@ -365,6 +367,7 @@ DOMAIN,mdap.mpaas.cn-hangzhou.aliyuncs.com
 DOMAIN,mdap.wallet.pbcdci.cn
 DOMAIN,mdc.wallet.pbcdci.cn
 DOMAIN,mediation.adnxs.com
+DOMAIN,message.meitu.com
 DOMAIN,meta.pinduoduo.com
 DOMAIN,meta.yangkeduo.com
 DOMAIN,metrics.apple.com
@@ -454,6 +457,7 @@ DOMAIN,soul-ad.soulapp.cn
 DOMAIN,splashimgbssdl.yun.kugou.com
 DOMAIN,splashqqlive.gtimg.com
 DOMAIN,stat.10jqka.com.cn
+DOMAIN,stat.meitudata.com
 DOMAIN,stat.y.qq.com
 DOMAIN,stat.youpin.mi.com
 DOMAIN,statistic.live.126.net
@@ -495,6 +499,7 @@ DOMAIN,tracking.babytree.com
 DOMAIN,tracking.leiting.com
 DOMAIN,tracklog.58.com
 DOMAIN,tte.meituan.com
+DOMAIN,tuiguang.meitu.com
 DOMAIN,tux.qq.com
 DOMAIN,twns.p2ptun.qq.com
 DOMAIN,tysdk.95516.com
