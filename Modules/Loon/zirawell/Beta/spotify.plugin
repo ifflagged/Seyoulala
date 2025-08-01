@@ -13,12 +13,13 @@
 #!date=2025-07-15
 
 [Rewrite]
-^https?:\/\/api\d?\.musical\.ly\/api\/ad\/ mock-response-body data-type=tiny-gif status-code=200
-^https?:\/\/spclient\.wg\.spotify\.com\/(?>ad-logic|ads|.+ad_slot|.+banners|.+canvases|.+cards|.+crashlytics|.+doubleclick.net|.+enabled-tracks|.+event|.+sponsored|.+promoted|.+promoted_offer) mock-response-body data-type=tiny-gif status-code=200
+^https?:\/\/(?>gae2-spclient|guc3-spclient|spclient\.wg)\.spotify\.com(:443)?\/artistview\/v1\/artist\/(.*)&platform=iphone https://$1.spotify.com/artistview/v1/artist/$2&platform=ipad 302
+^https?:\/\/(?>gae2-spclient|guc3-spclient|spclient\.wg)\.spotify\.com(:443)?\/pendragon\/ mock-response-body data-type=text data="{}" status-code=200
+^https?:\/\/(?>gae2-spclient|guc3-spclient|spclient\.wg)\.spotify\.com(:443)?\/(?>ad-logic|ads|.+ad_slot|.+banners|.+canvases|.+cards|.+crashlytics|.+doubleclick.net|.+enabled-tracks|.+event|.+sponsored|.+promoted) mock-response-body data-type=tiny-gif status-code=200
 
 [Script]
-http-response ^https?:\/\/spclient\.wg\.spotify\.com\/(bootstrap\/v\d\/bootstrap|user-customization-service\/v\d\/customize)$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/spotify/spotify.js, requires-body=true, tag=spotify
+http-response ^https?:\/\/(?>gae2-spclient|guc3-spclient|spclient\.wg)\.spotify\.com(:443)?\/(?>bootstrap\/v\d\/bootstrap|user-customization-service\/v\d\/customize)$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/spotify/spotify.js, requires-body=true, tag=spotify
 
 [MITM]
-hostname = api*.musical.ly, spclient.wg.spotify.com
+hostname = gae2-spclient.spotify.com, guc3-spclient.spotify.com, spclient.wg.spotify.com
 
