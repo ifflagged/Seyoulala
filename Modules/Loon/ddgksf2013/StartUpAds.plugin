@@ -11,7 +11,7 @@ DOMAIN,ad.12306.cn,DIRECT
 DOMAIN-SUFFIX,iyes.youku.com,REJECT
 
 [Rewrite]
-^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.*mytab response-body-json-jq '.data.model.children |= map(select(.name | contains("营销") | not))'
+^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba.*mytab response-body-json-jq '.data.model.children |= map(select(.name | contains("营销") | not))'
 ^https?:\/\/api\.xiaoyuzhoufm\.com\/v\d\/discovery-feed\/list response-body-json-jq '.data |= map(select(.type != "DISCOVERY_BANNER"))'
 # > Version
 ^https?:\/\/2025.08.02/c389/v2.0.610 - reject-200
