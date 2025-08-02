@@ -10,7 +10,7 @@
 #!tg-group=https://t.me/lanjieguanggao
 #!tag=去广告, fmz200, 奶思
 #!system=iOS, iPadOS
-#!date=2025-07-26 22:00:00
+#!date=2025-08-02 15:47:00
 #!remark=下方的所有规则都标注了对应的hostname，可能存在错误或者遗漏，欢迎反馈。对于无法/可选MITM的hostname都特别做了“如开启可自行添加主机名”提示，如果提示后面没有标注主机名则包含所有主机名，否则只包含提示语后面的主机名。
 #!arguments=12306_enable:true,555_enable:true,51xyk_enable:true,51job_enable:true,albb_enable:true,alyp_enable:true,aiqiyi_enable:true,blued_enable:true,bdduditu_enable:true,bddutpba_enable:true,lawson_enable:true,showUpList:"auto",filterTopReplies:true,airborne:true,logLevel:"info",bilimanhua_enable:true,bohejmkh_enable:true,cdyytmqi_enable:false,cdnngogo_enable:true,cdxb_enable:true,davsdmpk_enable:true,dshxfg_enable:true,didiiuxk_enable:true,dyls_enable:true,ddmc_enable:true,flightradar24_enable:true,fwke_enable:true,ffbi_enable:true,hlzh_enable:true,hema_enable:true,hftx_enable:true,itzj_enable:true,jhsh_enable:true,jkds_enable:true,jkxi_enable:true,keep_enable:true,kkuz_enable:true,kxke_enable:true,kuwoybyt_enable:true,glgclmmg_enable:true,kuan_enable:true,lvtusvuftk_enable:true,mddjba_enable:true,mhgotv_enable:true,mafgwo_enable:true,mdmd_enable:true,meiyou_enable:true,pupuicui_enable:true,51job_enable:true,quda_enable:true,reddit_enable:true,rfrfuipk_enable:true,tab:true,useractivity:true,soul_enable:true,sudaxnyr_enable:true,smzdm_enable:true,tcbc_enable:true,tgxyxbwf_enable:true,vgtime_enable:true,lmjpxmvi_enable:true,MY:true,DT:false,FX:true,PRGG:true,PRRK:false,PRDRD:false,PRSCVPT:false,PRST:false,PRRR:true,HMPR:false,PRMST:true,PRCN:true,whyiyyybyt_enable:true,whyiyzdccidm_enable:true,wfnibovj_enable:true,xnmiuhig_enable:true,xntuisis_enable:true,xnmh_enable:true,xmyu_enable:true,xljnuiyivsuvgo_enable:true,xnhsuu_enable:true,ximalaya_enable:true,youtube_enable:true,yzku_enable:true,yzxiapp_enable:true,vihu_enable:true,vhuhgsjn_enable:true,vrvr_enable:true,vsgogojihhks_enable:true,vsgorfbc_enable:true
 
@@ -1097,10 +1097,12 @@ https?:\/\/helper\.2bulu\.com\/(greenPea\/queryTasks|proSpecial\/allData|saveSpl
 http:\/\/dili.sqcosmos.com\/jiekou\/endpage\/ad - reject-dict
 # hostname = img.meituan.net, s3plus.meituan.net, flowplus.meituan.net
 ^https?:\/\/wmapi\.meituan\.com\/api\/v7\/(loadInfo|openscreen|startpicture)\? - reject-dict
-^https?:\/\/(s3plus|flowplus)\.meituan\.net\/v\d\/\w+\/linglong\/\w+\.(gif|jpg|mp4) - reject-dict
-^https?:\/\/img\.meituan\.net\/bizad\/bizad_brandCpt_\d+\.jpg - reject-dict
+^https?:\/\/(s3plus|flowplus)\.meituan\.net\/v\d\/\w+\/linglong\/\w+\.(gif|jpg|mp4) - reject-img
+^https?:\/\/img\.meituan\.net\/bizad\/bizad_brandCpt_\d+\.jpg - reject-img
+^https?:\/\/img\.meituan\.net\/goodsawardpic\/[a-f0-9]+\.png\.webp - reject-img
 ^https?:\/\/s3plus\.meituan\.net\/ocean-blk-index\/index\/blk_conf_73\.json - reject-dict
 ^https?:\/\/s3plus\.meituan\.net\/v1\/mss_\w+\/(brandcpt-vedio|waimai-alita)\/\w+\.zip$ - reject-dict
+^http:\/\/59\.82\.113\.10\/amdc\/mobileDispatch\?appkey=213807& - reject-dict
 # 美团订单详情页更多推荐
 ^https?:\/\/apimobile\.meituan\.com\/group\/v1\/recommend\/unity\/recommends - reject-dict
 # hostname = peisongapi.meituan.com
@@ -1959,6 +1961,8 @@ https://mgesq.api.mgtv.com/v2/user/center/icon - reject-dict
 #^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch - reject
 # 我的页面横幅
 ^https:\/\/dinamicx\.alibabausercontent\.com\/pub\/fish_home_top_kingkong_new\/ - reject
+# 开屏广告
+^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlecommerce\.splash\.ads\/ - reject-dict
 # 搜索页面净化
 ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.item\.search\.activate\/ - reject-dict
 ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.search\.discover\/ - reject-dict
@@ -2279,6 +2283,10 @@ https://.+\.gamersky.com/v1/statisticAd - reject-dict
 
 ^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.view\.v1\.View\/TFInfo$ data-type=base64 data="AAAAAAIIAQ=="
 
+^https?:\/\/wrapper\.cyapi\.cn\/v1\/activity\? data-type=file data="https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/caiyun.json" header="Content-Type:application/json"
+
+^https?:\/\/yunbusiness\.ccb\.com\/basic_service\/txCtrl\?txcode=A3341AB05 data-type=file data="https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/A3341AB05.json" header="Content-Type:application/json"
+
 ^https?:\/\/(ec|c)api\.lkcoffee\.com\/resource\/m\/eorder\/product\/popAppTagProductList data-type=text data="{"status":"SUCCESS"}" header="Content-Type:application/json"
 
 # 首页领券悬浮红包
@@ -2291,77 +2299,77 @@ body_rewrite_625 = type=http-response, pattern=^https:\/\/app\.bilibili\.com\/x\
 
 body_rewrite_719 = type=http-response, pattern=^https?:\/\/beta-api\.crunchyroll\.com\/cms, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22offset_ms%5C%22%3A%5C%5Cd%2B%22%2C%22offset_ms%5C%22%3A99999999999999%22%5D%5D%5D%5D
 
-body_rewrite_798 = type=http-response, pattern=^https?:\/\/adservice\.sigmob\.cn\/extconfig, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22false%22%2C%22true%22%5D%5D%5D%5D
+body_rewrite_799 = type=http-response, pattern=^https?:\/\/adservice\.sigmob\.cn\/extconfig, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22false%22%2C%22true%22%5D%5D%5D%5D
 
-body_rewrite_862 = type=http-response, pattern=^https?:\/\/maicai\.api\.ddxq\.mobi\/homeApi\/newDetails, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22suspension%22%2C%22fmz200%22%5D%5D%5D%5D
+body_rewrite_863 = type=http-response, pattern=^https?:\/\/maicai\.api\.ddxq\.mobi\/homeApi\/newDetails, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22suspension%22%2C%22fmz200%22%5D%5D%5D%5D
 
-body_rewrite_976 = type=http-response, pattern=^https?:\/\/47\.100\.65\.202\/api\/mobile\/index\.php\?version=\d&mobile=yes&module=basicdata&type=forumlist, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22adv%22%2C%22fmz200%22%5D%5D%5D%5D
+body_rewrite_977 = type=http-response, pattern=^https?:\/\/47\.100\.65\.202\/api\/mobile\/index\.php\?version=\d&mobile=yes&module=basicdata&type=forumlist, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22adv%22%2C%22fmz200%22%5D%5D%5D%5D
 
-body_rewrite_1261 = type=http-response, pattern=^https?:\/\/www\.i3zh\.com, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22cm-pop-up-banners%22%2C%22fmz200%22%5D%5D%5D%5D
+body_rewrite_1262 = type=http-response, pattern=^https?:\/\/www\.i3zh\.com, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22cm-pop-up-banners%22%2C%22fmz200%22%5D%5D%5D%5D
 
-body_rewrite_1276 = type=http-response, pattern=^https?:\/\/yunbusiness\.ccb\.com\/basic_service\/txCtrl\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22%5C%22TAG_AD_INFO%5C%22%22%2C%22%5C%22fmz200%5C%22%22%5D%5D%5D%5D
+body_rewrite_1277 = type=http-response, pattern=^https?:\/\/yunbusiness\.ccb\.com\/basic_service\/txCtrl\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22%5C%22TAG_AD_INFO%5C%22%22%2C%22%5C%22fmz200%5C%22%22%5D%5D%5D%5D
 
-body_rewrite_1281 = type=http-response, pattern=^https?:\/\/waimai-guide\.ele\.me\/\w+\/mtop\.venus\.shopresourceservice\.getshopresource, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22posterList%22%2C%22fmz200%22%5D%5D%5D%5D
+body_rewrite_1283 = type=http-response, pattern=^https?:\/\/waimai-guide\.ele\.me\/\w+\/mtop\.venus\.shopresourceservice\.getshopresource, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22posterList%22%2C%22fmz200%22%5D%5D%5D%5D
 
-body_rewrite_1301 = type=http-response, pattern=^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=lite_advertising, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22jdLiteAdvertisingVO%22%2C%22fmz200%22%5D%5D%5D%5D
+body_rewrite_1303 = type=http-response, pattern=^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=lite_advertising, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22jdLiteAdvertisingVO%22%2C%22fmz200%22%5D%5D%5D%5D
 
-body_rewrite_1302 = type=http-response, pattern=^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=lite_SmartPush, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22pushData%22%2C%22fmz200%22%5D%5D%5D%5D
+body_rewrite_1304 = type=http-response, pattern=^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=lite_SmartPush, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22pushData%22%2C%22fmz200%22%5D%5D%5D%5D
 
-body_rewrite_1414 = type=http-response, pattern=^https?:\/\/p\.kuaidi100\.com\/mobile\/mobileapi\.do$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22json-del%22%2C%5B%22adsplash%22%2C%22adIsConsumable%22%2C%22adProductId%22%2C%22nologin_tips%22%2C%22index_banner%22%2C%22me_banner%22%2C%22index_banner_shadow%22%2C%22adshongbao%22%2C%22adsapp_homepage_ticket_pop%22%2C%22adsoptimizationsend%22%2C%22adsapp_activity_ad_array%22%2C%22adbanner%22%2C%22adposition%22%2C%22adShowAgainTime%22%5D%5D%5D
+body_rewrite_1416 = type=http-response, pattern=^https?:\/\/p\.kuaidi100\.com\/mobile\/mobileapi\.do$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22json-del%22%2C%5B%22adsplash%22%2C%22adIsConsumable%22%2C%22adProductId%22%2C%22nologin_tips%22%2C%22index_banner%22%2C%22me_banner%22%2C%22index_banner_shadow%22%2C%22adshongbao%22%2C%22adsapp_homepage_ticket_pop%22%2C%22adsoptimizationsend%22%2C%22adsapp_activity_ad_array%22%2C%22adbanner%22%2C%22adposition%22%2C%22adShowAgainTime%22%5D%5D%5D
 
-body_rewrite_1415 = type=http-response, pattern=^https?:\/\/p\.kuaidi100\.com\/apicenter\/xcx\.dox, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22json-del%22%2C%5B%22data.secondMenuList%22%5D%5D%5D
+body_rewrite_1417 = type=http-response, pattern=^https?:\/\/p\.kuaidi100\.com\/apicenter\/xcx\.dox, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22json-del%22%2C%5B%22data.secondMenuList%22%5D%5D%5D
 
-body_rewrite_1756 = type=http-response, pattern=#^https?:\/\/www\.pushplus\.plus.*, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22(%3Chead%3E)%22%2C%22%241%3Cstyle%22%5D%2C%5B%22type%3D%5C%22text%2Fcss%5C%22%3E%22%2C%22div.container.py-3.text-center%22%5D%2C%5B%22%7Bdisplay%3A%22%2C%22none!%22%5D%2C%5B%22important%7D%22%2C%22%3C%2Fstyle%22%5D%5D%5D%5D
+body_rewrite_1760 = type=http-response, pattern=#^https?:\/\/www\.pushplus\.plus.*, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22(%3Chead%3E)%22%2C%22%241%3Cstyle%22%5D%2C%5B%22type%3D%5C%22text%2Fcss%5C%22%3E%22%2C%22div.container.py-3.text-center%22%5D%2C%5B%22%7Bdisplay%3A%22%2C%22none!%22%5D%2C%5B%22important%7D%22%2C%22%3C%2Fstyle%22%5D%5D%5D%5D
 
-body_rewrite_1797 = type=http-response, pattern=^https?:\/\/mobile\.yangkeduo\.com\/proxy\/api\/api\/express\/post\/waybill\/red_packet\/goods_list$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22%5C%22list%5C%22%3A%5C%5C%5B.%2B%5C%5C%5D%22%2C%22%5C%22list%5C%22%3A%5B%5D%22%5D%5D%5D%5D
+body_rewrite_1801 = type=http-response, pattern=^https?:\/\/mobile\.yangkeduo\.com\/proxy\/api\/api\/express\/post\/waybill\/red_packet\/goods_list$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22%5C%22list%5C%22%3A%5C%5C%5B.%2B%5C%5C%5D%22%2C%22%5C%22list%5C%22%3A%5B%5D%22%5D%5D%5D%5D
 
-body_rewrite_1875 = type=http-response, pattern=^https:\/\/beta-luna\.douyin\.com\/luna\/card\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22json-replace%22%2C%5B%5B%22card_items%5B0%5D.priority_display%22%2Cfalse%5D%2C%5B%22card_items%5B0%5D.is_show%22%2Cfalse%5D%2C%5B%22preview_guide%22%2Cnull%5D%5D%5D%5D
+body_rewrite_1879 = type=http-response, pattern=^https:\/\/beta-luna\.douyin\.com\/luna\/card\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22json-replace%22%2C%5B%5B%22card_items%5B0%5D.priority_display%22%2Cfalse%5D%2C%5B%22card_items%5B0%5D.is_show%22%2Cfalse%5D%2C%5B%22preview_guide%22%2Cnull%5D%5D%5D%5D
 
-body_rewrite_1877 = type=http-response, pattern=^https:\/\/beta-luna\.douyin\.com\/luna\/more-panel\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22json-del%22%2C%5B%22blocks%5B1%5D%22%5D%5D%5D
+body_rewrite_1881 = type=http-response, pattern=^https:\/\/beta-luna\.douyin\.com\/luna\/more-panel\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22json-del%22%2C%5B%22blocks%5B1%5D%22%5D%5D%5D
 
-body_rewrite_1963 = type=http-response, pattern=^https?:\/\/dyncdn\.me\/static\/\d{0,2}\/js\/showads\.js$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22true%22%2C%22false%22%5D%5D%5D%5D
+body_rewrite_1967 = type=http-response, pattern=^https?:\/\/dyncdn\.me\/static\/\d{0,2}\/js\/showads\.js$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22true%22%2C%22false%22%5D%5D%5D%5D
 
-body_rewrite_1966 = type=http-response, pattern=^https?:\/\/capi\.lkcoffee\.com\/resource\/m\/sys\/app\/adposNew, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22%5C%5C%7B.%2B%5C%5C%7D%22%2C%22%7B%5C%22status%5C%22%3A%5C%22SUCCESS%5C%22%7D%22%5D%5D%5D%5D
+body_rewrite_1970 = type=http-response, pattern=^https?:\/\/capi\.lkcoffee\.com\/resource\/m\/sys\/app\/adposNew, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22%5C%5C%7B.%2B%5C%5C%7D%22%2C%22%7B%5C%22status%5C%22%3A%5C%22SUCCESS%5C%22%7D%22%5D%5D%5D%5D
 
-body_rewrite_1968 = type=http-response, pattern=^https?:\/\/m\.lkcoffee\.com\/ecapi\/resource\/m\/member\/exchange\/page, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22%5C%5C%7B.%2B%5C%5C%7D%22%2C%22%7B%5C%22status%5C%22%3A%5C%22SUCCESS%5C%22%7D%22%5D%5D%5D%5D
+body_rewrite_1972 = type=http-response, pattern=^https?:\/\/m\.lkcoffee\.com\/ecapi\/resource\/m\/member\/exchange\/page, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22%5C%5C%7B.%2B%5C%5C%7D%22%2C%22%7B%5C%22status%5C%22%3A%5C%22SUCCESS%5C%22%7D%22%5D%5D%5D%5D
 
-body_rewrite_1969 = type=http-response, pattern=^https?:\/\/m\.lkcoffee\.com\/capi\/resource\/m\/growUp\/main, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22%5C%22popTitle%5C%22%3A%5C%22.%2B%3F%5C%22%22%2C%22%5C%22popTitle%5C%22%3A%5C%22%5C%22%22%5D%5D%5D%5D
+body_rewrite_1973 = type=http-response, pattern=^https?:\/\/m\.lkcoffee\.com\/capi\/resource\/m\/growUp\/main, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22%5C%22popTitle%5C%22%3A%5C%22.%2B%3F%5C%22%22%2C%22%5C%22popTitle%5C%22%3A%5C%22%5C%22%22%5D%5D%5D%5D
 
-body_rewrite_2155 = type=http-request, pattern=#^https:\/\/testflight\.apple\.com\/v2\/accounts\/.*\/apps\/\d*\/builds\/\d*\/install$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22%5C%22storefrontId%5C%22%20%3A%20.*%2C%22%2C%22%5C%22storefrontId%5C%22%3A%5C%22143441-19%2C29%5C%22%22%5D%5D%5D%5D
+body_rewrite_2159 = type=http-request, pattern=#^https:\/\/testflight\.apple\.com\/v2\/accounts\/.*\/apps\/\d*\/builds\/\d*\/install$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22%5C%22storefrontId%5C%22%20%3A%20.*%2C%22%2C%22%5C%22storefrontId%5C%22%3A%5C%22143441-19%2C29%5C%22%22%5D%5D%5D%5D
 
-body_rewrite_2177 = type=http-response, pattern=^https://www\.tailgdd\.com/v8/smart/app/config/get$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22json-replace%22%2C%5B%5B%22data%22%2C%7B%7D%5D%5D%5D%5D
+body_rewrite_2181 = type=http-response, pattern=^https://www\.tailgdd\.com/v8/smart/app/config/get$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22json-replace%22%2C%5B%5B%22data%22%2C%7B%7D%5D%5D%5D%5D
 
-body_rewrite_2182 = type=http-response, pattern=^https?:\/\/tft-app\.cdtft\.cn\/gateway-customer\/tftapp\/tft-ams\/api\/appAd, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22officialAdvertResultVo%22%2C%22fmz200%22%5D%5D%5D%5D
+body_rewrite_2186 = type=http-response, pattern=^https?:\/\/tft-app\.cdtft\.cn\/gateway-customer\/tftapp\/tft-ams\/api\/appAd, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22officialAdvertResultVo%22%2C%22fmz200%22%5D%5D%5D%5D
 
-body_rewrite_2189 = type=http-response, pattern=^https?:\/\/chl\.tf\.cn\/channelmg\/sys\/socso\/order\/queryOrderInfo, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22%5C%22imgUrl%5C%22%22%2C%22response-body%22%5D%5D%5D%5D
+body_rewrite_2193 = type=http-response, pattern=^https?:\/\/chl\.tf\.cn\/channelmg\/sys\/socso\/order\/queryOrderInfo, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22%5C%22imgUrl%5C%22%22%2C%22response-body%22%5D%5D%5D%5D
 
-body_rewrite_2263 = type=http-response, pattern=^https?:\/\/client\.tujia\.com\/bnbapp-node\/app\/portal\/getportalconfig\/bnb\/v2, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22%5C%22banners%5C%22%3A%5C%5C%5B.%2B%5C%5C%5D%2C%22%2C%22%5C%22banners%5C%22%3A%5B%5D%2C%22%5D%5D%5D%5D
+body_rewrite_2267 = type=http-response, pattern=^https?:\/\/client\.tujia\.com\/bnbapp-node\/app\/portal\/getportalconfig\/bnb\/v2, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22%5C%22banners%5C%22%3A%5C%5C%5B.%2B%5C%5C%5D%2C%22%2C%22%5C%22banners%5C%22%3A%5B%5D%2C%22%5D%5D%5D%5D
 
-body_rewrite_2291 = type=http-response, pattern=#^https?:\/\/vv\.video\.qq\.com\/getvinfo, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22%26sppreviewtype%3D%5C%5Cd(.*)%26spsrt%3D%5C%5Cd%22%2C%22%26sppreviewtype%3D0%241%26spsrt%3D0%22%5D%5D%5D%5D
+body_rewrite_2295 = type=http-response, pattern=#^https?:\/\/vv\.video\.qq\.com\/getvinfo, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22%26sppreviewtype%3D%5C%5Cd(.*)%26spsrt%3D%5C%5Cd%22%2C%22%26sppreviewtype%3D0%241%26spsrt%3D0%22%5D%5D%5D%5D
 
-body_rewrite_2385 = type=http-response, pattern=^https?:\/\/misc-api-prd-mx\.wandafilm\.com\/commend\/common_banner_batch\.api\?bannerInfos=%5B%7B%22cinemaI, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22%5C%22WX_index_mp-%26-boxAD%5C%22%22%2C%22%5C%22fmz200%5C%22%22%5D%5D%5D%5D
+body_rewrite_2389 = type=http-response, pattern=^https?:\/\/misc-api-prd-mx\.wandafilm\.com\/commend\/common_banner_batch\.api\?bannerInfos=%5B%7B%22cinemaI, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22%5C%22WX_index_mp-%26-boxAD%5C%22%22%2C%22%5C%22fmz200%5C%22%22%5D%5D%5D%5D
 
-body_rewrite_2389 = type=http-response, pattern=^https?:\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22advertisement%22%2C%22fmz200%22%5D%5D%5D%5D
+body_rewrite_2393 = type=http-response, pattern=^https?:\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22advertisement%22%2C%22fmz200%22%5D%5D%5D%5D
 
-body_rewrite_2443 = type=http-response, pattern=^https:\/\/app-conf\.ds\.163\.com\/v\d\/app\/base\/conf\/static\/start-config\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22json-del%22%2C%5B%22result.updateConfig%5B2%5D.itemList%5B94%5D.itemList%5B2%5D%22%5D%5D%5D
+body_rewrite_2447 = type=http-response, pattern=^https:\/\/app-conf\.ds\.163\.com\/v\d\/app\/base\/conf\/static\/start-config\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22json-del%22%2C%5B%22result.updateConfig%5B2%5D.itemList%5B94%5D.itemList%5B2%5D%22%5D%5D%5D
 
-body_rewrite_2594 = type=http-response, pattern=^https?:\/\/lcen\.xiaote\.net\/api\/graphql, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22screenSplashAd%22%2C%22fmz200%22%5D%5D%5D%5D
+body_rewrite_2598 = type=http-response, pattern=^https?:\/\/lcen\.xiaote\.net\/api\/graphql, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22screenSplashAd%22%2C%22fmz200%22%5D%5D%5D%5D
 
-body_rewrite_2787 = type=http-response, pattern=^https:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/football-portal\/diff2\/batch\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22json-del%22%2C%5B%22json.ad%22%2C%22json.toc%22%5D%5D%5D
+body_rewrite_2793 = type=http-response, pattern=^https:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/football-portal\/diff2\/batch\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22json-del%22%2C%5B%22json.ad%22%2C%22json.toc%22%5D%5D%5D
 
-body_rewrite_2793 = type=http-response, pattern=^https:\/\/mobwsa\.ximalaya\.com\/mobile-playpage\/playpage\/tabs\/v2\/, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22json-del%22%2C%5B%22data.playpage.resourceMap.defaultResource%22%2C%22data.playpage.resourceMap.playPageTip%22%5D%5D%5D
+body_rewrite_2799 = type=http-response, pattern=^https:\/\/mobwsa\.ximalaya\.com\/mobile-playpage\/playpage\/tabs\/v2\/, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22json-del%22%2C%5B%22data.playpage.resourceMap.defaultResource%22%2C%22data.playpage.resourceMap.playPageTip%22%5D%5D%5D
 
-body_rewrite_2799 = type=http-response, pattern=^https:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/mobile-user\/v\d\/homePage\/, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22json-del%22%2C%5B%22data.freeListenV2%22%5D%5D%5D
+body_rewrite_2805 = type=http-response, pattern=^https:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/mobile-user\/v\d\/homePage\/, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22json-del%22%2C%5B%22data.freeListenV2%22%5D%5D%5D
 
-body_rewrite_3118 = type=http-response, pattern=^https:\/\/api\.zhihu\.com\/search\/recommend_query\/v2\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22%5C%22recommend_queries%5C%22%3A%5C%5C%7B.%2B%5C%5C%7D%22%2C%22%5C%22recommend_queries%5C%22%3A%7B%7D%22%5D%5D%5D%5D
+body_rewrite_3124 = type=http-response, pattern=^https:\/\/api\.zhihu\.com\/search\/recommend_query\/v2\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22%5C%22recommend_queries%5C%22%3A%5C%5C%7B.%2B%5C%5C%7D%22%2C%22%5C%22recommend_queries%5C%22%3A%7B%7D%22%5D%5D%5D%5D
 
-body_rewrite_3180 = type=http-response, pattern=^https?:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzinfoshow\/getfeedflowinfo\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22userRed%22%2C%22fmz200%22%5D%5D%5D%5D
+body_rewrite_3186 = type=http-response, pattern=^https?:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzinfoshow\/getfeedflowinfo\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22userRed%22%2C%22fmz200%22%5D%5D%5D%5D
 
-body_rewrite_3182 = type=http-response, pattern=^https?:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzinfoshow\/getchoicegoodsinfos, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22infoData%22%2C%22fmz200%22%5D%5D%5D%5D
+body_rewrite_3188 = type=http-response, pattern=^https?:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzinfoshow\/getchoicegoodsinfos, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22infoData%22%2C%22fmz200%22%5D%5D%5D%5D
 
-body_rewrite_3191 = type=http-response, pattern=^https?:\/\/portal\.zjzwfw\.gov\.cn\/app_api\/appHome\/selectStartPic, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22json-replace%22%2C%5B%5B%22data%22%2C%7B%7D%5D%5D%5D%5D
+body_rewrite_3197 = type=http-response, pattern=^https?:\/\/portal\.zjzwfw\.gov\.cn\/app_api\/appHome\/selectStartPic, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22json-replace%22%2C%5B%5B%22data%22%2C%7B%7D%5D%5D%5D%5D
 
-body_rewrite_3195 = type=http-response, pattern=^https?:\/\/app-izz\.zhengzhou\.gov\.cn:10019\/bizgw\/gateway\.do, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22%5C%22imgUrl19_5x9%5C%22%3A%5C%22.%2B%3F%5C%22%22%2C%22%5C%22imgUrl19_5x9%5C%22%3A%5C%22%5C%22%22%5D%5D%5D%5D
+body_rewrite_3201 = type=http-response, pattern=^https?:\/\/app-izz\.zhengzhou\.gov\.cn:10019\/bizgw\/gateway\.do, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22%5C%22imgUrl19_5x9%5C%22%3A%5C%22.%2B%3F%5C%22%22%2C%22%5C%22imgUrl19_5x9%5C%22%3A%5C%22%5C%22%22%5D%5D%5D%5D
 
 # > 12306
 12306 = type=http-request, pattern=^https?:\/\/ad\.12306\.cn\/ad\/ser\/getAdList, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/12306.js, requires-body=true, timeout=60
@@ -2455,9 +2463,6 @@ bilibili.protobuf = type=http-response, pattern=^https:\/\/(grpc\.biliapi\.net|a
 # 代谢中心 顶部轮播图top_banner / 免费问诊推广diagnos_config / 合作医疗机构partner_hospital / 医患问答question_answer / 热门商品product / 品牌大事件brand_story
 薄荷健康 = type=http-response, pattern=^https:\/\/api\.boohee\.com\/open-interface\/v1\/string\/market_page\?title=metabolism_config$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/bohe_ads.js, requires-body=true, timeout=60
 
-# > 彩云天气
-彩云天气 = type=http-request, pattern=^https?:\/\/wrapper\.cyapi\.cn\/v1\/activity\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/caiyun.json?type=mock&target-app=loon-plugin, timeout=60
-
 # > 菜鸟裹裹
 菜鸟裹裹 = type=http-response, pattern=^https?:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/header.js, timeout=60
 
@@ -2542,9 +2547,6 @@ ithome = type=http-response, pattern=^https?:\/\/napi\.ithome\.com\/api\/(news\/
 
 # > 建行生活
 建行生活 = type=http-response, pattern=^https?:\/\/yunbusiness\.ccb\.com\/basic_service\/txCtrl\?txcode=A3341AB04, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/ccbLifeAds.js, requires-body=true, timeout=60
-
-# 删除首页+金融+我的多个横幅等乱七八糟的广告
-建行生活 = type=http-request, pattern=^https?:\/\/yunbusiness\.ccb\.com\/basic_service\/txCtrl\?txcode=A3341AB05, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/A3341AB05.json?type=mock&target-app=loon-plugin, timeout=60
 
 # 内置饿了么
 建行生活内置饿了么 = type=http-response, pattern=^https?:\/\/g\.alicdn\.com\/.*o2o-ad, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/alicdn.js, requires-body=true, timeout=60

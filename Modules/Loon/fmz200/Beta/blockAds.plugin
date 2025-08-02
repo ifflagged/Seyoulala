@@ -10,7 +10,7 @@
 #!tg-group=https://t.me/lanjieguanggao
 #!tag=去广告, fmz200, 奶思
 #!system=iOS, iPadOS
-#!date=2025-07-26 22:00:00
+#!date=2025-08-02 15:47:00
 #!remark=下方的所有规则都标注了对应的hostname，可能存在错误或者遗漏，欢迎反馈。对于无法/可选MITM的hostname都特别做了“如开启可自行添加主机名”提示，如果提示后面没有标注主机名则包含所有主机名，否则只包含提示语后面的主机名。
 
 [Argument]
@@ -1251,10 +1251,12 @@ https?:\/\/helper\.2bulu\.com\/(greenPea\/queryTasks|proSpecial\/allData|saveSpl
 http:\/\/dili.sqcosmos.com\/jiekou\/endpage\/ad - reject-dict
 # hostname = img.meituan.net, s3plus.meituan.net, flowplus.meituan.net
 ^https?:\/\/wmapi\.meituan\.com\/api\/v7\/(loadInfo|openscreen|startpicture)\? - reject-dict
-^https?:\/\/(s3plus|flowplus)\.meituan\.net\/v\d\/\w+\/linglong\/\w+\.(gif|jpg|mp4) - reject-dict
-^https?:\/\/img\.meituan\.net\/bizad\/bizad_brandCpt_\d+\.jpg - reject-dict
+^https?:\/\/(s3plus|flowplus)\.meituan\.net\/v\d\/\w+\/linglong\/\w+\.(gif|jpg|mp4) - reject-img
+^https?:\/\/img\.meituan\.net\/bizad\/bizad_brandCpt_\d+\.jpg - reject-img
+^https?:\/\/img\.meituan\.net\/goodsawardpic\/[a-f0-9]+\.png\.webp - reject-img
 ^https?:\/\/s3plus\.meituan\.net\/ocean-blk-index\/index\/blk_conf_73\.json - reject-dict
 ^https?:\/\/s3plus\.meituan\.net\/v1\/mss_\w+\/(brandcpt-vedio|waimai-alita)\/\w+\.zip$ - reject-dict
+^http:\/\/59\.82\.113\.10\/amdc\/mobileDispatch\?appkey=213807& - reject-dict
 # 美团订单详情页更多推荐
 ^https?:\/\/apimobile\.meituan\.com\/group\/v1\/recommend\/unity\/recommends - reject-dict
 # hostname = peisongapi.meituan.com
@@ -2113,6 +2115,8 @@ https://mgesq.api.mgtv.com/v2/user/center/icon - reject-dict
 #^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch - reject
 # 我的页面横幅
 ^https:\/\/dinamicx\.alibabausercontent\.com\/pub\/fish_home_top_kingkong_new\/ - reject
+# 开屏广告
+^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlecommerce\.splash\.ads\/ - reject-dict
 # 搜索页面净化
 ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.item\.search\.activate\/ - reject-dict
 ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.search\.discover\/ - reject-dict
@@ -2425,6 +2429,8 @@ https://.+\.gamersky.com/v1/statisticAd - reject-dict
 ^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.interface\.v1\.Teenagers\/ModeStatus$ mock-response-body data-type=base64 data="AAAAABMKEQgCEgl0ZWVuYWdlcnMgAioA" mock-data-is-base64=true
 ^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.interface\.v1\.Search\/DefaultWords$ mock-response-body data-type=base64 data="AAAAACkaHeaQnOe0ouinhumikeOAgeeVquWJp+aIlnVw5Li7IgAoAToAQgBKAA==" mock-data-is-base64=true
 ^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.view\.v1\.View\/TFInfo$ mock-response-body data-type=base64 data="AAAAAAIIAQ==" mock-data-is-base64=true
+^https?:\/\/wrapper\.cyapi\.cn\/v1\/activity\? mock-response-body data-type=json data-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/caiyun.json status-code=200
+^https?:\/\/yunbusiness\.ccb\.com\/basic_service\/txCtrl\?txcode=A3341AB05 mock-response-body data-type=json data-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/A3341AB05.json status-code=200
 ^https?:\/\/(ec|c)api\.lkcoffee\.com\/resource\/m\/eorder\/product\/popAppTagProductList mock-response-body data-type=json data="{"status":"SUCCESS"}"
 # 首页领券悬浮红包
 ^https?:\/\/mall\.meituan\.com\/api\/c\/homepage\/bubble\/operate\/info mock-response-body data-type=json data="{"code": 0}"
@@ -2523,9 +2529,6 @@ http-response ^https:\/\/api\.boohee\.com\/meta-interface\/v1\/index\/plaza\? sc
 # 代谢中心 顶部轮播图top_banner / 免费问诊推广diagnos_config / 合作医疗机构partner_hospital / 医患问答question_answer / 热门商品product / 品牌大事件brand_story
 http-response ^https:\/\/api\.boohee\.com\/open-interface\/v1\/string\/market_page\?title=metabolism_config$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/bohe_ads.js, requires-body=true, timeout=60, tag=薄荷健康, enable={bohejmkh_enable}
 
-# > 彩云天气
-http-request ^https?:\/\/wrapper\.cyapi\.cn\/v1\/activity\? script-path=http://127.0.0.1:9101/convert/_start_/https://raw.githubusercontent.com/Keywos/rule/main/mocks/caiyun.json/_end_/caiyun.json?type=mock&target-app=loon-plugin, timeout=60, tag=彩云天气, enable={cdyytmqi_enable}
-
 # > 菜鸟裹裹
 http-response ^https?:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/header.js, timeout=60, tag=菜鸟裹裹, enable={cdnngogo_enable}
 
@@ -2610,9 +2613,6 @@ http-response ^https?:\/\/napi\.ithome\.com\/api\/(news\/index|topmenu\/getfeeds
 
 # > 建行生活
 http-response ^https?:\/\/yunbusiness\.ccb\.com\/basic_service\/txCtrl\?txcode=A3341AB04 script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/ccbLifeAds.js, requires-body=true, timeout=60, tag=建行生活, enable={jhsh_enable}
-
-# 删除首页+金融+我的多个横幅等乱七八糟的广告
-http-request ^https?:\/\/yunbusiness\.ccb\.com\/basic_service\/txCtrl\?txcode=A3341AB05 script-path=http://127.0.0.1:9101/convert/_start_/https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/ccbLife/A3341AB05.json/_end_/A3341AB05.json?type=mock&target-app=loon-plugin, timeout=60, tag=建行生活, enable={jhsh_enable}
 
 # 内置饿了么
 http-response ^https?:\/\/g\.alicdn\.com\/.*o2o-ad script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/fmz200/blockAds/alicdn.js, requires-body=true, timeout=60, tag=建行生活内置饿了么, enable={jhsh_enable}
