@@ -1335,6 +1335,8 @@ https?:\/\/91porn\.com(\/|)$ https://91porn.com/index.php 302
 ^https?:\/\/axxd\.xmseeyouyima\.com\/ad - reject
 ^https?:\/\/axxd\.xmseeyouyima\.com\/.*getad\? - reject
 # Pinduoduo
+^https:\/\/api\.pinduoduo\.com\/api\/aristotle\/unrated_order_for_unreceived_tab - reject-dict
+^https:\/\/api\.pinduoduo\.com\/api\/aristotle\/query_order_list_tabs_element - reject-dict
 ^https:\/\/api\.pinduoduo\.com\/api\/aquarius\/hungary\/global\/homepage\? - reject-dict
 ^https:\/\/api\.pinduoduo\.com\/api\/caterham\/v3\/query\/order_express_group - reject-dict
 ^https:\/\/api\.pinduoduo\.com\/search_hotquery - reject-dict
