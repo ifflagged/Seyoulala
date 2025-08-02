@@ -4,7 +4,7 @@
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
 #!tag=Jacob
 
-#!update=2024-10-18 13:13
+#!update=2025-08-02
 
 [Rule]
 DOMAIN,sdk.1rtb.net,REJECT
@@ -23,6 +23,8 @@ IP-CIDR,183.194.214.14/32,REJECT,no-resolve
 IP-CIDR,114.110.96.1/32,REJECT,no-resolve
 
 [Rewrite]
+^https:\/\/api\.pinduoduo\.com\/api\/aristotle\/unrated_order_for_unreceived_tab - reject-dict
+^https:\/\/api\.pinduoduo\.com\/api\/aristotle\/query_order_list_tabs_element - reject-dict
 ^https:\/\/api\.pinduoduo\.com\/api\/aquarius\/hungary\/global\/homepage\? - reject-dict
 ^https:\/\/api\.pinduoduo\.com\/api\/caterham\/v3\/query\/order_express_group - reject-dict
 ^https:\/\/api\.pinduoduo\.com\/search_hotquery - reject-dict
