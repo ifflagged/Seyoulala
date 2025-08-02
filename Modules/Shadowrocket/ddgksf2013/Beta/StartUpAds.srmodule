@@ -11,7 +11,7 @@ DOMAIN-SUFFIX,iyes.youku.com,REJECT
 
 [URL Rewrite]
 # > Version
-^https?:\/\/2025.07.28/c388/v2.0.609 - reject-200
+^https?:\/\/2025.08.02/c389/v2.0.610 - reject-200
 # > 10
 ^https?:\/\/ftapi\.10jqka\.com\.cn\/futgwapi\/api\/om\/v\d\/ad\/common\/transfer - reject-200
 # > 139mail
@@ -564,6 +564,8 @@ https://top-widgets-api.xiaozujian.com/api/ad/config - reject-200
 ^https?:\/\/gw-app-gateway\.gwmapp-w\.com\/app-api.*Type=APPSECONDAD - reject-200
 # > tanghushi
 ^https?:\/\/api\.dnurse\.com\/api\/boot\/get-latest-items - reject-200
+# > tianmaojingling
+^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.aicloud\.splash - reject-200
 # > weipinhui
 ^https?:\/\/mapi\.appvipshop\.com\/vips-mobile\/rest\/activity\/advertisement\/get - reject-200
 https://b.appsimg.com/upload/momin/ - reject
@@ -806,6 +808,7 @@ https?:\/\/m\.sd\.10086\.cn\/zapi\/app_common\/homeWelcome\/welcome.do - reject-
 ^https?:\/\/api\.zcool\.com\.cn\/.*common\/open-screen - reject-200
 
 [Body Rewrite]
+http-response-jq ^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.*mytab '.data.model.children |= map(select(.name | contains("营销") | not))'
 http-response-jq ^https?:\/\/api\.xiaoyuzhoufm\.com\/v\d\/discovery-feed\/list '.data |= map(select(.type != "DISCOVERY_BANNER"))'
 
 [Map Local]

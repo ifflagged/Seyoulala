@@ -18,11 +18,12 @@ DOMAIN-SUFFIX,iyes.youku.com,REJECT
 https://b.appsimg.com/upload/momin/ - reject
 
 [Body Rewrite]
+http-response-jq ^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.*mytab '.data.model.children |= map(select(.name | contains("营销") | not))'
 http-response-jq ^https?:\/\/api\.xiaoyuzhoufm\.com\/v\d\/discovery-feed\/list '.data |= map(select(.type != "DISCOVERY_BANNER"))'
 
 [Map Local]
 # > Version
-^https?:\/\/2025.07.28/c388/v2.0.609 data-type=text data=" " status-code=200
+^https?:\/\/2025.08.02/c389/v2.0.610 data-type=text data=" " status-code=200
 
 # > 10
 ^https?:\/\/ftapi\.10jqka\.com\.cn\/futgwapi\/api\/om\/v\d\/ad\/common\/transfer data-type=text data=" " status-code=200
@@ -876,6 +877,9 @@ https://top-widgets-api.xiaozujian.com/api/ad/config data-type=text data=" " sta
 
 # > tanghushi
 ^https?:\/\/api\.dnurse\.com\/api\/boot\/get-latest-items data-type=text data=" " status-code=200
+
+# > tianmaojingling
+^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.aicloud\.splash data-type=text data=" " status-code=200
 
 # > weipinhui
 ^https?:\/\/mapi\.appvipshop\.com\/vips-mobile\/rest\/activity\/advertisement\/get data-type=text data=" " status-code=200

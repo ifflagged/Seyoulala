@@ -19,7 +19,7 @@ https://b.appsimg.com/upload/momin/ - reject
 
 [Map Local]
 # > Version
-^https?:\/\/2025.07.28/c388/v2.0.609 data-type=text data=" " status-code=200
+^https?:\/\/2025.08.02/c389/v2.0.610 data-type=text data=" " status-code=200
 
 # > 10
 ^https?:\/\/ftapi\.10jqka\.com\.cn\/futgwapi\/api\/om\/v\d\/ad\/common\/transfer data-type=text data=" " status-code=200
@@ -873,6 +873,9 @@ https://top-widgets-api.xiaozujian.com/api/ad/config data-type=text data=" " sta
 
 # > tanghushi
 ^https?:\/\/api\.dnurse\.com\/api\/boot\/get-latest-items data-type=text data=" " status-code=200
+
+# > tianmaojingling
+^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.aicloud\.splash data-type=text data=" " status-code=200
 
 # > weipinhui
 ^https?:\/\/mapi\.appvipshop\.com\/vips-mobile\/rest\/activity\/advertisement\/get data-type=text data=" " status-code=200
