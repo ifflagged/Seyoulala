@@ -1776,7 +1776,7 @@ http-response https?:\/\/91porn\.com\/(index|view_video|login|search_result)\.ph
 http-response ^https?:\/\/img\.meituan\.net\/dpmobile\/ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/dianping/dianping.js, requires-body=true, tag=dianping
 http-response ^https?:\/\/ddplus\.meituan\.net\/v\d\/mss_\w+\/picassovc script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/dianping/dianping.js, requires-body=true, tag=dianping
 # eleme
-http-response ^https?:\/\/waimai-guide\.ele\.me\/gw\/mtop\.alsc\.eleme\.miniapp\.homepage script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/eleme/eleme.js, requires-body=true, tag=eleme
+http-response ^https?:\/\/waimai-guide\.ele\.me\/gw\/mtop\.alsc\.eleme\.miniapp\.homepage script-path=https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/eleme.js, requires-body=true, tag=eleme
 # Amap_remove_ads
 http-response ^https:\/\/m5\.amap\.com\/ws\/aos\/perception\/publicTravel\/beforeNavi\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Amap_remove_ads/Amap_remove_ads.js, requires-body=true, tag=移除路线规划推广
 http-response ^https:\/\/m5\.amap\.com\/ws\/bus\/plan\/integrate\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Amap_remove_ads/Amap_remove_ads.js, requires-body=true, tag=移除路线规划、导航结束页推广
