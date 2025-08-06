@@ -55,6 +55,12 @@ jobs:
 
       - name: Run scrape_kelee_plugins.js from ShalalaLala repo
         run: node ShalalaLala/Scripts/scrape_kelee_plugins.js
+        
+      - name: Upload debug screenshot
+        uses: actions/upload-artifact@v3
+        with:
+          name: kelee-debug-screenshot
+          path: page_debug.png
 
       - name: Download plugin files
         run: |
