@@ -7,7 +7,7 @@
 #!openUrl=https://apps.apple.com/app/id432274380
 #!tag=去广告
 #!loon_version=3.2.4(787)
-#!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
+#!homepage=https://pluginhub.kelee.one
 #!date=2025-05-13 15:17:08
 
 [Rule]
@@ -52,6 +52,7 @@ http-response-jq ^https:\/\/api\.zhihu\.com\/bazaar\/vip_tab\/header\? 'delpaths
 http-response-jq ^https:\/\/api\.zhihu\.com\/bazaar\/vip_tab\/header\? 'delpaths([["activity_window"]])'
 http-response-jq ^https:\/\/api\.zhihu\.com\/bazaar\/vip_tab\/header\? 'delpaths([["vip_tip"]])'
 http-response ^https:\/\/api\.zhihu\.com\/search\/recommend_query\/v2\? "recommend_queries":\{.+\} "recommend_queries":{}
+http-response-jq ^https:\/\/api\.zhihu\.com\/questions\/\d+(?:\/answers|\/feeds|\?include=) 'del(.ad_info, .data.ad_info?, .query_info) | if (.data | type) == "array" then .data |= map(select(.target?.answer_type?// "" | tostring | contains("paid") | not)) else . end'
 
 [Script]
 移除回答底部卡片推广 = type=http-response, pattern=^https:\/\/(?:api|page-info)\.zhihu\.com\/(?:answers|articles)\/v2\/\d+, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Zhihu_remove_ads/Zhihu_remove_ads.js, requires-body=true

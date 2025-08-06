@@ -8,7 +8,7 @@
 #!tag=去广告
 #!system_version=15
 #!loon_version=3.2.4(787)
-#!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
+#!homepage=https://pluginhub.kelee.one
 #!date=2025-05-13 15:17:08
 
 [Rule]
@@ -26,11 +26,13 @@ http-response-jq ^https:\/\/tiebac\.baidu\.com\/c\/u\/user\/profile$ 'delpaths([
 http-response-jq ^https:\/\/tiebac\.baidu\.com\/c\/u\/user\/profile$ 'delpaths([["duxiaoman_entry"]])'
 http-response-jq ^https:\/\/tiebac\.baidu\.com\/c\/u\/user\/profile$ 'delpaths([["finance_tab"]])'
 http-response-jq ^https:\/\/tiebac\.baidu\.com\/c\/u\/user\/profile$ 'if (getpath(["user","shake_ad_switch"]) | has("is_show")) then (setpath(["user","shake_ad_switch","is_show"]; 0)) else . end'
+http-response-jq ^https:\/\/tiebac\.baidu\.com\/c\/u\/user\/profile$ '.zone_info |= map(select(.type as $t | ["commerce","banner","game"] | index($t) | not))'
 http-response-jq ^https:\/\/tiebac\.baidu\.com\/c\/f\/sidebar\/home$ 'delpaths([["task_list"]])'
 http-response-jq ^https:\/\/tiebac\.baidu\.com\/c\/f\/sidebar\/home$ 'delpaths([["game_center"]])'
 http-response-jq ^https:\/\/tiebac\.baidu\.com\/c\/f\/sidebar\/home$ 'delpaths([["tools"]])'
 http-response-jq ^https:\/\/tiebac\.baidu\.com\/c\/f\/sidebar\/home$ 'delpaths([["tools","yunying_tools_list"]])'
 http-response-jq ^https:\/\/tiebac\.baidu\.com\/c\/f\/sidebar\/home$ 'delpaths([["tools","show_tools_list"]])'
+http-response-jq ^https:\/\/tiebac\.baidu\.com\/c\/f\/sidebar\/home$ '.tools.show_tools_list |= map(.tools_list |= map(select(.title != "度小满钱包")))'
 http-response-jq ^https:\/\/tiebac\.baidu\.com\/c\/f\/frs\/frsBottom$ 'delpaths([["card_activity"]])'
 
 [Script]

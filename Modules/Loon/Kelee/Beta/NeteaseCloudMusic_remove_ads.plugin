@@ -7,7 +7,7 @@
 #!openUrl=https://apps.apple.com/app/id590338362
 #!tag=去广告
 #!loon_version=3.2.4(787)
-#!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
+#!homepage=https://pluginhub.kelee.one
 #!date=2025-05-13 15:17:08
 
 [Argument]
@@ -38,8 +38,8 @@ DOMAIN,ipv6.music.163.com,REJECT
 ^https?:\/\/interface\d?\.music\.163\.com\/eapi\/(?:ios\/version|mlivestream\/entrance\/playpage\/|link\/position\/show\/strategy|link\/scene\/show\/resource|v1\/content\/exposure\/comment\/banner\/) - reject-dict
 ^https?:\/\/interface\d?\.music\.163\.com\/w?eapi\/(?:activity\/bonus\/playpage\/time\/query|resource-exposure\/|search\/(?:chart\/|rcmd\/keyword\/|specialkeyword\/)) - reject-dict
 ^https:\/\/interface\d\.music\.163\.com\/eapi\/my\/podcast\/tab\/recommend - reject-dict
-^https?:\/\/interface\d?\.music\.163\.com\/e?api\/(ocpc\/)?ad\/ mock-response-body data-type=text data=""
-^https?:\/\/interface\d?\.music\.163.com\/w?e?api\/search\/default mock-response-body data-type=text data=""
+^https?:\/\/interface\d?\.music\.163\.com\/e?api\/(ocpc\/)?ad\/ mock-response-body data-type=text
+^https?:\/\/interface\d?\.music\.163.com\/w?e?api\/search\/default mock-response-body data-type=text
 
 [Script]
 http-response ^https?:\/\/interface\d?\.music\.163\.com\/eapi\/(?:batch|v2\/resource\/comment\/floor\/get) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/NeteaseCloudMusic_remove_ads/NeteaseCloudMusic_remove_ads.js, requires-body=true, binary-body-mode=true, timeout=20, tag=评论区、热推、有话想说、分享一下、歌曲下的祝福等小提示
