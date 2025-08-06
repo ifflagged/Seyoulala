@@ -39,7 +39,7 @@ Modules/Surge/Kelee/Bilibili_remove_ads.sgmodule # Loon,Shadowrocket
 Modules/Surge/BiliUniverse/BiliBili.ADBlock.sgmodule # Loon,Shadowrocket
 Modules/Surge/BiliUniverse/BiliBili.Enhanced.sgmodule # Loon,Shadowrocket
 Modules/Surge/BiliUniverse/BiliBili.Redirect.sgmodule # Loon,Shadowrocket
-Modules/Surge/zirawell/bydwc.sgmodule # Loon,Shadowrocket
+Modules/Surge/zirawell/byd.sgmodule # Loon,Shadowrocket
 
 # C #
 Modules/Surge/ifflagged/Module-Common.sgmodule # Loon,Shadowrocket
