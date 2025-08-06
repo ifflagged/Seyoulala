@@ -40,14 +40,22 @@ jobs:
             sleep 10
           done
 
-      - name: Download README.md
+      - name: Install Node.js and Puppeteer
         run: |
-          curl -s -o README.md https://raw.githubusercontent.com/luestr/ProxyResource/main/README.md
+          curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+          sudo apt-get install -y nodejs
+          npm install puppeteer
 
-      - name: Extract .plugin URLs
+      - name: Download scrape_kelee_plugins.js from private repo
+        env:
+          GH_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
         run: |
-          grep -oP 'https?://[^ )"]+\?plugin=[^ )"]+' README.md > Kelee_plugin_urls_raw.txt
-          grep -oP '(?<=\?plugin=)[^ )"]+' Kelee_plugin_urls_raw.txt > Kelee_plugin_urls.txt
+          curl -H "Authorization: token $GH_TOKEN" \
+               -s -o scrape_kelee_plugins.js \
+               https://raw.githubusercontent.com/${{ github.actor }}/ShalalaLala/main/Scripts/scrape_kelee_plugins.js
+
+      - name: Scrape Kelee plugin links
+        run: node scrape_kelee_plugins.js
 
       - name: Download plugin files
         run: |
