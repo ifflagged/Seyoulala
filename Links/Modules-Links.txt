@@ -75,7 +75,7 @@ https://github.com/zirawell/R-Store/raw/main/Rule/Surge/Adblock/App/0-9/360%E6%9
 https://github.com/zirawell/R-Store/raw/main/Rule/Surge/Adblock/App/A/%E7%88%B1%E5%A5%87%E8%89%BA/iqiyi.sgmodule
 https://github.com/zirawell/R-Store/raw/main/Rule/Surge/Adblock/App/B/%E4%B8%8D%E8%83%8C%E5%8D%95%E8%AF%8D/beingfine.sgmodule
 https://github.com/zirawell/R-Store/raw/main/Rule/Surge/Adblock/App/B/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9(%E5%9B%BD%E9%99%85%E7%89%88%EF%BC%89/bilibili.sgmodule😂https://github.com/zirawell/R-Store/raw/main/Rule/Surge/Adblock/App/B/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9/bilibili.sgmodule
-https://github.com/zirawell/R-Store/raw/main/Rule/Surge/Adblock/App/B/%E6%AF%94%E4%BA%9A%E8%BF%AA%E7%8E%8B%E6%9C%9D/bydwc.sgmodule
+https://github.com/zirawell/R-Store/raw/main/Rule/Surge/Adblock/App/B/%E6%AF%94%E4%BA%9A%E8%BF%AA/byd.sgmodule
 https://github.com/zirawell/R-Store/raw/main/Rule/Surge/Adblock/App/B/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98/baidupan.sgmodule😂https://github.com/zirawell/R-Store/raw/main/Rule/Surge/Adblock/Applet/Wechat/B/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98/baidupan.sgmodule
 https://github.com/zirawell/R-Store/raw/main/Rule/Surge/Adblock/App/B/%E7%99%BE%E8%AF%8D%E6%96%A9/baicizhan.sgmodule
 https://github.com/zirawell/R-Store/raw/main/Rule/Surge/Adblock/App/B/%E8%96%84%E8%8D%B7%E5%81%A5%E5%BA%B7/boohee.sgmodule
