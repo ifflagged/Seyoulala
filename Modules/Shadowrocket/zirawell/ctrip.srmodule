@@ -15,7 +15,6 @@
 [Rule]
 DOMAIN,sofire.baidu.com,REJECT,extended-matching
 DOMAIN-SUFFIX,cn-shanghai.nlb.aliyuncs.com,REJECT,extended-matching
-DOMAIN-SUFFIX,tcpgateway-ali.ctrip.com,REJECT,extended-matching
 DOMAIN-SUFFIX,volceapplog.com,REJECT,extended-matching
 IP-CIDR,210.13.85.204/32,REJECT,no-resolve
 IP-CIDR,116.196.84.232/32,REJECT,no-resolve
