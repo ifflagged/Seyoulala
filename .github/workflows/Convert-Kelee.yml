@@ -57,7 +57,7 @@ jobs:
         run: node ShalalaLala/Scripts/scrape_kelee_plugins.js
         
       - name: Upload debug screenshot
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: kelee-debug-screenshot
           path: page_debug.png
