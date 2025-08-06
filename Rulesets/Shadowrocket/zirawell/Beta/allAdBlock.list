@@ -1,4 +1,4 @@
-#规则数量:1327
+#规则数量:1326
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -1156,7 +1156,6 @@ DOMAIN-SUFFIX,tajs.qq.com
 DOMAIN-SUFFIX,tappx.com
 DOMAIN-SUFFIX,tb060x.corp.youdao.com
 DOMAIN-SUFFIX,tb104x.corp.youdao.com
-DOMAIN-SUFFIX,tcpgateway-ali.ctrip.com
 DOMAIN-SUFFIX,tcss.qq.com
 DOMAIN-SUFFIX,tdrec.youku.com
 DOMAIN-SUFFIX,temai.taobao.com
