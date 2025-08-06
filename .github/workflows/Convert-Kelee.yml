@@ -46,16 +46,15 @@ jobs:
           sudo apt-get install -y nodejs
           npm install puppeteer
 
-      - name: Download scrape_kelee_plugins.js from private repo
-        env:
-          GH_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
-        run: |
-          curl -H "Authorization: token $GH_TOKEN" \
-               -s -o scrape_kelee_plugins.js \
-               https://raw.githubusercontent.com/${{ github.actor }}/ShalalaLala/main/Scripts/scrape_kelee_plugins.js
+      - name: Checkout private repository
+        uses: actions/checkout@v3
+        with:
+          repository: "${{ github.actor }}/ShalalaLala"
+          token: ${{ secrets.PERSONAL_TOKENS }}
+          path: ShalalaLala
 
-      - name: Scrape Kelee plugin links
-        run: node scrape_kelee_plugins.js
+      - name: Run scrape_kelee_plugins.js from ShalalaLala repo
+        run: node ShalalaLala/Scripts/scrape_kelee_plugins.js
 
       - name: Download plugin files
         run: |
