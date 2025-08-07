@@ -1,63 +1,60 @@
-name: Fetch sgmodule files with retry
+name: Fetch sgmodule files with retry and auth
 
 on:
   workflow_dispatch:
+
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
   fetch-sgmodules:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Install jq and python3 (if not pre-installed)
+      - name: Install jq and python3
         run: |
           sudo apt-get update
           sudo apt-get install -y jq python3
 
-      - name: Get all file paths recursively and filter sgmodule files
-        id: list_paths
+      - name: Get all sgmodule file paths with auth
         run: |
-          curl -s "https://api.github.com/repos/zirawell/R-Store/git/trees/main?recursive=1" \
-            | jq -r '.tree[] | select(.path | test("sgmodule")) | .path' \
-            > sgmodule_paths.txt
-
-          echo "Found sgmodule files:"
+          curl -H "Authorization: token $GITHUB_TOKEN" -s \
+            "https://api.github.com/repos/zirawell/R-Store/git/trees/main?recursive=1" \
+            | jq -r '.tree[] | select(.path | test("sgmodule")) | .path' > sgmodule_paths.txt
           cat sgmodule_paths.txt
 
-      - name: Download sgmodule files with retry on failure
+      - name: Download sgmodule files with retry and auth
         run: |
           mkdir -p Modules/Surge/zirawell/Official
+          retry=3
 
           if [ ! -s sgmodule_paths.txt ]; then
-            echo "No sgmodule files found to download"
+            echo "No sgmodule files found"
             exit 0
           fi
-
-          retry=3
 
           while IFS= read -r file_path; do
             filename=$(basename "$file_path")
             echo "Downloading $file_path as $filename"
-
             encoded_path=$(python3 -c "import urllib.parse; print(urllib.parse.quote('''$file_path'''))")
 
             attempt=1
             success=0
             while [ $attempt -le $retry ]; do
               echo "Attempt $attempt for $file_path"
-              curl --fail -sL -H "Accept: application/vnd.github.raw" \
+              curl -H "Authorization: token $GITHUB_TOKEN" --fail -sL -H "Accept: application/vnd.github.raw" \
                 "https://api.github.com/repos/zirawell/R-Store/contents/$encoded_path?ref=main" \
                 -o "Modules/Surge/zirawell/Official/$filename" && success=1 && break
-
-              echo "Download attempt $attempt failed for $file_path"
+              echo "Attempt $attempt failed for $file_path"
               attempt=$((attempt+1))
               sleep 2
             done
 
             if [ $success -ne 1 ]; then
-              echo "Warning: Download failed for $file_path after $retry attempts, skipping."
-              curl -v "https://api.github.com/repos/zirawell/R-Store/contents/$encoded_path?ref=main"
+              echo "Warning: Failed $file_path after $retry attempts, skipping."
+              curl -v -H "Authorization: token $GITHUB_TOKEN" \
+                "https://api.github.com/repos/zirawell/R-Store/contents/$encoded_path?ref=main"
             fi
           done < sgmodule_paths.txt
 
