@@ -15,8 +15,8 @@ jobs:
 
       - name: Checkout deleted commit as temp
         run: |
-          git fetch origin b7e9c069a3eba5fe8c14a8c79b8688f1ec9dfc47
-          git checkout b7e9c069a3eba5fe8c14a8c79b8688f1ec9dfc47
+          git fetch origin 43d3a634dadfa410fbf6d461e5e6c55cabc6b0a2
+          git checkout 43d3a634dadfa410fbf6d461e5e6c55cabc6b0a2
 
       - name: Copy folders from old commit
         run: |
