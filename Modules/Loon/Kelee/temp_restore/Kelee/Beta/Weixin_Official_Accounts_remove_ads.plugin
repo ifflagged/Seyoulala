@@ -1,0 +1,22 @@
+#!name=微信公众号去广告
+#!desc=过滤微信公众号广告
+#!author=RuCu6[https://github.com/RuCu6]
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
+#!tag=Jacob
+
+#!openUrl=https://apps.apple.com/app/id414478124
+#!tag=功能增强
+#!loon_version=3.2.4(787)
+#!homepage=https://pluginhub.kelee.one
+#!date=2025-05-13 15:17:08
+
+[Rule]
+DOMAIN-SUFFIX,wxs.qq.com,REJECT
+
+[Rewrite]
+^https:\/\/mp\.weixin\.qq\.com\/mp\/(cps_product_info|getappmsgad|jsmonitor|masonryfeed|relatedarticle)\? - reject-dict
+^https:\/\/mp\.weixin\.qq\.com\/mp\/relatedsearchword - reject-dict
+
+[MITM]
+hostname = mp.weixin.qq.com
+
