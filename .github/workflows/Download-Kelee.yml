@@ -77,3 +77,45 @@ jobs:
           git commit -m "自动更新下载的 Lpx 插件文件为 .plugin"
           git push origin "${GITHUB_BRANCH}"
         fi
+
+    - name: Process plugin files and replace JS URLs using Python
+      continue-on-error: true
+      run: |
+        js_base_url="https://github.com/${GITHUB_REPOSITORY}/raw/main/Modules/JS"
+        script_path="ShalalaLala/Scripts/kelee-20250807.py"
+
+        for plugin_file in Modules/Loon/Kelee/Official/*.plugin; do
+          echo "Processing $plugin_file"
+
+          author=$(echo "$plugin_file" | awk -F'/' '{print $(NF-2)}')
+          module_folder=$(basename "$plugin_file" .plugin)
+          echo "From author: $author | Module folder: $module_folder"
+
+          # 提取所有 JS/JSON/JQ 链接
+          js_links=$(grep -v '#' "$plugin_file" | grep -oP 'https?://[^ ]+\.(json|js|jq)' || echo "")
+
+          for js_link in $js_links; do
+            js_filename=$(basename "$js_link")
+            local_js_path="Modules/JS/$author/$module_folder/$js_filename"
+            github_js_url="$js_base_url/$author/$module_folder/$js_filename"
+
+            # 创建目录
+            mkdir -p "$(dirname "$local_js_path")"
+
+            # 使用 Python 脚本下载
+            echo "Running Python script to download: $js_link"
+            if python3 "$script_path" "$js_link" "$local_js_path"; then
+              echo "✅ Downloaded via Python: $js_link"
+              echo "Replacing $js_link with $github_js_url in $plugin_file"
+              sed -i "s|$js_link|$github_js_url|g" "$plugin_file"
+
+              Copied_plugin_file="Modules/Loon/Kelee/$module_folder.plugin"
+              if [ -f "$Copied_plugin_file" ]; then
+                echo "Replacing $js_link with $github_js_url in $Copied_plugin_file"
+                sed -i "s|$js_link|$github_js_url|g" "$Copied_plugin_file"
+              fi
+            else
+              echo "❌ Failed to download with Python: $js_link"
+            fi
+          done
+        done
