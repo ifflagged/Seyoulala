@@ -1,1 +1,251 @@
-<!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta name="robots" content="noindex,nofollow"><meta name="viewport" content="width=device-width,initial-scale=1"><style>*{box-sizing:border-box;margin:0;padding:0}html{line-height:1.15;-webkit-text-size-adjust:100%;color:#313131;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"}body{display:flex;flex-direction:column;height:100vh;min-height:100vh}.main-content{margin:8rem auto;padding-left:1.5rem;max-width:60rem}@media (width <= 720px){.main-content{margin-top:4rem}}.h2{line-height:2.25rem;font-size:1.5rem;font-weight:500}@media (width <= 720px){.h2{line-height:1.5rem;font-size:1.25rem}}#challenge-error-text{background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgZmlsbD0ibm9uZSI+PHBhdGggZmlsbD0iI0IyMEYwMyIgZD0iTTE2IDNhMTMgMTMgMCAxIDAgMTMgMTNBMTMuMDE1IDEzLjAxNSAwIDAgMCAxNiAzbTAgMjRhMTEgMTEgMCAxIDEgMTEtMTEgMTEuMDEgMTEuMDEgMCAwIDEtMTEgMTEiLz48cGF0aCBmaWxsPSIjQjIwRjAzIiBkPSJNMTcuMDM4IDE4LjYxNUgxNC44N0wxNC41NjMgOS41aDIuNzgzem0tMS4wODQgMS40MjdxLjY2IDAgMS4wNTcuMzg4LjQwNy4zODkuNDA3Ljk5NCAwIC41OTYtLjQwNy45ODQtLjM5Ny4zOS0xLjA1Ny4zODktLjY1IDAtMS4wNTYtLjM4OS0uMzk4LS4zODktLjM5OC0uOTg0IDAtLjU5Ny4zOTgtLjk4NS40MDYtLjM5NyAxLjA1Ni0uMzk3Ii8+PC9zdmc+");background-repeat:no-repeat;background-size:contain;padding-left:34px}@media (prefers-color-scheme: dark){body{background-color:#222;color:#d9d9d9}}</style><meta http-equiv="refresh" content="360"></head><body><div class="main-wrapper" role="main"><div class="main-content"><noscript><div class="h2"><span id="challenge-error-text">Enable JavaScript and cookies to continue</span></div></noscript></div></div><script>(function(){window._cf_chl_opt = {cvId: '3',cZone: 'kelee.one',cType: 'managed',cRay: '96b633afcf5416a6',cH: 'AwInjmt0oZITvi1EdPQNrCgP_zqPbTAnqO.LzYE8QOI-1754563709-1.2.1.1-HnIIiIYduJiKQnksS0A1AmoZuZ1qu7BjyquArD0VtZjssk8961knciUbapNLgdN5',cUPMDTk:"\/Tool\/Loon\/Lpx\/BlockAdvertisers.lpx?__cf_chl_tk=AiL9M4v1g.uK6jqOBzEdfEikwr0JS2_y7vUp.lugoCw-1754563709-1.0.1.1-calV2tvj1UBOrmG3L7Z6Ty1oPMMTNvzGYC8xZ9nkX_8",cFPWv: 'b',cITimeS: '1754563709',cTplC:0,cTplV:5,cTplB: 'cf',fa:"\/Tool\/Loon\/Lpx\/BlockAdvertisers.lpx?__cf_chl_f_tk=AiL9M4v1g.uK6jqOBzEdfEikwr0JS2_y7vUp.lugoCw-1754563709-1.0.1.1-calV2tvj1UBOrmG3L7Z6Ty1oPMMTNvzGYC8xZ9nkX_8",md: 'GTbvla7jsiNnHIj3QUIMlwEHZC8uiGCDodtFyoTfkAU-1754563709-1.2.1.1-vxCZMSp5tr7OhRkIJnF3atjn8qHEtxkp_NTo3sawFx_QpuO2iq4FmpNf2Y.yx4Rlb31AoRE5EaERJ0Imc_uBfAe8VCq2T69YZ59aQNyLyCC__shSf0cvPxld9gG0E3f0lqC9QB0uyCcZYk..eJL48Qve1N5b0RdvqidhxKOb7OLKu05sFt3s0XtT0RXpYlYK.wn_SUlF3tfQiUGTMdY.D_JIBZ1TIwFpQjBTWDipLkEycOVLz4OlCziRE11PjrF58IonlvVWiO0YSNc8pbJB_fUyXDgwFNlfbI2fja.o7Hb_NpFMeGbSkJmtlHJLzxxLTGYnmhkxWabPIV7GzfPMdL2FfSBNnpfRgV7_DKQmkRnF_v5RdLOcskZXkw9BZyl80cLPFNKIhlPKY8FGk2jXmfuXKVLs1k8HDrhNMR4vJ5S68soyB5c8RXzW2fCnbAxcXKipXwCkxaDsNunVVa6Zn095uEx6sDqiGYCUb8ddhzvIdH.MvWHzTD7Fr6NnAYfFKpi0nVv8HDgMhjIKfT1NIER4ZHANqOOANasqK1B7EPQdZ8.4M85IWZOc0Tzfh5BrcnRzN6gcgY08bblUI5CjLV_tmfTN3XdouO1woygH_yJfLkxgnRBoRWDXUG06Ke6x4bOiBD9PnVhnRUTKvjFkO1C..PRPSI7IhLo73UtltYjfSP9odJ3Z3M6jy5Lu6WaZFdE2Xe5pRLk2xvKsWRKeptTaMV8nKEam.rH7ceB._n2U_b5xFrHXQOHN8AvwXHd1DBlSbe_3eVJ1J9jW1cuajo64C1IeUz.fqdoxMmK4eJGklqIBh8FsDEdSXfzNOR8Bjbo_ehNAbAf8s1HKjn2k6Q',mdrd: 'mKo3tVhNLfCv8IFw3kGVGO9xebkd7olhzS_56gpUwQo-1754563709-1.2.1.1-Vb8g7It3tLoiDPvdN4AGl7KJIFNfaRD_MKYK_Lztwav0x48pSeyszuhDS346YSiVuOQ0a7ms3K8asH7aW5aGwfJ1fFg8Rb8GMS1t_o9c8oFXZM9uHdGvBjvb25JT.hhlfeOuoefXCAubXIfuvGv5S4miOSaumUUC6rfnl_8gR36UOHmW5xBcWhq7VrKefrZMC2meW7yINjm9.5j1JU1gjKk.iabt_BiL9PNRHz34IiFhnSkcy2.6U2UDCN7h5z75dQsg0n6mr8RErqpRiths5f.VcWCeUL8z_1dnR8Xj.PLNpw1dFgskzUgvUeWKUHUXcCfcYfsDdJ0NRW0o35cSrviv.FfDFYKoYKzsNm4hRTuHMAB0dpw67Jtp.fXT23_0R5g88K25Up2atMF7Bv1mn1o_AaRrOtvuFEsoegKg6OM_kAcRBUJTY0Kh1T3APp9v1pHbAaHKamfarCj6rQM.ut_R9X2ZsHiDm9aMTS_hPsuWbGfLmcDqpPiN6W4CXM4mxW3_f_n3tfJLMIq_xs9UpS7y141dHuXzFqxheE_t2GZoIgIpa7lB3af.Ha8AO5odjZHv8amSEgCsp3JXYdWW2WVdAIlCiC6TIyd.4qFtW9qzwlVNN4tReP4Omf7YVFw_mF2x0THR2zojm5RuEM0zYXnEtU.QMlvUvFR6CpKlg.AzGgdoOjHGRruOvAxtXI94WAEEOFihYKCyMfXQY8Q3Zm6LbGOKi7SSf9CGyJdah_ve94v82BmTCqL6wV9iz5jLQdfNBjfp_MfuvMX3pjqh2DWbEHVfRHNDgkCMJfDIperrNz78g8dX2xxZFewRC6pA2MAO8sSIrU2bxG526RZSDGhcpFbo4LMJ1G5C6QwgDewBOC3rZGodxYcVOmbfp09BDYU0OQnrLLSPrMX2Yh6coRI0OvNh0YCYjjVnUNpub6MjDlDDwIxltT.HA0UOznpJVrUndZJ5OEbpOf5_LyUPioo9F4LGsoUUNYAxI.RCb0ceSMT8yXlzQJnGIMRLoYnjIiPWnFWjt.Wc42xQFvfid_De5LOXH_TJl1Tarj6mPCzzQt7CgSutNn7afEaKna_0CEzYylVIOEswApujmPwF6Mlh5L9iJitnrdoIyxQ21dRT_kbpX48iy5.fPaSz1t6wHbgl4upRptWH8CjPjY4Z_6Aaqphz4UMe5rEwTqsnCxUsIWZ9NQMQ_UtLOoPk3fyNt3zXOdsBHXsB77Y96NnYbS3P.B3Qnufbq5PmEV9nKzwsNjONFtMu5NmLIVrnmeaHJGdVe79OiVz9v1HYmwz0Z5Cte.pIOB5JtSVPJhQKsmoa8ZYg.HLLGAiwXzm7PxJHw3DrB2X4y17ZgGzkvBgWAd6skdcGtMQt7t8YilF8GcPbgExvtArw5a7OpU_.pp0i8pW9MYqdflJ0KcqnUM56NTwvuF_tuj29PneS5iOibZrBSpkB9MevF7V0yLsQ7ownxH08GJqkmPiMzNNSyiIqEMq.cXcH62zRzgk.iu_BBCYchvxPjbf.41l.DpcKh7wBk2NXLE2DcOfHaJlpbyy4z9pgCcP1Yobvf.EktBg_qwEI9oO9IYM0P1ShAkkZsitVsfuvJveM1XuEotM8X.u9ukipU5A8OQG0tI93KgMiCcLGY_kV0NlIZAJr4gbObFCrE65zXZ8FV6O23T3SHjWS9jL3W5BPElRp8oq42J9CyUMA_Kao0J6tDOGNLsEACl6ogHEdKIJke8Q2Eym6_Iuk67MP4rLPByH1QtXMqOrSJnFJTEvdaexGyPjWv04I7DZ2_ed0v7p_7gSvtrWWR_mcL2PkuYpxok9drM5T_8H8gSMYgD247UcrWGParYz_8y_Xgs8JHB7vyvQWW9blvX4AGuArQm8YmDGJnYDI08gzv9dD6UmSEu5GSJ6vVb6H946dXkDzfZgxSKLA5GBnxW5zpV7aSXRzrecg1xtEqGoz.G3y7eMHiYDfvfn5vgdcSkjUrsiWOIpnMKcdd4aztncK9V1b.Hvd6eoDXL.tPFKUhUungMybELYAwV5yjq3KLIC_Uzyjr3jmlcEShnfmwkKKIIcjaupY7AUcsPgUZIS_2RhM224hsnBFvHD_aiPeokRFUHXkifZA0w5jFX9DTz1i3bVwtUqGAclFSn3md603IHBLTHKP1ILCZwgGj25oaXw7YtmO1Ss34ohnt5NIXWi50QD2pen98QBUi94wzrh_r4RA1lVYHFjxpGGLOnFGetqhbQUjw4DbUkqBIUmVQhz5t8A7snSTUF_sUkrcxS4m_Z0VQ8DlPwDiA_aK.f_dWAn42nCmYl_epH9gfUbot8uh5qBaAvpm1S89ywwp9lMu2_rBPlEKn9hiW1hl62k2T2Ux',};var a = document.createElement('script');a.src = '/cdn-cgi/challenge-platform/h/b/orchestrate/chl_page/v1?ray=96b633afcf5416a6';window._cf_chl_opt.cOgUHash = location.hash === '' && location.href.indexOf('#') !== -1 ? '#' : location.hash;window._cf_chl_opt.cOgUQuery = location.search === '' && location.href.slice(0, location.href.length - window._cf_chl_opt.cOgUHash.length).indexOf('?') !== -1 ? '?' : location.search;if (window.history && window.history.replaceState) {var ogU = location.pathname + window._cf_chl_opt.cOgUQuery + window._cf_chl_opt.cOgUHash;history.replaceState(null, null,"\/Tool\/Loon\/Lpx\/BlockAdvertisers.lpx?__cf_chl_rt_tk=AiL9M4v1g.uK6jqOBzEdfEikwr0JS2_y7vUp.lugoCw-1754563709-1.0.1.1-calV2tvj1UBOrmG3L7Z6Ty1oPMMTNvzGYC8xZ9nkX_8"+ window._cf_chl_opt.cOgUHash);a.onload = function() {history.replaceState(null, null, ogU);}}document.getElementsByTagName('head')[0].appendChild(a);}());</script></body></html>
+#!name=广告平台拦截器
+#!desc=此插件是所有去广告插件的基础，只针对广告平台处理。你依然需要安装其他去广告插件来搭配使用，并确保此插件始终排序在顶部。\n\n支持拦截腾讯、字节跳动、快手、百度、邑盟、倍孜、艾狄墨搏、袤博、极光、个推、友盟、阿里、优比客思、秒针、网易、美团、小米、京东、天目、讯飞、泛连、锐讯灵通、聚次方、美数、嗨量、维快网络、变现猫、章鱼、分秒、泰之菩、翼信、快易、数萤技术、方麟、益起、上量优选、新义互联、腾云天下、布里奇、塔酷、丽声、推啊、旺脉、新度博望、新多广告、快易科技、封狐信息、互裕科技、旺脉信息、佳量动力、享点科技、游昆信息、小川科技、Google、SupersonicAds、APPSAD、Adjust、Sigmob、TradPlus、Fancy、MedPro等广告平台的广告请求，更适合iOS平台的应用。
+#!openUrl=
+#!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+#!tag=去广告, 依赖
+#!system=
+#!system_version=
+#!loon_version=3.2.4(787)
+#!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/Website_icon/120px/TencentAd.png
+#!date=2025-07-10 20:42:55
+
+[Rule]
+AND, ((OR, ((DOMAIN-KEYWORD, p1-be-pb), (DOMAIN-KEYWORD, lf3-plat), (DOMAIN-KEYWORD, lf6-plat), (DOMAIN-KEYWORD, lf9-plat), (DOMAIN-KEYWORD, lf26-plat), (DOMAIN-KEYWORD, s1-fe-scm), (DOMAIN-KEYWORD, s9-fe-scm), (DOMAIN-KEYWORD, s3-fe-scm), (DOMAIN-KEYWORD, sf3-be-tos), (DOMAIN-KEYWORD, sf1-fe-tos), (DOMAIN-KEYWORD, v1-be-pack), (DOMAIN-KEYWORD, sf1-be-tos), (DOMAIN-KEYWORD, v9-be-pack), (DOMAIN-KEYWORD, v6-be-pack), (DOMAIN-KEYWORD, v5-be-pack), (DOMAIN-KEYWORD, v3-be-pack), (DOMAIN-KEYWORD, sf6-fe-tos), (DOMAIN-KEYWORD, sf3-fe-tos), (DOMAIN-KEYWORD, p1-platform), (DOMAIN-KEYWORD, sf1-be-pack), (DOMAIN-KEYWORD, sf1-vc-pack), (DOMAIN-KEYWORD, sf3-be-pack), (DOMAIN-KEYWORD, sf3-vc-pack), (DOMAIN-KEYWORD, sf6-be-pack), (DOMAIN-KEYWORD, v1-dpa-pack), (DOMAIN-KEYWORD, p9-be-endcard), (DOMAIN-KEYWORD, p1-be-endcard), (DOMAIN-KEYWORD, sf1-scmcdn-tos), (DOMAIN-KEYWORD, sf3-scmcdn-tos), (DOMAIN-KEYWORD, sf6-scmcdn-tos), (DOMAIN-KEYWORD, lf3-reward-sign), (DOMAIN-KEYWORD, p6-be-pack-sign), (DOMAIN-KEYWORD, p3-be-pack-sign), (DOMAIN-KEYWORD, s3-platform-scm), (DOMAIN-KEYWORD, s9-platform-scm), (DOMAIN-KEYWORD, p9-be-pack-sign), (DOMAIN-KEYWORD, lf9-reward-sign), (DOMAIN-KEYWORD, v6-be-pack-nxyd), (DOMAIN-KEYWORD, lf3-ad-union-sdk), (DOMAIN-KEYWORD, lf6-ad-union-sdk), (DOMAIN-KEYWORD, p26-be-pack-sign), (DOMAIN-KEYWORD, sf1-be-auditpack), (DOMAIN-KEYWORD, lf9-ad-union-sdk), (DOMAIN-KEYWORD, lf3-sf-be-tos-sign), (DOMAIN-KEYWORD, lf9-sf-be-tos-sign), (DOMAIN-KEYWORD, lf6-sf-be-tos-sign), (DOMAIN-KEYWORD, lf26-sf-be-tos-sign), (DOMAIN-KEYWORD, lf6-sf-be-pack-sign), (DOMAIN-KEYWORD, lf9-sf-be-pack-sign), (DOMAIN-KEYWORD, lf3-sf-be-pack-sign), (DOMAIN-KEYWORD, lf26-sf-be-pack-sign))), (DOMAIN-SUFFIX, pglstatp-toutiao.com)), REJECT
+AND, ((OR, ((DOMAIN-KEYWORD, api-access), (DOMAIN-KEYWORD, api-access), (DOMAIN-KEYWORD, api-access), (DOMAIN-KEYWORD, api-access), (DOMAIN-KEYWORD, content-union), (DOMAIN-KEYWORD, dpa-pack), (DOMAIN-KEYWORD, ecom), (DOMAIN-KEYWORD, empower), (DOMAIN-KEYWORD, endcard-pack), (DOMAIN-KEYWORD, ether-pack), (DOMAIN-KEYWORD, gromore), (DOMAIN-KEYWORD, log-api), (DOMAIN-KEYWORD, mix), (DOMAIN-KEYWORD, novel), (DOMAIN-KEYWORD, track-pack-lq))), (DOMAIN-KEYWORD, pangolin-sdk-toutiao)), REJECT
+AND, ((DOMAIN-KEYWORD, tnc), (OR, ((DOMAIN-SUFFIX, zijieapi.com), (DOMAIN-SUFFIX, snssdk.com), (DOMAIN-SUFFIX, sgsnssdk.com)))), REJECT
+AND, ((DOMAIN-KEYWORD, pangolin), (OR, ((DOMAIN-SUFFIX, zijieapi.com), (DOMAIN-SUFFIX, snssdk.com), (DOMAIN-SUFFIX, sgsnssdk.com)))), REJECT
+AND, ((DOMAIN-KEYWORD, -ad-), (DOMAIN-SUFFIX, byteimg.com)), REJECT
+AND, ((DOMAIN-KEYWORD, ads), (DOMAIN-KEYWORD, normal), (DOMAIN-SUFFIX, zijieapi.com)), REJECT
+DOMAIN-KEYWORD, -ad-sign.byteimg.com, REJECT
+DOMAIN-KEYWORD, -ad.byteoversea.com, REJECT
+DOMAIN-KEYWORD, asiad.byteactivity, REJECT
+
+DOMAIN-KEYWORD, iflyad.bj.openstorage.cn, REJECT
+DOMAIN-KEYWORD, bjimp.voiceads.cn, REJECT
+
+DOMAIN-SUFFIX, 1rtb.net, REJECT
+
+DOMAIN-SUFFIX, halomobi.com, REJECT
+
+DOMAIN-SUFFIX, hubcloud.com.cn, REJECT
+
+DOMAIN-SUFFIX, inmobi.cn, REJECT
+
+DOMAIN-SUFFIX, uyunad.com, REJECT
+DOMAIN-SUFFIX, puata.info, REJECT
+
+DOMAIN, gdfp.gifshow.com, REJECT
+DOMAIN, open.e.kuaishou.com, REJECT
+DOMAIN, open.e.kuaishou.cn, REJECT
+DOMAIN, adtrack.e.kuaishou.com, REJECT
+DOMAIN-SUFFIX, partner.gifshow.com, REJECT
+DOMAIN-SUFFIX, adukwai.com, REJECT
+DOMAIN-SUFFIX, adkwai.com, REJECT
+
+DOMAIN-SUFFIX, supersonicads.com, REJECT
+
+DOMAIN-SUFFIX, appsad.cn, REJECT
+
+DOMAIN-SUFFIX, beizi.biz, REJECT
+
+DOMAIN-SUFFIX, miaozhen.com, REJECT
+
+DOMAIN-SUFFIX, admobile.top, REJECT
+
+DOMAIN-SUFFIX, yksdks.com, REJECT
+DOMAIN-SUFFIX, dutils.com, REJECT
+
+DOMAIN-SUFFIX, mob.com, REJECT
+
+DOMAIN-SUFFIX, jiguang.cn, REJECT
+DOMAIN-SUFFIX, jpush.cn, REJECT
+DOMAIN-SUFFIX, jpush.io, REJECT
+
+DOMAIN, afd.baidu.com, REJECT
+DOMAIN, als.baidu.com, REJECT
+DOMAIN, bgg.baidu.com, REJECT
+DOMAIN, cpro.baidustatic.com, REJECT
+DOMAIN, feed-image.baidu.com, REJECT
+DOMAIN, click-bes.baidu.com, REJECT
+DOMAIN, eclick.baidu.com, REJECT
+DOMAIN, mobads-logs.baidu.com, REJECT
+DOMAIN, mobads-pre-config.cdn.bcebos.com, REJECT
+DOMAIN, mobads.baidu.com, REJECT
+DOMAIN, nadvideo2.baidu.com, REJECT
+DOMAIN, wn.pos.baidu.com, REJECT
+DOMAIN, miniapp-ad.cdn.bcebos.com, REJECT
+DOMAIN, mobads-pre-config.cdn.bcebos.com, REJECT
+DOMAIN-SUFFIX, union.baidu.cn, REJECT
+DOMAIN-SUFFIX, union.baidu.com, REJECT
+
+DOMAIN, adsmind.gdtimg.com, REJECT
+DOMAIN, adsmind.ugdtimg.com, REJECT
+DOMAIN, c2.gdt.qq.com, REJECT
+DOMAIN, 2fwin.gdt.qq.com, REJECT
+DOMAIN, huatuocode.huatuo.qq.com, REJECT
+DOMAIN, info4.video.qq.com, REJECT
+DOMAIN, info6.video.qq.com, REJECT
+DOMAIN, ios.bugly.qq.com, REJECT
+DOMAIN, pro.bugly.qq.com, REJECT
+DOMAIN, ios.video.mpush.qq.com, REJECT
+DOMAIN, us.l.qq.com, REJECT
+DOMAIN, mi.gdt.qq.com, REJECT
+DOMAIN, otheve.beacon.qq.com, REJECT
+DOMAIN, pgdt.gtimg.cn, REJECT
+DOMAIN, pgdt.ugdtimg.com, REJECT
+DOMAIN, qzs.gdtimg.com, REJECT
+DOMAIN, qzs.qq.com, REJECT
+DOMAIN, rmonitor.qq.com, REJECT
+DOMAIN, sdk.e.qq.com, REJECT
+DOMAIN, sdkconfig.video.qq.com, REJECT
+DOMAIN, t.gdt.qq.com, REJECT
+DOMAIN, tmead.y.qq.com, REJECT
+DOMAIN, tmeadbak.y.qq.com, REJECT
+DOMAIN, tmeadcomm.y.qq.com, REJECT
+DOMAIN, tpns.qq.com, REJECT
+DOMAIN, v.gdt.qq.com, REJECT
+DOMAIN, v2.gdt.qq.com, REJECT
+DOMAIN, win.gdt.qq.com, REJECT
+DOMAIN, wup.imtt.qq.com, REJECT
+DOMAIN, tpstelemetry.tencent.com, REJECT
+DOMAIN, ii.gdt.qq.com, REJECT
+DOMAIN-KEYWORD, trace.qq.com, REJECT
+DOMAIN-KEYWORD, trace.video.qq.com, REJECT
+DOMAIN-KEYWORD, ad.hunyuan.tencent.com, REJECT
+DOMAIN-SUFFIX, gdt.qq.com, REJECT
+DOMAIN-SUFFIX, l.qq.com, REJECT
+DOMAIN-SUFFIX, ugdtimg.com, REJECT
+IP-CIDR, 47.110.187.87/32, REJECT, no-resolve
+
+DOMAIN-SUFFIX, openinstall.io, REJECT
+
+DOMAIN-SUFFIX, getui.com, REJECT
+DOMAIN-SUFFIX, igexin.com, REJECT
+
+DOMAIN-SUFFIX, umtrack.com, REJECT
+DOMAIN-SUFFIX, umeng.com, REJECT
+DOMAIN-SUFFIX, umsns.com, REJECT
+DOMAIN-SUFFIX, umengcloud.com, REJECT
+
+DOMAIN-SUFFIX, adfunlink.com, REJECT
+
+DOMAIN-SUFFIX, tianmu.mobi, REJECT
+
+DOMAIN-SUFFIX, ubixioe.com, REJECT
+
+DOMAIN, ossgw.alicdn.com, REJECT
+DOMAIN, ems.youku.com, REJECT
+DOMAIN, hudong.alicdn.com, REJECT
+DOMAIN, et.tanx.com, REJECT
+DOMAIN, df.tanx.com, REJECT
+DOMAIN, beacon-api.aliyuncs.com, REJECT
+DOMAIN, adash.man.aliyuncs.com, REJECT
+DOMAIN, applog.uc.cn, REJECT
+AND, ((DOMAIN-KEYWORD, adash), (DOMAIN-SUFFIX, ut.taobao.com)), REJECT
+
+DOMAIN, nex.163.com, REJECT
+DOMAIN, iad.g.163.com, REJECT
+DOMAIN, gorgon.youdao.com, REJECT
+
+DOMAIN-SUFFIX, ad.xiaomi.com, REJECT
+
+DOMAIN, al-log.d.meituan.net, REJECT
+DOMAIN, babel-statistics-android.d.meituan.net, REJECT
+DOMAIN, maplocatesdksnapshot.d.meituan.net, REJECT
+DOMAIN, metrics-picture.d.meituan.net, REJECT
+DOMAIN, route-stats.d.meituan.net, REJECT
+
+DOMAIN, dsp-x.jd.com, REJECT
+DOMAIN, im-x.jd.com, REJECT
+DOMAIN, xlog.jd.com, REJECT
+DOMAIN, janapi.jd.com, REJECT
+
+DOMAIN-SUFFIX, toponadss.com, REJECT
+
+DOMAIN-SUFFIX, motowoo.com, REJECT
+
+DOMAIN, guide2.bianxianmao.com, REJECT
+
+DOMAIN, sdk.zhangyuyidong.cn, REJECT
+DOMAIN, sdklog.zhangyuyidong.cn, REJECT
+DOMAIN-SUFFIX, adintl.cn, REJECT
+
+DOMAIN-SUFFIX, adtaipo.com, REJECT
+
+DOMAIN-SUFFIX, adx.yixin.im, REJECT
+
+DOMAIN-SUFFIX, kuaiyiad.com, REJECT
+
+DOMAIN-SUFFIX, adtianmai.com, REJECT
+
+DOMAIN-SUFFIX, readgps.com, REJECT
+
+DOMAIN-SUFFIX, fanglinad.com, REJECT
+
+DOMAIN-SUFFIX, 17admob.com, REJECT
+
+DOMAIN-SUFFIX, slyxmobi.com, REJECT
+
+DOMAIN-SUFFIX, mobrtb.com, REJECT
+
+DOMAIN-SUFFIX, maplehaze.cn, REJECT
+
+DOMAIN-SUFFIX, lnk0.com, REJECT
+
+DOMAIN-SUFFIX, bridgeoos.com, REJECT
+DOMAIN-SUFFIX, anythinktech.com, REJECT
+
+DOMAIN, ad-evods.tianya.tv, REJECT
+
+DOMAIN-SUFFIX, tuia.cn, REJECT
+
+DOMAIN-SUFFIX, 66mobi.com, REJECT
+
+DOMAIN-SUFFIX, xdplt.com, REJECT
+
+DOMAIN-SUFFIX, adjust.com, REJECT
+DOMAIN-SUFFIX, adjust.net.in, REJECT
+
+DOMAIN-SUFFIX, doubleclick-cn.net, REJECT
+DOMAIN-SUFFIX, googlesyndication-cn.com, REJECT
+
+DOMAIN-SUFFIX, xinduoad.com, REJECT
+
+DOMAIN-SUFFIX, kuaiyiad.com, REJECT
+
+DOMAIN, statis.miwuad.com, REJECT
+
+DOMAIN-SUFFIX, sigmob.cn, REJECT
+
+DOMAIN-SUFFIX, richmob.cn, REJECT
+
+DOMAIN-SUFFIX, 66mobi.com, REJECT
+
+DOMAIN, ad.shunchangzhixing.com, REJECT
+DOMAIN, redirect.shunchangzhixing.com, REJECT
+
+DOMAIN, api.touch-moblie.com, REJECT
+DOMAIN-SUFFIX, api.touch-moblie.com, REJECT
+
+DOMAIN, mercury-gateway.ixiaochuan.cn, REJECT
+DOMAIN, adapi.izuiyou.com, REJECT
+
+DOMAIN-SUFFIX, domob.cn, REJECT
+
+DOMAIN-SUFFIX, bxsnews.com, REJECT
+
+DOMAIN-SUFFIX, tradplusad.com, REJECT
+
+DOMAIN-SUFFIX, fancyapi.com, REJECT
+
+DOMAIN-SUFFIX, medproad.com, REJECT
+
+[Rewrite]
+^https:\/\/video-dsp\.pddpic\.com\/market-dsp-video\/ reject
+^https:\/\/t-dsp\.pinduoduo\.com\/dspcb\/i\/mrk_ reject
+^https:\/\/images\.pinduoduo\.com\/mrk\/ reject
+^https:\/\/images\.pinduoduo\.com\/marketing_api\/ reject
+
+[MitM]
+hostname=video-dsp.pddpic.com, t-dsp.pinduoduo.com, images.pinduoduo.com
