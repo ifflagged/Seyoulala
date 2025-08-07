@@ -63,7 +63,7 @@ jobs:
             Modules_name=$(echo "$plugin_url" | sed -E 's/\.(plugin|lpx)$//I' | xargs basename)
             echo "Downloading $plugin_url to Modules/Loon/Kelee/Official/${Modules_name}.plugin"
             mkdir -p "Modules/Loon/Kelee/Official" 
-            curl -A "Loon/3.3.2" -L "$plugin_url" -o "Modules/Loon/Kelee/Official/${Modules_name}.plugin" || echo "Failed to download $plugin_url"
+            curl -A "Surge Mac/2985" -L "$plugin_url" -H "Accept: application/json, text/javascript, */*; q=0.01" -H "Accept-Language: en-US,en;q=0.9" -o "Modules/Loon/Kelee/Official/${Modules_name}.plugin" || echo "Failed to download $plugin_url"
 
             echo "Copying ${Modules_name}.plugin to Modules/Loon/Kelee/"
             cp "Modules/Loon/Kelee/Official/${Modules_name}.plugin" "Modules/Loon/Kelee/${Modules_name}.plugin" || echo "Failed to copy ${Modules_name}.plugin"
