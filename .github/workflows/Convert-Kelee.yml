@@ -63,7 +63,7 @@ jobs:
             Modules_name=$(echo "$plugin_url" | sed -E 's/\.(plugin|lpx)$//I' | xargs basename)
             echo "Downloading $plugin_url to Modules/Loon/Kelee/Official/${Modules_name}.plugin"
             mkdir -p "Modules/Loon/Kelee/Official" 
-            curl -A "Surge Mac/2985" -L "$plugin_url" -o "Modules/Loon/Kelee/Official/${Modules_name}.plugin" || echo "Failed to download $plugin_url"
+            curl -A "Surge Mac/3272" -L "$plugin_url" -o "Modules/Loon/Kelee/Official/${Modules_name}.plugin" || echo "Failed to download $plugin_url"
 
             echo "Copying ${Modules_name}.plugin to Modules/Loon/Kelee/"
             cp "Modules/Loon/Kelee/Official/${Modules_name}.plugin" "Modules/Loon/Kelee/${Modules_name}.plugin" || echo "Failed to copy ${Modules_name}.plugin"
@@ -85,7 +85,7 @@ jobs:
           category="Jacob"
           encoded_category=$(echo "$category" | jq -sRr @uri)
           while read -r kelee_plugin_lurl; do
-            Modules_name=$(basename "$kelee_plugin_lurl" .plugin)
+            Modules_name=$(echo "$kelee_plugin_lurl" | sed -E 's/\.(plugin|lpx)$//I' | xargs basename)
             encoded_Modules_name=$(echo "$Modules_name" | jq -sRr @uri)
 
             Surge_url="http://localhost:9100/file/_start_/${kelee_plugin_lurl}/_end_/${encoded_Modules_name}.sgmodule?type=loon-plugin&target=surge-module&category=${encoded_category}&nore=true"
@@ -99,14 +99,14 @@ jobs:
 
             # Download plugin files
             echo "Converting to ${Modules_name}.sgmodule"
-            curl -A "Surge Mac/2985" -L -o "Modules/Surge/Kelee/${Modules_name}.sgmodule" "$Surge_url" || echo "Failed to download ${Modules_name}.sgmodule"
-            curl -A "Surge Mac/2985" -L -o "Modules/Surge/Kelee/Beta/${Modules_name}.sgmodule" "$Surge_Beta_url" || echo "Failed to download ${Modules_name}.sgmodule"
+            curl -A "Surge Mac/3272" -L -o "Modules/Surge/Kelee/${Modules_name}.sgmodule" "$Surge_url" || echo "Failed to download ${Modules_name}.sgmodule"
+            curl -A "Surge Mac/3272" -L -o "Modules/Surge/Kelee/Beta/${Modules_name}.sgmodule" "$Surge_Beta_url" || echo "Failed to download ${Modules_name}.sgmodule"
             echo "Converting to ${Modules_name}.plugin"
-            # curl -A "Surge Mac/2985" -L -o "Modules/Loon/Kelee/${Modules_name}.plugin" "$Loon_url" || echo "Failed to download ${Modules_name}.plugin"
-            curl -A "Surge Mac/2985" -L -o "Modules/Loon/Kelee/Beta/${Modules_name}.plugin" "$Loon_Beta_url" || echo "Failed to download ${Modules_name}.plugin"
+            # curl -A "Surge Mac/3272" -L -o "Modules/Loon/Kelee/${Modules_name}.plugin" "$Loon_url" || echo "Failed to download ${Modules_name}.plugin"
+            curl -A "Surge Mac/3272" -L -o "Modules/Loon/Kelee/Beta/${Modules_name}.plugin" "$Loon_Beta_url" || echo "Failed to download ${Modules_name}.plugin"
             echo "Converting to $.srmodule"
-            curl -A "Surge Mac/2985" -L -o "Modules/Shadowrocket/Kelee/${Modules_name}.srmodule" "$Shadowrocket_url" || echo "Failed to download ${Modules_name}.srmodule"
-            curl -A "Surge Mac/2985" -L -o "Modules/Shadowrocket/Kelee/Beta/${Modules_name}.srmodule" "$Shadowrocket_Beta_url" || echo "Failed to download ${Modules_name}.srmodule"
+            curl -A "Surge Mac/3272" -L -o "Modules/Shadowrocket/Kelee/${Modules_name}.srmodule" "$Shadowrocket_url" || echo "Failed to download ${Modules_name}.srmodule"
+            curl -A "Surge Mac/3272" -L -o "Modules/Shadowrocket/Kelee/Beta/${Modules_name}.srmodule" "$Shadowrocket_Beta_url" || echo "Failed to download ${Modules_name}.srmodule"
           done < Kelee_plugin_urls.txt
 
       - name: Find and replace external JS resources
@@ -131,7 +131,7 @@ jobs:
               mkdir -p "$(dirname "$local_js_path")"
         
               echo "Downloading $js_link to $local_js_path"
-              if curl -A "Surge Mac/2985" -L -o "$local_js_path" "$js_link"; then
+              if curl -A "Surge Mac/3272" -L -o "$local_js_path" "$js_link"; then
                 echo "Download successful for $js_link"
                 echo "Replacing $js_link with $github_js_url in $plugin_file"
                 sed -i "s|$js_link|$github_js_url|g" "$plugin_file"
