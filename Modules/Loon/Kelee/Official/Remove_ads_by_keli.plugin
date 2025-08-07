@@ -1,1 +1,176 @@
-<!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta name="robots" content="noindex,nofollow"><meta name="viewport" content="width=device-width,initial-scale=1"><style>*{box-sizing:border-box;margin:0;padding:0}html{line-height:1.15;-webkit-text-size-adjust:100%;color:#313131;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"}body{display:flex;flex-direction:column;height:100vh;min-height:100vh}.main-content{margin:8rem auto;padding-left:1.5rem;max-width:60rem}@media (width <= 720px){.main-content{margin-top:4rem}}.h2{line-height:2.25rem;font-size:1.5rem;font-weight:500}@media (width <= 720px){.h2{line-height:1.5rem;font-size:1.25rem}}#challenge-error-text{background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgZmlsbD0ibm9uZSI+PHBhdGggZmlsbD0iI0IyMEYwMyIgZD0iTTE2IDNhMTMgMTMgMCAxIDAgMTMgMTNBMTMuMDE1IDEzLjAxNSAwIDAgMCAxNiAzbTAgMjRhMTEgMTEgMCAxIDEgMTEtMTEgMTEuMDEgMTEuMDEgMCAwIDEtMTEgMTEiLz48cGF0aCBmaWxsPSIjQjIwRjAzIiBkPSJNMTcuMDM4IDE4LjYxNUgxNC44N0wxNC41NjMgOS41aDIuNzgzem0tMS4wODQgMS40MjdxLjY2IDAgMS4wNTcuMzg4LjQwNy4zODkuNDA3Ljk5NCAwIC41OTYtLjQwNy45ODQtLjM5Ny4zOS0xLjA1Ny4zODktLjY1IDAtMS4wNTYtLjM4OS0uMzk4LS4zODktLjM5OC0uOTg0IDAtLjU5Ny4zOTgtLjk4NS40MDYtLjM5NyAxLjA1Ni0uMzk3Ii8+PC9zdmc+");background-repeat:no-repeat;background-size:contain;padding-left:34px}@media (prefers-color-scheme: dark){body{background-color:#222;color:#d9d9d9}}</style><meta http-equiv="refresh" content="360"></head><body><div class="main-wrapper" role="main"><div class="main-content"><noscript><div class="h2"><span id="challenge-error-text">Enable JavaScript and cookies to continue</span></div></noscript></div></div><script>(function(){window._cf_chl_opt = {cvId: '3',cZone: 'kelee.one',cType: 'managed',cRay: '96b56fd479baf274',cH: 'HyQkFj.eYbqTBnuCV1Ubj8mvq.3YNDfuMjM6gRPhspI-1754555687-1.2.1.1-E0DfXRWa43ptLtUf0GMrIYksi0GvagiWoYNWQ9gDQ9yFhJ.DVNLo26Xoo3eypW5y',cUPMDTk:"\/Tool\/Loon\/Lpx\/Remove_ads_by_keli.lpx?__cf_chl_tk=x4BM4GiTAJxcNsCRke3r85b0O5NTJT50rtY5PWos854-1754555687-1.0.1.1-v7ZNvc.HLqcGGtvl6USV7Qod3IGC4wBR2F9SgwFKg8I",cFPWv: 'b',cITimeS: '1754555687',cTplC:0,cTplV:5,cTplB: 'cf',fa:"\/Tool\/Loon\/Lpx\/Remove_ads_by_keli.lpx?__cf_chl_f_tk=x4BM4GiTAJxcNsCRke3r85b0O5NTJT50rtY5PWos854-1754555687-1.0.1.1-v7ZNvc.HLqcGGtvl6USV7Qod3IGC4wBR2F9SgwFKg8I",md: 'ZSXhwXSt_p03_ASllyXdDTWqOgWkDenhLx85GMgnK4g-1754555687-1.2.1.1-2rGP6BQVyqpmGuIKEoqHYia_LXsZykLcHsUKpt_LvdHzYXrOixQv1MT7LIJci07SzWtZpqmXxSQ6c8teJKAzlDVROZIBSwCdn8Gdxc1UTbMOJEmGmRJW5fSOneFycn8BnyYFEHwJ.0JYBu20yUpUvftZgt0BfDohQUhrGaw8C1DMQ0pNRP1M5ZOJjcPr4jDJvCtybh2TduGjMNusW8cQI6s9qo85hAq9HiAGSoAYbK2FDtU5oLUVQeWxqbAkgot7fNSI1275I.2vmta8zWkuxbhjFnvRSWvZvSijX3L8LoY7i2_QmRIDoghRIDwZ9_MVhzgnClB7yeGwDHAR.6_7erBESeqHGWLk5w45OXA3zhQtBwfkvtjTmpZej7POHbR8Grbhu3lmfoDPqKoH0iF6V_.tIm5AmnrKpwIkFJcr1eMhI6INE5EdBKMOq.QexbP7Af7P9vMf7xWICt_yrXpq1qaSeoa225ELl7izo65VKNVqM4a7n8cnx.3S7qVovvbIBgMo6yn1p5ROkNHHK17qKyMMHxM01KlXZWbhKa7XA1T1a2pOGjusRwrUmDhV3h.HCEyTYW5vYbIk75X.DJgHVAthGvksh_YapD5WvbfpbKiT164S64IluXBoMR9Xc6ljkDdU4RqSC4CVZB3gx6f1t9mBNlxP4iudKh4x.aegPK0wlYho0Rn.aOuDAPHJnCF6SkZTWJm5_QscHcwRc3BMJ0uYV6kwsphLIUlGHsvPfDb.dpJrj8ChFKQylBi5hJOIZPdmMdtgFWEEZVItotDGXX9mJgU2e7aa0xuFYUCiYJ.ukM3Vw2NHn4TDwJdsb6LzHW0Gj2xov9FA3oDyiJw58A',mdrd: 'kFGUvZGAoRtj0JYuOjdd5aXlr72B2MwygLuJLqYLel4-1754555687-1.2.1.1-64b0lOcIqqp46rST6WZvSPci_P6Fhex8C8XBtx6HzkI_zTL0W6HK5bP0da_LHfU5osseeFJgmGAWp6iT78MDZwi3TwZ0Kl0Mw52WPxNk1B_aeGZ5Ud6Ci.OeMM62uYUGmzojfoFuXjjuRO8zf4K3.qNV4X6EnE278oeltY75SdLr71.Q_OzJWfA4Ca6H_hqGRFM6g9NSTkR5ilJw0d7JSzWfmkGlqUUngTS6aScdBj20Kr1w8HO8EVqu3Zpb5w4r.8MG_wfsI993Zpor78nGa_b2qr.f7bTq8RYT6DNjV_p97zSUduO536pIKiZENn8R4lM4ZCeGE71ugkW.0zY.awefRMrawSc6aCNolzGDqDP4id.zz21P9YD1fOCkzprWATU.pu0wvtmoVv3RIK_n9kUpL4rTPL0gHI.V4uIXh1t6qCY_8IMJeJQ0EUUErDi.GpHpw4QoshSmxc7NWM98nSryk58N6o6U75gJv_w28dYCo1spbcAjMN8BXtsOK.lyx3.HuRdID9fgLUaJ19JfwOBorZEjDwe8.sgoilXZHAe8wWUQZ9fCHCsZ.EpBPsXhWdOLhi.4erQVJRJ3XXUQsDqx7y5NFGvMJuVIhNpTsLh8Hf7OmrgsPfcq40rdP1L71JZ52mnW6YJpjEMlBBvDAZok.U_k7Rznb.9n62shby8anDSqiMOMrScQ5ZL37u2hUvgEXHcecMmvT8k1GtIIfUDZaDb59QyTJLFuzXcfteDc8D3X6pK53EC7zwr4XKilbYZKA6kCGpK4a3wOtsSDN1fB97DZPJPdjSv_YOgS8nE6m5NFBVoliWnIqtI.ACJbvyIvw37dHD5HRY21T0ebpW.zGFWAY57OGKqJTCkKBws0uMMKbgn57XlUOQ0GQ2IR1uf7y3fP97uW2HtGJZ_..pxpxG2wBSxZghkOGKtIe0nhreZ.CjwKJmso2H2wtYLjLWO5lhWDp0gglIbyypQ8uh7_U3IvTIPRlqQKuQTed5G8KDcKRCN4xIL0GuOtBOG8gGnf9b3RaKYg8S6YGAlTwEzVUOLg3E4wCcC5XFampm9gIRAbf3sQ7LZux186BFOS3a1lEwiY4a_NRgBP9lnFTN8HmoiFN9j7cXNOxk6qjMWSZ5SxRspxXcjQRKA70iS2FDxD7RfAu8cvAo66pl6me9.PT.TAAVgCXFDxJGjfAIdKEijq2vgdXNvAWN23HPfb9T9z1y9hNZbT8j6X23R49LSEelIs5c.F699Ka7UjhFSTBrfccttMQ1ujLQLr4D1IUknsCRebeDByCKvU3sm6bTlh7_3fppWRO.XZ4UC0ehYdFwpdKzAHOm9ekB8aiYJRBEBAcNcF7Jor3icUrlosfSq7n1Ra0C9IuslSNNcDcj1FShWH8gHDBY1n.r9m3Xs1lroI6cYDl_td62cw6MM.RV4ihYTNgUJcJXzZb6_uZFmuVng18EH62.ksFqhvnT5VXsV9ec3lIVmjHhQcyoFuHwSJZQF5bWIanSgGeE08f4eYsNOc.n6sXzCs8Eha5GEYaFEfeLFLHHJQl68BN15YzGd2H6qtXLaHVuZBzIGXcS5YVssEuodPYb1JRh2E94AO9RwyUlBF5OFNLHLD0uUgKODbNgKHBetU4mNl7RFBxnBq2CEK31RiKybYGZGK_Sdyyr6SejohBEKtSIPDUCcA452PZvyZtU9Lkg3ftcBb5ZDkZZyI7BEuxpgqBoybGvppOuC8Db1yArWiP3fi5X0QkiZg77nQ8zmJ0LWgIfSJ_c37LR2LOAeVwlYf3v18H3Hw68psWhOyhv8yAI8cky5rRTuB7oXg2w9AdRu9.nrVblinHFeWU217V2nZpQz2VearGG3GEil95q2zt.zMe8I_LCFCnb4HO9awAehVCfm5cR8mSOJuob9b2NHKl_81jn6mnvtJxcRPbbE_qrefMMW8XQDhQ4uj4kbPr_dfDgEur41qacGXxRpX.SlUSdd7y9owQNkkiwI6fRGTb29dXMVrT3MttnK8Hk6vtVB.A8xWynd1MoHL9VYNFDleG96W_JxDKzpohG19tac9SdJd2b_EEnJZ8XME6r7f7fv7pRA4gdxrVCTsb2AiuX1LPLo9pM6oUs2mTmB7H.7XQV5Mt5hE4S7LExVz.lUs5UwIsV7pzd.3pl4EvgxqPSgF0RkWgxpz_7cTD.bhJGA8m2lxebiZWw4Tbd__XYtcm4zs20m0eVWJ5EJDhxoKiWxN6yAiZHMajpOA4rFxqkKDmucBKIVI9IA4KKlHp0LKFAZknUyTzzbuFL6ZBaqzLg6jAfjcpL3g2fsaPQPoXCSSC_xCBh6VT.LfntiJOwSyShVwSEFny4NnqnBrY2cABd9vB.vTJyYg0fCDjBqGtGc.Qv0A1zTdwhBhsoh8qX2dCkoT5r6ya2A',};var a = document.createElement('script');a.src = '/cdn-cgi/challenge-platform/h/b/orchestrate/chl_page/v1?ray=96b56fd479baf274';window._cf_chl_opt.cOgUHash = location.hash === '' && location.href.indexOf('#') !== -1 ? '#' : location.hash;window._cf_chl_opt.cOgUQuery = location.search === '' && location.href.slice(0, location.href.length - window._cf_chl_opt.cOgUHash.length).indexOf('?') !== -1 ? '?' : location.search;if (window.history && window.history.replaceState) {var ogU = location.pathname + window._cf_chl_opt.cOgUQuery + window._cf_chl_opt.cOgUHash;history.replaceState(null, null,"\/Tool\/Loon\/Lpx\/Remove_ads_by_keli.lpx?__cf_chl_rt_tk=x4BM4GiTAJxcNsCRke3r85b0O5NTJT50rtY5PWos854-1754555687-1.0.1.1-v7ZNvc.HLqcGGtvl6USV7Qod3IGC4wBR2F9SgwFKg8I"+ window._cf_chl_opt.cOgUHash);a.onload = function() {history.replaceState(null, null, ogU);}}document.getElementsByTagName('head')[0].appendChild(a);}());</script></body></html>
+#!name=可莉广告过滤器
+#!desc=可莉自用的广告过滤器
+#!openUrl=
+#!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+#!tag=去广告
+#!system=
+#!system_version=
+#!loon_version=3.2.4(787)
+#!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/Other_icon/120px/KeLee.png
+#!date=2025-07-16 02:25:05
+
+[Rule]
+DOMAIN, acdn.adnxs.com, REJECT
+DOMAIN, mediation.adnxs.com, REJECT
+DOMAIN, sin3-ib.adnxs.com, REJECT
+
+DOMAIN, sdkconfig.ad.xiaomi.com, REJECT
+DOMAIN, data.mistat.xiaomi.com, REJECT
+DOMAIN, tracking.intl.miui.com, REJECT
+
+DOMAIN, sdkconfig.ad.xiaomi.com, REJECT
+
+DOMAIN-SUFFIX, doubleclick-cn.net, REJECT
+DOMAIN-SUFFIX, doubleclick.net, REJECT
+
+DOMAIN, business.msstatic.com, REJECT
+DOMAIN-SUFFIX, v1d.szbdyd.com, REJECT
+URL-REGEX, "^http:\/\/cdn\.wup\.huya\.com\/launch\/queryHttpDns$", REJECT
+
+DOMAIN-SUFFIX, m1.ad.10010.com, REJECT
+
+DOMAIN, ad.21cn.com, REJECT
+DOMAIN, ad.k.21cn.com, REJECT
+DOMAIN, admarket.21cn.com, REJECT
+DOMAIN, adshows.21cn.com, REJECT
+IP-CIDR, 122.229.8.47/32, REJECT, no-resolve
+IP-CIDR, 122.229.29.89/32, REJECT, no-resolve
+
+URL-REGEX, "^http:\/\/p\.kuaidi100\.com\/mobile\/mobileapi\.do", REJECT-DICT
+URL-REGEX, "^http:\/\/p\.kuaidi100\.com\/advertisement\/", REJECT-DICT
+
+DOMAIN, mall-dsp2.qinlinkeji.com, REJECT // 首页商品信息流
+DOMAIN, mallapi2.qinlinkeji.com, REJECT // 商城页面
+
+DOMAIN, open-pixon.ads-pixiv.net, REJECT
+
+[Rewrite]
+^https?:\/\/api-access\.pangolin-sdk-toutiao\.com\/api\/ad\/union\/sdk reject
+
+^https:\/\/cdn\.web\.chelaile\.net\.cn\/info-flow\/index\.html reject
+
+^http:\/\/mercury-gateway\.ixiaochuan\.cn\/mercury\/v1\/ad\/ reject
+
+^https?:\/\/api\.m\.mi\.com\/v\d\/app\/start reject-200
+^https?:\/\/api\.jr\.mi\.com\/v\d\/adv\/ reject-200
+^https?:\/\/api\.jr\.mi\.com\/jr\/api\/playScreen reject-200
+^https?:\/\/api-mifit.+?\.huami\.com\/discovery\/mi\/discovery\/.+?_ad\? reject-200
+^https?:\/\/home\.mi\.com\/cgi-op\/api\/v\d\/recommendation\/banner reject
+^https?:\/\/(api-mifit|api-mifit-\w+)\.huami\.com\/discovery\/mi\/discovery\/\w+_ad\? reject
+^https?:\/\/api-mifit\.huami\.com\/discovery\/mi\/discovery\/homepage_ad\? reject-img
+^https?:\/\/api-mifit\.huami\.com\/discovery\/mi\/discovery\/sleep_ad\? reject-img
+^https?:\/\/api-mifit\.huami\.com\/discovery\/mi\/discovery\/sport_summary_ad\? reject-img
+^https?:\/\/api-mifit\.huami\.com\/discovery\/mi\/discovery\/sport_training_ad\? reject-img
+^https?:\/\/api-mifit\.huami\.com\/discovery\/mi\/discovery\/step_detail_ad\? reject-img
+^https?:\/\/api-mifit\.huami\.com\/discovery\/mi\/discovery\/training_video_ad\? reject-img
+
+^https:\/\/shopapi\.io\.mi\.com\/mtop\/mf\/resource\/homePage\/pageConfig reject-200
+^https:\/\/api-mifit-cn2\.huami\.com\/discovery\/mi\/cards\/startpage_ad reject
+
+^https:\/\/apiwz\.midukanshu\.com\/advert\/getPopup$ reject
+^https:\/\/apiwz\.midukanshu\.com\/advert\/treasureInfo$ reject
+^https:\/\/apiwz\.midukanshu\.com\/config\/getAds$ reject
+
+^https:\/\/home\.mi\.com\/cgi-op\/api\/v1\/recommendation\/myTab\? response-body-json-del data.banners
+
+^http:\/\/img\.dailmo\.com\/img\/61\/23c7125bfe6166d69f3bff5b0ca4d31e\.jpg reject
+^http:\/\/img\.dailmo\.com\/img\/50\/edb40c6392f848df37f9c31d8a6f90f6\.jpg reject
+^http:\/\/img\.dailmo\.com\/img\/6\/90585d9e96c73dd49644af57d8501624\.jpg reject
+^http:\/\/img\.dailmo\.com\/img\/5\/6cb2aa237ce1f65944aa1ecb29fbdeef\.jpg reject
+^http:\/\/img\.allahall\.com\/img\/61\/23c7125bfe6166d69f3bff5b0ca4d31e\.jpg reject
+^http:\/\/img\.allahall\.com\/img\/50\/edb40c6392f848df37f9c31d8a6f90f6\.jpg reject
+^http:\/\/img\.allahall\.com\/img\/6\/90585d9e96c73dd49644af57d8501624\.jpg reject
+^http:\/\/img\.allahall\.com\/img\/5\/6cb2aa237ce1f65944aa1ecb29fbdeef\.jpg reject
+^http:\/\/img\.allahall\.com\/img\/59\/6a13a75dfe46ebfdac96bd27ef098885\.jpg reject
+^http:\/\/app\.zhoudamozi\.com\/ad\/.+ reject-200
+
+^https:\/\/api\.(pinduoduo|yangkeduo)\.com\/api\/cappuccino\/splash reject
+
+^https:\/\/gw\.alicdn\.com\/mt\/ reject
+^https:\/\/gw\.alicdn\.com\/tfs\/.+\d{3,4}-\d{4} reject
+^https:\/\/gw\.alicdn\.com\/tps\/.+\d{3,4}-\d{4} reject
+^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.taobao\.idle\.home\.welcome reject
+
+^https:\/\/m\.qianbao\.qq\.com\/services\/walletHome\/getQQshopData\? reject-dict
+^https:\/\/m\.qianbao\.qq\.com\/services\/walletHome\/getGameData\? reject-dict
+^https:\/\/m\.qianbao\.qq\.com\/services\/walletHome\/getFootData\? reject-dict
+
+^https:\/\/hfapp-service\.qweather\.net\/v2\.0\/app\/ad\/list\? reject-dict
+
+^http:\/\/home\.umetrip\.com\/gateway\/api\/umetrip\/native reject
+^http:\/\/umerp\.umetrip\.com\/gateway\/api\/umetrip\/native reject
+
+^https?:\/\/us\.l\.qq\.com\/exapp reject-200
+
+^https:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/DN\/init\/startInit$ reject
+
+^https:\/\/dict\.youdao\.com\/course\/tab\/translateTab reject-dict
+^https:\/\/dict\.youdao\.com\/homepage\/tile reject-dict
+^https:\/\/api-overmind\.youdao\.com\/openapi\/get\/luna\/dict\/dict-mobile\/prod\/dictCommonConfig reject-dict
+^https:\/\/cdke\.youdao\.com\/course3\/recommend\/dict\/startup reject-dict
+^https:\/\/dict\.youdao\.com\/commonsearch reject-dict
+^https:\/\/dict\.youdao\.com\/vip\/activity\/couponinfo reject-dict
+^https:\/\/dict\.youdao\.com\/dictusertask\/system reject-dict
+
+^https?:\/\/ecard\.shenzhentong\.com\/wxweb\/bwxppub2\/QryAdvertList\.do reject-200
+
+^https?:\/\/mob\.mddcloud\.com\.cn\/adApi\/advert\/(first|third)part\/advertList reject-dict
+^https?:\/\/t-dsp\.pinduoduo\.com reject-200
+^https?:\/\/mobads-pre-config\.cdn\.bcebos\.com\/preload\.php reject-200
+^http?:\/\/sfo\.mddcloud\.com\.cn\/api\/v2\/sfo\/popup_displays? reject-dict
+^https?:\/\/tower\.ubixioe\.com\/mob\/mediation reject
+^https?:\/\/toblog\.ctobsnssdk\.com reject-200
+^https?:\/\/conf-darwin\.xycdn\.com reject-dict
+^https?:\/\/sdk1xyajs\.data\.kuiniuca\.com reject
+
+^https:\/\/iyes\.youku\.com\/uts\/v1\/start\/ reject-dict
+^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.user\.strategy\.get\/ reject-dict
+
+^https:\/\/gw\.chuangkit\.com\/team\/app\/common\/ad\/ reject-dict
+
+^https:\/\/qiye\.gaoding\.com\/api\/v3\/oc\/v2\/delivery-pits\/ios-splash\/ reject-dict
+
+^https:\/\/p0\.pipi\.cn\/(adAdmin|mediaplus\/maoyantong_ads_fe)\/\w+\.jpg\?imageMogr2\/quality\/ reject-dict
+^https:\/\/p0\.pipi\.cn\/(adAdmin|mediaplus\/maoyantong_ads_fe)\/\w+\.(jpg|png)\?imageMogr2\/thumbnail\/(860x0|!165x165|!1049x1169) reject-dict
+
+^https:\/\/api\.zcool\.com\.cn\/v\d\.\d\.\d/common\/open-screen reject-dict
+
+^https:\/\/shealthyapi\.senssun\.com\/v1\/app\/banner\/findByType\?type=bottom$
+
+^https:\/\/lanfanapp\.com\/api\/v1\/ads\/ reject-dict
+
+^https:\/\/client-api-v2\.oray\.com\/materials\/SLCC_IOS_STARTUP reject-dict
+^https:\/\/client-api-v2\.oray\.com\/materials\/SLCC_IOS_DEVICE reject-dict
+^https:\/\/client-api-v2\.oray\.com\/materials\/SUNLOGIN_CLIENT_IOS_PROMOTION reject-dict
+
+^https:\/\/app\.10099\.com\.cn\/contact-web\/api\/version\/getFlashScreenPage reject
+
+^https:\/\/api\.flydigi\.com\/android\/v2\/ad reject-dict
+
+^https:\/\/api\.xiangji\.qq\.com\/splash$ reject-dict
+
+^https:\/\/cdn\.cmgadx\.com\/sdk\/pool\/ reject-dict
+
+^https:\/\/qadx\.qinlinad\.com\/ad\/ reject-dict
+
+^https:\/\/watch\.iot\.mi\.com\/cgi-op\/api\/v1\/watch\/health\/resource\?business=MI_WATCH_SPORT reject-dict
+
+^https:\/\/watch\.iot\.mi\.com\/cgi-op\/api\/v1\/watch\/health\/resource\?business=MI_HEALTH_DEVICE_TAB_PAGE reject-dict
+
+^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.film\.mtopadvertiseapi\.queryloadingbanner\/ reject-dict
+^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.film\.life\.popup\.get\/ reject-dict
+
+^https:\/\/d\.socdm\.com\/adsv\/ reject-dict
+
+^https?:\/\/m\.client\.10010\.com\/mobileService\/customer\/accountListData\.htm mock-response-body data-type=json data="{"imgIndex":"0","adv":{"startup_adv":{"advCntList":[],"buttonList":[]}},"respCode":"0000"}"
+
+^https?:\/\/cmds\.omesoft\.com\/HypnotistWS\.asmx response-body-replace-regex <GetADResult>\.\*\?<\/GetADResult> <GetADResult>{"ret":0,"msg":"正常","err_code":0,"data":{"ad":[]}}</GetADResult>
+
+^https?:\/\/api\.fenxianglife\.com\/njia\/index\/popup\/v2 response-body-json-jq '.data.list=[]'
+
+[Script]
+
+
+[MitM]
+hostname=api.zcool.com.cn, acs.m.goofish.com, acs.m.taobao.com, api-access.pangolin-sdk-toutiao*.com, api-access.pangolin-sdk-toutiao.com, api-mifit*.huami.com, api-mifit-cn2.huami.com, api-mifit.huami.com, api-overmind.youdao.com, api.ahmobile.cn, api.angkeduo.com, api.jr.mi.com, api.m.mi.com, api.pinduoduo.com, api.wfdata.club, apiwz.midukanshu.com, app.zhoudamozi.com, cdke.youdao.com, conf-darwin.xycdn.com, dict.youdao.com, ecard.shenzhentong.com, ether-pack.pangolin-sdk-toutiao.com, gromore.pangolin-sdk-toutiao.com, gw.alicdn.com, gw.chuangkit.com, hfapp-service.qweather.net, home.mi.com, home.umetrip.com, img.allahall.com, img.dailmo.com, iyes.youku.com, lfd?-analytics.bytescm.com, lfd?-cdn-tos.bytescm.com, m.qianbao.qq.com, mercury-gateway.ixiaochuan.cn, mob.mddcloud.com.cn, mobads-pre-config.cdn.bcebos.com, p0.pipi.cn, qiye.gaoding.com, sdk1xyajs.data.kuiniuca.com, sfd?-fe-tos.pglstatp-toutiao.com, sfo.mddcloud.com.cn, shopapi.io.mi.com, shealthyapi.senssun.com, t-dsp.pinduoduo.com, toblog.ctobsnssdk.com, tower.ubixioe.com, umerp.umetrip.com, us.l.qq.com, lanfanapp.com, api.xiachufang.com, api.xiangji.qq.com, video-dsp.pddpic.com, t-dsp.pinduoduo.com, images.pinduoduo.com, images.pinduoduo.com, client.app.coc.10086.cn, cdn.cmgadx.com, qadx.qinlinad.com, watch.iot.mi.com, cdn.web.chelaile.net.cn, d.socdm.com, m.client.10010.com, cmds.omesoft.com, api.fenxianglife.com
