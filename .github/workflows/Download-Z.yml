@@ -1,4 +1,4 @@
-name: Fetch sgmodule files
+name: Fetch sgmodule files with retry
 
 on:
   workflow_dispatch:
@@ -25,7 +25,7 @@ jobs:
           echo "Found sgmodule files:"
           cat sgmodule_paths.txt
 
-      - name: Download sgmodule files to target folder with URL encoding
+      - name: Download sgmodule files with retry on failure
         run: |
           mkdir -p Modules/Surge/zirawell/Official
 
@@ -34,16 +34,31 @@ jobs:
             exit 0
           fi
 
+          retry=3
+
           while IFS= read -r file_path; do
             filename=$(basename "$file_path")
             echo "Downloading $file_path as $filename"
 
-            # URL encode path
             encoded_path=$(python3 -c "import urllib.parse; print(urllib.parse.quote('''$file_path'''))")
 
-            curl --fail -sL -H "Accept: application/vnd.github.raw" \
-              "https://api.github.com/repos/zirawell/R-Store/contents/$encoded_path?ref=main" \
-              -o "Modules/Surge/zirawell/Official/$filename" || { echo "Download failed for $file_path"; exit 3; }
+            attempt=1
+            success=0
+            while [ $attempt -le $retry ]; do
+              echo "Attempt $attempt for $file_path"
+              curl --fail -sL -H "Accept: application/vnd.github.raw" \
+                "https://api.github.com/repos/zirawell/R-Store/contents/$encoded_path?ref=main" \
+                -o "Modules/Surge/zirawell/Official/$filename" && success=1 && break
+
+              echo "Download attempt $attempt failed for $file_path"
+              attempt=$((attempt+1))
+              sleep 2
+            done
+
+            if [ $success -ne 1 ]; then
+              echo "Warning: Download failed for $file_path after $retry attempts, skipping."
+              curl -v "https://api.github.com/repos/zirawell/R-Store/contents/$encoded_path?ref=main"
+            fi
           done < sgmodule_paths.txt
 
       - name: List downloaded files
