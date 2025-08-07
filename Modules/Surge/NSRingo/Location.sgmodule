@@ -14,7 +14,7 @@ DOMAIN,gspe1-ssl.ls.apple.com,DIRECT
 
 [Script]
 # 📍 Country Code
-📍 Location.pep.gcc.response = type=http-response, pattern=^https?:\/\/gspe1-ssl\.ls\.apple\.com\/pep\/gcc, requires-body=1, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/NSRingo/Location/response.bundle.js, argument=PEP.GCC={{{GeoCountryCode}}}
+📍 Location.pep.gcc.response = type=http-response, pattern=^https?:\/\/gspe1-ssl\.ls\.apple\.com\/pep\/gcc, requires-body=1, script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/NSRingo/Location/response.bundle.js, argument=PEP.GCC={{{GeoCountryCode}}}
 
 [MITM]
 hostname = %APPEND% gspe1-ssl.ls.apple.com
