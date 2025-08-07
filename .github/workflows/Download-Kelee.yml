@@ -100,22 +100,22 @@ jobs:
           done
         done
 
-    - name: Commit and push downloaded files
+    - name: Commit and push changes
       env:
-        GITHUB_BRANCH: ${{ github.ref_name }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        git config --global user.name "${GITHUB_ACTOR}"
-        git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-
-        if [ -d Modules/Loon/Kelee/Official ]; then
-          find Modules/Loon/Kelee/Official -name '*.plugin' -exec git add {} +
-        else
-          echo "目录 Modules/Loon/Kelee/Official 不存在，跳过添加文件"
-        fi
-
+        DATE="$(TZ='Asia/Shanghai' date '+%Y-%m-%d %H:%M:%S')"
+    
+        git add Modules/*
+    
         if git diff --cached --quiet; then
-          echo "✅ No changes to commit"
+          echo "No changes to commit"
         else
-          git commit -m "Auto Download Plugins"
-          git push origin "${GITHUB_BRANCH}"
+          COMMIT_MESSAGE="Converted files at $DATE (UTC+8)"
+          git stash
+          git pull --rebase
+          git stash pop
+          git add Modules/*
+          git commit -m "$COMMIT_MESSAGE"
+          git push
         fi
