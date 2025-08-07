@@ -10,8 +10,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install jq (if not pre-installed)
-        run: sudo apt-get update && sudo apt-get install -y jq
+      - name: Install jq and python3 (if not pre-installed)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y jq python3
 
       - name: Get all file paths recursively and filter sgmodule files
         id: list_paths
@@ -23,7 +25,7 @@ jobs:
           echo "Found sgmodule files:"
           cat sgmodule_paths.txt
 
-      - name: Download sgmodule files to target folder
+      - name: Download sgmodule files to target folder with URL encoding
         run: |
           mkdir -p Modules/Surge/zirawell/Official
 
@@ -35,8 +37,12 @@ jobs:
           while IFS= read -r file_path; do
             filename=$(basename "$file_path")
             echo "Downloading $file_path as $filename"
+
+            # URL encode path
+            encoded_path=$(python3 -c "import urllib.parse; print(urllib.parse.quote('''$file_path'''))")
+
             curl --fail -sL -H "Accept: application/vnd.github.raw" \
-              "https://api.github.com/repos/zirawell/R-Store/contents/$file_path?ref=main" \
+              "https://api.github.com/repos/zirawell/R-Store/contents/$encoded_path?ref=main" \
               -o "Modules/Surge/zirawell/Official/$filename" || { echo "Download failed for $file_path"; exit 3; }
           done < sgmodule_paths.txt
 
