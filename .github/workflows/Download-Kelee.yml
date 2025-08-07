@@ -1,0 +1,79 @@
+name: Download some plugins
+
+on:
+  schedule:
+    - cron: '0,30 * * * *'  # 每小时的第 0 分钟和第 30 分钟执行
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  downloading:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.x'
+
+    - name: Cache pip packages
+      uses: actions/cache@v4
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('ShalalaLala/Scripts/kelee-requirements.txt') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-
+
+    - name: Install dependencies
+      run: pip install -r ShalalaLala/Scripts/kelee-requirements.txt
+
+    - name: Checkout private repository
+      uses: actions/checkout@v3
+      with:
+        repository: "${{ github.actor }}/ShalalaLala"
+        token: ${{ secrets.PERSONAL_TOKENS }}
+        path: ShalalaLala
+
+    - name: Run download script
+      run: python ShalalaLala/Scripts/kelee-20250807.py
+
+    - name: List downloaded files
+      run: |
+        if [ -d Plugin ]; then
+          ls -R Plugin
+        else
+          echo "⚠️ 目录不存在"
+        fi
+
+    - name: Rename and move .lpx files
+      run: |
+        mkdir -p Modules/Loon/Kelee/Official
+        find Plugin -name '*.lpx' | while read file; do
+          base=$(basename "$file" .lpx)
+          cp "$file" "Modules/Loon/Kelee/Official/$base.plugin"
+        done
+
+    - name: Commit and push downloaded files
+      env:
+        GITHUB_BRANCH: ${{ github.ref_name }}
+      run: |
+        git config --global user.name "${GITHUB_ACTOR}"
+        git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+
+        if [ -d Modules/Loon/Kelee/Official ]; then
+          find Modules/Loon/Kelee/Official -name '*.plugin' -exec git add {} +
+        else
+          echo "目录 Modules/Loon/Kelee/Official 不存在，跳过添加文件"
+        fi
+
+        if git diff --cached --quiet; then
+          echo "✅ No changes to commit"
+        else
+          git commit -m "自动更新下载的 Lpx 插件文件为 .plugin"
+          git push origin "${GITHUB_BRANCH}"
+        fi
