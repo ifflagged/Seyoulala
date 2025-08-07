@@ -21,17 +21,17 @@ jobs:
       - name: Copy Official folder from old commit
         run: |
           mkdir -p temp_restore
-          cp -r Modules/Loon/Kelee/Official temp_restore/
+          cp -r Modules/Loon/Kelee temp_restore/
 
       - name: Checkout back to main branch
         run: |
           git checkout main
-          cp -r temp_restore/Official Modules/Loon/Kelee/
+          cp -r temp_restore Modules/Loon/Kelee/
 
       - name: Commit restored files
         run: |
           git config --global user.name "${GITHUB_ACTOR}"
           git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-          git add Modules/Loon/Kelee/Official
+          git add Modules/Loon/Kelee
           git commit -m "Restore Official folder from deleted commit"
           git push
