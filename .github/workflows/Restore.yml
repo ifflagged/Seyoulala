@@ -67,5 +67,5 @@ jobs:
           git config --global user.name "${GITHUB_ACTOR}"
           git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
           git add .
-          git commit -m "Restore folder. from deleted commit"
+          git commit -m "Restore folders from deleted commit"
           git push
