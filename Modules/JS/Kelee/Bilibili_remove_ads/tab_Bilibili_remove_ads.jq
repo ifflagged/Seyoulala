@@ -1,1 +1,78 @@
-<!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta name="robots" content="noindex,nofollow"><meta name="viewport" content="width=device-width,initial-scale=1"><style>*{box-sizing:border-box;margin:0;padding:0}html{line-height:1.15;-webkit-text-size-adjust:100%;color:#313131;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"}body{display:flex;flex-direction:column;height:100vh;min-height:100vh}.main-content{margin:8rem auto;padding-left:1.5rem;max-width:60rem}@media (width <= 720px){.main-content{margin-top:4rem}}.h2{line-height:2.25rem;font-size:1.5rem;font-weight:500}@media (width <= 720px){.h2{line-height:1.5rem;font-size:1.25rem}}#challenge-error-text{background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgZmlsbD0ibm9uZSI+PHBhdGggZmlsbD0iI0IyMEYwMyIgZD0iTTE2IDNhMTMgMTMgMCAxIDAgMTMgMTNBMTMuMDE1IDEzLjAxNSAwIDAgMCAxNiAzbTAgMjRhMTEgMTEgMCAxIDEgMTEtMTEgMTEuMDEgMTEuMDEgMCAwIDEtMTEgMTEiLz48cGF0aCBmaWxsPSIjQjIwRjAzIiBkPSJNMTcuMDM4IDE4LjYxNUgxNC44N0wxNC41NjMgOS41aDIuNzgzem0tMS4wODQgMS40MjdxLjY2IDAgMS4wNTcuMzg4LjQwNy4zODkuNDA3Ljk5NCAwIC41OTYtLjQwNy45ODQtLjM5Ny4zOS0xLjA1Ny4zODktLjY1IDAtMS4wNTYtLjM4OS0uMzk4LS4zODktLjM5OC0uOTg0IDAtLjU5Ny4zOTgtLjk4NS40MDYtLjM5NyAxLjA1Ni0uMzk3Ii8+PC9zdmc+");background-repeat:no-repeat;background-size:contain;padding-left:34px}@media (prefers-color-scheme: dark){body{background-color:#222;color:#d9d9d9}}</style><meta http-equiv="refresh" content="360"></head><body><div class="main-wrapper" role="main"><div class="main-content"><noscript><div class="h2"><span id="challenge-error-text">Enable JavaScript and cookies to continue</span></div></noscript></div></div><script>(function(){window._cf_chl_opt = {cvId: '3',cZone: 'kelee.one',cType: 'managed',cRay: '96431412f8fc67c1',cH: 'gf4TG6k1lOtJ6A0TjDA3vcc6DfWu2emlsXNHAtNis4s-1753356552-1.2.1.1-k.EgwPw1ev5S1zciIQxcw9yHflXyZR6IPw.pkdj0MXnPmMjfOWkCRvmEZoPlXAVr',cUPMDTk:"/Resource/JQLang/Bilibili/tab_Bilibili_remove_ads.jq?__cf_chl_tk=dk19rbpXkhFhNz15zKc0gjbgynzOAvKoYqvqRMZlQ9U-1753356552-1.0.1.1-F_l7Jfo9bCikCjLcmuISpKCR6QFH9nv4n3tA6uI4Gd8",cFPWv: 'b',cITimeS: '1753356552',cTplC:0,cTplV:5,cTplB: 'cf',fa:"/Resource/JQLang/Bilibili/tab_Bilibili_remove_ads.jq?__cf_chl_f_tk=dk19rbpXkhFhNz15zKc0gjbgynzOAvKoYqvqRMZlQ9U-1753356552-1.0.1.1-F_l7Jfo9bCikCjLcmuISpKCR6QFH9nv4n3tA6uI4Gd8",md: 'kufndHM8bYLm5GIjJDUJzzFySNBcslYdhs9.EfkgJuQ-1753356552-1.2.1.1-JnY07JPiCc6F6gGA_neKIshs47.u1BtUzEJI_LydzuTelm.LA28NWVVieomzif_ez_9i1NkG6Cn2yeE9U0fkLIzzv7rouQvjQUobIB5s0oxp3bpb4PmWmU9pVCCZLtmDzwcqEXNIoaoIiVPmRfrO.ZDHd01Vd40T_rtMnam14dMq2.Sc8vOPFIFxiI_YxUm9QI3wWH4pfDyF5Y9yZLM_ODdP7cg0LF2cZH62BhGwJbGjfZn2qUP_F7_y6fDCMo3TigHn3fgAOGjh98SXKkZ6I.FtdZE9xt8CO.elXbuZ5mIom4jrRRJ0LYd75BXF.71edTFxs7NJ4PgwYJXqvrfx_hADkm9I1BrCsCLbQxUjQoSU0dZQLLgtqWu97Lk2kDKo3UdPlzbPedsQ7GobXG4F1QMugTJ.ow_I9XfF5lan5y6HcyMUo1M521ucXumGHNXI33XWujYx.O5M8LNyUi57DzGORUpkLeM3uXhDN3xOwv69db37_lhxNK5rlrrLKIN0qDViOYw4K.qEJeNjnUX3mktW2QebVCI9_GkF7tQE9whSFcge2d4KaR1arcaCLk5RuuaggdOZ82Lc.rRdqW8bYuvXoZC9sxs7BPlGJd68a77AGunXZ9NdEa2nwmr7yOeSjg_Xf.OFPCGOTEAIueSr.Y9l9vUO.nozISHvIMqy0fTwiOvsO5ktG.cmQKmrZNZIbQjBdmirX1GgdMPKVY.W67_wd7jLCC8Q9ez9VXcqT2985pcEjxzLTdnOvjCFcANBNKIUBM.rBrzibHQwsIRAeh80o1LjfX8B47nJLMDrn.2EggvD_Aazj70brESkBok1aGyPthXcSaXcA42RwoXWGkd7nBKlTUXuSwJnkh95ebqzsdc.BwxQ_accribI_A7F67rco3j6No5y4ps80V7vqISXLNMJtod0mfi9HFm8NZ5K8swoXmgET7htB55lUeV2pvRDsb.MuQeeu6a0b6uePfACQuMj5h1TPu5HkmRFjIKxyDnZTQZ.sPJfK00TQpdanUUj83BzBsJRG5y_YNtYJ2jLbQGqekqtPv6C9wNQULw',mdrd: '',};var a = document.createElement('script');a.src = '/cdn-cgi/challenge-platform/h/b/orchestrate/chl_page/v1?ray=96431412f8fc67c1';window._cf_chl_opt.cOgUHash = location.hash === '' && location.href.indexOf('#') !== -1 ? '#' : location.hash;window._cf_chl_opt.cOgUQuery = location.search === '' && location.href.slice(0, location.href.length - window._cf_chl_opt.cOgUHash.length).indexOf('?') !== -1 ? '?' : location.search;if (window.history && window.history.replaceState) {var ogU = location.pathname + window._cf_chl_opt.cOgUQuery + window._cf_chl_opt.cOgUHash;history.replaceState(null, null,"/Resource/JQLang/Bilibili/tab_Bilibili_remove_ads.jq?__cf_chl_rt_tk=dk19rbpXkhFhNz15zKc0gjbgynzOAvKoYqvqRMZlQ9U-1753356552-1.0.1.1-F_l7Jfo9bCikCjLcmuISpKCR6QFH9nv4n3tA6uI4Gd8"+ window._cf_chl_opt.cOgUHash);a.onload = function() {history.replaceState(null, null, ogU);}}document.getElementsByTagName('head')[0].appendChild(a);}());</script></body></html>
+.data.tab = [
+    {
+        pos: 1,
+        id: 477,
+        name: "推荐",
+        tab_id: "推荐tab",
+        uri: "bilibili://pegasus/promo",
+        default_selected: 1
+    },
+    {
+        pos: 2,
+        id: 478,
+        name: "热门",
+        tab_id: "热门tab",
+        uri: "bilibili://pegasus/hottopic"
+    },
+    {
+        pos: 3,
+        id: 545,
+        name: "动画",
+        tab_id: "bangumi",
+        uri: "bilibili://pgc/home"
+    },
+    {
+        pos: 4,
+        id: 151,
+        name: "影视",
+        tab_id: "film",
+        uri: "bilibili://pgc/cinema-tab"
+    },
+    {
+        pos: 5,
+        id: 731,
+        name: "直播",
+        tab_id: "直播tab",
+        uri: "bilibili://live/home"
+    }
+] | 
+.data.top = [
+    {
+        pos: 1,
+        id: 176,
+        name: "消息",
+        tab_id: "消息Top",
+        uri: "bilibili://link/im_home",
+        icon: "http://i0.hdslb.com/bfs/archive/d43047538e72c9ed8fd8e4e34415fbe3a4f632cb.png"
+    }
+] | 
+.data.bottom = [
+    {
+        pos: 1,
+        id: 177,
+        name: "首页",
+        tab_id: "home",
+        uri: "bilibili://main/home/",
+        icon: "http://i0.hdslb.com/bfs/archive/63d7ee88d471786c1af45af86e8cb7f607edf91b.png",
+        icon_selected: "http://i0.hdslb.com/bfs/archive/e5106aa688dc729e7f0eafcbb80317feb54a43bd.png"
+    },
+    {
+        pos: 2,
+        id: 179,
+        name: "动态",
+        tab_id: "dynamic",
+        uri: "bilibili://following/home/",
+        icon: "http://i0.hdslb.com/bfs/archive/86dfbe5fa32f11a8588b9ae0fccb77d3c27cedf6.png",
+        icon_selected: "http://i0.hdslb.com/bfs/archive/25b658e1f6b6da57eecba328556101dbdcb4b53f.png"
+    },
+    {
+        pos: 5,
+        id: 181,
+        name: "我的",
+        tab_id: "我的Bottom",
+        uri: "bilibili://user_center/",
+        icon: "http://i0.hdslb.com/bfs/archive/4b0b2c49ffeb4f0c2e6a4cceebeef0aab1c53fe1.png",
+        icon_selected: "http://i0.hdslb.com/bfs/archive/a54a8009116cb896e64ef14dcf50e5cade401e00.png"
+    }
+]
+

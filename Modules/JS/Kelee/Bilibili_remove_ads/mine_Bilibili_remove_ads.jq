@@ -1,1 +1,182 @@
-<!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta name="robots" content="noindex,nofollow"><meta name="viewport" content="width=device-width,initial-scale=1"><style>*{box-sizing:border-box;margin:0;padding:0}html{line-height:1.15;-webkit-text-size-adjust:100%;color:#313131;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"}body{display:flex;flex-direction:column;height:100vh;min-height:100vh}.main-content{margin:8rem auto;padding-left:1.5rem;max-width:60rem}@media (width <= 720px){.main-content{margin-top:4rem}}.h2{line-height:2.25rem;font-size:1.5rem;font-weight:500}@media (width <= 720px){.h2{line-height:1.5rem;font-size:1.25rem}}#challenge-error-text{background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgZmlsbD0ibm9uZSI+PHBhdGggZmlsbD0iI0IyMEYwMyIgZD0iTTE2IDNhMTMgMTMgMCAxIDAgMTMgMTNBMTMuMDE1IDEzLjAxNSAwIDAgMCAxNiAzbTAgMjRhMTEgMTEgMCAxIDEgMTEtMTEgMTEuMDEgMTEuMDEgMCAwIDEtMTEgMTEiLz48cGF0aCBmaWxsPSIjQjIwRjAzIiBkPSJNMTcuMDM4IDE4LjYxNUgxNC44N0wxNC41NjMgOS41aDIuNzgzem0tMS4wODQgMS40MjdxLjY2IDAgMS4wNTcuMzg4LjQwNy4zODkuNDA3Ljk5NCAwIC41OTYtLjQwNy45ODQtLjM5Ny4zOS0xLjA1Ny4zODktLjY1IDAtMS4wNTYtLjM4OS0uMzk4LS4zODktLjM5OC0uOTg0IDAtLjU5Ny4zOTgtLjk4NS40MDYtLjM5NyAxLjA1Ni0uMzk3Ii8+PC9zdmc+");background-repeat:no-repeat;background-size:contain;padding-left:34px}@media (prefers-color-scheme: dark){body{background-color:#222;color:#d9d9d9}}</style><meta http-equiv="refresh" content="360"></head><body><div class="main-wrapper" role="main"><div class="main-content"><noscript><div class="h2"><span id="challenge-error-text">Enable JavaScript and cookies to continue</span></div></noscript></div></div><script>(function(){window._cf_chl_opt = {cvId: '3',cZone: 'kelee.one',cType: 'managed',cRay: '964314135f74182a',cH: 'O6Rd1BYaTqMdvXT_2zy9aWgjzi7RUUxD5_H.AWyHurg-1753356552-1.2.1.1-PN89H7dlUhA0x2YXwFW2SsqdEyWH4HH322lFG0ECMWKjBrZ6D0gp3YR4yaqEHB5e',cUPMDTk:"/Resource/JQLang/Bilibili/mine_Bilibili_remove_ads.jq?__cf_chl_tk=zVJhJyZlBS.ieGZLRhmKi.Gh9tA5F3nL7qrp_9eFG3U-1753356552-1.0.1.1-YuDTOm4VDKHKlrVsdlZyIpwsLPDpkuibwiiZPZo_8eA",cFPWv: 'b',cITimeS: '1753356552',cTplC:0,cTplV:5,cTplB: 'cf',fa:"/Resource/JQLang/Bilibili/mine_Bilibili_remove_ads.jq?__cf_chl_f_tk=zVJhJyZlBS.ieGZLRhmKi.Gh9tA5F3nL7qrp_9eFG3U-1753356552-1.0.1.1-YuDTOm4VDKHKlrVsdlZyIpwsLPDpkuibwiiZPZo_8eA",md: 'JWTMZbKP4Vox4XCVcHSNxMvv6fTaOHPJc9M83uExeEM-1753356552-1.2.1.1-i_xjSHE.JpZXNgt0cJZxpx6phu588xNp6tchahZdbSBJDshtJKVZKh0F95WsU.To_QSilWo4I7vsV_mz3Aye6rmef6LQ1u5NqkRGJ4PaBUtJ8GPCwpd0J7zAgrBXR5F4qvLeDLWF69hctBCeZG9KLFGipKNoQaQFfUcpj8jVwwZOVxj9bAmzyChUGYBho._6gQ7KGfgj34FeZ1huALFZv4qEZRx8SKfkgsk1zmPQqm1WnLd45TdLh2w..UFL8JLOR0nmnaRqA.klkubYFYlwDP1DhAx4Aiz5vDllxYRVXy6P3wy5s.Q7YGq1OKn4QnWeWyMEf.kEJdPqTH0u.DRjLKMlnG3HDgdd4d38.6Ep3xZ5rlVCtf_EUzYy_kZpLdMcP8orTmfXsoXIcrzplDsw6VZVBT6toAyFCOfOq8.lCyVgT.NC1GZHYQkGC48xvLsP69g3szhpUeE2WwqgGDRz21rJZDKrHQanIAlGq0upo9oLzvjLgrsiswePDC6LQvPhLAUiOEEEduM_rR9ajfRlF7W_B5PDgtSUi2ve1VSLhf0IR3abQV8ojKgNVAutRjpXCHFSNPJfZ6uHRAFJkM9_CT5J8kATQD0w1mkDVpZtwRQYawtWeml1dwR.8Y1YsULl6QSEl35fiPYb6YAewG0AmH9tAX7Z0s.fqkBUthKH9pa3p3R8DdRSEi8SIkLGEg6IAR0UVvUx9m7Jboxv9ZAI9Br0wqCWJMfH1iWxiyObiNcrcoNgP9p4hBV0Qxc0dW5nb9cYXVY9tY5hGY7PEfGT8I3_.WuSEFq5Y31sICS2Q1a5KVtd0zvMKIi0RBeJf6CbRUSqa.lWrVllkHT0l1IyLgICoBg_jkud4u0T54GF8e8cejIqOv1Pt8nrJwWmDdy0KdDuVqC_82z_Vmlv_nuZWCsdcjuikOmQ8Ynk.uKKQoLe67am67dfxrUruLvN8fGB_DSHH2ZTmcv8h09jadIHmXNNlUMAlXfg.qlCXuDxKjfxbHygoT27j31ltyn38lRZy27VVrSQYmABEpmq29uWxAsf9ZUw1KcEh8Q1AADyRyZtO0lltgDSf.zsugXO5MIM',mdrd: '',};var a = document.createElement('script');a.src = '/cdn-cgi/challenge-platform/h/b/orchestrate/chl_page/v1?ray=964314135f74182a';window._cf_chl_opt.cOgUHash = location.hash === '' && location.href.indexOf('#') !== -1 ? '#' : location.hash;window._cf_chl_opt.cOgUQuery = location.search === '' && location.href.slice(0, location.href.length - window._cf_chl_opt.cOgUHash.length).indexOf('?') !== -1 ? '?' : location.search;if (window.history && window.history.replaceState) {var ogU = location.pathname + window._cf_chl_opt.cOgUQuery + window._cf_chl_opt.cOgUHash;history.replaceState(null, null,"/Resource/JQLang/Bilibili/mine_Bilibili_remove_ads.jq?__cf_chl_rt_tk=zVJhJyZlBS.ieGZLRhmKi.Gh9tA5F3nL7qrp_9eFG3U-1753356552-1.0.1.1-YuDTOm4VDKHKlrVsdlZyIpwsLPDpkuibwiiZPZo_8eA"+ window._cf_chl_opt.cOgUHash);a.onload = function() {history.replaceState(null, null, ogU);}}document.getElementsByTagName('head')[0].appendChild(a);}());</script></body></html>
+.data |= (
+    del(.answer, .live_tip, .vip_section, .vip_section_v2, .modular_vip_section) | 
+    .vip_type = 2 | 
+    .vip |= if . != null and .status == 0 
+        then . + { status: 1, type: 2, due_date: 9005270400000, role: 15 }
+        else . 
+    end | 
+    if .sections_v2 then .sections_v2 = 
+        [
+            {
+                "items": [
+                    {
+                        "id": 396,
+                        "title": "离线缓存",
+                        "uri": "bilibili://user_center/download",
+                        "icon": "http://i0.hdslb.com/bfs/archive/5fc84565ab73e716d20cd2f65e0e1de9495d56f8.png",
+                        "common_op_item": {}
+                    },
+                    {
+                        "id": 397,
+                        "title": "历史记录",
+                        "uri": "bilibili://user_center/history",
+                        "icon": "http://i0.hdslb.com/bfs/archive/8385323c6acde52e9cd52514ae13c8b9481c1a16.png",
+                        "common_op_item": {}
+                    },
+                    {
+                        "id": 3072,
+                        "title": "我的收藏",
+                        "uri": "bilibili://user_center/favourite?version=2",
+                        "icon": "http://i0.hdslb.com/bfs/archive/d79b19d983067a1b91614e830a7100c05204a821.png",
+                        "common_op_item": {}
+                    },
+                    {
+                        "id": 2830,
+                        "title": "稍后再看",
+                        "uri": "bilibili://user_center/watch_later_v2",
+                        "icon": "http://i0.hdslb.com/bfs/archive/63bb768caa02a68cb566a838f6f2415f0d1d02d6.png",
+                        "need_login": 1,
+                        "common_op_item": {}
+                    }
+                ],
+                "style": 1,
+                "button": {}
+            },
+            {
+                "title": "推荐服务",
+                "items": [
+                    {
+                        "id": 402,
+                        "title": "个性装扮",
+                        "uri": "https://www.bilibili.com/h5/mall/home?navhide=1&f_source=shop&from=myservice",
+                        "icon": "http://i0.hdslb.com/bfs/archive/0bcad10661b50f583969b5a188c12e5f0731628c.png",
+                        "common_op_item": {}
+                    },
+                    {
+                        "id": 622,
+                        "title": "会员购",
+                        "uri": "bilibili://mall/home",
+                        "icon": "http://i0.hdslb.com/bfs/archive/19c794f01def1a267b894be84427d6a8f67081a9.png",
+                        "common_op_item": {}
+                    },
+                    {
+                        "id": 404,
+                        "title": "我的钱包",
+                        "uri": "bilibili://bilipay/mine_wallet",
+                        "icon": "http://i0.hdslb.com/bfs/archive/f416634e361824e74a855332b6ff14e2e7c2e082.png",
+                        "common_op_item": {}
+                    },
+                    {
+                        "id": 406,
+                        "title": "我的直播",
+                        "uri": "bilibili://user_center/live_center",
+                        "icon": "http://i0.hdslb.com/bfs/archive/1db5791746a0112890b77a0236baf263d71ecb27.png",
+                        "common_op_item": {},
+                    }
+                ],
+                "style": 1,
+                "button": {}
+            },
+            {
+                "title": "更多服务",
+                "items": [
+                    {
+                        "id": 407,
+                        "title": "联系客服",
+                        "uri": "bilibili://user_center/feedback",
+                        "icon": "http://i0.hdslb.com/bfs/archive/7ca840cf1d887a45ee1ef441ab57845bf26ef5fa.png",
+                        "common_op_item": {}
+                    },
+                    {
+                        "id": 410,
+                        "title": "设置",
+                        "uri": "bilibili://user_center/setting",
+                        "icon": "http://i0.hdslb.com/bfs/archive/e932404f2ee62e075a772920019e9fbdb4b5656a.png",
+                        "common_op_item": {}
+                    }
+                ],
+                "style": 2,
+                "button": {}
+            }
+        ]
+    end | 
+    if .ipad_sections then .ipad_sections = 
+        [
+            {
+                "id": 747,
+                "title": "离线缓存",
+                "uri": "bilibili://user_center/download",
+                "icon": "http://i0.hdslb.com/bfs/feed-admin/9bd72251f7366c491cfe78818d453455473a9678.png",
+                "mng_resource": { "icon_id": 0, "icon": "" }
+            },
+            {
+                "id": 748,
+                "title": "历史记录",
+                "uri": "bilibili://user_center/history",
+                "icon": "http://i0.hdslb.com/bfs/feed-admin/83862e10685f34e16a10cfe1f89dbd7b2884d272.png",
+                "mng_resource": { "icon_id": 0, "icon": "" }
+            },
+            {
+                "id": 749,
+                "title": "我的收藏",
+                "uri": "bilibili://user_center/favourite",
+                "icon": "http://i0.hdslb.com/bfs/feed-admin/6ae7eff6af627590fc4ed80c905e9e0a6f0e8188.png",
+                "mng_resource": { "icon_id": 0, "icon": "" }
+            },
+            {
+                "id": 750,
+                "title": "稍后再看",
+                "uri": "bilibili://user_center/watch_later",
+                "icon": "http://i0.hdslb.com/bfs/feed-admin/928ba9f559b02129e51993efc8afe95014edec94.png",
+                "mng_resource": { "icon_id": 0, "icon": "" }
+            }
+        ] 
+    end | 
+    if .ipad_upper_sections then .ipad_upper_sections = 
+        [
+            {
+                "id": 752,
+                "title": "创作首页",
+                "uri": "/uper/homevc",
+                "icon": "http://i0.hdslb.com/bfs/feed-admin/d20dfed3b403c895506b1c92ecd5874abb700c01.png",
+                "mng_resource": { "icon_id": 0, "icon": "" }
+            }
+        ] 
+    end | 
+    if .ipad_recommend_sections then .ipad_recommend_sections = 
+        [
+            {
+                "id": 755,
+                "title": "我的关注",
+                "uri": "bilibili://user_center/myfollows",
+                "icon": "http://i0.hdslb.com/bfs/feed-admin/fdd7f676030c6996d36763a078442a210fc5a8c0.png",
+                "mng_resource": { "icon_id": 0, "icon": "" }
+            },
+            {
+                "id": 756,
+                "title": "我的消息",
+                "uri": "bilibili://link/im_home",
+                "icon": "http://i0.hdslb.com/bfs/feed-admin/e1471740130a08a48b02a4ab29ed9d5f2281e3bf.png",
+                "mng_resource": { "icon_id": 0, "icon": "" }
+            }
+        ] 
+    end | 
+    if .ipad_more_sections then .ipad_more_sections = 
+        [
+            {
+                "id": 763,
+                "title": "我的客服",
+                "uri": "bilibili://user_center/feedback",
+                "icon": "http://i0.hdslb.com/bfs/feed-admin/7801a6180fb67cf5f8ee05a66a4668e49fb38788.png",
+                "mng_resource": { "icon_id": 0, "icon": "" }
+            },
+            {
+                "id": 764,
+                "title": "设置",
+                "uri": "bilibili://user_center/setting",
+                "icon": "http://i0.hdslb.com/bfs/feed-admin/34e8faea00b3dd78977266b58d77398b0ac9410b.png",
+                "mng_resource": { "icon_id": 0, "icon": "" }
+            }
+        ] 
+    end 
+)

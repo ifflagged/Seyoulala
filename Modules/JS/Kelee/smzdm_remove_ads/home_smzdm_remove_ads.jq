@@ -1,1 +1,39 @@
-<!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta name="robots" content="noindex,nofollow"><meta name="viewport" content="width=device-width,initial-scale=1"><style>*{box-sizing:border-box;margin:0;padding:0}html{line-height:1.15;-webkit-text-size-adjust:100%;color:#313131;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"}body{display:flex;flex-direction:column;height:100vh;min-height:100vh}.main-content{margin:8rem auto;padding-left:1.5rem;max-width:60rem}@media (width <= 720px){.main-content{margin-top:4rem}}.h2{line-height:2.25rem;font-size:1.5rem;font-weight:500}@media (width <= 720px){.h2{line-height:1.5rem;font-size:1.25rem}}#challenge-error-text{background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgZmlsbD0ibm9uZSI+PHBhdGggZmlsbD0iI0IyMEYwMyIgZD0iTTE2IDNhMTMgMTMgMCAxIDAgMTMgMTNBMTMuMDE1IDEzLjAxNSAwIDAgMCAxNiAzbTAgMjRhMTEgMTEgMCAxIDEgMTEtMTEgMTEuMDEgMTEuMDEgMCAwIDEtMTEgMTEiLz48cGF0aCBmaWxsPSIjQjIwRjAzIiBkPSJNMTcuMDM4IDE4LjYxNUgxNC44N0wxNC41NjMgOS41aDIuNzgzem0tMS4wODQgMS40MjdxLjY2IDAgMS4wNTcuMzg4LjQwNy4zODkuNDA3Ljk5NCAwIC41OTYtLjQwNy45ODQtLjM5Ny4zOS0xLjA1Ny4zODktLjY1IDAtMS4wNTYtLjM4OS0uMzk4LS4zODktLjM5OC0uOTg0IDAtLjU5Ny4zOTgtLjk4NS40MDYtLjM5NyAxLjA1Ni0uMzk3Ii8+PC9zdmc+");background-repeat:no-repeat;background-size:contain;padding-left:34px}@media (prefers-color-scheme: dark){body{background-color:#222;color:#d9d9d9}}</style><meta http-equiv="refresh" content="360"></head><body><div class="main-wrapper" role="main"><div class="main-content"><noscript><div class="h2"><span id="challenge-error-text">Enable JavaScript and cookies to continue</span></div></noscript></div></div><script>(function(){window._cf_chl_opt = {cvId: '3',cZone: 'kelee.one',cType: 'managed',cRay: '9643145fdfd6158f',cH: 'FgbbqFYkmcvRcZOxfxq0u1WnRDuc2xK71IeYF.O3ZE0-1753356564-1.2.1.1-QWVMsv_NauH3rAsdF.80XYiW_vDofyg7wH0j_xl10cZNW0CH8TAXVBqI0CUyxraR',cUPMDTk:"/Resource/JQLang/smzdm/home_smzdm_remove_ads.jq?__cf_chl_tk=2ej7IggAo1GoTMidexwoYE5PzfElDq5lC4sC4bsJRI8-1753356564-1.0.1.1-qVfgw9eKVJctic5xEWbBD6sIIg.UGO9Ik5Cd9k6Ju7s",cFPWv: 'b',cITimeS: '1753356564',cTplC:0,cTplV:5,cTplB: 'cf',fa:"/Resource/JQLang/smzdm/home_smzdm_remove_ads.jq?__cf_chl_f_tk=2ej7IggAo1GoTMidexwoYE5PzfElDq5lC4sC4bsJRI8-1753356564-1.0.1.1-qVfgw9eKVJctic5xEWbBD6sIIg.UGO9Ik5Cd9k6Ju7s",md: 'mZxHdsjwAS1ynH9Ap2o0WPf968pucaC.KZ5_RaYS.5Y-1753356564-1.2.1.1-0JHcwOoksp9dO75OwzJBzdqUXfWipzLtny_SlXSVtSciQh0F7xIV7mwr45A3wnjLINa02chiuxRLPTsgNGEjykvrqtO97SQsqIpRAVepKLw3Z7jO9dC.dG5g4eZC7jx9ASepFtEcAmtYXToL4hd9Vg0lLO8E.67bE9Xop0gdWZf3cLZNdHS2r6aBXna4L0iJwwf1ILPpMgYl0OhnsXmdIUnOk3IDMwFrK1qv_KH1_zS3HZsnRt3rlBzuyZ3H7FpvDG68VsPdhE3HOv4lyeYAvxat79i3OpYSfW_4pnu_LQ.ObLbId6bv178yoWBxDRXmYeWJMUe_PMEbcyeOPiUO4SrgaeOXuNnIw6Sut9bG0_dYUL6QsMHvHEAsbYjeB8JHuYAKhSaQgZSvsllddQfMGAczLclcxCkn2I9H7379SdTx_5YtrE7OdEYm5aa2p0hdwax9k8A3vxVxRQxEPcZw53E_hWQaTiKiK8x0DO7glMnzV7YT_TZBCGyNr8SdRM.qKFRJAeIEMy0KiXFOaqPylKBtUBpr0Qtias2Nv9mwu0SGk145R2WoOwQErtKmEqF3TJAzGBFE3F1.04j9kH_fgv768HTnjH420gDMT.zxZQ0.MPvc5PWfKhdlwSt221u0tJwzcYm2J5Ubiavj62jNleYOun70f4V336GDYd_74sjwHMiqYbTgIDdsoWTrx96Go5dJWKpIixdRonexavBrHX9XMOstlCvvU_dJtzGUqKJKnT14y8tPk4A4H9eRpYvE2M5rOlwAgjZ91u7CXm83hBYQ7YWtTCeCkOQpcDOOwG9GgVeA8Ibcu6gGS.ZvJvET2s8IjvxACS_z.EcyV_gOB0XHqJhevrO8TWxTsmQ4kuBxMcwl0EFepq2gMLyRqbFDJ7YGNoBhg0VtnPbeYX7ZqxVYHpLiC0Yav8RmIxXB9t3MQrFa5QBTMpnvqw9fn2rIZ5CxECnWdJMicqTYaUdIYk_tO8mv7aTqo3SbuoNSMNYluOnc_68eSXPxl_VeBiLFpXwHZRD6CEiTuVuI5YJKvNbnAEwXpXgwW_izq2ECHjk',mdrd: '',};var a = document.createElement('script');a.src = '/cdn-cgi/challenge-platform/h/b/orchestrate/chl_page/v1?ray=9643145fdfd6158f';window._cf_chl_opt.cOgUHash = location.hash === '' && location.href.indexOf('#') !== -1 ? '#' : location.hash;window._cf_chl_opt.cOgUQuery = location.search === '' && location.href.slice(0, location.href.length - window._cf_chl_opt.cOgUHash.length).indexOf('?') !== -1 ? '?' : location.search;if (window.history && window.history.replaceState) {var ogU = location.pathname + window._cf_chl_opt.cOgUQuery + window._cf_chl_opt.cOgUHash;history.replaceState(null, null,"/Resource/JQLang/smzdm/home_smzdm_remove_ads.jq?__cf_chl_rt_tk=2ej7IggAo1GoTMidexwoYE5PzfElDq5lC4sC4bsJRI8-1753356564-1.0.1.1-qVfgw9eKVJctic5xEWbBD6sIIg.UGO9Ik5Cd9k6Ju7s"+ window._cf_chl_opt.cOgUHash);a.onload = function() {history.replaceState(null, null, ogU);}}document.getElementsByTagName('head')[0].appendChild(a);}());</script></body></html>
+# 如果"data.component[*].zz_content[*].ad_campaign_id"的字符串值是有效的，则删除"data.component[*].zz_content[*].ad_campaign_id"所在的对象
+# 如果"data.component[*].zz_content[*].tag"的字符串值是有效的，则删除"data.component[*].zz_content[*].tag"所在的对象
+# 如果"data.component[*].zz_content[*].model_type"的值是字符串类型的"ads"则删除"data.component[*].zz_content[*].model_type"所在的对象
+
+.data.component |= map(
+  # 仅当 zz_content 是数组时执行过滤
+  if (.zz_content | type) == "array" then
+    .zz_content |= map(
+      select(
+        ( (.ad_campaign_id? | type == "string" and length > 0) // false ) or
+        ( (.tag? | type == "string" and length > 0) // false ) or
+        ( (.model_type? == "ads" and (type == "string")) // false )
+        | not
+      )
+    )
+  else . end
+)
+
+# 如果"data.component[*].zz_type"存在，且字符串的值不是"circular_banner"或"filter"或"list"，则删除"data.component[*].zz_type"所在的对象
+| .data.component |= map(
+  select(
+    if has("zz_type") then 
+      .zz_type | IN(["circular_banner", "filter", "list"][]) 
+    else true end
+  )
+)
+
+# 移除首页主题皮肤背景
+# 删除"data.theme"
+| del(.data.theme) |
+
+# 遍历"data.component"数组并安全删除"circular_banner_option"
+.data.component |= map(
+  if .zz_content | type == "object" then
+    .zz_content |= del(.circular_banner_option)
+  else
+    .
+  end
+)
