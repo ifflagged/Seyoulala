@@ -1,0 +1,31 @@
+name: Restore Folder from Previous Commit
+
+on:
+  workflow_dispatch:  # 手动触发
+
+jobs:
+  restore:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout current repo
+        uses: actions/checkout@v4
+
+      - name: Restore folder from previous commit
+        run: |
+          # 替换为包含该文件夹的旧提交哈希（可以用git log找到）
+          COMMIT_HASH="fceb30a7953e894eb19e3f55b3827b141d99082b"
+          
+          # 需要恢复的目录
+          git checkout $COMMIT_HASH -- Modules/Loon/Kelee
+          git checkout $COMMIT_HASH -- Modules/Surge/Kelee
+          git checkout $COMMIT_HASH -- Modules/Shadowrocket/Kelee
+
+          echo "Folders restored."
+
+      - name: Commit and push restored files
+        run: |
+          git config --global user.name "${GITHUB_ACTOR}"
+          git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+          git add .
+          git commit -m "Restore $TARGET_PATH from commit $COMMIT_HASH"
+          git push
