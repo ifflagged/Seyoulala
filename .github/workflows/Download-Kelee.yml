@@ -82,7 +82,7 @@ jobs:
       continue-on-error: true
       run: |
         js_base_url="https://github.com/${GITHUB_REPOSITORY}/raw/main/Modules/JS"
-        script_path="ShalalaLala/Scripts/kelee-20250807.py"
+        script_path="ShalalaLala/Scripts/kelee_extract_and_replace.py"
 
         for plugin_file in Modules/Loon/Kelee/Official/*.plugin; do
           echo "Processing $plugin_file"
