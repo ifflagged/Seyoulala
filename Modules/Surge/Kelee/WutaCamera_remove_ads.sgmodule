@@ -10,14 +10,8 @@
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
 #!date=2025-07-05 02:22:08
 
-[Body Rewrite]
-http-response-jq ^https:\/\/api-release\.wuta-cam\.com\/ad_tree$ 'delpaths([["regular","splash"]])'
-http-response-jq ^https:\/\/api-release\.wuta-cam\.com\/ad_tree$ 'delpaths([["big_day"]])'
-http-response-jq ^https:\/\/api-release\.wuta-cam\.com\/ad_tree$ 'delpaths([["big_day_overrides"]])'
-http-response-jq ^https:\/\/api-release\.wuta-cam\.com\/ad_tree$ 'delpaths([["regular","home_bottom_right_entry_v2"]])'
-http-response-jq ^https:\/\/api-release\.wuta-cam\.com\/ad_tree$ 'delpaths([["regular","pic_upload_alert"]])'
-http-response-jq ^https:\/\/api-release\.wuta-cam\.com\/ad_tree$ 'delpaths([["regular","retouching_before_icon"]])'
-http-response-jq ^https:\/\/api-release\.wuta-cam\.com\/ad_tree$ '.regular.homepage_25_bottom_nav_bar|=map(.button_list|=map(select(.name|IN("home","me"))))'
+[Script]
+body_rewrite_12 = type=http-response, pattern=^https:\/\/api-release\.wuta-cam\.com\/ad_tree$, script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22json-del%22%2C%5B%22regular.splash%22%2C%22big_day%22%2C%22big_day_overrides%22%2C%22regular.home_bottom_right_entry_v2%22%2C%22regular.pic_upload_alert%22%2C%22regular.retouching_before_icon%22%5D%5D%5D
 
 [MITM]
 hostname = %APPEND% api-release.wuta-cam.com
