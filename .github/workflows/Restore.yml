@@ -17,8 +17,8 @@ jobs:
           
           # 需要恢复的目录
           git checkout $COMMIT_HASH -- Modules/Loon/Kelee
-          git checkout $COMMIT_HASH -- Modules/Surge/Kelee
-          git checkout $COMMIT_HASH -- Modules/Shadowrocket/Kelee
+          #git checkout $COMMIT_HASH -- Modules/Surge/Kelee
+          #git checkout $COMMIT_HASH -- Modules/Shadowrocket/Kelee
 
           echo "Folders restored."
 
