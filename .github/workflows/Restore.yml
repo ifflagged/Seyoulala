@@ -20,10 +20,10 @@ jobs:
 
       - name: Copy folders from old commit
         run: |
-          mkdir -p temp_restore
-          cp -r Modules/Loon/Kelee temp_restore/
-          cp -r Modules/Surge/Kelee temp_restore/
-          cp -r Modules/Shadowrocket/Kelee temp_restore/
+          mkdir -p temp_restore/Surge temp_restore/Loon temp_restore/Shadowrocket
+          cp -r Modules/Surge/Kelee temp_restore/Surge/
+          cp -r Modules/Loon/Kelee temp_restore/Loon/
+          cp -r Modules/Shadowrocket/Kelee temp_restore/Shadowrocket/
 
       - name: Switch back to main and restore folders
         run: |
@@ -33,10 +33,19 @@ jobs:
           rm -rf Modules/Surge/Kelee
           rm -rf Modules/Shadowrocket/Kelee
 
-          cp -r temp_restore/Kelee Modules/Loon/
-          cp -r temp_restore/Kelee Modules/Surge/
-          cp -r temp_restore/Kelee Modules/Shadowrocket/
+          # 恢复各自平台正确的文件类型
+          mkdir -p Modules/Surge/Kelee
+          find temp_restore/Surge/Kelee -type f -name '*.sgmodule' -exec cp {} Modules/Surge/Kelee/ \;
 
+          mkdir -p Modules/Loon/Kelee
+          find temp_restore/Loon/Kelee -type f -name '*.plugin' -exec cp {} Modules/Loon/Kelee/ \;
+
+          mkdir -p Modules/Shadowrocket/Kelee
+          find temp_restore/Shadowrocket/Kelee -type f -name '*.srmodule' -exec cp {} Modules/Shadowrocket/Kelee/
+
+      - name: Remove temp_restore folder
+        run: rm -rf temp_restore
+        
       - name: Commit restored files
         run: |
           git config --global user.name "${GITHUB_ACTOR}"
