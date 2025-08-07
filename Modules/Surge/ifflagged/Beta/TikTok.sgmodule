@@ -19,7 +19,7 @@
 
 [Script]
 # > TikTok 去水印
-{{{TikTok_Watermark}}} = type=http-response, pattern=https?:\/\/.*\.tiktokv\.com\/aweme\/v\d\/(feed|mix\/aweme|aweme\/post|(multi\/)?aweme\/detail|follow\/feed|nearby\/feed|search\/item|general\/search\/single|hot\/search\/video\/list|aweme\/favorite), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/TikTok/Tiktok.js, requires-body=true, max-size=0, script-update-interval=0, timeout=30
+{{{TikTok_Watermark}}} = type=http-response, pattern=https?:\/\/.*\.tiktokv\.com\/aweme\/v\d\/(feed|mix\/aweme|aweme\/post|(multi\/)?aweme\/detail|follow\/feed|nearby\/feed|search\/item|general\/search\/single|hot\/search\/video\/list|aweme\/favorite), script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/ifflagged/TikTok/Tiktok.js, requires-body=true, max-size=0, script-update-interval=0, timeout=30
 
 [MITM]
 hostname = %APPEND% *.tiktokv.com, *.byteoversea.com, *.tik-tokapi.com

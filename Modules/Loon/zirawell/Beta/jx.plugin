@@ -5,11 +5,11 @@
 
 [Script]
 # > 京喜 - JX
-http-response ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=lite_advertising script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/jx/replace-body.js, requires-body=true, timeout=30, tag=replaceBody, argument=jdLiteAdvertisingVO-%3Erandom_body
+http-response ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=lite_advertising script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zirawell/jx/replace-body.js, requires-body=true, timeout=30, tag=replaceBody, argument=jdLiteAdvertisingVO-%3Erandom_body
 
-http-response ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=lite_SmartPush script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/jx/replace-body.js, requires-body=true, timeout=30, tag=replaceBody, argument=pushData-%3Erandom_body
+http-response ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=lite_SmartPush script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zirawell/jx/replace-body.js, requires-body=true, timeout=30, tag=replaceBody, argument=pushData-%3Erandom_body
 
-http-response ^https?:\/\/api\.m\.jd\.com\/api\?functionId=delivery_show script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/jx/jingxi.js, requires-body=true, timeout=60, tag=jingxi
+http-response ^https?:\/\/api\.m\.jd\.com\/api\?functionId=delivery_show script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zirawell/jx/jingxi.js, requires-body=true, timeout=60, tag=jingxi
 
 [MITM]
 hostname = api.m.jd.com

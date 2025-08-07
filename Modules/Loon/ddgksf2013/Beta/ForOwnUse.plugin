@@ -5,66 +5,66 @@
 
 [Script]
 # ✅ Spotify
-http-response ^https:\/\/spclient\.wg\.spotify\.com\/(bootstrap\/v1\/bootstrap|user-customization-service\/v1\/customize)$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ddgksf2013/ForOwnUse/spotify-proto.js, requires-body=true, binary-body-mode=true, timeout=60, tag=spotify-proto
+http-response ^https:\/\/spclient\.wg\.spotify\.com\/(bootstrap\/v1\/bootstrap|user-customization-service\/v1\/customize)$ script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/ddgksf2013/ForOwnUse/spotify-proto.js, requires-body=true, binary-body-mode=true, timeout=60, tag=spotify-proto
 
-http-request ^https:\/\/spclient\.wg\.spotify\.com\/(artistview\/v1\/artist|album-entity-view\/v2\/album)\/ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ddgksf2013/ForOwnUse/spotify-json.js, timeout=60, tag=spotify-json
+http-request ^https:\/\/spclient\.wg\.spotify\.com\/(artistview\/v1\/artist|album-entity-view\/v2\/album)\/ script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/ddgksf2013/ForOwnUse/spotify-json.js, timeout=60, tag=spotify-json
 
 # ✅ 一言(need登录)
-http-response ^https:\/\/app\.yiyan\.art\/yiyan\/ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ddgksf2013/ForOwnUse/YiYanProCrack.js, requires-body=true, timeout=60, tag=YiYanProCrack
+http-response ^https:\/\/app\.yiyan\.art\/yiyan\/ script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/ddgksf2013/ForOwnUse/YiYanProCrack.js, requires-body=true, timeout=60, tag=YiYanProCrack
 
 # ✅ 西窗烛(need登录)
-http-response https://lchttpapi.xczim.com/* script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ddgksf2013/ForOwnUse/XiChuangZhuProCrack.js, requires-body=true, timeout=60, tag=XiChuangZhuProCrack
+http-response https://lchttpapi.xczim.com/* script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/ddgksf2013/ForOwnUse/XiChuangZhuProCrack.js, requires-body=true, timeout=60, tag=XiChuangZhuProCrack
 
 # ✅ 简讯(need登录)
-http-response ^https?:\/\/api\.tipsoon\.com\/api\/v1\/user\/info script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ddgksf2013/ForOwnUse/JianXunProCrack.js, requires-body=true, timeout=60, tag=JianXunProCrack
+http-response ^https?:\/\/api\.tipsoon\.com\/api\/v1\/user\/info script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/ddgksf2013/ForOwnUse/JianXunProCrack.js, requires-body=true, timeout=60, tag=JianXunProCrack
 
 # ✅ Flightradar24
-http-request ^https?:\/\/mobile\.flightradar24\.com\/mobile\/(user-session|\w{9}) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ddgksf2013/ForOwnUse/flightradar24.js, timeout=60, tag=flightradar24
+http-request ^https?:\/\/mobile\.flightradar24\.com\/mobile\/(user-session|\w{9}) script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/ddgksf2013/ForOwnUse/flightradar24.js, timeout=60, tag=flightradar24
 
 # ✅ 财新周刊
-http-response http://ipadcms.caixin.com/tmp/articles script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ddgksf2013/ForOwnUse/CaiXinZhouKanProCrack.js, requires-body=true, timeout=60, tag=CaiXinZhouKanProCrack
+http-response http://ipadcms.caixin.com/tmp/articles script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/ddgksf2013/ForOwnUse/CaiXinZhouKanProCrack.js, requires-body=true, timeout=60, tag=CaiXinZhouKanProCrack
 
 # ✅ Fimo(need登录)
-http-response ^https?:\/\/server\.zbisq\.com\/fimo-user script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ddgksf2013/ForOwnUse/FimoProCrack.js, requires-body=true, timeout=60, tag=FimoProCrack
+http-response ^https?:\/\/server\.zbisq\.com\/fimo-user script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/ddgksf2013/ForOwnUse/FimoProCrack.js, requires-body=true, timeout=60, tag=FimoProCrack
 
 # ✅ 傲软抠图(need登录)
-http-response ^https?:\/\/.*aoscdn\.com\/base\/vip\/v\d\/vips script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ddgksf2013/ForOwnUse/ApowersoftProCrack.js, requires-body=true, timeout=60, tag=ApowersoftProCrack
+http-response ^https?:\/\/.*aoscdn\.com\/base\/vip\/v\d\/vips script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/ddgksf2013/ForOwnUse/ApowersoftProCrack.js, requires-body=true, timeout=60, tag=ApowersoftProCrack
 
 # ✅ 克拉壁纸
-http-response ^https:\/\/claritywallpaper\.com\/clarity\/api\/(userInfo|special\/queryByCatalogAll|picture\/search|catalog\/listAll|top\/list|picture\/date\?date) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ddgksf2013/ForOwnUse/ClarityProCrack.js, requires-body=true, timeout=60, tag=ClarityProCrack
+http-response ^https:\/\/claritywallpaper\.com\/clarity\/api\/(userInfo|special\/queryByCatalogAll|picture\/search|catalog\/listAll|top\/list|picture\/date\?date) script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/ddgksf2013/ForOwnUse/ClarityProCrack.js, requires-body=true, timeout=60, tag=ClarityProCrack
 
 # ✅ Picsart
-http-response ^https?:\/\/api\.meiease\.cn\/shop\/subscription\/validate script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ddgksf2013/ForOwnUse/PicsartProCrack.js, requires-body=true, timeout=60, tag=PicsartProCrack
+http-response ^https?:\/\/api\.meiease\.cn\/shop\/subscription\/validate script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/ddgksf2013/ForOwnUse/PicsartProCrack.js, requires-body=true, timeout=60, tag=PicsartProCrack
 
 # ✅ 搜图神器
-http-response http:\/\/wallpaper\.soutushenqi\.com\/api\/v1\/account\/token script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ddgksf2013/ForOwnUse/replace-body.js, requires-body=true, timeout=30, tag=replaceBody, argument=vipType%22%3A%200-%3EvipType%22%3A%201024
+http-response http:\/\/wallpaper\.soutushenqi\.com\/api\/v1\/account\/token script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/ddgksf2013/ForOwnUse/replace-body.js, requires-body=true, timeout=30, tag=replaceBody, argument=vipType%22%3A%200-%3EvipType%22%3A%201024
 
 # ✅ 黄油相机
-http-response ^https?:\/\/api4\.bybutter\.com\/v4\/(users\/me$|shop\/me\/privileges$) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ddgksf2013/ForOwnUse/BybutterProCrack.js, requires-body=true, timeout=60, tag=BybutterProCrack
+http-response ^https?:\/\/api4\.bybutter\.com\/v4\/(users\/me$|shop\/me\/privileges$) script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/ddgksf2013/ForOwnUse/BybutterProCrack.js, requires-body=true, timeout=60, tag=BybutterProCrack
 
 # ✅ Focos
-http-response ^https?:\/\/.*oracle\.bendingspoonsapps\.com\/v\d\/(users\/setup|purchases\/verify\/apple) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ddgksf2013/ForOwnUse/FocosProCrack.js, requires-body=true, timeout=60, tag=FocosProCrack
+http-response ^https?:\/\/.*oracle\.bendingspoonsapps\.com\/v\d\/(users\/setup|purchases\/verify\/apple) script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/ddgksf2013/ForOwnUse/FocosProCrack.js, requires-body=true, timeout=60, tag=FocosProCrack
 
 # ✅ 养基宝
-http-response ^https?:\/\/.*yangjibao\.com\/(wxapi\/)?account script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ddgksf2013/ForOwnUse/YangJiBaoProCrack.js, requires-body=true, timeout=60, tag=YangJiBaoProCrack
+http-response ^https?:\/\/.*yangjibao\.com\/(wxapi\/)?account script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/ddgksf2013/ForOwnUse/YangJiBaoProCrack.js, requires-body=true, timeout=60, tag=YangJiBaoProCrack
 
 # ✅ 极简汇率
-http-response ^https?:\/\/explorer\.tratao\.com\/api\/client\/xtool\/vip script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ddgksf2013/ForOwnUse/JiJianHuiLvProCrack.js, requires-body=true, timeout=60, tag=JiJianHuiLvProCrack
+http-response ^https?:\/\/explorer\.tratao\.com\/api\/client\/xtool\/vip script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/ddgksf2013/ForOwnUse/JiJianHuiLvProCrack.js, requires-body=true, timeout=60, tag=JiJianHuiLvProCrack
 
 # ✅ TopWidgets
-http-response ^https?:\/\/.*xiaozujian\.com\/api\/app\/config\/userConfig script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ddgksf2013/ForOwnUse/TopwidgetsProCrack.js, requires-body=true, timeout=60, tag=TopwidgetsProCrack
+http-response ^https?:\/\/.*xiaozujian\.com\/api\/app\/config\/userConfig script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/ddgksf2013/ForOwnUse/TopwidgetsProCrack.js, requires-body=true, timeout=60, tag=TopwidgetsProCrack
 
 # 🟥 WPS(国区)
 #http-response ^https:\/\/(vas|account)\.wps\.cn\/(query\/api\/v\d\/list_purchase_info|api\/users\/\d+\/overview) script-path=https://raw.githubusercontent.com/510004015/Quantumult_X/Remote/Premium/WPSOffice.js, requires-body=true, timeout=60, tag=WPSOffice
 
 # ✅ Appraven(美化)
-http-response ^https?:\/\/.*appraven\.net\/appraven\/graphql script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ddgksf2013/ForOwnUse/appraven.vip.js, requires-body=true, timeout=60, tag=appraven.vip
+http-response ^https?:\/\/.*appraven\.net\/appraven\/graphql script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/ddgksf2013/ForOwnUse/appraven.vip.js, requires-body=true, timeout=60, tag=appraven.vip
 
 # ✅ Nicegram
-http-response ^https?:\/\/nicegram\.cloud\/api\/v\d\/(ai-assistant\/purchase-list|user\/info|telegram\/auth) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ddgksf2013/ForOwnUse/NicegramProCrack.js, requires-body=true, timeout=60, tag=NicegramProCrack
+http-response ^https?:\/\/nicegram\.cloud\/api\/v\d\/(ai-assistant\/purchase-list|user\/info|telegram\/auth) script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/ddgksf2013/ForOwnUse/NicegramProCrack.js, requires-body=true, timeout=60, tag=NicegramProCrack
 
 # ✅ 扫描全能王
-http-response ^https:\/\/(api|api-cs)\.intsig\.net\/purchase\/cs\/query_property\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ddgksf2013/ForOwnUse/CamscannerProCrack.js, requires-body=true, timeout=60, tag=CamscannerProCrack
+http-response ^https:\/\/(api|api-cs)\.intsig\.net\/purchase\/cs\/query_property\? script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/ddgksf2013/ForOwnUse/CamscannerProCrack.js, requires-body=true, timeout=60, tag=CamscannerProCrack
 
 [MITM]
 hostname = *appraven.net, *.oracle.bendingspoonsapps.com, *.yangjibao.com, explorer.tratao.com, server.zbisq.com, mobile.flightradar24.com, api4.bybutter.com, wallpaper.soutushenqi.com, api.tipsoon.com, *xiaozujian, lchttpapi.xczim.com, app.yiyan.art, gateway.caixin.com, notability.com, spclient.wg.spotify.com, ticktick.com, ap*.intsig.net, ipadcms.caixin.com, *.aoscdn.com, claritywallpaper.com, api.meiease.cn, nicegram.cloud

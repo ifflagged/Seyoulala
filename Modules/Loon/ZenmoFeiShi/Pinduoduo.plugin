@@ -38,13 +38,13 @@ IP-CIDR,114.110.96.1/32,REJECT,no-resolve
 ^https:\/\/api\.pinduoduo\.com\/api\/caterham\/v3\/query\/likes - reject-dict
 
 [Script]
-http-response ^https:\/\/api\.pinduoduo\.com\/search script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ZenmoFeiShi/Pinduoduo/Pinduoduo.js, requires-body=true, timeout=60, tag=Pinduoduo
+http-response ^https:\/\/api\.pinduoduo\.com\/search script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/ZenmoFeiShi/Pinduoduo/Pinduoduo.js, requires-body=true, timeout=60, tag=Pinduoduo
 
-http-response ^https:\/\/api\.pinduoduo\.com\/api\/philo\/personal\/hub script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ZenmoFeiShi/Pinduoduo/Pinduoduo.js, requires-body=true, timeout=60, tag=Pinduoduo
+http-response ^https:\/\/api\.pinduoduo\.com\/api\/philo\/personal\/hub script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/ZenmoFeiShi/Pinduoduo/Pinduoduo.js, requires-body=true, timeout=60, tag=Pinduoduo
 
-http-response ^https:\/\/api\.pinduoduo\.com\/api\/alexa\/homepage\/hub script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ZenmoFeiShi/Pinduoduo/Pinduoduo.js, requires-body=true, timeout=60, tag=Pinduoduo
+http-response ^https:\/\/api\.pinduoduo\.com\/api\/alexa\/homepage\/hub script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/ZenmoFeiShi/Pinduoduo/Pinduoduo.js, requires-body=true, timeout=60, tag=Pinduoduo
 
-http-response ^https:\/\/api\.pinduoduo\.com\/api\/oak\/integration\/render script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ZenmoFeiShi/Pinduoduo/Pinduoduo.js, requires-body=true, timeout=60, tag=Pinduoduo
+http-response ^https:\/\/api\.pinduoduo\.com\/api\/oak\/integration\/render script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/ZenmoFeiShi/Pinduoduo/Pinduoduo.js, requires-body=true, timeout=60, tag=Pinduoduo
 
 [MITM]
 hostname = api.pinduoduo.com

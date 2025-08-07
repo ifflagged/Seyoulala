@@ -20,7 +20,7 @@ WATERMARK_REMOVAL=input,下载水印,tag=WATERMARK_REMOVAL, desc=WATERMARK_REMOV
 
 [Script]
 # > TikTok 去水印
-http-response https?:\/\/.*\.tiktokv\.com\/aweme\/v\d\/(feed|mix\/aweme|aweme\/post|(multi\/)?aweme\/detail|follow\/feed|nearby\/feed|search\/item|general\/search\/single|hot\/search\/video\/list|aweme\/favorite) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/githubdulong/TikTok_Surge/Tiktok.js, requires-body=true, timeout=30, tag={WATERMARK_REMOVAL}
+http-response https?:\/\/.*\.tiktokv\.com\/aweme\/v\d\/(feed|mix\/aweme|aweme\/post|(multi\/)?aweme\/detail|follow\/feed|nearby\/feed|search\/item|general\/search\/single|hot\/search\/video\/list|aweme\/favorite) script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/githubdulong/TikTok_Surge/Tiktok.js, requires-body=true, timeout=30, tag={WATERMARK_REMOVAL}
 
 [MITM]
 hostname = *.tiktokv.com, *.byteoversea.com, *.tik-tokapi.com

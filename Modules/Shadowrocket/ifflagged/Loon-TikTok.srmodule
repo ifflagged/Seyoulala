@@ -15,7 +15,7 @@
 ^https:\/\/tnc\d+-platform-\w+\.tiktokv\.com\/get_domains\/ - reject
 
 [Script]
-TikTok = type=http-request, pattern=https?:\/\/.+.(tiktokv|tiktokcdn).com\/.+(region\d?=CN|&mcc_mnc=\d+), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/Loon-TikTok/TikTok.js, timeout=20
+TikTok = type=http-request, pattern=https?:\/\/.+.(tiktokv|tiktokcdn).com\/.+(region\d?=CN|&mcc_mnc=\d+), script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/ifflagged/Loon-TikTok/TikTok.js, timeout=20
 
 [MITM]
 hostname = %APPEND% *.byteoversea.com, *.tik-tokapi.com, *.tiktokv.com, *.tiktokcdn.com

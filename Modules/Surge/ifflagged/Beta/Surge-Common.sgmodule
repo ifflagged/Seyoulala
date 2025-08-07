@@ -4,9 +4,9 @@
 
 [Script]
 # Gentler Streak //api.revenuecat.com
-Gentler Streak = type=http-response, pattern=^https?:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/?(.*?)*$), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/Surge-Common/gsjk.js, requires-body=true, max-size=0, script-update-interval=0
+Gentler Streak = type=http-response, pattern=^https?:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/?(.*?)*$), script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/ifflagged/Surge-Common/gsjk.js, requires-body=true, max-size=0, script-update-interval=0
 
-Gentler Streak = type=http-request, pattern=^https?:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/?(.*?)*$), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ifflagged/Surge-Common/gsjk.js, script-update-interval=0
+Gentler Streak = type=http-request, pattern=^https?:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/?(.*?)*$), script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/ifflagged/Surge-Common/gsjk.js, script-update-interval=0
 
 [MITM]
 hostname = %APPEND% api.revenuecat.com

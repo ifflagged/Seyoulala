@@ -365,61 +365,61 @@ URL-REGEX,"^http:\/\/\w{32}\.jddebug\.com\/diagnose\?",REJECT
 ^https:\/\/ecssmobile\.e-chinalife\.com:8082\/ecss\/web\/appupdate\/customization\/getFlashScreenInfo data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 [Script]
-body_rewrite_229 = type=http-response, pattern=^https:\/\/tiebac\.baidu\.com\/c\/u\/user\/profile$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/sooyaaabo/MyBlockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22json-del%22%2C%5B%22recom_naws_list%22%2C%22namoaixud_entry%22%2C%22custom_grid%22%2C%22duxiaoman_entry%22%2C%22finance_tab%22%5D%5D%2C%5B%22json-replace%22%2C%5B%5B%22user.shake_ad_switch.is_show%22%2C0%5D%5D%5D%5D
+body_rewrite_229 = type=http-response, pattern=^https:\/\/tiebac\.baidu\.com\/c\/u\/user\/profile$, script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/sooyaaabo/MyBlockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22json-del%22%2C%5B%22recom_naws_list%22%2C%22namoaixud_entry%22%2C%22custom_grid%22%2C%22duxiaoman_entry%22%2C%22finance_tab%22%5D%5D%2C%5B%22json-replace%22%2C%5B%5B%22user.shake_ad_switch.is_show%22%2C0%5D%5D%5D%5D
 
-body_rewrite_232 = type=http-response, pattern=^https:\/\/tiebac\.baidu\.com\/c\/f\/sidebar\/home$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/sooyaaabo/MyBlockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22json-del%22%2C%5B%22task_list%22%2C%22game_center%22%2C%22tools%22%2C%22tools.yunying_tools_list%22%2C%22tools.show_tools_list%22%5D%5D%5D
+body_rewrite_232 = type=http-response, pattern=^https:\/\/tiebac\.baidu\.com\/c\/f\/sidebar\/home$, script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/sooyaaabo/MyBlockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22json-del%22%2C%5B%22task_list%22%2C%22game_center%22%2C%22tools%22%2C%22tools.yunying_tools_list%22%2C%22tools.show_tools_list%22%5D%5D%5D
 
-body_rewrite_235 = type=http-response, pattern=^https:\/\/tiebac\.baidu\.com\/c\/f\/frs\/frsBottom$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/sooyaaabo/MyBlockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22json-del%22%2C%5B%22card_activity%22%5D%5D%5D
+body_rewrite_235 = type=http-response, pattern=^https:\/\/tiebac\.baidu\.com\/c\/f\/frs\/frsBottom$, script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/sooyaaabo/MyBlockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22json-del%22%2C%5B%22card_activity%22%5D%5D%5D
 
-body_rewrite_237 = type=http-response, pattern=^http:\/\/ad\.5tao5ai\.com\/common\/getReceipt\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/sooyaaabo/MyBlockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22json-del%22%2C%5B%22payload.adInfo%22%5D%5D%5D
+body_rewrite_237 = type=http-response, pattern=^http:\/\/ad\.5tao5ai\.com\/common\/getReceipt\?, script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/sooyaaabo/MyBlockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22json-del%22%2C%5B%22payload.adInfo%22%5D%5D%5D
 
-body_rewrite_239 = type=http-response, pattern=^https:\/\/www\.washpayer\.com\/common\/getReceipt, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/sooyaaabo/MyBlockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22json-del%22%2C%5B%22payload.adInfo%22%5D%5D%5D
+body_rewrite_239 = type=http-response, pattern=^https:\/\/www\.washpayer\.com\/common\/getReceipt, script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/sooyaaabo/MyBlockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22json-del%22%2C%5B%22payload.adInfo%22%5D%5D%5D
 
-body_rewrite_256 = type=http-response, pattern=^https:\/\/emdcadvertise(?:pj)?\.eastmoney\.com\/infoService\/v2, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/sooyaaabo/MyBlockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22json-replace%22%2C%5B%5B%22data.adpositionidlist%22%2C%5B%5D%5D%5D%5D%5D
+body_rewrite_256 = type=http-response, pattern=^https:\/\/emdcadvertise(?:pj)?\.eastmoney\.com\/infoService\/v2, script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/sooyaaabo/MyBlockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22json-replace%22%2C%5B%5B%22data.adpositionidlist%22%2C%5B%5D%5D%5D%5D%5D
 
-body_rewrite_320 = type=http-response, pattern=^https:\/\/api\.m\.mi\.com\/v1\/order\/expressView, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/sooyaaabo/MyBlockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22json-del%22%2C%5B%22data.bottom.ad_info%22%5D%5D%5D
+body_rewrite_320 = type=http-response, pattern=^https:\/\/api\.m\.mi\.com\/v1\/order\/expressView, script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/sooyaaabo/MyBlockAds/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22json-del%22%2C%5B%22data.bottom.ad_info%22%5D%5D%5D
 
 # 百度贴吧 //tiebac.baidu.com
-[MyBlockAds]百度贴吧 = type=http-response, pattern=^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/c\/f\/(frs\/(page|threadlist|generalTabList)|pb\/page|excellent\/personalized)\?cmd, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/sooyaaabo/MyBlockAds/TB.js, requires-body=true, binary-body-mode=true, timeout=10
+[MyBlockAds]百度贴吧 = type=http-response, pattern=^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/c\/f\/(frs\/(page|threadlist|generalTabList)|pb\/page|excellent\/personalized)\?cmd, script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/sooyaaabo/MyBlockAds/TB.js, requires-body=true, binary-body-mode=true, timeout=10
 
 # 昌原云充 五代十路 //www.washpayer.com
-[MyBlockAds]昌原云充 五代十路 = type=http-response, pattern=^https:\/\/www\.washpayer\.com\/user\/message\/equipmentPara\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/sooyaaabo/MyBlockAds/Changyuan.js, requires-body=true
+[MyBlockAds]昌原云充 五代十路 = type=http-response, pattern=^https:\/\/www\.washpayer\.com\/user\/message\/equipmentPara\?, script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/sooyaaabo/MyBlockAds/Changyuan.js, requires-body=true
 
 # 航旅纵横 //114.115.217.129, home.umetrip.com
-[MyBlockAds]航旅纵横 = type=http-response, pattern=^http?:\/\/(114\.115\.217\.129)|(home\.umetrip\.com)\/gateway\/api\/umetrip\/native$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/sooyaaabo/MyBlockAds/Umetrip.js, requires-body=true
+[MyBlockAds]航旅纵横 = type=http-response, pattern=^http?:\/\/(114\.115\.217\.129)|(home\.umetrip\.com)\/gateway\/api\/umetrip\/native$, script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/sooyaaabo/MyBlockAds/Umetrip.js, requires-body=true
 
 # 盒马 //acs.m.taobao.com, acs-m.freshippo.com
-[MyBlockAds]盒马 = type=http-response, pattern=^https?:\/\/acs(\.|-)m\.(?:taobao|freshippo)\.com\/gw\/mtop\.wdk\.render\.query(?:index|my)page, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/sooyaaabo/MyBlockAds/Freshippo.js, requires-body=true
+[MyBlockAds]盒马 = type=http-response, pattern=^https?:\/\/acs(\.|-)m\.(?:taobao|freshippo)\.com\/gw\/mtop\.wdk\.render\.query(?:index|my)page, script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/sooyaaabo/MyBlockAds/Freshippo.js, requires-body=true
 
 # 虎扑 //*.hupu.com
-[MyBlockAds]虎扑 = type=http-response, pattern=^https:\/\/fairy\.mobileapi\.hupu\.com\/mang\/preview\/banners, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/sooyaaabo/MyBlockAds/HP.js, requires-body=true
+[MyBlockAds]虎扑 = type=http-response, pattern=^https:\/\/fairy\.mobileapi\.hupu\.com\/mang\/preview\/banners, script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/sooyaaabo/MyBlockAds/HP.js, requires-body=true
 
-[MyBlockAds]虎扑 = type=http-response, pattern=^https:\/\/bbs\.mobileapi\.hupu\.com\/\d\/\d\.\d\.\d+\/bbsallapi\/lego\/data, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/sooyaaabo/MyBlockAds/HP.js, requires-body=true
+[MyBlockAds]虎扑 = type=http-response, pattern=^https:\/\/bbs\.mobileapi\.hupu\.com\/\d\/\d\.\d\.\d+\/bbsallapi\/lego\/data, script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/sooyaaabo/MyBlockAds/HP.js, requires-body=true
 
-[MyBlockAds]虎扑 = type=http-response, pattern=^https:\/\/games\.mobileapi\.hupu\.com\/\d\/\d\.\d\.\d+\/buffer\/hotList, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/sooyaaabo/MyBlockAds/HP.js, requires-body=true
+[MyBlockAds]虎扑 = type=http-response, pattern=^https:\/\/games\.mobileapi\.hupu\.com\/\d\/\d\.\d\.\d+\/buffer\/hotList, script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/sooyaaabo/MyBlockAds/HP.js, requires-body=true
 
-[MyBlockAds]虎扑 = type=http-response, pattern=^https:\/\/games\.mobileapi\.hupu\.com\/\d\/\d\.\d\.\d+\/bplapi\/user\/v1\/more, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/sooyaaabo/MyBlockAds/HP.js, requires-body=true
+[MyBlockAds]虎扑 = type=http-response, pattern=^https:\/\/games\.mobileapi\.hupu\.com\/\d\/\d\.\d\.\d+\/bplapi\/user\/v1\/more, script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/sooyaaabo/MyBlockAds/HP.js, requires-body=true
 
 # 酷狗音乐 //adserviceretry.kglink.cn, gateway.kugou.com
-[MyBlockAds]酷狗音乐 = type=http-response, pattern=^https:\/\/gateway\.kugou\.com\/(?:adp\/ad\/v1\/mine_top_banner|ads\.gateway\/v2\/home_card), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/sooyaaabo/MyBlockAds/Kugou.js, requires-body=true
+[MyBlockAds]酷狗音乐 = type=http-response, pattern=^https:\/\/gateway\.kugou\.com\/(?:adp\/ad\/v1\/mine_top_banner|ads\.gateway\/v2\/home_card), script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/sooyaaabo/MyBlockAds/Kugou.js, requires-body=true
 
-[MyBlockAds]酷狗音乐 = type=http-response, pattern=^https?:\/\/adserviceretry\.kglink\.cn\/v\d\/mobile\w+, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/sooyaaabo/MyBlockAds/Kugou.js, requires-body=true
+[MyBlockAds]酷狗音乐 = type=http-response, pattern=^https?:\/\/adserviceretry\.kglink\.cn\/v\d\/mobile\w+, script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/sooyaaabo/MyBlockAds/Kugou.js, requires-body=true
 
 # 美团 //web.meituan.com
-[MyBlockAds]美团小程序 = type=http-response, pattern=^https:\/\/web\.meituan\.com\/api\/miniprogram\/tabbar\/all\/query, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/sooyaaabo/MyBlockAds/MeiTuanNoAd.js, requires-body=true
+[MyBlockAds]美团小程序 = type=http-response, pattern=^https:\/\/web\.meituan\.com\/api\/miniprogram\/tabbar\/all\/query, script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/sooyaaabo/MyBlockAds/MeiTuanNoAd.js, requires-body=true
 
-[MyBlockAds]美团小程序 = type=http-response, pattern=^https:\/\/web\.meituan\.com\/api\/miniprogram\/index\/aggregate, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/sooyaaabo/MyBlockAds/MeiTuanNoAd.js, requires-body=true
+[MyBlockAds]美团小程序 = type=http-response, pattern=^https:\/\/web\.meituan\.com\/api\/miniprogram\/index\/aggregate, script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/sooyaaabo/MyBlockAds/MeiTuanNoAd.js, requires-body=true
 
 # 小米商城 //api.m.mi.com, shop-api.retail.mi.com
-[MyBlockAds]小米商城 = type=http-response, pattern=^https:\/\/api\.m\.mi\.com\/v1\/app\/start, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/sooyaaabo/MyBlockAds/MyBlockAds.js, requires-body=true
+[MyBlockAds]小米商城 = type=http-response, pattern=^https:\/\/api\.m\.mi\.com\/v1\/app\/start, script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/sooyaaabo/MyBlockAds/MyBlockAds.js, requires-body=true
 
 # 中国农业银行 //mobilepaas.abchina.com.cn
-[MyBlockAds]中国农业银行 = type=http-request, pattern=^https:\/\/mobilepaas\.abchina\.com\.cn:441\/mgw\.htm$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/sooyaaabo/MyBlockAds/header.js
+[MyBlockAds]中国农业银行 = type=http-request, pattern=^https:\/\/mobilepaas\.abchina\.com\.cn:441\/mgw\.htm$, script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/sooyaaabo/MyBlockAds/header.js
 
 # 中国移动云盘 //ad.mcloud.139.com, jzts.cmpassport.com
-[MyBlockAds]中国移动云盘 = type=http-response, pattern=^https:\/\/ad\.mcloud\.139\.com\/advertapi\/adv-filter\/, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/sooyaaabo/MyBlockAds/Cloud139.js, requires-body=true
+[MyBlockAds]中国移动云盘 = type=http-response, pattern=^https:\/\/ad\.mcloud\.139\.com\/advertapi\/adv-filter\/, script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/sooyaaabo/MyBlockAds/Cloud139.js, requires-body=true
 
-[MyBlockAds]中国移动云盘 = type=http-response, pattern=^https:\/\/jzts\.cmpassport\.com\/personalized\/getPushContent, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/sooyaaabo/MyBlockAds/Cloud139.js, requires-body=true
+[MyBlockAds]中国移动云盘 = type=http-response, pattern=^https:\/\/jzts\.cmpassport\.com\/personalized\/getPushContent, script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/sooyaaabo/MyBlockAds/Cloud139.js, requires-body=true
 
 [MITM]
 hostname = %APPEND% app-v1.ecoliving168.com, 852b95d36.xwlpk.cn, gab.122.gov.cn, acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com, list-app-m.i4.cn, tiebac.baidu.com, www.washpayer.com, img.alicdn.com, emdcadvertise.eastmoney.com, emdcadvertisepj.eastmoney.com, swdlcdn.eastmoney.com, elemecdn.com, fuss10.elemecdn.com, cube.elemecdn.com, www1.elecfans.com, nr-op.elemecdn.com, www.haixue.com, hfapp-service.qweather.net, acs-m.freshippo.com, gw.alicdn.com, mobileapi.hupu.com, goblin.hupu.com, *.hupu.com, p0.pipi.cn, app-cdn.2q10.com, flowplus.meituan.net, img.meituan.net, s3plus.meituan.net, web.meituan.com, npay.meituan.com, apimobile.meituan.com, osg-service.sgcc.com.cn, api.m.mi.com, shop-api.retail.mi.com, home.mi.com, wallet.95516.com, ecssmobile.e-chinalife.com, 114.115.217.129, home.umetrip.com, adserviceretry.kglink.cn, gateway.kugou.com, mobilepaas.abchina.com.cn, ad.mcloud.139.com, jzts.cmpassport.com

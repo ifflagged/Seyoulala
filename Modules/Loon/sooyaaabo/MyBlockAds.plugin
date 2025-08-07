@@ -298,61 +298,61 @@ URL-REGEX,"^http:\/\/\w{32}\.jddebug\.com\/diagnose\?",REJECT
 ^https:\/\/ecssmobile\.e-chinalife\.com:8082\/ecss\/web\/appupdate\/customization\/getFlashScreenInfo - reject-dict
 
 [Script]
-http-response ^https:\/\/tiebac\.baidu\.com\/c\/u\/user\/profile$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/sooyaaabo/MyBlockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_229, argument=%5B%5B%22json-del%22%2C%5B%22recom_naws_list%22%2C%22namoaixud_entry%22%2C%22custom_grid%22%2C%22duxiaoman_entry%22%2C%22finance_tab%22%5D%5D%2C%5B%22json-replace%22%2C%5B%5B%22user.shake_ad_switch.is_show%22%2C0%5D%5D%5D%5D
+http-response ^https:\/\/tiebac\.baidu\.com\/c\/u\/user\/profile$ script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/sooyaaabo/MyBlockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_229, argument=%5B%5B%22json-del%22%2C%5B%22recom_naws_list%22%2C%22namoaixud_entry%22%2C%22custom_grid%22%2C%22duxiaoman_entry%22%2C%22finance_tab%22%5D%5D%2C%5B%22json-replace%22%2C%5B%5B%22user.shake_ad_switch.is_show%22%2C0%5D%5D%5D%5D
 
-http-response ^https:\/\/tiebac\.baidu\.com\/c\/f\/sidebar\/home$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/sooyaaabo/MyBlockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_232, argument=%5B%5B%22json-del%22%2C%5B%22task_list%22%2C%22game_center%22%2C%22tools%22%2C%22tools.yunying_tools_list%22%2C%22tools.show_tools_list%22%5D%5D%5D
+http-response ^https:\/\/tiebac\.baidu\.com\/c\/f\/sidebar\/home$ script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/sooyaaabo/MyBlockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_232, argument=%5B%5B%22json-del%22%2C%5B%22task_list%22%2C%22game_center%22%2C%22tools%22%2C%22tools.yunying_tools_list%22%2C%22tools.show_tools_list%22%5D%5D%5D
 
-http-response ^https:\/\/tiebac\.baidu\.com\/c\/f\/frs\/frsBottom$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/sooyaaabo/MyBlockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_235, argument=%5B%5B%22json-del%22%2C%5B%22card_activity%22%5D%5D%5D
+http-response ^https:\/\/tiebac\.baidu\.com\/c\/f\/frs\/frsBottom$ script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/sooyaaabo/MyBlockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_235, argument=%5B%5B%22json-del%22%2C%5B%22card_activity%22%5D%5D%5D
 
-http-response ^http:\/\/ad\.5tao5ai\.com\/common\/getReceipt\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/sooyaaabo/MyBlockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_237, argument=%5B%5B%22json-del%22%2C%5B%22payload.adInfo%22%5D%5D%5D
+http-response ^http:\/\/ad\.5tao5ai\.com\/common\/getReceipt\? script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/sooyaaabo/MyBlockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_237, argument=%5B%5B%22json-del%22%2C%5B%22payload.adInfo%22%5D%5D%5D
 
-http-response ^https:\/\/www\.washpayer\.com\/common\/getReceipt script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/sooyaaabo/MyBlockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_239, argument=%5B%5B%22json-del%22%2C%5B%22payload.adInfo%22%5D%5D%5D
+http-response ^https:\/\/www\.washpayer\.com\/common\/getReceipt script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/sooyaaabo/MyBlockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_239, argument=%5B%5B%22json-del%22%2C%5B%22payload.adInfo%22%5D%5D%5D
 
-http-response ^https:\/\/emdcadvertise(?:pj)?\.eastmoney\.com\/infoService\/v2 script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/sooyaaabo/MyBlockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_256, argument=%5B%5B%22json-replace%22%2C%5B%5B%22data.adpositionidlist%22%2C%5B%5D%5D%5D%5D%5D
+http-response ^https:\/\/emdcadvertise(?:pj)?\.eastmoney\.com\/infoService\/v2 script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/sooyaaabo/MyBlockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_256, argument=%5B%5B%22json-replace%22%2C%5B%5B%22data.adpositionidlist%22%2C%5B%5D%5D%5D%5D%5D
 
-http-response ^https:\/\/api\.m\.mi\.com\/v1\/order\/expressView script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/sooyaaabo/MyBlockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_320, argument=%5B%5B%22json-del%22%2C%5B%22data.bottom.ad_info%22%5D%5D%5D
+http-response ^https:\/\/api\.m\.mi\.com\/v1\/order\/expressView script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/sooyaaabo/MyBlockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_320, argument=%5B%5B%22json-del%22%2C%5B%22data.bottom.ad_info%22%5D%5D%5D
 
 # 百度贴吧 //tiebac.baidu.com
-http-response ^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/c\/f\/(frs\/(page|threadlist|generalTabList)|pb\/page|excellent\/personalized)\?cmd script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/sooyaaabo/MyBlockAds/TB.js, requires-body=true, binary-body-mode=true, timeout=10, tag=[MyBlockAds]百度贴吧
+http-response ^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/c\/f\/(frs\/(page|threadlist|generalTabList)|pb\/page|excellent\/personalized)\?cmd script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/sooyaaabo/MyBlockAds/TB.js, requires-body=true, binary-body-mode=true, timeout=10, tag=[MyBlockAds]百度贴吧
 
 # 昌原云充 五代十路 //www.washpayer.com
-http-response ^https:\/\/www\.washpayer\.com\/user\/message\/equipmentPara\? script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/sooyaaabo/MyBlockAds/Changyuan.js, requires-body=true, tag=[MyBlockAds]昌原云充 五代十路
+http-response ^https:\/\/www\.washpayer\.com\/user\/message\/equipmentPara\? script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/sooyaaabo/MyBlockAds/Changyuan.js, requires-body=true, tag=[MyBlockAds]昌原云充 五代十路
 
 # 航旅纵横 //114.115.217.129, home.umetrip.com
-http-response ^http?:\/\/(114\.115\.217\.129)|(home\.umetrip\.com)\/gateway\/api\/umetrip\/native$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/sooyaaabo/MyBlockAds/Umetrip.js, requires-body=true, tag=[MyBlockAds]航旅纵横
+http-response ^http?:\/\/(114\.115\.217\.129)|(home\.umetrip\.com)\/gateway\/api\/umetrip\/native$ script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/sooyaaabo/MyBlockAds/Umetrip.js, requires-body=true, tag=[MyBlockAds]航旅纵横
 
 # 盒马 //acs.m.taobao.com, acs-m.freshippo.com
-http-response ^https?:\/\/acs(\.|-)m\.(?:taobao|freshippo)\.com\/gw\/mtop\.wdk\.render\.query(?:index|my)page script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/sooyaaabo/MyBlockAds/Freshippo.js, requires-body=true, tag=[MyBlockAds]盒马
+http-response ^https?:\/\/acs(\.|-)m\.(?:taobao|freshippo)\.com\/gw\/mtop\.wdk\.render\.query(?:index|my)page script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/sooyaaabo/MyBlockAds/Freshippo.js, requires-body=true, tag=[MyBlockAds]盒马
 
 # 虎扑 //*.hupu.com
-http-response ^https:\/\/fairy\.mobileapi\.hupu\.com\/mang\/preview\/banners script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/sooyaaabo/MyBlockAds/HP.js, requires-body=true, tag=[MyBlockAds]虎扑
+http-response ^https:\/\/fairy\.mobileapi\.hupu\.com\/mang\/preview\/banners script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/sooyaaabo/MyBlockAds/HP.js, requires-body=true, tag=[MyBlockAds]虎扑
 
-http-response ^https:\/\/bbs\.mobileapi\.hupu\.com\/\d\/\d\.\d\.\d+\/bbsallapi\/lego\/data script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/sooyaaabo/MyBlockAds/HP.js, requires-body=true, tag=[MyBlockAds]虎扑
+http-response ^https:\/\/bbs\.mobileapi\.hupu\.com\/\d\/\d\.\d\.\d+\/bbsallapi\/lego\/data script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/sooyaaabo/MyBlockAds/HP.js, requires-body=true, tag=[MyBlockAds]虎扑
 
-http-response ^https:\/\/games\.mobileapi\.hupu\.com\/\d\/\d\.\d\.\d+\/buffer\/hotList script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/sooyaaabo/MyBlockAds/HP.js, requires-body=true, tag=[MyBlockAds]虎扑
+http-response ^https:\/\/games\.mobileapi\.hupu\.com\/\d\/\d\.\d\.\d+\/buffer\/hotList script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/sooyaaabo/MyBlockAds/HP.js, requires-body=true, tag=[MyBlockAds]虎扑
 
-http-response ^https:\/\/games\.mobileapi\.hupu\.com\/\d\/\d\.\d\.\d+\/bplapi\/user\/v1\/more script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/sooyaaabo/MyBlockAds/HP.js, requires-body=true, tag=[MyBlockAds]虎扑
+http-response ^https:\/\/games\.mobileapi\.hupu\.com\/\d\/\d\.\d\.\d+\/bplapi\/user\/v1\/more script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/sooyaaabo/MyBlockAds/HP.js, requires-body=true, tag=[MyBlockAds]虎扑
 
 # 酷狗音乐 //adserviceretry.kglink.cn, gateway.kugou.com
-http-response ^https:\/\/gateway\.kugou\.com\/(?:adp\/ad\/v1\/mine_top_banner|ads\.gateway\/v2\/home_card) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/sooyaaabo/MyBlockAds/Kugou.js, requires-body=true, tag=[MyBlockAds]酷狗音乐
+http-response ^https:\/\/gateway\.kugou\.com\/(?:adp\/ad\/v1\/mine_top_banner|ads\.gateway\/v2\/home_card) script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/sooyaaabo/MyBlockAds/Kugou.js, requires-body=true, tag=[MyBlockAds]酷狗音乐
 
-http-response ^https?:\/\/adserviceretry\.kglink\.cn\/v\d\/mobile\w+ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/sooyaaabo/MyBlockAds/Kugou.js, requires-body=true, tag=[MyBlockAds]酷狗音乐
+http-response ^https?:\/\/adserviceretry\.kglink\.cn\/v\d\/mobile\w+ script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/sooyaaabo/MyBlockAds/Kugou.js, requires-body=true, tag=[MyBlockAds]酷狗音乐
 
 # 美团 //web.meituan.com
-http-response ^https:\/\/web\.meituan\.com\/api\/miniprogram\/tabbar\/all\/query script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/sooyaaabo/MyBlockAds/MeiTuanNoAd.js, requires-body=true, tag=[MyBlockAds]美团小程序
+http-response ^https:\/\/web\.meituan\.com\/api\/miniprogram\/tabbar\/all\/query script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/sooyaaabo/MyBlockAds/MeiTuanNoAd.js, requires-body=true, tag=[MyBlockAds]美团小程序
 
-http-response ^https:\/\/web\.meituan\.com\/api\/miniprogram\/index\/aggregate script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/sooyaaabo/MyBlockAds/MeiTuanNoAd.js, requires-body=true, tag=[MyBlockAds]美团小程序
+http-response ^https:\/\/web\.meituan\.com\/api\/miniprogram\/index\/aggregate script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/sooyaaabo/MyBlockAds/MeiTuanNoAd.js, requires-body=true, tag=[MyBlockAds]美团小程序
 
 # 小米商城 //api.m.mi.com, shop-api.retail.mi.com
-http-response ^https:\/\/api\.m\.mi\.com\/v1\/app\/start script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/sooyaaabo/MyBlockAds/MyBlockAds.js, requires-body=true, tag=[MyBlockAds]小米商城
+http-response ^https:\/\/api\.m\.mi\.com\/v1\/app\/start script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/sooyaaabo/MyBlockAds/MyBlockAds.js, requires-body=true, tag=[MyBlockAds]小米商城
 
 # 中国农业银行 //mobilepaas.abchina.com.cn
-http-request ^https:\/\/mobilepaas\.abchina\.com\.cn:441\/mgw\.htm$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/sooyaaabo/MyBlockAds/header.js, tag=[MyBlockAds]中国农业银行
+http-request ^https:\/\/mobilepaas\.abchina\.com\.cn:441\/mgw\.htm$ script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/sooyaaabo/MyBlockAds/header.js, tag=[MyBlockAds]中国农业银行
 
 # 中国移动云盘 //ad.mcloud.139.com, jzts.cmpassport.com
-http-response ^https:\/\/ad\.mcloud\.139\.com\/advertapi\/adv-filter\/ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/sooyaaabo/MyBlockAds/Cloud139.js, requires-body=true, tag=[MyBlockAds]中国移动云盘
+http-response ^https:\/\/ad\.mcloud\.139\.com\/advertapi\/adv-filter\/ script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/sooyaaabo/MyBlockAds/Cloud139.js, requires-body=true, tag=[MyBlockAds]中国移动云盘
 
-http-response ^https:\/\/jzts\.cmpassport\.com\/personalized\/getPushContent script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/sooyaaabo/MyBlockAds/Cloud139.js, requires-body=true, tag=[MyBlockAds]中国移动云盘
+http-response ^https:\/\/jzts\.cmpassport\.com\/personalized\/getPushContent script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/sooyaaabo/MyBlockAds/Cloud139.js, requires-body=true, tag=[MyBlockAds]中国移动云盘
 
 [MITM]
 hostname = app-v1.ecoliving168.com, 852b95d36.xwlpk.cn, gab.122.gov.cn, acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com, list-app-m.i4.cn, tiebac.baidu.com, www.washpayer.com, img.alicdn.com, emdcadvertise.eastmoney.com, emdcadvertisepj.eastmoney.com, swdlcdn.eastmoney.com, elemecdn.com, fuss10.elemecdn.com, cube.elemecdn.com, www1.elecfans.com, nr-op.elemecdn.com, www.haixue.com, hfapp-service.qweather.net, acs-m.freshippo.com, gw.alicdn.com, mobileapi.hupu.com, goblin.hupu.com, *.hupu.com, p0.pipi.cn, app-cdn.2q10.com, flowplus.meituan.net, img.meituan.net, s3plus.meituan.net, web.meituan.com, npay.meituan.com, apimobile.meituan.com, osg-service.sgcc.com.cn, api.m.mi.com, shop-api.retail.mi.com, home.mi.com, wallet.95516.com, ecssmobile.e-chinalife.com, 114.115.217.129, home.umetrip.com, adserviceretry.kglink.cn, gateway.kugou.com, mobilepaas.abchina.com.cn, ad.mcloud.139.com, jzts.cmpassport.com

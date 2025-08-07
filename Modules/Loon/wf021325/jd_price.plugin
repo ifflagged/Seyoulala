@@ -4,9 +4,9 @@
 #!tag=Jacob
 
 [Script]
-http-response ^https?:\/\/in\.m\.jd\.com\/product\/graphext\/\d+\.html script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/wf021325/jd_price/jd_price.js, requires-body=true, timeout=60, tag=jd_price
+http-response ^https?:\/\/in\.m\.jd\.com\/product\/graphext\/\d+\.html script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/wf021325/jd_price/jd_price.js, requires-body=true, timeout=60, tag=jd_price
 
-http-request ^https?:\/\/apapia-sqk-weblogic\.manmanbuy\.com\/baoliao\/center\/menu$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/wf021325/jd_price/jd_price.js, requires-body=true, timeout=60, tag=jd_price
+http-request ^https?:\/\/apapia-sqk-weblogic\.manmanbuy\.com\/baoliao\/center\/menu$ script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/wf021325/jd_price/jd_price.js, requires-body=true, timeout=60, tag=jd_price
 
 #http-response ^https?:\/\/in\.m\.jd\.com\/product\/graphext\/\d+\.html script-path=http://192.168.2.170:8080/jd_price.js, requires-body=true, timeout=60, tag=jd_price
 

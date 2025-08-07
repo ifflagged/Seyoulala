@@ -21,7 +21,7 @@
 ^https?:\/\/acs(\.|-)m\.(taobao|freshippo)\.com\/gw\/mtop\.wdk\.mimir\.recommend\.after\.purchase\.activity mock-response-body data-type=text data="{}" status-code=200
 
 [Script]
-http-response ^https?:\/\/acs(\.|-)m\.(taobao|freshippo)\.com\/gw\/mtop\.wdk\.render\.query(?>indexpage|mypage|tabfeedstream) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zirawell/freshippo/freshippo.js, requires-body=true, tag=freshippo
+http-response ^https?:\/\/acs(\.|-)m\.(taobao|freshippo)\.com\/gw\/mtop\.wdk\.render\.query(?>indexpage|mypage|tabfeedstream) script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zirawell/freshippo/freshippo.js, requires-body=true, tag=freshippo
 
 [MITM]
 hostname = acs.m.taobao.com, acs-m.freshippo.com

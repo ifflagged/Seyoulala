@@ -23,16 +23,16 @@
 
 [Script]
 # > 百度网盘_开屏广告@ddgksf2013
-http-response ^https?:\/\/pan\.baidu\.com\/api\/getsyscfg script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ddgksf2013/baiduCloud.adblock/baiduCloud.adblock.js, requires-body=true, timeout=60, tag=baiduCloud.adblock
+http-response ^https?:\/\/pan\.baidu\.com\/api\/getsyscfg script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/ddgksf2013/baiduCloud.adblock/baiduCloud.adblock.js, requires-body=true, timeout=60, tag=baiduCloud.adblock
 
 # > 百度网盘_广告推广@ddgksf2013
-http-response ^https?:\/\/afd\.baidu\.com\/afd\/entry script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ddgksf2013/baiduCloud.adblock/baiduCloud.adblock.js, requires-body=true, timeout=60, tag=baiduCloud.adblock
+http-response ^https?:\/\/afd\.baidu\.com\/afd\/entry script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/ddgksf2013/baiduCloud.adblock/baiduCloud.adblock.js, requires-body=true, timeout=60, tag=baiduCloud.adblock
 
 # > 百度网盘_游戏广告@ddgksf2013
-http-response ^https:\/\/pan\.baidu\.com\/rest\/.*\/membership\/user\?method=gamecenter script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ddgksf2013/baiduCloud.adblock/baiduCloud.adblock.js, requires-body=true, timeout=60, tag=baiduCloud.adblock
+http-response ^https:\/\/pan\.baidu\.com\/rest\/.*\/membership\/user\?method=gamecenter script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/ddgksf2013/baiduCloud.adblock/baiduCloud.adblock.js, requires-body=true, timeout=60, tag=baiduCloud.adblock
 
 # > 百度网盘_首页信息流@ddgksf2013
-http-response ^https:\/\/pan\.baidu\.com\/feed\/cardinfos script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/ddgksf2013/baiduCloud.adblock/baiduCloud.adblock.js, requires-body=true, timeout=60, tag=baiduCloud.adblock
+http-response ^https:\/\/pan\.baidu\.com\/feed\/cardinfos script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/ddgksf2013/baiduCloud.adblock/baiduCloud.adblock.js, requires-body=true, timeout=60, tag=baiduCloud.adblock
 
 [MITM]
 hostname = pan.baidu.com, afd.baidu.com
