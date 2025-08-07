@@ -1,4 +1,4 @@
-name: Fetch sgmodule files with retry and auth
+name: Fetch sgmodule Files
 
 on:
   workflow_dispatch:
@@ -7,32 +7,31 @@ env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
-  fetch-sgmodules:
+  fetch-and-commit:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
 
-      - name: Install jq and python3
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Install dependencies
         run: |
           sudo apt-get update
           sudo apt-get install -y jq python3
 
-      - name: Get all sgmodule file paths with auth
+      - name: Fetch sgmodule paths
         run: |
           curl -H "Authorization: token $GITHUB_TOKEN" -s \
             "https://api.github.com/repos/zirawell/R-Store/git/trees/main?recursive=1" \
             | jq -r '.tree[] | select(.path | test("sgmodule")) | .path' > sgmodule_paths.txt
           cat sgmodule_paths.txt
 
-      - name: Download sgmodule files with retry and auth
+      - name: Download sgmodule files with retry
         run: |
           mkdir -p Modules/Surge/zirawell/Official
           retry=3
-
-          if [ ! -s sgmodule_paths.txt ]; then
-            echo "No sgmodule files found"
-            exit 0
-          fi
 
           while IFS= read -r file_path; do
             filename=$(basename "$file_path")
@@ -43,7 +42,8 @@ jobs:
             success=0
             while [ $attempt -le $retry ]; do
               echo "Attempt $attempt for $file_path"
-              curl -H "Authorization: token $GITHUB_TOKEN" --fail -sL -H "Accept: application/vnd.github.raw" \
+              curl -H "Authorization: token $GITHUB_TOKEN" --fail -sL \
+                -H "Accept: application/vnd.github.raw" \
                 "https://api.github.com/repos/zirawell/R-Store/contents/$encoded_path?ref=main" \
                 -o "Modules/Surge/zirawell/Official/$filename" && success=1 && break
               echo "Attempt $attempt failed for $file_path"
@@ -52,11 +52,21 @@ jobs:
             done
 
             if [ $success -ne 1 ]; then
-              echo "Warning: Failed $file_path after $retry attempts, skipping."
-              curl -v -H "Authorization: token $GITHUB_TOKEN" \
-                "https://api.github.com/repos/zirawell/R-Store/contents/$encoded_path?ref=main"
+              echo "⚠️ Warning: Failed to download $file_path after $retry attempts, skipping."
             fi
           done < sgmodule_paths.txt
 
-      - name: List downloaded files
-        run: ls -lR Modules/Surge/zirawell/Official
+      - name: Commit and Push Changes
+        run: |
+          git config user.name "${GITHUB_ACTOR}"
+          git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+
+          git add Modules/Surge/zirawell/Official || true
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            COMMIT_MSG="Update sgmodule files on $(date -u '+%Y-%m-%d %H:%M:%S') UTC"
+            git commit -m "$COMMIT_MSG"
+            git push
+          fi
