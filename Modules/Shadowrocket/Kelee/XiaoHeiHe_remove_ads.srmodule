@@ -1,18 +1,4 @@
-#!name=小黑盒去广告
-#!desc=移除开屏广告和热点板块信息流广告
-#!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
-#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/XiaoHeiHe.png
+#!name=XiaoHeiHe_remove_ads
+#!desc=XiaoHeiHe_remove_ads
 #!category=Jacob
-
-#!openUrl=https://apps.apple.com/app/id1244505010
-#!tag=去广告
-#!loon_version=3.2.4(787)
-#!homepage=https://pluginhub.kelee.one
-#!date=2025-05-13 15:17:08
-
-[URL Rewrite]
-^https:\/\/api\.xiaoheihe\.cn\/account\/get_ads_info_v2 - reject-dict
-
-[MITM]
-hostname = %APPEND% api.xiaoheihe.cn
 
