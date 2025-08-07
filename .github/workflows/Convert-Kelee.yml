@@ -40,15 +40,21 @@ jobs:
             sleep 10
           done
 
-      - name: 
+      - name: Install Node.js and Puppeteer
         run: |
-          curl -s "https://pluginhub.kelee.one/Lpx_list.json" -o Kelee_plugin_data.json
+          curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+          sudo apt-get install -y nodejs
+          npm install puppeteer
 
-      - name: Extract .plugin URLs
-        run: |
-          grep -oE 'https?://[^"]+\.(plugin|lpx)' Kelee_plugin_data.json | sort -u > Kelee_plugin_urls.txt || true
-          echo "提取到 $(wc -l < Kelee_plugin_urls.txt) 个插件链接："
-          cat Kelee_plugin_urls.txt
+      - name: Checkout private repository
+        uses: actions/checkout@v3
+        with:
+          repository: "${{ github.actor }}/ShalalaLala"
+          token: ${{ secrets.PERSONAL_TOKENS }}
+          path: ShalalaLala
+
+      - name: Run scrape_kelee_plugins.js from ShalalaLala repo
+        run: node ShalalaLala/Scripts/scrape_kelee_plugins.js
 
       - name: Download plugin files
         run: |
