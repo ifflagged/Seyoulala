@@ -6,7 +6,7 @@
 #!system=
 #!system_version=
 #!loon_version=3.2.4(787)
-#!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
+#!homepage=https://pluginhub.kelee.one
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/Other_icon/120px/KeLee.png
 #!date=2025-07-16 02:25:05
 
@@ -71,8 +71,6 @@ DOMAIN, open-pixon.ads-pixiv.net, REJECT
 ^https:\/\/apiwz\.midukanshu\.com\/advert\/getPopup$ reject
 ^https:\/\/apiwz\.midukanshu\.com\/advert\/treasureInfo$ reject
 ^https:\/\/apiwz\.midukanshu\.com\/config\/getAds$ reject
-
-^https:\/\/home\.mi\.com\/cgi-op\/api\/v1\/recommendation\/myTab\? response-body-json-del data.banners
 
 ^http:\/\/img\.dailmo\.com\/img\/61\/23c7125bfe6166d69f3bff5b0ca4d31e\.jpg reject
 ^http:\/\/img\.dailmo\.com\/img\/50\/edb40c6392f848df37f9c31d8a6f90f6\.jpg reject
