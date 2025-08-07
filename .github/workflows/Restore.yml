@@ -33,15 +33,31 @@ jobs:
           rm -rf Modules/Surge/Kelee
           rm -rf Modules/Shadowrocket/Kelee
 
-          # 恢复各自平台正确的文件类型
-          mkdir -p Modules/Surge/Kelee
-          find temp_restore/Surge/Kelee -type f -name '*.sgmodule' -exec cp {} Modules/Surge/Kelee/ \;
+      - name: Restore Kelee folders with rsync
+        run: |
+          for platform in Surge Loon Shadowrocket; do
+            case $platform in
+              Surge)
+                ext="sgmodule"
+                ;;
+              Loon)
+                ext="plugin"
+                ;;
+              Shadowrocket)
+                ext="srmodule"
+                ;;
+            esac
 
-          mkdir -p Modules/Loon/Kelee
-          find temp_restore/Loon/Kelee -type f -name '*.plugin' -exec cp {} Modules/Loon/Kelee/ \;
+            src="temp_restore/$platform/Kelee"
+            dest="Modules/$platform/Kelee"
 
-          mkdir -p Modules/Shadowrocket/Kelee
-          find temp_restore/Shadowrocket/Kelee -type f -name '*.srmodule' -exec cp {} Modules/Shadowrocket/Kelee/ \;
+            if [ -d "$src" ]; then
+              mkdir -p "$dest"
+              rsync -av --include='*/' --include="*.$ext" --exclude='*' "$src/" "$dest/"
+            else
+              echo "$platform/Kelee folder not found, skipping."
+            fi
+          done
 
       - name: Remove temp_restore folder
         run: rm -rf temp_restore
