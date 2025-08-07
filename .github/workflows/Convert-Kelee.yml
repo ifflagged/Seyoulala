@@ -40,21 +40,15 @@ jobs:
             sleep 10
           done
 
-      - name: Install Node.js and Puppeteer
+      - name: 
         run: |
-          curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
-          sudo apt-get install -y nodejs
-          npm install puppeteer
+          curl -s "https://pluginhub.kelee.one/Lpx_list.json" -o Kelee_plugin_data.json
 
-      - name: Checkout private repository
-        uses: actions/checkout@v3
-        with:
-          repository: "${{ github.actor }}/ShalalaLala"
-          token: ${{ secrets.PERSONAL_TOKENS }}
-          path: ShalalaLala
-
-      - name: Run scrape_kelee_plugins.js from ShalalaLala repo
-        run: node ShalalaLala/Scripts/scrape_kelee_plugins.js
+      - name: Extract .plugin URLs
+        run: |
+          grep -oE 'https?://[^"]+\.(plugin|lpx)' Kelee_plugin_data.json | sort -u > Kelee_plugin_urls.txt || true
+          echo "提取到 $(wc -l < Kelee_plugin_urls.txt) 个插件链接："
+          cat Kelee_plugin_urls.txt
 
       - name: Download plugin files
         run: |
@@ -84,16 +78,16 @@ jobs:
         run: |
           category="Jacob"
           encoded_category=$(echo "$category" | jq -sRr @uri)
-          while read -r plugin_local_url; do
-            Modules_name=$(basename "$plugin_local_url" .plugin)
+          while read -r kelee_plugin_lurl; do
+            Modules_name=$(basename "$kelee_plugin_lurl" .plugin)
             encoded_Modules_name=$(echo "$Modules_name" | jq -sRr @uri)
 
-            Surge_url="http://localhost:9100/file/_start_/${plugin_local_url}/_end_/${encoded_Modules_name}.sgmodule?type=loon-plugin&target=surge-module&category=${encoded_category}&nore=true"
-            Surge_Beta_url="http://localhost:9101/file/_start_/${plugin_local_url}/_end_/${encoded_Modules_name}.sgmodule?type=loon-plugin&target=surge-module&category=${encoded_category}&nore=true&jqEnabled=true"
-            Loon_url="http://localhost:9100/file/_start_/${plugin_local_url}/_end_/${encoded_Modules_name}.plugin?type=loon-plugin&target=loon-plugin&category=${encoded_category}&icon=Loon&nore=true"
-            Loon_Beta_url="http://localhost:9101/file/_start_/${plugin_local_url}/_end_/${encoded_Modules_name}.plugin?type=loon-plugin&target=loon-plugin&category=${encoded_category}&icon=Loon&nore=true&jqEnabled=true"
-            Shadowrocket_url="http://localhost:9100/file/_start_/${plugin_local_url}/_end_/${encoded_Modules_name}.sgmodule?type=loon-plugin&target=shadowrocket-module&category=${encoded_category}&nore=true"
-            Shadowrocket_Beta_url="http://localhost:9101/file/_start_/${plugin_local_url}/_end_/${encoded_Modules_name}.sgmodule?type=loon-plugin&target=shadowrocket-module&category=${encoded_category}&nore=true&jqEnabled=true"
+            Surge_url="http://localhost:9100/file/_start_/${kelee_plugin_lurl}/_end_/${encoded_Modules_name}.sgmodule?type=loon-plugin&target=surge-module&category=${encoded_category}&nore=true"
+            Surge_Beta_url="http://localhost:9101/file/_start_/${kelee_plugin_lurl}/_end_/${encoded_Modules_name}.sgmodule?type=loon-plugin&target=surge-module&category=${encoded_category}&nore=true&jqEnabled=true"
+            Loon_url="http://localhost:9100/file/_start_/${kelee_plugin_lurl}/_end_/${encoded_Modules_name}.plugin?type=loon-plugin&target=loon-plugin&category=${encoded_category}&icon=Loon&nore=true"
+            Loon_Beta_url="http://localhost:9101/file/_start_/${kelee_plugin_lurl}/_end_/${encoded_Modules_name}.plugin?type=loon-plugin&target=loon-plugin&category=${encoded_category}&icon=Loon&nore=true&jqEnabled=true"
+            Shadowrocket_url="http://localhost:9100/file/_start_/${kelee_plugin_lurl}/_end_/${encoded_Modules_name}.sgmodule?type=loon-plugin&target=shadowrocket-module&category=${encoded_category}&nore=true"
+            Shadowrocket_Beta_url="http://localhost:9101/file/_start_/${kelee_plugin_lurl}/_end_/${encoded_Modules_name}.sgmodule?type=loon-plugin&target=shadowrocket-module&category=${encoded_category}&nore=true&jqEnabled=true"
 
             mkdir -p Modules/{Surge,Loon,Shadowrocket}/Kelee/Beta
 
@@ -107,14 +101,14 @@ jobs:
             echo "Converting to $.srmodule"
             curl -A "Surge Mac/2985" -L -o "Modules/Shadowrocket/Kelee/${Modules_name}.srmodule" "$Shadowrocket_url" || echo "Failed to download ${Modules_name}.srmodule"
             curl -A "Surge Mac/2985" -L -o "Modules/Shadowrocket/Kelee/Beta/${Modules_name}.srmodule" "$Shadowrocket_Beta_url" || echo "Failed to download ${Modules_name}.srmodule"
-          done < plugin_local_url.txt
+          done < Kelee_plugin_urls.txt
 
       - name: Find and replace external JS resources
         continue-on-error: true  # 确保步骤在部分失败时继续执行
         run: |
           js_base_url="https://github.com/${GITHUB_REPOSITORY}/raw/main/Modules/JS"
 
-          for plugin_file in Modules/Loon/Kelee/Official/*.plugin; do
+          for plugin_file in Modules/Loon/Kelee/*.plugin; do
             echo "Processing $plugin_file"
 
             author=$(echo "$plugin_file" | awk -F'/' '{print $(NF-2)}')
