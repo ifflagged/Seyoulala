@@ -1,4 +1,4 @@
-name: Download some plugins
+name: Download Some Plugins
 
 on:
   schedule:
@@ -21,6 +21,13 @@ jobs:
       with:
         python-version: '3.x'
 
+    - name: Checkout private repository
+      uses: actions/checkout@v3
+      with:
+        repository: "${{ github.actor }}/ShalalaLala"
+        token: ${{ secrets.PERSONAL_TOKENS }}
+        path: ShalalaLala
+
     - name: Cache pip packages
       uses: actions/cache@v4
       with:
@@ -31,13 +38,6 @@ jobs:
 
     - name: Install dependencies
       run: pip install -r ShalalaLala/Scripts/kelee-requirements.txt
-
-    - name: Checkout private repository
-      uses: actions/checkout@v3
-      with:
-        repository: "${{ github.actor }}/ShalalaLala"
-        token: ${{ secrets.PERSONAL_TOKENS }}
-        path: ShalalaLala
 
     - name: Run download script
       run: python ShalalaLala/Scripts/kelee-20250807.py
