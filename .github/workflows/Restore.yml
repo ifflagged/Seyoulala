@@ -1,4 +1,4 @@
-name: Restore Modules
+name: Restore Multiple Folders
 
 on:
   workflow_dispatch:  # 手动触发
@@ -15,23 +15,32 @@ jobs:
 
       - name: Checkout deleted commit as temp
         run: |
-          git fetch origin fceb30a7953e894eb19e3f55b3827b141d99082b
-          git checkout fceb30a7953e894eb19e3f55b3827b141d99082b
+          git fetch origin b7e9c069a3eba5fe8c14a8c79b8688f1ec9dfc47
+          git checkout b7e9c069a3eba5fe8c14a8c79b8688f1ec9dfc47
 
-      - name: Copy Official folder from old commit
+      - name: Copy folders from old commit
         run: |
           mkdir -p temp_restore
           cp -r Modules/Loon/Kelee temp_restore/
+          cp -r Modules/Surge/Kelee temp_restore/
+          cp -r Modules/Shadowrocket/Kelee temp_restore/
 
-      - name: Checkout back to main branch
+      - name: Switch back to main and restore folders
         run: |
           git checkout main
-          cp -r temp_restore Modules/Loon/Kelee/
+
+          rm -rf Modules/Loon/Kelee
+          rm -rf Modules/Surge/Kelee
+          rm -rf Modules/Shadowrocket/Kelee
+
+          cp -r temp_restore/Kelee Modules/Loon/
+          cp -r temp_restore/Kelee Modules/Surge/
+          cp -r temp_restore/Kelee Modules/Shadowrocket/
 
       - name: Commit restored files
         run: |
           git config --global user.name "${GITHUB_ACTOR}"
           git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-          git add Modules/Loon/Kelee
-          git commit -m "Restore Official folder from deleted commit"
+          git add.
+          git commit -m "Restore folder. from deleted commit"
           git push
