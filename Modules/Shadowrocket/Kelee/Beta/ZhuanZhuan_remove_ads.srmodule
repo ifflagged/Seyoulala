@@ -7,7 +7,7 @@
 #!openUrl=https://apps.apple.com/app/id1002355194
 #!tag=去广告
 #!loon_version=3.2.4(787)
-#!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
+#!homepage=https://pluginhub.kelee.one
 #!date=2025-05-13 15:17:08
 
 [URL Rewrite]
@@ -26,7 +26,10 @@ http-response-jq ^https:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzlogic\/mycontinentho
 http-response-jq ^https:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzlogic\/mycontinenthomepage\? 'delpaths([["respData","bmArea"]])'
 http-response-jq ^https:\/\/app\.zhuanzhuan\.com\/zzx\/transfer\/getConfigInfo\? 'delpaths([["respData","freeMarketTabLeadPop"]])'
 http-response-jq ^https:\/\/app\.zhuanzhuan\.com\/zzx\/transfer\/getConfigInfo\? 'delpaths([["respData","topOperations"]])'
+http-response-jq ^https:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzinfoshow\/getfeedflowinfo\? 'if .respData.userRed.campName == "OCD挂件" then del(.respData.userRed) else . end | .respData.infoData |= map(del(.rotateResource,.appRecommendResource,."cargoGroupCardV2"))'
+http-response-jq ^https:\/\/app\.zhuanzhuan\.com\/zz\/transfer\/getmymoretools$ 'walk(if type == "object" and .name == "免流量特权" then empty else . end) | del(.respData.groupList[] | select(.groupName == "活动参与" or .groupName == "金融工具"))'
 http-response-jq ^https:\/\/app\.zhuanzhuan\.com\/zz\/transfer\/getmyprofilev3$ 'delpaths([["respData","bmNewInfo"]])'
+http-response-jq ^https:\/\/app\.zhuanzhuan\.com\/zz\/transfer\/getmyprofilev3$ 'del(.respData.itemGroupList[].itemList[] | select(.name == "天天赚钱" or .name == "借钱")) | del(.respData.itemGroupList[] | select(.groupType == 15))'
 
 [Map Local]
 ^https:\/\/app\.zhuanzhuan\.com\/zzopen\/ptsimpleshow\/recommendbymyloveinfo\? data-type=text data="{"respCode":0,"errorMsg":"null","errMsg":""}" header="Content-Type:application/json"

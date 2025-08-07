@@ -7,7 +7,7 @@
 #!openUrl=https://apps.apple.com/app/id768082524
 #!tag=去广告
 #!loon_version=3.2.4(787)
-#!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
+#!homepage=https://pluginhub.kelee.one
 #!date=2025-05-13 15:17:08
 
 [Rule]
@@ -34,7 +34,10 @@ http-response-jq ^https:\/\/maicai\.api\.ddxq\.mobi\/homeApi\/categoriesNewDetai
 http-response-jq ^https:\/\/maicai\.api\.ddxq\.mobi\/tool\/getConfig\? 'delpaths([["data","ai_enter_config"]])'
 http-response-jq ^https?:\/\/maicai\.api\.ddxq\.mobi\/homeApi\/newDetails\? 'delpaths([["data","top_advert_data"]])'
 http-response-jq ^https?:\/\/maicai\.api\.ddxq\.mobi\/homeApi\/newDetails\? 'delpaths([["data","suspension"]])'
+http-response-jq ^https?:\/\/maicai\.api\.ddxq\.mobi\/homeApi\/newDetails\? '.data.list |= map(select(has("capsule_freedom_zone") | not))'
 http-response-jq ^https:\/\/maicai\.api\.ddxq\.mobi\/guide-service\/productApi\/productDetail\/info\? 'delpaths([["data","detail","chatEntry"]])'
+http-response-jq ^https?:\/\/maicai\.api\.ddxq\.mobi\/homeApi\/bottomNavi 'del(.data.adId?) | if (.data.bottom_list? | length > 0) then .data.bottom_list |= map(select(.type != "eatwhat")) else . end'
+http-response-jq ^https?:\/\/maicai\.api\.ddxq\.mobi\/homeApi\/homeFlowDetail 'walk(if type == "object" and has("list") then .list |= map(if type == "object" and has("multi_advertise_data_list") then del(.multi_advertise_data_list) else . end) else . end)'
 
 [MITM]
 hostname = %APPEND% 119.29.29.*, maicai.api.ddxq.mobi, user.api.ddxq.mobi

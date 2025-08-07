@@ -8,7 +8,7 @@
 #!tag=去广告
 #!system_version=15
 #!loon_version=3.2.4(787)
-#!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
+#!homepage=https://pluginhub.kelee.one
 #!date=2025-05-13 15:17:08
 
 [Rule]
@@ -26,7 +26,7 @@ body_rewrite_19 = type=http-response, pattern=^https:\/\/tiebac\.baidu\.com\/c\/
 
 body_rewrite_22 = type=http-response, pattern=^https:\/\/tiebac\.baidu\.com\/c\/f\/frs\/frsBottom$, script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22json-del%22%2C%5B%22card_activity%22%5D%5D%5D
 
-ProtoBuf处理 = type=http-response, pattern=^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/c\/f\/(frs\/(page|threadlist|generalTabList)|pb\/page|excellent\/personalized)\?cmd, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Tieba_remove_ads/tieba-proto.js, requires-body=true, binary-body-mode=true, timeout=10
+ProtoBuf处理 = type=http-response, pattern=^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/c\/f\/(frs\/(page|threadlist|generalTabList)|pb\/page|excellent\/personalized)\?cmd, script-path=https://kelee.one/Resource/JavaScript/Tieba/tieba-proto.js, requires-body=true, binary-body-mode=true, timeout=10
 
 [MITM]
 hostname = %APPEND% tiebac.baidu.com, tieba.baidu.com

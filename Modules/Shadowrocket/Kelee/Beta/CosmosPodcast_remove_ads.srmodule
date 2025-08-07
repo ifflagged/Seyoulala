@@ -7,7 +7,7 @@
 #!openUrl=https://apps.apple.com/app/id1488894313
 #!tag=去广告
 #!loon_version=3.2.4(787)
-#!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
+#!homepage=https://pluginhub.kelee.one
 #!date=2025-07-21 18:21:13
 
 [URL Rewrite]
@@ -15,6 +15,9 @@
 ^https:\/\/api\.xiaoyuzhoufm\.com\/v\d\/ai - reject-dict
 ^https:\/\/api\.xiaoyuzhoufm\.com\/v\d\/search\/get - reject-dict
 ^https?:\/\/api\.xiaoyuzhoufm\.com\/v\d\/category - reject-dict
+
+[Body Rewrite]
+http-response-jq ^https:\/\/api\.xiaoyuzhoufm\.com\/v1\/discovery-feed\/list '.data |= map(select(.type != "DISCOVERY_HEADER" and .type != "DISCOVERY_BANNER"))'
 
 [MITM]
 hostname = %APPEND% api.xiaoyuzhoufm.com

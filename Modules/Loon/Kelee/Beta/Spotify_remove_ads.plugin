@@ -7,7 +7,7 @@
 #!openUrl=https://apps.apple.com/app/id324684580
 #!tag=去广告
 #!loon_version=3.2.4(787)
-#!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
+#!homepage=https://pluginhub.kelee.one
 #!date=2025-07-04 16:36:19
 
 [Argument]
@@ -24,7 +24,7 @@ AND,((DOMAIN,guc3-spclient.spotify.com),(PROTOCOL,QUIC)),REJECT
 ^https?:\/\/(gae2-spclient|guc3-spclient|spclient\.wg)\.spotify\.com(?::443)?\/artistview\/v1\/artist\/(.*)&platform=iphone https://$1.spotify.com/artistview/v1/artist/$2&platform=ipad header
 
 [Script]
-http-response ^https?:\/\/(?:gae2-spclient|guc3-spclient|spclient\.wg)\.spotify\.com(?::443)?\/(?:bootstrap|user-customization-service) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Spotify_remove_ads/Spotify_remove_ads.js, requires-body=true, binary-body-mode=true, timeout=5, tag=Protobuf处理, argument="[{tab},{useractivity}]"
+http-response ^https?:\/\/(?:gae2-spclient|guc3-spclient|spclient\.wg)\.spotify\.com(?::443)?\/(?:bootstrap|user-customization-service) script-path=https://kelee.one/Resource/JavaScript/Spotify/Spotify_remove_ads.js, requires-body=true, binary-body-mode=true, timeout=5, tag=Protobuf处理, argument="[{tab},{useractivity}]"
 
 [MITM]
 hostname = gae2-spclient.spotify.com, guc3-spclient.spotify.com, spclient.wg.spotify.com

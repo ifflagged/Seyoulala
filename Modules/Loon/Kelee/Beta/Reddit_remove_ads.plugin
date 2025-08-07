@@ -7,11 +7,11 @@
 #!openUrl=https://apps.apple.com/app/id1064216828
 #!tag=去广告
 #!loon_version=3.2.9(837)
-#!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
+#!homepage=https://pluginhub.kelee.one
 #!date=2025-05-13 15:17:08
 
 [Rewrite]
-^https?:\/\/gql(-fed)?\.reddit\.com response-body-json-jq jq-path="https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Reddit_remove_ads/Reddit_remove_ads.jq"
+^https?:\/\/gql(-fed)?\.reddit\.com response-body-json-jq jq-path="https://kelee.one/Resource/JQLang/Reddit/Reddit_remove_ads.jq"
 
 [MITM]
 hostname = gql.reddit.com, gql-fed.reddit.com

@@ -7,7 +7,7 @@
 #!openUrl=https://apps.apple.com/app/id1426252715
 #!tag=去广告
 #!loon_version=3.2.4(787)
-#!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
+#!homepage=https://pluginhub.kelee.one
 #!date=2025-05-13 15:17:08
 
 [URL Rewrite]
@@ -23,9 +23,9 @@
 ^https:\/\/manga\.bilibili\.com\/twirp\/comic\.v\d\.Comic\/ListFlash - reject-dict
 
 [Script]
-移除顶部标签 = type=http-response, pattern=^https:\/\/manga\.bilibili\.com\/twirp\/comic\.v\d\.Comic\/GetClassPageAllTabs, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/BiliComic_remove_ads/BiliComic_remove_ads.js, requires-body=true
+移除顶部标签 = type=http-response, pattern=^https:\/\/manga\.bilibili\.com\/twirp\/comic\.v\d\.Comic\/GetClassPageAllTabs, script-path=https://kelee.one/Resource/JavaScript/BiliComic/BiliComic_remove_ads.js, requires-body=true
 
-精简我的页面 = type=http-response, pattern=^https:\/\/manga\.bilibili\.com\/twirp\/user\.v\d\.User\/UCenterConf, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/BiliComic_remove_ads/BiliComic_remove_ads.js, requires-body=true
+精简我的页面 = type=http-response, pattern=^https:\/\/manga\.bilibili\.com\/twirp\/user\.v\d\.User\/UCenterConf, script-path=https://kelee.one/Resource/JavaScript/BiliComic/BiliComic_remove_ads.js, requires-body=true
 
 [MITM]
 hostname = %APPEND% manga.bilibili.com

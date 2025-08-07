@@ -7,7 +7,7 @@
 #!openUrl=https://apps.apple.com/app/id570610859
 #!tag=去广告
 #!loon_version=3.2.4(787)
-#!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
+#!homepage=https://pluginhub.kelee.one
 #!date=2025-05-13 15:17:08
 
 [Argument]
@@ -19,7 +19,7 @@ removeBannerSwitch=switch,"false","true",tag=移除轮播图, desc=移除轮播�
 ^https?:\/\/dat\.ruanmei\.com\/ithome\/money\/acd\.json$ - reject
 
 [Script]
-http-response ^https:\/\/napi\.ithome\.com\/api\/(?:news\/index|topmenu\/getfeeds\?|api\/douyin\/GetLiveInfo) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/IThome_remove_ads/IThome_remove_ads.js, requires-body=true, tag=IT之家去广告, argument="[{removeTopSwitch},{removeBannerSwitch}]"
+http-response ^https:\/\/napi\.ithome\.com\/api\/(?:news\/index|topmenu\/getfeeds\?|api\/douyin\/GetLiveInfo) script-path=https://kelee.one/Resource/JavaScript/IThome/IThome_remove_ads.js, requires-body=true, tag=IT之家去广告, argument="[{removeTopSwitch},{removeBannerSwitch}]"
 
 [MITM]
 hostname = napi.ithome.com, api.zuihuimai.com, dat.ruanmei.com

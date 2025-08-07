@@ -6,7 +6,7 @@
 
 #!tag=去广告
 #!loon_version=3.2.4(787)
-#!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
+#!homepage=https://pluginhub.kelee.one
 #!date=2025-07-16 02:25:05
 
 [Rule]
@@ -36,7 +36,6 @@ DOMAIN,mallapi2.qinlinkeji.com,REJECT
 DOMAIN,open-pixon.ads-pixiv.net,REJECT
 
 [Rewrite]
-^https:\/\/home\.mi\.com\/cgi-op\/api\/v1\/recommendation\/myTab\? response-body-json-del data.banners
 ^https?:\/\/cmds\.omesoft\.com\/HypnotistWS\.asmx response-body-replace-regex <GetADResult>\.\*\?<\/GetADResult> <GetADResult>{"ret":0,"msg":"正常","err_code":0,"data":{"ad":[]}}</GetADResult>
 ^https?:\/\/api\.fenxianglife\.com\/njia\/index\/popup\/v2 response-body-json-jq '.data.list=[]'
 ^https?:\/\/api-access\.pangolin-sdk-toutiao\.com\/api\/ad\/union\/sdk - reject

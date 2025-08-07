@@ -7,7 +7,7 @@
 #!openUrl=https://apps.apple.com/app/id899247664
 #!tag=定时任务
 #!loon_version=3.2.4(787)
-#!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
+#!homepage=https://pluginhub.kelee.one
 #!date=2025-05-13 15:17:08
 #!arguments=CaptureAccountToken:false,CaptureAppID:false,TimingParameters:"0 0/2 * * * ?"
 
@@ -15,11 +15,11 @@
 DOMAIN,testflight.apple.com,PROXY
 
 [Script]
-获取账号令牌 = type=http-request, pattern=^https?:\/\/testflight\.apple\.com\/v3\/accounts\/.*\/apps$, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Auto_Join_TF/TF_keys.js
+获取账号令牌 = type=http-request, pattern=^https?:\/\/testflight\.apple\.com\/v3\/accounts\/.*\/apps$, script-path=https://kelee.one/Resource/JavaScript/TestFlight/TF_keys.js
 
-应用ID捕获 = type=http-request, pattern=^https://testflight.apple.com/join/(.*), script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Auto_Join_TF/TF_keys.js
+应用ID捕获 = type=http-request, pattern=^https://testflight.apple.com/join/(.*), script-path=https://kelee.one/Resource/JavaScript/TestFlight/TF_keys.js
 
-自动加入TF = type=cron, cronexp={{{TimingParameters}}}, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/Auto_Join_TF/Auto_join_TF.js, timeout=180
+自动加入TF = type=cron, cronexp={{{TimingParameters}}}, script-path=https://kelee.one/Resource/JavaScript/TestFlight/Auto_join_TF.js, timeout=180
 
 [MITM]
 hostname = %APPEND% testflight.apple.com

@@ -7,7 +7,7 @@
 #!openUrl=https://apps.apple.com/app/id746925035
 #!tag=去广告
 #!loon_version=3.2.4(787)
-#!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
+#!homepage=https://pluginhub.kelee.one
 #!date=2025-05-13 15:17:08
 
 [Script]
@@ -19,7 +19,7 @@ body_rewrite_15 = type=http-response, pattern=^https:\/\/iosapi\.peiyinxiu\.com\
 
 body_rewrite_16 = type=http-response, pattern=^https:\/\/iosapi\.peiyinxiu\.com\/api\/Union\/HomeData, script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22json-del%22%2C%5B%22obj.data%22%5D%5D%5D
 
-移除首页底部弹窗 = type=http-response, pattern=^https:\/\/iosapi\.peiyinxiu\.com\/Api\/Film\/GetConfigValue, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/DubbingShow_remove_ads/DubbingShow_remove_ads.js, requires-body=true
+移除首页底部弹窗 = type=http-response, pattern=^https:\/\/iosapi\.peiyinxiu\.com\/Api\/Film\/GetConfigValue, script-path=https://kelee.one/Resource/JavaScript/DubbingShow/DubbingShow_remove_ads.js, requires-body=true
 
 [MITM]
 hostname = %APPEND% iosapi.peiyinxiu.com

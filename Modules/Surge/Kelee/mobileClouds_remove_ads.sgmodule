@@ -7,13 +7,13 @@
 #!openUrl=https://apps.apple.com/app/id1618137934
 #!tag=去广告
 #!loon_version=3.2.4(787)
-#!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
+#!homepage=https://pluginhub.kelee.one
 #!date=2025-05-13 15:17:08
 
 [Script]
-移除开屏广告 = type=http-response, pattern=^https:\/\/jzts\.cmpassport\.com\/personalized\/getPushContent, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/mobileClouds_remove_ads/mobileClouds_remove_ads.js, requires-body=true
+移除开屏广告 = type=http-response, pattern=^https:\/\/jzts\.cmpassport\.com\/personalized\/getPushContent, script-path=https://kelee.one/Resource/JavaScript/mobileClouds/mobileClouds_remove_ads.js, requires-body=true
 
-移除应用内广告 = type=http-response, pattern=^https:\/\/ad\.mcloud\.139\.com\/advertapi\/adv-filter\/, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/mobileClouds_remove_ads/mobileClouds_remove_ads.js, requires-body=true
+移除应用内广告 = type=http-response, pattern=^https:\/\/ad\.mcloud\.139\.com\/advertapi\/adv-filter\/, script-path=https://kelee.one/Resource/JavaScript/mobileClouds/mobileClouds_remove_ads.js, requires-body=true
 
 [MITM]
 hostname = %APPEND% jzts.cmpassport.com, ad.mcloud.139.com

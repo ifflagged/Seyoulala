@@ -7,7 +7,7 @@
 #!openUrl=https://apps.apple.com/app/id1605585211
 #!tag=去广告
 #!loon_version=3.2.4(787)
-#!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
+#!homepage=https://pluginhub.kelee.one
 #!date=2025-05-18 01:29:34
 
 [Map Local]
@@ -34,7 +34,7 @@ body_rewrite_17 = type=http-response, pattern=^https:\/\/beta-luna\.douyin\.com\
 
 body_rewrite_20 = type=http-response, pattern=^https:\/\/beta-luna\.douyin\.com\/luna\/card\?, script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22json-del%22%2C%5B%22preview_guide%22%5D%5D%5D
 
-移除播放页面视频流 = type=http-response, pattern=^https:\/\/beta-luna\.douyin\.com\/luna\/me\/recently-played-media\?, script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/SodaMusic_remove_ads/SodaMusic_remove_ads.js, requires-body=true
+移除播放页面视频流 = type=http-response, pattern=^https:\/\/beta-luna\.douyin\.com\/luna\/me\/recently-played-media\?, script-path=https://kelee.one/Resource/JavaScript/SodaMusic/SodaMusic_remove_ads.js, requires-body=true
 
 [MITM]
 hostname = %APPEND% webcast-open.douyin.com, beta-luna.douyin.com, api.qishui.com

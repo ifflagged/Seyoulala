@@ -7,7 +7,7 @@
 #!openUrl=https://apps.apple.com/app/id710189980
 #!tag=去广告
 #!loon_version=3.2.4(787)
-#!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
+#!homepage=https://pluginhub.kelee.one
 #!date=2025-05-13 15:17:08
 
 [Rewrite]
@@ -16,9 +16,9 @@
 ^https:\/\/zgrb\.epicc\.com\.cn\/G-HAPP\/a\/config\/guessYouLike\/v3 - reject-dict
 
 [Script]
-http-response ^https:\/\/zgrb\.epicc\.com\.cn\/G-HAPP\/a\/config\/homeInit\/v3 script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/PICC_Insurance_remove_ads/PICC_Insurance_remove_ads.js, requires-body=true, tag=移除主页推广
+http-response ^https:\/\/zgrb\.epicc\.com\.cn\/G-HAPP\/a\/config\/homeInit\/v3 script-path=https://kelee.one/Resource/JavaScript/PICC_Insurance/PICC_Insurance_remove_ads.js, requires-body=true, tag=移除主页推广
 
-http-response ^https:\/\/zgrb\.epicc\.com\.cn\/G-HAPP\/mpageconfig\/myPageConfigList\/v3 script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/PICC_Insurance_remove_ads/PICC_Insurance_remove_ads.js, requires-body=true, tag=移除我的页面推广
+http-response ^https:\/\/zgrb\.epicc\.com\.cn\/G-HAPP\/mpageconfig\/myPageConfigList\/v3 script-path=https://kelee.one/Resource/JavaScript/PICC_Insurance/PICC_Insurance_remove_ads.js, requires-body=true, tag=移除我的页面推广
 
 [MITM]
 hostname = zgrb.epicc.com.cn
