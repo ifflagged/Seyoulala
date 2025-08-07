@@ -41,7 +41,7 @@ jobs:
           find temp_restore/Loon/Kelee -type f -name '*.plugin' -exec cp {} Modules/Loon/Kelee/ \;
 
           mkdir -p Modules/Shadowrocket/Kelee
-          find temp_restore/Shadowrocket/Kelee -type f -name '*.srmodule' -exec cp {} Modules/Shadowrocket/Kelee/
+          find temp_restore/Shadowrocket/Kelee -type f -name '*.srmodule' -exec cp {} Modules/Shadowrocket/Kelee/ \;
 
       - name: Remove temp_restore folder
         run: rm -rf temp_restore
