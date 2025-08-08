@@ -15,7 +15,7 @@ DOMAIN, loon-plugin.vercel.app, PROXY
 DOMAIN, raw.githubusercontent.com, PROXY
 
 [Script]
-http-request ^https?:\/\/xn--ck8h\.com script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/Kelee/LoonGallery/gallery.js, requires-body=true, timeout=120, tag=Loon插件仓库
+http-request ^https?:\/\/xn--ck8h\.com script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/LoonGallery/gallery.js, requires-body=true, timeout=120, tag=Loon插件仓库
 
 [MitM]
 hostname=xn--ck8h.com
