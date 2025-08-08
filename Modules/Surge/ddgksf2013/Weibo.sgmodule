@@ -15,6 +15,12 @@ DOMAIN-SUFFIX,api.touch-moblie.com,REJECT
 ^https?:\/\/sdkapp\.uve\.weibo\.com\/interface\/sdk\/sdkconfig\.php - reject
 
 [Map Local]
+# > 微博_首页信息流可能感兴趣推广@ddgksf2013
+^https?:\/\/api\.weibo\.cn\/\d\/statuses\/container_positive data-type=text data=" " status-code=200
+
+# > 微博_首页顶部弹窗@ddgksf2013
+^https?:\/\/api\.weibo\.cn\/\d\/push\/info data-type=text data=" " status-code=200
+
 # > 微博_启动感兴趣弹窗@ddgksf2013
 ^https?:\/\/api\.weibo\.cn\/.*account\/recommend_interesttags data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 

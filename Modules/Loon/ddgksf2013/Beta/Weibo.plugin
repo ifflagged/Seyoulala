@@ -10,6 +10,11 @@ DOMAIN,sdkapp.uve.weibo.com,DIRECT
 DOMAIN-SUFFIX,api.touch-moblie.com,REJECT
 
 [Rewrite]
+^https?:\/\/api\.weibo\.cn\/\d\/ug\/checkin\/stream response-body-json-jq '.items |= map(select(.category != "card"))'
+# > 微博_首页信息流可能感兴趣推广@ddgksf2013
+^https?:\/\/api\.weibo\.cn\/\d\/statuses\/container_positive - reject-200
+# > 微博_首页顶部弹窗@ddgksf2013
+^https?:\/\/api\.weibo\.cn\/\d\/push\/info - reject-200
 # > 微博_启动感兴趣弹窗@ddgksf2013
 ^https?:\/\/api\.weibo\.cn\/.*account\/recommend_interesttags - reject-dict
 # > 微博_首页顶部直播推荐Tab@ddgksf2013
