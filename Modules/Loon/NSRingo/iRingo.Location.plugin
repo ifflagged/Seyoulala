@@ -17,7 +17,7 @@ DOMAIN,gspe1-ssl.ls.apple.com,DIRECT
 
 [Script]
 # 📍 Country Code
-http-response ^https?:\/\/gspe1-ssl\.ls\.apple\.com\/pep\/gcc script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/NSRingo/iRingo.Location/response.bundle.js, requires-body=1, tag=📍 Location.pep.gcc.response, argument=[{PEP.GCC}]
+http-response ^https?:\/\/gspe1-ssl\.ls\.apple\.com\/pep\/gcc script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/NSRingo/iRingo.Location/response.bundle.js, requires-body=1, tag=📍 Location.pep.gcc.response, argument=[{PEP.GCC}]
 
 [MITM]
 hostname = gspe1-ssl.ls.apple.com
