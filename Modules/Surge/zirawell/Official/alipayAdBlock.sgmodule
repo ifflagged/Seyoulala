@@ -8,7 +8,7 @@
 ^https?:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.film\.life\.(popup|aristotle)\.get data-type=text data="{}" status-code=200
 
 [Script]
-eleme = type=http-response,pattern=^https?:\/\/waimai-guide\.ele\.me\/gw\/mtop\.alsc\.eleme\.miniapp\.homepage,requires-body=1,max-size=0,script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zirawell/Official/alipayAdBlock/eleme.js
+eleme = type=http-response,pattern=^https?:\/\/waimai-guide\.ele\.me\/gw\/mtop\.alsc\.eleme\.miniapp\.homepage,requires-body=1,max-size=0,script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zirawell/Official/alipayAdBlock/eleme.js
 
 [MITM]
 hostname= %APPEND% guide-acs.m.taobao.com, mdn.alicdn.com, waimai-guide.ele.me, guide-acs.m.taobao.com

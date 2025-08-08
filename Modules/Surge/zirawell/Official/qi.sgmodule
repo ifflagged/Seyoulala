@@ -11,7 +11,7 @@
 #!date=2025-07-08
 
 [Map Local]
-^https?:\/\/apps\.teamair\.cn\/app\/version data-type=file data="https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zirawell/Official/qi/qi.json"
+^https?:\/\/apps\.teamair\.cn\/app\/version data-type=file data="https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zirawell/Official/qi/qi.json"
 
 [MITM]
 hostname= %APPEND% apps.teamair.cn

@@ -11,8 +11,8 @@
 #!date=2025-07-08
 
 [Script]
-ppx = type=http-response,pattern=^https?:\/\/.+\.pipix\.com\/bds\/feed\/channel_list\/,requires-body=1,max-size=0,script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zirawell/Official/ppx/ppx.js
-ppx = type=http-response,pattern=^https?:\/\/.+\.pipix\.com\/bds\/user\/check_in\/,requires-body=1,max-size=0,script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zirawell/Official/ppx/ppx.js
+ppx = type=http-response,pattern=^https?:\/\/.+\.pipix\.com\/bds\/feed\/channel_list\/,requires-body=1,max-size=0,script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zirawell/Official/ppx/ppx.js
+ppx = type=http-response,pattern=^https?:\/\/.+\.pipix\.com\/bds\/user\/check_in\/,requires-body=1,max-size=0,script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zirawell/Official/ppx/ppx.js
 
 [MITM]
 hostname= %APPEND% *.pipix.com

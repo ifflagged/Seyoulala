@@ -1,7 +1,7 @@
 # > 掌上公交<微信小程序> - MYGOLBS
 
 [Script]
-mygolbs = type=http-response,pattern=^https?:\/\/wx\.mygolbs\.com\/WxBusServer\/ApiData\.do,requires-body=1,max-size=0,script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zirawell/Official/mygolbs/zsgj.js
+mygolbs = type=http-response,pattern=^https?:\/\/wx\.mygolbs\.com\/WxBusServer\/ApiData\.do,requires-body=1,max-size=0,script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zirawell/Official/mygolbs/zsgj.js
 
 [MITM]
 hostname= %APPEND% wx.mygolbs.com

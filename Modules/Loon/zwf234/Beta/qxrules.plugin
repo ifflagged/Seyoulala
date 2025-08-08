@@ -159,489 +159,489 @@
 
 [Script]
 #  扫描全能王 解锁黄金会员    *.camscanner.com, *.intsig.net
-http-response ^https:\/\/.*\.(intsig\.net|camscanner\.com) script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/CamScanner.js, requires-body=true, timeout=60, tag=CamScanner
+http-response ^https:\/\/.*\.(intsig\.net|camscanner\.com) script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/CamScanner.js, requires-body=true, timeout=60, tag=CamScanner
 
 # > Soul 破解部分超星特权     api-pay.soulapp.cn, api-user.soulapp.cn, api-chat.soulapp.cn, 8.210.3.170, 47.96.7.91, 47.96.11.46, 47.96.20.45, 47.98.54.106, 47.98.137.249, 114.215.255.94, 118.31.7.235, 118.31.112.221, 120.55.55.115, 120.55.62.124, 121.196.197.147, 121.196.203.183
-http-response ^https?:\/\/.+(\/privilege\/supervip\/status|\/show\/superVIP\/detail|\/meet\/invisible\/saveByUserId|\/special\/concern\/setting|\/chat\/history\/setting|\/privilege\/bubble\/buy|\/soul-coin\/total|\/user\/queryInvisibleSetting|\/chat\/limitInfo) script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/SoulSuperVipCrack.js, requires-body=true, timeout=60, tag=SoulSuperVipCrack
+http-response ^https?:\/\/.+(\/privilege\/supervip\/status|\/show\/superVIP\/detail|\/meet\/invisible\/saveByUserId|\/special\/concern\/setting|\/chat\/history\/setting|\/privilege\/bubble\/buy|\/soul-coin\/total|\/user\/queryInvisibleSetting|\/chat\/limitInfo) script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/SoulSuperVipCrack.js, requires-body=true, timeout=60, tag=SoulSuperVipCrack
 
 # > WPS 解锁超级会员 Pro      *.wps.cn
-http-response ^https?:\/\/(account|drive|vas|userinfo.docer)\.wps\.cn\/(.*api\/(v3\/(mine\/vips|spaces)|users\/\d+\/overview|v1\/list_purchase_info)|user\/v1\/vip_dl_times) script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/WPSuperVIPuserCrack.js, requires-body=true, timeout=60, tag=WPSuperVIPuserCrack
+http-response ^https?:\/\/(account|drive|vas|userinfo.docer)\.wps\.cn\/(.*api\/(v3\/(mine\/vips|spaces)|users\/\d+\/overview|v1\/list_purchase_info)|user\/v1\/vip_dl_times) script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/WPSuperVIPuserCrack.js, requires-body=true, timeout=60, tag=WPSuperVIPuserCrack
 
-http-request ^https?:\/\/(mobile|client|vas|download)(\.docer)?\.wps.cn\/(android\/mb\/buy_info|api\/v1\/mobile\/mb\/detail|query\/api\/v1\/list_privilege_info|download\/adapter\/v1\/mb) script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/WPSuperVIPowerCrack.js, timeout=60, tag=WPSuperVIPowerCrack
+http-request ^https?:\/\/(mobile|client|vas|download)(\.docer)?\.wps.cn\/(android\/mb\/buy_info|api\/v1\/mobile\/mb\/detail|query\/api\/v1\/list_privilege_info|download\/adapter\/v1\/mb) script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/WPSuperVIPowerCrack.js, timeout=60, tag=WPSuperVIPowerCrack
 
 # > 网易云音乐解锁黑胶会员      *music.163.com, 115.236.121.4, 115.236.118.34, 115.238.119.68, 183.136.182.19
-http-request ^https?:\/\/.*\/eapi\/(music|s(ong|ingle|earch)|album|link|zone|content|p(laylist|rivilege|laymode|urchased)|r(esni|nca)che|vip(auth|pro|(new)?center)|music-vip-membership).+ script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/NeteaseMusicVipCrack.js, timeout=60, tag=NeteaseMusicVipCrack
+http-request ^https?:\/\/.*\/eapi\/(music|s(ong|ingle|earch)|album|link|zone|content|p(laylist|rivilege|laymode|urchased)|r(esni|nca)che|vip(auth|pro|(new)?center)|music-vip-membership).+ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/NeteaseMusicVipCrack.js, timeout=60, tag=NeteaseMusicVipCrack
 
 # 搜索页
-http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/search\/hot_list\?? script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/xiaohongshu.js, requires-body=true, timeout=60, tag=xiaohongshu
+http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/search\/hot_list\?? script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/xiaohongshu.js, requires-body=true, timeout=60, tag=xiaohongshu
 
-http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v4\/search\/(hint|trending)\? script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/xiaohongshu.js, requires-body=true, timeout=60, tag=xiaohongshu
+http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v4\/search\/(hint|trending)\? script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/xiaohongshu.js, requires-body=true, timeout=60, tag=xiaohongshu
 
 # 开屏广告
-http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/system_service\/config\? script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/xiaohongshu.js, requires-body=true, timeout=60, tag=xiaohongshu
+http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/system_service\/config\? script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/xiaohongshu.js, requires-body=true, timeout=60, tag=xiaohongshu
 
-http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v2\/system_service\/splash_config$ script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/xiaohongshu.js, requires-body=true, timeout=60, tag=xiaohongshu
+http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v2\/system_service\/splash_config$ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/xiaohongshu.js, requires-body=true, timeout=60, tag=xiaohongshu
 
 # 信息流
-http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v6\/homefeed\? script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/xiaohongshu.js, requires-body=true, timeout=60, tag=xiaohongshu
+http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v6\/homefeed\? script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/xiaohongshu.js, requires-body=true, timeout=60, tag=xiaohongshu
 
-http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v[23]\/note\/(video)?feed\? script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/replace-body.js, requires-body=true, timeout=30, tag=replaceBody, argument=%22disable_watermark%22%3Afalse%2C-%3E%22disable_watermark%22%3Atrue%2C
+http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v[23]\/note\/(video)?feed\? script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/replace-body.js, requires-body=true, timeout=30, tag=replaceBody, argument=%22disable_watermark%22%3Afalse%2C-%3E%22disable_watermark%22%3Atrue%2C
 
 # soul解除送礼私聊限制     api-chat.soulapp.cn
-http-response ^https:\/\/api-chat\.soulapp\.cn\/chat\/limitInfo script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/Soul.js, requires-body=true, timeout=60, tag=Soul
+http-response ^https:\/\/api-chat\.soulapp\.cn\/chat\/limitInfo script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/Soul.js, requires-body=true, timeout=60, tag=Soul
 
-http-response ^https?:\/\/(h5|api)\.xiuxiu\.meitu\.com\/v\d\/(h\d\/vip|vip|user)\/ script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/mtxx.js, requires-body=true, timeout=60, tag=mtxx
+http-response ^https?:\/\/(h5|api)\.xiuxiu\.meitu\.com\/v\d\/(h\d\/vip|vip|user)\/ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/mtxx.js, requires-body=true, timeout=60, tag=mtxx
 
 # 滴答清单   dida365.com
-http-response ^https:\/\/dida365\.com\/api\/v2\/user\/status script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/ddqd.js, requires-body=true, timeout=60, tag=ddqd
+http-response ^https:\/\/dida365\.com\/api\/v2\/user\/status script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/ddqd.js, requires-body=true, timeout=60, tag=ddqd
 
 # 使用方法 ：先进app，在开脚本   ypmnkbb.saejeuj.com, fufxtyc.bytebwq.com, lcbnejx.dirptev.com, gcyivjc.qrneryt.com
-http-request ^https?:\/\/.*\/api\/app\/media\/m3u8\/.*\.m3u8 script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/mdsqallcrack.js, timeout=60, tag=mdsqallcrack
+http-request ^https?:\/\/.*\/api\/app\/media\/m3u8\/.*\.m3u8 script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/mdsqallcrack.js, timeout=60, tag=mdsqallcrack
 
 # 沙拉祝频——解锁订阅   api.saladvideo.com
-http-response http:\/\/api\.saladvideo\.com\/app\/v1\/user script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/slsp.js, requires-body=true, timeout=60, tag=slsp
+http-response http:\/\/api\.saladvideo\.com\/app\/v1\/user script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/slsp.js, requires-body=true, timeout=60, tag=slsp
 
 # 爱剪辑-视屏剪辑&视屏编辑vlog制作 解锁会员(需要登录)     api.open.loveclip.site
-http-response ^https?:\/\/api\.open\.loveclip\.site\/UserInfo\/(UserPersonalCoreAsync|GetUserDetail) script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/ajj.js, requires-body=true, timeout=60, tag=ajj
+http-response ^https?:\/\/api\.open\.loveclip\.site\/UserInfo\/(UserPersonalCoreAsync|GetUserDetail) script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/ajj.js, requires-body=true, timeout=60, tag=ajj
 
 # 聊天话术——解锁会员     api.chuangqi.store
-http-response http:\/\/api\.chuangqi\.store\/ script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/lths.js, requires-body=true, timeout=60, tag=lths
+http-response http:\/\/api\.chuangqi\.store\/ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/lths.js, requires-body=true, timeout=60, tag=lths
 
 # 中华诗词库——解锁VIP
-http-response http:\/\/api\.chuangqi\.store\/ script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/zhsck.js, requires-body=true, timeout=60, tag=zhsck
+http-response http:\/\/api\.chuangqi\.store\/ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/zhsck.js, requires-body=true, timeout=60, tag=zhsck
 
 #itranslate修复Pro    ssl-api.itranslateapp.com
-http-request https://ssl-api.itranslateapp.com/accounts/v4/subscriptions/verify/ios script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/iTranslate.js, requires-body=true, timeout=60, tag=iTranslate
+http-request https://ssl-api.itranslateapp.com/accounts/v4/subscriptions/verify/ios script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/iTranslate.js, requires-body=true, timeout=60, tag=iTranslate
 
 # effie解锁订阅    api.effie.pro, api.effie.co
-http-response ^https://api.effie.(co|pro)/api/v1/user/member script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/effie.js, requires-body=true, timeout=60, tag=effie
+http-response ^https://api.effie.(co|pro)/api/v1/user/member script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/effie.js, requires-body=true, timeout=60, tag=effie
 
 # 灵感足迹高级解锁     backend.getdrafts.com
-http-response ^https://backend.getdrafts.com/api/v1/verification/verify_receipt script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/Drafts.js, requires-body=true, timeout=60, tag=Drafts
+http-response ^https://backend.getdrafts.com/api/v1/verification/verify_receipt script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/Drafts.js, requires-body=true, timeout=60, tag=Drafts
 
 # dayone 日记高级版    dayone.app
-http-response ^https:\/\/dayone\.app\/api\/v2\/users script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/dayone.js, requires-body=true, timeout=60, tag=dayone
+http-response ^https:\/\/dayone\.app\/api\/v2\/users script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/dayone.js, requires-body=true, timeout=60, tag=dayone
 
 # flightradar24高级解锁--Eric   mobile.flightradar24.com
-http-response ^https://mobile.flightradar24.com/mobile/(user-session|subscribe) script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/flightradar24.js, requires-body=true, timeout=60, tag=flightradar24
+http-response ^https://mobile.flightradar24.com/mobile/(user-session|subscribe) script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/flightradar24.js, requires-body=true, timeout=60, tag=flightradar24
 
 # 美颜相机解锁vip    *.meiyan.com, *.meitu.com
-http-response ^https://.*.mei(yan|tu).com\/.* script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/myCamera.js, requires-body=true, timeout=60, tag=myCamera
+http-response ^https://.*.mei(yan|tu).com\/.* script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/myCamera.js, requires-body=true, timeout=60, tag=myCamera
 
 # 萌猪记账    xrckeji.com
-http-response ^https:\/\/xrckeji\.com\/itally\/app\/user\/query script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/mzjz.js, requires-body=true, timeout=60, tag=mzjz
+http-response ^https:\/\/xrckeji\.com\/itally\/app\/user\/query script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/mzjz.js, requires-body=true, timeout=60, tag=mzjz
 
 # 小习惯   xianbeikeji.com
-http-response ^https:\/\/xianbeikeji\.com\/daily\/app\/user\/query script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/XXG.js, requires-body=true, timeout=60, tag=XXG
+http-response ^https:\/\/xianbeikeji\.com\/daily\/app\/user\/query script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/XXG.js, requires-body=true, timeout=60, tag=XXG
 
 # 布丁锁屏     creen-lock.51wnl-cq.com
-http-request https?:\/\/screen-lock\.51wnl-cq\.com\/userApi\/saveUser script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/budingsuoping.js, timeout=60, tag=budingsuoping
+http-request https?:\/\/screen-lock\.51wnl-cq\.com\/userApi\/saveUser script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/budingsuoping.js, timeout=60, tag=budingsuoping
 
 #网易蜗牛读书+解锁VIP     p.du.163.com
-http-response ^https:\/\/p\.du\.163\.com\/gain\/readtime\/info\.json script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/yywnds.js, requires-body=true, timeout=60, tag=yywnds
+http-response ^https:\/\/p\.du\.163\.com\/gain\/readtime\/info\.json script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/yywnds.js, requires-body=true, timeout=60, tag=yywnds
 
 # TopWidgets-小组件+解锁订阅    top-widgets-api.xiaozujian.com
-http-response ^https:\/\/top-widgets-api\.xiaozujian\.com\/api\/app\/config\/userConfig script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/widgets.js, requires-body=true, timeout=60, tag=widgets
+http-response ^https:\/\/top-widgets-api\.xiaozujian\.com\/api\/app\/config\/userConfig script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/widgets.js, requires-body=true, timeout=60, tag=widgets
 
 # 白描-OCR 文字识别与文件扫描   解锁黄金会员    baimiao.uzero.cn
-http-response ^https?:\/\/baimiao\.uzero\.cn\/api\/v\d\.user\/appLaunchWithUser$ script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/baimiao.js, requires-body=true, timeout=60, tag=baimiao
+http-response ^https?:\/\/baimiao\.uzero\.cn\/api\/v\d\.user\/appLaunchWithUser$ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/baimiao.js, requires-body=true, timeout=60, tag=baimiao
 
 # 迅雷不限速     xluser-ssl.xunlei.com
-http-response https://xluser-ssl.xunlei.com/xluser.core.login/v3/getuserinfo script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/xunlei.js, requires-body=true, timeout=60, tag=xunlei
+http-response https://xluser-ssl.xunlei.com/xluser.core.login/v3/getuserinfo script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/xunlei.js, requires-body=true, timeout=60, tag=xunlei
 
 # 搜图神器+解锁VIP   wallpaper.soutushenqi.com
-http-response http:\/\/wallpaper\.soutushenqi\.com\/api\/v1\/account script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/stsq.js, requires-body=true, timeout=60, tag=stsq
+http-response http:\/\/wallpaper\.soutushenqi\.com\/api\/v1\/account script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/stsq.js, requires-body=true, timeout=60, tag=stsq
 
 # TestFlight账户管理脚本     testflight.apple.com
-http-request ^https:\/\/testflight\.apple\.com\/v\d\/(app|account|invite)s\/ script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/TestFlightAccount.js, requires-body=true, timeout=60, tag=TestFlightAccount
+http-request ^https:\/\/testflight\.apple\.com\/v\d\/(app|account|invite)s\/ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/TestFlightAccount.js, requires-body=true, timeout=60, tag=TestFlightAccount
 
 # Spotify     spclient.wg.spotify.com
-http-response ^https:\/\/spclient\.wg\.spotify\.com\/(bootstrap\/v1\/bootstrap|user-customization-service\/v1\/customize)$ script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/spotify-proto.js, requires-body=true, binary-body-mode=true, timeout=60, tag=spotify-proto
+http-response ^https:\/\/spclient\.wg\.spotify\.com\/(bootstrap\/v1\/bootstrap|user-customization-service\/v1\/customize)$ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/spotify-proto.js, requires-body=true, binary-body-mode=true, timeout=60, tag=spotify-proto
 
 # aktv      aktv111.com
-http-response ^http:\/\/aktv111\.com\/api\/user.* script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/aktv.js, requires-body=true, timeout=60, tag=aktv
+http-response ^http:\/\/aktv111\.com\/api\/user.* script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/aktv.js, requires-body=true, timeout=60, tag=aktv
 
 #  解锁PlaneFinder高级订阅    app-live.planefinder.net
-http-response ^https?:\/\/app\-live\.planefinder\.net\/api\/v\d+\/account\/\w+\/login script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/PlaneFinder.js, requires-body=true, timeout=60, tag=PlaneFinder
+http-response ^https?:\/\/app\-live\.planefinder\.net\/api\/v\d+\/account\/\w+\/login script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/PlaneFinder.js, requires-body=true, timeout=60, tag=PlaneFinder
 
 # 脚本功能：TIDAL解锁HiFi Plus   软件版本：2.48.0【美区下载】   下载地址：http://t.cn/A662gqIO
-http-response ^https?:\/\/api\.tidal\.com\/v1\/users\/\d+\/subscription.+ script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/TIDALHiFiPlusCrack.js, requires-body=true, timeout=60, tag=TIDALHiFiPlusCrack
+http-response ^https?:\/\/api\.tidal\.com\/v1\/users\/\d+\/subscription.+ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/TIDALHiFiPlusCrack.js, requires-body=true, timeout=60, tag=TIDALHiFiPlusCrack
 
-http-request ^https?:\/\/api\.tidal\.com\/v1\/tracks/\d+\/playbackinfopostpaywall.+ script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/TidalHiFiPlusCrack.js, requires-body=true, timeout=60, tag=TidalHiFiPlusCrack
+http-request ^https?:\/\/api\.tidal\.com\/v1\/tracks/\d+\/playbackinfopostpaywall.+ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/TidalHiFiPlusCrack.js, requires-body=true, timeout=60, tag=TidalHiFiPlusCrack
 
 #  一言解锁会员权限  app.yiyan.art
-http-response ^https:\/\/app\.yiyan\.art\/yiyan\/ script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/yiyan.js, requires-body=true, timeout=60, tag=yiyan
+http-response ^https:\/\/app\.yiyan\.art\/yiyan\/ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/yiyan.js, requires-body=true, timeout=60, tag=yiyan
 
 # 茶杯狐、Libvio 流媒体    m.douban.com
-http-response ^https://m.douban.com/movie/subject/.+ script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/douban.js, requires-body=true, timeout=60, tag=douban
+http-response ^https://m.douban.com/movie/subject/.+ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/douban.js, requires-body=true, timeout=60, tag=douban
 
 #   Airtable 收藏
-http-request ^https://m.douban.com/movie/subject/.+\?seen=\d script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/douban.js, timeout=60, tag=douban
+http-request ^https://m.douban.com/movie/subject/.+\?seen=\d script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/douban.js, timeout=60, tag=douban
 
 #  百度贴吧去广告  ios15以上   新回复等通知功能不可用    tiebac.baidu.com
-http-response ^http:\/\/c\.tieba\.baidu\.com\/(tiebaads\/commonbatch|c\/s\/sync) script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/tieba-json.js, requires-body=true, timeout=60, tag=tieba-json
+http-response ^http:\/\/c\.tieba\.baidu\.com\/(tiebaads\/commonbatch|c\/s\/sync) script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/tieba-json.js, requires-body=true, timeout=60, tag=tieba-json
 
-http-response ^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/c\/f\/(frs\/(page|threadlist|generalTabList)|pb\/page|excellent\/personalized) script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/tieba-proto.js, requires-body=true, binary-body-mode=true, timeout=60, tag=tieba-proto
+http-response ^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/c\/f\/(frs\/(page|threadlist|generalTabList)|pb\/page|excellent\/personalized) script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/tieba-proto.js, requires-body=true, binary-body-mode=true, timeout=60, tag=tieba-proto
 
 # 使用方法：先登录账号再开脚本
-http-response ^https?:\/\/sjapp\.o3aqqc\.work\/user\/(info|fansAndUpAndAttentionCnt)$ script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/SJSPCrack.js, requires-body=true, timeout=60, tag=SJSPCrack
+http-response ^https?:\/\/sjapp\.o3aqqc\.work\/user\/(info|fansAndUpAndAttentionCnt)$ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/SJSPCrack.js, requires-body=true, timeout=60, tag=SJSPCrack
 
-http-request ^https?:\/\/sjapp\.o3aqqc\.work\/mov\/browse script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/replace-header.js, timeout=30, tag=replaceHeader, argument=(%5Cr%5Cn)Authorization%3A.%2B(%5Cr%5Cn)-%3E%241Authorization%3A%200547064bb9a5557d332023ab513a2e3784e38dc54f844f53cbb804d3a687c48b6c2e670c6aba3e564f%242
+http-request ^https?:\/\/sjapp\.o3aqqc\.work\/mov\/browse script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/replace-header.js, timeout=30, tag=replaceHeader, argument=(%5Cr%5Cn)Authorization%3A.%2B(%5Cr%5Cn)-%3E%241Authorization%3A%200547064bb9a5557d332023ab513a2e3784e38dc54f844f53cbb804d3a687c48b6c2e670c6aba3e564f%242
 
 # 阿里云盘 解锁画质 *.aliyundrive.com
-http-response ^https?:\/\/(api|member)\.aliyundrive\.com script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/alidrive.js, requires-body=true, timeout=60, tag=alidrive
+http-response ^https?:\/\/(api|member)\.aliyundrive\.com script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/alidrive.js, requires-body=true, timeout=60, tag=alidrive
 
 # > 12 Cokemv[网页优化] - 网站地址：https://cokemv.me/
-http-response ^https?:/\/cokemv\.me(\/?$|\/([?]|vod).*$) script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/cokemv.js, requires-body=true, timeout=60, tag=cokemv
+http-response ^https?:/\/cokemv\.me(\/?$|\/([?]|vod).*$) script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/cokemv.js, requires-body=true, timeout=60, tag=cokemv
 
-http-response ^https?:/\/(cn|www)\.pornhub\.com(\/?$|\/([?]|view|video).*$) script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/pornhub.js, requires-body=true, timeout=60, tag=pornhub
+http-response ^https?:/\/(cn|www)\.pornhub\.com(\/?$|\/([?]|view|video).*$) script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/pornhub.js, requires-body=true, timeout=60, tag=pornhub
 
 # > 10 LeZhu[网页优化] - 网站地址：http://www.lezhutv.com
-http-response ^https?:/\/www\.lezhutv\.com(\/?$|\/([?]|type|detail|play|index).*$) script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/lezhu.js, requires-body=true, timeout=60, tag=lezhu
+http-response ^https?:/\/www\.lezhutv\.com(\/?$|\/([?]|type|detail|play|index).*$) script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/lezhu.js, requires-body=true, timeout=60, tag=lezhu
 
 # > 09 Bimi[网页优化] - 网站地址：https://www.bimi.net
-http-response ^https?:/\/www\.bimi.*\.(net\/$|net\/(vodshow|bangumi|type)\/[0-9a-z-\/]+\/$) script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/bimi.js, requires-body=true, timeout=60, tag=bimi
+http-response ^https?:/\/www\.bimi.*\.(net\/$|net\/(vodshow|bangumi|type)\/[0-9a-z-\/]+\/$) script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/bimi.js, requires-body=true, timeout=60, tag=bimi
 
 # > 08 禁漫天堂[网页优化] - 网站地址：https://18comic.org
-http-response ^https?:\/\/18comic\.org(\/?$|\/([?]|album|photo).*$) script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/18comic.js, requires-body=true, timeout=60, tag=18comic
+http-response ^https?:\/\/18comic\.org(\/?$|\/([?]|album|photo).*$) script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/18comic.js, requires-body=true, timeout=60, tag=18comic
 
 # > 07 555影视[网页优化] - 网站地址：https://555dy.vip
-http-response ^https?:\/\/(www\.)?(5.*|o8tv)\.((cc|vip|com)\/$|(cc|vip|com)\/[a-z]+\/[0-9a-z-]+\.html) script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/555.js, requires-body=true, timeout=60, tag=555
+http-response ^https?:\/\/(www\.)?(5.*|o8tv)\.((cc|vip|com)\/$|(cc|vip|com)\/[a-z]+\/[0-9a-z-]+\.html) script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/555.js, requires-body=true, timeout=60, tag=555
 
 # > 06 剧迷[网页优化] - 网站地址：https://gimytv.app
-http-response ^https?:\/\/gimytv\.(app\/$|app\/(browse\/)?[0-9a-zA-Z-_]+\.html) script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/gimytv.js, requires-body=true, timeout=60, tag=gimytv
+http-response ^https?:\/\/gimytv\.(app\/$|app\/(browse\/)?[0-9a-zA-Z-_]+\.html) script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/gimytv.js, requires-body=true, timeout=60, tag=gimytv
 
 # > 04 天空影视[网页优化]@ - 网站地址：https://www.tkys.tv
-http-response ^https?:\/\/www\.tkys\.(tv\/$|tv\/(voddetail|vodplay)\/[0-9a-z-]+\.html$) script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/tkys.js, requires-body=true, timeout=60, tag=tkys
+http-response ^https?:\/\/www\.tkys\.(tv\/$|tv\/(voddetail|vodplay)\/[0-9a-z-]+\.html$) script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/tkys.js, requires-body=true, timeout=60, tag=tkys
 
 # > 03 厂长电影[网页优化]@ - 网站地址：https://www.qianoo.cn
-http-response ^https?:/\/www\.qianoo\.(cn\/$|cn\/[0-9a-zA-Z_\/]+\.html$) script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/qianoo.js, requires-body=true, timeout=60, tag=qianoo
+http-response ^https?:/\/www\.qianoo\.(cn\/$|cn\/[0-9a-zA-Z_\/]+\.html$) script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/qianoo.js, requires-body=true, timeout=60, tag=qianoo
 
 # > 02 真不卡[网页优化]@ - 网站地址：https://www.zhenbuka5.com
-http-response ^https?:\/\/www\.zhenbuka.*\.com(\/?$|\/([?]|vod).*$) script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/zhenbuka.js, requires-body=true, timeout=60, tag=zhenbuka
+http-response ^https?:\/\/www\.zhenbuka.*\.com(\/?$|\/([?]|vod).*$) script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/zhenbuka.js, requires-body=true, timeout=60, tag=zhenbuka
 
 # > 01 libvio[网页优化]@ - 网站地址：https://www.iioo.me
-http-response ^https?:/\/www\.libvio\.(me\/$|me\/(detail|play)\/[0-9a-z-]+\.html$) script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/libvio.js, requires-body=true, timeout=60, tag=libvio
+http-response ^https?:/\/www\.libvio\.(me\/$|me\/(detail|play)\/[0-9a-z-]+\.html$) script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/libvio.js, requires-body=true, timeout=60, tag=libvio
 
 # 注：登陆后，白嫖年费会员到2030年，白嫖年费会员所有课程 ，白嫖所有付费课程。
-http-response ^https?:\/\/api\.infzm\.com\/mobile\/(user|contents\?|contents\/\d+\?|contents\/\d+\/isview\?|course_borrow|courses\/\d+\?|mall|course_items) script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/NanFangZhouMo.js, requires-body=true, timeout=60, tag=NanFangZhouMo
+http-response ^https?:\/\/api\.infzm\.com\/mobile\/(user|contents\?|contents\/\d+\?|contents\/\d+\/isview\?|course_borrow|courses\/\d+\?|mall|course_items) script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/NanFangZhouMo.js, requires-body=true, timeout=60, tag=NanFangZhouMo
 
 # 柱：解锁终身会员，无任何下载、阅读、听书限制，去除所有广告（还有广告卸载重装）
-http-response ^https?:\/\/(api-\w+|xiaoshuo)\.wtzw\.com\/api\/v\d\/ script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/QiMaoXiaoShuo.js, requires-body=true, timeout=60, tag=QiMaoXiaoShuo
+http-response ^https?:\/\/(api-\w+|xiaoshuo)\.wtzw\.com\/api\/v\d\/ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/QiMaoXiaoShuo.js, requires-body=true, timeout=60, tag=QiMaoXiaoShuo
 
 # 菜谱大全(2022.01.19).    apiios_dq.xiangha.com, appweb_dq.xiangha.com, 101.200.225.157
-http-response ^https?:\/\/apiios_dq\.xiangha\.com\/v\d\/ script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/CaiPuDaQuan.js, requires-body=true, timeout=60, tag=CaiPuDaQuan
+http-response ^https?:\/\/apiios_dq\.xiangha\.com\/v\d\/ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/CaiPuDaQuan.js, requires-body=true, timeout=60, tag=CaiPuDaQuan
 
-http-response ^https?:\/\/appweb_dq\.xiangha\.com\/center\/pay\/home script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/CaiPuDaQuan.js, requires-body=true, timeout=60, tag=CaiPuDaQuan
+http-response ^https?:\/\/appweb_dq\.xiangha\.com\/center\/pay\/home script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/CaiPuDaQuan.js, requires-body=true, timeout=60, tag=CaiPuDaQuan
 
 # 香哈菜谱    apiios.xiangha.com, 39.97.157.167。    除课程外，解锁所有限制
-http-response ^https?:\/\/apiios\.xiangha\.com\/main\d+\/ script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/XiangHaCaiPu.js, requires-body=true, timeout=60, tag=XiangHaCaiPu
+http-response ^https?:\/\/apiios\.xiangha\.com\/main\d+\/ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/XiangHaCaiPu.js, requires-body=true, timeout=60, tag=XiangHaCaiPu
 
 # 注：解锁付费皮肤
-http-response ^https?:\/\/((user)?api|community)\.feidee\.(net|com)\/(v\d\/(pay/vip|profile/basic_info|app_themes/types)|transfer\/gapi\/accurat\/v\d\/tasks) script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/SuiShouJi.js, requires-body=true, timeout=60, tag=SuiShouJi
+http-response ^https?:\/\/((user)?api|community)\.feidee\.(net|com)\/(v\d\/(pay/vip|profile/basic_info|app_themes/types)|transfer\/gapi\/accurat\/v\d\/tasks) script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/SuiShouJi.js, requires-body=true, timeout=60, tag=SuiShouJi
 
-http-request ^https?:\/\/api\.feidee\.net\/v\d\/app_themes\/\d+\/download script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/SuiShouJi.js, timeout=60, tag=SuiShouJi
+http-request ^https?:\/\/api\.feidee\.net\/v\d\/app_themes\/\d+\/download script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/SuiShouJi.js, timeout=60, tag=SuiShouJi
 
 # 马卡龙玩图   app.api.versa-ai.com
-http-response ^https?:\/\/app\.api\.versa-ai\.com\/pay\/order\/iap\/check script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/MaKaLongWanTu.js, requires-body=true, timeout=60, tag=MaKaLongWanTu
+http-response ^https?:\/\/app\.api\.versa-ai\.com\/pay\/order\/iap\/check script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/MaKaLongWanTu.js, requires-body=true, timeout=60, tag=MaKaLongWanTu
 
 # NOMO CAM 解锁订阅  nomo.dafork.com
-http-response ^https?:\/\/nomo\.dafork\.com\/api\/v3\/register\/phone_signin$ script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/NoMoCamProCrack.js, requires-body=true, timeout=60, tag=NoMoCamProCrack
+http-response ^https?:\/\/nomo\.dafork\.com\/api\/v3\/register\/phone_signin$ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/NoMoCamProCrack.js, requires-body=true, timeout=60, tag=NoMoCamProCrack
 
 # 使用方法：会员时长到2030年，破解的标志是打开阅读️限制，不会提示会员才能看️️️，如果没有显示会员，剩余天数999。必须卸载重装！
-http-response ^https?:\/\/vira\.llsapp\.com\/api\/v\d\/\w+\/\w+$ script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/LiuLiShuo-YueDu.js, requires-body=true, timeout=60, tag=LiuLiShuo-YueDu
+http-response ^https?:\/\/vira\.llsapp\.com\/api\/v\d\/\w+\/\w+$ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/LiuLiShuo-YueDu.js, requires-body=true, timeout=60, tag=LiuLiShuo-YueDu
 
 # keep解锁会员    *.gotokeep.com
-http-response ^https://(.+).gotokeep.com(/athena/v5/people/my|/nuocha/plans) script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/keep.js, requires-body=true, timeout=60, tag=keep
+http-response ^https://(.+).gotokeep.com(/athena/v5/people/my|/nuocha/plans) script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/keep.js, requires-body=true, timeout=60, tag=keep
 
 #绅士摄影解锁会员
-http-response ^https?:\/\/appa\.lingdu2019\.cn\/api\/(my_home\/\w{9}|portrait\/\w{15,23}|iport/luffy/api/\w{7}/\w{9}|send\/\w{18})$ script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/LingDuPortraitProCrack.js, requires-body=true, timeout=60, tag=LingDuPortraitProCrack
+http-response ^https?:\/\/appa\.lingdu2019\.cn\/api\/(my_home\/\w{9}|portrait\/\w{15,23}|iport/luffy/api/\w{7}/\w{9}|send\/\w{18})$ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/LingDuPortraitProCrack.js, requires-body=true, timeout=60, tag=LingDuPortraitProCrack
 
 # 糖心网页版解锁会员  网址：http://txv04.com/
-http-response ^https?:\/\/txv04\.com\/h5\/user\/findQrcode$ script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/tangxin.js, requires-body=true, timeout=60, tag=tangxin
+http-response ^https?:\/\/txv04\.com\/h5\/user\/findQrcode$ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/tangxin.js, requires-body=true, timeout=60, tag=tangxin
 
 #Notability解锁订阅
-http-response ^https?:\/\/notability\.com\/subscriptions script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/NotabilityProCrack.js, requires-body=true, timeout=60, tag=NotabilityProCrack
+http-response ^https?:\/\/notability\.com\/subscriptions script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/NotabilityProCrack.js, requires-body=true, timeout=60, tag=NotabilityProCrack
 
 #替换支付宝内淘票票评分为豆瓣评分
-http-response ^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.film\.mtopshowapi\.getextendshowbyid script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/taopiaopiao.js, requires-body=true, timeout=60, tag=taopiaopiao
+http-response ^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.film\.mtopshowapi\.getextendshowbyid script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/taopiaopiao.js, requires-body=true, timeout=60, tag=taopiaopiao
 
 # 豆瓣电影和电视剧添加便捷播放按钮    m.douban.com
-http-response ^https?:\/\/m\.douban\.com\/movie\/subject\/\d+\/ script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/DouBan.js, requires-body=true, timeout=60, tag=DouBan
+http-response ^https?:\/\/m\.douban\.com\/movie\/subject\/\d+\/ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/DouBan.js, requires-body=true, timeout=60, tag=DouBan
 
 #百度网盘解锁vip，视频倍速播放     pan.baidu.com
-http-response ^https:\/\/pan\.baidu\.com\/rest\/\d\.\d\/membership\/user script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/bdcloud.js, requires-body=true, timeout=60, tag=bdcloud
+http-response ^https:\/\/pan\.baidu\.com\/rest\/\d\.\d\/membership\/user script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/bdcloud.js, requires-body=true, timeout=60, tag=bdcloud
 
 #修复Sileo下载嗨客源错误问题
-http-request ^http:\/\/repo\.qqtlr\.com\/\.\/downloads\.php%3Frequest=\d+\.deb script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/replace-header.js, timeout=30, tag=replaceHeader, argument=(GET%20%5C%2F%5C.%5C%2Fdownloads%5C.php)%253F-%3E%241%3F
+http-request ^http:\/\/repo\.qqtlr\.com\/\.\/downloads\.php%3Frequest=\d+\.deb script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/replace-header.js, timeout=30, tag=replaceHeader, argument=(GET%20%5C%2F%5C.%5C%2Fdownloads%5C.php)%253F-%3E%241%3F
 
 #解锁悟饭游戏厅  iosv2.cjapi.papa21.com
-http-response ^http:\/\/iosv2\.cjapi\.papa21\.com\/user\/ios_store_pay_edition\/members_login\/check_members_identity_v2 script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/wukongplay.js, requires-body=true, timeout=60, tag=wukongplay
+http-response ^http:\/\/iosv2\.cjapi\.papa21\.com\/user\/ios_store_pay_edition\/members_login\/check_members_identity_v2 script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/wukongplay.js, requires-body=true, timeout=60, tag=wukongplay
 
 #在微信中打开淘宝等被屏蔽链接，点击 Surge/QuantumultX 通知跳转到 Safari 或淘宝 App
-http-response ^https\:\/\/(weixin110\.qq|security.wechat)\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi\? script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/weixin110.js, requires-body=true, timeout=60, tag=weixin110
+http-response ^https\:\/\/(weixin110\.qq|security.wechat)\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi\? script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/weixin110.js, requires-body=true, timeout=60, tag=weixin110
 
 #VUE Vlog 解锁高级功能 (需登录)   api.vuevideo.net
-http-response ^https:\/\/api\.vuevideo\.net\/api\/v1\/(users\/.+\/profile|subtitle\/prepare) script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/VUE.js, requires-body=true, timeout=60, tag=VUE
+http-response ^https:\/\/api\.vuevideo\.net\/api\/v1\/(users\/.+\/profile|subtitle\/prepare) script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/VUE.js, requires-body=true, timeout=60, tag=VUE
 
 # 强制跳转百度UA    *.baidu.com
-http-request ^https?:\/\/(?!d\.pcs).*(?<!map)\.baidu\.com script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/replace-header.js, timeout=30, tag=replaceHeader, argument=(%5Cr%5Cn)User-Agent%3A.%2BiPhone.%2B(%5Cr%5Cn)-%3E%241User-Agent%3A%20Mozilla%2F5.0%20(iPhone%3B%20CPU%20iPhone%20OS%2013_5%20like%20Mac%20OS%20X)%20AppleWebKit%2F605.1.15%20(KHTML%2C%20like%20Gecko)%20Version%2F13.1.1%20Mobile%2F15E148%20Safari%2F16C50%20Quark%2F604.1%20T7%2F10.3%20SearchCraft%2F2.6.3%20(Baidu%3B%20P1%208.0.0)%242
+http-request ^https?:\/\/(?!d\.pcs).*(?<!map)\.baidu\.com script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/replace-header.js, timeout=30, tag=replaceHeader, argument=(%5Cr%5Cn)User-Agent%3A.%2BiPhone.%2B(%5Cr%5Cn)-%3E%241User-Agent%3A%20Mozilla%2F5.0%20(iPhone%3B%20CPU%20iPhone%20OS%2013_5%20like%20Mac%20OS%20X)%20AppleWebKit%2F605.1.15%20(KHTML%2C%20like%20Gecko)%20Version%2F13.1.1%20Mobile%2F15E148%20Safari%2F16C50%20Quark%2F604.1%20T7%2F10.3%20SearchCraft%2F2.6.3%20(Baidu%3B%20P1%208.0.0)%242
 
 #EMBY
-http-request ^https:\/\/mb3admin\.com\/admin\/service(\/registration\/validateDevice|\/appstore\/register|\/registration\/validate|\/registration\/getStatus|\/supporter\/retrievekey) script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/Emby.js, timeout=60, tag=Emby
+http-request ^https:\/\/mb3admin\.com\/admin\/service(\/registration\/validateDevice|\/appstore\/register|\/registration\/validate|\/registration\/getStatus|\/supporter\/retrievekey) script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/Emby.js, timeout=60, tag=Emby
 
 # Netflix评分
-http-request ^https?://ios-h2\.prod\.ftl\.netflix\.com/iosui/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/nf_rating.js, timeout=60, tag=nf_rating
+http-request ^https?://ios-h2\.prod\.ftl\.netflix\.com/iosui/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/nf_rating.js, timeout=60, tag=nf_rating
 
-http-response ^https?://ios-h2\.prod\.ftl\.netflix\.com/iosui/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/nf_rating.js, requires-body=true, timeout=60, tag=nf_rating
+http-response ^https?://ios-h2\.prod\.ftl\.netflix\.com/iosui/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/nf_rating.js, requires-body=true, timeout=60, tag=nf_rating
 
 #ios.fuliapps.com, apple.fuliapps.com, ios.xiangjiaoapps.com, apple.xiangjiaoapps.com, *.xiangxiangapps.com, *.pipiapps.com
-http-response ^https?:\/\/.+?\.(pipi|fuli|xiang(jiao|xiang))apps\.com\/(ucp\/index|getGlobalData|(\/|)vod\/reqplay\/) script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/xjsp.js, requires-body=true, timeout=60, tag=xjsp
+http-response ^https?:\/\/.+?\.(pipi|fuli|xiang(jiao|xiang))apps\.com\/(ucp\/index|getGlobalData|(\/|)vod\/reqplay\/) script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/xjsp.js, requires-body=true, timeout=60, tag=xjsp
 
 #JibJab 解锁高级功能   origin-prod-phoenix.jibjab.com
-http-response https:\/\/origin-prod-phoenix\.jibjab\.com\/v1\/user script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/jibjab.js, requires-body=true, timeout=60, tag=jibjab
+http-response https:\/\/origin-prod-phoenix\.jibjab\.com\/v1\/user script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/jibjab.js, requires-body=true, timeout=60, tag=jibjab
 
 #菠萝视频解锁vip无限看，没破解付费（by 黑科技）    下载地址https://aff.polomv.com           api.myb6api.com:8080
-http-response ^http:\/\/api\.myb6api\.(org|com):8080\/api\.php\/api\/users\/getBaseInfo script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/blsp.js, requires-body=true, timeout=60, tag=blsp
+http-response ^http:\/\/api\.myb6api\.(org|com):8080\/api\.php\/api\/users\/getBaseInfo script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/blsp.js, requires-body=true, timeout=60, tag=blsp
 
 #桃子视频解锁会员     api.*.xyz
-http-response ^http:\/\/api\.(.+)\.xyz\/fast-cloud\/user\/info script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/taozi.js, requires-body=true, timeout=60, tag=taozi
+http-response ^http:\/\/api\.(.+)\.xyz\/fast-cloud\/user\/info script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/taozi.js, requires-body=true, timeout=60, tag=taozi
 
 ##酷咪视频VIP无限看    酷咪下载地址 km.app      lginstaacademy.com
-http-response ^https:\/\/lginstaacademy\.com(\/\/api\/movie\/addPlay|\/\/api\/member|\/api\/video_clip\/play|\/api\/app\/message_list|\/api\/home\/index_recommend|\/\/api\/movie\/play\/|\/\/api\/vip\/index) script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/kumiyw.js, requires-body=true, timeout=60, tag=kumiyw
+http-response ^https:\/\/lginstaacademy\.com(\/\/api\/movie\/addPlay|\/\/api\/member|\/api\/video_clip\/play|\/api\/app\/message_list|\/api\/home\/index_recommend|\/\/api\/movie\/play\/|\/\/api\/vip\/index) script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/kumiyw.js, requires-body=true, timeout=60, tag=kumiyw
 
 #陆琪讲故事 解锁电台   www.luqijianggushi.com
-http-response ^https:\/\/www\.luqijianggushi\.com\/api\/v2\/user\/get script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/luqi.js, requires-body=true, timeout=60, tag=luqi
+http-response ^https:\/\/www\.luqijianggushi\.com\/api\/v2\/user\/get script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/luqi.js, requires-body=true, timeout=60, tag=luqi
 
 #泼辣修图    api.polaxiong.com
-http-request https:\/\/api\.polaxiong\.com\/v1\/payments\/appleiap\/receipts/confirmation script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/pola.js, requires-body=true, timeout=60, tag=pola
+http-request https:\/\/api\.polaxiong\.com\/v1\/payments\/appleiap\/receipts/confirmation script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/pola.js, requires-body=true, timeout=60, tag=pola
 
 #显示netflix的收视率（IMDb）  ios.prod.ftl.netflix.com
-http-request ^https?://ios\.prod\.ftl\.netflix\.com/iosui/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/nf_rating.js, timeout=60, tag=nf_rating
+http-request ^https?://ios\.prod\.ftl\.netflix\.com/iosui/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/nf_rating.js, timeout=60, tag=nf_rating
 
-http-response ^https?://ios\.prod\.ftl\.netflix\.com/iosui/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/nf_rating.js, requires-body=true, timeout=60, tag=nf_rating
+http-response ^https?://ios\.prod\.ftl\.netflix\.com/iosui/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/nf_rating.js, requires-body=true, timeout=60, tag=nf_rating
 
 #国区TF无法下载已下架app规则
-http-request ^https?:\/\/testflight\.apple\.com\/v2\/accounts\/.*\/apps\/\d*/builds/\d*/install script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/replace-body.js, requires-body=true, timeout=30, tag=replaceBody, argument=storefrontId%22%20%3A%20%22.*%22%2C-%3EstorefrontId%22%20%3A%20%22143441-1%2C29%22%2C
+http-request ^https?:\/\/testflight\.apple\.com\/v2\/accounts\/.*\/apps\/\d*/builds/\d*/install script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/replace-body.js, requires-body=true, timeout=30, tag=replaceBody, argument=storefrontId%22%20%3A%20%22.*%22%2C-%3EstorefrontId%22%20%3A%20%22143441-1%2C29%22%2C
 
 # 仅去除首页瀑布流广告/播放页推荐列表广告(非贴片广告)
-http-response ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next)\? script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/youtube.js, requires-body=true, binary-body-mode=true, timeout=60, tag=youtube
+http-response ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next)\? script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/youtube.js, requires-body=true, binary-body-mode=true, timeout=60, tag=youtube
 
 #无字幕机翻简体中文
-http-request https:\/\/www.youtube.com\/api\/timedtext\?.+&lang=(?!(zh|zh\-Hans)&)((?!&tlang=zh\-Hans).)*$ script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/replace-header.js, timeout=30, tag=replaceHeader, argument=%5CsHTTP%2F1%5C.1(%5Cr%5Cn)-%3E%26tlang%3Dzh-Hans%20HTTP%2F1.1%241
+http-request https:\/\/www.youtube.com\/api\/timedtext\?.+&lang=(?!(zh|zh\-Hans)&)((?!&tlang=zh\-Hans).)*$ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/replace-header.js, timeout=30, tag=replaceHeader, argument=%5CsHTTP%2F1%5C.1(%5Cr%5Cn)-%3E%26tlang%3Dzh-Hans%20HTTP%2F1.1%241
 
 #大象冥想 解锁VIP&付费音乐
-http-response ^https?:\/\/nmeditation\.snailsleep\.net\/meditation-(audio|user|order|audio)\/(api|user)\/(audio\/master\/detail|get\/info|order/user\/vip\/info|ad\/get) script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/dxmx.js, requires-body=true, timeout=60, tag=dxmx
+http-response ^https?:\/\/nmeditation\.snailsleep\.net\/meditation-(audio|user|order|audio)\/(api|user)\/(audio\/master\/detail|get\/info|order/user\/vip\/info|ad\/get) script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/dxmx.js, requires-body=true, timeout=60, tag=dxmx
 
 # 知音漫客VIP   user*.zymk.cn
-http-response ^https:\/\/(userpurchased|user-api)\.zymk\.cn\/v\d\/(userpurchased\/paychapters|getuserinfo)\/ script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/Zymh.js, requires-body=true, timeout=60, tag=Zymh
+http-response ^https:\/\/(userpurchased|user-api)\.zymk\.cn\/v\d\/(userpurchased\/paychapters|getuserinfo)\/ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/Zymh.js, requires-body=true, timeout=60, tag=Zymh
 
 # PicsArt美易 pro    api.picsart.c*, api.meiease.c*
-http-response ^https:\/\/api\.(picsart|meiease)\.c(n|om)\/users\/show\/me\.json script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/PicsArt.js, requires-body=true, timeout=60, tag=PicsArt
+http-response ^https:\/\/api\.(picsart|meiease)\.c(n|om)\/users\/show\/me\.json script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/PicsArt.js, requires-body=true, timeout=60, tag=PicsArt
 
 # > WPS解锁稻壳会员
-http-response ^https?:\/\/account\.wps\.cn\/api\/v3\/mine\/vips script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/WPSDocerVIPuserCrack.js, requires-body=true, timeout=60, tag=WPSDocerVIPuserCrack
+http-response ^https?:\/\/account\.wps\.cn\/api\/v3\/mine\/vips script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/WPSDocerVIPuserCrack.js, requires-body=true, timeout=60, tag=WPSDocerVIPuserCrack
 
-http-request ^https?:\/\/.+\.(docer.)?wps.cn\/(user\/v1\/vip|android\/mb\/buy|download\/v1\/ios|partner\/invoke\/usable|(api|rank)\/v1(\/mobile\/mb)?\/detail) script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/WPSDocerVIPowerCrack.js, timeout=60, tag=WPSDocerVIPowerCrack
+http-request ^https?:\/\/.+\.(docer.)?wps.cn\/(user\/v1\/vip|android\/mb\/buy|download\/v1\/ios|partner\/invoke\/usable|(api|rank)\/v1(\/mobile\/mb)?\/detail) script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/WPSDocerVIPowerCrack.js, timeout=60, tag=WPSDocerVIPowerCrack
 
-http-response ^https?:\/\/.*?account\.wps\.(com|cn)(:\d+)?\/api\/users\/\w+\/overview$ script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/WPS.js, requires-body=true, timeout=60, tag=WPS
+http-response ^https?:\/\/.*?account\.wps\.(com|cn)(:\d+)?\/api\/users\/\w+\/overview$ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/WPS.js, requires-body=true, timeout=60, tag=WPS
 
 #蜗牛睡眠  所有功能解锁VIP&付费音乐
-http-response ^https:\/\/(snailsleep\.net\/|(music|community)\.snailsleep\.net\/)(snail\/v1\/profile\/get|snail-music\/music\/(sleeping|meditation)\/single\/list) script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/wnsm.js, requires-body=true, timeout=60, tag=wnsm
+http-response ^https:\/\/(snailsleep\.net\/|(music|community)\.snailsleep\.net\/)(snail\/v1\/profile\/get|snail-music\/music\/(sleeping|meditation)\/single\/list) script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/wnsm.js, requires-body=true, timeout=60, tag=wnsm
 
 # VSCO滤镜VIP     vsco.co, api.revenuecat.com
-http-response ^https:\/\/(api\.revenuecat\.com\/v\d\/subscribers|vsco\.co\/api\/subscriptions\/\d\.\d\/user-subscriptions)\/ script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/vsco.js, requires-body=true, timeout=60, tag=vsco
+http-response ^https:\/\/(api\.revenuecat\.com\/v\d\/subscribers|vsco\.co\/api\/subscriptions\/\d\.\d\/user-subscriptions)\/ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/vsco.js, requires-body=true, timeout=60, tag=vsco
 
 #人人视频   api.rr.tv
-http-response ^https:\/\/api\.rr\.tv\/user\/profile* script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/rrtvvip.js, requires-body=true, timeout=60, tag=rrtvvip
+http-response ^https:\/\/api\.rr\.tv\/user\/profile* script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/rrtvvip.js, requires-body=true, timeout=60, tag=rrtvvip
 
 #  酷我音乐vip   *kuwo*,*lrts*
-http-response ^https?:\/\/.*(kuwo|lrts).*(music\.pay\?ne|\/a\.p|v\d\/api\/(user\/in|pay\/vi)|\w{3}\/v\d\/user\/vi|\w{3}\/spi\/ms|\w{3}\/v\d\/the|\w{3}\/enc\/use) script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/KuWoMusicProCrack.js, requires-body=true, timeout=60, tag=KuWoMusicProCrack
+http-response ^https?:\/\/.*(kuwo|lrts).*(music\.pay\?ne|\/a\.p|v\d\/api\/(user\/in|pay\/vi)|\w{3}\/v\d\/user\/vi|\w{3}\/spi\/ms|\w{3}\/v\d\/the|\w{3}\/enc\/use) script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/KuWoMusicProCrack.js, requires-body=true, timeout=60, tag=KuWoMusicProCrack
 
-http-request ^https?:\/\/.*(kuwo|lrts).*(music\.pay\?ui) script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/KuWoMusicProCrack.js, timeout=60, tag=KuWoMusicProCrack
+http-request ^https?:\/\/.*(kuwo|lrts).*(music\.pay\?ui) script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/KuWoMusicProCrack.js, timeout=60, tag=KuWoMusicProCrack
 
 #去除微信公众号文章底部广告    mp.weixin.qq.com
-http-response ^https?:\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/Wechat.js, requires-body=true, timeout=60, tag=Wechat
+http-response ^https?:\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/Wechat.js, requires-body=true, timeout=60, tag=Wechat
 
 #小小影视   无限观看&免广告  官网：www.xiao1.app       
-http-response https:\/\/.*\.(xiaoxiaoapps|xiaoxiaoimg)\.com\/(ssp-svr\/ssp\/list3|ucp/index|getGlobalData) script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/xxysad.js, requires-body=true, timeout=60, tag=xxysad
+http-response https:\/\/.*\.(xiaoxiaoapps|xiaoxiaoimg)\.com\/(ssp-svr\/ssp\/list3|ucp/index|getGlobalData) script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/xxysad.js, requires-body=true, timeout=60, tag=xxysad
 
 # NiChi 解锁素材
-http-response ^https?:\/\/mp\.bybutter\.com\/mood\/(official-templates|privileges) script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/NiChi.js, requires-body=true, timeout=60, tag=NiChi
+http-response ^https?:\/\/mp\.bybutter\.com\/mood\/(official-templates|privileges) script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/NiChi.js, requires-body=true, timeout=60, tag=NiChi
 
 # 小影 解锁Vip (By @hiepkimcdtk55)
-http-response ^https:\/\/viva\.v21xy\.com\/api\/rest\/u\/vip script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/vivavideo.js, requires-body=true, timeout=60, tag=vivavideo
+http-response ^https:\/\/viva\.v21xy\.com\/api\/rest\/u\/vip script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/vivavideo.js, requires-body=true, timeout=60, tag=vivavideo
 
 #vsco
-http-response ^https?:\/\/vsco\.co\/api\/subscriptions\/2.1\/user-subscriptions\/ script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/vsco.js, requires-body=true, timeout=60, tag=vsco
+http-response ^https?:\/\/vsco\.co\/api\/subscriptions\/2.1\/user-subscriptions\/ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/vsco.js, requires-body=true, timeout=60, tag=vsco
 
 #gyroscope
-http-response ^https:\/\/api\.gyrosco\.pe\/v1\/account\/$ script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/Gyroscope.vip.js, requires-body=true, timeout=60, tag=Gyroscope.vip
+http-response ^https:\/\/api\.gyrosco\.pe\/v1\/account\/$ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/Gyroscope.vip.js, requires-body=true, timeout=60, tag=Gyroscope.vip
 
 #Termius 
-http-response https:\/\/api\.termius\.com\/api\/v3\/bulk\/account\/ script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/Terminus.js, requires-body=true, timeout=60, tag=Terminus
+http-response https:\/\/api\.termius\.com\/api\/v3\/bulk\/account\/ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/Terminus.js, requires-body=true, timeout=60, tag=Terminus
 
 #Vivavideo
-http-response ^https:\/\/viva-asia1\.vvbrd\.com\/api\/rest\/u\/vip* script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/vivavideo.vip.js, requires-body=true, timeout=60, tag=vivavideo.vip
+http-response ^https:\/\/viva-asia1\.vvbrd\.com\/api\/rest\/u\/vip* script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/vivavideo.vip.js, requires-body=true, timeout=60, tag=vivavideo.vip
 
 #Undfold
-http-response ^https:\/\/api\.unfold\.app\/v1\/ios\/receipts$ script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/Unfold.vip.js, requires-body=true, timeout=60, tag=Unfold.vip
+http-response ^https:\/\/api\.unfold\.app\/v1\/ios\/receipts$ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/Unfold.vip.js, requires-body=true, timeout=60, tag=Unfold.vip
 
 #Nhaccuatui
-http-response ^https:\/\/graph\.nhaccuatui\.com\/.*\/users\/info* script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/nhaccuatui.js, requires-body=true, timeout=60, tag=nhaccuatui
+http-response ^https:\/\/graph\.nhaccuatui\.com\/.*\/users\/info* script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/nhaccuatui.js, requires-body=true, timeout=60, tag=nhaccuatui
 
 #Memrise
-http-response ^https:\/\/api\.memrise\.com\/.+\/(me\/$|dashboard\/$|leaderboards\/following\/) script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/memrise.vip.js, requires-body=true, timeout=60, tag=memrise.vip
+http-response ^https:\/\/api\.memrise\.com\/.+\/(me\/$|dashboard\/$|leaderboards\/following\/) script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/memrise.vip.js, requires-body=true, timeout=60, tag=memrise.vip
 
 #sync
-http-response ^https:\/\/api\.sync\.me\/api\/purchases\/(report_purchases|get_purchases) script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/syn.me.js, requires-body=true, timeout=60, tag=syn.me
+http-response ^https:\/\/api\.sync\.me\/api\/purchases\/(report_purchases|get_purchases) script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/syn.me.js, requires-body=true, timeout=60, tag=syn.me
 
 #elsaresponse
-http-response ^https:\/\/pool\.elsanow\.io\/user\/api\/v1\/purchase$ script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/elsa-response.js, requires-body=true, timeout=60, tag=elsa-response
+http-response ^https:\/\/pool\.elsanow\.io\/user\/api\/v1\/purchase$ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/elsa-response.js, requires-body=true, timeout=60, tag=elsa-response
 
 #elsarewrite
-http-request ^https:\/\/pool\.elsanow\.io\/content\/api\/v1\/modules\/download$ script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/replace-header.js, timeout=30, tag=replaceHeader, argument=(%5Cr%5Cn)x-session-token%3A.%2B(%5Cr%5Cn)-%3E%241x-session-token%3A%20F3S0w0bysBQFdbjtxpFurrFv2ItBBcBkVQxUddQW%2B9vjt2JXM751ksqq5GAWpkl%2Bkk9nhig9BGh9JhYHQaokmendY6zLZDscHiRkZD2HrdJclKVCLordAARJhYIrf5C%2B5OSK6ax2TA45CKi8S09FEtYXN4noXO7gt42NT6WPIv6DKhdIwVxQuIAMLU5abmpMTDlyWeI4ulBWcOQbuZWWZg%3D%3D
+http-request ^https:\/\/pool\.elsanow\.io\/content\/api\/v1\/modules\/download$ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/replace-header.js, timeout=30, tag=replaceHeader, argument=(%5Cr%5Cn)x-session-token%3A.%2B(%5Cr%5Cn)-%3E%241x-session-token%3A%20F3S0w0bysBQFdbjtxpFurrFv2ItBBcBkVQxUddQW%2B9vjt2JXM751ksqq5GAWpkl%2Bkk9nhig9BGh9JhYHQaokmendY6zLZDscHiRkZD2HrdJclKVCLordAARJhYIrf5C%2B5OSK6ax2TA45CKi8S09FEtYXN4noXO7gt42NT6WPIv6DKhdIwVxQuIAMLU5abmpMTDlyWeI4ulBWcOQbuZWWZg%3D%3D
 
 #drops
-http-response ^https:\/\/lambda\.us-east-1\.amazonaws\.com/.*/functions\/prod-4-syncPurchases\/invocations$ script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/drops.js, requires-body=true, timeout=60, tag=drops
+http-response ^https:\/\/lambda\.us-east-1\.amazonaws\.com/.*/functions\/prod-4-syncPurchases\/invocations$ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/drops.js, requires-body=true, timeout=60, tag=drops
 
 #mondly
-http-response ^https:\/\/api\.mondlylanguages\.com\/v1\/ios\/user\/sync$ script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/mondly.vip.js, requires-body=true, timeout=60, tag=mondly.vip
+http-response ^https:\/\/api\.mondlylanguages\.com\/v1\/ios\/user\/sync$ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/mondly.vip.js, requires-body=true, timeout=60, tag=mondly.vip
 
 #busuu
-http-response ^https:\/\/api\.busuu\.com\/users\/me* script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/busuu.vip.js, requires-body=true, timeout=60, tag=busuu.vip
+http-response ^https:\/\/api\.busuu\.com\/users\/me* script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/busuu.vip.js, requires-body=true, timeout=60, tag=busuu.vip
 
 #Videoshow
-http-response ^https:\/\/owa\.videoshowiosglobalserver\.com\/.*\/iosPayClient script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/videoshow.vip.js, requires-body=true, timeout=60, tag=videoshow.vip
+http-response ^https:\/\/owa\.videoshowiosglobalserver\.com\/.*\/iosPayClient script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/videoshow.vip.js, requires-body=true, timeout=60, tag=videoshow.vip
 
 #elevate
-http-response ^https:\/\/accounts\.elevateapp\.net\/api\/users\?user%5Bauthentication_token* script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/elevate.vip.js, requires-body=true, timeout=60, tag=elevate.vip
+http-response ^https:\/\/accounts\.elevateapp\.net\/api\/users\?user%5Bauthentication_token* script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/elevate.vip.js, requires-body=true, timeout=60, tag=elevate.vip
 
 #beautyplus
-http-response ^https:\/\/api-intl\.mr\.meitu\.com/.*/subs_offer_elg$ script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/beautyplusvip.js, requires-body=true, timeout=60, tag=beautyplusvip
+http-response ^https:\/\/api-intl\.mr\.meitu\.com/.*/subs_offer_elg$ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/beautyplusvip.js, requires-body=true, timeout=60, tag=beautyplusvip
 
 #camera360
-http-response ^https:\/\/bmall\.camera360\.com\/api\/(iap\/check-receipt$|mix\/getinfo$) script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/camera360.vip.js, requires-body=true, timeout=60, tag=camera360.vip
+http-response ^https:\/\/bmall\.camera360\.com\/api\/(iap\/check-receipt$|mix\/getinfo$) script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/camera360.vip.js, requires-body=true, timeout=60, tag=camera360.vip
 
 #zingtv
-http-response ^https?:\/\/api\.tv\.zing\.vn\/.*/user* script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/zingtvvipv1.js, requires-body=true, timeout=60, tag=zingtvvipv1
+http-response ^https?:\/\/api\.tv\.zing\.vn\/.*/user* script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/zingtvvipv1.js, requires-body=true, timeout=60, tag=zingtvvipv1
 
 #calm
-http-response ^https:\/\/api\.calm\.com\/me$ script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/calm.vip.js, requires-body=true, timeout=60, tag=calm.vip
+http-response ^https:\/\/api\.calm\.com\/me$ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/calm.vip.js, requires-body=true, timeout=60, tag=calm.vip
 
 #lightroom
-http-response ^https:\/\/photos\.adobe\.io\/v2\/accounts* script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/Lightroom.js, requires-body=true, timeout=60, tag=Lightroom
+http-response ^https:\/\/photos\.adobe\.io\/v2\/accounts* script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/Lightroom.js, requires-body=true, timeout=60, tag=Lightroom
 
 #Pdfexpert
-http-response ^https:\/\/license\.pdfexpert\.com\/api\/1\.0\/pdfexpert6\/subscription\/(refresh$|check$) script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/Pdfexpert.vip.js, requires-body=true, timeout=60, tag=Pdfexpert.vip
+http-response ^https:\/\/license\.pdfexpert\.com\/api\/1\.0\/pdfexpert6\/subscription\/(refresh$|check$) script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/Pdfexpert.vip.js, requires-body=true, timeout=60, tag=Pdfexpert.vip
 
 #productive&sleepzy&weather live
-http-response ^https:\/\/subs\.platforms\.team\/.+\/apple\/verify$ script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/productive.js, requires-body=true, timeout=60, tag=productive
+http-response ^https:\/\/subs\.platforms\.team\/.+\/apple\/verify$ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/productive.js, requires-body=true, timeout=60, tag=productive
 
 #Musixmatch
-http-response ^https:\/\/apic\.musixmatch\.com\/ws\/.*\/config\.get script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/musixmatch.miao.js, requires-body=true, timeout=60, tag=musixmatch.miao
+http-response ^https:\/\/apic\.musixmatch\.com\/ws\/.*\/config\.get script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/musixmatch.miao.js, requires-body=true, timeout=60, tag=musixmatch.miao
 
 #mimo
-http-response ^https:\/\/api\.getmimo\.com\/v1\/subscriptions$ script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/mimo.vip.js, requires-body=true, timeout=60, tag=mimo.vip
+http-response ^https:\/\/api\.getmimo\.com\/v1\/subscriptions$ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/mimo.vip.js, requires-body=true, timeout=60, tag=mimo.vip
 
 #lingokids
-http-response ^https:\/\/api\.lingokids\.com\/v1\/renovate_session$ script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/lingokids.vip.js, requires-body=true, timeout=60, tag=lingokids.vip
+http-response ^https:\/\/api\.lingokids\.com\/v1\/renovate_session$ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/lingokids.vip.js, requires-body=true, timeout=60, tag=lingokids.vip
 
 #duolingo_test
-http-response ^https:\/\/duolingo-leaderboards-prod\.duolingo\.com\/leaderboards* script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/duolingo.js, requires-body=true, timeout=60, tag=duolingo
+http-response ^https:\/\/duolingo-leaderboards-prod\.duolingo\.com\/leaderboards* script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/duolingo.js, requires-body=true, timeout=60, tag=duolingo
 
 #ulike
-http-response ^https:\/\/commerce-i18n-api\.faceu\.mobi\/commerce\/v1\/subscription\/user_info$ script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/ulike.js, requires-body=true, timeout=60, tag=ulike
+http-response ^https:\/\/commerce-i18n-api\.faceu\.mobi\/commerce\/v1\/subscription\/user_info$ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/ulike.js, requires-body=true, timeout=60, tag=ulike
 
 #zingmp3
-http-response ^https:\/\/api\.global\.mp3\.zing\.vn\/1\.0\/getUserInfo\?data=* script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/zingmp3.js, requires-body=true, timeout=60, tag=zingmp3
+http-response ^https:\/\/api\.global\.mp3\.zing\.vn\/1\.0\/getUserInfo\?data=* script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/zingmp3.js, requires-body=true, timeout=60, tag=zingmp3
 
 #Blinkist
-http-response ^https:\/\/api\.blinkist\.com\/v4\/(me$|me.json$|me\/access$) script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/blinkist.js, requires-body=true, timeout=60, tag=blinkist
+http-response ^https:\/\/api\.blinkist\.com\/v4\/(me$|me.json$|me\/access$) script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/blinkist.js, requires-body=true, timeout=60, tag=blinkist
 
 #sololearn 
-http-response ^https:\/\/api\.sololearn\.com\/(Profile\/GetProfile$|authenticateDevice$) script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/sololearn.js, requires-body=true, timeout=60, tag=sololearn
+http-response ^https:\/\/api\.sololearn\.com\/(Profile\/GetProfile$|authenticateDevice$) script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/sololearn.js, requires-body=true, timeout=60, tag=sololearn
 
 #kinemaster
-http-response ^https:\/\/api-kinemaster-assetstore\.(nexstreaming|kinemasters)\.com\/.*\/product\/verifyReceipt$ script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/kinemaster.js, requires-body=true, timeout=60, tag=kinemaster
+http-response ^https:\/\/api-kinemaster-assetstore\.(nexstreaming|kinemasters)\.com\/.*\/product\/verifyReceipt$ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/kinemaster.js, requires-body=true, timeout=60, tag=kinemaster
 
 #pushover
-http-response ^https:\/\/api\.pushover\.net\/1\/messages\.json* script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/pushover.js, requires-body=true, timeout=60, tag=pushover
+http-response ^https:\/\/api\.pushover\.net\/1\/messages\.json* script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/pushover.js, requires-body=true, timeout=60, tag=pushover
 
 #CamScanner
-http-response ^https:\/\/(api|api-cs)\.intsig\.net\/purchase\/cs\/query_property\? script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/CamScaner.js, requires-body=true, timeout=60, tag=CamScaner
+http-response ^https:\/\/(api|api-cs)\.intsig\.net\/purchase\/cs\/query_property\? script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/CamScaner.js, requires-body=true, timeout=60, tag=CamScaner
 
 #over
-http-response ^https:\/\/api\.overhq\.com\/(user\/token\/refresh$|subscription\/verifyReceipt$) script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/over.vip.js, requires-body=true, timeout=60, tag=over.vip
+http-response ^https:\/\/api\.overhq\.com\/(user\/token\/refresh$|subscription\/verifyReceipt$) script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/over.vip.js, requires-body=true, timeout=60, tag=over.vip
 
 #speak&translate
 http-response ^https:\/\/receipt-validator\.herewetest\.com\/apple\/verifyTransaction$ script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/zwf234/qxrules/speakhttps://github.com/ifflagged/Darwin/raw/main/Modules/JS/zwf234/qxrules/speakhttps://github.com/ifflagged/Darwin/raw/main/Modules/JS/zwf234/qxrules/speakhttps://github.com/ifflagged/Darwin/raw/main/Modules/JS/zwf234/qxrules/speakhttps://github.com/ifflagged/Darwin/raw/main/Modules/JS/zwf234/qxrules/speakhttps://nav.qixinpro.com/rules/QuantumultX/js/yue/speak&translate.jstranslate.jstranslate.jstranslate.jstranslate.jstranslate.jstranslate.jstranslate.jstranslate.jstranslate.jstranslate.jstranslate.jstranslate.jstranslate.jstranslate.jstranslate.jstranslate.jstranslate.jstranslate.jstranslate.jstranslate.jstranslate.jstranslate.jstranslate.jstranslate.jstranslate.jstranslate.jstranslate.jstranslate.jstranslate.jstranslate.jstranslate.js, requires-body=true, timeout=60, tag=speak&translate
 
 #document
-http-response ^https:\/\/license\.pdfexpert\.com\/api\/.*\/documents\/subscription\/(refresh$|check$) script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/documents.js, requires-body=true, timeout=60, tag=documents
+http-response ^https:\/\/license\.pdfexpert\.com\/api\/.*\/documents\/subscription\/(refresh$|check$) script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/documents.js, requires-body=true, timeout=60, tag=documents
 
 #workingcopy
-http-response ^https:\/\/education\.github\.com\/api\/user$ script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/workingcopy.js, requires-body=true, timeout=60, tag=workingcopy
+http-response ^https:\/\/education\.github\.com\/api\/user$ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/workingcopy.js, requires-body=true, timeout=60, tag=workingcopy
 
 #draft
-http-response ^https:\/\/backend\.getdrafts\.com\/api\/.*\/verification* script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/draft.js, requires-body=true, timeout=60, tag=draft
+http-response ^https:\/\/backend\.getdrafts\.com\/api\/.*\/verification* script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/draft.js, requires-body=true, timeout=60, tag=draft
 
 #phothop&PSexpress
-http-response ^https:\/\/lcs-mobile-cops\.adobe\.io\/mobile_profile script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/photoshop.js, requires-body=true, timeout=60, tag=photoshop
+http-response ^https:\/\/lcs-mobile-cops\.adobe\.io\/mobile_profile script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/photoshop.js, requires-body=true, timeout=60, tag=photoshop
 
 #itranslate&lingo&voice&converse
-http-response ^https:\/\/ssl-api\.itranslateapp\.com\/.*\/subscriptions\/.*\/ios$ script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/itranslate.js, requires-body=true, timeout=60, tag=itranslate
+http-response ^https:\/\/ssl-api\.itranslateapp\.com\/.*\/subscriptions\/.*\/ios$ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/itranslate.js, requires-body=true, timeout=60, tag=itranslate
 
 #pre_dayone
-#http-request ^https:\/\/dayone\.me\/api\/users$ script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/replace-header.js, timeout=30, tag=replaceHeader, argument=(%5Cr%5Cn)If-None-Match%3A.%2B(%5Cr%5Cn)-%3E%241
+#http-request ^https:\/\/dayone\.me\/api\/users$ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/replace-header.js, timeout=30, tag=replaceHeader, argument=(%5Cr%5Cn)If-None-Match%3A.%2B(%5Cr%5Cn)-%3E%241
 
 #dayone
-http-response ^https:\/\/dayone\.me\/api\/(users|v2\/users\/account-status)$ script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/dayone.js, requires-body=true, timeout=60, tag=dayone
+http-response ^https:\/\/dayone\.me\/api\/(users|v2\/users\/account-status)$ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/dayone.js, requires-body=true, timeout=60, tag=dayone
 
 #endel
-http-response ^https:\/\/api-production\.endel\.io\/.*\/user$ script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/endel.js, requires-body=true, timeout=60, tag=endel
+http-response ^https:\/\/api-production\.endel\.io\/.*\/user$ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/endel.js, requires-body=true, timeout=60, tag=endel
 
 #shred
-http-response ^https:\/\/api\.shred\.app\/verifyReceipt$ script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/shred.js, requires-body=true, timeout=60, tag=shred
+http-response ^https:\/\/api\.shred\.app\/verifyReceipt$ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/shred.js, requires-body=true, timeout=60, tag=shred
 
 #nichi
-http-response ^https?:\/\/mp\.bybutter\.com\/mood\/(official-templates|privileges) script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/nichi.js, requires-body=true, timeout=60, tag=nichi
+http-response ^https?:\/\/mp\.bybutter\.com\/mood\/(official-templates|privileges) script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/nichi.js, requires-body=true, timeout=60, tag=nichi
 
 #grammarly
-http-response ^https:\/\/subscription\.grammarly\.com\/api\/v1$ script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/grammarly.js, requires-body=true, timeout=60, tag=grammarly
+http-response ^https:\/\/subscription\.grammarly\.com\/api\/v1$ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/grammarly.js, requires-body=true, timeout=60, tag=grammarly
 
 #splice
-http-response ^https:\/\/splice\.oracle\.\w+\.com\/devices\/me script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/splice.js, requires-body=true, timeout=60, tag=splice
+http-response ^https:\/\/splice\.oracle\.\w+\.com\/devices\/me script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/splice.js, requires-body=true, timeout=60, tag=splice
 
 #planner5d
-http-response ^https:\/\/planner5d\.com\/api\/sets script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/planner5d.js, requires-body=true, timeout=60, tag=planner5d
+http-response ^https:\/\/planner5d\.com\/api\/sets script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/planner5d.js, requires-body=true, timeout=60, tag=planner5d
 
 #playerxtreme
-#http-request ^https:\/\/secure\.istreamer\.com\/backend$ script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/replace-header.js, timeout=30, tag=replaceHeader, argument=(%5Cr%5Cn)If-None-Match%3A.%2B(%5Cr%5Cn)-%3E%241
+#http-request ^https:\/\/secure\.istreamer\.com\/backend$ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/replace-header.js, timeout=30, tag=replaceHeader, argument=(%5Cr%5Cn)If-None-Match%3A.%2B(%5Cr%5Cn)-%3E%241
 
-http-response ^https:\/\/secure\.istreamer\.com\/backend$ script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/playerxtreme.js, requires-body=true, timeout=60, tag=playerxtreme
+http-response ^https:\/\/secure\.istreamer\.com\/backend$ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/playerxtreme.js, requires-body=true, timeout=60, tag=playerxtreme
 
 #all apps monkey
-http-response ^https:\/\/www\.api\.monkeyuni\.net\/api\/.+\/mobile\/account\/load-update script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/monkey.js, requires-body=true, timeout=60, tag=monkey
+http-response ^https:\/\/www\.api\.monkeyuni\.net\/api\/.+\/mobile\/account\/load-update script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/monkey.js, requires-body=true, timeout=60, tag=monkey
 
 #textnow
-http-response ^https:\/\/api\.textnow\.me\/api2.0\/users\/.* script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/Textnow.js, requires-body=true, timeout=60, tag=Textnow
+http-response ^https:\/\/api\.textnow\.me\/api2.0\/users\/.* script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/Textnow.js, requires-body=true, timeout=60, tag=Textnow
 
 #彩云（解锁VIP）   biz.caiyunapp.com
-http-response ^https:\/\/biz\.caiyunapp\.com\/v2\/user.+ script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/caiyun.js, requires-body=true, timeout=60, tag=caiyun
+http-response ^https:\/\/biz\.caiyunapp\.com\/v2\/user.+ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/caiyun.js, requires-body=true, timeout=60, tag=caiyun
 
 #头脑吃鸡
-http-response ^https://tncj.hortorgames.com/chicken/fight/(answer|findQuiz) script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/tncj.min.js, requires-body=true, timeout=60, tag=tncj.min
+http-response ^https://tncj.hortorgames.com/chicken/fight/(answer|findQuiz) script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/tncj.min.js, requires-body=true, timeout=60, tag=tncj.min
 
 # XMind思维导图   www.xmind.cn, www.xmind.net
-http-response https:\/\/www\.xmind\.cn\/\_res\/devices script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/xmind.js, requires-body=true, timeout=60, tag=xmind
+http-response https:\/\/www\.xmind\.cn\/\_res\/devices script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/xmind.js, requires-body=true, timeout=60, tag=xmind
 
 # 什么值得买(By blackmatrix7)
-http-response ^https:\/\/homepage-api.smzdm.com\/home script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/smzdm_remove_ads.js, requires-body=true, timeout=60, tag=smzdm_remove_ads
+http-response ^https:\/\/homepage-api.smzdm.com\/home script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/smzdm_remove_ads.js, requires-body=true, timeout=60, tag=smzdm_remove_ads
 
-http-response ^https:\/\/haojia-api.smzdm.com\/home\/list script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/smzdm_remove_ads.js, requires-body=true, timeout=60, tag=smzdm_remove_ads
+http-response ^https:\/\/haojia-api.smzdm.com\/home\/list script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/smzdm_remove_ads.js, requires-body=true, timeout=60, tag=smzdm_remove_ads
 
-http-response ^https:\/\/article-api.smzdm.com\/article\/index_home_page script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zwf234/qxrules/smzdm_remove_ads.js, requires-body=true, timeout=60, tag=smzdm_remove_ads
+http-response ^https:\/\/article-api.smzdm.com\/article\/index_home_page script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zwf234/qxrules/smzdm_remove_ads.js, requires-body=true, timeout=60, tag=smzdm_remove_ads
 
 [MITM]
 hostname = mp.weixin.qq.com, api.gamer.com.tw, ios.prod.ftl.netflix.com, homepage-api.smzdm.com, haojia-api.smzdm.com, article-api.smzdm.com, haojia.m.smzdm.com, app-api.smzdm.com, s-api.smzdm.com, www.52pojie.cn, c.tieba.baidu.com, ifac*.iqiyi.com, api.kkmh.com, wapside.189.cn, act.10010.com, clientaccess.10086.cn, *.acfun.cn, apk.tw, group.baicizhan.com, sapi.beingfine.cn, *.csdn.net, www.duokan.com, api.dongqiudi.com, api.everphoto.cn, api.dushu.io, *.feng.com, pm.m.fenqile.com, www.flyertea.com, m.gdoil.cn, gameapi.hellobike.com, wxprdapplet.gac-nio.com, www.maomicd.com, i.meituan.com, credits.bz.mgtv.com, apiwz.midukanshu.com, api-takumi.mihoyo.com, app.nio.com, xiaoshuo.qm989.com, node.kg.qq.com, api.1sapp.com, user.qunar.com, sf-integral-sign-in.weixinjia.net, mcs-mimp-web.sf-express.com, passport.suning.com, luckman.suning.com, sign.suning.com, gameapi.suning.com, tieba.baidu.com, tncj.hortorgames.com, *.v2ex.com, user-api-prd-mx.wandafilm.com, *.video.qq.com, promotion.waimai.meituan.com, 110.43.90.61, m-bean.kaola.com, *.you.163.com, iphone.myzaker.com, *.rrys2019.com, ios.zmzapi.com, wx-mini.pagoda.com.cn, api.infzm.com, my.ruanmei.com, mwegame.qq.com, m.ctrip.com, h5.bianlifeng.com, as.xiaojukeji.com, superapp.kiwa-tech.com, activity-1.m.duiba.com.cn, webapi.qmai.cn, teacherapi.zmlearn.com, mall.oclean.com, api.xiaoheihe.cn, h5.ele.me, *.xmcimg.com, nebula.kuaishou.com, draw.jdfcloud.com, newsapi.sina.cn, api.inews.qq.com, *.youth.cn, www.mydigit.cn, ios.baertt.com, maicai.api.ddxq.mobi, proxy.vac.qq.com, app*.jegotrip.com.cn, task.jegotrip.com.cn, api.umer.com.cn, exp.angelalign.com, ngabbs.com, h5.youzan.com, dominos0724.shjimang.com, e.189.cn, huiyuan.163.com, app.kxp.com, geekhub.com, cxdng.cpic.com.cn, mobile01.91quzou.com, api.cashtoutiao.com, appv8.qukantianxia.com, appv7.qukantx.com, qqpet.jwetech.com, sports.lifesense.com, studygolang.com, cloud.umetrip.com, www.2xtj7.cnwww.baimaa.comwww.hnmiaosu.cc, m.ctrp.com, m.elong.com, activity.m.duiba.com.cn, icbc1.wlphp.com:8444, wx.17u.cn, ios-fenqu11.lxsjgo.com, i.snssdk.com, is.snssdk.com, wq.jd.com, ph0001.hezyq.com, wq.02gk.com, marketappapi.biyao.com, app.ymatou.com, api.tuhu.cn, now.qq.com, daojia.jd.com, yuba.douyu.com, j1.pupuapi.com, club.yili.com, wxavip-up.ezrpro.cn, common.diditaxi.com.cn, www.xiaodouzhuan.cn, biz.caiyunapp.com, non-existed-domain.com, *.non-connected-domain.com, mqqapi.reader.qq.com, greasyfork.org, openuserjs.org, api.interpreter.caiyunai.com, api.rr.tv, *.bh3.com, api.sololearn.com, bkcd.b-cdn.net, www.baidu.com2.club, *.baidu.com, duckduckgo.com, www.xmind.cn, www.xmind.net, 118.89.204.198, *.musical.ly, getuserinfo.321mh.com, user*.zymk.cn, ios.fuliapps.com, vsco.co, api.vnision.com, sp.kaola.com, app101.avictown.cc, api.hlo.xyz, api.ijo.xyz, www.luqijianggushi.com, u.kanghuayun.com, mitaoapp.yeduapp.com, www.3ivf.com, pay.guoing.com, viva.v21xy.com, mp.bybutter.com, m.iqiyi.com, z1.m1907.cn, m.youku.com, m.v.qq.com, m.bilibili.com, api.vuevidmeo.net, api.picsart.c*, ios.xiangjiaoapps.com, apple.xiangjiaoapps.com, *.lagoapps.com, *.xiangxiangapps.com, *.pipiapps.com, avatar-nct.nixcdn.com, oa.zalo.me, origin-prod-phoenix.jibjab.com, api.meiease.c*, api.unfold.app, viva-asia1.vvbrd.com, graph.nhaccuatui.com, api.memrise.com, api.sync.me, pool.elsanow.io, lambda.us-east-1.amazonaws.com, api.mondlylanguages.com, api.busuu.com, owa.videoshowiosglobalserver.com:0, accounts.elevateapp.net, purchases.ws.pho.to, api-intl.mr.meitu.com, bmall.camera360.com, api.tv.zing.vn, api.calm.com, www.calm.com, api.global.mp3.zing.vn, apimboom2.globaldelight.net, photos.adobe.io, license.pdfexpert.com, subs.platforms.team, apic.musixmatch.com, api.getmimo.com, api.revenuecat.com, engbright.com, api.lingokids.com, www.peacefulsoundsapp.com, duolingo-leaderboards-prod.duolingo.com, mobile-api.adguard.com, api.blinkist.com, api-kinemaster-assetstore.*, api.pushover.net, api.overhq.com, receipt-validator.herewetest.com, lcs-mobile-cops.adobe.io, education.github.com, backend.getdrafts.com, ssl-api.itranslateapp.com, m.douban.com, dayone.me, license.enpass.io, *.grammarly.com, api.keepkeep.com, planner5d.com, pan.baidu.com, secure.istreamer.com, www.api.monkeyuni.net, api.textnow.me, veishop.iboxpay.com, *.xjxjappss.com, sub.store, testflight.apple.com, api.polaxiong.com, *.xxjjappss.com, *.huaerdadi.com, *.xiaoxiaoapps.com, *.xiaoxiaoimg.com, *.byteoversea.com, *.tik-tokapi.com, snailsleep.net, music.snailsleep.net, community.snailsleep.net, nmeditation.snailsleep.net, api.myb6api.com:8080, lginstaacademy.com, ios-h2.prod.ftl.netflix.com, mb3admin.com, weixin110.qq.com, security.wechat.com, guide-acs.m.taobao.com, shopmember.m.jd.com, iosv2.cjapi.papa21.com, iflow.uc.cn, notability.com, app.api.versa-ai.com, api.feidee.net, userapi.feidee.net, tg.feidee.com, community.feidee.com, txv04.com, apiios.xiangha.com, 39.97.157.167, appa.lingdu2019.cn, www.zhihu.com, api.zhihu.com, spclient.wg.spotify.com, zhuanlan.zhihu.com, appcloud2.zhihu.com, 103.41.167.236, 103.41.167.234, 103.41.167.235, 103.41.167.226, *.gotokeep.com, vira.llsapp.com, nomo.dafork.com, apiios_dq.xiangha.com, appweb_dq.xiangha.com, 101.200.225.157, *.wtzw.com, sjapp.o3aqqc.work, cokemv.me, *.pornhub.com, www.lezhutv.com, www.bimi*.net, *kuwo*, *lrts*, 18comic.org, www.o8tv.com, 555dy.vip, www.5*.com, www.5*.cc, gimytv.app, www.tkys.tv, www.qianoo.cn, *.zhenbuka*.*, xluser-ssl.xunlei.com, www.libvio.me, tiebac.baidu.com, app.yiyan.art, api.tidal.com, app-live.planefinder.net, aktv111.com, *.docer.wps.cn, vipapi.wps.cn, account.wps.cn, *account.wps.com, wallpaper.soutushenqi.com, baimiao.uzero.cn, top-widgets-api.xiaozujian.com, p.du.163.com, sdk.alibaba.com.ailbaba.me, xrckeji.com, xianbeikeji.com, creen-lock.51wnl-cq.com, *.meiyan.com, *.meitu.com, mobile.flightradar24.com, dayone.app, api.effie.pro, api.effie.co, api.chuangqi.store, api.open.loveclip.site, api.saladvideo.com, -redirector*.googlevideo.com, *.googlevideo.com, www.youtube.com, s.youtube.com, youtubei.googleapis.com, ypmnkbb.saejeuj.com, fufxtyc.bytebwq.com, lcbnejx.dirptev.com, gcyivjc.qrneryt.com, dida365.com, *.xiuxiu.meitu.com, api-chat.soulapp.cn, *.aliyundrive.com, edith.xiaohongshu.com, www.xiaohongshu.com, *music.163.com, 115.236.121.4, 115.236.118.34, 115.238.119.68, 183.136.182.19, *.wps.cn, api-pay.soulapp.cn, api-user.soulapp.cn, 8.210.3.170, 47.96.7.91, 47.96.11.46, 47.96.20.45, 47.98.54.106, 47.98.137.249, 114.215.255.94, 118.31.7.235, 118.31.112.221, 120.55.55.115, 120.55.62.124, 121.196.197.147, 121.196.203.183, *.camscanner.com, *.intsig.net

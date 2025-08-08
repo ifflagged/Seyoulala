@@ -3,9 +3,9 @@
 #!category=Jacob
 
 [Script]
-jd_price = type=http-response, pattern=^https?:\/\/in\.m\.jd\.com\/product\/graphext\/\d+\.html, script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/wf021325/jd_price/jd_price.js, requires-body=true, max-size=-1, timeout=60
+jd_price = type=http-response, pattern=^https?:\/\/in\.m\.jd\.com\/product\/graphext\/\d+\.html, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/wf021325/jd_price/jd_price.js, requires-body=true, max-size=-1, timeout=60
 
-jd_price = type=http-request, pattern=^https?:\/\/apapia-sqk-weblogic\.manmanbuy\.com\/baoliao\/center\/menu$, script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/wf021325/jd_price/jd_price.js, requires-body=true, max-size=-1, timeout=60
+jd_price = type=http-request, pattern=^https?:\/\/apapia-sqk-weblogic\.manmanbuy\.com\/baoliao\/center\/menu$, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/wf021325/jd_price/jd_price.js, requires-body=true, max-size=-1, timeout=60
 
 #jd_price = type=http-response, pattern=^https?:\/\/in\.m\.jd\.com\/product\/graphext\/\d+\.html, script-path=http://192.168.2.170:8080/jd_price.js, requires-body=true, max-size=-1, timeout=60
 

@@ -4,7 +4,7 @@
 http-response ^https?:\/\/app\.zhuanzhuan\.com\/zz\/transfer\/getpersonalcenter pendantInfo random_body
 
 [Script]
-zhuanzhuan = type=http-response,pattern=^https?:\/\/app\.zhuanzhuan\.com\/zz\/v\d\/zzlogic\/mywxcontinenthomepage,requires-body=1,max-size=0,script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zirawell/Official/zhuanzhuan/zhuanzhuan.js
+zhuanzhuan = type=http-response,pattern=^https?:\/\/app\.zhuanzhuan\.com\/zz\/v\d\/zzlogic\/mywxcontinenthomepage,requires-body=1,max-size=0,script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zirawell/Official/zhuanzhuan/zhuanzhuan.js
 
 [MITM]
 hostname= %APPEND% app.zhuanzhuan.com

@@ -33,19 +33,19 @@ IP-CIDR,116.85.3.25/32,REJECT,no-resolve
 ^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v1\/other\/slow - reject-dict
 
 [Script]
-http-response ^https:\/\/common\.diditaxi\.com\.cn\/common\/v5\/usercenter\/layout script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/ZenmoFeiShi/Didichuxing/Didichuxing.js, requires-body=true, timeout=60, tag=Didichuxing
+http-response ^https:\/\/common\.diditaxi\.com\.cn\/common\/v5\/usercenter\/layout script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ZenmoFeiShi/Didichuxing/Didichuxing.js, requires-body=true, timeout=60, tag=Didichuxing
 
-http-response ^https:\/\/common\.diditaxi\.com\.cn\/common\/v\d\/usercenter\/me script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/ZenmoFeiShi/Didichuxing/Didichuxing.js, requires-body=true, timeout=60, tag=Didichuxing
+http-response ^https:\/\/common\.diditaxi\.com\.cn\/common\/v\d\/usercenter\/me script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ZenmoFeiShi/Didichuxing/Didichuxing.js, requires-body=true, timeout=60, tag=Didichuxing
 
-http-response ^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/core script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/ZenmoFeiShi/Didichuxing/Didichuxing.js, requires-body=true, timeout=60, tag=Didichuxing
+http-response ^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/core script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ZenmoFeiShi/Didichuxing/Didichuxing.js, requires-body=true, timeout=60, tag=Didichuxing
 
-http-response ^https:\/\/api\.udache\.com\/gulfstream\/pre-sale\/v1\/other\/pGetSceneList script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/ZenmoFeiShi/Didichuxing/Didichuxing.js, requires-body=true, timeout=60, tag=Didichuxing
+http-response ^https:\/\/api\.udache\.com\/gulfstream\/pre-sale\/v1\/other\/pGetSceneList script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ZenmoFeiShi/Didichuxing/Didichuxing.js, requires-body=true, timeout=60, tag=Didichuxing
 
-http-response ^https:\/\/conf\.diditaxi\.com\.cn\/ota\/na\/yuantu\/infoList script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/ZenmoFeiShi/Didichuxing/Didichuxing.js, requires-body=true, timeout=60, tag=Didichuxing
+http-response ^https:\/\/conf\.diditaxi\.com\.cn\/ota\/na\/yuantu\/infoList script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ZenmoFeiShi/Didichuxing/Didichuxing.js, requires-body=true, timeout=60, tag=Didichuxing
 
-http-response ^https:\/\/api\.udache\.com\/gulfstream\/passenger-center\/v2\/other\/pInTripLayout script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/ZenmoFeiShi/Didichuxing/Didichuxing.js, requires-body=true, timeout=60, tag=Didichuxing
+http-response ^https:\/\/api\.udache\.com\/gulfstream\/passenger-center\/v2\/other\/pInTripLayout script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ZenmoFeiShi/Didichuxing/Didichuxing.js, requires-body=true, timeout=60, tag=Didichuxing
 
-http-response ^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v1\/oversea\/layout script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/ZenmoFeiShi/Didichuxing/Didichuxing.js, requires-body=true, timeout=60, tag=Didichuxing
+http-response ^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v1\/oversea\/layout script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ZenmoFeiShi/Didichuxing/Didichuxing.js, requires-body=true, timeout=60, tag=Didichuxing
 
 [MITM]
 hostname = common.diditaxi.com.cn, freight.xiaojukeji.com, daijia.kuaidadi.com, 162.14.157.*, ct.xiaojukeji.com, res.xiaojukeji.com, conf.diditaxi.com.cn, api.udache.com, 123.207.209.*, 112.53.55.225, 120.241.142.*, 120.241.143.*, 116.85.*, 139.199.240.84

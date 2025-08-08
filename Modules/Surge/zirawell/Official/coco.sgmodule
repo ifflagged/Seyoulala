@@ -1,7 +1,7 @@
 # > CoCo点单+<微信小程序> - COCO
 
 [Script]
-coco = type=http-response,pattern=^https?:\/\/coco-com\.e\.verystar\.net\/v\d\/home\/info,requires-body=1,max-size=0,script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zirawell/Official/coco/wechatApplet.js
+coco = type=http-response,pattern=^https?:\/\/coco-com\.e\.verystar\.net\/v\d\/home\/info,requires-body=1,max-size=0,script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zirawell/Official/coco/wechatApplet.js
 
 [MITM]
 hostname= %APPEND% coco-com.e.verystar.net

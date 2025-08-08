@@ -4,7 +4,7 @@
 DOMAIN, api.liquidlink.cn, REJECT, extended-matching, pre-matching
 
 [Script]
-javdb = type=http-response,pattern=^https?:\/\/(api\.hechuangxinxi\.xyz|jdforrepam\.com)\/api\/v\d\/(?>ads|startup|users|movies),requires-body=1,max-size=0,script-path=https://github.com/ifflagged/Darwin-1/raw/main/Modules/JS/zirawell/Official/javdb/javdb.js
+javdb = type=http-response,pattern=^https?:\/\/(api\.hechuangxinxi\.xyz|jdforrepam\.com)\/api\/v\d\/(?>ads|startup|users|movies),requires-body=1,max-size=0,script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zirawell/Official/javdb/javdb.js
 
 [MITM]
 hostname= %APPEND% api.hechuangxinxi.xyz, jdforrepam.com
