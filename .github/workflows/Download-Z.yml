@@ -64,7 +64,7 @@ jobs:
             prefix=$(echo "$file_path" | cut -d'/' -f4)
 
             if [[ $count -gt 1 ]]; then
-              save_name="${prefix}-${filename}"
+              save_name="${filename}-${prefix}"
             else
               save_name="$filename"
             fi
