@@ -44,12 +44,13 @@ jobs:
           cat duplicate_list.txt >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
 
-      - name: Download sgmodule files with retry and rename duplicates
+      - name: Download sgmodule files with retry and smart renaming
+        shell: bash
         run: |
           mkdir -p Modules/Surge/zirawell/Official
           retry=3
 
-          # 读取重复次数到关联数组
+          # 读取重复统计
           declare -A name_count
           while IFS= read -r line; do
             filename=$(echo "$line" | awk '{print $1}')
@@ -57,18 +58,33 @@ jobs:
             name_count["$filename"]=$count
           done < duplicate_list.txt
 
+          # 取合适前缀的函数
+          get_prefix() {
+            local full_path="$1"
+            IFS='/' read -r -a parts <<< "$full_path"
+            for i in 3 2 1; do
+              dir="${parts[i]}"
+              # 简单判断非文件即目录（没.sgmodule后缀）
+              if [[ "$dir" != *".sgmodule" ]]; then
+                echo "$dir"
+                return
+              fi
+            done
+            echo "Unknown"
+          }
+
           while IFS= read -r file_path; do
-            filename_full=$(basename "$file_path")        # 带后缀的完整文件名
-            filename="${filename_full%.sgmodule}"        # 去掉后缀，得到纯名字
-            count=${name_count["$filename_full"]}        # 用带后缀的完整名统计
-            prefix=$(echo "$file_path" | cut -d'/' -f4)
+            filename_full=$(basename "$file_path")
+            filename="${filename_full%.sgmodule}"
+            count=${name_count["$filename_full"]}
+            prefix=$(get_prefix "$file_path")
 
             if [[ $count -gt 1 ]]; then
-              save_name="${filename}-${prefix}.sgmodule"  # 拼接时只加一次后缀
+              save_name="${filename}-${prefix}.sgmodule"
             else
-              save_name="$filename_full"                   # 不重复就用原名
+              save_name="$filename_full"
             fi
-            
+
             echo "Downloading $file_path as $save_name"
             encoded_path=$(python3 -c "import urllib.parse; print(urllib.parse.quote('''$file_path'''))")
 
