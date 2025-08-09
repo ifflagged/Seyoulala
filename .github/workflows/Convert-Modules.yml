@@ -99,7 +99,7 @@ jobs:
               ! -path "Modules/Surge/VirgilClyne/*" \
               ! -path "*/Beta/*"); do
             # 获取当前文件所在的文件夹路径
-            author=$(dirname "$sgmodule_file" | sed 's|^Modules/Surge/||')
+            author=$(echo "$sgmodule_file" | sed -E 's|^Modules/Surge/([^/]+)/.*$|\1|')
             module_folder=$(basename "$sgmodule_file" .sgmodule)
             echo "Processing $sgmodule_file from folder $author for JS links"
 
