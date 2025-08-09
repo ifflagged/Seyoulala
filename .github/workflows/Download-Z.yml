@@ -110,7 +110,6 @@ jobs:
         continue-on-error: true  # 确保步骤在部分失败时继续执行
         run: |
           js_base_url="https://github.com/${GITHUB_REPOSITORY}/raw/main/Modules/JS"
-          GITHUB_API_URL="https://api.GitHub.com/repos/${GITHUB_REPOSITORY}/contents"
 
           for module_file in Modules/Surge/zirawell/Official/*.sgmodule; do
             echo "Processing $module_file"
@@ -120,30 +119,16 @@ jobs:
             echo "Processing $module_file from folder $author for JS links"
 
             js_links=$(grep -v '#' "$module_file" | grep -oP 'https?://[^ ]+\.(json|js|jq)' || echo "")
-          
+
             for js_link in $js_links; do
               js_filename=$(basename "$js_link")
               local_js_path="Modules/JS/$author/$module_folder/$js_filename"
               github_js_url="$js_base_url/$author/$module_folder/$js_filename"
-            
-              # 提取原始仓库和路径
-              # 假设 js_link 格式为 https://raw.githubusercontent.com/repo/branch/path
-              repo_path=$(echo "$js_link" | sed -E 's|https://(raw.githubusercontent.com|github.com)/([^/]+/[^/]+)/[^/]+/(.*)|\2/\3|')
-              # 如果是 github.com/raw 链接，需要特殊处理
-              if [[ "$js_link" == *"github.com/raw"* ]]; then
-                 repo_path=$(echo "$js_link" | sed -E 's|https://github.com/raw/([^/]+/[^/]+)/(.*)|\1/\2|')
-              fi
-
-              # 构建 API URL
-              api_url="https://api.github.com/repos/$repo_path"
 
               mkdir -p "$(dirname "$local_js_path")"
         
               echo "Downloading $js_link to $local_js_path"
-              # 使用 cURL 和 GITHUB_TOKEN 下载文件
-              if curl -H "Authorization: token $GITHUB_TOKEN" \
-                      -H "Accept: application/vnd.github.raw" \
-                      -L -o "$local_js_path" "$api_url"; then
+              if curl -A "Surge Mac/2985" -L -o "$local_js_path" "$js_link"; then
                 echo "Download successful for $js_link"
                 echo "Replacing $js_link with $github_js_url in $module_file"
                 sed -i "s|$js_link|$github_js_url|g" "$module_file"
