@@ -58,16 +58,17 @@ jobs:
           done < duplicate_list.txt
 
           while IFS= read -r file_path; do
-            filename=$(basename "$file_path" .sgmodule)  # 去掉.sgmodule后缀
-            count=${name_count["$filename.sgmodule"]}
+            filename_full=$(basename "$file_path")        # 带后缀的完整文件名
+            filename="${filename_full%.sgmodule}"        # 去掉后缀，得到纯名字
+            count=${name_count["$filename_full"]}        # 用带后缀的完整名统计
             prefix=$(echo "$file_path" | cut -d'/' -f4)
 
             if [[ $count -gt 1 ]]; then
-              save_name="${filename}-${prefix}.sgmodule"
+              save_name="${filename}-${prefix}.sgmodule"  # 拼接时只加一次后缀
             else
-              save_name="${filename}.sgmodule"
+              save_name="$filename_full"                   # 不重复就用原名
             fi
-
+            
             echo "Downloading $file_path as $save_name"
             encoded_path=$(python3 -c "import urllib.parse; print(urllib.parse.quote('''$file_path'''))")
 
@@ -88,6 +89,44 @@ jobs:
               echo "⚠️ Warning: Failed to download $file_path after $retry attempts, skipping."
             fi
           done < sgmodule_paths.txt
+
+      - name: Find and replace external JS resources
+        continue-on-error: true  # 确保步骤在部分失败时继续执行
+        run: |
+          js_base_url="https://github.com/${GITHUB_REPOSITORY}/raw/main/Modules/JS"
+
+          for module_file in Modules/Surge/zirawell/Official/*.sgmodule; do
+            echo "Processing $module_file"
+
+            author=$(echo "$module_file" | awk -F'/' '{print $(NF-2)}')
+            module_folder=$(basename "$module_file" .sgmodule)
+            echo "Processing $module_file from folder $author for JS links"
+
+            js_links=$(grep -v '#' "$module_file" | grep -oP 'https?://[^ ]+\.(json|js|jq)' || echo "")
+
+            for js_link in $js_links; do
+              js_filename=$(basename "$js_link")
+              local_js_path="Modules/JS/$author/$module_folder/$js_filename"
+              github_js_url="$js_base_url/$author/$module_folder/$js_filename"
+
+              mkdir -p "$(dirname "$local_js_path")"
+        
+              echo "Downloading $js_link to $local_js_path"
+              if curl -A "Surge Mac/2985" -L -o "$local_js_path" "$js_link"; then
+                echo "Download successful for $js_link"
+                echo "Replacing $js_link with $github_js_url in $module_file"
+                sed -i "s|$js_link|$github_js_url|g" "$module_file"
+          
+                Copied_module_file="Modules/Surge/zirawell/$module_folder.sgmodule"
+                if [ -f "$Copied_module_file" ]; then
+                  echo "Replacing $js_link with $github_js_url in $Copied_module_file"
+                  sed -i "s|$js_link|$github_js_url|g" "$Copied_module_file"
+                fi
+              else
+                echo "Failed to download $js_link, skipping..."
+              fi
+            done
+          done
 
       - name: Commit and push changes
         run: |
