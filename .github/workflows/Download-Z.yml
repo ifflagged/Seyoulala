@@ -1,73 +1,106 @@
-name: Fetch Surge sgmodule Files
+name: Fetch sgmodule Files
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: "0 3 * * *" # 每天 03:00 UTC 自动运行
+
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
-  fetch-sgmodules:
+  fetch-and-commit:
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
 
-      - name: Install jq & urlencode tool
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Install dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y jq
+          sudo apt-get install -y jq python3
 
-      - name: Prepare download folder
-        run: mkdir -p Modules/Surge/zirawell/Official
-
-      - name: Fetch and download sgmodule files
+      - name: Fetch sgmodule paths
         run: |
-          API="https://api.github.com/repos/zirawell/R-Store/contents/Rule/Surge"
-          
-          # 递归获取所有文件路径
-          get_files() {
-            local url="$1"
-            echo "Fetching: $url"
-            curl -s "$url" | jq -r '.[] | [.type, .path] | @tsv' | while IFS=$'\t' read -r type path; do
-              if [[ "$type" == "dir" ]]; then
-                get_files "https://api.github.com/repos/zirawell/R-Store/contents/$(python3 -c "import urllib.parse; print(urllib.parse.quote('$path'))")"
-              elif [[ "$path" == *.sgmodule ]]; then
-                echo "$path"
-              fi
-            done
-          }
+          curl -H "Authorization: token $GITHUB_TOKEN" -s \
+            "https://api.github.com/repos/zirawell/R-Store/git/trees/main?recursive=1" \
+            | jq -r '.tree[] | select(.path | test("sgmodule$")) | .path' > sgmodule_paths.txt
+          cat sgmodule_paths.txt
 
-          mapfile -t all_files < <(get_files "$API")
-
-          echo "Found ${#all_files[@]} sgmodule files."
-
-          # 检查重名文件
+      - name: Detect duplicate filenames
+        run: |
           declare -A name_count
-          for f in "${all_files[@]}"; do
-            base=$(basename "$f")
-            name_count["$base"]=$(( ${name_count["$base"]} + 1 ))
-          done
+          while IFS= read -r file_path; do
+            filename=$(basename "$file_path")
+            name_count["$filename"]=$(( ${name_count["$filename"]} + 1 ))
+          done < sgmodule_paths.txt
 
-          # 下载文件，失败重试
-          for f in "${all_files[@]}"; do
-            base=$(basename "$f")
-            dir1=$(echo "$f" | cut -d'/' -f3) # Rule/Surge/Adblock → Adblock
-            if (( name_count["$base"] > 1 )); then
-              save_name="${dir1}-${base}"
+          # 输出成文件供后面使用
+          for k in "${!name_count[@]}"; do
+            echo "$k ${name_count[$k]}"
+          done > name_counts.txt
+
+      - name: Download sgmodule files with duplicate rename & retry
+        run: |
+          mkdir -p Modules/Surge/zirawell/Official
+
+          # 读取name_counts到数组
+          declare -A name_count
+          while read -r fname count; do
+            name_count["$fname"]=$count
+          done < name_counts.txt
+
+          while IFS= read -r file_path; do
+            filename=$(basename "$file_path")
+            count=${name_count["$filename"]}
+
+            # 取三级目录分类名: Rule/Surge/Adblock/...
+            category=$(echo "$file_path" | cut -d'/' -f3)
+
+            if [[ $count -gt 1 ]]; then
+              save_name="${category}-${filename}"
             else
-              save_name="$base"
+              save_name="$filename"
             fi
 
-            echo "📥 Downloading $f as $save_name"
-            for attempt in {1..3}; do
-              echo "Attempt $attempt for $f"
-              curl -sL \
+            echo "Downloading $file_path as $save_name"
+
+            encoded_path=$(python3 -c "import urllib.parse; print(urllib.parse.quote('''$file_path'''))")
+
+            retry=3
+            attempt=1
+            success=0
+            while [ $attempt -le $retry ]; do
+              echo "Attempt $attempt for $file_path"
+              curl -H "Authorization: token $GITHUB_TOKEN" --fail -sL \
                 -H "Accept: application/vnd.github.raw" \
-                "https://raw.githubusercontent.com/zirawell/R-Store/main/$(python3 -c "import urllib.parse; print(urllib.parse.quote('$f'))")" \
-                -o "Modules/Surge/zirawell/Official/$save_name" && break
+                "https://api.github.com/repos/zirawell/R-Store/contents/$encoded_path?ref=main" \
+                -o "Modules/Surge/zirawell/Official/$save_name" && success=1 && break
+              echo "Attempt $attempt failed for $file_path"
+              attempt=$((attempt+1))
               sleep 2
             done
-          done
+
+            if [ $success -ne 1 ]; then
+              echo "⚠️ Warning: Failed to download $file_path after $retry attempts, skipping."
+            fi
+          done < sgmodule_paths.txt
+
+      - name: Commit and Push Changes
+        run: |
+          git config user.name "${GITHUB_ACTOR}"
+          git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+
+          git add Modules/Surge/zirawell/Official || true
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            COMMIT_MSG="Update sgmodule files on $(date -u '+%Y-%m-%d %H:%M:%S') UTC"
+            git commit -m "$COMMIT_MSG"
+            git push
+          fi
 
       - name: Commit and push changes
         run: |
