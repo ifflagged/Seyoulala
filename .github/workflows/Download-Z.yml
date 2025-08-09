@@ -1,95 +1,107 @@
-name: Download Surge Modules
+name: Download sgmodule files
 
 on:
+  workflow_dispatch:
   schedule:
-    - cron: "0 2 * * *" # 每天早上 10 点（UTC 2 点）运行
-  workflow_dispatch: # 手动触发
+    - cron: "0 0 * * *"
 
 jobs:
-  Download:
+  download-sgmodules:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.x"
-
-      - name: Install jq
-        run: sudo apt-get update && sudo apt-get install -y jq
-
-      - name: Download all sgmodule files
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Set up variables
         run: |
-          set -e
-          GITHUB_USER="zirawell"
-          GITHUB_REPO="R-Store"
-          GITHUB_BRANCH="main"
-          TARGET_DIR="Modules/Surge/zirawell/Official"
+          mkdir -p Modules/Surge/zirawell/Official
+          API_URL="https://api.github.com/repos/zirawell/R-Store/contents/Rule/Surge/Adblock/App"
+          AUTH_HEADER=""
+          if [ -n "${{ secrets.GITHUB_TOKEN }}" ]; then
+            AUTH_HEADER="-H \"Authorization: token ${{ secrets.GITHUB_TOKEN }}\""
+          fi
+          echo "API_URL=$API_URL" >> $GITHUB_ENV
+          echo "AUTH_HEADER=$AUTH_HEADER" >> $GITHUB_ENV
 
-          mkdir -p "$TARGET_DIR"
+      - name: Fetch file list recursively
+        run: |
+          fetch_files() {
+            local url="$1"
+            echo "Fetching: $url"
+            response=$(curl -s $AUTH_HEADER "$url")
+            for row in $(echo "$response" | jq -r '.[] | @base64'); do
+              _jq() { echo "${row}" | base64 --decode | jq -r "${1}"; }
+              type=$(_jq '.type')
+              path=$(_jq '.path')
+              if [ "$type" == "file" ] && [[ "$path" == *.sgmodule ]]; then
+                echo "$path" >> all_files.txt
+              elif [ "$type" == "dir" ]; then
+                fetch_files "https://api.github.com/repos/zirawell/R-Store/contents/$path"
+              fi
+            done
+          }
+          rm -f all_files.txt
+          fetch_files "$API_URL"
 
-          echo "📄 获取文件列表..."
-          file_list=$(curl -sL -H "Authorization: token $GITHUB_TOKEN" \
-            "https://api.github.com/repos/$GITHUB_USER/$GITHUB_REPO/git/trees/$GITHUB_BRANCH?recursive=1" \
-            | jq -r '.tree[].path' | grep -E '\.sgmodule$')
+      - name: Count duplicate filenames
+        run: |
+          declare -A counts
+          while read -r file_path; do
+            filename=$(basename "$file_path")
+            counts["$filename"]=$(( ${counts["$filename"]} + 1 ))
+          done < all_files.txt
+          for name in "${!counts[@]}"; do
+            echo "$name ${counts[$name]}"
+          done > name_counts.txt
 
+      - name: Download files with retry and handle duplicates
+        run: |
           declare -A name_count
+          while read -r name count; do
+            name_count["$name"]=$count
+          done < name_counts.txt
 
-          # 统计文件名出现次数
-          for file_path in $file_list; do
+          while read -r file_path; do
             filename=$(basename "$file_path")
-            name_count["$filename"]=$(( ${name_count["$filename"]} + 1 ))
-          done
+            category=$(echo "$file_path" | cut -d'/' -f3) # 功能分类
 
-          # 下载文件
-          for file_path in $file_list; do
-            filename=$(basename "$file_path")
-            grandparent_dir=$(basename "$(dirname "$(dirname "$file_path")")")
-
-            # 只有重名才加前缀
             if [ ${name_count["$filename"]} -gt 1 ]; then
-              new_filename="${grandparent_dir}-${filename}"
+              new_filename="${category}-${filename}"
             else
               new_filename="$filename"
             fi
 
-            target_path="$TARGET_DIR/$new_filename"
+            dest="Modules/Surge/zirawell/Official/$new_filename"
             echo "📥 Downloading $file_path as $new_filename"
 
-            encoded_path=$(python3 -c "import urllib.parse; print(urllib.parse.quote('''$file_path'''))")
-
-            attempt=1
-            success=0
-            while [ $attempt -le 3 ]; do
+            url="https://raw.githubusercontent.com/zirawell/R-Store/main/$file_path"
+            success=false
+            for attempt in 1 2 3; do
               echo "Attempt $attempt for $file_path"
-              curl --fail -sL \
-                -H "Authorization: token $GITHUB_TOKEN" \
-                -H "Accept: application/vnd.github.raw" \
-                "https://api.github.com/repos/$GITHUB_USER/$GITHUB_REPO/contents/$encoded_path?ref=$GITHUB_BRANCH" \
-                -o "$target_path" && success=1 && break
-              echo "❌ Attempt $attempt failed for $file_path"
-              attempt=$((attempt+1))
-              sleep 2
+              if curl -sSL "$url" -o "$dest"; then
+                success=true
+                break
+              else
+                echo "Download attempt $attempt failed for $file_path"
+                sleep 2
+              fi
             done
-
-            if [ $success -ne 1 ]; then
-              echo "⚠️ Warning: Failed to download $file_path after 3 attempts, skipping."
-              rm -f "$target_path"
+            if [ "$success" = false ]; then
+              echo "Warning: Download failed for $file_path after 3 attempts, skipping."
             fi
-          done
+          done < all_files.txt
 
       - name: Commit and push changes
         run: |
+          DATE="$(TZ='Asia/Shanghai' date '+%Y-%m-%d %H:%M:%S')"
+          
           git config user.name "${GITHUB_ACTOR}"
           git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
           git add Modules/Surge/zirawell/Official
           if git diff --cached --quiet; then
             echo "✅ No changes to commit."
           else
-            git commit -m "Download Surge Modules ($(date '+%Y-%m-%d %H:%M:%S'))"
+            git commit -m "Download Surge Modules at $DATE (UTC+8)"
             git push
           fi
