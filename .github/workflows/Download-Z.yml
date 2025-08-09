@@ -58,15 +58,14 @@ jobs:
           done < duplicate_list.txt
 
           while IFS= read -r file_path; do
-            filename=$(basename "$file_path")
-            count=${name_count["$filename"]}
-            # 获取path的第四部分作为前缀，例如 Rule/Surge/Adblock/App => App
+            filename=$(basename "$file_path" .sgmodule)  # 去掉.sgmodule后缀
+            count=${name_count["$filename.sgmodule"]}
             prefix=$(echo "$file_path" | cut -d'/' -f4)
 
             if [[ $count -gt 1 ]]; then
-              save_name="${filename}-${prefix}"
+              save_name="${filename}-${prefix}.sgmodule"
             else
-              save_name="$filename"
+              save_name="${filename}.sgmodule"
             fi
 
             echo "Downloading $file_path as $save_name"
