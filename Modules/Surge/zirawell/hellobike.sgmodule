@@ -1,0 +1,10 @@
+#!name=hellobike
+#!desc=hellobike
+#!category=Jacob
+
+[Map Local]
+^https?:\/\/api\.hellobike\.com\/api\?adx data-type=text data="{}" status-code=200
+
+[MITM]
+hostname = %APPEND% api.hellobike.com
+
