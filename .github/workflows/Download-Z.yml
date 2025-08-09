@@ -1,72 +1,95 @@
-name: Fetch sgmodule Files
+name: Download Surge Modules
 
 on:
-  workflow_dispatch:
-
-env:
-  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  schedule:
+    - cron: "0 2 * * *" # 每天早上 10 点（UTC 2 点）运行
+  workflow_dispatch: # 手动触发
 
 jobs:
-  fetch-and-commit:
+  Download:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout Repo
+      - name: Checkout repo
         uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
-          persist-credentials: true
+          python-version: "3.x"
 
-      - name: Install dependencies
+      - name: Install jq
+        run: sudo apt-get update && sudo apt-get install -y jq
+
+      - name: Download all sgmodule files
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          sudo apt-get update
-          sudo apt-get install -y jq python3
+          set -e
+          GITHUB_USER="zirawell"
+          GITHUB_REPO="R-Store"
+          GITHUB_BRANCH="main"
+          TARGET_DIR="Modules/Surge/zirawell/Official"
 
-      - name: Fetch sgmodule paths
-        run: |
-          curl -H "Authorization: token $GITHUB_TOKEN" -s \
-            "https://api.github.com/repos/zirawell/R-Store/git/trees/main?recursive=1" \
-            | jq -r '.tree[] | select(.path | test("sgmodule")) | .path' > sgmodule_paths.txt
-          cat sgmodule_paths.txt
+          mkdir -p "$TARGET_DIR"
 
-      - name: Download sgmodule files with retry
-        run: |
-          mkdir -p Modules/Surge/zirawell/Official
-          retry=3
+          echo "📄 获取文件列表..."
+          file_list=$(curl -sL -H "Authorization: token $GITHUB_TOKEN" \
+            "https://api.github.com/repos/$GITHUB_USER/$GITHUB_REPO/git/trees/$GITHUB_BRANCH?recursive=1" \
+            | jq -r '.tree[].path' | grep -E '\.sgmodule$')
 
-          while IFS= read -r file_path; do
+          declare -A name_count
+
+          # 统计文件名出现次数
+          for file_path in $file_list; do
             filename=$(basename "$file_path")
-            echo "Downloading $file_path as $filename"
+            name_count["$filename"]=$(( ${name_count["$filename"]} + 1 ))
+          done
+
+          # 下载文件
+          for file_path in $file_list; do
+            filename=$(basename "$file_path")
+            grandparent_dir=$(basename "$(dirname "$(dirname "$file_path")")")
+
+            # 只有重名才加前缀
+            if [ ${name_count["$filename"]} -gt 1 ]; then
+              new_filename="${grandparent_dir}-${filename}"
+            else
+              new_filename="$filename"
+            fi
+
+            target_path="$TARGET_DIR/$new_filename"
+            echo "📥 Downloading $file_path as $new_filename"
+
             encoded_path=$(python3 -c "import urllib.parse; print(urllib.parse.quote('''$file_path'''))")
 
             attempt=1
             success=0
-            while [ $attempt -le $retry ]; do
+            while [ $attempt -le 3 ]; do
               echo "Attempt $attempt for $file_path"
-              curl -H "Authorization: token $GITHUB_TOKEN" --fail -sL \
+              curl --fail -sL \
+                -H "Authorization: token $GITHUB_TOKEN" \
                 -H "Accept: application/vnd.github.raw" \
-                "https://api.github.com/repos/zirawell/R-Store/contents/$encoded_path?ref=main" \
-                -o "Modules/Surge/zirawell/Official/$filename" && success=1 && break
-              echo "Attempt $attempt failed for $file_path"
+                "https://api.github.com/repos/$GITHUB_USER/$GITHUB_REPO/contents/$encoded_path?ref=$GITHUB_BRANCH" \
+                -o "$target_path" && success=1 && break
+              echo "❌ Attempt $attempt failed for $file_path"
               attempt=$((attempt+1))
               sleep 2
             done
 
             if [ $success -ne 1 ]; then
-              echo "⚠️ Warning: Failed to download $file_path after $retry attempts, skipping."
+              echo "⚠️ Warning: Failed to download $file_path after 3 attempts, skipping."
+              rm -f "$target_path"
             fi
-          done < sgmodule_paths.txt
+          done
 
-      - name: Commit and Push Changes
+      - name: Commit and push changes
         run: |
           git config user.name "${GITHUB_ACTOR}"
           git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-
-          git add Modules/Surge/zirawell/Official || true
-
+          git add Modules/Surge/zirawell/Official
           if git diff --cached --quiet; then
-            echo "No changes to commit."
+            echo "✅ No changes to commit."
           else
-            COMMIT_MSG="Update sgmodule files on $(date -u '+%Y-%m-%d %H:%M:%S') UTC"
-            git commit -m "$COMMIT_MSG"
+            git commit -m "Download Surge Modules ($(date '+%Y-%m-%d %H:%M:%S'))"
             git push
           fi
