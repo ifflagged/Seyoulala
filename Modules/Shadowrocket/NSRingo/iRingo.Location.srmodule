@@ -1,22 +1,7 @@
-#!name= iRingo: 📍 Location
-#!desc=自定义「定位服务」\n通过「基于网络的地区检测」结果始终为用户设置的地区。
-#!author=VirgilClyne[https://github.com/VirgilClyne]
-#!icon=https://images.macrumors.com/article-new/2019/07/ios_location_services-250x250.jpg
-#!category=Jacob
+iRingo.Location%0A：Error: Response code 503 (Service Unavailable)
 
-#!openUrl=http://boxjs.com/#/app/iRingo.Location
-#!homepage=https://NSRingo.github.io/guide/GeoServices/location
-#!arguments-desc=GeoCountryCode: [地区检测] 地理国家或地区代码
-#!arguments=GeoCountryCode:US
 
-[Rule]
-# 📍 Country Code
-DOMAIN,gspe1-ssl.ls.apple.com,DIRECT
 
-[Script]
-# 📍 Country Code
-📍 Location.pep.gcc.response = type=http-response, pattern=^https?:\/\/gspe1-ssl\.ls\.apple\.com\/pep\/gcc, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/NSRingo/iRingo.Location/response.bundle.js, requires-body=true, argument=PEP.GCC={{{GeoCountryCode}}}
 
-[MITM]
-hostname = %APPEND% gspe1-ssl.ls.apple.com
 
+Script Hub 重写转换: ❌  可自行翻译错误信息或复制错误信息后点击通知进行反馈
