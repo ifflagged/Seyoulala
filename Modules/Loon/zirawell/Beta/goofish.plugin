@@ -16,6 +16,7 @@
 ^https?:\/\/h5\.m\.goofish\.com\/app\/idleFish-F2e\/idlefish-pop - reject
 ^https?:\/\/dinamicx\.alibabausercontent\.com\/pub\/fish_home_top_kingkong_new\/ - reject
 ^https?:\/\/g\.alicdn\.com\/IdleFish-F2e\/idlefish-workers\/[0-9.]+\/smartLoader - reject
+^https?:\/\/h5\.m\.goofish\.com\/wow\/moyu\/moyu-project\/idle-xy-seller-home\/pages\/dress-pop mock-response-body data-type=text data="{}" status-code=200
 ^https?:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop\.taobao\.wireless\.home\.xianyu(\.my)?\.awesome\.get mock-response-body data-type=text data="{}" status-code=200
 ^https?:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.live\.home\.ads\.material\.get mock-response-body data-type=text data="{}" status-code=200
 ^https?:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.user\.strategy\. mock-response-body data-type=text data="{}" status-code=200
