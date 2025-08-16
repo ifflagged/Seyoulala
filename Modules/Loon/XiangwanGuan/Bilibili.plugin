@@ -31,7 +31,7 @@ AND,((DOMAIN-SUFFIX,chat.bilibili.com),(OR,((DOMAIN-KEYWORD,stun),(DOMAIN-KEYWOR
 ^https?:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.view\.v1\.View\/TFInfo$ mock-response-body data-type=base64 data="AAAAAAIIAQ==" mock-data-is-base64=true
 
 [Script]
-http-response ^https?:\/\/live\.bilibili\.com\/blackboard\/era\/.+\.html\? script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/XiangwanGuan/Bilibili/webpage.bilibili.js, requires-body=true, timeout=60, tag=webpage.bilibili
+http-response ^https?:\/\/live\.bilibili\.com\/blackboard\/era\/.+\.html\? script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/webpage.bilibili.js, requires-body=true, timeout=60, tag=webpage.bilibili
 
 # Shadowrocket的脚本执行引擎不支持如下脚本的运行，屏蔽规则；
 #http-request ^https?:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.community\.service\.dm\.v1\.DM\/DmSegMobile$ script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/bilibili.protobuf.request.js,, requires-body=true, binary-body-mode=true, timeout=60, tag=bilibili.protobuf.request
