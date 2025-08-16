@@ -40,7 +40,7 @@ http-response-jq ^https?:\/\/app\.bilibili\.com\/x\/v2\/account\/myinfo\? '.data
 ^https?:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.view\.v1\.View\/TFInfo$ data-type=base64 data="AAAAAAIIAQ=="
 
 [Script]
-webpage.bilibili = type=http-response, pattern=^https?:\/\/live\.bilibili\.com\/blackboard\/era\/.+\.html\?, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/webpage.bilibili.js, requires-body=true, max-size=-1, timeout=60
+webpage.bilibili = type=http-response, pattern=^https?:\/\/live\.bilibili\.com\/blackboard\/era\/.+\.html\?, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/XiangwanGuan/Bilibili/webpage.bilibili.js, requires-body=true, max-size=-1, timeout=60
 
 # Shadowrocket的脚本执行引擎不支持如下脚本的运行，屏蔽规则；
 #bilibili.protobuf.request = type=http-request, pattern=^https?:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.community\.service\.dm\.v1\.DM\/DmSegMobile$, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/bilibili.protobuf.request.js,, requires-body=true, binary-body-mode=true, max-size=-1, timeout=60
