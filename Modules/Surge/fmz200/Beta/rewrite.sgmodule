@@ -3230,12 +3230,6 @@ Smzdm = type=http-response, pattern=^https?:\/\/article-api\.smzdm\.com\/publish
 
 Smzdm = type=http-response, pattern=^https?:\/\/qianbao\.smzdm\.com\/v\d\/app\/home, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/Smzdm.js, requires-body=true, max-size=-1, timeout=60
 
-# TestFlight 国区下载修正
-replaceBody = type=http-request, pattern=^https:\/\/testflight\.apple\.com\/v2\/accounts\/.*\/apps\/\d*\/builds\/\d*\/install$, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/replace-body.js, requires-body=true, max-size=-1, timeout=30, argument=%22storefrontId%22%5Cx20%3A%5Cx20.*%2C-%3E%22storefrontId%22%3A%22143441-19%2C29%22%2C
-
-# TF账户管理 App更新时提示"APP不可用"问题，解决部分TF兑换错了区域的问题，例如Loon兑换到了国区
-#TestFlightAccount = type=http-request, pattern=^https?:\/\/testflight\.apple\.com\/v\d\/(app|account|invite)s\/, script-path=https://raw.githubusercontent.com/NobyDa/Script/master/TestFlight/TestFlightAccount.js, requires-body=true, max-size=-1, timeout=60
-
 # 开屏广告
 replaceBody = type=http-response, pattern=^https://www\.tailgdd\.com/v8/smart/app/config/get$, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/replace-body.js, requires-body=true, max-size=-1, timeout=30, argument=%22data%22%3A%5C%7B.%2B%5C%7D-%3E%22data%22%3A%7B%7D
 
