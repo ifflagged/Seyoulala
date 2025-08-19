@@ -8,7 +8,7 @@
 #!loon_version=3.2.4(787)
 #!homepage=https://hub.kelee.one
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/Other_icon/120px/HTTPDNS.png
-#!date=2025-08-20 00:08:21
+#!date=2025-08-20 00:30:31
 
 [Rule]
 DOMAIN, yyapp-httpdns.gslb.yy.com, REJECT
