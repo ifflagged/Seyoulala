@@ -8,12 +8,10 @@
 #!loon_version=3.2.4(787)
 #!homepage=https://hub.kelee.one
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/Website_icon/120px/TencentAd.png
-#!date=2025-08-19 23:36:44
+#!date=2025-08-20 00:05:20
 
 [Rule]
-AND, ((OR, ((DOMAIN-KEYWORD, api-access), (DOMAIN-KEYWORD, content-union), (DOMAIN-KEYWORD, dpa-pack), (DOMAIN-KEYWORD, ecom), (DOMAIN-KEYWORD, empower), (DOMAIN-KEYWORD, endcard-pack), (DOMAIN-KEYWORD, ether-pack), (DOMAIN-KEYWORD, gromore), (DOMAIN-KEYWORD, log-api), (DOMAIN-KEYWORD, mix), (DOMAIN-KEYWORD, novel), (DOMAIN-KEYWORD, track-pack-lq))), (DOMAIN-KEYWORD, pangolin-sdk-toutiao)), REJECT
-AND, ((DOMAIN-KEYWORD, tnc), (OR, ((DOMAIN-SUFFIX, zijieapi.com), (DOMAIN-SUFFIX, snssdk.com), (DOMAIN-SUFFIX, sgsnssdk.com)))), REJECT
-AND, ((DOMAIN-KEYWORD, pangolin), (OR, ((DOMAIN-SUFFIX, zijieapi.com), (DOMAIN-SUFFIX, snssdk.com), (DOMAIN-SUFFIX, sgsnssdk.com)))), REJECT
+AND, ((OR, ((DOMAIN-KEYWORD, api-access), (DOMAIN-KEYWORD, log-api))), (DOMAIN-KEYWORD, pangolin-sdk-toutiao)), REJECT
 AND, ((DOMAIN-KEYWORD, -ad-), (DOMAIN-SUFFIX, byteimg.com)), REJECT
 AND, ((DOMAIN-KEYWORD, ads), (DOMAIN-KEYWORD, normal), (DOMAIN-SUFFIX, zijieapi.com)), REJECT
 DOMAIN-KEYWORD, -ad-sign.byteimg.com, REJECT
