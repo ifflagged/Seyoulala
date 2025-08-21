@@ -1,4 +1,4 @@
-#规则数量:9556
+#规则数量:9555
 #不支持的规则数量:1
 #已排除的规则数量:0
 #不支持的规则:
@@ -1092,9 +1092,8 @@ payload:
   - DOMAIN-SUFFIX,sjarvis.taobao.com
   - DOMAIN,adsmind.ugdtimg.com
   - DOMAIN,amdc.m.youku.com
-  - DOMAIN,apiv4-iyes.youku.com
   - DOMAIN,httpdns.alicdn.com
-  - DOMAIN,iyes.youku.com
+  - DOMAIN-KEYWORD,iyes.youku.com
   - DOMAIN,m-vali.cp31.ott.cibntv.net
   - DOMAIN,mc.atm.youku.com
   - DOMAIN,vali-g1.cp31.ott.cibntv.net
