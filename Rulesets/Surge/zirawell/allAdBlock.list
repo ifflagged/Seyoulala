@@ -1,4 +1,4 @@
-#规则数量:1328
+#规则数量:1329
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -336,6 +336,7 @@ DOMAIN,jdqd.jd.com
 DOMAIN,kad.gotokeep.com
 DOMAIN,launch.apple.com
 DOMAIN,layer.bz.mgtv.com
+DOMAIN,layout.meituan.net
 DOMAIN,lbs.netease.im
 DOMAIN,lc.map.baidu.com
 DOMAIN,lf-webcast-gr-sourcecdn.bytegecko.com
