@@ -16,6 +16,7 @@
 IP-CIDR,103.37.155.60/32,REJECT,no-resolve
 DOMAIN,flowplus.meituan.net,REJECT,extended-matching
 DOMAIN,hlx.meituan.com,REJECT,extended-matching
+DOMAIN,layout.meituan.net,REJECT,extended-matching
 DOMAIN,httpdnsmultiapi.meituan.com,REJECT,extended-matching
 DOMAIN,httpdnsmultiapivip.meituan.com,REJECT,extended-matching
 DOMAIN-SUFFIX,httpdns.meituan.com,REJECT,extended-matching
