@@ -1,6 +1,8 @@
 name: Fetch sgmodule Files
 
 on:
+  schedule:
+    - cron: '7 1 * * *'  # 每小时的第 0 分钟和第 30 分钟执行
   workflow_dispatch:
 
 env:
