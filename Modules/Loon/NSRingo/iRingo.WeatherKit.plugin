@@ -6,12 +6,12 @@
 #!icon = https://developer.apple.com/assets/elements/icons/weatherkit/weatherkit-128x128.png
 #!tag =  iRingo
 #!system = iOS,iPadOS,macOS,watchOS
-#!date = 2025-08-21 02:46:56
-#!version = 1.9.8
+#!date = 2025-08-22 02:57:53
+#!version = 1.9.9
 #!system_version = 18
 
 [Argument]
-DataSets = input,"airQuality,currentWeather,forecastDaily,forecastHourly,forecastNextHour,news,historicalComparisons,weatherAlerts,weatherChanges",tag=[数据集] 需要包含的数据集,desc=选中的数据集会被包含在请求中。
+DataSets = input,"airQuality,currentWeather,forecastDaily,forecastHourly,forecastNextHour,locationInfo,news,historicalComparisons,weatherAlerts,weatherChanges",tag=[数据集],desc=选中的数据集会被包含在请求中。
 CurrentWeather.Provider = select,"WeatherKit","ColorfulClouds","QWeather",tag=[当前天气] 数据源,desc=始终会使用选定的数据源，替换当前天气数据。
 NextHour.Provider = select,"ColorfulClouds","WeatherKit","QWeather",tag=[未来一小时降水强度] 数据源,desc=始终会使用选定的数据源，填补无降水监测地区的数据。
 AQI.Provider = select,"ColorfulClouds","WeatherKit","QWeather","WAQI",tag=[空气质量] 数据源,desc=始终会使用选定的数据源，填补无空气质量监测地区的数据。
