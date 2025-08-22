@@ -68,7 +68,7 @@ http-response ^https://api.weibo.cn/2/!/client/light_skin script-path=https://gi
 http-response ^https://new.vip.weibo.cn/littleskin/preview script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ddgksf2013/Weibo/weibo_json.js, requires-body=true, timeout=60, tag=weibo_json
 
 # > 微博_去广告以及去除各部分推广模块@zmqcherish,@ddgksf2013
-http-response ^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/(searchall|page\?|flowpage) script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ddgksf2013/Weibo/weibo_json.js, requires-body=true, timeout=60, tag=weibo_json
+http-response ^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/(searchall|page\?|0flowpage) script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ddgksf2013/Weibo/weibo_json.js, requires-body=true, timeout=60, tag=weibo_json
 
 http-response ^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/statuses/(unread_)?friends(/|_)timeline script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ddgksf2013/Weibo/weibo_json.js, requires-body=true, timeout=60, tag=weibo_json
 

@@ -69,7 +69,7 @@ weibo_json = type=http-response, pattern=^https://api.weibo.cn/2/!/client/light_
 weibo_json = type=http-response, pattern=^https://new.vip.weibo.cn/littleskin/preview, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ddgksf2013/Weibo/weibo_json.js, requires-body=true, max-size=-1, timeout=60
 
 # > 微博_去广告以及去除各部分推广模块@zmqcherish,@ddgksf2013
-weibo_json = type=http-response, pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/(searchall|page\?|flowpage), script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ddgksf2013/Weibo/weibo_json.js, requires-body=true, max-size=-1, timeout=60
+weibo_json = type=http-response, pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/(searchall|page\?|0flowpage), script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ddgksf2013/Weibo/weibo_json.js, requires-body=true, max-size=-1, timeout=60
 
 weibo_json = type=http-response, pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/statuses/(unread_)?friends(/|_)timeline, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ddgksf2013/Weibo/weibo_json.js, requires-body=true, max-size=-1, timeout=60
 
