@@ -1,4 +1,4 @@
-#规则数量:1329
+#规则数量:1328
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -189,7 +189,6 @@ payload:
   - DOMAIN,api.zuihuimai.com
   - DOMAIN,api.zysdsk.cn
   - DOMAIN,apiinit.amap.com
-  - DOMAIN,apiv4-iyes.youku.com
   - DOMAIN,apm.gotokeep.com
   - DOMAIN,apm.pinduoduo.com
   - DOMAIN,apmplus.volces.com
@@ -331,7 +330,6 @@ payload:
   - DOMAIN,ipv6.music.163.com
   - DOMAIN,iqiyim.adtrack.enlightent.cn
   - DOMAIN,ivy.pchouse.com.cn
-  - DOMAIN,iyes.youku.com
   - DOMAIN,janapi.jd.com
   - DOMAIN,jdqd.jd.com
   - DOMAIN,kad.gotokeep.com
@@ -1299,6 +1297,7 @@ payload:
   - DOMAIN-KEYWORD,dnspod.meituan.httpdns
   - DOMAIN-KEYWORD,gdtimg.com
   - DOMAIN-KEYWORD,iflyad.bj.openstorage.cn
+  - DOMAIN-KEYWORD,iyes.youku.com
   - DOMAIN-KEYWORD,kepler.jd.com
   - DOMAIN-KEYWORD,keplerapi.jd.com
   - DOMAIN-KEYWORD,log.snssdk.com
