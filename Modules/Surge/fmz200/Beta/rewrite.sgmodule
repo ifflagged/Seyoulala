@@ -2261,6 +2261,8 @@ https?:\/\/interface\d?\.music\.163.com\/eapi\/(mlivestream\/entrance\/playpage|
 # hostname = home.mi.com
 ^https?:\/\/home\.mi\.com\/cgi-op\/api\/v1\/recommendation\/(banner|carousel\/banners|myTab|openingBanner) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
+^https?:\/\/home\.mi\.com\/cgi-op\/api\/v1\/resource\/realtime\/openingBanner data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
 # hostname = upload-bbs.mihoyo.com
 ^https?:\/\/upload-bbs\.mihoyo\.com\/upload\/202[2-9]{1}\/[0-9]{2}\/[0-9]{2}\/[a-z0-9]{32}_[a-z0-9]{19}\.(jpg|png)$ data-type=text data=" " status-code=200
 

@@ -2226,6 +2226,8 @@ https?:\/\/interface\d?\.music\.163.com\/eapi\/(mlivestream\/entrance\/playpage|
 # hostname = home.mi.com
 ^https?:\/\/home\.mi\.com\/cgi-op\/api\/v1\/recommendation\/(banner|carousel\/banners|myTab|openingBanner) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
+^https?:\/\/home\.mi\.com\/cgi-op\/api\/v1\/resource\/realtime\/openingBanner data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
 # hostname = upload-bbs.mihoyo.com
 ^https?:\/\/upload-bbs\.mihoyo\.com\/upload\/202[2-9]{1}\/[0-9]{2}\/[0-9]{2}\/[a-z0-9]{32}_[a-z0-9]{19}\.(jpg|png)$ data-type=text data=" " status-code=200
 
@@ -3327,11 +3329,11 @@ xiaohongshu = type=http-response, pattern=^https?:\/\/(edith|rec|www)\.xiaohongs
 # 评论区用户id置空 (实验功能可能无效)
 replaceBody = type=http-response, pattern=^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/note\/comment\/list, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/replace-body.js, requires-body=true, max-size=-1, timeout=30, argument=red_id-%3Efmz200
 
-body_rewrite_2725 = type=http-response, pattern=#^https:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/football-portal\/diff2\/batch\? url, script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22json-del%22%2C%5B%22json.ad%22%2C%22json.toc%22%5D%5D%5D
+body_rewrite_2726 = type=http-response, pattern=#^https:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/football-portal\/diff2\/batch\? url, script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22json-del%22%2C%5B%22json.ad%22%2C%22json.toc%22%5D%5D%5D
 
-body_rewrite_2731 = type=http-response, pattern=#^https:\/\/mobwsa\.ximalaya\.com\/mobile-playpage\/playpage\/tabs\/v2\/ url, script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22json-del%22%2C%5B%22data.playpage.resourceMap.defaultResource%22%2C%22data.playpage.resourceMap.playPageTip%22%5D%5D%5D
+body_rewrite_2732 = type=http-response, pattern=#^https:\/\/mobwsa\.ximalaya\.com\/mobile-playpage\/playpage\/tabs\/v2\/ url, script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22json-del%22%2C%5B%22data.playpage.resourceMap.defaultResource%22%2C%22data.playpage.resourceMap.playPageTip%22%5D%5D%5D
 
-body_rewrite_2737 = type=http-response, pattern=#^https:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/mobile-user\/v\d\/homePage\/ url, script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22json-del%22%2C%5B%22data.freeListenV2%22%5D%5D%5D
+body_rewrite_2738 = type=http-response, pattern=#^https:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/mobile-user\/v\d\/homePage\/ url, script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22json-del%22%2C%5B%22data.freeListenV2%22%5D%5D%5D
 
 # 响应体
 youtube.response = type=http-response, pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch), script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/youtube.response.js, requires-body=true, binary-body-mode=true, max-size=-1, timeout=60

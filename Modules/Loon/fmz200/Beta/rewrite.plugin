@@ -1545,6 +1545,7 @@ https?:\/\/interface\d?\.music\.163.com\/eapi\/(mlivestream\/entrance\/playpage|
 ^https?:\/\/(info\.mina\.xiaoaisound|marketing-aibox\.v\.mitvos)\.com\/popup - reject-dict
 # hostname = home.mi.com
 ^https?:\/\/home\.mi\.com\/cgi-op\/api\/v1\/recommendation\/(banner|carousel\/banners|myTab|openingBanner) - reject-dict
+^https?:\/\/home\.mi\.com\/cgi-op\/api\/v1\/resource\/realtime\/openingBanner - reject-dict
 # hostname = apiwz.midukanshu.com
 ^https?:\/\/apiwz\.midukanshu\.com\/advert\/getPopup$ - reject
 ^https?:\/\/apiwz\.midukanshu\.com\/advert\/treasureInfo$ - reject
