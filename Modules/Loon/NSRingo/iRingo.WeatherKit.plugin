@@ -6,8 +6,8 @@
 #!icon = https://developer.apple.com/assets/elements/icons/weatherkit/weatherkit-128x128.png
 #!tag =  iRingo
 #!system = iOS,iPadOS,macOS,watchOS
-#!date = 2025-08-22 02:57:53
-#!version = 1.9.9
+#!date = 2025-08-24 08:31:43
+#!version = 1.9.10
 #!system_version = 18
 
 [Argument]
