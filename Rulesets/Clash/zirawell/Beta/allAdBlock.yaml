@@ -1,4 +1,4 @@
-#规则数量:1328
+#规则数量:1330
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -317,6 +317,7 @@ payload:
   - DOMAIN,icloud-amap.com
   - DOMAIN,id.hadron.ad.gt
   - DOMAIN,ifconfig.me
+  - DOMAIN,imc.abchina.com.cn
   - DOMAIN,img.adnyg.com
   - DOMAIN,img.adnyg.com.w.kunlungr.com
   - DOMAIN,img.auction-ads.wpscdn.cn
@@ -382,6 +383,7 @@ payload:
   - DOMAIN,mon11-misc.fqnovel.com
   - DOMAIN,monitor.music.qq.com
   - DOMAIN,mqtt.zhihu.com
+  - DOMAIN,msmp.abchina.com.cn
   - DOMAIN,mssdk-bu.bytedance.com
   - DOMAIN,mssdk.volces.com
   - DOMAIN,mssdk.zijieapi.com
