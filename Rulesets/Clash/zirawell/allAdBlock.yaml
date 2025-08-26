@@ -1,4 +1,4 @@
-#规则数量:1330
+#规则数量:1329
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -652,7 +652,6 @@ payload:
   - DOMAIN-SUFFIX,amfi.gou.sogou.com
   - DOMAIN-SUFFIX,analy.qq.com
   - DOMAIN-SUFFIX,analytics.163.com
-  - DOMAIN-SUFFIX,analytics.meituan.net
   - DOMAIN-SUFFIX,analytics.snssdk.com
   - DOMAIN-SUFFIX,anquan.baidu.com
   - DOMAIN-SUFFIX,antivirus.baidu.com
