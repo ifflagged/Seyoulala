@@ -20,7 +20,6 @@ DOMAIN,layout.meituan.net,REJECT,extended-matching
 DOMAIN,httpdnsmultiapi.meituan.com,REJECT,extended-matching
 DOMAIN,httpdnsmultiapivip.meituan.com,REJECT,extended-matching
 DOMAIN-SUFFIX,httpdns.meituan.com,REJECT,extended-matching
-DOMAIN-SUFFIX,analytics.meituan.net,REJECT,extended-matching
 DOMAIN-SUFFIX,meituan.xn,REJECT,extended-matching
 DOMAIN-SUFFIX,meituan.yoga,REJECT,extended-matching
 DOMAIN-SUFFIX,meituangov.cn,REJECT,extended-matching
