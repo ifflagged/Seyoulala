@@ -25,6 +25,10 @@ if (url.indexOf("queryindexpage") != -1) {
     }
     obj.data.scenes = scenes;
   }
+  // 首页顶屏
+  if (obj.data?.secondFloor) {
+    obj.data.secondFloor = {};
+  }
 // 我的页
 } else if (url.indexOf("querymypage") != -1) {
   const sceneTemplateId = [
