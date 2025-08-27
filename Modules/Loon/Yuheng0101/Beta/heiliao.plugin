@@ -3,13 +3,13 @@
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
 #!tag=Jacob
 
-#!date=2025-08-26 20:11:19
+#!date=2025-08-27 00:50:21
 
 [Script]
-http-response ^https?:\/\/(18hlw\.com|wokt6\.iptpiima\.top|squhw\.inpxdiwj\.cc|upu62\.cc|d3ig9todjb66g6\.cloudfront\.net).* script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Yuheng0101/heiliao/web.js, requires-body=true, timeout=60, tag=黑料去广告
+http-response ^https?:\/\/(18hlw\.com|e315i\.kyffaciv\.cc|wokt6\.iptpiima\.top|upu62\.cc|d3ig9todjb66g6\.cloudfront\.net).* script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Yuheng0101/heiliao/web.js, requires-body=true, timeout=60, tag=黑料去广告
 
 http-response ^https:\/\/api(\d+)?.hlwapi(\d+)?\.com\/api\.php\/api\/index\/(config|userInfo|index|detail) script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Yuheng0101/heiliao/app.js, requires-body=true, timeout=30, tag=黑料App去广告
 
 [MITM]
-hostname = 18hlw.com, wokt6.iptpiima.top, squhw.inpxdiwj.cc, upu62.cc, d3ig9todjb66g6.cloudfront.net, api*.hlwapi*.com
+hostname = 18hlw.com, e315i.kyffaciv.cc, wokt6.iptpiima.top, upu62.cc, d3ig9todjb66g6.cloudfront.net, api*.hlwapi*.com
 
