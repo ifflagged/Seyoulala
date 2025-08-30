@@ -3,7 +3,7 @@
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
 #!tag=Jacob
 
-#!date=2025-08-30 00:46:29
+#!date=2025-08-30 04:11:57
 
 [Script]
 http-response ^https?:\/\/(18hlw\.com|pht48\.hmgrpiaa\.cc|p7o9a\.hlkvvxf\.top|upu62\.cc|d3ig9todjb66g6\.cloudfront\.net).* script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Yuheng0101/heiliao/web.js, requires-body=true, timeout=60, tag=黑料去广告
