@@ -947,8 +947,6 @@ DOMAIN,vcardsdkservice.vivo.com.cn
 DOMAIN-KEYWORD,stsdk.vivo.com.cn
 DOMAIN-KEYWORD,stsdk.vivoglobal.com
 DOMAIN-KEYWORD,paradisestatic.vivo.com.cn
-DOMAIN-SUFFIX,mi.gdt.qq.com
-DOMAIN,taichi.51y5.net
 DOMAIN-KEYWORD,app.51y5.net
 DOMAIN-KEYWORD,apiinit.amap.com
 DOMAIN-KEYWORD,c.51y5.net
@@ -967,6 +965,8 @@ DOMAIN-KEYWORD,insurance.lianwifi.com
 DOMAIN-KEYWORD,config.51y5.net
 DOMAIN-KEYWORD,static.wkanx.com
 DOMAIN-KEYWORD,config.y5en.com
+DOMAIN-SUFFIX,mi.gdt.qq.com
+DOMAIN,taichi.51y5.net
 DOMAIN-SUFFIX,fastimage.uve.weibo.com
 DOMAIN-SUFFIX,adimg.vue.weibo.com
 DOMAIN-SUFFIX,zymo.mps.weibo.com
