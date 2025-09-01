@@ -1,7 +1,19 @@
-RevenueCat.Vip%0A：Error: 请求超时(20 秒)
+#!name=𝐑𝐞𝐯𝐞𝐧𝐮𝐞𝐂𝐚𝐭
+#!desc=今天也要吸猫猫吖
+#!author=𝐝𝐝𝐠𝐤𝐬𝐟𝟐𝟎𝟏𝟑
+#!category=Jacob
 
+#!unlockapplist=https://appraven.net/collection/77299969
+#!tgchannel=https://t.me/ddgksf2021
+#!moduleUrl=https://github.com/ddgksf2013/Modules/raw/main/RevenueCat.Vip.sgmodule
+#!howtouse=小火箭、Surge用户直接添加模块，QuantumultX用户添加重写时打开解析器
 
+[Script]
+# ～ RevenueCat@ddgksf2013
+RevenueCatVip = type=http-response, pattern=^https:\/\/api\.(revenuecat|rc-backup)\.com\/.+\/(receipts$|subscribers\/[^/]+$), script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ddgksf2013/RevenueCat.Vip/revenuecat.js, requires-body=true, max-size=-1, timeout=60
 
+RevenueCatDeleteHeader = type=http-request, pattern=^https:\/\/api\.(revenuecat|rc-backup)\.com\/.+\/(receipts|subscribers), script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ddgksf2013/RevenueCat.Vip/deleteHeader.js, timeout=60
 
+[MITM]
+hostname = %APPEND% api.revenuecat.com, api.rc-backup.com
 
-Script Hub 重写转换: ❌  可自行翻译错误信息或复制错误信息后点击通知进行反馈
