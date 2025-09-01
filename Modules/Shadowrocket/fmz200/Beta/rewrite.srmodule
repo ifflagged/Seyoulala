@@ -268,7 +268,7 @@ http:\/\/ad\.myfriday\.cn\/d\/json\/1\.1 - reject
 ^https?:\/\/app\.hbooker\.com\/setting\/get_startpage_url_list - reject
 # hostname = gw.chuangkit.com
 ^https:\/\/gw\.chuangkit\.com\/team\/app\/common\/ad\/ - reject-dict
-# hostname = clubmed.bd.clubmedmnp.com
+# 微信小程序
 ^https?:\/\/clubmed\.bd\.clubmedmnp\.com\/miniorder\/api\/basic\/common - reject-dict
 # 去开屏广告
 ^https:\/\/se-api\.djiits\.com\/api\/components\/launch_ad\.json\?abbrv_url=1&country=cn&language=zh-CN - reject-dict
@@ -507,16 +507,16 @@ http:\/\/ad\.myfriday\.cn\/d\/json\/1\.1 - reject
 ^https?:\/\/prom\.mobile\.gome\.com\.cn\/mobile\/promotion\/promscms\/sale\w+\.jsp - reject
 # 开屏广告
 ^https?:\/\/gugongmini\.dpm\.org\.cn\/gugong_applet\/open-screen - reject-dict
-# hostname = awg.enmonster.com
+# hostname = awg.enmonster.com, aag.enmonster.com
 https?:\/\/awg\.enmonster\.com\/apa\/(advert\/demand\/home\/poster|index\/advert\/skin) - reject-dict
+# 微信小程序
+^https?:\/\/aag\.enmonster\.com\/apa\/index\/advert\/skin - reject
 # hostname = zone.guiderank-app.com
 ^https?:\/\/zone\.guiderank-app\.com\/guiderank-web\/app\/ad\/listLaunchADByCity\.do - reject
 # 开屏广告
 ^https?:\/\/guanyu\.longfor\.com\/app-server\/api\/v1\/main\/start - reject
 # hostname = gha.ghac.cn
 #^https?:\/\/gha\.ghac\.cn\:8081\/base\/app\/api\/ad\/query\?adType=1 - reject-200
-# hostname = aag.enmonster.com
-^https?:\/\/aag\.enmonster\.com\/apa\/index\/advert\/skin - reject
 # hostname = yun.tuitiger.com, mi.gdt.qq.com, open.e.kuaishou.com
 ^https?:\/\/yun\.tuitiger\.com\/mami-media - reject-200
 ^https?:\/\/mi\.gdt\.qq\.com\/gdt_mview\.fcg - reject
@@ -524,6 +524,8 @@ https?:\/\/awg\.enmonster\.com\/apa\/(advert\/demand\/home\/poster|index\/advert
 # hostname = cdn.133.cn, jt.rsscc.com, jp.rsscc.com
 ^https?:\/\/cdn\.133\.cn\/md\/gtgj\/.+\/.+720x1280 - reject-dict
 ^https?:\/\/[a-z]*\.rsscc\.com\/[a-z]*\/adver - reject
+# hostname = api.gongkaoleida.com
+^https?:\/\/api\.gongkaoleida\.com\/api\/v2\/ad\/info - reject-dict
 # 横幅广告
 ^https:\/\/emisdatacenteraws\.hafoo\.com\/ad\/api\/v2\/appMarket - reject-dict
 # hostname = static.creditcard.hxb.com.cn
@@ -673,7 +675,7 @@ https?:\/\/awg\.enmonster\.com\/apa\/(advert\/demand\/home\/poster|index\/advert
 #^https?:\/\/jiucaigongshe\.oss-cn-beijing\.aliyuncs\.com\/[A-Z0-9]{8}-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{12}\.png - reject-200
 # 开屏广告 感谢【Ava阿檬】分享
 ^https?:\/\/www\.gcores\.com\/gapi\/v1\/app-start-pages\?page - reject-dict
-# hostname = s.jiediankeji.com
+# 微信小程序
 ^https?:\/\/s\.jiediankeji\.com\/adv - reject-dict
 # hostname = explorer.tratao.com
 ^https?:\/\/explorer\.tratao\.com\/api\/client\/v4\/xtransfer\/ad\/ - reject
@@ -722,8 +724,6 @@ https?:\/\/awg\.enmonster\.com\/apa\/(advert\/demand\/home\/poster|index\/advert
 ^https?:\/\/www\.oschina\.net\/action\/apiv2\/get_launcher - reject-img
 # hostname = pocketuni.net
 ^https?:\/\/pocketuni\.net\/\?app=api&mod=Message&act=ad - reject-200
-# hostname = api.gongkaoleida.com
-^https?:\/\/api\.gongkaoleida\.com\/api\/v2\/ad\/info - reject-dict
 # hostname = api.coolapk.com
 #^https?:\/\/api\.coolapk\.com\/v6\/search\?.*type=hotSearch - reject-dict
 # hostname = res.kfc.com.cn
@@ -783,7 +783,7 @@ https?:\/\/awg\.enmonster\.com\/apa\/(advert\/demand\/home\/poster|index\/advert
 ^https?:\/\/ios\.lantouzi\.com\/api\/startpage - reject
 # hostname = api.laifeng.com, api.jxedt.com
 ^https?:\/\/api\.laifeng\.com\/v\d\/start\/ads - reject
-# hostname = mobile-api.imlaidian.com
+# 小程序净化
 ^https?:\/\/mobile-api\.imlaidian\.com\/api\/args - reject-dict
 # hostname = mobile.laichon.com, shop.laichon.com
 ^https?:\/\/(mobile|shop)\.laichon\.com\/api\/(v1\/goods\/goodsList|exposureAdvStatistics|getWebAdvList) - reject
@@ -1101,9 +1101,9 @@ https://access.mypikpak.com/access_controller/v1/area_accessible - reject
 ^https?:\/\/app\.peopleapp\.com\/Api\/\d+/HomeApi\/(adv|getAdvertImage) - reject
 ^https?:\/\/stat\.peopleapp\.com\/ - reject
 ^https?:\/\/adstatic\.peopleapp\.com\/upload\/AppLoad\/.*.(jpg|png) - reject-200
-# > RRTV_屏蔽軟件更新
+# RRTV_屏蔽軟件更新
 ^https?:\/\/api\.rr\.tv\/.*?Version - reject
-# > RRTV_屏蔽限時彈窗
+# RRTV_屏蔽限時彈窗
 https://api.rr.tv/storage/business/rootName/app/homePage\?dataType=JSON - reject-dict
 # hostname = cms.daydaycook.com.cn, api.daydaycook.com.cn
 ^https?:\/\/cms\.daydaycook\.com\.cn\/api\/cms\/advertisement\/ - reject
@@ -1166,7 +1166,7 @@ https://api.rr.tv/storage/business/rootName/app/homePage\?dataType=JSON - reject
 ^https?://(ios|android)\.sogou\.com/[^/]+/sogou_input_[^/]+/[^/]+/index\.html - reject
 # 屏蔽游戏中心
 ^https?:\/\/h5api\.sginput\.qq\.com\/v1\/gcenter\/ios\/homepage - reject-dict
-# hostname = wxs-weixin.sd.zhumanggroup.com
+# 微信小程序
 ^https?:\/\/wxs-weixin\.sd\.zhumanggroup\.com\/api\/v2\/ad - reject-dict
 # hostname = ecard.shenzhentong.com
 ^https?:\/\/ecard\.shenzhentong\.com\/wxweb\/bwxppub2\/QryAdvertList\.do - reject-200
@@ -1243,7 +1243,7 @@ https://apis.lifeweek.com.cn/api/baseConfig/getIosNewConfig - reject
 ^https?:\/\/api-sams\.walmartmobile\.cn\/api\/v\d\/sams\/configuration\/appVersionUpdate\/getAppVersionUpdateInfo - reject-dict
 # 屏蔽更新
 ^https?:\/\/api-sams\.walmartmobile\.cn\/api\/v1\/sams\/configuration\/portal\/beUpdate - reject-dict
-# hostname = api.pinduoduo.com
+# 买单小程序去广告
 ^https?:\/\/api\.pinduoduo\.com\/api\/ktt_gateway\/activity\/feeds\/personal_home_page\/ - reject
 # 开屏广告 需要清理缓存
 ^https:\/\/www\.ymm56\.com\/short-distance-match-app\/openAppAd - reject-dict
@@ -1342,7 +1342,7 @@ https://apis.lifeweek.com.cn/api/baseConfig/getIosNewConfig - reject
 #^https?:\/\/vv\.video\.qq\.com\/(diff|get)vmind - reject-dict
 # 感谢【jinlvei】分享
 ^https?:\/\/ccmsupport-sz\.tenpay\.com\/cgi-bin\/common\/ccm_page_element.cgi - reject
-# > 如果想拦截1234567890-1234?wx类的长连接就加长规则,不加结尾符,只要前面的匹配了都会拦截。
+# 如果想拦截1234567890-1234?wx类的长连接就加长规则,不加结尾符,只要前面的匹配了都会拦截。
 ^https?:\/\/static\.gameplus\.qq\.com\/img\/\d{10}-\d{4}$ - reject
 # hostname = qt.qq.com
 ^https?:\/\/qt\.qq\.com\/lua\/mengyou\/get_splash_screen_info - reject
@@ -1560,7 +1560,7 @@ https?:\/\/interface\d?\.music\.163.com\/eapi\/(mlivestream\/entrance\/playpage|
 ^https?:\/\/mpos-pic\.helipay\.com\/upload\/images\/advertisment\/image - reject
 # 小程序净化
 ^https?:\/\/ad\.xiaotucc\.com\/advert - reject
-# hostname = smarket.dian.so, file.dian.so
+# 微信小程序
 ^https?:\/\/smarket\.dian\.so - reject-dict
 ^https?:\/\/file\.dian\.so\/c\/leto - reject-dict
 # hostname = xhtz.oss-cn-guangzhou.aliyuncs.com
@@ -1619,7 +1619,7 @@ https://mgesq.api.mgtv.com/v2/user/center/icon - reject-dict
 ^https?:\/\/xxyx-client-api\.xiaoxiaoyouxuan\.com\/client\/urban\/activity\/index\/data\?agentId=12 - reject
 # 禁止上报设备信息
 ^https?:\/\/statistic\.live\.126\.net\/statics\/report\/common\/form - reject
-# hostname = wcprd.hilton.com.cn
+# 荣誉客会
 ^https?:\/\/wcprd\.hilton\.com\.cn\/app-middleware\/graphql\?type=splashAd - reject-200
 # 开屏广告 需要卸载重装 感谢【别怕我又不乱来】分享
 ^https?:\/\/cstore-en-public-tx\.seewo\.com\/easinote5_public - reject-dict
@@ -1770,7 +1770,7 @@ https://mgesq.api.mgtv.com/v2/user/center/icon - reject-dict
 ^https?:\/\/cheyouapi\.ycapp\.yiche\.com\/appforum\/getusermessagecount - reject-img
 # 开屏广告
 ^https?:\/\/a\.sinopecsales\.com\/app\/cms - reject-dict
-# 底部横幅广告
+# 小程序底部横幅广告
 ^https?:\/\/ocrifs\.ejoy\.sinopec\.com\/advertitfs\/advert\/findAdvertInfo - reject-dict
 # 开屏广告
 ^https?:\/\/compus\.xiaofubao\.com\/compus\/advertising\/getStartupAdvertising - reject-dict
@@ -1822,7 +1822,7 @@ https://mgesq.api.mgtv.com/v2/user/center/icon - reject-dict
 ^https?:\/\/api2\.yaduo\.com\/atourlife\/activity\/appLaunch - reject-dict
 # 开屏以及app内弹窗广告
 ^https:\/\/api5\.youonbike\.com\/ibike-rest-service\/user\/fun_IBF_GetAdvert - reject-dict
-# hostname = gw3.ykccn.com
+# 微信小程序
 ^https:\/\/gw3\.ykccn\.com\/api\/omp\/mt\/enterpriseWeChatConfig\/app\/queryCityConfig - reject-dict
 ^https:\/\/gw3\.ykccn\.com\/api\/omp\/mt\/appAdvertising\/queryAdvertisingByParams - reject-dict
 ^https:\/\/gw3\.ykccn\.com\/api\/omp\/mt\/charge\/activity\/package\/newest - reject-dict
@@ -2334,31 +2334,31 @@ qmai = type=http-response, pattern=^https?:\/\/(?>webapi|miniapp)\.qmai\.cn\/web
 # 过滤推广 关NSFW提示 感谢【xream】分享
 reddit = type=http-response, pattern=^https?:\/\/gql(-fed)?\.reddit\.com, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/reddit.js, requires-body=true, max-size=-1, timeout=60
 
-# > RRTV_level_info
+# RRTV_level_info
 rrtv_json = type=http-response, pattern=^https?:\/\/api\.rr\.tv\/\w{3}\/level\/info, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/rrtv_json.js, requires-body=true, max-size=-1, timeout=60
 
-# > RRTV_去除首頁廣告
+# RRTV_去除首頁廣告
 rrtv_json = type=http-response, pattern=https://api.rr.tv/v3plus/index/channel\?pageNum=1&position=CHANNEL_INDEX, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/rrtv_json.js, requires-body=true, max-size=-1, timeout=60
 
-# > RRTV_去除廣場tab
+# RRTV_去除廣場tab
 rrtv_json = type=http-response, pattern=^https?:\/\/api\.rr\.tv\/app\/config\/h5NativeBar, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/rrtv_json.js, requires-body=true, max-size=-1, timeout=60
 
-# > RRTV_去除商城廣告
+# RRTV_去除商城廣告
 rrtv_json = type=http-response, pattern=^https?:\/\/api\.rr\.tv\/v3plus\/index\/channel\?pageNum=1&position=CHANNEL_MY, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/rrtv_json.js, requires-body=true, max-size=-1, timeout=60
 
-# > RRTV_Ad_List
+# RRTV_Ad_List
 rrtv_json = type=http-response, pattern=^https?:\/\/api\.rr\.tv\/user\/privilege\/list, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/rrtv_json.js, requires-body=true, max-size=-1, timeout=60
 
-# > RRTV_Ad_All
+# RRTV_Ad_All
 rrtv_json = type=http-response, pattern=^https?:\/\/api\.rr\.tv\/ad\/getAll, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/rrtv_json.js, requires-body=true, max-size=-1, timeout=60
 
-# > RRTV_Get_Drama
+# RRTV_Get_Drama
 rrtv_json = type=http-response, pattern=^https?:\/\/api\.rr\.tv\/drama\/app\/get_combined_drama_detail, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/rrtv_json.js, requires-body=true, max-size=-1, timeout=60
 
-# > RRTV_Watch_V4
+# RRTV_Watch_V4
 rrtv_json = type=http-response, pattern=https://api.rr.tv/watch/v4, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/rrtv_json.js, requires-body=true, max-size=-1, timeout=60
 
-# > RRTV_User_Info
+# RRTV_User_Info
 rrtv_json = type=http-response, pattern=https://api.rr.tv/user/profile, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/rrtv_json.js, requires-body=true, max-size=-1, timeout=60
 
 replaceBody = type=http-response, pattern=^https?:\/\/dyncdn\.me\/static\/\d{0,2}\/js\/showads\.js$, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/replace-body.js, requires-body=true, max-size=-1, timeout=30, argument=true-%3Efalse
