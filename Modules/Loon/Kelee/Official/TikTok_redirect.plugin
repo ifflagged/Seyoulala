@@ -115,7 +115,7 @@ DOMAIN-KEYWORD, ttlivecdn.com., PROXY
 ^https:\/\/tnc\d+-platform-\w+\.tiktokv\.com\/get_domains\/ reject
 
 [Script]
-http-request https?:\/\/.+.(tiktokv|tiktokcdn).com\/.+(region\d?=CN|&mcc_mnc=\d+) script-path=https://github.com/ifflagged/Darwin/raw/main/Modules/JS/Kelee/TikTok_redirect/TikTok_redirect.js, tag=TikTok解锁
+http-request https?:\/\/.+.(tiktokv|tiktokcdn).com\/.+(region\d?=CN|&mcc_mnc=\d+) script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Kelee/TikTok_redirect/TikTok_redirect.js, tag=TikTok解锁
 
 [MitM]
 hostname=*.byteoversea.com, *.tik-tokapi.com, *.tiktokv.com, *.tiktokcdn.com
