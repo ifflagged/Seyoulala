@@ -8,14 +8,18 @@
 #!loon_version=3.2.4(787)
 #!homepage=https://hub.kelee.one
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/iReaderDejian.png
-#!date=2025-09-04 22:09:29
+#!date=2025-09-04 22:36:17
 
 [Rule]
 DOMAIN, smad.ms.zhangyue.net, REJECT
+DOMAIN, saad.ms.zhangyue.net, REJECT
 
 [Rewrite]
+^https:\/\/dj\.palmestore\.com\/zybk\/api\/powerup\/userGroup\? response-body-json-del body.sevenDaysAd body.shortPlayShow body.sdkShortPlayAB
+
 ^https:\/\/dj\.palmestore\.com\/djad\/ reject-dict
 ^https:\/\/dj\.palmestore\.com\/zybk\/api\/ad\/ reject-dict
+^https:\/\/dj\.palmestore\.com\/zyapi\/bookstore\/ad\/ reject-dict
 
 ^https:\/\/dj\.palmestore\.com\/zybk\/api\/search\/index\? response-body-json-del body.keywords
 
