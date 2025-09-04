@@ -1,4 +1,4 @@
-#规则数量:9528
+#规则数量:9527
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -23,7 +23,6 @@ DOMAIN-SUFFIX,cdntips.net
 DOMAIN-SUFFIX,tfogc.com
 DOMAIN-KEYWORD,volc
 DOMAIN-KEYWORD,umeng
-DOMAIN,api.liquidlink.cn
 DOMAIN-SUFFIX,v3.fstats.xyz
 DOMAIN-SUFFIX,wss.haoyundmn.com
 DOMAIN-SUFFIX,new.xiongzhangad.com
