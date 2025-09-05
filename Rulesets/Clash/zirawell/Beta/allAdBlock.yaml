@@ -93,6 +93,7 @@ payload:
   - DOMAIN,ad.k.21cn.com
   - DOMAIN,ad.life.360.cn
   - DOMAIN,ad.maoyan.com
+  - DOMAIN,ad.mcloud.139.com
   - DOMAIN,ad.qingting.fm
   - DOMAIN,ad.seeyouyima.com
   - DOMAIN,ad.tencentmusic.com
@@ -181,7 +182,6 @@ payload:
   - DOMAIN,api.hongyibo.com.cn
   - DOMAIN,api.htp.ad-scope.com.cn
   - DOMAIN,api.iqiyi.com
-  - DOMAIN,api.liquidlink.cn
   - DOMAIN,api.share.mob.com
   - DOMAIN,api.sm.cn
   - DOMAIN,api.verify.mob.com
