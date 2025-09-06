@@ -14,7 +14,7 @@ DOMAIN-SUFFIX,iyes.youku.com,REJECT
 ^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba.*mytab response-body-json-jq '.data.model.children |= map(select(.name | contains("营销") | not))'
 ^https?:\/\/api\.xiaoyuzhoufm\.com\/v\d\/discovery-feed\/list response-body-json-jq '.data |= map(select(.type != "DISCOVERY_BANNER"))'
 # > Version
-^https?:\/\/2025.08.27/c393/v2.0.615 - reject-200
+^https?:\/\/2025.09.06/c393/v2.0.618 - reject-200
 # > 10
 ^https?:\/\/ftapi\.10jqka\.com\.cn\/futgwapi\/api\/om\/v\d\/ad\/common\/transfer - reject-200
 # > 139mail

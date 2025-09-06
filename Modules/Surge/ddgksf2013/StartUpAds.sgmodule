@@ -19,7 +19,7 @@ https://b.appsimg.com/upload/momin/ - reject
 
 [Map Local]
 # > Version
-^https?:\/\/2025.08.27/c393/v2.0.615 data-type=text data=" " status-code=200
+^https?:\/\/2025.09.06/c393/v2.0.618 data-type=text data=" " status-code=200
 
 # > 10
 ^https?:\/\/ftapi\.10jqka\.com\.cn\/futgwapi\/api\/om\/v\d\/ad\/common\/transfer data-type=text data=" " status-code=200
