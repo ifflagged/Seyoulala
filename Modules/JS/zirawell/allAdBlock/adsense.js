@@ -1,70 +1,45 @@
-/**
- * Checkout Source - https://raw.githubusercontent.com/app2smile/rules/master/js/adsense.js
- * */
 
-let url = $request.url;
-let method = $request.method;
-if (!$response.body) $done({});
+<html>
+  <head>
+    <meta content="origin" name="referrer">
+    <title>Rate limit &middot; GitHub</title>
+    <meta name="viewport" content="width=device-width">
+    <style type="text/css" media="screen">
+      body {
+        background-color: #f6f8fa;
+        color: rgba(0, 0, 0, 0.5);
+        font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+        font-size: 14px;
+        line-height: 1.5;
+      }
+      .c { margin: 50px auto; max-width: 600px; text-align: center; padding: 0 24px; }
+      a { text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      h1 { color: #24292e; line-height: 60px; font-size: 48px; font-weight: 300; margin: 0px; }
+      p { margin: 20px 0 40px; }
+      #s { margin-top: 35px; }
+      #s a {
+        color: #666666;
+        font-weight: 200;
+        font-size: 14px;
+        margin: 0 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="c">
+      <h1>Access has been restricted</h1>
+      <p>You have triggered a rate limit.<br><br>
+         Please wait a few minutes before you try again;<br>
+         in some cases this may take up to an hour.
+      </p>
+      <div id="s">
+        <a href="https://support.github.com">Contact Support</a> &mdash;
+        <a href="https://githubstatus.com">GitHub Status</a> &mdash;
+        <a href="https://twitter.com/githubstatus">@githubstatus</a>
+      </div>
+    </div>
+  </body>
+</html>
 
-let body = JSON.parse($response.body);
 
-if (method !== "POST") {
-    $notification.post("腾讯新闻App脚本错误", "method错误:", method);
-}
-
-if (url.includes("r.inews.qq.com/gw/page/event_detail")) {
-    removeAdList('event_detail');
-} else if (url.includes("r.inews.qq.com/gw/page/channel_feed")) {
-    removeAdList('channel_feed');
-} else {
-    let name = "";
-    if (url.includes("news.ssp.qq.com/app")) {
-        name = '开屏页';
-    } else if (url.includes("r.inews.qq.com/getQQNewsUnreadList")) {
-        // 是否弃用,还需要验证
-        name = '要闻/财经等';
-    } else if (url.includes("r.inews.qq.com/news_feed/hot_module_list")) {
-        name = '财经精选-更多';
-    } else if (url.includes("r.inews.qq.com/gw/event/list")) {
-        // 弃用
-        name = '专题gw/event/list';
-    } else if (url.includes("r.inews.qq.com/getTwentyFourHourNews")) {
-        // 弃用
-        name = '热点精选getTwentyFourHourNews';
-    } else if (url.includes("r.inews.qq.com/getQQNewsListItems")) {
-        // 弃用
-        name = '热点精选getQQNewsListItems';
-    } else if (url.includes("r.inews.qq.com/getTagFeedList")) {
-        // 如地方专区下的 XX旅游 XX美食列表广告
-        name = 'getTagFeedList';
-    } else {
-        $notification.post('腾讯新闻App脚本错误', "路径匹配错误:", url);
-    }
-    if (!body.adList) {
-        // 部分专题列表无广告,没有adList字段
-    } else {
-        body.adList = null;
-    }
-}
-
-body = JSON.stringify(body);
-
-$done({
-    body
-});
-
-function removeAdList(name) {
-    //console.log(`gw/page/${name}`);
-    if (body.data.widget_list) {
-        body.data.widget_list = body.data.widget_list.filter(item => {
-            if (item.widget_type === 'ad_list') {
-                //console.log('去除ad_list广告');
-                return false;
-            }
-            return true;
-        });
-    } else {
-        //console.log($response.body);
-        $notification.post('腾讯新闻App脚本错误', name, '无widget_list字段');
-    }
-}

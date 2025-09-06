@@ -1,68 +1,45 @@
-/************************
 
-动画疯，屏蔽播放广告脚本 (黑屏25秒自动播放)
-由于动画疯强制验证观看广告时间，无法实现真正意义上的跳过广告。
+<html>
+  <head>
+    <meta content="origin" name="referrer">
+    <title>Rate limit &middot; GitHub</title>
+    <meta name="viewport" content="width=device-width">
+    <style type="text/css" media="screen">
+      body {
+        background-color: #f6f8fa;
+        color: rgba(0, 0, 0, 0.5);
+        font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+        font-size: 14px;
+        line-height: 1.5;
+      }
+      .c { margin: 50px auto; max-width: 600px; text-align: center; padding: 0 24px; }
+      a { text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      h1 { color: #24292e; line-height: 60px; font-size: 48px; font-weight: 300; margin: 0px; }
+      p { margin: 20px 0 40px; }
+      #s { margin-top: 35px; }
+      #s a {
+        color: #666666;
+        font-weight: 200;
+        font-size: 14px;
+        margin: 0 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="c">
+      <h1>Access has been restricted</h1>
+      <p>You have triggered a rate limit.<br><br>
+         Please wait a few minutes before you try again;<br>
+         in some cases this may take up to an hour.
+      </p>
+      <div id="s">
+        <a href="https://support.github.com">Contact Support</a> &mdash;
+        <a href="https://githubstatus.com">GitHub Status</a> &mdash;
+        <a href="https://twitter.com/githubstatus">@githubstatus</a>
+      </div>
+    </div>
+  </body>
+</html>
 
-Surge(4.11+)模块：
-https://raw.githubusercontent.com/NobyDa/Script/master/Surge/Module/BahamutAnimeAds.sgmodule
 
-QX(1.0.27+)用户请自行搭配KOP-XIAO资源解析器重写引用Surge模块。
-
-************************/
-
-let [req, rsp] = [$request, JSON.parse($response.body || '{}')];
-
-runs().catch((err) => {
-  console.log(`[BahamutAnime] ERROR: ${err.message||err}`)
-}).finally(() => $done({
-  body: JSON.stringify(rsp)
-}));
-
-async function runs() {
-  if (req.url.includes('token.php')) {
-    if (rsp.ad) {
-      rsp.ad.minor = [];
-      rsp.ad.major = [];
-    }
-    if (rsp.data && rsp.data.ad) {
-      rsp.data.ad.minor = [];
-      rsp.data.ad.major = [];
-    }  
-  }
-  if (req.url.includes('m3u8.php') && (rsp.message || rsp.error)) {
-    await adURL('');
-    await new Promise(r => setTimeout(r, 25000));
-    await adURL('end');
-    rsp = await playURL();
-  }
-}
-
-function adURL(str) {
-  return new Promise((res) => {
-    get({
-      url: `https://api.gamer.com.tw/mobile_app/anime/v1/stat_ad.php?ad=${str}&schedule=0&sn=${req.url.split(/sn=(\d+)/i)[1]}`,
-      headers: req.headers
-    }, (err, resp, data) => res())
-  })
-}
-
-function playURL() {
-  return new Promise((res) => {
-    get({
-      url: req.url,
-      headers: req.headers
-    }, (err, resp, data) => res(JSON.parse(data || '{}')))
-  })
-}
-
-function get(options, callback) {
-  if (typeof $task != "undefined") {
-    $task.fetch(options).then(response => {
-      response["status"] = response.statusCode
-      callback(null, response, response.body)
-    }, reason => callback(reason.error, null, null))
-  }
-  if (typeof $httpClient != "undefined") {
-    $httpClient.get(options, callback)
-  }
-}
