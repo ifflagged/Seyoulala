@@ -736,7 +736,7 @@ http:\/\/ad\.myfriday\.cn\/d\/json\/1\.1 - reject
 ^https:\/\/ecloud\.tppension\.cntaiping\.com\/fxtpplatform\/common\/anonymous\/common\/page\/queryStartPageNew\?language=zh-CN - reject-dict
 # hostname = mobile.cebbank.com, yghsh.cebbank.com
 ^https?:\/\/mobile\.cebbank\.com\/cebclient\/ClientNoticeList - reject-200
-# > 光大银行 阳光惠生活
+# hostname = yghsh.cebbank.com
 ^https?:\/\/yghsh\.cebbank\.com\/static\/picture\/.*.jpg - reject-200
 # 如开启可自行添加主机名
 ^https?:\/\/v\.icbc\.com\.cn\/userfiles\/Resources\/WAP\/advertisement\/ - reject-200
@@ -1710,7 +1710,7 @@ https://apis.lifeweek.com.cn/api/baseConfig/getIosNewConfig - reject
 ^https?:\/\/recite\.perfectlingo\.com\/api\/recite\/content-recommend\/v\d\/get-by-uid.+ - reject-dict
 # 移除悬浮广告
 ^https?:\/\/recite\.perfectlingo\.com\/api\/recite\/floating-window\/v\d\/get-show.+ - reject-dict
-# 微信公众号去除商品推广
+# 公众号去除商品推广
 ^https?:\/\/mp\.weixin\.qq\.com\/mp\/cps_product_info\?action - reject-dict
 # hostname = c.m.163.com
 ^https?:\/\/c\.m\.163\.com\/nc\/gl\/ - reject-200
@@ -2031,7 +2031,7 @@ https://mgesq.api.mgtv.com/v2/user/center/icon - reject-dict
 ^https?:\/\/static\.mobile-bank\.psbc\.com\/mgs - reject
 # hostname = ad.ysepay.com
 ^https?:\/\/ad\.ysepay\.com\/yst-ad\/ST101001\/[0-9]{11}\.jpg - reject
-#开屏广告
+# 开屏广告
 ^https:\/\/ads\.ysepay\.com\/ads\/ctrl\/getAdvertisingInfo - reject-dict
 # 首页和我的横幅广告
 ^https?:\/\/api\.winbull8\.com\/v1\/marketing\/(advert|activity)\/(list|page) - reject-dict
@@ -2347,7 +2347,6 @@ http-response ^https?:\/\/dyncdn\.me\/static\/\d{0,2}\/js\/showads\.js$ true fal
 http-response ^https?:\/\/capi\.lkcoffee\.com\/resource\/m\/sys\/app\/adposNew \{.+\} {"status":"SUCCESS"}
 http-response ^https?:\/\/m\.lkcoffee\.com\/ecapi\/resource\/m\/member\/exchange\/page \{.+\} {"status":"SUCCESS"}
 http-response ^https?:\/\/m\.lkcoffee\.com\/capi\/resource\/m\/growUp\/main "popTitle":".+?" "popTitle":""
-http-request #^https:\/\/testflight\.apple\.com\/v2\/accounts\/.*\/apps\/\d*\/builds\/\d*\/install$ "storefrontId" : .*, "storefrontId":"143441-19,29"
 http-response-jq ^https://www\.tailgdd\.com/v8/smart/app/config/get$ 'if (getpath([]) | has("data")) then (setpath(["data"]; {})) else . end'
 http-response ^https?:\/\/tft-app\.cdtft\.cn\/gateway-customer\/tftapp\/tft-ams\/api\/appAd officialAdvertResultVo fmz200
 http-response ^https?:\/\/chl\.tf\.cn\/channelmg\/sys\/socso\/order\/queryOrderInfo "imgUrl" response-body
@@ -2424,7 +2423,7 @@ http-response ^https?:\/\/app-izz\.zhengzhou\.gov\.cn:10019\/bizgw\/gateway\.do 
 
 51信用卡管家 = type=http-response, pattern=^https?:\/\/api\.u51\.com\/generic-config-gateway\/api\/v\d\/guanjia\/me-tab2\/config, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/blockAds/51card.js, requires-body=true, timeout=60
 
-# > 51job
+# > 前程无忧 51Job
 51job = type=http-response, pattern=^https?:\/\/cupid\.51job(app)?\.com\/open\/noauth\/recommend\/job-tab-dynamic, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/blockAds/51job.js, requires-body=true, timeout=60
 
 # > 阿里巴巴

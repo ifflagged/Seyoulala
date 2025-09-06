@@ -407,7 +407,6 @@ http:\/\/dili.sqcosmos.com\/jiekou\/mains\/p\d+.html response-body-json-jq '.alb
 ^https?:\/\/capi\.lkcoffee\.com\/resource\/m\/sys\/app\/adposNew response-body-replace-regex \{.+\} {"status":"SUCCESS"}
 ^https?:\/\/m\.lkcoffee\.com\/ecapi\/resource\/m\/member\/exchange\/page response-body-replace-regex \{.+\} {"status":"SUCCESS"}
 ^https?:\/\/m\.lkcoffee\.com\/capi\/resource\/m\/growUp\/main response-body-replace-regex "popTitle":".+?" "popTitle":""
-#^https:\/\/testflight\.apple\.com\/v2\/accounts\/.*\/apps\/\d*\/builds\/\d*\/install$ request-body-replace-regex "storefrontId"\x20:\x20.*, "storefrontId":"143441-19,29"
 ^https://www\.tailgdd\.com/v8/smart/app/config/get$ response-body-json-replace data {}
 ^https?:\/\/tft-app\.cdtft\.cn\/gateway-customer\/tftapp\/tft-ams\/api\/appAd response-body-replace-regex officialAdvertResultVo fmz200
 ^https?:\/\/chl\.tf\.cn\/channelmg\/sys\/socso\/order\/queryOrderInfo response-body-replace-regex "imgUrl" response-body "fmz200"
@@ -905,7 +904,7 @@ http:\/\/ad\.myfriday\.cn\/d\/json\/1\.1 - reject
 ^https:\/\/ecloud\.tppension\.cntaiping\.com\/fxtpplatform\/common\/anonymous\/common\/page\/queryStartPageNew\?language=zh-CN - reject-dict
 # hostname = mobile.cebbank.com, yghsh.cebbank.com
 ^https?:\/\/mobile\.cebbank\.com\/cebclient\/ClientNoticeList - reject-200
-# > 光大银行 阳光惠生活
+# hostname = yghsh.cebbank.com
 ^https?:\/\/yghsh\.cebbank\.com\/static\/picture\/.*.jpg - reject-200
 # 如开启可自行添加主机名
 ^https?:\/\/v\.icbc\.com\.cn\/userfiles\/Resources\/WAP\/advertisement\/ - reject-200
@@ -1879,7 +1878,7 @@ https://apis.lifeweek.com.cn/api/baseConfig/getIosNewConfig - reject
 ^https?:\/\/recite\.perfectlingo\.com\/api\/recite\/content-recommend\/v\d\/get-by-uid.+ - reject-dict
 # 移除悬浮广告
 ^https?:\/\/recite\.perfectlingo\.com\/api\/recite\/floating-window\/v\d\/get-show.+ - reject-dict
-# 微信公众号去除商品推广
+# 公众号去除商品推广
 ^https?:\/\/mp\.weixin\.qq\.com\/mp\/cps_product_info\?action - reject-dict
 # hostname = c.m.163.com
 ^https?:\/\/c\.m\.163\.com\/nc\/gl\/ - reject-200
@@ -2200,7 +2199,7 @@ https://mgesq.api.mgtv.com/v2/user/center/icon - reject-dict
 ^https?:\/\/static\.mobile-bank\.psbc\.com\/mgs - reject
 # hostname = ad.ysepay.com
 ^https?:\/\/ad\.ysepay\.com\/yst-ad\/ST101001\/[0-9]{11}\.jpg - reject
-#开屏广告
+# 开屏广告
 ^https:\/\/ads\.ysepay\.com\/ads\/ctrl\/getAdvertisingInfo - reject-dict
 # 首页和我的横幅广告
 ^https?:\/\/api\.winbull8\.com\/v1\/marketing\/(advert|activity)\/(list|page) - reject-dict
@@ -2485,7 +2484,7 @@ http-response ^https?:\/\/api\.u51\.com\/liabilitygateway\/api\/v\d\/homepage\/l
 
 http-response ^https?:\/\/api\.u51\.com\/generic-config-gateway\/api\/v\d\/guanjia\/me-tab2\/config script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/blockAds/51card.js, requires-body=true, timeout=60, tag=51信用卡管家, enable={51xyk_enable}
 
-# > 51job
+# > 前程无忧 51Job
 http-response ^https?:\/\/cupid\.51job(app)?\.com\/open\/noauth\/recommend\/job-tab-dynamic script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/blockAds/51job.js, requires-body=true, timeout=60, tag=51job, enable={51job_enable}
 
 # > 阿里巴巴
