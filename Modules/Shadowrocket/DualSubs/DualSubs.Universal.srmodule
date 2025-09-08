@@ -5,8 +5,8 @@
 #!homepage = https://DualSubs.github.io/guide/universal
 #!icon = https://github.com/DualSubs/Universal/raw/main/src/assets/icon_rounded.png
 #!category = 🍿️ DualSubs
-#!date = 2025-04-17 03:21:29
-#!version = 1.7.1
+#!date = 2025-09-08 03:11:01
+#!version = 1.7.2
 
 [General]
 force-http-engine-hosts = %APPEND% *.hls.pv-cdn.net, *.hls.row.aiv-cdn.net, *avodhlss3ww-a.akamaihd.net, s3.amazonaws.com, cf-timedtext.aux.pv-cdn.net, d1v5ir2lpwr8os.cloudfront.net, d22qjgkvxw22r6.cloudfront.net, d25xi40x97liuc.cloudfront.net, d27xxe7juh1us6.cloudfront.net, dmqdd6hw24ucf.cloudfront.net, assets.huluim.com, vod-*.live.cf.md.bbci.co.uk, vod-*-live.akamaized.net

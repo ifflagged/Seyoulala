@@ -6,14 +6,17 @@
 
 #!openUrl=http://boxjs.com/#/app/BiliBili.ADBlock
 #!homepage=https://ADBlock.BiliUniverse.io
-#!date=2025-04-28 09:40:25
-#!version=0.6.19
+#!date=2025-09-08 02:35:48
+#!version=0.6.20
 #!arguments-desc=Splash: [开屏] 去除广告\n是否启用此处修改\n\nFeed.AD: [推荐] 去除广告\n是否启用此处修改\n\nFeed.Activity: [推荐] 去除“活动大图”\n是否启用此处修改\n\nFeed.Vertical: [推荐] 去除竖屏视频\n是否启用此处修改\n\nFeed.BlockUpLiveList: [推荐] 屏蔽UP主直播推广\n填写up主uid，以英文逗号隔开。\n\nFeed.Story: [首页] 去除短视频流广告\n是否启用此处修改\n\nSearch.AD: [搜索] 去除广告\n是否启用此处修改\n\nSearch.HotSearch: [搜索] 去除“热搜”\n是否启用此处修改\n\nPGC.AD: [番剧电影] 去除广告\n是否启用此处修改\n\nXlive.AD: [直播] 去除广告\n是否启用此处修改\n\nDynamic.HotTopics: [动态] 去除“热门话题”\n是否启用此处修改\n\nDynamic.MostVisited: [动态] 去除“最常访问”\n是否启用此处修改\n\nDynamic.AdCard: [动态] 去除广告卡片\n是否启用此处修改\n\nView.AD: [用户投稿] 去除视频广告\n是否启用此处修改\n\nDM.Command: [弹幕] 去除交互式弹幕\n是否启用此处修改\n\nDM.Colorful: [弹幕] 替换彩色弹幕\n是否启用此处修改\n\nReply.AD: [评论] 去除广告\n是否启用此处修改\n\nLogLevel: [调试] 日志等级\n    ├ OFF: 🔴 关闭\n    ├ ERROR: ❌ 错误\n    ├ WARN: ⚠️ 警告\n    ├ INFO: ℹ️ 信息\n    ├ DEBUG: 🅱️ 调试\n    └ ALL: 全部\n选择脚本日志的输出等级，低于所选等级的日志将全部输出。\n
 #!arguments=Splash:true,Feed.AD:true,Feed.Activity:false,Feed.Vertical:false,Feed.BlockUpLiveList:"
 
 [URL Rewrite]
 # 去除搜索中的默认关键词
 ^https?:\/\/(grpc|app)\.bili(bili\.com|api\.net)\/bilibili\.app\.interface\.v1\.Search\/DefaultWords$ - reject
+
+[Body Rewrite]
+http-response-jq ^https:\/\/api\.bilibili\.com\/pgc\/view\/v2\/app\/season\? 'del(.data.payment)'
 
 [Map Local]
 # 去除搜索中的大家都在搜
@@ -25,15 +28,15 @@
 # 去除动态中的最常访问
 ^https?:\/\/api\.vc\.bilibili\.com\/dynamic_svr\/v1\/dynamic_svr\/mix_uplist data-type=text data="{}" header="application/json"
 
-# 可能的一些推广(beta)
-^https?:\/\/api\.bili(bili\.com|api\.net)\/pgc\/season\/app\/related\/recommend\? data-type=text data="{}" header="application/json"
-
 # BiliBili漫画去广告
 ^https?:\/\/manga\.bilibili\.com\/twirp\/comic\.v\d\.Comic\/Flash data-type=text data="{}" header="application/json"
 
 ^https?:\/\/manga\.bilibili\.com\/twirp\/comic\.v\d\.Comic\/ListFlash data-type=text data="{}" header="application/json"
 
 ^https?:\/\/api\.live\.bilibili\.com\/xlive\/e-commerce-interface\/v1\/ecommerce-user\/get_shopping_info\? data-type=text data="{}" header="application/json"
+
+# 番剧页可能弹出的HTML广告
+^https:\/\/api\.bilibili\.com\/pgc\/activity\/deliver\/material\/receive\? data-type=text data="{"code":0,"data":{"closeType":"close_win","container":[],"showTime":""},"message":"success"}" header="content-type: application/json"
 
 [Script]
 📺 BiliBili.ADBlock.feed.index.request.json = type=http-request, pattern=^https?:\/\/app\.bili(bili\.com|api\.net)\/x\/v2\/feed\/index\?, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/BiliUniverse/BiliBili.ADBlock/request.bundle.js, argument=Splash="{{{Splash}}}"&Feed.AD="{{{Feed.AD}}}"&Feed.Activity="{{{Feed.Activity}}}"&Feed.Vertical="{{{Feed.Vertical}}}"&Feed.BlockUpLiveList="{{{Feed.BlockUpLiveList}}}"&Feed.Story="{Feed.Story}"&Search.AD="{Search.AD}"&Search.HotSearch="{Search.HotSearch}"&PGC.AD="{PGC.AD}"&Xlive.AD="{Xlive.AD}"&Dynamic.HotTopics="{Dynamic.HotTopics}"&Dynamic.MostVisited="{Dynamic.MostVisited}"&Dynamic.AdCard="{Dynamic.AdCard}"&View.AD="{View.AD}"&DM.Command="{DM.Command}"&DM.Colorful="{DM.Colorful}"&Reply.AD="{Reply.AD}"&LogLevel="{LogLevel}"
@@ -59,6 +62,8 @@
 📺 BiliBili.ADBlock.interface.response.grpc = type=http-response, pattern=^https:\/\/(grpc|app)\.bili(bili\.com|api\.net)\/bilibili\.app\.interface\.v1\.Teenagers\/ModeStatus, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/BiliUniverse/BiliBili.ADBlock/response.bundle.js, requires-body=true, binary-body-mode=true, argument=Splash="{{{Splash}}}"&Feed.AD="{{{Feed.AD}}}"&Feed.Activity="{{{Feed.Activity}}}"&Feed.Vertical="{{{Feed.Vertical}}}"&Feed.BlockUpLiveList="{{{Feed.BlockUpLiveList}}}"&Feed.Story="{Feed.Story}"&Search.AD="{Search.AD}"&Search.HotSearch="{Search.HotSearch}"&PGC.AD="{PGC.AD}"&Xlive.AD="{Xlive.AD}"&Dynamic.HotTopics="{Dynamic.HotTopics}"&Dynamic.MostVisited="{Dynamic.MostVisited}"&Dynamic.AdCard="{Dynamic.AdCard}"&View.AD="{View.AD}"&DM.Command="{DM.Command}"&DM.Colorful="{DM.Colorful}"&Reply.AD="{Reply.AD}"&LogLevel="{LogLevel}"
 
 📺 BiliBili.ADBlock.reply.response.grpc = type=http-response, pattern=^https:\/\/(grpc|app)\.bili(bili\.com|api\.net)\/bilibili\.main\.community\.reply\.v1\.Reply\/MainList, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/BiliUniverse/BiliBili.ADBlock/response.bundle.js, requires-body=true, binary-body-mode=true, argument=Splash="{{{Splash}}}"&Feed.AD="{{{Feed.AD}}}"&Feed.Activity="{{{Feed.Activity}}}"&Feed.Vertical="{{{Feed.Vertical}}}"&Feed.BlockUpLiveList="{{{Feed.BlockUpLiveList}}}"&Feed.Story="{Feed.Story}"&Search.AD="{Search.AD}"&Search.HotSearch="{Search.HotSearch}"&PGC.AD="{PGC.AD}"&Xlive.AD="{Xlive.AD}"&Dynamic.HotTopics="{Dynamic.HotTopics}"&Dynamic.MostVisited="{Dynamic.MostVisited}"&Dynamic.AdCard="{Dynamic.AdCard}"&View.AD="{View.AD}"&DM.Command="{DM.Command}"&DM.Colorful="{DM.Colorful}"&Reply.AD="{Reply.AD}"&LogLevel="{LogLevel}"
+
+📺 BiliBili.ADBlock.pgc.response.grpc = type=http-response, pattern=^https:\/\/(grpc|app)\.bili(bili\.com|api\.net)\/bilibili\.pgc\.gateway\.player\.v2\.PlayURL\/PlayView$, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/BiliUniverse/BiliBili.ADBlock/response.bundle.js, requires-body=true, binary-body-mode=true, argument=Splash="{{{Splash}}}"&Feed.AD="{{{Feed.AD}}}"&Feed.Activity="{{{Feed.Activity}}}"&Feed.Vertical="{{{Feed.Vertical}}}"&Feed.BlockUpLiveList="{{{Feed.BlockUpLiveList}}}"&Feed.Story="{Feed.Story}"&Search.AD="{Search.AD}"&Search.HotSearch="{Search.HotSearch}"&PGC.AD="{PGC.AD}"&Xlive.AD="{Xlive.AD}"&Dynamic.HotTopics="{Dynamic.HotTopics}"&Dynamic.MostVisited="{Dynamic.MostVisited}"&Dynamic.AdCard="{Dynamic.AdCard}"&View.AD="{View.AD}"&DM.Command="{DM.Command}"&DM.Colorful="{DM.Colorful}"&Reply.AD="{Reply.AD}"&LogLevel="{LogLevel}"
 
 [MITM]
 hostname = %APPEND% manga.bilibili.com, api.live.bilibili.com, api.vc.bilibili.com, app.bilibili.com, app.biliapi.net, api.bilibili.com, api.biliapi.net, grpc.biliapi.net
