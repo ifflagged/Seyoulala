@@ -19,7 +19,7 @@
 ^https?:\/\/acs(\.|-)m\.(taobao|freshippo)\.com\/gw\/mtop\.wdk\.render\.querysinglepage mock-response-body data-type=text status-code=200
 ^https?:\/\/acs(\.|-)m\.(taobao|freshippo)\.com\/gw\/mtop\.wdk\.fc\.recommend\.feedscommondservice mock-response-body data-type=text data="{}" status-code=200
 ^https?:\/\/acs(\.|-)m\.(taobao|freshippo)\.com\/gw\/mtop\.wdk\.crm\.platform\.ma\.recommend mock-response-body data-type=text data="{}" status-code=200
-^https?:\/\/acs(\.|-)m\.(taobao|freshippo)\.com\/gw\/mtop\.wdk\.mimir\.recommend\.after\.purchase\.activity mock-response-body data-type=text data="{}" status-code=200
+^https?:\/\/acs(\.|-)m\.(taobao|freshippo)\.com\/gw\/mtop\.wdk\.mimir\.recommend mock-response-body data-type=text data="{}" status-code=200
 
 [Script]
 http-response ^https?:\/\/acs(\.|-)m\.(taobao|freshippo)\.com\/gw\/mtop\.wdk\.render\.query(?>indexpage|mypage|tabfeedstream) script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zirawell/freshippo/freshippo.js, requires-body=true, tag=freshippo
