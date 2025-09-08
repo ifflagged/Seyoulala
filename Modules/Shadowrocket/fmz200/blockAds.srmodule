@@ -261,6 +261,11 @@ DOMAIN,iadmat.nosdn.127.net,REJECT
 DOMAIN,iadmatapk.nosdn.127.net,REJECT
 DOMAIN,httpdns.n.netease.com,REJECT
 DOMAIN,httpdns.music.163.com,REJECT
+# > 小红书
+DOMAIN,ads-img-qc.xhscdn.com,REJECT
+DOMAIN,ads-video-al.xhscdn.com,REJECT
+DOMAIN,ads-video-qc.xhscdn.com,REJECT
+DOMAIN,t-ads.xiaohongshu.com,REJECT
 AND,((PROTOCOL,QUIC),(DOMAIN-SUFFIX,xiaohongshu.com)),REJECT
 AND,((URL-REGEX,"^http:\/\/.+\/amdc\/mobileDispatch"),(USER-AGENT,"%E9%97%B2%E9%B1%BC*")),REJECT
 DOMAIN-KEYWORD,iyes.youku.com,REJECT
