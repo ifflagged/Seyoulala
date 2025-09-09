@@ -1,4 +1,4 @@
-#规则数量:9526
+#规则数量:9522
 #不支持的规则数量:1
 #已排除的规则数量:0
 #不支持的规则:
@@ -295,8 +295,6 @@ payload:
   - DOMAIN,dispatcher.360in.com
   - DOMAIN,ad.360in.com
   - DOMAIN,exp.360in.com
-  - DOMAIN,atrace.chelaile.net.cn
-  - DOMAIN,logs.chelaile.net.cn
   - DOMAIN-SUFFIX,hoisin.coocaa.com
   - DOMAIN-SUFFIX,hoisin.coocaatv.com
   - DOMAIN,data-hoisin.coocaa.com
@@ -2144,8 +2142,6 @@ payload:
   - DOMAIN-SUFFIX,funshion.net.cn
   - DOMAIN-SUFFIX,jnsz.net.cn
   - DOMAIN-SUFFIX,a1.0s.net.cn
-  - DOMAIN-SUFFIX,atrace.chelaile.net.cn
-  - DOMAIN-SUFFIX,logs.chelaile.net.cn
   - DOMAIN-SUFFIX,pb.funshion.net.cn
   - DOMAIN-SUFFIX,f.qcwzx.net.cn
   - DOMAIN-SUFFIX,dimg1.sz.net.cn
