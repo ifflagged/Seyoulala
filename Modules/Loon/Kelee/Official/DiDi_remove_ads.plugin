@@ -8,7 +8,7 @@
 #!loon_version=3.2.4(787)
 #!homepage=https://hub.kelee.one
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/DiDi.png
-#!date=2025-09-10 03:07:59
+#!date=2025-09-10 09:50:58
 
 [Rule]
 DOMAIN, gwp.xiaojukeji.com, REJECT
@@ -38,5 +38,7 @@ AND, ((IP-ASN, 63646, no-resolve), (DEST-PORT, 25641), (PROTOCOL, TCP)), REJECT
 
 ^https:\/\/api\.udache\.com\/gulfstream\/porsche\/v1\/dache_homepage_layout\? response-body-json-del data.instances.car_icon_01.data.icon_info_new_agreement
 
+^https:\/\/as\.xiaojukeji\.com\/ep\/as\/toggles\? response-body-json-jq '.data |= map(if .name|IN("daijia_journey_new_tcp_switch","daijia_tcp_init","daijia_tcp_msg_encrypt","daijia_tcp_site_info","daijia_tcp_site_report")then.allow=false else. end)'
+
 [MitM]
-hostname=common.diditaxi.com.cn, conf.diditaxi.com.cn, lion.didialift.com, api.udache.com, ct.xiaojukeji.com, res.xiaojukeji.com, 123.207.209.177, 123.207.209.160, 123.207.209.143, 123.207.209.142, 123.207.209.57, 123.207.209.56, 123.207.209.42, 123.207.209.41, 116.85.2.15, 116.85.2.14, 2402:4e00:4040::16, 2402:4e00:4040::15, 2402:4e00:4040::f, 2402:4e00:4040::c, 2402:4e00:4040::b, 2402:4e00:4040::5, 2402:840:d001::4, 2402:840:d001::3
+hostname=as.xiaojukeji.com, common.diditaxi.com.cn, conf.diditaxi.com.cn, lion.didialift.com, api.udache.com, ct.xiaojukeji.com, res.xiaojukeji.com
