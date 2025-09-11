@@ -1,4 +1,4 @@
-#规则数量:2362
+#规则数量:2361
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -261,7 +261,6 @@ DOMAIN,token.safebrowsing.apple
 DOMAIN,vs6.bj2ct.u3.ucweb.com
 DOMAIN-SUFFIX,safebrowsing.apple
 DOMAIN-SUFFIX,u3.ucweb.com
-DOMAIN,> AdColony
 DOMAIN-SUFFIX,adcolony.com
 DOMAIN-SUFFIX,amazon-adsystem.com
 DOMAIN-SUFFIX,mads.amazon.com

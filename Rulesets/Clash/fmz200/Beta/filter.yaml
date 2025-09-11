@@ -1,4 +1,4 @@
-#规则数量:2361
+#规则数量:2360
 #不支持的规则数量:1
 #已排除的规则数量:0
 #不支持的规则:
@@ -264,7 +264,6 @@ payload:
   - DOMAIN,vs6.bj2ct.u3.ucweb.com
   - DOMAIN-SUFFIX,safebrowsing.apple
   - DOMAIN-SUFFIX,u3.ucweb.com
-  - DOMAIN,> AdColony
   - DOMAIN-SUFFIX,adcolony.com
   - DOMAIN-SUFFIX,amazon-adsystem.com
   - DOMAIN-SUFFIX,mads.amazon.com
