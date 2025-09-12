@@ -10,12 +10,12 @@
 
 [Rewrite]
 # 高铁管家
-^http:\/\/cdn\.133\.cn\/md\/gtgj\/.+\/.+720x1280 - reject-dict
+#^http:\/\/cdn\.133\.cn\/md\/gtgj\/.+\/.+720x1280 - reject-dict
 # 拼多多瀑布流 // api.pinduoduo.com
 ^https:\/\/api\.pinduoduo\.com\/api\/alexa\/cells\/hub\/v3\? - reject-dict
 # > 亚朵开屏 // api2.yaduo.com
-^https?:\/\/api2\.yaduo\.com\/atourlife\/activity\/appLaunch - reject-dict
+#^https?:\/\/api2\.yaduo\.com\/atourlife\/activity\/appLaunch - reject-dict
 
 [MITM]
-hostname = api.pinduoduo.com, api2.yaduo.com
+hostname = api.pinduoduo.com
 
