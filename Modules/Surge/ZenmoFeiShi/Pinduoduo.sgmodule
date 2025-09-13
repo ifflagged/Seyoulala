@@ -3,7 +3,7 @@
 #!author=怎么肥事 walala
 #!category=Jacob
 
-#!update=2025-08-02
+#!update=2025-09-13
 
 [Rule]
 DOMAIN,sdk.1rtb.net,REJECT
@@ -25,7 +25,6 @@ IP-CIDR,114.110.97.30/32,REJECT,no-resolve
 IP-CIDR,81.69.130.131/32,REJECT,no-resolve
 IP-CIDR,114.110.96.26/32,REJECT,no-resolve
 IP-CIDR,101.35.212.35/32,REJECT,no-resolve
-IP-CIDR,91.108.56.107/32,REJECT,no-resolve
 
 [Map Local]
 ^https:\/\/api\.pinduoduo\.com\/api\/aristotle\/unrated_order_for_unreceived_tab data-type=text data="{}" status-code=200 header="Content-Type:application/json"
