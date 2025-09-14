@@ -1,4 +1,4 @@
-#规则数量:2963
+#规则数量:2962
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -663,7 +663,6 @@ DOMAIN-SUFFIX,newton-api.ele.me
 DOMAIN-SUFFIX,facebookma.cn
 DOMAIN-SUFFIX,atdmt.com
 DOMAIN-SUFFIX,staticxx.facebook.com
-DOMAIN-SUFFIX,byteimg.com
 DOMAIN,i.snssdk.com
 DOMAIN,i-lq.snssdk.com
 DOMAIN,dig.bdurl.net
