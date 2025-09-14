@@ -1270,7 +1270,7 @@ https://apis.lifeweek.com.cn/api/baseConfig/getIosNewConfig - reject
 # 屏蔽更新
 ^https?:\/\/api-sams\.walmartmobile\.cn\/api\/v1\/sams\/configuration\/portal\/beUpdate - reject-dict
 # 买单小程序去广告
-^https?:\/\/api\.pinduoduo\.com\/api\/ktt_gateway\/activity\/feeds\/personal_home_page\/ - reject
+#^https?:\/\/api\.pinduoduo\.com\/api\/ktt_gateway\/activity\/feeds\/personal_home_page\/ - reject
 # 开屏广告 需要清理缓存
 ^https:\/\/www\.ymm56\.com\/short-distance-match-app\/openAppAd - reject-dict
 # hostname = alt-r.my.com, imgx.jampp.com
