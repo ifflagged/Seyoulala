@@ -42,6 +42,9 @@
 ^https?:\/\/api-new\.app\.acfun\.cn\/rest\/app\/flash\/screen\/ - reject
 # hostname = sso.ifanr.com
 ^https?:\/\/sso\.ifanr\.com\/jiong\/IOS\/appso\/splash\/ - reject
+# hostname = api-cslp-emt.amazon.cn
+^https?:\/\/api-cslp-emt\.amazon\.cn\/gateway\/content\/widget\/popup - reject-200
+^https?:\/\/api-cslp-emt\.amazon\.cn\/gateway\/recommend - reject-dict
 # hostname = acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com
 ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.fliggy\.crm\.screen\.(allresource|predict) - reject-dict
 ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv - reject-dict
@@ -1849,9 +1852,6 @@ https://mgesq.api.mgtv.com/v2/user/center/icon - reject-dict
 ^https?:\/\/gongdu\.youshu\.cc\/m\/open_screen\/list_by_udid - reject
 # hostname = *.yuxueyuan.cn
 ^https?:\/\/.*\.yuxueyuan\.cn\/yxy-api-gateway\/api\/json\/advert\/getsAdStartScreen - reject-200
-# hostname = api-cslp-emt.amazon.cn
-^https?:\/\/api-cslp-emt\.amazon\.cn\/gateway\/content\/widget\/popup - reject-200
-^https?:\/\/api-cslp-emt\.amazon\.cn\/gateway\/recommend - reject-dict
 # hostname = api2.yaduo.com
 ^https?:\/\/api2\.yaduo\.com\/atourlife\/activity\/appLaunch - reject-dict
 # 开屏以及app内弹窗广告

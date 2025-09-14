@@ -772,6 +772,11 @@ https://support.you.163.com/appversync/check.do - reject
 
 ^https?:\/\/app\.58\.com\/api\/home\/invite\/popupAdv data-type=text data=" " status-code=200
 
+# hostname = api-cslp-emt.amazon.cn
+^https?:\/\/api-cslp-emt\.amazon\.cn\/gateway\/content\/widget\/popup data-type=text data=" " status-code=200
+
+^https?:\/\/api-cslp-emt\.amazon\.cn\/gateway\/recommend data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
 # hostname = acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com
 ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.fliggy\.crm\.screen\.(allresource|predict) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
@@ -2607,11 +2612,6 @@ https://mgesq.api.mgtv.com/v2/user/center/icon data-type=text data="{}" status-c
 # hostname = *.yuxueyuan.cn
 ^https?:\/\/.*\.yuxueyuan\.cn\/yxy-api-gateway\/api\/json\/advert\/getsAdStartScreen data-type=text data=" " status-code=200
 
-# hostname = api-cslp-emt.amazon.cn
-^https?:\/\/api-cslp-emt\.amazon\.cn\/gateway\/content\/widget\/popup data-type=text data=" " status-code=200
-
-^https?:\/\/api-cslp-emt\.amazon\.cn\/gateway\/recommend data-type=text data="{}" status-code=200 header="Content-Type:application/json"
-
 # hostname = api2.yaduo.com
 ^https?:\/\/api2\.yaduo\.com\/atourlife\/activity\/appLaunch data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
@@ -3390,11 +3390,11 @@ xiaohongshu = type=http-response, pattern=^https?:\/\/(edith|rec|www)\.xiaohongs
 # 评论区用户id置空 (实验功能可能无效)
 replaceBody = type=http-response, pattern=^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/note\/comment\/list, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/replace-body.js, requires-body=true, max-size=-1, timeout=30, argument=red_id-%3Efmz200
 
-body_rewrite_2773 = type=http-response, pattern=#^https:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/football-portal\/diff2\/batch\? url, script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22json-del%22%2C%5B%22json.ad%22%2C%22json.toc%22%5D%5D%5D
+body_rewrite_2777 = type=http-response, pattern=#^https:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/football-portal\/diff2\/batch\? url, script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22json-del%22%2C%5B%22json.ad%22%2C%22json.toc%22%5D%5D%5D
 
-body_rewrite_2779 = type=http-response, pattern=#^https:\/\/mobwsa\.ximalaya\.com\/mobile-playpage\/playpage\/tabs\/v2\/ url, script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22json-del%22%2C%5B%22data.playpage.resourceMap.defaultResource%22%2C%22data.playpage.resourceMap.playPageTip%22%5D%5D%5D
+body_rewrite_2783 = type=http-response, pattern=#^https:\/\/mobwsa\.ximalaya\.com\/mobile-playpage\/playpage\/tabs\/v2\/ url, script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22json-del%22%2C%5B%22data.playpage.resourceMap.defaultResource%22%2C%22data.playpage.resourceMap.playPageTip%22%5D%5D%5D
 
-body_rewrite_2785 = type=http-response, pattern=#^https:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/mobile-user\/v\d\/homePage\/ url, script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22json-del%22%2C%5B%22data.freeListenV2%22%5D%5D%5D
+body_rewrite_2789 = type=http-response, pattern=#^https:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/mobile-user\/v\d\/homePage\/ url, script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22json-del%22%2C%5B%22data.freeListenV2%22%5D%5D%5D
 
 # 我的页推广
 usmile = type=http-response, pattern=^https?:\/\/www\.myusmile\.online\/user\/plaqueTopic\/selectByType, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/usmile.js, requires-body=true, max-size=-1, timeout=60

@@ -808,6 +808,11 @@ http-response-jq http:\/\/.+\.gamersky.com/.+/lists/getListElements '.listElemen
 
 ^https?:\/\/app\.58\.com\/api\/home\/invite\/popupAdv data-type=text data=" " status-code=200
 
+# hostname = api-cslp-emt.amazon.cn
+^https?:\/\/api-cslp-emt\.amazon\.cn\/gateway\/content\/widget\/popup data-type=text data=" " status-code=200
+
+^https?:\/\/api-cslp-emt\.amazon\.cn\/gateway\/recommend data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
 # hostname = acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com
 ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.fliggy\.crm\.screen\.(allresource|predict) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
@@ -2642,11 +2647,6 @@ https://mgesq.api.mgtv.com/v2/user/center/icon data-type=text data="{}" status-c
 
 # hostname = *.yuxueyuan.cn
 ^https?:\/\/.*\.yuxueyuan\.cn\/yxy-api-gateway\/api\/json\/advert\/getsAdStartScreen data-type=text data=" " status-code=200
-
-# hostname = api-cslp-emt.amazon.cn
-^https?:\/\/api-cslp-emt\.amazon\.cn\/gateway\/content\/widget\/popup data-type=text data=" " status-code=200
-
-^https?:\/\/api-cslp-emt\.amazon\.cn\/gateway\/recommend data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = api2.yaduo.com
 ^https?:\/\/api2\.yaduo\.com\/atourlife\/activity\/appLaunch data-type=text data="{}" status-code=200 header="Content-Type:application/json"
