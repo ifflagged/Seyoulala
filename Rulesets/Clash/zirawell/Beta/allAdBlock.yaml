@@ -1,4 +1,4 @@
-#规则数量:1329
+#规则数量:1328
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -646,7 +646,6 @@ payload:
   - DOMAIN-SUFFIX,afpmm.alicdn.com
   - DOMAIN-SUFFIX,agoodm.m.taobao.com
   - DOMAIN-SUFFIX,ai.taobao.com
-  - DOMAIN-SUFFIX,alipaydns.com
   - DOMAIN-SUFFIX,alitui.weibo.com
   - DOMAIN-SUFFIX,alitui.weibo.com.cn
   - DOMAIN-SUFFIX,amfi.gou.sogou.com
