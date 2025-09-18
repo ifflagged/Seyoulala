@@ -8,7 +8,7 @@
 #!loon_version=3.2.4(787)
 #!homepage=https://hub.kelee.one
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/IThome.png
-#!date=2025-09-18 21:23:13
+#!date=2025-09-18 21:42:00
 
 [Argument]
 removeAllBanners = switch, false, true, tag=移除全部横幅, desc=启用后将移除全部横幅
