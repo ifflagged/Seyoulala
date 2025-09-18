@@ -628,8 +628,6 @@ https://support.you.163.com/appversync/check.do - reject
 ^https?:\/\/apiwz\.midukanshu\.com\/advert\/getPopup$ - reject
 ^https?:\/\/apiwz\.midukanshu\.com\/advert\/treasureInfo$ - reject
 ^https?:\/\/apiwz\.midukanshu\.com\/config\/getAds$ - reject
-# hostname = api.xiachufang.com
-^https?:\/\/api\.xiachufang\.com\/v\d\/ad/ - reject
 # 开屏广告
 ^https?:\/\/api\d\.sparke\.cn\/admodel\/list\?adspace=spgg&flag=\d$ - reject
 # hostname = api.psy-1.com
@@ -667,6 +665,7 @@ https://support.you.163.com/appversync/check.do - reject
 ^https?:\/\/mbd\.baidu\.com\/newspage\/api\/getmobads\?page\=landingshare - reject
 # hostname = acs.m.taobao.com
 ^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alimusic\.common\.mobileservice\.startinit\/ - reject
+^https?:\/\/api\.xiachufang\.com\/v\d\/ad/ - reject
 # 开屏广告
 ^https:\/\/mobileapi\.xiamenair\.com\/mobile-starter - reject
 # 消息页感兴趣推荐
