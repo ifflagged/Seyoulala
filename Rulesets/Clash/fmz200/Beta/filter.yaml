@@ -1,4 +1,4 @@
-#规则数量:2961
+#规则数量:2949
 #不支持的规则数量:1
 #已排除的规则数量:0
 #不支持的规则:
@@ -37,12 +37,6 @@ payload:
   - DOMAIN-SUFFIX,tg.jifen.2345.com
   - DOMAIN-SUFFIX,update.minipage.2345.com
   - DOMAIN-SUFFIX,g.wan.2345.com
-  - DOMAIN-SUFFIX,3600.com
-  - DOMAIN-SUFFIX,360640.com
-  - DOMAIN-SUFFIX,360jiaquan.com
-  - DOMAIN-SUFFIX,360safego.com
-  - DOMAIN-SUFFIX,365safego.com
-  - DOMAIN-SUFFIX,366safego.com
   - DOMAIN-SUFFIX,pjogndc8ixoidna.360doc.cn
   - DOMAIN-SUFFIX,w5sac788c1.360doc.cn
   - DOMAIN-SUFFIX,360shopping.com.cn
@@ -50,9 +44,6 @@ payload:
   - DOMAIN-SUFFIX,eclick.360doc.com
   - DOMAIN-SUFFIX,ad.360in.com
   - DOMAIN-SUFFIX,dl.360safe.com
-  - DOMAIN-SUFFIX,down.360safe.com
-  - DOMAIN-SUFFIX,inst.360safe.com
-  - DOMAIN-SUFFIX,update.360safe.com
   - DOMAIN-SUFFIX,kuaikan.netmon.360safe.com
   - DOMAIN-SUFFIX,ini.update.360safe.com
   - DOMAIN-SUFFIX,display.360totalsecurity.com
@@ -71,9 +62,6 @@ payload:
   - DOMAIN-SUFFIX,spro.so.com
   - DOMAIN-SUFFIX,mbrowser.news.so.com
   - DOMAIN-SUFFIX,tran.news.so.com
-  - DOMAIN-SUFFIX,360safe.com
-  - DOMAIN-SUFFIX,360.cn
-  - DOMAIN-SUFFIX,360.com
   - DOMAIN-SUFFIX,ad.365rili.com
   - DOMAIN-SUFFIX,app-g.39.net
   - DOMAIN-SUFFIX,d.39.net
