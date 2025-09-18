@@ -8,10 +8,10 @@
 #!loon_version=3.2.4(787)
 #!homepage=https://hub.kelee.one
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/IThome.png
-#!date=2025-09-18 04:08:07
+#!date=2025-09-18 21:23:13
 
 [Argument]
-removeBanners = switch, false, true, tag=移除全部横幅, desc=启用后将移除全部横幅
+removeAllBanners = switch, false, true, tag=移除全部横幅, desc=启用后将移除全部横幅
 removePinnedArticles = switch, false, true, tag=移除置顶文章, desc=启用后将移除置顶文章
 
 [Rewrite]
@@ -19,7 +19,7 @@ removePinnedArticles = switch, false, true, tag=移除置顶文章, desc=启用�
 ^https?:\/\/dat\.ruanmei\.com\/ithome\/money\/acd\.json$ reject
 
 [Script]
-http-response ^https:\/\/napi\.ithome\.com\/api\/topmenu\/getfeeds\? script-path=https://kelee.one/Resource/JavaScript/IThome/IThome_remove_ads.js, requires-body=true, tag=IT之家去广告, argument=[{removeBanners},{removePinnedArticles}]
- 
+http-response ^https:\/\/napi\.ithome\.com\/api\/(news\/indexv2\/|topmenu\/getfeeds\?) script-path=https://kelee.one/Resource/JavaScript/IThome/IThome_remove_ads.js, requires-body=true, tag=IT之家去广告, argument=[{removeAllBanners},{removePinnedArticles}]
+
 [MitM]
 hostname=napi.ithome.com, api.zuihuimai.com, dat.ruanmei.com
