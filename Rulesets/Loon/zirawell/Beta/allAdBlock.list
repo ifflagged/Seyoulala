@@ -1,4 +1,4 @@
-#规则数量:1330
+#规则数量:1329
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -968,7 +968,6 @@ DOMAIN-SUFFIX,m.yes.youku.com
 DOMAIN-SUFFIX,m1.baidu.com
 DOMAIN-SUFFIX,ma.baidu.com
 DOMAIN-SUFFIX,mads.meituan.com
-DOMAIN-SUFFIX,mall.icbc.com.cn
 DOMAIN-SUFFIX,masdk.3g.qq.com
 DOMAIN-SUFFIX,mbdlog.iqiyi.com
 DOMAIN-SUFFIX,mclick.simba.taobao.com
