@@ -12,7 +12,7 @@ DOMAIN-SUFFIX,iyes.youku.com,REJECT
 
 [URL Rewrite]
 # > Version
-^https?:\/\/2025.09.19/c394/v2.0.619 - reject-200
+^https?:\/\/2025.09.19/c396/v2.0.619 - reject-200
 # > 10
 ^https?:\/\/ftapi\.10jqka\.com\.cn\/futgwapi\/api\/om\/v\d\/ad\/common\/transfer - reject-200
 # > 139mail
