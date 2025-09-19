@@ -1,4 +1,4 @@
-#规则数量:1328
+#规则数量:1330
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -355,6 +355,7 @@ payload:
   - DOMAIN,logs.chelaile.net.cn
   - DOMAIN,lookup.api.bsb.baidu.com
   - DOMAIN,lwlog.laiwang.com
+  - DOMAIN,lx0.meituan.com
   - DOMAIN,m-vali.cp31.ott.cibntv.net
   - DOMAIN,m.meitun.com
   - DOMAIN,m.pinduoduo.net
@@ -958,6 +959,7 @@ payload:
   - DOMAIN-SUFFIX,lstat.youku.com
   - DOMAIN-SUFFIX,lu.sogou.com
   - DOMAIN-SUFFIX,lu.sogoucdn.com
+  - DOMAIN-SUFFIX,lx.meituan.net
   - DOMAIN-SUFFIX,m-adash.m.taobao.com
   - DOMAIN-SUFFIX,m.baidu.com.yiqisee.cn
   - DOMAIN-SUFFIX,m.baidu.com.zhiduo.org
