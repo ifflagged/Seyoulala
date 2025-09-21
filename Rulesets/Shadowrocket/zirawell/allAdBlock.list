@@ -1,4 +1,4 @@
-#规则数量:1329
+#规则数量:1326
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -702,7 +702,6 @@ DOMAIN-SUFFIX,bdcode.youke.com
 DOMAIN-SUFFIX,bdplus.baidu.com
 DOMAIN-SUFFIX,beacon.sina.com.cn
 DOMAIN-SUFFIX,beizi.biz
-DOMAIN-SUFFIX,bg4nxu2u5t.com
 DOMAIN-SUFFIX,bianxianmao.com
 DOMAIN-SUFFIX,brand.sogou.com
 DOMAIN-SUFFIX,bsiet.husky.sogou.com
@@ -948,7 +947,6 @@ DOMAIN-SUFFIX,l.ykimg.com
 DOMAIN-SUFFIX,l.youku.com
 DOMAIN-SUFFIX,linkeye.ximalaya.com
 DOMAIN-SUFFIX,livep.l.ott.video.qq.com
-DOMAIN-SUFFIX,lkpmprksau.com
 DOMAIN-SUFFIX,location.ximalaya.com
 DOMAIN-SUFFIX,log-yex.youdao.com
 DOMAIN-SUFFIX,log.mgtv.com
@@ -1101,7 +1099,6 @@ DOMAIN-SUFFIX,rj.baidu.com
 DOMAIN-SUFFIX,rlogs.youdao.com
 DOMAIN-SUFFIX,rm.sina.com.cn
 DOMAIN-SUFFIX,rmoeu.mercury.sogou.com
-DOMAIN-SUFFIX,rou3.xyz
 DOMAIN-SUFFIX,rplog.baidu.com
 DOMAIN-SUFFIX,rqd.qq.com
 DOMAIN-SUFFIX,rt-m.kugou.com
