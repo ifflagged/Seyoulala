@@ -5,7 +5,7 @@
 
 [Script]
 # ✅ Spotify
-http-response ^https:\/\/spclient\.wg\.spotify\.com\/(bootstrap\/v1\/bootstrap|user-customization-service\/v1\/customize)$ script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/spotify-proto.js, requires-body=true, binary-body-mode=true, timeout=60, tag=spotify-proto
+http-response ^https:\/\/spclient\.wg\.spotify\.com\/(bootstrap\/v1\/bootstrap|user-customization-service\/v1\/customize)$ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ddgksf2013/ForOwnUse/spotify-proto.js, requires-body=true, binary-body-mode=true, timeout=60, tag=spotify-proto
 
 http-request ^https:\/\/spclient\.wg\.spotify\.com\/(artistview\/v1\/artist|album-entity-view\/v2\/album)\/ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ddgksf2013/ForOwnUse/spotify-json.js, timeout=60, tag=spotify-json
 
@@ -43,7 +43,7 @@ http-response http:\/\/wallpaper\.soutushenqi\.com\/api\/v1\/account\/token scri
 http-response ^https?:\/\/api4\.bybutter\.com\/v4\/(users\/me$|shop\/me\/privileges$) script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ddgksf2013/ForOwnUse/BybutterProCrack.js, requires-body=true, timeout=60, tag=BybutterProCrack
 
 # ✅ Focos
-http-response ^https?:\/\/.*oracle\.bendingspoonsapps\.com\/v\d\/(users\/setup|purchases\/verify\/apple) script-path=https://github.com/ddgksf2013/MoYu/raw/master/FocosProCrack.js, requires-body=true, timeout=60, tag=FocosProCrack
+http-response ^https?:\/\/.*oracle\.bendingspoonsapps\.com\/v\d\/(users\/setup|purchases\/verify\/apple) script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ddgksf2013/ForOwnUse/FocosProCrack.js, requires-body=true, timeout=60, tag=FocosProCrack
 
 # ✅ 养基宝
 http-response ^https?:\/\/.*yangjibao\.com\/(wxapi\/)?account script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ddgksf2013/ForOwnUse/YangJiBaoProCrack.js, requires-body=true, timeout=60, tag=YangJiBaoProCrack
@@ -58,7 +58,7 @@ http-response ^https?:\/\/.*xiaozujian\.com\/api\/app\/config\/userConfig script
 #http-response ^https:\/\/(vas|account)\.wps\.cn\/(query\/api\/v\d\/list_purchase_info|api\/users\/\d+\/overview) script-path=https://raw.githubusercontent.com/510004015/Quantumult_X/Remote/Premium/WPSOffice.js, requires-body=true, timeout=60, tag=WPSOffice
 
 # ✅ Appraven(美化)
-http-response ^https?:\/\/.*appraven\.net\/appraven\/graphql script-path=https://gist.githubusercontent.com/ddgksf2013/562f8fd6a40be92d7c8b358aa25eab3f/raw/appraven.vip.js, requires-body=true, timeout=60, tag=appraven.vip
+http-response ^https?:\/\/.*appraven\.net\/appraven\/graphql script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ddgksf2013/ForOwnUse/appraven.vip.js, requires-body=true, timeout=60, tag=appraven.vip
 
 # ✅ Nicegram
 http-response ^https?:\/\/nicegram\.cloud\/api\/v\d\/(ai-assistant\/purchase-list|user\/info|telegram\/auth) script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ddgksf2013/ForOwnUse/NicegramProCrack.js, requires-body=true, timeout=60, tag=NicegramProCrack
