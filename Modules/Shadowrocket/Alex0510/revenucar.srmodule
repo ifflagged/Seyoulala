@@ -11,9 +11,9 @@ RC = type=http-request, pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts|s
 
 Receipt = type=http-response, pattern=https:\/\/buy\.itunes\.apple\.com\/verifyReceipt, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/test.js, requires-body=true, max-size=0
 
-projects = type=http-response, pattern=^https://firebaseremoteconfig.googleapis.com/v1/projects/filebox-ac299/.*, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/projects.js, requires-body=true, max-size=0
+projects = type=http-response, pattern=^https://firebaseremoteconfig.googleapis.com/v1/projects/filebox-ac299/.*, script-path=https://raw.githubusercontent.com/Alex0510/Eric/master/surge/Script/projects.js, requires-body=true, max-size=0
 
-美颜相机VIP = type=http-response, pattern=^https://.*.mei(yan|tu).com\/.*, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/myCamera.js, requires-body=true, max-size=0
+美颜相机VIP = type=http-response, pattern=^https://.*.mei(yan|tu).com\/.*, script-path=https://raw.githubusercontent.com/Alex0510/Eric/master/surge/Script/myCamera.js, requires-body=true, max-size=0
 
 flightradar24高级解锁 = type=http-response, pattern=^ https://mobile.flightradar24.com/mobile/(user-session|subscribe), script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/flightradar24.js, requires-body=true, max-size=0
 
@@ -25,7 +25,7 @@ DayOne = type=http-response, pattern=^https:\/\/dayone\.app\/api\/v2\/users, scr
 
 effie解锁订阅 = type=http-response,8pattern=  https://api.effie.(co|pro)/api/v1/user/member, pattern==, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/effie.js, requires-body=true, max-size=0
 
-itranslatePro = type=http-response, pattern=https://ssl-api.itranslateapp.com/accounts/v4/subscriptions/verify/ios, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/iTranslate.js, requires-body=true, max-size=0
+itranslatePro = type=http-response, pattern=https://ssl-api.itranslateapp.com/accounts/v4/subscriptions/verify/ios, script-path=https://raw.githubusercontent.com/Alex0510/Eric/master/surge/Script/iTranslate.js, requires-body=true, max-size=0
 
 钱迹 = type=http-response, pattern=https://qianji.xxoojoke.com/vip/configios, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/qianji.js, requires-body=true, max-size=0
 
@@ -41,7 +41,7 @@ sleepcycle = type=http-response, pattern=https://ch.sleepcycle.com/(useraccounts
 
 adguard = type=http-response, pattern=https://mobile-api.adguard.com/api/2.0/ios_validate_receipt/.*, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/adguard.js, requires-body=true, max-size=0, script-update-interval=0
 
-今日热榜 = type=http-response, pattern=^https://api2.tophub.app/account/sync, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/jinrirebang.js, requires-body=true, max-size=0, script-update-interval=0
+今日热榜 = type=http-response, pattern=^https://api2.tophub.app/account/sync, script-path=https://raw.githubusercontent.com/Alex0510/Eric/master/surge/Script/jinrirebang.js, requires-body=true, max-size=0, script-update-interval=0
 
 flow = type=http-response, pattern=^https://.*.flownow.cn/v\d.\d.0/(.*|user.info), script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/flow.js, requires-body=true, max-size=0, script-update-interval=0
 
@@ -49,25 +49,25 @@ mimo = type=http-response, pattern=^https://api.getmimo.com/v1/subscriptions, sc
 
 apphud = type=http-response, pattern=^https://api.apphud.com/v1/(customers|subscriptions)$, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/apphud.js, requires-body=true, max-size=0, script-update-interval=0
 
-endel = type=http-response, pattern=^https://api-production.endel.io/v4/call, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/endel.js, requires-body=true, max-size=0, script-update-interval=0
+endel = type=http-response, pattern=^https://api-production.endel.io/v4/call, script-path=https://raw.githubusercontent.com/Alex0510/Eric/master/surge/Script/endel.js, requires-body=true, max-size=0, script-update-interval=0
 
 Alarmy = type=http-response, pattern=^https://ars.alar.my/api/v2/user/sync, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/alarmy.js, requires-body=true, max-size=0, script-update-interval=0
 
-duet = type=http-response, pattern=^https://rdp.duetdisplay.com/v1/users/validateReceipt, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/duet.js, requires-body=true, max-size=0, script-update-interval=0
+duet = type=http-response, pattern=^https://rdp.duetdisplay.com/v1/users/validateReceipt, script-path=https://raw.githubusercontent.com/Alex0510/Eric/master/surge/Script/duet.js, requires-body=true, max-size=0, script-update-interval=0
 
-vivacut = type=http-response, pattern=^https://medi.dxzzy321.top/api/rest/commerce/integrate/vip/perform, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/vivacut.js, requires-body=true, max-size=0, script-update-interval=0
+vivacut = type=http-response, pattern=^https://medi.dxzzy321.top/api/rest/commerce/integrate/vip/perform, script-path=https://raw.githubusercontent.com/Alex0510/Eric/master/surge/Script/vivacut.js, requires-body=true, max-size=0, script-update-interval=0
 
 faceapp = type=http-response, pattern=^https://api.faceapp.io/api/v3.3/auth/user/credentials, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/faceapp.js, requires-body=true, max-size=0, script-update-interval=0
 
-habits = type=http-response, pattern=^https://api-weather.andy.works/v1/, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/habits.js, requires-body=true, max-size=0, script-update-interval=0
+habits = type=http-response, pattern=^https://api-weather.andy.works/v1/, script-path=https://raw.githubusercontent.com/Alex0510/Eric/master/surge/Script/habits.js, requires-body=true, max-size=0, script-update-interval=0
 
-cocorus = type=http-response, pattern=^https://cocorus-api.excite.co.jp/v2/users/me, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/cocorus.js, requires-body=true, max-size=0, script-update-interval=0
+cocorus = type=http-response, pattern=^https://cocorus-api.excite.co.jp/v2/users/me, script-path=https://raw.githubusercontent.com/Alex0510/Eric/master/surge/Script/cocorus.js, requires-body=true, max-size=0, script-update-interval=0
 
 格式转换 = type=http-response, pattern=^http://format-api.netpock.com/api/user_info, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/gszh.js, requires-body=true, max-size=0, script-update-interval=0
 
 猫头鹰文件 = type=http-response, pattern=^https://www.skyjos.cn:58080/ws/(loadaccountinfo|validate), script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/mty.js, requires-body=true, max-size=0, script-update-interval=0
 
-mate翻译 = type=http-response, pattern=^https://asia.gikken.co/matesync/(subscription|login|check_user), script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/mate.js, requires-body=true, max-size=0, script-update-interval=0
+mate翻译 = type=http-response, pattern=^https://asia.gikken.co/matesync/(subscription|login|check_user), script-path=https://raw.githubusercontent.com/Alex0510/Eric/master/surge/Script/mate.js, requires-body=true, max-size=0, script-update-interval=0
 
 Adobescan = type=http-response, pattern=^https://createpdf.acrobat.com/createpdf/api/users/me/subscriptions, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/Adobescan.js, requires-body=true, max-size=0, script-update-interval=0
 

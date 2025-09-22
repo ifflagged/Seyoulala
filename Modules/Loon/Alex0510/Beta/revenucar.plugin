@@ -12,9 +12,9 @@ http-request ^https:\/\/api\.revenuecat\.com\/.+\/(receipts|subscribers\/(\$RCAn
 
 http-response https:\/\/buy\.itunes\.apple\.com\/verifyReceipt script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/test.js, requires-body=true, tag=Receipt
 
-http-response ^https://firebaseremoteconfig.googleapis.com/v1/projects/filebox-ac299/.* script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/projects.js, requires-body=true, tag=projects
+http-response ^https://firebaseremoteconfig.googleapis.com/v1/projects/filebox-ac299/.* script-path=https://raw.githubusercontent.com/Alex0510/Eric/master/surge/Script/projects.js, requires-body=true, tag=projects
 
-http-response ^https://.*.mei(yan|tu).com\/.* script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/myCamera.js, requires-body=true, tag=美颜相机VIP
+http-response ^https://.*.mei(yan|tu).com\/.* script-path=https://raw.githubusercontent.com/Alex0510/Eric/master/surge/Script/myCamera.js, requires-body=true, tag=美颜相机VIP
 
 http-response ^ https://mobile.flightradar24.com/mobile/(user-session|subscribe) script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/flightradar24.js, requires-body=true, tag=flightradar24高级解锁
 
@@ -26,7 +26,7 @@ http-response ^https://backend.getdrafts.com/api/v1/verification/verify_receipt 
 
 http-response,8pattern=  https://api.effie.(co|pro)/api/v1/user/member = script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/effie.js, requires-body=true, tag=effie解锁订阅
 
-http-response https://ssl-api.itranslateapp.com/accounts/v4/subscriptions/verify/ios script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/iTranslate.js, requires-body=true, tag=itranslatePro
+http-response https://ssl-api.itranslateapp.com/accounts/v4/subscriptions/verify/ios script-path=https://raw.githubusercontent.com/Alex0510/Eric/master/surge/Script/iTranslate.js, requires-body=true, tag=itranslatePro
 
 http-response https://qianji.xxoojoke.com/vip/configios script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/qianji.js, requires-body=true, tag=钱迹
 
@@ -42,7 +42,7 @@ http-response https://ch.sleepcycle.com/(useraccountstats|api/v1/subscription/ge
 
 http-response https://mobile-api.adguard.com/api/2.0/ios_validate_receipt/.* script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/adguard.js, requires-body=true, tag=adguard
 
-http-response ^https://api2.tophub.app/account/sync script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/jinrirebang.js, requires-body=true, tag=今日热榜
+http-response ^https://api2.tophub.app/account/sync script-path=https://raw.githubusercontent.com/Alex0510/Eric/master/surge/Script/jinrirebang.js, requires-body=true, tag=今日热榜
 
 http-response ^https://.*.flownow.cn/v\d.\d.0/(.*|user.info) script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/flow.js, requires-body=true, tag=flow
 
@@ -50,25 +50,25 @@ http-response ^https://api.getmimo.com/v1/subscriptions script-path=https://gith
 
 http-response ^https://api.apphud.com/v1/(customers|subscriptions)$ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/apphud.js, requires-body=true, tag=apphud
 
-http-response ^https://api-production.endel.io/v4/call script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/endel.js, requires-body=true, tag=endel
+http-response ^https://api-production.endel.io/v4/call script-path=https://raw.githubusercontent.com/Alex0510/Eric/master/surge/Script/endel.js, requires-body=true, tag=endel
 
 http-response ^https://ars.alar.my/api/v2/user/sync script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/alarmy.js, requires-body=true, tag=Alarmy
 
-http-response ^https://rdp.duetdisplay.com/v1/users/validateReceipt script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/duet.js, requires-body=true, tag=duet
+http-response ^https://rdp.duetdisplay.com/v1/users/validateReceipt script-path=https://raw.githubusercontent.com/Alex0510/Eric/master/surge/Script/duet.js, requires-body=true, tag=duet
 
-http-response ^https://medi.dxzzy321.top/api/rest/commerce/integrate/vip/perform script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/vivacut.js, requires-body=true, tag=vivacut
+http-response ^https://medi.dxzzy321.top/api/rest/commerce/integrate/vip/perform script-path=https://raw.githubusercontent.com/Alex0510/Eric/master/surge/Script/vivacut.js, requires-body=true, tag=vivacut
 
 http-response ^https://api.faceapp.io/api/v3.3/auth/user/credentials script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/faceapp.js, requires-body=true, tag=faceapp
 
-http-response ^https://api-weather.andy.works/v1/ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/habits.js, requires-body=true, tag=habits
+http-response ^https://api-weather.andy.works/v1/ script-path=https://raw.githubusercontent.com/Alex0510/Eric/master/surge/Script/habits.js, requires-body=true, tag=habits
 
-http-response ^https://cocorus-api.excite.co.jp/v2/users/me script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/cocorus.js, requires-body=true, tag=cocorus
+http-response ^https://cocorus-api.excite.co.jp/v2/users/me script-path=https://raw.githubusercontent.com/Alex0510/Eric/master/surge/Script/cocorus.js, requires-body=true, tag=cocorus
 
 http-response ^http://format-api.netpock.com/api/user_info script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/gszh.js, requires-body=true, tag=格式转换
 
 http-response ^https://www.skyjos.cn:58080/ws/(loadaccountinfo|validate) script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/mty.js, requires-body=true, tag=猫头鹰文件
 
-http-response ^https://asia.gikken.co/matesync/(subscription|login|check_user) script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/mate.js, requires-body=true, tag=mate翻译
+http-response ^https://asia.gikken.co/matesync/(subscription|login|check_user) script-path=https://raw.githubusercontent.com/Alex0510/Eric/master/surge/Script/mate.js, requires-body=true, tag=mate翻译
 
 http-response ^https://createpdf.acrobat.com/createpdf/api/users/me/subscriptions script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/Adobescan.js, requires-body=true, tag=Adobescan
 
