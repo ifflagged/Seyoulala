@@ -17,7 +17,7 @@
 ^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.trip\.guide\.guess\.what\.you\.like - reject
 
 [Script]
-http-response ^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.fliggy\.ssif\.pattern\.home script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zirawell/fliggy/fliggy.js, requires-body=true, tag=fliggy
+http-response ^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.fliggy\.ssif\.pattern\.home script-path=https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/fliggy.js, requires-body=true, tag=fliggy
 
 [MITM]
 hostname = acs.m.taobao.com
