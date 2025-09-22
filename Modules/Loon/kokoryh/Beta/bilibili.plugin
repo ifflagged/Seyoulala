@@ -36,9 +36,9 @@ AND,((DOMAIN-SUFFIX,chat.bilibili.com),(OR,((DOMAIN-KEYWORD,stun),(DOMAIN-KEYWOR
 [Script]
 http-request ^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.community\.service\.dm\.v1\.DM\/DmSegMobile$ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/kokoryh/bilibili/bilibili.protobuf.request.js, requires-body=true, binary-body-mode=true, tag={空降助手}, argument="{"logLevel":"{日志等级}"}"
 
-http-response ^https:\/\/live\.bilibili\.com\/blackboard\/era\/.+\.html\? script-path=https://raw.githubusercontent.com/kokoryh/Sparkle/refs/heads/master/dist/webpage.bilibili.js, requires-body=true, tag={净化内嵌网页}
+http-response ^https:\/\/live\.bilibili\.com\/blackboard\/era\/.+\.html\? script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/kokoryh/bilibili/webpage.bilibili.js, requires-body=true, tag={净化内嵌网页}
 
-http-response ^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\? script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/bili-suit-diy.js, requires-body=true, tag=bilibili.skin
+http-response ^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\? script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/kokoryh/bilibili/bili-suit-diy.js, requires-body=true, tag=bilibili.skin
 
 http-response ^https:\/\/app\.bilibili\.com\/x\/(resource\/show\/tab\/v2|v2\/(splash\/(list|show|event\/list2)|feed\/index(\/story)?|account\/(mine(\/ipad)?|myinfo)))\? script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/kokoryh/bilibili/bilibili.json.js, requires-body=true, tag=bilibili.json, argument="{"showCreatorHub":{创作中心}}"
 
