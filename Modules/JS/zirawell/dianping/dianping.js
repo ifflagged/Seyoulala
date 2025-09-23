@@ -23,7 +23,7 @@ if (url.includes("/dpmobile") || url.includes("/goodsawardpic")) {
     const blankPxReq = {
       url: url
     };
-    $.get(blankPxReq).then(response => {
+    get(blankPxReq).then(response => {
       $done({bodyBytes: response.bodyBytes});
     }, reason => {
       $done();
