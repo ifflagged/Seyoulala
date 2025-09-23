@@ -8,6 +8,7 @@ https://raw.githubusercontent.com/zirawell/R-Store/main/Rule/QuanX/Adblock/App/D
 
 ********************************/
 
+const $ = new Env('大众点评');
 const url = $request.url;
 if (url.includes("/dpmobile") || url.includes("/goodsawardpic")) {
   const header = $request.headers;
@@ -20,14 +21,18 @@ if (url.includes("/dpmobile") || url.includes("/goodsawardpic")) {
     $done({body: "", headers: "", status: "HTTP/1.1 404 Not Found"});
   } else if (url.includes(".gif.webp")) {
     const blankPxUrl = "https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Blank/blank.gif"
-    const blankPxReq = {
-      url: url
-    };
-    get(blankPxReq).then(response => {
-      $done({bodyBytes: response.bodyBytes});
-    }, reason => {
-      $done();
-    });
+    $.get(
+      {
+          url: blankPxUrl
+      },
+      (error, response, data) => {
+          if (!error && response.status === 200) {
+            $done({bodyBytes: response.bodyBytes});
+          } else {
+            $done();
+          }
+      }
+    );
   } else {
     $done({});
   }
