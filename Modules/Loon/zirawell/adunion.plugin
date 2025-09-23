@@ -137,6 +137,7 @@ DOMAIN-SUFFIX,adservice.google.com,REJECT
 DOMAIN-SUFFIX,mobileads.google.com,REJECT
 DOMAIN-SUFFIX,google-analytics.com,REJECT
 DOMAIN-SUFFIX,googlesyndication.com,REJECT
+DOMAIN-SUFFIX,googlesyndication-cn.com,REJECT
 DOMAIN-SUFFIX,googletagservices.com,REJECT
 DOMAIN-SUFFIX,googletagmanager.com,REJECT
 DOMAIN-SUFFIX,l.google.com,REJECT

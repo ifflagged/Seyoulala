@@ -136,6 +136,7 @@ DOMAIN-SUFFIX,adservice.google.com,REJECT,extended-matching
 DOMAIN-SUFFIX,mobileads.google.com,REJECT,extended-matching
 DOMAIN-SUFFIX,google-analytics.com,REJECT,extended-matching
 DOMAIN-SUFFIX,googlesyndication.com,REJECT,extended-matching
+DOMAIN-SUFFIX,googlesyndication-cn.com,REJECT,extended-matching
 DOMAIN-SUFFIX,googletagservices.com,REJECT,extended-matching
 DOMAIN-SUFFIX,googletagmanager.com,REJECT,extended-matching
 DOMAIN-SUFFIX,l.google.com,REJECT,extended-matching

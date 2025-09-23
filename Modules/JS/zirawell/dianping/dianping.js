@@ -16,7 +16,7 @@ if (url.includes("/dpmobile") || url.includes("/goodsawardpic")) {
   const traceKey2 = Object.keys(header).find(key => /^(ai|dt|al|u)$/i.test(key));
   const headopt1 = traceKey1 ? header[traceKey1] : null;
   const headopt2 = traceKey2 ? header[traceKey2] : null;
-  if (headopt1 && !headopt2) {
+  if ((headopt1 && !headopt2) || url.includes(".gif.webp")) {
     $done({body: "", headers: "", status: "HTTP/1.1 404 Not Found"});
   } else {
     $done({});
