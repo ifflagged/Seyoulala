@@ -16,8 +16,12 @@ if (url.includes("/dpmobile") || url.includes("/goodsawardpic")) {
   const traceKey2 = Object.keys(header).find(key => /^(ai|dt|al|u)$/i.test(key));
   const headopt1 = traceKey1 ? header[traceKey1] : null;
   const headopt2 = traceKey2 ? header[traceKey2] : null;
-  if ((headopt1 && !headopt2) || url.includes(".gif.webp")) {
+  if (headopt1 && !headopt2) {
     $done({body: "", headers: "", status: "HTTP/1.1 404 Not Found"});
+  } else if (url.includes(".gif.webp")) {
+    const imgBase64 = "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNgYAAAAAMAAWgmWQ0AAAAASUVORK5CYII=";
+    const imgBuffer = Buffer.from(imgBase64, 'base64');
+    $done({bodyBytes: imgBuffer});
   } else {
     $done({});
   }
