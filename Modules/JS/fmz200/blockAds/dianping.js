@@ -27,7 +27,7 @@ if (url.includes("/dpmobile") || url.includes("/goodsawardpic")) {
       },
       (error, response, data) => {
           if (!error && response.status === 200) {
-            $done({bodyBytes: response.bodyBytes});
+            $done({bodyBytes: response.bodyBytes.slice(response.bodyBytes.byteOffset, 1)});
           } else {
             $done();
           }
