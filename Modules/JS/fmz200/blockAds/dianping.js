@@ -20,7 +20,7 @@ if (url.includes("/dpmobile") || url.includes("/goodsawardpic")) {
     $done({body: "", headers: "", status: "HTTP/1.1 404 Not Found"});
   } else if (url.includes(".gif.webp")) {
     const imgBase64 = "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNgYAAAAAMAAWgmWQ0AAAAASUVORK5CYII=";
-    const imgBuffer = Buffer.from(imgBase64, 'base64');
+    const imgBuffer = Uint8Array.from(atob(imgBase64), c => c.charCodeAt(0));
     $done({bodyBytes: imgBuffer});
   } else {
     $done({});
