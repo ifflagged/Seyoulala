@@ -1,4 +1,4 @@
-#规则数量:1352
+#规则数量:1357
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -567,6 +567,7 @@ payload:
   - DOMAIN-SUFFIX,ad.mobile.youku.com
   - DOMAIN-SUFFIX,ad.player.baidu.com
   - DOMAIN-SUFFIX,ad.qq.com
+  - DOMAIN-SUFFIX,ad.richmob.cn
   - DOMAIN-SUFFIX,ad.sina.com.cn
   - DOMAIN-SUFFIX,ad.sohu.com
   - DOMAIN-SUFFIX,ad.test.ximalaya.com
@@ -710,6 +711,7 @@ payload:
   - DOMAIN-SUFFIX,bdplus.baidu.com
   - DOMAIN-SUFFIX,beacon.sina.com.cn
   - DOMAIN-SUFFIX,beizi.biz
+  - DOMAIN-SUFFIX,bg4nxu2u5t.com
   - DOMAIN-SUFFIX,bianxianmao.com
   - DOMAIN-SUFFIX,bidder.criteo.com
   - DOMAIN-SUFFIX,brand.sogou.com
@@ -842,6 +844,7 @@ payload:
   - DOMAIN-SUFFIX,epro.sogou.com
   - DOMAIN-SUFFIX,ers.baidu.com
   - DOMAIN-SUFFIX,fair.sogou.com
+  - DOMAIN-SUFFIX,fancyapi.com
   - DOMAIN-SUFFIX,fastimage.uve.weibo.com
   - DOMAIN-SUFFIX,fav.simba.taobao.com
   - DOMAIN-SUFFIX,fclick.baidu.com
@@ -963,6 +966,7 @@ payload:
   - DOMAIN-SUFFIX,l.youku.com
   - DOMAIN-SUFFIX,linkeye.ximalaya.com
   - DOMAIN-SUFFIX,livep.l.ott.video.qq.com
+  - DOMAIN-SUFFIX,lkpmprksau.com
   - DOMAIN-SUFFIX,location.ximalaya.com
   - DOMAIN-SUFFIX,log-yex.youdao.com
   - DOMAIN-SUFFIX,log.mgtv.com
@@ -1120,6 +1124,7 @@ payload:
   - DOMAIN-SUFFIX,rlogs.youdao.com
   - DOMAIN-SUFFIX,rm.sina.com.cn
   - DOMAIN-SUFFIX,rmoeu.mercury.sogou.com
+  - DOMAIN-SUFFIX,rou3.xyz
   - DOMAIN-SUFFIX,rplog.baidu.com
   - DOMAIN-SUFFIX,rqd.qq.com
   - DOMAIN-SUFFIX,rt-m.kugou.com
