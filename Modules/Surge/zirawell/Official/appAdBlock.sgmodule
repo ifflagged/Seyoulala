@@ -526,6 +526,7 @@ DOMAIN-SUFFIX, 1rtb.net, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, 33.autohome.com.cn, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, 360baidus.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, 3rd.t.sohu.com, REJECT, extended-matching, pre-matching
+DOMAIN-SUFFIX, 4dvertible.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, 888.tv.sohu.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, a-dxk.play.api.3g.youku.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, a.baidu.com, REJECT, extended-matching, pre-matching
@@ -574,10 +575,13 @@ DOMAIN-SUFFIX, adnet.sohu.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, adping.qq.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, adpm.app.qq.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, adrdir.qq.com, REJECT, extended-matching, pre-matching
+DOMAIN-SUFFIX, adrta.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, ads-d.viber.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, ads-twitter.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, ads.aws.viber.com, REJECT, extended-matching, pre-matching
+DOMAIN-SUFFIX, ads.inmobi.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, ads.linkedin.com, REJECT, extended-matching, pre-matching
+DOMAIN-SUFFIX, ads.pubmatic.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, ads.sohu.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, ads.viber.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, ads.vungle.com, REJECT, extended-matching, pre-matching
@@ -608,6 +612,7 @@ DOMAIN-SUFFIX, adsmoloco.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, adsolution.imtt.qq.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, adspecs.yahoo.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, adsqqclick.qq.com, REJECT, extended-matching, pre-matching
+DOMAIN-SUFFIX, adsrvr.org, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, adstextview.qq.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, adstream.123.sogoucdn.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, adsview.qq.com, REJECT, extended-matching, pre-matching
@@ -629,8 +634,10 @@ DOMAIN-SUFFIX, afp.zol-img.com.cn, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, afpmm.alicdn.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, agoodm.m.taobao.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, ai.taobao.com, REJECT, extended-matching, pre-matching
+DOMAIN-SUFFIX, akamaized.net, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, alitui.weibo.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, alitui.weibo.com.cn, REJECT, extended-matching, pre-matching
+DOMAIN-SUFFIX, amazon-adsystem.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, amfi.gou.sogou.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, analy.qq.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, analytics.163.com, REJECT, extended-matching, pre-matching
@@ -687,6 +694,7 @@ DOMAIN-SUFFIX, bdplus.baidu.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, beacon.sina.com.cn, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, beizi.biz, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, bianxianmao.com, REJECT, extended-matching, pre-matching
+DOMAIN-SUFFIX, bidder.criteo.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, brand.sogou.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, bsiet.husky.sogou.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, btlaunch.baidu.com, REJECT, extended-matching, pre-matching
@@ -856,6 +864,7 @@ DOMAIN-SUFFIX, google-analytics.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, googleadservices.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, googleadsserving.cn, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, googlecommerce.com, REJECT, extended-matching, pre-matching
+DOMAIN-SUFFIX, googlesyndication-cn.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, googlesyndication.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, googletagmanager.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, googletagservices.com, REJECT, extended-matching, pre-matching
@@ -864,6 +873,7 @@ DOMAIN-SUFFIX, goto.sogou.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, gozendata.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, graph.facebook.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, guanjia.baidu.com, REJECT, extended-matching, pre-matching
+DOMAIN-SUFFIX, gum.criteo.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, gw5.push.mcp.weibo.cn, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, gw6.push.mcp.weibo.cn, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, gxe.husky.sogou.com, REJECT, extended-matching, pre-matching
@@ -883,6 +893,7 @@ DOMAIN-SUFFIX, hui.sohu.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, huodong.pl.youku.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, huodong.vip.youku.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, hz.youku.com, REJECT, extended-matching, pre-matching
+DOMAIN-SUFFIX, i.sng.link, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, iad-apple.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, iadmusicmat.music.126.net, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, iadmusicmatvideo.music.126.net, REJECT, extended-matching, pre-matching
@@ -897,12 +908,15 @@ DOMAIN-SUFFIX, ikcode.baidu.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, img-x.jd.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, imgaliyun.res.mgtv.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, imp.zol.com.cn, REJECT, extended-matching, pre-matching
+DOMAIN-SUFFIX, impression.link, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, impservice-test.dictapp.youdao.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, impservice.dictapp.youdao.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, impservice.youdao.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, impservice2.youdao.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, impservicetest.dictapp.youdao.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, info.pinyin.sogou.com, REJECT, extended-matching, pre-matching
+DOMAIN-SUFFIX, inhousedsp.com, REJECT, extended-matching, pre-matching
+DOMAIN-SUFFIX, inner-active.mobi, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, install.kugou.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, install2.kugou.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, int.dpool.sina.com.cn, REJECT, extended-matching, pre-matching
@@ -912,6 +926,7 @@ DOMAIN-SUFFIX, interest.mix.sina.com.cn, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, iwanad.baidu.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, j.br.baidu.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, j.wit.qq.com, REJECT, extended-matching, pre-matching
+DOMAIN-SUFFIX, jampp.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, jb.mbaidu.top, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, jiguang.cn, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, jpush.cn, REJECT, extended-matching, pre-matching
@@ -972,6 +987,7 @@ DOMAIN-SUFFIX, mob.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, mobaliyun.res.mgtv.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, mobilead.kuwo.cn, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, mobileads.google.com, REJECT, extended-matching, pre-matching
+DOMAIN-SUFFIX, mobilefuse.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, mobilemsg.youku.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, mobileservice.cn, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, mobsurl.com, REJECT, extended-matching, pre-matching
@@ -1014,6 +1030,8 @@ DOMAIN-SUFFIX, omgmta.qq.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, omgmta1.qq.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, openinstall.io, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, openrcv.baidu.com, REJECT, extended-matching, pre-matching
+DOMAIN-SUFFIX, outbrain.com, REJECT, extended-matching, pre-matching
+DOMAIN-SUFFIX, outbrainimg.com, REJECT
 DOMAIN-SUFFIX, p-log.ykimg.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, p.kugou.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, p.twitter.com, REJECT, extended-matching, pre-matching
@@ -1047,6 +1065,7 @@ DOMAIN-SUFFIX, pmbservice.bosc.cn, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, pmbservice2.bosc.cn, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, pmir.3g.qq.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, policy.video.iqiyi.com, REJECT, extended-matching, pre-matching
+DOMAIN-SUFFIX, pomodoromedia.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, pos.baidu.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, promote.biz.weibo.cn, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, promote.caixin.com, REJECT, extended-matching, pre-matching
@@ -1079,6 +1098,7 @@ DOMAIN-SUFFIX, re.taobao.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, redirect.simba.taobao.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, release.baidu.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, rich.kuwo.cn, REJECT, extended-matching, pre-matching
+DOMAIN-SUFFIX, richmob.cn, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, river.zhidao.baidu.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, rj.baidu.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, rlogs.youdao.com, REJECT, extended-matching, pre-matching
@@ -1110,10 +1130,13 @@ DOMAIN-SUFFIX, shouji.sougou.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, shuzilm.cn, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, simba.m.taobao.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, slog.sina.com.cn, REJECT, extended-matching, pre-matching
+DOMAIN-SUFFIX, smaato.net, REJECT, extended-matching, pre-matching
+DOMAIN-SUFFIX, smadex.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, sngmta.qq.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, sobar.baidu.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, sobartop.baidu.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, song.fanxing.kugou.com, REJECT, extended-matching, pre-matching
+DOMAIN-SUFFIX, spadsync.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, spcode.baidu.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, srd.simba.taobao.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, stat.simba.taobao.com, REJECT, extended-matching, pre-matching
@@ -1160,6 +1183,8 @@ DOMAIN-SUFFIX, track.sohu.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, track.toutiao.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, tracker.sns.iqiyi.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, tracker.yhd.com, REJECT, extended-matching, pre-matching
+DOMAIN-SUFFIX, trustarc.com, REJECT, extended-matching, pre-matching
+DOMAIN-SUFFIX, truste.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, ttayy.cn, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, tui.weibo.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, tuijian.baidu.com, REJECT, extended-matching, pre-matching
@@ -1241,6 +1266,7 @@ DOMAIN-SUFFIX, yksdks.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, ynuf.alipay.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, youxi.kugou.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, yuedu.iqiyi.com, REJECT, extended-matching, pre-matching
+DOMAIN-SUFFIX, zemanta.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, zhengxiaoliu.top, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, znsv.baidu.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, zymo.mps.weibo.com, REJECT, extended-matching, pre-matching
@@ -2095,6 +2121,7 @@ https?:\/\/awg\.enmonster\.com\/apa\/(advert\/demand\/home\/poster|index\/advert
 ^https?:\/\/d\.psbc\.com:\d+\/mcc\/resources\/.+\.(?>jpg|jpeg|png) data-type=text data="" status-code=200
 ^https?:\/\/mime\.baidu\.com\/sapi\/v\d\/circle\/joinedlist data-type=text data="{}" status-code=200
 ^https?:\/\/(cdn-)?h5\.kuaikanmanhua\.com\/user\/scene\/api\/new_user\/sign_in\/list data-type=text data="{}" status-code=200
+^https?:\/\/img\.meituan\.net\/goodsawardpic\/\w+\.gif data-type=tiny-gif status-code=200
 ^https?:\/\/api\.pinduoduo\.com\/api\/caterham\/v\d\/query\/new_chat_group data-type=text data="{}" status-code=200
 ^https?:\/\/(info\.mina\.xiaoaisound|marketing-aibox\.v\.mitvos)\.com\/popup data-type=text data="{}" status-code=200
 ^https?:\/\/ad\.shunchangzhixing\.com\/getAd data-type=text data="{}" status-code=200
@@ -2421,7 +2448,6 @@ https?:\/\/awg\.enmonster\.com\/apa\/(advert\/demand\/home\/poster|index\/advert
 ^https?:\/\/api\.pinduoduo\.com\/api\/caterham\/v\d\/query\/personal data-type=text data="{}" status-code=200
 ^https?:\/\/api\.weibo\.cn\/2\/(ug\/checkin\/list|push\/daily)\? data-type=text data="{}" status-code=200
 ^https?:\/\/(?>csc|osg)-service\.sgcc\.com\.cn:\d+\/emss-pfa-appset-front\/bootpageoutter\/ data-type=text data="{}" status-code=200
-^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(?>searchBoxWord|xview2Config|stationPullService|getWidget|widget|hybrid|jdDiscoveryRedPoint|queryMaterialAdverts) data-type=text data="" status-code=200
 ^https?:\/\/weibo\.com\/ttarticle\/x\/m\/aj\/(reward|uvead)\? data-type=text data="{}" status-code=200
 ^https?:\/\/api\.zhihu\.com\/feed\/render\/revisit\/current_reading data-type=text data="{}" status-code=200
 ^https?:\/\/hweb-hotel\.huazhu\.com\/home\/queryRecommond data-type=text data="{}" status-code=200
@@ -2724,6 +2750,7 @@ https?:\/\/awg\.enmonster\.com\/apa\/(advert\/demand\/home\/poster|index\/advert
 ^https?:\/\/api-sams\.walmartmobile\.cn\/api\/v\d\/sams\/channel\/portal\/AdgroupData data-type=text data="{}" status-code=200
 ^https?:\/\/i\d\.hdslb\.com\/bfs\/fawkes data-type=text data="{}" status-code=200
 ^https?:\/\/api\.duitang\.com\/napi\/infra\/settings\/ data-type=text data="{}" status-code=200
+^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(?>searchBoxWord|xview2Config|stationPullService|getWidget|widget|hybrid|jdDiscoveryRedPoint|queryMaterialAdverts|apollo_style) data-type=text data="" status-code=200
 ^https?:\/\/api\.bwton\.com\/bff\/app\/index\/goods data-type=text data="{}" status-code=200
 ^https?:\/\/mbd\.baidu\.com\/ccs\/v\d\/start\/confsync\?appname=baidu_input data-type=text data="{}" status-code=200
 ^https?:\/\/appapi\.51job(app)?\.com\/api\/util\/get_version data-type=text data="{}" status-code=200
@@ -2818,6 +2845,7 @@ mgtv = type=http-response,pattern=^https?:\/\/mobile\.api\.mgtv\.com\/mobile\/co
 youtube = type=http-response,pattern=^https?:\/\/youtubei\.googleapis\.com\/youtubei\/v\d\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch),requires-body=1,max-size=0,script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zirawell/appAdBlock/youtube.js
 rrtv = type=http-response,pattern=^https?:\/\/api\.rr\.tv\/drama\/app\/get_combined_drama_detail,requires-body=1,max-size=0,script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zirawell/appAdBlock/rrtv.js
 163music = type=http-response,pattern=^https?:\/\/interface\d?\.music\.163\.com\/w?e?api\/song\/play\/more\/list\/v\d,requires-body=1,max-size=0,script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zirawell/appAdBlock/163music.js
+dianping = type=http-response,pattern=^https?:\/\/img\.meituan\.net\/dpmobile\/,requires-body=1,max-size=0,script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zirawell/appAdBlock/dianping.js
 goofish = type=http-response,pattern=^https?:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlehome\.home\.nextfresh\/,requires-body=1,max-size=0,script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zirawell/appAdBlock/goofish.js
 weibo = type=http-response,pattern=^https?:\/\/api\.weibo\.cn\/2\/profile\/(container_timeline|dealatt|me|statuses\/tab|userinfo)\?,requires-body=1,max-size=0,script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zirawell/appAdBlock/weibo.js
 bilibiliManga = type=http-response,pattern=^https?:\/\/manga\.bilibili\.com\/twirp\/user\.v\d\.User\/GetInitInfo,requires-body=1,max-size=0,script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zirawell/appAdBlock/bilibiliManga.js
@@ -2915,7 +2943,6 @@ weibo = type=http-response,pattern=^https?:\/\/api\.weibo\.cn\/2\/search\/(conta
 youku = type=http-response,pattern=^https?:\/\/push\.m\.youku\.com\/collect-api\/get_push_interval_config_wx\?,requires-body=1,max-size=0,script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zirawell/appAdBlock/cntv.js
 peiyinxiu = type=http-response,pattern=^https?:\/\/iosapi\.peiyinxiu\.com\/api\/Union\/HomeData,requires-body=1,max-size=0,script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zirawell/appAdBlock/peiyinxiu.js
 adunion = type=http-response,pattern=^https?:\/\/g\.alicdn\.com\/.*o2o-ad,requires-body=1,max-size=0,script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zirawell/appAdBlock/alicdn.js
-dianping = type=http-response,pattern=^https?:\/\/img\.meituan\.net\/(?>dpmobile|goodsawardpic)\/,requires-body=1,max-size=0,script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zirawell/appAdBlock/dianping.js
 adunion = type=http-response,pattern=^https?:\/\/mi\.gdt\.qq\.com\/gdt_mview,requires-body=1,max-size=0,script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zirawell/appAdBlock/adsense.js
 adunion = type=http-response,pattern=^https?:\/\/is.snssdk.com/api/ad/union/sdk,requires-body=1,max-size=0,script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zirawell/appAdBlock/adsense.js
 ppx = type=http-response,pattern=^https?:\/\/.+\.pipix\.com\/bds\/feed\/channel_list\/,requires-body=1,max-size=0,script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zirawell/appAdBlock/ppx.js
@@ -2937,6 +2964,7 @@ kuwo = type=http-response,pattern=^https?:\/\/vip\d\.kuwo\.cn\/vip\/(enc\/user\/
 quda = type=http-response,pattern=^https?:\/\/iqushangwang\.8quan\.com\/index\.php\/i\/index\/index,requires-body=1,max-size=0,script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zirawell/appAdBlock/quda.js
 youku = type=http-response,pattern=^https?:\/\/un-acs\.youku\.com\/gw\/mtop\.youku\.play\.ups\.appinfo\.get,requires-body=1,max-size=0,script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zirawell/appAdBlock/cntv.js
 zhihu = type=http-response,pattern=^https?:\/\/appcloud2\.zhihu\.com\/v\d\/config,requires-body=1,max-size=0,script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zirawell/appAdBlock/zhihu.js
+dianping = type=http-response,pattern=^https?:\/\/img\.meituan\.net\/goodsawardpic\/\w+\.(?!gif)\w+$,requires-body=1,max-size=0,script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zirawell/appAdBlock/dianping.js
 kkmh = type=http-response,pattern=^https?:\/\/(cdn-)?social\.kkmh\.com\/v\d\/graph\/homepage\/comicVideo\/v\d\/configs,requires-body=1,max-size=0,script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zirawell/appAdBlock/kkmh.js
 boohee = type=http-response,pattern=^https?:\/\/api\.boohee\.com\/meta-interface\/v\d\/index\?,requires-body=1,max-size=0,script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zirawell/appAdBlock/boohee.js
 baidutieba = type=http-response,pattern=^https?:\/\/c\.tieba\.baidu\.com\/c\/f\/(excellent\/personalized|frs\/(?>generalTabList|page|threadlist)|pb\/(pic)?page)$,requires-body=1,max-size=0,script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zirawell/appAdBlock/tiebaJson.js
