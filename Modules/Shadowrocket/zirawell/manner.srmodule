@@ -1,10 +1,7 @@
-#!name=manner
-#!desc=manner
-#!category=Jacob
+manner%0A：Error: 请求超时(20 秒)
 
-[Script]
-manner = type=http-response, pattern=^https?:\/\/triangle\.wearemanner\.com\/mp-api\/v\d\/ads, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zirawell/manner/manner.js, requires-body=true, max-size=0
 
-[MITM]
-hostname = %APPEND% triangle.wearemanner.com
 
+
+
+Script Hub 重写转换: ❌  可自行翻译错误信息或复制错误信息后点击通知进行反馈
