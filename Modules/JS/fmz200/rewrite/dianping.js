@@ -22,7 +22,7 @@ if (url.includes("/dpmobile") || url.includes("/goodsawardpic")) {
     console.log("url" + url);
     const hexString = "47494638396101000100800000000000ffffff21f90401000000002c000000000100010000020144003b";
     const header = {};
-    header["Content-Type'"] = "image/gif";
+    header["Content-Type"] = "image/gif";
     header["Content-length"] = 42;
     header["Connection"] = "close";
     $done({bodyBytes: hexStringToArrayBuffer(hexString),headers: header, status: "HTTP/1.1 200 OK"});
@@ -51,5 +51,9 @@ function hexStringToArrayBuffer(hexString) {
     throw new Error('十六进制字符串长度必须是偶数');
   }
   const buffer = new ArrayBuffer(cleanHex.length / 2);
+  const view = new Uint8Array(buffer);
+  for (let i = 0; i < cleanHex.length; i += 2) {
+      view[i / 2] = parseInt(cleanHex.substr(i, 2), 16);
+  }
   return buffer;
 }
