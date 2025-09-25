@@ -8,7 +8,6 @@ https://raw.githubusercontent.com/zirawell/R-Store/main/Rule/QuanX/Adblock/App/D
 
 ********************************/
 
-const $ = new Env('大众点评');
 const url = $request.url;
 if (url.includes("/dpmobile") || url.includes("/goodsawardpic")) {
   const header = $request.headers;
@@ -20,12 +19,13 @@ if (url.includes("/dpmobile") || url.includes("/goodsawardpic")) {
   if (headopt1 && !headopt2) {
     $done({body: "", headers: "", status: "HTTP/1.1 404 Not Found"});
   } else if (url.includes(".gif")) {
+    console.log("url" + url);
     const hexString = "47494638396101000100800000000000ffffff21f90401000000002c000000000100010000020144003b";
     const header = {};
-            header["Content-Type'"] = "image/gif";
-            header["Content-length"] = 42;
-            header["Connection"] = "close";
-            $done({bodyBytes: hexToBytes(hexString),headers: header, status: "HTTP/1.1 200 OK"});
+    header["Content-Type'"] = "image/gif";
+    header["Content-length"] = 42;
+    header["Connection"] = "close";
+    $done({bodyBytes: hexToBytes(hexString),headers: header, status: "HTTP/1.1 200 OK"});
   } else {
     $done({});
   }
