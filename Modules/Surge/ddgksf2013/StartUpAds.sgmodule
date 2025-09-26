@@ -8,6 +8,8 @@ DOMAIN,ad.12306.cn,DIRECT
 DOMAIN-SUFFIX,shenshiads.com,REJECT
 # > liangBulU
 #DOMAIN-SUFFIX,admobile.top,REJECT-200
+# > lexiaotong
+DOMAIN-SUFFIX,yfanads.com,REJECT
 DOMAIN-SUFFIX,iyes.youku.com,REJECT
 
 [URL Rewrite]
@@ -20,7 +22,7 @@ https://b.appsimg.com/upload/momin/ - reject
 
 [Map Local]
 # > Version
-^https?:\/\/2025.09.19/c396/v2.0.619 data-type=text data=" " status-code=200
+^https?:\/\/2025.09.19/c397/v2.0.619 data-type=text data=" " status-code=200
 
 # > 10
 ^https?:\/\/ftapi\.10jqka\.com\.cn\/futgwapi\/api\/om\/v\d\/ad\/common\/transfer data-type=text data=" " status-code=200
