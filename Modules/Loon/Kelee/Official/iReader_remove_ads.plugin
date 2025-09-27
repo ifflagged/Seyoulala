@@ -1,5 +1,5 @@
 #!name=掌阅去广告
-#!desc=移除开屏广告、悬浮广告、弹窗广告、朗读音色广告及我的页面广告。
+#!desc=移除开屏广告、悬浮广告、弹窗广告、朗读音色广告及我的页面广告，移除各页面的横幅轮播图。
 #!openUrl=https://apps.apple.com/app/id463150061
 #!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 #!tag=去广告
@@ -8,7 +8,7 @@
 #!loon_version=3.2.4(787)
 #!homepage=https://hub.kelee.one
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/iReader.png
-#!date=2025-09-28 00:06:41
+#!date=2025-09-28 00:31:22
 
 [Rule]
 DOMAIN, saad.ms.zhangyue.net, REJECT
