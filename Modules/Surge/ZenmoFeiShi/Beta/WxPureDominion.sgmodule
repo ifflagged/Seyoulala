@@ -17,6 +17,8 @@
 
 ^https:\/\/gw3\.ykccn\.com\/api\/omp\/mt\/charge\/activity\/package\/newest data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
+^https:\/\/wx\.17u\.cn\/wxorderextend\/banner\/get data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
 ^https:\/\/wx\.17u\.cn\/xcxhomeapi\/aggregator\/index data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 ^https:\/\/wx\.17u\.cn\/mytourapi\/mytrip\/blankflight data-type=text data="{}" status-code=200 header="Content-Type:application/json"
