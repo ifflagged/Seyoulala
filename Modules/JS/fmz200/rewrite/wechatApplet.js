@@ -26,7 +26,6 @@ https://raw.githubusercontent.com/zirawell/R-Store/main/Rule/Surge/Adblock/Apple
 https://raw.githubusercontent.com/zirawell/R-Store/main/Rule/Surge/Adblock/Applet/Wechat/X/小兔充充/xiaotucc.sgmodule
 https://raw.githubusercontent.com/zirawell/R-Store/main/Rule/Surge/Adblock/Applet/Wechat/E/EMS/ems.sgmodule
 https://raw.githubusercontent.com/zirawell/R-Store/main/Rule/Surge/Adblock/Applet/Wechat/L/罗森点点/lawson.sgmodule
-
 ********************************/
 
 const url = $request.url;
