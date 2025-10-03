@@ -1,4 +1,4 @@
-#规则数量:2752
+#规则数量:2753
 #不支持的规则数量:1
 #已排除的规则数量:0
 #不支持的规则:
@@ -117,6 +117,7 @@ payload:
   - DOMAIN-SUFFIX,ads.stickyadstv.com
   - DOMAIN-SUFFIX,adnxs.com
   - DOMAIN-SUFFIX,presage.io
+  - DOMAIN-SUFFIX,mradx.net
   - DOMAIN-SUFFIX,3dns-2.adobe.com
   - DOMAIN-SUFFIX,3dns-3.adobe.com
   - DOMAIN-SUFFIX,activate.adobe.com

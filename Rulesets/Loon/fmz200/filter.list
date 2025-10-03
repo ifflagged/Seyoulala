@@ -1,4 +1,4 @@
-#规则数量:2753
+#规则数量:2754
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -114,6 +114,7 @@ DOMAIN-SUFFIX,logger.adthrive.com
 DOMAIN-SUFFIX,ads.stickyadstv.com
 DOMAIN-SUFFIX,adnxs.com
 DOMAIN-SUFFIX,presage.io
+DOMAIN-SUFFIX,mradx.net
 DOMAIN-SUFFIX,3dns-2.adobe.com
 DOMAIN-SUFFIX,3dns-3.adobe.com
 DOMAIN-SUFFIX,activate.adobe.com
