@@ -1,28 +1,45 @@
-/***********************************
 
-> 应用名称：傲软抠图
-> 软件版本：1.7.1
-> 下载地址：https://apps.apple.com/cn/app/id1490054676
-> 脚本作者：ddgksf2013
-> 微信账号：墨鱼手记
-> 更新时间：2023-11-30
-> 通知频道：https://t.me/ddgksf2021
-> 问题反馈：https://t.me/ddgksf2013_bot
-> 特别说明：本脚本仅供学习交流使用，禁止转载售卖
- 
-[rewrite_local]
+<html>
+  <head>
+    <meta content="origin" name="referrer">
+    <title>Rate limit &middot; GitHub</title>
+    <meta name="viewport" content="width=device-width">
+    <style type="text/css" media="screen">
+      body {
+        background-color: #f6f8fa;
+        color: rgba(0, 0, 0, 0.5);
+        font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+        font-size: 14px;
+        line-height: 1.5;
+      }
+      .c { margin: 50px auto; max-width: 600px; text-align: center; padding: 0 24px; }
+      a { text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      h1 { color: #24292e; line-height: 60px; font-size: 48px; font-weight: 300; margin: 0px; }
+      p { margin: 20px 0 40px; }
+      #s { margin-top: 35px; }
+      #s a {
+        color: #666666;
+        font-weight: 200;
+        font-size: 14px;
+        margin: 0 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="c">
+      <h1>Access has been restricted</h1>
+      <p>You have triggered a rate limit.<br><br>
+         Please wait a few minutes before you try again;<br>
+         in some cases this may take up to an hour.
+      </p>
+      <div id="s">
+        <a href="https://support.github.com">Contact Support</a> &mdash;
+        <a href="https://githubstatus.com">GitHub Status</a> &mdash;
+        <a href="https://twitter.com/githubstatus">@githubstatus</a>
+      </div>
+    </div>
+  </body>
+</html>
 
-# ～ 傲软抠图解锁会员权限（2023-11-30）@ddgksf2013
-^https?:\/\/.*aoscdn\.com\/base\/vip\/v\d\/vips url script-response-body https://github.com/ddgksf2013/MoYu/raw/master/ApowersoftProCrack.js
 
-[mitm] 
-
-hostname=*.aoscdn.com
-
-***********************************/
-
-
-
-
-
-var ddgksf2013={status:200,message:"success",data:{group_expired_at:0,is_tried:0,max_devices:1,period_type:"active",candy_expired_at:0,pending:0,remained_seconds:0,limit:0,expired_at:4045798296,candy:0,license_type:"premium",quota:0,status:1,coin:100}};$done({body:JSON.stringify(ddgksf2013)});
