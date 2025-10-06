@@ -2429,7 +2429,7 @@ https://mgesq.api.mgtv.com/v2/user/center/icon data-type=text data="{}" status-c
 ^https:\/\/gw\.xiaocantech\.com\/g\/pa data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 多余模块
-^https:\/\/xxyx-client-api\.xiaoxiaoyouxuan\.com\/vajra data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+#^https:\/\/xxyx-client-api\.xiaoxiaoyouxuan\.com\/vajra data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 #^https?:\/\/xxyx-client-api\.xiaoxiaoyouxuan\.com\/newcomer_ad data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
