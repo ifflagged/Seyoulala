@@ -1,4 +1,4 @@
-#规则数量:2753
+#规则数量:2751
 #不支持的规则数量:1
 #已排除的规则数量:0
 #不支持的规则:
@@ -568,7 +568,6 @@ payload:
   - DOMAIN-SUFFIX,facebookma.cn
   - DOMAIN-SUFFIX,atdmt.com
   - DOMAIN-SUFFIX,staticxx.facebook.com
-  - DOMAIN,i.snssdk.com
   - DOMAIN,i-lq.snssdk.com
   - DOMAIN,dig.bdurl.net
   - DOMAIN,activity-ag.awemeughun.com
@@ -576,7 +575,6 @@ payload:
   - DOMAIN,tnc3-alisc1.snssdk.com
   - DOMAIN,security-lq.snssdk.com
   - DOMAIN,tnc3-aliec2.snssdk.com
-  - DOMAIN,i.snssdk.com
   - DOMAIN,v6-novelapp.ixigua.com
   - DOMAIN-SUFFIX,novelapp.ixigua.com
   - DOMAIN-SUFFIX,default.ixigua.com
