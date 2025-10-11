@@ -35,7 +35,7 @@ redbook_json = type=http-response, pattern=^https?:\/\/[a-z]+\.xiaohongshu\.com\
 redbook_json = type=http-response, pattern=^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/note\/video\/save, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ddgksf2013/XiaoHongShuAds/redbook_json.js, requires-body=true, max-size=-1, timeout=60
 
 # > 小红书_评论区图片处理@ddgksf2013
-redbook_json = type=http-response, pattern=^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/note\/comment\/list, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ddgksf2013/XiaoHongShuAds/redbook_json.js, requires-body=true, max-size=-1, timeout=60
+#redbook_json = type=http-response, pattern=^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/note\/comment\/list, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ddgksf2013/XiaoHongShuAds/redbook_json.js, requires-body=true, max-size=-1, timeout=60
 
 # > 小红书_Live图片去水印@ddgksf2013
 redbook_json = type=http-response, pattern=^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/note\/live_photo\/save, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ddgksf2013/XiaoHongShuAds/redbook_json.js, requires-body=true, max-size=-1, timeout=60

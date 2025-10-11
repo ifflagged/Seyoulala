@@ -29,7 +29,7 @@ http-response ^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/note\/tabfee
 http-response ^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/note\/video\/save script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ddgksf2013/XiaoHongShuAds/redbook_json.js, requires-body=true, timeout=60, tag=redbook_json
 
 # > 小红书_评论区图片处理@ddgksf2013
-http-response ^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/note\/comment\/list script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ddgksf2013/XiaoHongShuAds/redbook_json.js, requires-body=true, timeout=60, tag=redbook_json
+#http-response ^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/note\/comment\/list script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ddgksf2013/XiaoHongShuAds/redbook_json.js, requires-body=true, timeout=60, tag=redbook_json
 
 # > 小红书_Live图片去水印@ddgksf2013
 http-response ^https?:\/\/[a-z]+\.xiaohongshu\.com\/api\/sns\/v\d+\/note\/live_photo\/save script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ddgksf2013/XiaoHongShuAds/redbook_json.js, requires-body=true, timeout=60, tag=redbook_json
