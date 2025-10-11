@@ -826,7 +826,7 @@ https://apis.lifeweek.com.cn/api/baseConfig/getIosNewConfig - reject
 # hostname = top-widgets-api.xiaozujian.com
 ^https?:\/\/top-widgets-api\.xiaozujian\.com\/api\/ad\/config - reject
 # hostname = truthsocial.com
-^https?:\/\/truthsocial\.com\/api\/v5\/truth\/ads - reject
+^https?:\/\/truthsocial\.com\/api\/v\d\/truth\/ads - reject
 ^https?:\/\/appactive\.1234567\.com\.cn\/AppoperationApi\/OperationService\/GetAppStartImg - reject
 # hostname = t1.market.xiaomi.com
 ^https?:\/\/t1\.market\.xiaomi\.com\/thumbnail\/webp\/w1170q100\/ - reject

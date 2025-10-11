@@ -1714,7 +1714,7 @@ https://apis.lifeweek.com.cn/api/baseConfig/getIosNewConfig - reject
 # hostname = top-widgets-api.xiaozujian.com
 ^https?:\/\/top-widgets-api\.xiaozujian\.com\/api\/ad\/config - reject
 # hostname = truthsocial.com
-^https?:\/\/truthsocial\.com\/api\/v5\/truth\/ads - reject
+^https?:\/\/truthsocial\.com\/api\/v\d\/truth\/ads - reject
 # 注意：生活圈,社区打不开 需要的自己添加主机名
 ^https?:\/\/tfsmy\.chengdu\.gov\.cn\/api\/v5\/core\/version - reject-200
 # hostname = cgbank.oss-cn-shenzhen.aliyuncs.com
