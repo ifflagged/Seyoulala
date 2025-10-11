@@ -8,7 +8,7 @@
 #!loon_version=3.2.4(787)
 #!homepage=https://hub.kelee.one
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/iReader.png
-#!date=2025-09-28 00:31:22
+#!date=2025-10-11 08:34:06
 
 [Rule]
 DOMAIN, saad.ms.zhangyue.net, REJECT
@@ -24,7 +24,6 @@ DOMAIN, saad.ms.zhangyue.net, REJECT
 ^https:\/\/(webboot\.zhangyue\.com|ih2\.ireader\.com)\/bookstore\/read\/visual\/channel\/list\? response-body-json-jq '.body.list |= map(select(.id | contains("ad_") | not))'
 
 ^https:\/\/(webboot\.zhangyue\.com|ih2\.ireader\.com)\/zyapi\/bookstore\/user\/mytab\? reject-dict
-^https:\/\/(webboot\.zhangyue\.com|ih2\.ireader\.com)\/zyboot\/activity\/mytab\?
 ^https:\/\/(webboot\.zhangyue\.com|ih2\.ireader\.com)\/zyboot\/activity\/mytab\? reject-dict
 
 https:\/\/(webboot\.zhangyue\.com|ih2\.ireader\.com)\/zyam\/app\/app\.php\? reject-dict
