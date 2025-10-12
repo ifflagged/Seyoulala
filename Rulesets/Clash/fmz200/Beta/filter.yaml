@@ -1,4 +1,4 @@
-#规则数量:2751
+#规则数量:2750
 #不支持的规则数量:1
 #已排除的规则数量:0
 #不支持的规则:
@@ -2385,7 +2385,6 @@ payload:
   - DOMAIN-SUFFIX,zlsdk.1rtb.net
   - DOMAIN-SUFFIX,cdntips.net
   - DOMAIN-SUFFIX,tfogc.com
-  - DOMAIN-KEYWORD,volc
   - DOMAIN-KEYWORD,umeng
   - DOMAIN-SUFFIX,ad-stir.com
   - DOMAIN-SUFFIX,adadapted.com

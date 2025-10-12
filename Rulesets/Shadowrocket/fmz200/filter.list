@@ -1,4 +1,4 @@
-#规则数量:2752
+#规则数量:2751
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -2383,7 +2383,6 @@ DOMAIN-SUFFIX,log.aliyuncs.com
 DOMAIN-SUFFIX,zlsdk.1rtb.net
 DOMAIN-SUFFIX,cdntips.net
 DOMAIN-SUFFIX,tfogc.com
-DOMAIN-KEYWORD,volc
 DOMAIN-KEYWORD,umeng
 DOMAIN-SUFFIX,ad-stir.com
 DOMAIN-SUFFIX,adadapted.com
