@@ -24,6 +24,7 @@ DOMAIN-KEYWORD,logs.amap.com,REJECT
 DOMAIN-KEYWORD,ads.amap.com,REJECT
 
 [Rewrite]
+^https?:\/\/amap-aos-info-nogw\.amap\.com\/ws\/aos\/alimama\/splash_screen_rt - reject
 ^https?:\/\/m\d\.amap\.com\/ws\/valueadded\/ - reject
 ^https?:\/\/m\d\.amap\.com\/ws\/shield\/dsp\/app\/startup\/init\? mock-response-body data-type=text data="{}" status-code=200
 ^https?:\/\/m\d\.amap\.com\/ws\/faas\/amap-navigation\/card-service-(?>car-end|route-plan) mock-response-body data-type=text data="{}" status-code=200
@@ -71,5 +72,5 @@ http-response ^https?:\/\/m\d-zb\.amap\.com\/ws\/promotion-web\/resource(\/home)
 http-response ^https?:\/\/m\d-zb\.amap\.com\/ws\/sharedtrip\/taxi\/order_detail_car_tips\? script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zirawell/amap/amap.js, requires-body=true, tag=amap
 
 [MITM]
-hostname = m*.amap.com, oss.amap.com, sns.amap.com
+hostname = amap-aos-info-nogw.amap.com, m*.amap.com, oss.amap.com, sns.amap.com
 
