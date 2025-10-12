@@ -9,7 +9,7 @@
 #!tg-channel=https://t.me/inaisi
 #!tag=去广告, 微博, fmz200
 #!system=ios
-#!date=2025-10-05 16:30:17
+#!date=2025-10-12 10:15:00
 
 [Rule]
 # 收集用户信息，上传用户日志的请求
@@ -52,6 +52,7 @@ DOMAIN,adpinpai.video.weibocdn.com,REJECT
 [URL Rewrite]
 ^https?:\/\/sdkapp\.uve\.weibo\.com\/interface\/sdk\/(get-lbs-cell-info\.php|sdkconfig\.php) - reject
 ^https?:\/\/api\.weibo\.cn\/2\/logservice\/service\? - reject
+^https?:\/\/api\.weibo\.cn\/2\/push\/info\? - reject
 
 [Body Rewrite]
 http-response-jq ^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?a=trends& 'del(.data.banner)'
