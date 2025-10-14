@@ -88,7 +88,6 @@ DOMAIN,polaris.zijieapi.com,REJECT
 DOMAIN,feedback-c.zijieapi.com,REJECT
 DOMAIN,abtest3-misc.zijieapi.com,REJECT
 DOMAIN,bsync3-normal.zijieapi.com,REJECT
-DOMAIN,i.snssdk.com,REJECT
 DOMAIN,ug.snssdk.com,REJECT
 DOMAIN,bds.snssdk.com,REJECT
 DOMAIN,mcs.snssdk.com,REJECT
