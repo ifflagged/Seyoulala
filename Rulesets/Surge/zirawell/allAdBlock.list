@@ -1,4 +1,4 @@
-#规则数量:1357
+#规则数量:1356
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -299,7 +299,6 @@ DOMAIN,huichuan.sm.cn
 DOMAIN,huodong.weibo.cn
 DOMAIN,huyafile.msstatic.com
 DOMAIN,i.gtimg.cn
-DOMAIN,i.snssdk.com
 DOMAIN,iacc.qq.com
 DOMAIN,iad.apple.com
 DOMAIN,iad.g.163.com
