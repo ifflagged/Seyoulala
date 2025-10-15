@@ -1,4 +1,4 @@
-#规则数量:2751
+#规则数量:2750
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -409,7 +409,6 @@ DOMAIN-SUFFIX,su.bdstatic.com
 DOMAIN-SUFFIX,zz.bdstatic.com
 DOMAIN-SUFFIX,bcebos.com
 DOMAIN-SUFFIX,baidustatic.com
-DOMAIN-SUFFIX,bdstatic.com
 DOMAIN-SUFFIX,duapps.com
 DOMAIN,afd.baidu.com
 DOMAIN,afdconf.baidu.com
