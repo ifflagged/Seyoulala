@@ -38,7 +38,7 @@ http-response-jq ^https:\/\/api\.live\.bilibili\.com\/xlive\/(app-interface\/v2\
 [Script]
 {{{空降助手}}} = type=http-request, pattern=^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.community\.service\.dm\.v1\.DM\/DmSegMobile$, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/kokoryh/bilibili/bilibili.protobuf.request.js, requires-body=true, binary-body-mode=true, max-size=-1, argument="{"logLevel":"{{{日志等级}}}"}"
 
-{{{净化内嵌网页}}} = type=http-response, pattern=^https:\/\/live\.bilibili\.com\/blackboard\/era\/.+\.html\?, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/kokoryh/bilibili/webpage.bilibili.js, requires-body=true, max-size=-1
+{{{净化内嵌网页}}} = type=http-response, pattern=^https:\/\/(live|www)\.bilibili\.com\/blackboard\/era\/.+\.html\?, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/kokoryh/bilibili/webpage.bilibili.js, requires-body=true, max-size=-1
 
 bilibili.skin = type=http-response, pattern=^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\?, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/kokoryh/bilibili/bili-suit-diy.js, requires-body=true, max-size=-1
 
@@ -47,5 +47,5 @@ bilibili.json = type=http-response, pattern=^https:\/\/app\.bilibili\.com\/x\/(r
 bilibili.protobuf = type=http-response, pattern=^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.(app\.(show\.v1\.Popular\/Index|dynamic\.v2\.Dynamic\/DynAll|view(unite)?\.v1\.View\/(View|ViewProgress|RelatesFeed)|playurl\.v1\.PlayURL\/PlayView|playerunite\.v1\.Player\/PlayViewUnite)|polymer\.app\.search\.v1\.Search\/SearchAll|community\.service\.dm\.v1\.DM\/DmView|main\.community\.reply\.v1\.Reply\/MainList|pgc\.gateway\.player\.v2\.PlayURL\/PlayView)$, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/kokoryh/bilibili/bilibili.protobuf.response.js, requires-body=true, binary-body-mode=true, max-size=-1, argument="{"showUpList":"{{{动态最常访问}}}","purifyTopReplies":{{{过滤置顶评论广告}}},"airborne":"{{{空降助手}}}","logLevel":"{{{日志等级}}}"}"
 
 [MITM]
-hostname = %APPEND% grpc.biliapi.net, app.bilibili.com, api.bilibili.com, api.live.bilibili.com, live.bilibili.com, line3-h5-mobile-api.biligame.com
+hostname = %APPEND% grpc.biliapi.net, app.bilibili.com, api.bilibili.com, api.live.bilibili.com, live.bilibili.com, www.bilibili.com, line3-h5-mobile-api.biligame.com
 
