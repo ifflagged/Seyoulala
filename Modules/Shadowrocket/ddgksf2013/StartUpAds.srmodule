@@ -10,6 +10,8 @@ DOMAIN-SUFFIX,shenshiads.com,REJECT
 #DOMAIN-SUFFIX,admobile.top,REJECT-200
 # > lexiaotong
 DOMAIN-SUFFIX,yfanads.com,REJECT
+# > nongyeyinhang
+DOMAIN-SUFFIX,msmp.abchina.com.cn,REJECT
 DOMAIN-SUFFIX,iyes.youku.com,REJECT
 
 [URL Rewrite]
@@ -892,7 +894,6 @@ quark = type=http-response, pattern=^https?:\/\/open-cms-api\.(uc|quark)\.cn\/op
 # > manmanmai
 replaceBody = type=http-response, pattern=^https?:\/\/apapia-sqk\.manmanbuy\.com\/index_json\.ashx, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ddgksf2013/StartUpAds/replace-body.js, requires-body=true, max-size=-1, timeout=30, argument=splashAD-%3Eddgksf2013
 
-# > nongyeyinhang
 abchina = type=http-response, pattern=^https?:\/\/mobilepaas\.abchina\.com\.cn:441\/mgw\.htm, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ddgksf2013/StartUpAds/abchina.js, timeout=60
 
 # > ocleancare*
