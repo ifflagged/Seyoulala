@@ -14,7 +14,7 @@ DOMAIN-SUFFIX,iyes.youku.com,REJECT
 
 [URL Rewrite]
 # > Version
-^https?:\/\/2025.10.08/c397/v2.0.621 - reject-200
+^https?:\/\/2025.10.18/c398/v2.0.622 - reject-200
 # > 10
 ^https?:\/\/ftapi\.10jqka\.com\.cn\/futgwapi\/api\/om\/v\d\/ad\/common\/transfer - reject-200
 # > 139mail
@@ -446,8 +446,6 @@ https://access.mypikpak.com/access_controller/v1/area_accessible - reject-200
 ^https?:\/\/adpai\.thepaper\.cn\/.+&ad= - reject-200
 # > pufayinhang
 ^https?:\/\/lban\.spdb\.com\.cn\/mspmk-web-component\/(getAdvList|prefetchAdvList)\.ah - reject-200
-# > pupumarket
-^https?:\/\/j1\.pupuapi\.com\/client\/marketing\/advertisement - reject-200
 # > pica
 ^https?:\/\/.*tipatipa\.xyz\/announcements - reject-200
 # > pansearch
@@ -480,6 +478,7 @@ https://homefront.qunar.com/front/splash/ad - reject-200
 ^https?:\/\/api\.qd-metro\.com\/ngstatic\/appScreenAds - reject-200
 # > quchenshi
 ^https?:\/\/mystore-gw\.watsonsvip\.com\.cn\/gfu\/popup\/advert\/launch - reject-200
+^http:\/\/[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+){1,4}(:\d+)?\/\w+\/resolv - reject-200
 # > qihangjiaoyu
 ^https?:\/\/mobile\.iqihang\.com\/api\/ark\/web\/v\d\/advert - reject-200
 # > RenMinRiBao
@@ -901,6 +900,9 @@ abchina = type=http-response, pattern=^https?:\/\/mobilepaas\.abchina\.com\.cn:4
 
 # > ocleancare*
 replaceBody = type=http-response, pattern=^https?:\/\/careapi\.oclean\.com\/mall\/v\d\/User\/GetUserCenter, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ddgksf2013/StartUpAds/replace-body.js, requires-body=true, max-size=-1, timeout=30, argument=banner%22-%3Eddgksf2013%22
+
+# > pupumarket
+replaceBody = type=http-response, pattern=^https?:\/\/j1\.pupuapi\.com\/client\/marketing\/advertisement\/v, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ddgksf2013/StartUpAds/replace-body.js, requires-body=true, max-size=-1, timeout=30, argument=launch_time_close%22%3A%5Cd%2B-%3Elaunch_time_close%22%3A1660716799999
 
 pupumarket = type=http-response, pattern=^https?:\/\/j1\.pupuapi\.com\/client\/marketing\/banner\/v\d\?position, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ddgksf2013/StartUpAds/pupumarket.js, requires-body=true, max-size=-1, timeout=60
 
