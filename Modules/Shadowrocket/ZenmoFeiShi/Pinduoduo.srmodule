@@ -3,7 +3,7 @@
 #!author=怎么肥事 walala
 #!category=Jacob
 
-#!update=2025-09-13
+#!update=2025-10-22
 
 [Rule]
 DOMAIN,sdk.1rtb.net,REJECT

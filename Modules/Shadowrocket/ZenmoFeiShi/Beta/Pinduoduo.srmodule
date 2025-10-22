@@ -3,7 +3,7 @@
 #!author=怎么肥事 walala
 #!category=Jacob
 
-#!update=2025-09-13
+#!update=2025-10-22
 
 [Rule]
 DOMAIN,sdk.1rtb.net,REJECT
@@ -40,6 +40,9 @@ IP-CIDR,101.35.212.35/32,REJECT,no-resolve
 ^https:\/\/api\.pinduoduo\.com\/api\/engels\/reviews\/require\/append - reject-dict
 ^https:\/\/api\.pinduoduo\.com\/api\/caterham\/v3\/query\/my_order_group - reject-dict
 ^https:\/\/api\.pinduoduo\.com\/api\/caterham\/v3\/query\/likes - reject-dict
+
+[Body Rewrite]
+http-response-jq ^https:\/\/api\.pinduoduo\.com\/api\/caterham\/v3\/query\/order_detail_group 'del(.data.goods_list)'
 
 [Script]
 Pinduoduo = type=http-response, pattern=^https:\/\/api\.pinduoduo\.com\/search, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ZenmoFeiShi/Pinduoduo/Pinduoduo.js, requires-body=true, max-size=-1, timeout=60
