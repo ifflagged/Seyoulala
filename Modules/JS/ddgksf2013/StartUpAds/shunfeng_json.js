@@ -1,23 +1,17 @@
-/*
-version     v0.0.1
-updatetime  2022-11-17
-tgchannel   https://t.me/ddgksf2021
-function    顺丰
-author      ddgksf2013
 
-
-[rewrite_local]
-https://ccsp-egmas.sf-express.com/cx-app-base/base/app/ad/queryInfoFlow url script-response-body https://github.com/ddgksf2013/Scripts/raw/master/shunfeng_json.js
-
-[mitm]
-hostname = ccsp-egmas.sf-express.com
-
-*/
-
-if ($request.url.indexOf("app/ad/queryInfoFlow") != -1) {
-    var ddgksf2013 = JSON.parse($response.body);
-    ddgksf2013.obj = Object.values(ddgksf2013.obj).filter((item) => item.adverId==2833);
-    $done({
-        body: JSON.stringify(ddgksf2013),
-    });
-}
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>503 backend read error</title>
+  </head>
+  <body>
+    <h1>Error 503 backend read error</h1>
+    <p>backend read error</p>
+    <h3>Error 54113</h3>
+    <p>Details: cache-bur-kbur8200081-BUR 1761261775 370005070</p>
+    <hr>
+    <p>Varnish cache server</p>
+  </body>
+</html>
