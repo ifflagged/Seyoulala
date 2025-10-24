@@ -2149,6 +2149,8 @@ http-response ^https?:\/\/manga\.bilibili\.com\/twirp\/user\.v\d\.User\/UCenterC
 
 http-response ^https?:\/\/manga\.bilibili\.com\/twirp\/user\.v\d\.User\/GetInitInfo script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/bilibiliManga.js, requires-body=true, timeout=60, tag=bilibiliManga
 
+http-response ^https?:\/\/manga\.bilibili\.com\/twirp\/comic\.v\d\.Comment\/Main script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/bilibiliManga.js, requires-body=true, timeout=60, tag=bilibiliManga
+
 # 记录 - 大家都在看data.recom_cards / 底部按钮data.recom_btns
 http-response ^https:\/\/api\.boohee\.com\/meta-interface\/v2\/index\? script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/bohe_ads.js, requires-body=true, timeout=60, tag=bohe_ads
 
