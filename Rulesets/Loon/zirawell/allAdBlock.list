@@ -1,4 +1,4 @@
-#规则数量:1356
+#规则数量:1354
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -400,7 +400,6 @@ DOMAIN,open.kuaishou.com
 DOMAIN,openapi.boc.cn
 DOMAIN,optimus-ads.amap.com
 DOMAIN,ossgw.alicdn.com
-DOMAIN,overseamobileap.ctrip.com
 DOMAIN,pageviewp.icbc.com.cn
 DOMAIN,pl.cp31.ott.cibntv.net
 DOMAIN,polaris.zijieapi.com
@@ -978,7 +977,6 @@ DOMAIN-SUFFIX,lx.meituan.net
 DOMAIN-SUFFIX,m-adash.m.taobao.com
 DOMAIN-SUFFIX,m.baidu.com.yiqisee.cn
 DOMAIN-SUFFIX,m.baidu.com.zhiduo.org
-DOMAIN-SUFFIX,m.ctripins.com
 DOMAIN-SUFFIX,m.simba.taobao.com
 DOMAIN-SUFFIX,m.yes.youku.com
 DOMAIN-SUFFIX,m1.baidu.com
