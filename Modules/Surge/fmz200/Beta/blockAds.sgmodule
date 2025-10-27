@@ -9,7 +9,7 @@
 #!tg-channel=https://t.me/inaisi
 #!tag=去广告, fmz200, 奶思
 #!system=ios
-#!date=2025-10-18 17:19:00
+#!date=2025-10-27 19:46:00
 #!remark=下方的所有规则都标注了对应的hostname，可能存在错误或者遗漏，欢迎反馈。对于无法/可选MITM的hostname都特别做了“如开启可自行添加主机名”提示，如果提示后面没有标注主机名则包含所有主机名，否则只包含提示语后面的主机名。
 #!arguments=12306_enable:true,555_enable:true,51xyk_enable:true,51job_enable:true,albb_enable:true,alyp_enable:true,aiqiyi_enable:true,blued_enable:true,bdduditu_enable:true,bddutpba_enable:true,lawson_enable:true,showUpList:"show",purifyTopReplies:true,purifyWebpage:true,airborne:true,logLevel:"info",bilimanhua_enable:true,bohejmkh_enable:true,cdyytmqi_enable:false,cdnngogo_enable:true,cdxb_enable:true,davsdmpk_enable:true,dshxfg_enable:true,didiiuxk_enable:true,dyls_enable:true,ddmc_enable:true,flightradar24_enable:true,fwke_enable:true,ffbi_enable:true,hlzh_enable:true,hema_enable:true,hftx_enable:true,itzj_enable:true,jhsh_enable:true,jkds_enable:true,jkxi_enable:true,keep_enable:true,kkuz_enable:true,kxke_enable:true,kuwoybyt_enable:true,glgclmmg_enable:true,kuan_enable:true,lvtusvuftk_enable:true,mddjba_enable:true,mhgotv_enable:true,mafgwo_enable:true,mdmd_enable:true,meiyou_enable:true,pupuicui_enable:true,51job_enable:true,quda_enable:true,reddit_enable:true,rfrfuipk_enable:true,tab:true,useractivity:true,soul_enable:true,sudaxnyr_enable:true,smzdm_enable:true,tcbc_enable:true,tgxyxbwf_enable:true,vgtime_enable:true,lmjpxmvi_enable:true,MY:true,DT:false,FX:true,PRGG:true,PRRK:false,PRDRD:false,PRSCVPT:false,PRST:false,PRRR:true,HMPR:false,PRMST:true,PRCN:true,whyiyyybyt_enable:true,whyiyzdccidm_enable:true,wfnibovj_enable:true,xnmiuhig_enable:true,xntuisis_enable:true,xnmh_enable:true,xmyu_enable:true,xljnuiyivsuvgo_enable:true,xhs_enable:true,ximalaya_enable:true,youtube_enable:true,yzku_enable:true,yzxiapp_enable:true,vihu_enable:true,vhuhgsjn_enable:true,vrvr_enable:true,vsgogojihhks_enable:true,vsgorfbc_enable:true
 
@@ -938,6 +938,7 @@ https://support.you.163.com/appversync/check.do - reject
 ^https?:\/\/xxyx-client-api\.xiaoxiaoyouxuan\.com\/get_big_module_bottom_ad - reject
 ^https:\/\/xxyx-client-api\.xiaoxiaoyouxuan\.com\/get_index_activity_list_ad - reject
 ^https:\/\/xxyx-client-api\.xiaoxiaoyouxuan\.com\/bottom_banner - reject
+^https:\/\/xxyx-client-api\.xiaoxiaoyouxuan\.com\/new_banner\? - reject
 # 弹窗广告
 ^https?:\/\/xxyx-client-api\.xiaoxiaoyouxuan\.com\/agent_ad - reject
 # 右下角的悬浮广告

@@ -9,7 +9,7 @@
 #!tg-channel=https://t.me/inaisi
 #!tag=去广告, fmz200, 奶思
 #!system=iOS, iPadOS
-#!date=2025-10-18 17:19:00
+#!date=2025-10-27 19:46:00
 #!remark=下方的所有规则都标注了对应的hostname，可能存在错误或者遗漏，欢迎反馈。对于无法/可选MITM的hostname都特别做了“如开启可自行添加主机名”提示，如果提示后面没有标注主机名则包含所有主机名，否则只包含提示语后面的主机名。
 
 [Argument]
@@ -2092,6 +2092,7 @@ https://mgesq.api.mgtv.com/v2/user/center/icon - reject-dict
 ^https?:\/\/xxyx-client-api\.xiaoxiaoyouxuan\.com\/get_big_module_bottom_ad - reject
 ^https:\/\/xxyx-client-api\.xiaoxiaoyouxuan\.com\/get_index_activity_list_ad - reject
 ^https:\/\/xxyx-client-api\.xiaoxiaoyouxuan\.com\/bottom_banner - reject
+^https:\/\/xxyx-client-api\.xiaoxiaoyouxuan\.com\/new_banner\? - reject
 # 多余模块
 #^https:\/\/xxyx-client-api\.xiaoxiaoyouxuan\.com\/vajra - reject-dict
 # 弹窗广告
@@ -2541,24 +2542,24 @@ http-response ^https:\/\/app-conf\.ds\.163\.com\/v\d\/app\/base\/conf\/static\/s
 
 http-response ^https?:\/\/lcen\.xiaote\.net\/api\/graphql script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_2668, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22screenSplashAd%22%2C%22fmz200%22%5D%5D%5D%5D
 
-http-response ^https:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/football-portal\/diff2\/batch\? script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_2890, argument=%5B%5B%22json-del%22%2C%5B%22json.ad%22%2C%22json.toc%22%5D%5D%5D
+http-response ^https:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/football-portal\/diff2\/batch\? script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_2891, argument=%5B%5B%22json-del%22%2C%5B%22json.ad%22%2C%22json.toc%22%5D%5D%5D
 
-http-response ^https:\/\/mobwsa\.ximalaya\.com\/mobile-playpage\/playpage\/tabs\/v2\/ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_2896, argument=%5B%5B%22json-del%22%2C%5B%22data.playpage.resourceMap.defaultResource%22%2C%22data.playpage.resourceMap.playPageTip%22%5D%5D%5D
+http-response ^https:\/\/mobwsa\.ximalaya\.com\/mobile-playpage\/playpage\/tabs\/v2\/ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_2897, argument=%5B%5B%22json-del%22%2C%5B%22data.playpage.resourceMap.defaultResource%22%2C%22data.playpage.resourceMap.playPageTip%22%5D%5D%5D
 
-http-response ^https:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/mobile-user\/v\d\/homePage\/ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_2902, argument=%5B%5B%22json-del%22%2C%5B%22data.freeListenV2%22%5D%5D%5D
+http-response ^https:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/mobile-user\/v\d\/homePage\/ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_2903, argument=%5B%5B%22json-del%22%2C%5B%22data.freeListenV2%22%5D%5D%5D
 
 # 我的页推广
 http-response ^https?:\/\/www\.myusmile\.online\/user\/plaqueTopic\/selectByType script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/blockAds/usmile.js, tag=usmile
 
-http-response ^https:\/\/api\.zhihu\.com\/search\/recommend_query\/v2\? script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_3228, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22%5C%22recommend_queries%5C%22%3A%5C%5C%7B.%2B%5C%5C%7D%22%2C%22%5C%22recommend_queries%5C%22%3A%7B%7D%22%5D%5D%5D%5D
+http-response ^https:\/\/api\.zhihu\.com\/search\/recommend_query\/v2\? script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_3229, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22%5C%22recommend_queries%5C%22%3A%5C%5C%7B.%2B%5C%5C%7D%22%2C%22%5C%22recommend_queries%5C%22%3A%7B%7D%22%5D%5D%5D%5D
 
-http-response ^https?:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzinfoshow\/getfeedflowinfo\? script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_3290, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22userRed%22%2C%22fmz200%22%5D%5D%5D%5D
+http-response ^https?:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzinfoshow\/getfeedflowinfo\? script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_3291, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22userRed%22%2C%22fmz200%22%5D%5D%5D%5D
 
-http-response ^https?:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzinfoshow\/getchoicegoodsinfos script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_3292, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22infoData%22%2C%22fmz200%22%5D%5D%5D%5D
+http-response ^https?:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzinfoshow\/getchoicegoodsinfos script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_3293, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22infoData%22%2C%22fmz200%22%5D%5D%5D%5D
 
-http-response ^https?:\/\/portal\.zjzwfw\.gov\.cn\/app_api\/appHome\/selectStartPic script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_3301, argument=%5B%5B%22json-replace%22%2C%5B%5B%22data%22%2C%7B%7D%5D%5D%5D%5D
+http-response ^https?:\/\/portal\.zjzwfw\.gov\.cn\/app_api\/appHome\/selectStartPic script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_3302, argument=%5B%5B%22json-replace%22%2C%5B%5B%22data%22%2C%7B%7D%5D%5D%5D%5D
 
-http-response ^https?:\/\/app-izz\.zhengzhou\.gov\.cn:10019\/bizgw\/gateway\.do script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_3305, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22%5C%22imgUrl19_5x9%5C%22%3A%5C%22.%2B%3F%5C%22%22%2C%22%5C%22imgUrl19_5x9%5C%22%3A%5C%22%5C%22%22%5D%5D%5D%5D
+http-response ^https?:\/\/app-izz\.zhengzhou\.gov\.cn:10019\/bizgw\/gateway\.do script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/blockAds/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_3306, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22%5C%22imgUrl19_5x9%5C%22%3A%5C%22.%2B%3F%5C%22%22%2C%22%5C%22imgUrl19_5x9%5C%22%3A%5C%22%5C%22%22%5D%5D%5D%5D
 
 # hostname = ad.12306.cn
 http-request ^https?:\/\/ad\.12306\.cn\/ad\/ser\/getAdList script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/blockAds/12306.js, requires-body=true, timeout=60, tag=12306, enable={12306_enable}
