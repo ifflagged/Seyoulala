@@ -1384,6 +1384,7 @@ DOMAIN-KEYWORD, wan.sogou.com, REJECT, extended-matching, pre-matching
 ^https?:\/\/amap-aos-info-nogw\.amap\.com\/ws\/aos\/alimama\/splash_screen_rt - reject
 ^https?:\/\/mkt-gateway\.tuhu\.cn\/mkt-push-message-box\/banner\/cms\/getIndexBanner - reject
 ^https?:\/\/cix\.line-apps\.com\/R4\? - reject
+^https?:\/\/xxyx-client-api\.xiaoxiaoyouxuan\.com\/get_.*_ad - reject
 ^https?:\/\/api-sams\.walmartmobile\.cn\/api\/v\d\/sams\/sams-user\/(window\/getGoUpPlus|screen_promotion\/get) - reject
 ^https?:\/\/.*\.xima.*\.com\/api\/v\d\/adRealTime - reject
 ^https?:\/\/api\.gotokeep\.com\/anno\/v\d\/upgrade\/check - reject
@@ -1408,7 +1409,6 @@ DOMAIN-KEYWORD, wan.sogou.com, REJECT, extended-matching, pre-matching
 ^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alimama\.etao\.config\.query\/.+?etao_advertise - reject
 ^https?:\/\/appgw\.ddpai\.com.*\/ad\/list.* - reject
 ^https?:\/\/b-api\.ins\.miaopai\.com\/\d\/ad/ - reject
-^https?:\/\/xxyx-client-api\.xiaoxiaoyouxuan\.com\/bottom_banner - reject
 ^https?:\/\/appactive\.1234567\.com\.cn\/AppoperationApi\/OperationService\/GetAppStartImg - reject
 ^https?:\/\/mime\.baidu\.com\/v\d\/IosStart\/getStartInfo - reject
 ^https?:\/\/axxd\.xmseeyouyima\.com\/.*getad\? - reject
@@ -1538,13 +1538,13 @@ DOMAIN-KEYWORD, wan.sogou.com, REJECT, extended-matching, pre-matching
 ^https?:\/\/sytgate\.jslife\.com\.cn\/base-gateway\/config\/queryAppNewVersion - reject
 ^https?:\/\/gaia\.ch\.com\/ECProduct\/homePageRevision\/queryRecommendInfo - reject
 ^https?:\/\/ut2\.shuqistat\.com\/.+\.gif - reject
+^https?:\/\/xxyx-client-api\.xiaoxiaoyouxuan\.com\/\w+_banner - reject
 ^https?:\/\/dss0\.bdstatic\.com\/.+/tam-ogel\/.+\.(?>jpg|mp4) - reject
 ^https?:\/\/aiqicha\.baidu\.com\/apps\/getHomeMonitorDataAjax - reject
 ^https?:\/\/www\.okx\.com\/v\d\/support\/home\/app\/updateInfo - reject
 ^https?:\/\/.+\.shuqireader\.com\/sapi\/.+ - reject
 ^https?:\/\/business\.msstatic\.com\/advertiser\/material - reject
 ^https?:\/\/res\.mi\.baidu\.com\/imeres\/ime-res\/advertisement\/files\/.+\.jpg - reject
-^https?:\/\/xxyx-client-api\.xiaoxiaoyouxuan\.com\/get_index_activity_list_ad - reject
 ^https?:\/\/www\.zhihu\.com\/api\/v\d\/mcn\/v\d\/linkcards\? - reject
 ^https?:\/\/p\.meituan\.com\/api\/privacy\/config - reject
 ^https?:\/\/api\.zhihu\.com\/unlimited\/go\/my_card - reject
@@ -1926,7 +1926,6 @@ DOMAIN-KEYWORD, wan.sogou.com, REJECT, extended-matching, pre-matching
 ^https?:\/\/mcsp\.cloudpnr\.com\/api\/miniapp\/popular\/T_MINIAPP$ - reject
 ^https?:\/\/aiqicha\.baidu\.com\/app\/getPopConfigAjax - reject
 ^https?:\/\/catfront\.dianping\.com\/api\/metric\?v=\d&p=rn_gcbu_mrn-joy-poidetail - reject
-^https?:\/\/xxyx-client-api\.xiaoxiaoyouxuan\.com\/get_big_module_bottom_ad - reject
 ^https?:\/\/182\.92\.244\.70\/d\/json - reject
 ^https?:\/\/cupid\.51job(app)?\.com\/open\/user-task\/user\/task\/init - reject
 ^https?:\/\/static\.line-scdn\.net\/ad-sdk\/ - reject
@@ -3011,6 +3010,7 @@ keep = type=http-response,pattern=^https?:\/\/api\.gotokeep\.com\/nuocha\/course
 soul = type=http-response,pattern=^https?:\/\/gateway-mobile-gray\.soulapp\.cn\/mobile\/app\/version\/queryIos,requires-body=1,max-size=0,script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zirawell/allAdBlock/soul.js
 mgtv = type=http-response,pattern=^https?:\/\/mob-st\.bz\.mgtv\.com\/odin\/c\d\/channel\/index\?,requires-body=1,max-size=0,script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zirawell/allAdBlock/cntv.js
 tflj = type=http-response,pattern=^https?:\/\/tf02\.istrongcloud\.com\/member\/v[0-9.]+\/home,requires-body=1,max-size=0,script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zirawell/allAdBlock/tflj.js
+cotti = type=http-request,pattern=^https?:\/\/gateway\.cotticoffee\.com\/cotti-capi\/customer\/position\/list$,requires-body=1,max-size=0,script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zirawell/allAdBlock/cotti.js
 wechatAppletGeneral = type=http-response,pattern=^https?:\/\/(?>webapi|miniapp)\.qmai\.cn\/web\/catering([0-9]-apiserver)?\/advertising\/ad\/advertiseInfo,requires-body=1,max-size=0,script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zirawell/allAdBlock/qmai.js
 goofish = type=http-response,pattern=^https?:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.local\.home\/,requires-body=1,max-size=0,script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zirawell/allAdBlock/goofish.js
 xmly = type=http-response,pattern=^https?:\/\/.*\.xima.*\.com\/discovery-feed\/v\d\/mix,requires-body=1,max-size=0,script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zirawell/allAdBlock/xmly.js
@@ -3300,7 +3300,6 @@ sqkb = type=http-response,pattern=^https?:\/\/api\.17gwx\.com\/operate\/elements
 weibo = type=http-response,pattern=^https?:\/\/wbapp\.uve\.weibo\.com\/(preload\/get_ad|wbapplua\/wbpullad\.lua)\?,requires-body=1,max-size=0,script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zirawell/allAdBlock/weibo.js
 dushu365 = type=http-response,pattern=^https?:\/\/g(.*)\.dushu365\.com\/fs-member\/user\/profile\/v100\/detail,requires-body=1,max-size=0,script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zirawell/allAdBlock/dushu365.js
 tuhu = type=http-response,pattern=^https?:\/\/cl-gateway\.tuhu\.cn\/cl-common-api\/api\/personalCenter\/getCmsModuleList,requires-body=1,max-size=0,script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zirawell/allAdBlock/tuhu.js
-cotti = type=http-response,pattern=^https?:\/\/gateway\.cotticoffee\.com\/cotti-capi\/customer\/position\/list$,requires-body=0,max-size=0,script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zirawell/allAdBlock/cotti.js
 smzdm = type=http-response,pattern=^https?:\/\/s-api\.smzdm\.com\/sou\/(>?filter\/tags\/hot_tags|list_v\d\?),requires-body=1,max-size=0,script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zirawell/allAdBlock/smzdm.js
 meituanwm = type=http-response,pattern=^https?:\/\/web\.meituan\.com\/api\/miniprogram\/index\/aggregate,requires-body=1,max-size=0,script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zirawell/allAdBlock/meituanwm.js
 baidupan = type=http-response,pattern=^https?:\/\/pan\.baidu\.com\/rest\/\d\.\d\/membership\/user,requires-body=1,max-size=0,script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zirawell/allAdBlock/baiduPan.js
