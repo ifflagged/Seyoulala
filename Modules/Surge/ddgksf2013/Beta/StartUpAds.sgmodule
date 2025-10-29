@@ -1262,7 +1262,7 @@ https?:\/\/m\.sd\.10086\.cn\/zapi\/app_common\/homeWelcome\/welcome.do data-type
 ^https?:\/\/.*zongheng\.com\/iosapi\/system\/startup data-type=text data=" " status-code=200
 
 # > zhangshangwuweiqiyue
-^https?:\/\/app\.mval\.qq\.com\/go\/mlol_news\/recommend_feeds data-type=text data=" " status-code=200
+#^https?:\/\/app\.mval\.qq\.com\/go\/mlol_news\/recommend_feeds data-type=text data=" " status-code=200
 
 # > zcool
 ^https?:\/\/api\.zcool\.com\.cn\/.*common\/open-screen data-type=text data=" " status-code=200

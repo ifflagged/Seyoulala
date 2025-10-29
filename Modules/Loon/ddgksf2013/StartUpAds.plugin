@@ -819,7 +819,7 @@ https?:\/\/m\.sd\.10086\.cn\/zapi\/app_common\/homeWelcome\/welcome.do - reject-
 # > zonghengxiaoshuo
 ^https?:\/\/.*zongheng\.com\/iosapi\/system\/startup - reject-200
 # > zhangshangwuweiqiyue
-^https?:\/\/app\.mval\.qq\.com\/go\/mlol_news\/recommend_feeds - reject-200
+#^https?:\/\/app\.mval\.qq\.com\/go\/mlol_news\/recommend_feeds - reject-200
 # > zcool
 ^https?:\/\/api\.zcool\.com\.cn\/.*common\/open-screen - reject-200
 # > dongqiudi
