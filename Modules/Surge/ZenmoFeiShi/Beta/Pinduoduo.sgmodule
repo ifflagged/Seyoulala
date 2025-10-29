@@ -27,6 +27,10 @@ IP-CIDR,114.110.96.26/32,REJECT,no-resolve
 IP-CIDR,101.35.212.35/32,REJECT,no-resolve
 
 [Body Rewrite]
+http-response-jq ^https:\/\/api\.pinduoduo\.com\/api\/alexa\/homepage\/hub 'del(.result.icon_set, .result.search_bar_hot_query, .result.dy_module) | if .result.bottom_tabs then .result.bottom_tabs |= map(select(.link == "index.html" or .link == "chat_list.html" or .link == "personal.html")) else . end'
+http-response-jq ^https:\/\/api\.pinduoduo\.com\/search 'del(.expansion)'
+http-response-jq ^https:\/\/api\.pinduoduo\.com\/api\/philo\/personal\/hub 'del(.monthly_card_entrance, .personal_center_style_v2_vo, .icon_set.icons, .icon_set.top_personal_icons)'
+http-response-jq ^https:\/\/api\.pinduoduo\.com\/api\/oak\/integration\/render 'del(.bottom_section_list, .ui.bottom_section, .ui.live_section.float_info)'
 http-response-jq ^https:\/\/api\.pinduoduo\.com\/api\/caterham\/v3\/query\/order_detail_group 'del(.data.goods_list)'
 
 [Map Local]
@@ -55,15 +59,6 @@ http-response-jq ^https:\/\/api\.pinduoduo\.com\/api\/caterham\/v3\/query\/order
 ^https:\/\/api\.pinduoduo\.com\/api\/caterham\/v3\/query\/my_order_group data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 ^https:\/\/api\.pinduoduo\.com\/api\/caterham\/v3\/query\/likes data-type=text data="{}" status-code=200 header="Content-Type:application/json"
-
-[Script]
-Pinduoduo = type=http-response, pattern=^https:\/\/api\.pinduoduo\.com\/search, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ZenmoFeiShi/Pinduoduo/Pinduoduo.js, requires-body=true, max-size=-1, timeout=60
-
-Pinduoduo = type=http-response, pattern=^https:\/\/api\.pinduoduo\.com\/api\/philo\/personal\/hub, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ZenmoFeiShi/Pinduoduo/Pinduoduo.js, requires-body=true, max-size=-1, timeout=60
-
-Pinduoduo = type=http-response, pattern=^https:\/\/api\.pinduoduo\.com\/api\/alexa\/homepage\/hub, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ZenmoFeiShi/Pinduoduo/Pinduoduo.js, requires-body=true, max-size=-1, timeout=60
-
-Pinduoduo = type=http-response, pattern=^https:\/\/api\.pinduoduo\.com\/api\/oak\/integration\/render, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ZenmoFeiShi/Pinduoduo/Pinduoduo.js, requires-body=true, max-size=-1, timeout=60
 
 [MITM]
 hostname = %APPEND% api.pinduoduo.com

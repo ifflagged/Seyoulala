@@ -28,6 +28,10 @@ IP-CIDR,114.110.96.26/32,REJECT,no-resolve
 IP-CIDR,101.35.212.35/32,REJECT,no-resolve
 
 [Rewrite]
+^https:\/\/api\.pinduoduo\.com\/api\/alexa\/homepage\/hub response-body-json-jq 'del(.result.icon_set, .result.search_bar_hot_query, .result.dy_module) | if .result.bottom_tabs then .result.bottom_tabs |= map(select(.link == "index.html" or .link == "chat_list.html" or .link == "personal.html")) else . end'
+^https:\/\/api\.pinduoduo\.com\/search response-body-json-jq 'del(.expansion)'
+^https:\/\/api\.pinduoduo\.com\/api\/philo\/personal\/hub response-body-json-jq 'del(.monthly_card_entrance, .personal_center_style_v2_vo, .icon_set.icons, .icon_set.top_personal_icons)'
+^https:\/\/api\.pinduoduo\.com\/api\/oak\/integration\/render response-body-json-jq 'del(.bottom_section_list, .ui.bottom_section, .ui.live_section.float_info)'
 ^https:\/\/api\.pinduoduo\.com\/api\/caterham\/v3\/query\/order_detail_group response-body-json-jq 'del(.data.goods_list)'
 ^https:\/\/api\.pinduoduo\.com\/api\/aristotle\/unrated_order_for_unreceived_tab - reject-dict
 ^https:\/\/api\.pinduoduo\.com\/api\/aristotle\/query_order_list_tabs_element - reject-dict
@@ -42,15 +46,6 @@ IP-CIDR,101.35.212.35/32,REJECT,no-resolve
 ^https:\/\/api\.pinduoduo\.com\/api\/engels\/reviews\/require\/append - reject-dict
 ^https:\/\/api\.pinduoduo\.com\/api\/caterham\/v3\/query\/my_order_group - reject-dict
 ^https:\/\/api\.pinduoduo\.com\/api\/caterham\/v3\/query\/likes - reject-dict
-
-[Script]
-http-response ^https:\/\/api\.pinduoduo\.com\/search script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ZenmoFeiShi/Pinduoduo/Pinduoduo.js, requires-body=true, timeout=60, tag=Pinduoduo
-
-http-response ^https:\/\/api\.pinduoduo\.com\/api\/philo\/personal\/hub script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ZenmoFeiShi/Pinduoduo/Pinduoduo.js, requires-body=true, timeout=60, tag=Pinduoduo
-
-http-response ^https:\/\/api\.pinduoduo\.com\/api\/alexa\/homepage\/hub script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ZenmoFeiShi/Pinduoduo/Pinduoduo.js, requires-body=true, timeout=60, tag=Pinduoduo
-
-http-response ^https:\/\/api\.pinduoduo\.com\/api\/oak\/integration\/render script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ZenmoFeiShi/Pinduoduo/Pinduoduo.js, requires-body=true, timeout=60, tag=Pinduoduo
 
 [MITM]
 hostname = api.pinduoduo.com
