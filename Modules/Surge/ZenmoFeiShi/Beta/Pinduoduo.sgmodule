@@ -6,6 +6,12 @@
 #!update=2025-10-22
 
 [Rule]
+IP-CIDR,114.110.98.3/32,REJECT,no-resolve
+IP-CIDR,114.110.98.2/32,REJECT,no-resolve
+IP-CIDR,36.152.46.3/32,REJECT,no-resolve
+IP-CIDR,114.110.96.6/32,REJECT,no-resolve
+IP-CIDR,36.152.46.13/32,REJECT,no-resolve
+IP-CIDR,121.5.84.85/32,REJECT,no-resolve
 DOMAIN,sdk.1rtb.net,REJECT
 DOMAIN,titan.pinduoduo.com,REJECT
 IP-CIDR,183.194.214.21/32,REJECT,no-resolve
@@ -59,6 +65,14 @@ http-response-jq ^https:\/\/api\.pinduoduo\.com\/api\/caterham\/v3\/query\/order
 ^https:\/\/api\.pinduoduo\.com\/api\/caterham\/v3\/query\/my_order_group data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 ^https:\/\/api\.pinduoduo\.com\/api\/caterham\/v3\/query\/likes data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+^https:\/\/api\.pinduoduo\.com\/api\/phantom\/gbdbpdv\/extra data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+^https:\/\/api\.pinduoduo\.com\/api\/manufacturer\/cross\/shortcut\/list data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+^https:\/\/api\.pinduoduo\.com\/api\/dunkirk\/liveactivity\/push\/create\/url\/report data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+^https:\/\/api\.pinduoduo\.com\/api\/growth\/nagato\/app\/index\/gather data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 [MITM]
 hostname = %APPEND% api.pinduoduo.com
