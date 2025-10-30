@@ -470,12 +470,15 @@ DOMAIN-SUFFIX, gma.alicdn.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, nbsdk-baichuan.alicdn.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, strip.alicdn.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, unidesk.alicdn.com, REJECT, extended-matching, pre-matching
+DOMAIN-SUFFIX, abtest.alibaba.com, REJECT, extended-matching, pre-matching
 DOMAIN-KEYWORD, dns.alidns.com, REJECT, extended-matching, pre-matching
 DOMAIN, nex.163.com, REJECT, extended-matching, pre-matching
 DOMAIN, iad.g.163.com, REJECT, extended-matching, pre-matching
 DOMAIN, n.3g.163.com, REJECT, extended-matching, pre-matching
 DOMAIN, g1.163.com, REJECT, extended-matching, pre-matching
 DOMAIN, ad.bn.netease.com, REJECT, extended-matching, pre-matching
+DOMAIN, statistic.live.126.net, REJECT, extended-matching, pre-matching
+DOMAIN, lbs.netease.im, REJECT, extended-matching, pre-matching
 DOMAIN, ad.yixin.im, REJECT, extended-matching, pre-matching
 DOMAIN, yt-adp.nosdn.127.net, REJECT, extended-matching, pre-matching
 DOMAIN, yt-adp.ws.126.net, REJECT, extended-matching, pre-matching
