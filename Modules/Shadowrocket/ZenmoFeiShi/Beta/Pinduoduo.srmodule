@@ -52,7 +52,7 @@ IP-CIDR,101.35.212.35/32,REJECT,no-resolve
 ^https:\/\/api\.pinduoduo\.com\/api\/growth\/nagato\/app\/index\/gather - reject-dict
 
 [Body Rewrite]
-http-response-jq ^https:\/\/api\.pinduoduo\.com\/api\/alexa\/homepage\/hub 'del(.result.icon_set, .result.search_bar_hot_query, .result.dy_module) | if .result.bottom_tabs then .result.bottom_tabs |= map(select(.link == "index.html" or .link == "chat_list.html" or .link == "personal.html")) else . end'
+http-response-jq ^https:\/\/api\.pinduoduo\.com\/api\/alexa\/homepage\/hub 'del(.result.icon_set, .result.search_bar_hot_query, .result.dy_module.irregular_banner_dy,.result.dy_module.recommend_fresh_info) | if .result.bottom_tabs then .result.bottom_tabs |= map(select(.link == "index.html" or .link == "chat_list.html" or .link == "personal.html")) else . end'
 http-response-jq ^https:\/\/api\.pinduoduo\.com\/search 'del(.expansion)'
 http-response-jq ^https:\/\/api\.pinduoduo\.com\/api\/philo\/personal\/hub 'del(.monthly_card_entrance, .personal_center_style_v2_vo, .icon_set.icons, .icon_set.top_personal_icons)'
 http-response-jq ^https:\/\/api\.pinduoduo\.com\/api\/oak\/integration\/render 'del(.bottom_section_list, .ui.bottom_section, .ui.live_section.float_info)'
