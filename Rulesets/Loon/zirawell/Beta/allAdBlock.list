@@ -1,4 +1,4 @@
-#规则数量:1355
+#规则数量:1360
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -215,6 +215,7 @@ DOMAIN,bigdata-behaviordata.189.cn
 DOMAIN,bootpreload.uve.weibo.com
 DOMAIN,bsync3-normal.zijieapi.com
 DOMAIN,business.msstatic.com
+DOMAIN,cactus.jd.com
 DOMAIN,cad.youku.com
 DOMAIN,collect.xiaopeng.com
 DOMAIN,conf-darwin.xycdn.com
@@ -286,6 +287,7 @@ DOMAIN,goblin.hupu.com
 DOMAIN,gorgon.youdao.com
 DOMAIN,hc-ssp.sm.cn
 DOMAIN,hdns.ksyun.com
+DOMAIN,hermes.jd.com
 DOMAIN,hlx.meituan.com
 DOMAIN,hmma.baidu.com
 DOMAIN,httpdns.baidubce.com
@@ -433,6 +435,7 @@ DOMAIN,rprain.bz.mgtv.com
 DOMAIN,rtlog5-applog.fqnovel.com
 DOMAIN,rtms.alipay.com
 DOMAIN,rttrack.ddxq.mobi
+DOMAIN,s.youtube.com
 DOMAIN,s3a.pstatp.com
 DOMAIN,safebrowsing.g.applimg.com
 DOMAIN,safebrowsing.googleapis.com
@@ -505,6 +508,7 @@ DOMAIN,twns.p2ptun.qq.com
 DOMAIN,tysdk.95516.com
 DOMAIN,ug.snssdk.com
 DOMAIN,ugchsy.gtimg.com
+DOMAIN,un.m.jd.com
 DOMAIN,union.chinalifeonline.com.cn
 DOMAIN,ups.ksmobile.net
 DOMAIN,vali-g1.cp31.ott.cibntv.net
@@ -521,6 +525,7 @@ DOMAIN,webproxy-advp.iad-apple.com
 DOMAIN,webproxy-advp.iad-apple.com.akadns.net
 DOMAIN,wn.pos.baidu.com
 DOMAIN,woodpecker.uc.cn
+DOMAIN,wqs.jd.com
 DOMAIN,ws.ksmobile.net
 DOMAIN,ws.tapjoyads.com
 DOMAIN,wxsmsdy.video.qq.com
