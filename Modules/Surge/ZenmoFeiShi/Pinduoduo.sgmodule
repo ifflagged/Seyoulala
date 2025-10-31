@@ -6,31 +6,36 @@
 #!update=2025-10-22
 
 [Rule]
-IP-CIDR,114.110.98.3/32,REJECT,no-resolve
-IP-CIDR,114.110.98.2/32,REJECT,no-resolve
-IP-CIDR,36.152.46.3/32,REJECT,no-resolve
-IP-CIDR,114.110.96.6/32,REJECT,no-resolve
-IP-CIDR,36.152.46.13/32,REJECT,no-resolve
-IP-CIDR,121.5.84.85/32,REJECT,no-resolve
-DOMAIN,sdk.1rtb.net,REJECT
+DOMAIN,cdl-1.pddpic.com,REJECT
 DOMAIN,titan.pinduoduo.com,REJECT
-IP-CIDR,183.194.214.21/32,REJECT,no-resolve
-IP-CIDR,49.235.102.190/32,REJECT,no-resolve
-IP-CIDR,81.69.116.33/32,REJECT,no-resolve
-IP-CIDR,183.194.214.20/32,REJECT,no-resolve
-IP-CIDR,117.185.244.145/32,REJECT,no-resolve
-IP-CIDR,101.35.204.35/32,REJECT,no-resolve
-IP-CIDR,114.110.97.97/32,REJECT,no-resolve
-IP-CIDR,81.69.104.17/32,REJECT,no-resolve
+DOMAIN,cdl-p2.pddpic.com,REJECT
+DOMAIN,cd-1.pddpic.com,REJECT
+DOMAIN,apm.pinduoduo.com,REJECT
+DOMAIN,th-b.pinduoduo.com,REJECT
+DOMAIN,file.pinduoduo.com,REJECT
+DOMAIN,ta.pinduoduo.com,REJECT
+DOMAIN,th.pinduoduo.com,REJECT
+DOMAIN,th-a.pinduoduo.com,REJECT
+DOMAIN,ta-a.pinduoduo.com,REJECT
+DOMAIN,meta.pinduoduo.com,REJECT
+DOMAIN,apm-a.pinduoduo.com,REJECT
 IP-CIDR,117.185.242.187/32,REJECT,no-resolve
 IP-CIDR,117.185.242.18/32,REJECT,no-resolve
-IP-CIDR,183.194.214.14/32,REJECT,no-resolve
+IP-CIDR,49.235.102.190/32,REJECT,no-resolve
 IP-CIDR,114.110.96.1/32,REJECT,no-resolve
+IP-CIDR,81.69.104.17/32,REJECT,no-resolve
+IP-CIDR,81.69.116.33/32,REJECT,no-resolve
+IP-CIDR,114.110.98.2/32,REJECT,no-resolve
+IP-CIDR,183.194.214.21/32,REJECT,no-resolve
+IP-CIDR,114.110.97.97/32,REJECT,no-resolve
+IP-CIDR,114.110.98.3/32,REJECT,no-resolve
+IP-CIDR,183.194.214.14/32,REJECT,no-resolve
+IP-CIDR,36.152.46.3/32,REJECT,no-resolve
+IP-CIDR,183.194.214.20/32,REJECT,no-resolve
 IP-CIDR,36.152.46.15/32,REJECT,no-resolve
-IP-CIDR,114.110.97.30/32,REJECT,no-resolve
-IP-CIDR,81.69.130.131/32,REJECT,no-resolve
-IP-CIDR,114.110.96.26/32,REJECT,no-resolve
-IP-CIDR,101.35.212.35/32,REJECT,no-resolve
+IP-CIDR,36.152.46.13/32,REJECT,no-resolve
+IP-CIDR,117.185.244.145/32,REJECT,no-resolve
+DOMAIN,m.pinduoduo.net,REJECT
 
 [Map Local]
 ^https:\/\/api\.pinduoduo\.com\/api\/aristotle\/unrated_order_for_unreceived_tab data-type=text data="{}" status-code=200 header="Content-Type:application/json"
