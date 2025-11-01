@@ -51,12 +51,12 @@ DOMAIN,adpinpai.video.weibocdn.com,REJECT
 
 [URL Rewrite]
 ^https?:\/\/sdkapp\.uve\.weibo\.com\/interface\/sdk\/(get-lbs-cell-info\.php|sdkconfig\.php) - reject
-^https?:\/\/api\.weibo\.cn\/2\/logservice\/service\? - reject
-^https?:\/\/api\.weibo\.cn\/2\/push\/info\? - reject
+^https?:\/\/m?api\.weibo\.c(n|om)\/2\/logservice\/service\? - reject
+^https?:\/\/m?api\.weibo\.c(n|om)\/2\/push\/info\? - reject
 
 [Body Rewrite]
 http-response-jq ^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?a=trends& 'del(.data.banner)'
-http-response-jq ^https?:\/\/api\.weibo\.cn\/2\/cardlist\? 'del(.items[] | select(.category == "group"))'
+http-response-jq ^https?:\/\/m?api\.weibo\.c(n|om)\/2\/cardlist\? 'del(.items[] | select(.category == "group"))'
 
 [Map Local]
 # 热门视频 | 热推荐
@@ -87,11 +87,11 @@ http-response-jq ^https?:\/\/api\.weibo\.cn\/2\/cardlist\? 'del(.items[] | selec
 ^https:\/\/weibo\.com\/ttarticle\/x\/m\/aj\/(reward|uvead)\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 微博
-^https?:\/\/api\.weibo\.cn\/2\/!\/huati\/discovery_home_bottom_channels data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https?:\/\/m?api\.weibo\.c(n|om)\/2\/!\/huati\/discovery_home_bottom_channels data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/api\.weibo\.cn\/2\/!\/chaohua\/discovery\/home_bottom\/switch data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https?:\/\/m?api\.weibo\.c(n|om)\/2\/!\/chaohua\/discovery\/home_bottom\/switch data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/api\.weibo\.cn\/2\/!\/was\/finder\/searchbarchange\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https?:\/\/m?api\.weibo\.c(n|om)\/2\/!\/was\/finder\/searchbarchange\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 [Script]
 # 微博移除发现页广告
