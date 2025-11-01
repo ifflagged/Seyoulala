@@ -1,4 +1,4 @@
-#规则数量:1360
+#规则数量:1359
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -508,7 +508,6 @@ DOMAIN,twns.p2ptun.qq.com
 DOMAIN,tysdk.95516.com
 DOMAIN,ug.snssdk.com
 DOMAIN,ugchsy.gtimg.com
-DOMAIN,un.m.jd.com
 DOMAIN,union.chinalifeonline.com.cn
 DOMAIN,ups.ksmobile.net
 DOMAIN,vali-g1.cp31.ott.cibntv.net
