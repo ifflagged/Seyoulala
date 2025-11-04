@@ -187,6 +187,7 @@ DOMAIN,api.verify.mob.com
 DOMAIN,api.zuihuimai.com
 DOMAIN,api.zysdsk.cn
 DOMAIN,apiinit.amap.com
+DOMAIN,apis.alenable.com
 DOMAIN,apm.gotokeep.com
 DOMAIN,apm.pinduoduo.com
 DOMAIN,apmplus.volces.com
@@ -318,8 +319,6 @@ DOMAIN,icloud-amap.com
 DOMAIN,id.hadron.ad.gt
 DOMAIN,ifconfig.me
 DOMAIN,imc.abchina.com.cn
-DOMAIN,img.adnyg.com
-DOMAIN,img.adnyg.com.w.kunlungr.com
 DOMAIN,img.auction-ads.wpscdn.cn
 DOMAIN,imgad0.pcauto.com.cn
 DOMAIN,imgad0.pconline.com.cn
@@ -1327,6 +1326,7 @@ DOMAIN-KEYWORD,dns.alidns.com
 DOMAIN-KEYWORD,dnspod.meituan.httpdns
 DOMAIN-KEYWORD,gdtimg.com
 DOMAIN-KEYWORD,iflyad.bj.openstorage.cn
+DOMAIN-KEYWORD,img.adnyg.com
 DOMAIN-KEYWORD,iyes.youku.com
 DOMAIN-KEYWORD,kepler.jd.com
 DOMAIN-KEYWORD,keplerapi.jd.com
