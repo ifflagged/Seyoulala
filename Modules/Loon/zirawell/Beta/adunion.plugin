@@ -12,6 +12,8 @@
 
 [Rule]
 DOMAIN,adtracker.adfunlink.com,REJECT
+DOMAIN,apis.alenable.com,REJECT
+DOMAIN,app-analytics-services.com,REJECT
 DOMAIN,init.supersonicads.com,REJECT
 DOMAIN,ws.tapjoyads.com,REJECT
 DOMAIN,hdns.ksyun.com,REJECT
@@ -28,10 +30,7 @@ DOMAIN,api.adnet.mob.com,REJECT
 DOMAIN,dig.bdurl.net,REJECT
 DOMAIN,g1.tagtic.cn,REJECT
 DOMAIN,log.tagtic.cn,REJECT
-DOMAIN,img.adnyg.com,REJECT
-DOMAIN,img.adnyg.com.w.kunlungr.com,REJECT
 DOMAIN,sdownload.stargame.com,REJECT
-DOMAIN,app-analytics-services.com,REJECT
 DOMAIN-SUFFIX,adview.cn,REJECT
 DOMAIN-SUFFIX,ttayy.cn,REJECT
 DOMAIN-SUFFIX,tobidad.cn,REJECT
@@ -72,6 +71,7 @@ DOMAIN-KEYWORD,ads.g.doubleclick,REJECT
 DOMAIN-KEYWORD,iflyad.bj.openstorage.cn,REJECT
 DOMAIN-KEYWORD,bjimp.voiceads.cn,REJECT
 DOMAIN-KEYWORD,sdk.1rtb.net,REJECT
+DOMAIN-KEYWORD,img.adnyg.com,REJECT
 IP-CIDR,203.107.1.0/24,REJECT,no-resolve
 DOMAIN-KEYWORD,sensorsdata.cn,REJECT
 DOMAIN-SUFFIX,gozendata.com,REJECT
