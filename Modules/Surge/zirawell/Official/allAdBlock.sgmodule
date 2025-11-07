@@ -212,7 +212,6 @@ DOMAIN, bigdata-behaviordata.189.cn, REJECT, extended-matching, pre-matching
 DOMAIN, bootpreload.uve.weibo.com, REJECT, extended-matching, pre-matching
 DOMAIN, bsync3-normal.zijieapi.com, REJECT, extended-matching, pre-matching
 DOMAIN, business.msstatic.com, REJECT, extended-matching, pre-matching
-DOMAIN, cactus.jd.com, REJECT, extended-matching, pre-matching
 DOMAIN, cad.youku.com, REJECT, extended-matching, pre-matching
 DOMAIN, collect.xiaopeng.com, REJECT, extended-matching, pre-matching
 DOMAIN, conf-darwin.xycdn.com, REJECT, extended-matching, pre-matching
@@ -284,7 +283,6 @@ DOMAIN, goblin.hupu.com, REJECT, extended-matching, pre-matching
 DOMAIN, gorgon.youdao.com, REJECT, extended-matching, pre-matching
 DOMAIN, hc-ssp.sm.cn, REJECT, extended-matching, pre-matching
 DOMAIN, hdns.ksyun.com, REJECT, extended-matching, pre-matching
-DOMAIN, hermes.jd.com, REJECT, extended-matching, pre-matching
 DOMAIN, hlx.meituan.com, REJECT, extended-matching, pre-matching
 DOMAIN, hmma.baidu.com, REJECT, extended-matching, pre-matching
 DOMAIN, httpdns.baidubce.com, REJECT, extended-matching, pre-matching
@@ -2271,6 +2269,7 @@ https?:\/\/awg\.enmonster\.com\/apa\/(advert\/demand\/home\/poster|index\/advert
 ^https?:\/\/pic\.edaijia\.cn\/adsplash\/ data-type=text data="" status-code=200
 ^https?:\/\/m\.client\.10010\.com\/mobileService\/customer\/getclientconfig\.htm data-type=text data="{}" status-code=200
 ^https?:\/\/mkt-gateway\.tuhu\.cn\/mkt-scene-marketing-service\/api\/scene\/queryScheme data-type=text data="{}" status-code=200
+^https?:\/\/ucmp\.sf-express\.com\/cx-wechat-query\/query\/module-config\/query data-type=text data="{}" status-code=200
 ^https?:\/\/gateway(retry)?\.kugou\.com\/mstc\/musicsymbol\/v\d\/system\/profile data-type=text data="{}" status-code=200
 ^https?:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlecommerce\.splash data-type=text data="{}" status-code=200
 ^https?:\/\/mall\.meituan\.com\/api\/c\/homepage\/bubble\/operate\/info data-type=text data="{}" status-code=200
