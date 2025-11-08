@@ -8,7 +8,7 @@
 #!loon_version=3.2.4(787)
 #!homepage=https://hub.kelee.one
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Mango_TV.png
-#!date=2025-11-09 05:13:05
+#!date=2025-11-09 07:05:44
 
 [Rule]
 DOMAIN, credits.bz.mgtv.com, REJECT
@@ -48,9 +48,11 @@ DOMAIN-SUFFIX, da.mgtv.com, REJECT
 ^https?:\/\/dc\d?\.bz\.mgtv\.com\/dynamic\/v\d\/channel\/index\/\w response-body-json-jq '.data |= map(select(.moduleEntityId != "10579" and .moduleEntityId != "9686")) | .moduleIDS |= map(select(.moduleEntityId != "10579" and .moduleEntityId != "9686"))'
 
 
-^https:\/\/mobile-thor\.api\.mgtv\.com\/v\d+\/vod\/info\? response-body-json-del data.config.ad data.config.vipNav data.template.skinList
+^https:\/\/mobile-thor\.api\.mgtv\.com\/v\d+\/vod\/info\? response-body-json-del data.config.ad data.config.vipNav data.template.skinList data.template.theme 
 
-^https:\/\/mobile-thor\.api\.mgtv\.com\/v\d+\/vod\/info\? response-body-json-jq 'del(.data.template.skinList,.data.template.theme)|.data.tabs|=.[:2]|.data.template.modules|=[.[]|select(.moduleId=="12" or .moduleId=="13" or .moduleId=="14" or .moduleId=="16" or .moduleId=="667" or .moduleId=="662" or .moduleId=="664" or .moduleId=="663" or .moduleId=="18")|if .moduleId=="12" then .clipInfo|=del(.ext) else . end]'
+^https:\/\/mobile-thor\.api\.mgtv\.com\/v\d+\/vod\/info\? response-body-json-jq '.data.tabs |= map(select(.name == "视频" or .name == "讨论")) | .data.template.modules |= map(if .clipInfo.ext?.ipPublishEntrance then .clipInfo |= del(.ext) else . end) | .data.template.modules |= map(select(.dataType == 101 or .dataType == 201)) | .data.template.modules |= map(.media.list |= (if type == "array" then map(select(.type != 0)) else . end))'
+
+^https:\/\/comment\.mgtv\.com\/v\d\/comment\/getCommentList\? response-body-json-jq '.data.list |= map(select(.type == 0))'
 
 ^https?:\/\/mobileso\.bz\.mgtv\.com\/mobile\/recommend\/v\d\? reject-dict
 
