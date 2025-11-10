@@ -1,4 +1,4 @@
-#规则数量:2749
+#规则数量:2754
 #不支持的规则数量:1
 #已排除的规则数量:0
 #不支持的规则:
@@ -1971,6 +1971,12 @@ payload:
   - DOMAIN,39d83s.com
   - DOMAIN-KEYWORD,mpos-pic.helipay.com
   - DOMAIN,mistat.xiaomi.com
+  - DOMAIN-SUFFIX,1sapp.com
+  - DOMAIN-SUFFIX,aiclk.com
+  - DOMAIN-SUFFIX,adbiding.com
+  - DOMAIN-SUFFIX,xwpbj.com
+  - DOMAIN-SUFFIX,qttunion.com
+  - DOMAIN-SUFFIX,qiyukf.com
   - DOMAIN-SUFFIX,fancyapi.com
   - DOMAIN-SUFFIX,ad.richmob.cn
   - DOMAIN-SUFFIX,api-htp.beizi.biz
@@ -2093,7 +2099,6 @@ payload:
   - DOMAIN-SUFFIX,d8.sinaimg.cn
   - DOMAIN-SUFFIX,newspush.sinajs.cn
   - DOMAIN-SUFFIX,rs.sinajs.cn
-  - DOMAIN-SUFFIX,tjs.sjs.sinajs.cn
   - DOMAIN-SUFFIX,sinaalicdn.com
   - DOMAIN-SUFFIX,oascentral.sina.com
   - DOMAIN-SUFFIX,pfpip.sina.com
