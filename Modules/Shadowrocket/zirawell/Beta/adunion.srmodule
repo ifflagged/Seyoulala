@@ -30,6 +30,12 @@ DOMAIN,dig.bdurl.net,REJECT,extended-matching
 DOMAIN,g1.tagtic.cn,REJECT,extended-matching
 DOMAIN,log.tagtic.cn,REJECT,extended-matching
 DOMAIN,sdownload.stargame.com,REJECT,extended-matching
+DOMAIN-SUFFIX,1sapp.com,REJECT,extended-matching
+DOMAIN-SUFFIX,aiclk.com,REJECT,extended-matching
+DOMAIN-SUFFIX,adbiding.com,REJECT,extended-matching
+DOMAIN-SUFFIX,xwpbj.com,REJECT,extended-matching
+DOMAIN-SUFFIX,qiyukf.com,REJECT,extended-matching
+DOMAIN-SUFFIX,qttunion.com,REJECT,extended-matching
 DOMAIN-SUFFIX,adview.cn,REJECT,extended-matching
 DOMAIN-SUFFIX,ttayy.cn,REJECT,extended-matching
 DOMAIN-SUFFIX,tobidad.cn,REJECT,extended-matching
