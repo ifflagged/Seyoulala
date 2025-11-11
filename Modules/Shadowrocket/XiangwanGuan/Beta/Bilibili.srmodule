@@ -3,11 +3,11 @@
 #!category=Jacob
 
 [Rule]
-DOMAIN,api.biliapi.com,REJECT
-DOMAIN,app.biliapi.com,REJECT
-DOMAIN,api.biliapi.net,REJECT
-DOMAIN,app.biliapi.net,REJECT
-AND,((DOMAIN-SUFFIX,chat.bilibili.com),(OR,((DOMAIN-KEYWORD,stun),(DOMAIN-KEYWORD,tracker)))),REJECT
+DOMAIN,api.biliapi.com,REJECT,extended-matching
+DOMAIN,app.biliapi.com,REJECT,extended-matching
+DOMAIN,api.biliapi.net,REJECT,extended-matching
+DOMAIN,app.biliapi.net,REJECT,extended-matching
+AND,((DOMAIN-SUFFIX,chat.bilibili.com),(OR,((DOMAIN-KEYWORD,stun),(DOMAIN-KEYWORD,tracker)))),REJECT,pre-matching
 
 [URL Rewrite]
 ^https?:\/\/api\.live\.bilibili\.com\/xlive\/e-commerce-interface\/v1\/ecommerce-user\/get_shopping_info\? - reject-dict
