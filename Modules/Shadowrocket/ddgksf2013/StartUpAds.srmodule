@@ -621,7 +621,7 @@ https://support.you.163.com/appversync/check.do - reject-200
 ^https?:\/\/180\.96\.8\.44\/smartad\/ad - reject-200
 ^https?:\/\/125\.215\.147\.40\/smartad\/ad - reject-200
 # > wodenanjing
-^https?:\/\/m\.mynj\.cn:\d+\/znmh_FEP\/loadpic\.jsp.*ad_pic.*open - reject-img
+^https?:\/\/m\.mynj\.cn:\d+\/znmh_FEP\/loadpic\.jsp.*ad_pic.*open - reject
 # > xinyue
 ^https?:\/\/bgw\.xinyue\.qq\.com\/xyapi\.PageService\/GetIndexPopFlash - reject-200
 # > xierdun
