@@ -8,7 +8,7 @@ DOMAIN,api.biliapi.com,REJECT
 DOMAIN,app.biliapi.com,REJECT
 DOMAIN,api.biliapi.net,REJECT
 DOMAIN,app.biliapi.net,REJECT
-AND,((DOMAIN-SUFFIX,chat.bilibili.com),(OR,((DOMAIN-KEYWORD,stun),(DOMAIN-KEYWORD,tracker)))),REJECT,pre-matching
+AND,((DOMAIN-SUFFIX,chat.bilibili.com),(OR,((DOMAIN-KEYWORD,stun),(DOMAIN-KEYWORD,tracker)))),REJECT
 
 [Rewrite]
 ^https?:\/\/api\.bilibili\.com\/x\/pd-proxy\/tracker\? response-body-json-jq '.data[][]?="stun.chat.bilibili.com:3478"'

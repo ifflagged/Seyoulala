@@ -7,7 +7,7 @@ DOMAIN,api.biliapi.com,REJECT,extended-matching
 DOMAIN,app.biliapi.com,REJECT,extended-matching
 DOMAIN,api.biliapi.net,REJECT,extended-matching
 DOMAIN,app.biliapi.net,REJECT,extended-matching
-AND,((DOMAIN-SUFFIX,chat.bilibili.com),(OR,((DOMAIN-KEYWORD,stun),(DOMAIN-KEYWORD,tracker)))),REJECT,pre-matching
+AND,((DOMAIN-SUFFIX,chat.bilibili.com),(OR,((DOMAIN-KEYWORD,stun),(DOMAIN-KEYWORD,tracker)))),REJECT
 
 [URL Rewrite]
 ^https?:\/\/api\.live\.bilibili\.com\/xlive\/e-commerce-interface\/v1\/ecommerce-user\/get_shopping_info\? - reject-dict
