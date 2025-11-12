@@ -1,4 +1,4 @@
-#规则数量:1363
+#规则数量:1364
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -673,6 +673,7 @@ payload:
   - DOMAIN-SUFFIX,api.poll.video.qq.com
   - DOMAIN-SUFFIX,api.waptest.taobao.com
   - DOMAIN-SUFFIX,apilog.qbb6.com
+  - DOMAIN-SUFFIX,apkevery.com
   - DOMAIN-SUFFIX,apoll.m.taobao.com
   - DOMAIN-SUFFIX,apollo.caixin.com
   - DOMAIN-SUFFIX,app-measurement.com
