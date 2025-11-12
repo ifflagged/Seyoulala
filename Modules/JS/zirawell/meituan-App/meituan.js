@@ -1,31 +1,45 @@
-/********************************
-Meituan Remove Ads - Version 1.0
-Please note that you may need to reinstall app for script to work.
 
-QuantumultX rewrite link:
-https://raw.githubusercontent.com/zirawell/R-Store/main/Rule/QuanX/Adblock/App/M/美团/rewrite/meituan.conf
+<html>
+  <head>
+    <meta content="origin" name="referrer">
+    <title>Rate limit &middot; GitHub</title>
+    <meta name="viewport" content="width=device-width">
+    <style type="text/css" media="screen">
+      body {
+        background-color: #f6f8fa;
+        color: rgba(0, 0, 0, 0.5);
+        font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+        font-size: 14px;
+        line-height: 1.5;
+      }
+      .c { margin: 50px auto; max-width: 600px; text-align: center; padding: 0 24px; }
+      a { text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      h1 { color: #24292e; line-height: 60px; font-size: 48px; font-weight: 300; margin: 0px; }
+      p { margin: 20px 0 40px; }
+      #s { margin-top: 35px; }
+      #s a {
+        color: #666666;
+        font-weight: 200;
+        font-size: 14px;
+        margin: 0 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="c">
+      <h1>Access has been restricted</h1>
+      <p>You have triggered a rate limit.<br><br>
+         Please wait a few minutes before you try again;<br>
+         in some cases this may take up to an hour.
+      </p>
+      <div id="s">
+        <a href="https://support.github.com">Contact Support</a> &mdash;
+        <a href="https://githubstatus.com">GitHub Status</a> &mdash;
+        <a href="https://twitter.com/githubstatus">@githubstatus</a>
+      </div>
+    </div>
+  </body>
+</html>
 
-********************************/
 
-const url = $request.url;
-const iconRegex1 = /\.(gif|jpg|webp|png)@(100w_100h|150w_150h|250w_250h|132w_96h|1284w|250w_0h|400w_0h|700w_0h|1200w_0h)/;
-const iconRegex2 = /%(4088h_88w|40115h_115w|4047h_189w|40157h_189w)_1e_1l\.(gif|jpg|webp|png)/;
-const urlRegex1 = /https?:\/\/p\d\.meituan\.net\/linglong\/\w+\.(gif|jpg|webp|png)$/;
-var removeFlag = true;
-if (url.includes("/linglong")) {
-    if (urlRegex1.test(url)) {
-        const header = $request.headers;
-        const traceKey = Object.keys(header).find(key => /^ai|dt|al|u/i.test(key));
-        removeFlag = traceKey ? true : false;
-    } else {
-        if (url.match(iconRegex1) || url.match(iconRegex2)) {
-            removeFlag = false;
-        }
-    }
-    
-    if (removeFlag) {
-        $done({body: "", headers: "", status: "HTTP/1.1 204 No Content"});
-    } else {
-        $done({});
-    }
-}

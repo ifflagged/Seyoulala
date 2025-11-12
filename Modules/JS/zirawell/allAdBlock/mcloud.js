@@ -1,62 +1,45 @@
-/********************************
-Cloud139 Remove Ads - Version 1.0
-Checkout Source - https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cloud139.js
-Please note that you may need to reinstall app for script to work.
 
-QuantumultX rewrite link:
-https://raw.githubusercontent.com/zirawell/R-Store/main/Rule/QuanX/Adblock/App/Z/中国移动云盘/rewrite/mcloud.conf
-
-********************************/
-
-const url = $request.url;
-if (!$response.body) $done({});
-let obj = JSON.parse($response.body);
-
-if (url.includes("ad.mcloud.139.com/advertapi/adv-filter/")) {
-  // 广告组件
-  if (obj?.body) {
-    if (obj?.body?.length > 0) {
-      let newBods = [];
-      for (let item of obj.body) {
-        if (
-            [
-              "APP-启动页",
-              "APP-我的-底部卡片",
-              "APP-我的-悬浮窗",
-              "APP-我的-文字链",
-              "APP-我的-活动推广专区",
-              "APP-相册上传界面-banner",
-              "APP-首页-云朵中心卡片"
-            ]?.includes(item?.adposname)
-        ) {
-          continue;
-        }
-        newBods.push(item);
+<html>
+  <head>
+    <meta content="origin" name="referrer">
+    <title>Rate limit &middot; GitHub</title>
+    <meta name="viewport" content="width=device-width">
+    <style type="text/css" media="screen">
+      body {
+        background-color: #f6f8fa;
+        color: rgba(0, 0, 0, 0.5);
+        font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+        font-size: 14px;
+        line-height: 1.5;
       }
-      obj.body = newBods;
-    } else {
-      obj.body = {};
-    }
-  }
-} else if (url.includes("jzts.cmpassport.com/personalized/getPushContent")) {
-  // 开屏广告
-  if (obj?.data?.length > 0) {
-    for (let item of obj.data) {
-      if (item?.actsList?.length > 0) {
-        for (let i of item.actsList) {
-          if (i?.putStartTime) {
-            i.putStartTime = "2090-12-31 00:00:00.0";
-          }
-          if (i?.putEndTime) {
-            i.putEndTime = "2090-12-31 23:59:59.0";
-          }
-          if (i?.adUrl) {
-            i.adUrl = "";
-          }
-        }
+      .c { margin: 50px auto; max-width: 600px; text-align: center; padding: 0 24px; }
+      a { text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      h1 { color: #24292e; line-height: 60px; font-size: 48px; font-weight: 300; margin: 0px; }
+      p { margin: 20px 0 40px; }
+      #s { margin-top: 35px; }
+      #s a {
+        color: #666666;
+        font-weight: 200;
+        font-size: 14px;
+        margin: 0 10px;
       }
-    }
-  }
-}
+    </style>
+  </head>
+  <body>
+    <div class="c">
+      <h1>Access has been restricted</h1>
+      <p>You have triggered a rate limit.<br><br>
+         Please wait a few minutes before you try again;<br>
+         in some cases this may take up to an hour.
+      </p>
+      <div id="s">
+        <a href="https://support.github.com">Contact Support</a> &mdash;
+        <a href="https://githubstatus.com">GitHub Status</a> &mdash;
+        <a href="https://twitter.com/githubstatus">@githubstatus</a>
+      </div>
+    </div>
+  </body>
+</html>
 
-$done({body: JSON.stringify(obj)});
+

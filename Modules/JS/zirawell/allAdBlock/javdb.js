@@ -1,60 +1,45 @@
-/********************************
-JavDB Remove Ads - Version 1.0
-CheckOut Source - https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/myBlockAds.js
-Please note that you may need to reinstall app for script to work.
 
-QuantumultX rewrite link:
-https://raw.githubusercontent.com/zirawell/R-Store/main/Rule/QuanX/Adblock/App/J/JavDB/rewrite/javdb.conf
+<html>
+  <head>
+    <meta content="origin" name="referrer">
+    <title>Rate limit &middot; GitHub</title>
+    <meta name="viewport" content="width=device-width">
+    <style type="text/css" media="screen">
+      body {
+        background-color: #f6f8fa;
+        color: rgba(0, 0, 0, 0.5);
+        font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+        font-size: 14px;
+        line-height: 1.5;
+      }
+      .c { margin: 50px auto; max-width: 600px; text-align: center; padding: 0 24px; }
+      a { text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      h1 { color: #24292e; line-height: 60px; font-size: 48px; font-weight: 300; margin: 0px; }
+      p { margin: 20px 0 40px; }
+      #s { margin-top: 35px; }
+      #s a {
+        color: #666666;
+        font-weight: 200;
+        font-size: 14px;
+        margin: 0 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="c">
+      <h1>Access has been restricted</h1>
+      <p>You have triggered a rate limit.<br><br>
+         Please wait a few minutes before you try again;<br>
+         in some cases this may take up to an hour.
+      </p>
+      <div id="s">
+        <a href="https://support.github.com">Contact Support</a> &mdash;
+        <a href="https://githubstatus.com">GitHub Status</a> &mdash;
+        <a href="https://twitter.com/githubstatus">@githubstatus</a>
+      </div>
+    </div>
+  </body>
+</html>
 
-********************************/
 
-const url = $request.url;
-if (!$response.body) $done({});
-let body = $response.body;
-try {
-    let obj = JSON.parse(body);
-    if (url.includes("/ads")) {
-        // 首页banner
-        if (obj?.data?.ads?.index_top?.length > 0) {
-            // 黑名单 移除http外链
-            obj.data.ads.index_top = obj.data.ads.index_top.filter((i) => !/https?:\/\//.test(i?.url));
-        }
-        if (obj?.data?.ads?.web_magnets_top?.length > 0) {
-            // 黑名单 移除http外链
-            obj.data.ads.web_magnets_top = obj.data.ads.web_magnets_top.filter((i) => !/https?:\/\//.test(i?.url));
-        }
-    } else if (url.includes("/startup")) {
-        // 开屏广告
-        if (obj?.data?.splash_ad) {
-            obj.data.splash_ad.enabled = false;
-            obj.data.splash_ad.overtime = 0;
-        }
-        if (obj?.data?.feedback) {
-            obj.data.feedback = {};
-        }
-        if (obj?.data?.settings?.NOTICE) {
-            delete obj.data.settings.NOTICE;
-        }
-        if (obj?.data?.user) {
-            obj.data.user.vip_expired_at = "2090-12-31T23:59:59.000+08:00";
-            obj.data.user.is_vip = true;
-        }
-    } else if (url.includes("/users")) {
-        // 伪装会员
-        if (obj?.data?.user) {
-            obj.data.user.vip_expired_at = "2090-12-31T23:59:59.000+08:00";
-            obj.data.user.is_vip = true;
-        }
-    } else if (url.includes("/movies")) {
-        // 详情页banner
-        if (obj?.data?.show_vip_banner) {
-            obj.data.show_vip_banner = false;
-        }
-    } else {
-        $done({});
-    }
-    body = JSON.stringify(obj);
-    $done({body});
-} catch (err) {
-    console.log(`JavDB, 出现异常: ` + err);
-}

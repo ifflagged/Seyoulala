@@ -1,40 +1,45 @@
-/********************************
-PeiYinXiu Remove Ads - Version 1.0 
-Date - 2024-08-28 08:57:11
-Checkout Source - https://kelee.one/Resource/Script/DubbingShow/DubbingShow_remove_ads.js
-Please note that you may need to reinstall app for script to work.
 
-QuantumultX rewrite link:
-https://raw.githubusercontent.com/zirawell/R-Store/main/Rule/QuanX/Adblock/App/P/配音秀/rewrite/peiyinxiu.conf
+<html>
+  <head>
+    <meta content="origin" name="referrer">
+    <title>Rate limit &middot; GitHub</title>
+    <meta name="viewport" content="width=device-width">
+    <style type="text/css" media="screen">
+      body {
+        background-color: #f6f8fa;
+        color: rgba(0, 0, 0, 0.5);
+        font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+        font-size: 14px;
+        line-height: 1.5;
+      }
+      .c { margin: 50px auto; max-width: 600px; text-align: center; padding: 0 24px; }
+      a { text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      h1 { color: #24292e; line-height: 60px; font-size: 48px; font-weight: 300; margin: 0px; }
+      p { margin: 20px 0 40px; }
+      #s { margin-top: 35px; }
+      #s a {
+        color: #666666;
+        font-weight: 200;
+        font-size: 14px;
+        margin: 0 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="c">
+      <h1>Access has been restricted</h1>
+      <p>You have triggered a rate limit.<br><br>
+         Please wait a few minutes before you try again;<br>
+         in some cases this may take up to an hour.
+      </p>
+      <div id="s">
+        <a href="https://support.github.com">Contact Support</a> &mdash;
+        <a href="https://githubstatus.com">GitHub Status</a> &mdash;
+        <a href="https://twitter.com/githubstatus">@githubstatus</a>
+      </div>
+    </div>
+  </body>
+</html>
 
-********************************/
 
-const url = $request.url;
-const body = $response.body;
-
-if (!body) $done({});
-
-function removeDataWithKeyword(array) {
-    if (Array.isArray(array)) {
-        for (let i = array.length - 1; i >= 0; i--) {
-            if (array[i].data && array[i].data.includes("金币哦")) {
-                array.splice(i, 1);
-            }
-        }
-    }
-}
-
-try {
-    let obj = JSON.parse(body);
-
-    if (url.includes("/Api/Film/GetConfigValue")) {
-        if (obj.data && Array.isArray(obj.data)) {
-            removeDataWithKeyword(obj.data);
-        }
-    }
-
-    $done({body: JSON.stringify(obj)});
-} catch (e) {
-    console.error("JSON parsing error:", e);
-    $done({});
-}

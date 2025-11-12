@@ -1,55 +1,45 @@
-/********************************
-HaierZJ Remove Ads - Version 1.0
-Please note that you may need to reinstall app for script to work.
 
-QuantumultX rewrite link:
-https://raw.githubusercontent.com/zirawell/R-Store/main/Rule/QuanX/Adblock/App/H/海尔智家/rewrite/ehaier.conf
+<html>
+  <head>
+    <meta content="origin" name="referrer">
+    <title>Rate limit &middot; GitHub</title>
+    <meta name="viewport" content="width=device-width">
+    <style type="text/css" media="screen">
+      body {
+        background-color: #f6f8fa;
+        color: rgba(0, 0, 0, 0.5);
+        font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+        font-size: 14px;
+        line-height: 1.5;
+      }
+      .c { margin: 50px auto; max-width: 600px; text-align: center; padding: 0 24px; }
+      a { text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      h1 { color: #24292e; line-height: 60px; font-size: 48px; font-weight: 300; margin: 0px; }
+      p { margin: 20px 0 40px; }
+      #s { margin-top: 35px; }
+      #s a {
+        color: #666666;
+        font-weight: 200;
+        font-size: 14px;
+        margin: 0 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="c">
+      <h1>Access has been restricted</h1>
+      <p>You have triggered a rate limit.<br><br>
+         Please wait a few minutes before you try again;<br>
+         in some cases this may take up to an hour.
+      </p>
+      <div id="s">
+        <a href="https://support.github.com">Contact Support</a> &mdash;
+        <a href="https://githubstatus.com">GitHub Status</a> &mdash;
+        <a href="https://twitter.com/githubstatus">@githubstatus</a>
+      </div>
+    </div>
+  </body>
+</html>
 
-********************************/
 
-if (!$response.body) $done({});
-const url = $request.url;
-let obj = JSON.parse($response.body);
-
-if (url.includes("/get/resourceBag")) {
-  if (obj.data) {
-    obj.data.resource.md5 = null;
-  }
-}
-
-if (url.includes("/resource/confFile/")) {
-  if (obj.id) {
-    if (obj.id === 595 && obj.detail) {
-      let item = obj.detail;
-      item = item.filter(a =>
-              a.aliasName === "705首页顶部" ||
-              // a.aliasName === "718-天气"
-              a.aliasName === "版块标题" ||
-              a.aliasName === "图文导航" ||
-              a.aliasName === "705消息通知"
-          // a.aliasName === "705活动标题"
-          // a.aliasName === "魔方"
-          // a.aliasName === "705生活标题"
-          // a.aliasName === "魔方"
-          // a.aliasName === "双排瀑布流"
-      );
-    } else if (obj.id === 169 && obj.detail) {
-      let item = obj.detail[0].na.items;
-      item = item.filter(b =>
-          b.na.name === "首页" ||
-          b.na.name === "智家" ||
-          b.na.name === "我的"
-      );
-    }
-  } else if (obj.length === 1) {
-    let item = obj[0].na.items;
-    item = item.filter(c =>
-        c.na.name === "首页" ||
-        c.na.name === "智家" ||
-        c.na.name === "我的"
-    );
-  }
-}
-
-body = JSON.stringify(obj);
-$done({body});

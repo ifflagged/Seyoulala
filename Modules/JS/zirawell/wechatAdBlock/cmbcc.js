@@ -1,37 +1,45 @@
-/********************************
-CMBCreditCard Remove Ads - Version 1.0
-Please note that you may need to reinstall app for script to work.
 
-QuantumultX rewrite link:
-https://raw.githubusercontent.com/zirawell/R-Store/main/Rule/QuanX/Adblock/Applet/Wechat/Z/招行信用卡/rewrite/cmbcc.conf
+<html>
+  <head>
+    <meta content="origin" name="referrer">
+    <title>Rate limit &middot; GitHub</title>
+    <meta name="viewport" content="width=device-width">
+    <style type="text/css" media="screen">
+      body {
+        background-color: #f6f8fa;
+        color: rgba(0, 0, 0, 0.5);
+        font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+        font-size: 14px;
+        line-height: 1.5;
+      }
+      .c { margin: 50px auto; max-width: 600px; text-align: center; padding: 0 24px; }
+      a { text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      h1 { color: #24292e; line-height: 60px; font-size: 48px; font-weight: 300; margin: 0px; }
+      p { margin: 20px 0 40px; }
+      #s { margin-top: 35px; }
+      #s a {
+        color: #666666;
+        font-weight: 200;
+        font-size: 14px;
+        margin: 0 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="c">
+      <h1>Access has been restricted</h1>
+      <p>You have triggered a rate limit.<br><br>
+         Please wait a few minutes before you try again;<br>
+         in some cases this may take up to an hour.
+      </p>
+      <div id="s">
+        <a href="https://support.github.com">Contact Support</a> &mdash;
+        <a href="https://githubstatus.com">GitHub Status</a> &mdash;
+        <a href="https://twitter.com/githubstatus">@githubstatus</a>
+      </div>
+    </div>
+  </body>
+</html>
 
-********************************/
 
-const url = $request.url;
-if (!$response.body) $done({});
-let body = $response.body;
-
-if (url.includes("ResourceBits")) {
-  let obj = JSON.parse(body);
-  if (obj?.data?.metaData?.length > 0) {
-    obj.data.metaData = obj.data.metaData.filter(item => item.key !== "banner");
-  }
-  if (obj?.data?.RIGHTRED) {
-    delete obj.data.RIGHTRED;
-  }
-  if (obj?.data?.HOT) {
-    delete obj.data.HOT;
-  }
-  if (obj?.data?.F1) {
-    delete obj.data.F1;
-  }
-  if (obj?.data?.BANNER) {
-    delete obj.data.BANNER;
-  }
-
-  body = JSON.stringify(obj);
-} else if (url.includes("get-page-resource")) {
-  body = body.replace(/_AD/g, "_AD0");
-}
-
-$done({body});

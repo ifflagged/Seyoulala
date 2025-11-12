@@ -1,34 +1,45 @@
-/********************************
-Tuhu Remove Ads - Version 1.0
-Please note that you may need to reinstall app for script to work.
 
-QuantumultX rewrite link:
-https://raw.githubusercontent.com/zirawell/R-Store/main/Rule/QuanX/Adblock/App/T/途虎养车/rewrite/tuhu.conf
-
-********************************/
-
-const url = $request.url;
-if (!$response.body) $done({});
-let obj = JSON.parse($response.body);
-
-if (url.indexOf("/homePage/getHomePageInfo") != -1) {
-  const moduleIdDelete = [120, 810, 119, 819, 7, 852, 122, 801, 13, 688, 502, 668, 93, 53, 87, 650, 652];
-  obj.data.cmsInfo.cmsList = obj.data.cmsInfo.cmsList.filter(item => !moduleIdDelete.includes(item.moduleId));
-} else if (url.indexOf("/personalCenter/getCmsModuleList") != -1) {
-  const idsToDelete = [90, 17, 13, 35, 10, 7];
-  const mainTitlesToDelete = ["保养超值卡", "特价团购", "合作加盟", "抖音团购券兑换", "集团客户", "美团兑换", "评价途虎"];
-  obj.data.cmsList = obj.data.cmsList.filter(item => !idsToDelete.includes(item.moduleTypeId) && !mainTitlesToDelete.includes(item.mainTitle));
-} else if (url.indexOf("/shopTab/getModuleForC") != -1) {
-  delete obj.data.bannersList;
-  if (obj && obj.data && obj.data.cmsList) {
-    obj.data.cmsList = obj.data.cmsList.reduce((acc, module) => {
-      if (module.bottomMargin !== 12) {
-        acc.push(module);
+<html>
+  <head>
+    <meta content="origin" name="referrer">
+    <title>Rate limit &middot; GitHub</title>
+    <meta name="viewport" content="width=device-width">
+    <style type="text/css" media="screen">
+      body {
+        background-color: #f6f8fa;
+        color: rgba(0, 0, 0, 0.5);
+        font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+        font-size: 14px;
+        line-height: 1.5;
       }
-      return acc;
-    }, []);
-  }
-} else {
-  $done({});
-}
-$done({body: JSON.stringify(obj)});
+      .c { margin: 50px auto; max-width: 600px; text-align: center; padding: 0 24px; }
+      a { text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      h1 { color: #24292e; line-height: 60px; font-size: 48px; font-weight: 300; margin: 0px; }
+      p { margin: 20px 0 40px; }
+      #s { margin-top: 35px; }
+      #s a {
+        color: #666666;
+        font-weight: 200;
+        font-size: 14px;
+        margin: 0 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="c">
+      <h1>Access has been restricted</h1>
+      <p>You have triggered a rate limit.<br><br>
+         Please wait a few minutes before you try again;<br>
+         in some cases this may take up to an hour.
+      </p>
+      <div id="s">
+        <a href="https://support.github.com">Contact Support</a> &mdash;
+        <a href="https://githubstatus.com">GitHub Status</a> &mdash;
+        <a href="https://twitter.com/githubstatus">@githubstatus</a>
+      </div>
+    </div>
+  </body>
+</html>
+
+

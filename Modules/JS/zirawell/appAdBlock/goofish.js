@@ -1,41 +1,45 @@
-/********************************
-Goofish Remove Ads - Version 1.0
-Checkout Source - https://github.com/fmz200/wool_scripts/raw/main/Scripts/xianyu/xianyu_ads.js
-Please note that you may need to reinstall app for script to work.
 
-QuantumultX rewrite link:
-https://raw.githubusercontent.com/zirawell/R-Store/main/Rule/QuanX/Adblock/App/X/闲鱼/rewrite/goofish.conf
+<html>
+  <head>
+    <meta content="origin" name="referrer">
+    <title>Rate limit &middot; GitHub</title>
+    <meta name="viewport" content="width=device-width">
+    <style type="text/css" media="screen">
+      body {
+        background-color: #f6f8fa;
+        color: rgba(0, 0, 0, 0.5);
+        font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+        font-size: 14px;
+        line-height: 1.5;
+      }
+      .c { margin: 50px auto; max-width: 600px; text-align: center; padding: 0 24px; }
+      a { text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      h1 { color: #24292e; line-height: 60px; font-size: 48px; font-weight: 300; margin: 0px; }
+      p { margin: 20px 0 40px; }
+      #s { margin-top: 35px; }
+      #s a {
+        color: #666666;
+        font-weight: 200;
+        font-size: 14px;
+        margin: 0 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="c">
+      <h1>Access has been restricted</h1>
+      <p>You have triggered a rate limit.<br><br>
+         Please wait a few minutes before you try again;<br>
+         in some cases this may take up to an hour.
+      </p>
+      <div id="s">
+        <a href="https://support.github.com">Contact Support</a> &mdash;
+        <a href="https://githubstatus.com">GitHub Status</a> &mdash;
+        <a href="https://twitter.com/githubstatus">@githubstatus</a>
+      </div>
+    </div>
+  </body>
+</html>
 
-********************************/
 
-const url = $request.url;
-if (!$response.body) $done({});
-let obj = JSON.parse($response.body);
-
-if (url.includes("/mtop.taobao.idlehome.home.nextfresh")) {
-  // 可能存在的首页标签
-  delete obj.data.widgetReturnDO;
-  // 删除banner图
-  delete obj.data.bannerReturnDO;
-  // 信息流广告
-  if (obj.data?.sections) {
-    obj.data.sections = obj.data.sections.filter(section => {
-      return !(section.data && (section.data.bizType === "AD" || section.data.bizType === "homepage"));
-    });
-
-    let excludeNames = ['fish_home_yunying_card_d3', 'idlefish_seafood_market', 'fish_home_chat_room'];
-    obj.data.sections = obj.data.sections.filter(function (section) {
-      return !excludeNames.includes(section.template.name);
-    });
-  }
-} else if (url.includes("/mtop.taobao.idle.local.home")) {
-  if (obj.data?.sections) {
-    obj.data.sections = obj.data.sections.filter(section => {
-      return !(section.data && section.data.bizType === "AD");
-    });
-  }
-} else if (url.includes("/mtop.taobao.idle.home.whale.modulet")) {
-  delete obj.data.container.sections;
-}
-
-$done({body: JSON.stringify(obj)});

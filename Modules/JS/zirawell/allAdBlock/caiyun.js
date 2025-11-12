@@ -1,50 +1,45 @@
-/********************************
-Caiyun Remove Ads - Version 1.0
-Checkout Source - https://kelee.one/Resource/Script/ColorfulClouds/ColorfulClouds_remove_ads.js
-Please note that you may need to reinstall app for script to work.
 
-QuantumultX rewrite link:
-https://raw.githubusercontent.com/zirawell/R-Store/main/Rule/QuanX/Adblock/App/C/彩云天气/rewrite/caiyunapp.conf
-
-********************************/
-
-const url = $request.url;
-if (!$response.body) $done({});
-let obj = JSON.parse($response.body);
-if (url.includes("/activity")) {
-  // 彩云推广
-  if (["&type_id=A03&"]?.includes(url)) {
-    // 彩云AI
-    if (obj?.interval) {
-      obj.interval = 2592000; // 30天===2592000秒
-    }
-    if (obj?.activities?.length > 0) {
-      let newActs = [];
-      for (let item of obj.activities) {
-        if (item?.type === "tabbar" && item?.feature) {
-          item.feature = false;
-        } else {
-          continue;
-        }
-        newActs.push(item);
+<html>
+  <head>
+    <meta content="origin" name="referrer">
+    <title>Rate limit &middot; GitHub</title>
+    <meta name="viewport" content="width=device-width">
+    <style type="text/css" media="screen">
+      body {
+        background-color: #f6f8fa;
+        color: rgba(0, 0, 0, 0.5);
+        font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+        font-size: 14px;
+        line-height: 1.5;
       }
-      obj.activities = newActs;
-    }
-  } else {
-    // 其他请求
-    obj = {
-      status: "ok",
-      interval: 2592000,
-      id: "1",
-      activities: [
-        {
-          items: [{text: "", image_light: "", link: "", activity_name: "", id: "1", image_dark: ""}],
-          type: "activity_icon",
-          name: "",
-          carousel: "5000"
-        }
-      ]
-    };
-  }
-}
-$done({body: JSON.stringify(obj)});
+      .c { margin: 50px auto; max-width: 600px; text-align: center; padding: 0 24px; }
+      a { text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      h1 { color: #24292e; line-height: 60px; font-size: 48px; font-weight: 300; margin: 0px; }
+      p { margin: 20px 0 40px; }
+      #s { margin-top: 35px; }
+      #s a {
+        color: #666666;
+        font-weight: 200;
+        font-size: 14px;
+        margin: 0 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="c">
+      <h1>Access has been restricted</h1>
+      <p>You have triggered a rate limit.<br><br>
+         Please wait a few minutes before you try again;<br>
+         in some cases this may take up to an hour.
+      </p>
+      <div id="s">
+        <a href="https://support.github.com">Contact Support</a> &mdash;
+        <a href="https://githubstatus.com">GitHub Status</a> &mdash;
+        <a href="https://twitter.com/githubstatus">@githubstatus</a>
+      </div>
+    </div>
+  </body>
+</html>
+
+

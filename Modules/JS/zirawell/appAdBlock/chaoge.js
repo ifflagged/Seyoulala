@@ -1,35 +1,45 @@
-/********************************
-Chaoge Remove Ads - Version 1.0
-Please note that you may need to reinstall app for script to work.
 
-QuantumultX rewrite link:
-https://raw.githubusercontent.com/zirawell/R-Store/main/Rule/QuanX/Adblock/App/C/超格教育/rewrite/chaoge.conf
-
-********************************/
-
-const url = $request.url;
-if (!$response.body) $done({});
-let obj = JSON.parse($response.body);
-
-if (url.includes("/getPageAdList")) {
-  if (obj.data?.ad_list?.length > 0) {
-    obj.data.ad_list = obj.data.ad_list.filter(list => list.page_position !== "pop");
-  }
-  
-} else if (url.includes("/getAppBanner")) {
-  const queryParam = $request.url.split("?")[1];
-  if (queryParam) {
-    const params = {};
-    for (param of queryParam.split("&")) {
-        params[param.split("=")[0]] = param.split("=")[1];
-    }
-    if (params.adv_flag === "1") {
-      if (obj.data?.length > 0) {
-        obj.data = obj.data.filter(item => item.adv_flag !== "1");
+<html>
+  <head>
+    <meta content="origin" name="referrer">
+    <title>Rate limit &middot; GitHub</title>
+    <meta name="viewport" content="width=device-width">
+    <style type="text/css" media="screen">
+      body {
+        background-color: #f6f8fa;
+        color: rgba(0, 0, 0, 0.5);
+        font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+        font-size: 14px;
+        line-height: 1.5;
       }
-    }
-  }
-}
-$done({body: JSON.stringify(obj)});
+      .c { margin: 50px auto; max-width: 600px; text-align: center; padding: 0 24px; }
+      a { text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      h1 { color: #24292e; line-height: 60px; font-size: 48px; font-weight: 300; margin: 0px; }
+      p { margin: 20px 0 40px; }
+      #s { margin-top: 35px; }
+      #s a {
+        color: #666666;
+        font-weight: 200;
+        font-size: 14px;
+        margin: 0 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="c">
+      <h1>Access has been restricted</h1>
+      <p>You have triggered a rate limit.<br><br>
+         Please wait a few minutes before you try again;<br>
+         in some cases this may take up to an hour.
+      </p>
+      <div id="s">
+        <a href="https://support.github.com">Contact Support</a> &mdash;
+        <a href="https://githubstatus.com">GitHub Status</a> &mdash;
+        <a href="https://twitter.com/githubstatus">@githubstatus</a>
+      </div>
+    </div>
+  </body>
+</html>
 
 

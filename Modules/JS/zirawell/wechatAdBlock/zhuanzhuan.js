@@ -1,55 +1,45 @@
-/********************************
-Zhuanzhuan Remove Ads - Version 2.0
-Reference Source - https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/zhuanzhuan/zhuanzhuan.js
-Please note that you may need to reinstall app for script to work.
 
-QuantumultX rewrite link:
-https://raw.githubusercontent.com/zirawell/R-Store/main/Rule/QuanX/Adblock/App/Z/转转/rewrite/zhuanzhuan.conf
-https://raw.githubusercontent.com/zirawell/R-Store/main/Rule/QuanX/Adblock/Applet/Wechat/Z/转转/rewrite/zhuanzhuan.conf
+<html>
+  <head>
+    <meta content="origin" name="referrer">
+    <title>Rate limit &middot; GitHub</title>
+    <meta name="viewport" content="width=device-width">
+    <style type="text/css" media="screen">
+      body {
+        background-color: #f6f8fa;
+        color: rgba(0, 0, 0, 0.5);
+        font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+        font-size: 14px;
+        line-height: 1.5;
+      }
+      .c { margin: 50px auto; max-width: 600px; text-align: center; padding: 0 24px; }
+      a { text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      h1 { color: #24292e; line-height: 60px; font-size: 48px; font-weight: 300; margin: 0px; }
+      p { margin: 20px 0 40px; }
+      #s { margin-top: 35px; }
+      #s a {
+        color: #666666;
+        font-weight: 200;
+        font-size: 14px;
+        margin: 0 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="c">
+      <h1>Access has been restricted</h1>
+      <p>You have triggered a rate limit.<br><br>
+         Please wait a few minutes before you try again;<br>
+         in some cases this may take up to an hour.
+      </p>
+      <div id="s">
+        <a href="https://support.github.com">Contact Support</a> &mdash;
+        <a href="https://githubstatus.com">GitHub Status</a> &mdash;
+        <a href="https://twitter.com/githubstatus">@githubstatus</a>
+      </div>
+    </div>
+  </body>
+</html>
 
-********************************/
 
-const url = $request.url;
-if (!$response.body) $done({});
-let obj = JSON.parse($response.body);
-
-// App去广告
-if (url.indexOf("/transfer/getmyprofilev") != -1) {
-    try {
-        // 删除“测一测，你的手机能卖多少钱”
-        delete obj.respData.bmNewInfo;
-        obj.respData.itemGroupList = obj.respData.itemGroupList.map(itemGroup => {
-            // 去掉“我的钱包”
-            if (itemGroup.groupType === 15) {
-                return null; // 将groupType为15的元素置为null
-            } else if (itemGroup.groupType === 3) { // 推荐工具只保留4个
-                itemGroup.itemList = itemGroup.itemList.slice(0, 4);
-            }
-            return itemGroup;
-        }).filter(Boolean); // 过滤掉为null的元素
-    } catch (error) {
-        console.log('zhuanzhuan.js 脚本运行出现错误，部分内容未生效⚠️');
-        console.log('错误信息：' + error.message);
-    }
-// 小程序去广告
-} else if (url.indexOf("/zzlogic/mywxcontinenthomepage") != -1) {
-    if (obj?.respData?.popWin) {
-        delete obj.respData.popWin;
-    }
-    if (obj?.respData?.pendant) {
-        delete obj.respData.pendant;
-    }
-    if (obj?.respData?.leftPendant) {
-        delete obj.respData.leftPendant;
-    }
-    if (obj?.respData?.rightOpera) {
-        delete obj.respData.rightOpera;
-    }
-    if (obj?.respData?.rightOpera2) {
-        delete obj.respData.rightOpera2;
-    }
-} else {
-    $done({});
-}
-
-$done({body: JSON.stringify(obj)});

@@ -1,35 +1,45 @@
-/********************************
-12306 Remove Ads - Version 1.0
-Please note that you may need to reinstall app for script to work.
 
-QuantumultX rewrite link:
-https://raw.githubusercontent.com/zirawell/R-Store/main/Rule/QuanX/Adblock/App/0-9/12306/rewrite/12306.conf
+<html>
+  <head>
+    <meta content="origin" name="referrer">
+    <title>Rate limit &middot; GitHub</title>
+    <meta name="viewport" content="width=device-width">
+    <style type="text/css" media="screen">
+      body {
+        background-color: #f6f8fa;
+        color: rgba(0, 0, 0, 0.5);
+        font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+        font-size: 14px;
+        line-height: 1.5;
+      }
+      .c { margin: 50px auto; max-width: 600px; text-align: center; padding: 0 24px; }
+      a { text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      h1 { color: #24292e; line-height: 60px; font-size: 48px; font-weight: 300; margin: 0px; }
+      p { margin: 20px 0 40px; }
+      #s { margin-top: 35px; }
+      #s a {
+        color: #666666;
+        font-weight: 200;
+        font-size: 14px;
+        margin: 0 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="c">
+      <h1>Access has been restricted</h1>
+      <p>You have triggered a rate limit.<br><br>
+         Please wait a few minutes before you try again;<br>
+         in some cases this may take up to an hour.
+      </p>
+      <div id="s">
+        <a href="https://support.github.com">Contact Support</a> &mdash;
+        <a href="https://githubstatus.com">GitHub Status</a> &mdash;
+        <a href="https://twitter.com/githubstatus">@githubstatus</a>
+      </div>
+    </div>
+  </body>
+</html>
 
-********************************/
 
-const url = $request.url;
-const header = $request.headers;
-const headopt = header["Operation-Type"] || header["operation-type"];
-
-const blockList = [
-  // "com.cars.otsmobile.bangbangSafe.deciveInfo", // 设备序列号
-  // "com.cars.otsmobile.checkLoginStatus", // 登录信息
-  // "com.cars.otsmobile.city",
-  // "com.cars.otsmobile.initCountry",
-  // "com.cars.otsmobile.initNewSysCache",
-  // "com.cars.otsmobile.initProvince",
-  //"com.cars.otsmobile.integration.activityBanner", // 活动横幅
-  "com.cars.otsmobile.memberInfo.getMemberQa", // 铁路会员 常见问题
-  // "com.cars.otsmobile.memberInfo.integrationHomeInit", // 铁路会员 会员信息
-  // "com.cars.otsmobile.newHomePage.getWeatherByStationCode", // 天气信息
-  "com.cars.otsmobile.newHomePage.initData", // 热门资讯
-  "com.cars.otsmobile.newHomePageBussData" // 商品信息流
-  // "com.cars.otsmobile.newHomePageRefresh",
-  // "com.cars.otsmobile.travelPage.initData", // 出行服务
-];
-
-if (blockList?.includes(headopt)) {
-  $done({status: "HTTP/1.1 204 No Content"});
-} else {
-  $done({});
-}

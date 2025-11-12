@@ -1,45 +1,45 @@
-/********************************
-PPX Remove Ads - Version 1.0
-Please note that you may need to reinstall app for script to work.
 
-QuantumultX rewrite link:
-https://raw.githubusercontent.com/zirawell/R-Store/main/Rule/QuanX/Adblock/App/P/皮皮虾/rewrite/ppx.conf
+<html>
+  <head>
+    <meta content="origin" name="referrer">
+    <title>Rate limit &middot; GitHub</title>
+    <meta name="viewport" content="width=device-width">
+    <style type="text/css" media="screen">
+      body {
+        background-color: #f6f8fa;
+        color: rgba(0, 0, 0, 0.5);
+        font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+        font-size: 14px;
+        line-height: 1.5;
+      }
+      .c { margin: 50px auto; max-width: 600px; text-align: center; padding: 0 24px; }
+      a { text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      h1 { color: #24292e; line-height: 60px; font-size: 48px; font-weight: 300; margin: 0px; }
+      p { margin: 20px 0 40px; }
+      #s { margin-top: 35px; }
+      #s a {
+        color: #666666;
+        font-weight: 200;
+        font-size: 14px;
+        margin: 0 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="c">
+      <h1>Access has been restricted</h1>
+      <p>You have triggered a rate limit.<br><br>
+         Please wait a few minutes before you try again;<br>
+         in some cases this may take up to an hour.
+      </p>
+      <div id="s">
+        <a href="https://support.github.com">Contact Support</a> &mdash;
+        <a href="https://githubstatus.com">GitHub Status</a> &mdash;
+        <a href="https://twitter.com/githubstatus">@githubstatus</a>
+      </div>
+    </div>
+  </body>
+</html>
 
-********************************/
 
-const url = $request.url;
-const scriptEnvironment = typeof $task != 'undefined' ? 'Surge' : (typeof $loon != 'undefined' ? 'Loon' : (typeof $httpClient != 'undefined' ? 'Qx' : 'Unknown'));
-
-if (!$response.body || scriptEnvironment === 'Unknown') {
-  $done({});
-}
-
-let obj = JSON.parse($response.body);
-
-function filterProfileEntrances() {
-  let profileEntrances = obj.data.profile_entrances;
-  let titlesToFilter = ['放心借', '创作中心', '原创特权', '小黑屋', '我的订单'];
-  obj.data.profile_entrances = profileEntrances.filter(entry => !titlesToFilter.includes(entry.title));
-  fixPos(obj.data.profile_entrances);
-}
-
-function filterChannelModel() {
-  if (obj.data.channel_model) {
-    obj.data.channel_model = obj.data.channel_model.filter(item => ["feed", "image_text"].includes(item.event_name));
-    fixPos(obj.data.channel_model);
-  }
-}
-
-function fixPos(arr) {
-  for (let i = 0; i < arr.length; i++) {
-    arr[i].pos = i + 1;
-  }
-}
-
-if (url.includes("/bds/user/check_in/")) {
-  filterProfileEntrances();
-} else if (url.includes("/bds/feed/channel_list/")) {
-  filterChannelModel();
-}
-
-$done({body: JSON.stringify(obj)});

@@ -1,55 +1,45 @@
-/********************************
-Douyu Remove Ads - Version 1.0
-Please note that you may need to reinstall app for script to work.
-Checkout Source - https://kelee.one/Resource/Script/Douyu/Douyu_remove_ads.js
 
-QuantumultX rewrite link:
-https://raw.githubusercontent.com/zirawell/R-Store/main/Rule/QuanX/Adblock/App/D/斗鱼直播/rewrite/douyu.conf
-
-********************************/
-
-const url = $request.url;
-if (!$response.body) $done({});
-let obj = JSON.parse($response.body);
-
-function removeAds(data) {
-  return data.filter(item => !item.ad);
-}
-
-if (url.includes("/getRecV3")) {
-  if (obj.data && obj.data.rec_cont) {
-    obj.data.rec_cont = removeAds(obj.data.rec_cont);
-  }
-  if (obj.data && obj.data.rec_card) {
-    for (let i in obj.data.rec_card) {
-      var v = obj.data.rec_card[i]
-      if (v.card_banner) {
-        v.card_banner = removeAds(v.card_banner)
+<html>
+  <head>
+    <meta content="origin" name="referrer">
+    <title>Rate limit &middot; GitHub</title>
+    <meta name="viewport" content="width=device-width">
+    <style type="text/css" media="screen">
+      body {
+        background-color: #f6f8fa;
+        color: rgba(0, 0, 0, 0.5);
+        font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+        font-size: 14px;
+        line-height: 1.5;
       }
-    }
-  }
-} else if (url.includes("/nc/m/list")) {
-  if (obj.data) {
-    // 直播间悬浮窗
-    delete obj.data.pendant_a;
-    // 直播间宝箱
-    delete obj.data.entrance_d;
-  }
-} else if (url.includes("keyCodeSet=flow_config")) {
-  const keysToZero = {
-    "greatGodGameSitterSwitch": 0, // 大神游戏陪玩
-    "followMoreAnchorEntrance": 0, // 关注更多主播入口
-    "sdklivebanner": 0, // 直播横幅
-    "homeActFloatSwitch": 0, // 首页活动悬浮窗
-    "bringGoodsSwitch": 0, // 带货开关
-    "qqGameSwitch": 0 // QQ游戏
-  };
-  if (obj.data) {
-    for (let key in keysToZero) {
-      if (obj.data.hasOwnProperty(key)) {
-        obj.data[key] = keysToZero[key];
+      .c { margin: 50px auto; max-width: 600px; text-align: center; padding: 0 24px; }
+      a { text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      h1 { color: #24292e; line-height: 60px; font-size: 48px; font-weight: 300; margin: 0px; }
+      p { margin: 20px 0 40px; }
+      #s { margin-top: 35px; }
+      #s a {
+        color: #666666;
+        font-weight: 200;
+        font-size: 14px;
+        margin: 0 10px;
       }
-    }
-  }
-}
-$done({body: JSON.stringify(obj)});
+    </style>
+  </head>
+  <body>
+    <div class="c">
+      <h1>Access has been restricted</h1>
+      <p>You have triggered a rate limit.<br><br>
+         Please wait a few minutes before you try again;<br>
+         in some cases this may take up to an hour.
+      </p>
+      <div id="s">
+        <a href="https://support.github.com">Contact Support</a> &mdash;
+        <a href="https://githubstatus.com">GitHub Status</a> &mdash;
+        <a href="https://twitter.com/githubstatus">@githubstatus</a>
+      </div>
+    </div>
+  </body>
+</html>
+
+

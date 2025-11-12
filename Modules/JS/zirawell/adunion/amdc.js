@@ -1,38 +1,45 @@
-/********************************
-AMDC - Version 1.0
-Please note that you may need to reinstall app for script to work.
 
-QuantumultX rewrite link:
-https://raw.githubusercontent.com/zirawell/R-Store/main/Rule/QuanX/Adblock/App/#/广告联盟/rewrite/adUnion.conf
+<html>
+  <head>
+    <meta content="origin" name="referrer">
+    <title>Rate limit &middot; GitHub</title>
+    <meta name="viewport" content="width=device-width">
+    <style type="text/css" media="screen">
+      body {
+        background-color: #f6f8fa;
+        color: rgba(0, 0, 0, 0.5);
+        font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+        font-size: 14px;
+        line-height: 1.5;
+      }
+      .c { margin: 50px auto; max-width: 600px; text-align: center; padding: 0 24px; }
+      a { text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      h1 { color: #24292e; line-height: 60px; font-size: 48px; font-weight: 300; margin: 0px; }
+      p { margin: 20px 0 40px; }
+      #s { margin-top: 35px; }
+      #s a {
+        color: #666666;
+        font-weight: 200;
+        font-size: 14px;
+        margin: 0 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="c">
+      <h1>Access has been restricted</h1>
+      <p>You have triggered a rate limit.<br><br>
+         Please wait a few minutes before you try again;<br>
+         in some cases this may take up to an hour.
+      </p>
+      <div id="s">
+        <a href="https://support.github.com">Contact Support</a> &mdash;
+        <a href="https://githubstatus.com">GitHub Status</a> &mdash;
+        <a href="https://twitter.com/githubstatus">@githubstatus</a>
+      </div>
+    </div>
+  </body>
+</html>
 
-Surge module link:
-https://raw.githubusercontent.com/zirawell/R-Store/main/Rule/Surge/Adblock/App/#/广告联盟/adUnion.sgmodule
-********************************/
 
-const url = $request.url;
-const header = $request.headers;
-const ua = header["User-Agent"] || header["user-agent"];
-
-if (url.includes("/amdc/mobileDispatch")) {
-  // 高德地图
-  if (ua.includes("AMapiPhone") ||
-      // 阿里巴巴
-      ua.includes("Alibaba") ||
-      // 菜鸟
-      ua.includes("Cainiao4iPhone") ||
-      // 飞猪旅行
-      ua.includes("%E9%A3%9E%E7%8C%AA%E6%97%85%E8%A1%8C") ||
-      // 盒马
-      ua.includes("Hema4iPhone") ||
-      // 闲鱼
-      //ua.includes("%E9%97%B2%E9%B1%BC") ||
-      // 淘宝
-      ua.includes("%E6%B7%98%E5%AE%9D")
-  ) {
-    $done({status: "HTTP/1.1 404 Not Found"});
-  } else {
-    $done({});
-  }
-} else {
-  $done({});
-}

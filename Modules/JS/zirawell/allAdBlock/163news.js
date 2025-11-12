@@ -1,41 +1,45 @@
-/********************************
-163News Remove Ads - Version 1.0
-Please note that you may need to reinstall app for script to work.
 
-QuantumultX rewrite link:
-https://raw.githubusercontent.com/zirawell/R-Store/main/Rule/QuanX/Adblock/App/W/网易新闻/rewrite/163news.conf
+<html>
+  <head>
+    <meta content="origin" name="referrer">
+    <title>Rate limit &middot; GitHub</title>
+    <meta name="viewport" content="width=device-width">
+    <style type="text/css" media="screen">
+      body {
+        background-color: #f6f8fa;
+        color: rgba(0, 0, 0, 0.5);
+        font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+        font-size: 14px;
+        line-height: 1.5;
+      }
+      .c { margin: 50px auto; max-width: 600px; text-align: center; padding: 0 24px; }
+      a { text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      h1 { color: #24292e; line-height: 60px; font-size: 48px; font-weight: 300; margin: 0px; }
+      p { margin: 20px 0 40px; }
+      #s { margin-top: 35px; }
+      #s a {
+        color: #666666;
+        font-weight: 200;
+        font-size: 14px;
+        margin: 0 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="c">
+      <h1>Access has been restricted</h1>
+      <p>You have triggered a rate limit.<br><br>
+         Please wait a few minutes before you try again;<br>
+         in some cases this may take up to an hour.
+      </p>
+      <div id="s">
+        <a href="https://support.github.com">Contact Support</a> &mdash;
+        <a href="https://githubstatus.com">GitHub Status</a> &mdash;
+        <a href="https://twitter.com/githubstatus">@githubstatus</a>
+      </div>
+    </div>
+  </body>
+</html>
 
-********************************/
 
-if (!$response.body) $done({});
-const url = $request.url;
-let body = $response.body;
-let obj = JSON.parse(body);
-if (url.includes("/feed/dynamic/headline-list")) {
-  // 信息流
-  if (obj?.data?.items?.length > 0) {
-    // 移除置顶新闻
-    obj.data.items = obj.data.items.filter((i) => !(i?.tagList?.length > 0));
-  }
-} else if (url.includes("/nex.163.com/q")) {
-  // 开屏广告
-  if (obj?.ads?.length > 0) {
-    obj.ads = [];
-  }
-} else if (url.includes("/search/hot-word")) {
-  // 搜索框
-  if (obj?.data?.special?.length > 0) {
-    // 猜你想搜
-    obj.data.special = [];
-  }
-  // if (obj?.data?.hotWordList?.length > 0) {
-  //     热搜列表
-  //   obj.data.hotWordList = [];
-  // }
-  if (obj?.data?.RollhotWordList?.length > 0) {
-    // 搜索框填充词
-    obj.data.RollhotWordList = [];
-  }
-}
-body = JSON.stringify(obj);
-$done({body});
