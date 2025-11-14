@@ -5,4 +5,5 @@
 [URL Rewrite]
 #请使用新地址 https://ddgksf2013.top/rewrite/StartUpAds.conf
 https://please.use.new.address - reject-200
+https://new.address.is.https://ddgksf2013.top/rewrite/StartUpAds.conf - reject-200
 
