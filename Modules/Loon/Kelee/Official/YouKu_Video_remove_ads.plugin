@@ -1,55 +1,47 @@
 #!name=优酷视频去广告
-#!desc=过滤优酷视频客户端广告，由于此插件不再维护，客户端版本高于11.0.48可能会导致此插件失效，请勿升级客户端。
+#!desc=移除开屏广告、视频广告、信息流广告。其余广告由于请求已加密，故无法移除。
 #!openUrl=https://apps.apple.com/app/id336141475
-#!author=RuCu6[https://github.com/RuCu6]
+#!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md], RuCu6[https://github.com/RuCu6]
 #!tag=去广告
 #!system=
 #!system_version=
 #!loon_version=3.2.4(787)
 #!homepage=https://hub.kelee.one
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/YouKu_Video.png
-#!date=2025-05-13 15:17:08
+#!date=2025-11-14 22:56:21
 
 [Rule]
 DOMAIN, push.m.youku.com, DIRECT
 DOMAIN, un-acs.youku.com, DIRECT
 DOMAIN, dorangesource.alicdn.com, DIRECT
 
-DOMAIN, acs4baichuan.m.taobao.com, REJECT
-DOMAIN, adsmind.ugdtimg.com, REJECT
-DOMAIN, amdc.m.youku.com, REJECT
-DOMAIN, api.sm.cn, REJECT
-DOMAIN, apiv4-iyes.youku.com, REJECT
-DOMAIN, baichuan-sdk.alicdn.com, REJECT
+DOMAIN, h-adashx.ut.taobao.com, REJECT
+DOMAIN, adx-core.youku.com, REJECT
+DOMAIN, adx-open-service.youku.com, REJECT
+DOMAIN, yk-ssp.ad.youku.com, REJECT
 DOMAIN, cad.youku.com, REJECT
-DOMAIN, huichuan-mc.sm.cn, REJECT
-DOMAIN, huichuan.sm.cn, REJECT
-DOMAIN, iyes.youku.com, REJECT
-DOMAIN, m-vali.cp31.ott.cibntv.net, REJECT
-DOMAIN, mc.atm.youku.com, REJECT
+DOMAIN, ykad-data.youku.com, REJECT
+DOMAIN, yk-ssp.ad.youku.com, REJECT
+DOMAIN, amdc.m.youku.com, REJECT
+DOMAIN, cad.youku.com, REJECT
 DOMAIN, nbsdk-baichuan.alicdn.com, REJECT
-DOMAIN, pre-acs.youku.com, REJECT
+DOMAIN, youku-crm-product.youku.com, REJECT
+DOMAIN, dr-danmu.youku.com, REJECT
+DOMAIN, group-ssl-danmu-ori.youku.com, REJECT
+DOMAIN, m.atm.youku.com, REJECT
+DOMAIN, mc.atm.youku.com, REJECT
 DOMAIN, vali-g1.cp31.ott.cibntv.net, REJECT
 DOMAIN, vali-ugc.cp31.ott.cibntv.net, REJECT
-DOMAIN, yk-ssp.ad.youku.com, REJECT
-DOMAIN, ykad-data.youku.com, REJECT
+DOMAIN-SUFFIX, iyes.youku.com, REJECT
+
+DOMAIN, adsmind.ugdtimg.com, REJECT
+DOMAIN, pre-acs.youku.com, REJECT
 DOMAIN, youku-acs.m.taobao.com, REJECT
 
 [Rewrite]
-^https:\/\/acs\.youku\.com\/gw\/mtop\.youku\.(pisp\.scripts\.get|xspace\.play\.position\.preload\.query|xspace\.poplayer\.position\.query) url reject-dict
+^https:\/\/un-acs\.youku\.com\/gw\/mtop\.youku\.play\.ups\.appinfo\.get response-body-json-del data.data.ad data.data.watermark data.data.ykad
 
-[Script]
-http-response ^https:\/\/acs\.youku\.com\/gw\/mtop\.youku\.columbus\.(gateway\.new\.execute|home\.feed|home\.query|uc\.query|ycp\.query) script-path=https://kelee.one/Resource/JavaScript/YouKu_Video/YouKu_Video_remove_ads.js, requires-body=true, tag=移除首页广告
-
-http-response ^https:\/\/acs\.youku\.com\/gw\/mtop\.youku\.haidai\.lantern\.appconfig\.get script-path=https://kelee.one/Resource/JavaScript/YouKu_Video/YouKu_Video_remove_ads.js, requires-body=true, tag=移除无用底栏
-
-http-response ^https:\/\/acs\.youku\.com\/gw\/mtop\.youku\.huluwa\.dispatcher\.youthmode\.config2 script-path=https://kelee.one/Resource/JavaScript/YouKu_Video/YouKu_Video_remove_ads.js, requires-body=true, tag=移除青少年模式弹窗
-
-http-response ^https:\/\/acs\.youku\.com\/gw\/mtop\.youku\.soku\.yksearch script-path=https://kelee.one/Resource/JavaScript/YouKu_Video/YouKu_Video_remove_ads.js, requires-body=true, tag=移除搜索列表推广
-
-http-response ^https:\/\/push\.m\.youku\.com\/collect-api\/get_push_interval_config_wx\? script-path=https://kelee.one/Resource/JavaScript/YouKu_Video/YouKu_Video_remove_ads.js, requires-body=true, tag=移除热剧弹窗
-
-http-response ^https:\/\/un-acs\.youku\.com\/gw\/mtop\.youku\.play\.ups\.appinfo\.get script-path=https://kelee.one/Resource/JavaScript/YouKu_Video/YouKu_Video_remove_ads.js, requires-body=true, tag=移除开屏广告
+^https:\/\/push\.m\.youku\.com\/collect-api\/get_push_interval_config_wx\? response-body-json-del data.tipContent data.tipContentNew
 
 [MitM]
-hostname=acs.youku.com, push.m.youku.com, un-acs.youku.com
+hostname=push.m.youku.com, un-acs.youku.com
