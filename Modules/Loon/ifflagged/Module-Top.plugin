@@ -9,10 +9,10 @@
 
 [Script]
 # bilibili
-http-response ^https?:\/\/app\.bilibili\.com\/x\/resource\/show\/tab script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ifflagged/Module-Top/BiliBili.js, requires-body=true, tag=Tab
+http-response ^https?:\/\/app\.bilibili\.com\/x\/resource\/show\/tab script-path=https://github.com/ifflagged/Neverflagged/raw/main/Surge/Scripts/BiliBili.js, requires-body=true, tag=Tab
 
-http-response ^https?:\/\/app\.bilibili\.com\/x\/v2\/account\/mine script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ifflagged/Module-Top/BiliBili.js, requires-body=true, tag=My Info
+http-response ^https?:\/\/app\.bilibili\.com\/x\/v2\/account\/mine script-path=https://github.com/ifflagged/Neverflagged/raw/main/Surge/Scripts/BiliBili.js, requires-body=true, tag=My Info
 
 # DiDi
-http-response ^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/core script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ifflagged/Module-Top/DiDi.js, requires-body=true, tag=Tab
+http-response ^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/core script-path=https://github.com/ifflagged/Neverflagged/raw/main/Loon/Scripts/DiDi.js, requires-body=true, tag=Tab
 

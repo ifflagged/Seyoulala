@@ -1,17 +1,7 @@
-#!name=jd_price
-#!desc=jd_price
-#!category=Jacob
+jd_price%0A：Error: 请求超时(20 秒)
 
-[Script]
-jd_price = type=http-response, pattern=^https?:\/\/in\.m\.jd\.com\/product\/graphext\/\d+\.html, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/wf021325/jd_price/jd_price.js, requires-body=true, max-size=-1, timeout=60
 
-jd_price = type=http-request, pattern=^https?:\/\/apapia-sqk-weblogic\.manmanbuy\.com\/baoliao\/center\/menu$, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/wf021325/jd_price/jd_price.js, requires-body=true, max-size=-1, timeout=60
 
-#jd_price = type=http-response, pattern=^https?:\/\/in\.m\.jd\.com\/product\/graphext\/\d+\.html, script-path=http://192.168.2.170:8080/jd_price.js, requires-body=true, max-size=-1, timeout=60
 
-# ^https?:\/\/in\.m\.jd\.com\/product\/graphext\/\d+\.html url script-response-body http://192.168.2.170:8080/jd_price.js
-#jd_price = type=http-request, pattern=^https?:\/\/apapia-sqk-weblogic\.manmanbuy\.com\/baoliao\/center\/menu$, script-path=http://192.168.2.170:8080/jd_price.js, requires-body=true, max-size=-1, timeout=60
 
-[MITM]
-hostname = %APPEND% in.m.jd.com, apapia-sqk-weblogic.manmanbuy.com
-
+Script Hub 重写转换: ❌  可自行翻译错误信息或复制错误信息后点击通知进行反馈
