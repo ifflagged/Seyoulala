@@ -17,7 +17,7 @@ var removeFlag = true;
 if (url.includes("/linglong")) {
     if (urlRegex.test(url)) {
         const header = $request.headers;
-        const traceKey = Object.keys(header).find(key => /^ai|dt|al|u/i.test(key));
+        const traceKey = Object.keys(header).find(key => /^(ai|dt|al|u)$/i.test(key));
         removeFlag = traceKey ? true : false;
     } else {
         const dimStr = extractAfterAt(url);
@@ -53,5 +53,5 @@ function compareDimensions(str) {
     if (width == null || height == null) {
         return false;
     }
-    return width == height;
+    return width == height || Math.abs(width - height) === 1;;
 }
