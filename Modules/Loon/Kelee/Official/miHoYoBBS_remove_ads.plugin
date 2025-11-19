@@ -1,5 +1,5 @@
 #!name=米游社去广告
-#!desc=移除开屏广告、移除青少年模式弹窗。
+#!desc=移除开屏广告、搜索栏热搜及资讯、青少年模式弹窗。
 #!openUrl=https://apps.apple.com/app/id1470182559
 #!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 #!tag=去广告
@@ -8,7 +8,7 @@
 #!loon_version=3.2.4(787)
 #!homepage=https://hub.kelee.one
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/miHoYoBBS.png
-#!date=2025-11-19 02:02:40
+#!date=2025-11-20 01:12:36
 
 [Rewrite]
 ^https:\/\/bbs-api(-ab)?\.miyoushe\.com\/apihub\/api\/getAppSplash$ reject-dict
@@ -17,7 +17,10 @@
 
 ^https:\/\/bbs-api(-ab)?\.miyoushe\.com\/apihub\/api\/getAppConfig$ response-body-json-replace data.config.teenager_popup_freq_type 0 data.config.is_show_teenager_mode_btn 0
 
+^https:\/\/bbs-api-ab\.miyoushe\.com\/teenager\/api\/info$ response-body-json-replace data.is_enabled false data.is_teenager false data.is_force false
+
 ^https:\/\/bbs-api(-ab)?\.miyoushe\.com\/apihub\/api\/getHotKeywordAndEvent$ reject-dict
+^https:\/\/bbs-api-static\.miyoushe\.com\/search\/api\/search\/pre_keyword\? reject-dict
 
 [MitM]
 hostname=bbs-api.miyoushe.com, bbs-api-ab.miyoushe.com
