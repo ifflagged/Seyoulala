@@ -1,5 +1,5 @@
 #!name=粉笔去广告
-#!desc=移除开屏广告、首页弹窗和悬浮窗。
+#!desc=移除开屏广告、弹窗广告、悬浮广告、热门搜索，移除底栏皮肤，精简我的页面。
 #!openUrl=https://apps.apple.com/app/id584660358
 #!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 #!tag=去广告
@@ -8,14 +8,28 @@
 #!loon_version=3.2.4(787)
 #!homepage=https://hub.kelee.one
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/FenBi.png
-#!date=2025-05-13 15:17:08
+#!date=2025-11-24 03:57:05
 
 [Rewrite]
-^https:\/\/tiku\.fenbi\.com\/activity\/app\/launcher reject-dict
-^https:\/\/keapi\.fenbi\.com\/app\/iphone\/\w+\/popup reject-dict
-^https:\/\/market-api\.fenbi\.com\/iphone\/v1\/assistant\/info reject-dict
-^https:\/\/market-api\.fenbi\.com\/iphone\/v1\/assistant\/entrance\/show reject-dict
+^https:\/\/keapi\.fenbi\.com\/app\/iphone\/position_resource\/get_banners\? reject-dict
 
+^https:\/\/market-api\.fenbi\.com\/iphone\/v1\/assistant\/info\? reject-dict
+
+^https:\/\/keapi\.fenbi\.com\/app\/iphone\/position_resource\/get_home_banners\?.*position_resource_type=1 mock-response-body data-type=json data="{"code":1,"msg":"","data":{"positionResourceType":1,"payload":{"items":[{"id":17868,"courseSetId":2,"content":"妹子图","imageUrl":"https://i.im.ge/2025/11/24/4DrVp0.mm.png","url":"null","redirectType":1,"ordinal":8,"createdTime":1746799144383,"startTime":1759850171000,"endTime":4070880000000,"type":0,"bizType":4}],"count":1}}}" status-code=200
+
+^https:\/\/keapi\.fenbi\.com\/app\/iphone\/position_resource\/get_home_banners\?.*position_resource_type=2 reject-dict
+
+^https:\/\/ke\.fenbi\.com\/iphone\/v3\/timetable\/today_with_public_episodes\? reject-dict
+
+^https:\/\/hera-webapp\.fenbi\.com\/iphone\/topic\/hotquery\/list\? reject-dict
+
+^https:\/\/hera-webapp\.fenbi\.com\/iphone\/explore\/consts\? reject-dict
+
+^https:\/\/hera-webapp\.fenbi\.com\/iphone\/recommend\/info\? response-body-json-del data.rollingBanner
+
+^https:\/\/hera-webapp\.fenbi\.com\/iphone\/announcement\/hotquery\/list\? reject-dict
+
+^https:\/\/ke\.fenbi\.com\/iphone\/v3\/apps\/config\? response-body-json-del data.bottomIconInfos.position.iconDefaultUrl data.bottomIconInfos.position.iconSelectedUrl data.bottomIconInfos.position.nightModeIconDefaultUrl data.bottomIconInfos.position.nightModeIconSelectedUrl
 
 [MitM]
-hostname=keapi.fenbi.com, market-api.fenbi.com, tiku.fenbi.com
+hostname=keapi.fenbi.com, market-api.fenbi.com, ke.fenbi.com, hera-webapp.fenbi.com
