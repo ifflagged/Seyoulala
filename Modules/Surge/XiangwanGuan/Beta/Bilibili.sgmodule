@@ -3,6 +3,7 @@
 #!category=Jacob
 
 [Rule]
+# DOMAIN, bsbsb.top, PROXY
 DOMAIN,api.biliapi.com,REJECT,extended-matching,pre-matching
 DOMAIN,app.biliapi.com,REJECT,extended-matching,pre-matching
 DOMAIN,api.biliapi.net,REJECT,extended-matching,pre-matching
@@ -44,10 +45,13 @@ http-response-jq ^https?:\/\/app\.bilibili\.com\/x\/v2\/account\/myinfo\? '.data
 #^https?:\/\/grpc\.biliapi\.net\/bilibili\.app\.(view\.v1\.View\/TFInfo|viewunite\.v1\.View\/ViewEndPage)$ data-type=base64 data="AAAAAAA="
 
 [Script]
-# Shadowrocket的脚本执行引擎不支持如下脚本的运行，屏蔽规则；
+# Shadowrocket的脚本执行引擎不支持如下脚本的运行，不支持HTTP/2的MITM，屏蔽规则；
 #bilibili.protobuf.request = type=http-request, pattern=^https?:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.community\.service\.dm\.v1\.DM\/DmSegMobile$, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/bilibili.protobuf.request.js,, requires-body=true, binary-body-mode=true, max-size=-1, timeout=60
 
 # ^https?:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.community\.service\.dm\.v1\.DM\/DmSegMobile$ url script-request-body https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/bilibili.protobuf.request.js, binary-body-mode=true
+#bilibili.protobuf.request = type=http-request, pattern=^https?:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.(app\.viewunite\.v1\.View\/View|main\.community\.reply\.v1\.Reply\/MainList)$, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/bilibili.protobuf.request.js,, requires-body=true, binary-body-mode=true, max-size=-1, timeout=60
+
+# ^https?:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.(app\.viewunite\.v1\.View\/View|main\.community\.reply\.v1\.Reply\/MainList)$ url script-request-body https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/bilibili.protobuf.request.js, binary-body-mode=true, argument="{"displayUpList":"{哔哩哔哩·显示最常访问}"}"
 #bilibili.protobuf.response = type=http-response, pattern=^https?:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.(app\.(show\.v1\.Popular\/Index|dynamic\.v2\.Dynamic\/DynAll|view(unite)?\.v1\.View\/(View|ViewProgress|RelatesFeed)|playurl\.v1\.PlayURL\/PlayView|playerunite\.v1\.Player\/PlayViewUnite)|polymer\.app\.search\.v1\.Search\/SearchAll|community\.service\.dm\.v1\.DM\/DmView|main\.community\.reply\.v1\.Reply\/MainList|pgc\.gateway\.player\.v2\.PlayURL\/PlayView)$, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/bilibili.protobuf.response.js,, requires-body=true, binary-body-mode=true, max-size=-1, timeout=60
 
 [MITM]
