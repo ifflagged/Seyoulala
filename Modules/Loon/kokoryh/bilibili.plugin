@@ -3,7 +3,7 @@
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
 #!tag=Jacob
 
-#!arguments-desc=动态最常访问: [auto, show, hide]\n- auto: 仅当列表中存在直播状态时显示\n- show: 始终显示\n- hide: 始终隐藏\n\n创作中心: [1, 0]\n- 1: 显示\n- 0: 隐藏\n\n过滤置顶评论广告: [1, 0]\n- 1: 开启\n- 0: 关闭\n\n空降助手: 默认开启，配置为"#"时关闭\n\n优化评论区卡顿(BETA): 默认关闭\n\n日志等级: [off, error, warn, info, debug]
+#!arguments-desc=动态最常访问: [auto, show, hide]\n- auto: 仅当列表中存在直播状态时显示\n- show: 始终显示\n- hide: 始终隐藏\n\n创作中心: [1, 0]\n- 1: 显示\n- 0: 隐藏\n\n过滤置顶评论广告: [1, 0]\n- 1: 开启\n- 0: 关闭\n\n空降助手: 默认开启，配置为"#"时关闭\n\n优化评论区卡顿(BETA): 默认关闭\n\n日志等级: [off: 5, error: 4, warn: 3, info: 2, debug: 1]
 
 [Argument]
 动态最常访问=input,auto,tag=动态最常访问, desc=动态最常访问
@@ -11,7 +11,7 @@
 过滤置顶评论广告=input,1,tag=过滤置顶评论广告, desc=过滤置顶评论广告
 空降助手=input,bilibili.airborne,tag=空降助手, desc=空降助手
 优化评论区卡顿=input,#,tag=优化评论区卡顿, desc=优化评论区卡顿
-日志等级=input,info,tag=日志等级, desc=日志等级
+日志等级=input,4,tag=日志等级, desc=日志等级
 
 [Rule]
 DOMAIN,api.biliapi.com,REJECT
