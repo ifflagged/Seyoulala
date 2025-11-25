@@ -69,7 +69,7 @@ if (url.includes("/mtop.idle.user.page.my.adapter")) {
   //  处理简历菜单item.tool.exContent.tools[]:13：我的帖子；1：安全中心；2：闲鱼体验官；20：闲鱼公约；34：宝贝上首页；14：借钱；11：淘宝转卖；26：简历认证
   //obj.data.container.sections = obj.data.container.sections.filter(item => item.index !== "5");
   obj.data.container.sections.forEach(section => {
-    if (section.index === "5") {
+    if (section.index === "7") {
       //section.item.tool.exContent.tools = section.item.tool.exContent.tools.filter(item => tools.includes(item.exContent.toolId));
 
       // 定义要筛选的 toolId 列表
