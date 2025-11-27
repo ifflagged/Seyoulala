@@ -21,7 +21,7 @@
 ^https:\/\/bp-api\.bestv\.cn\/cms\/api\/free\/open\/advertisingV2 response-body-json-jq '.dt = []'
 ^https:\/\/bp-api\.bestv\.cn\/cms\/api\/c\/search\/hot\/v(2|4) response-body-json-jq '.dt.hot = [] | .dt.recommand = [] | .dt.bannerList = []'
 http:\/\/dili.sqcosmos.com\/jiekou\/mains\/p\d+.html response-body-json-jq '.album |= map(select(.id != "4154" and .id != "4165"))'
-^https:\/\/j1\.pupuapi\.com\/client\/notification\/message_center\/unread_number response-body-json-jq .data = []
+^https:\/\/j1\.pupuapi\.com\/client\/notification\/message_center\/unread_number response-body-json-jq '.data = []'
 ^https?:\/\/misc-api-prd-mx\.wandafilm\.com\/commend\/common_banner_batch\.api response-body-json-jq '.data.objects["OpenAPP-&-FlashAD"] = [] | .data.objects["InTheaters-&-BoxAD"] = []'
 ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.search\.shade\/ response-body-json-jq 'del(.data)'
 ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.user\.strategy\.list\/ response-body-json-jq 'del(.data)'
