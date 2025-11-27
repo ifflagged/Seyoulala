@@ -36,9 +36,9 @@ http-response-jq ^https:\/\/api\.live\.bilibili\.com\/xlive\/(app-interface\/v2\
 ^https:\/\/grpc\.biliapi\.net\/bilibili\.app\.(view\.v1\.View\/TFInfo|viewunite\.v1\.View\/ViewEndPage)$ data-type=base64 data="AAAAAAA=" header="content-type: application/grpc"
 
 [Script]
-{{{空降助手}}} = type=http-request, pattern=^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.community\.service\.dm\.v1\.DM\/DmSegMobile$, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/kokoryh/bilibili/bilibili.protobuf.request.js, requires-body=true, binary-body-mode=true, engine=webview, max-size=-1, argument="{"logLevel":"{{{日志等级}}}"}"
+{{{空降助手}}} = type=http-request, pattern=^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.community\.service\.dm\.v1\.DM\/DmSegMobile$, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/kokoryh/bilibili/bilibili.protobuf.request.js, requires-body=true, binary-body-mode=true, engine=webview, max-size=-1, timeout=10, argument="{"logLevel":"{{{日志等级}}}"}"
 
-{{{优化评论区卡顿}}} = type=http-request, pattern=^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.(app\.viewunite\.v1\.View\/View|main\.community\.reply\.v1\.Reply\/MainList)$, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/kokoryh/bilibili/bilibili.protobuf.request.js, requires-body=true, binary-body-mode=true, engine=webview, max-size=-1, argument="{"purifyComment":{{{过滤置顶评论广告}}},"logLevel":"{{{日志等级}}}"}"
+{{{优化评论区卡顿}}} = type=http-request, pattern=^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.(app\.viewunite\.v1\.View\/View|main\.community\.reply\.v1\.Reply\/MainList)$, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/kokoryh/bilibili/bilibili.protobuf.request.js, requires-body=true, binary-body-mode=true, engine=webview, max-size=-1, timeout=10, argument="{"purifyComment":{{{过滤置顶评论广告}}},"logLevel":"{{{日志等级}}}"}"
 
 bilibili.skin = type=http-response, pattern=^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\?, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/kokoryh/bilibili/bili-suit-diy.js, requires-body=true, engine=webview, max-size=-1
 
