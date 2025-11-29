@@ -2547,6 +2547,8 @@ bilibili.protobuf = type=http-response, pattern=^https:\/\/(grpc\.biliapi\.net|a
 
 哔哩哔哩漫画 = type=http-response, pattern=^https?:\/\/manga\.bilibili\.com\/twirp\/user\.v\d\.User\/GetInitInfo, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/blockAds/bilibiliManga.js, requires-body=true, timeout=60
 
+哔哩哔哩漫画 = type=http-response, pattern=^https?:\/\/manga\.bilibili\.com\/twirp\/comic\.v\d\.Comment\/Main, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/blockAds/bilibiliManga.js, requires-body=true, timeout=60
+
 # 记录 大家都在看data.recom_cards / 底部按钮data.recom_btns
 薄荷健康 = type=http-response, pattern=^https:\/\/api\.boohee\.com\/meta-interface\/v2\/index\?, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/blockAds/bohe_ads.js, requires-body=true, timeout=60
 
