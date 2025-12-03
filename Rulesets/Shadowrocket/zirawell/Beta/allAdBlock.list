@@ -1,4 +1,4 @@
-#规则数量:1364
+#规则数量:1365
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -1332,6 +1332,7 @@ DOMAIN-KEYWORD,dnspod.meituan.httpdns
 DOMAIN-KEYWORD,gdtimg.com
 DOMAIN-KEYWORD,iflyad.bj.openstorage.cn
 DOMAIN-KEYWORD,img.adnyg.com
+DOMAIN-KEYWORD,inappcheck
 DOMAIN-KEYWORD,iyes.youku.com
 DOMAIN-KEYWORD,kepler.jd.com
 DOMAIN-KEYWORD,keplerapi.jd.com
