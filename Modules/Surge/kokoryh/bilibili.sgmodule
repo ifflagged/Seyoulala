@@ -2,8 +2,8 @@
 #!desc=拜托，没有广告的哔哩哔哩真的超酷的
 #!category=Jacob
 
-#!arguments-desc=动态最常访问: [auto, show, hide]\n- auto: 仅当列表中存在直播状态时显示\n- show: 始终显示\n- hide: 始终隐藏\n\n创作中心: [1, 0]\n- 1: 显示\n- 0: 隐藏\n\n过滤置顶评论广告: [1, 0]\n- 1: 开启\n- 0: 关闭\n\n空降助手: 默认开启，配置为"#"时关闭\n\n优化评论区卡顿(BETA): 默认关闭\n\n日志等级: [off: 5, error: 4, warn: 3, info: 2, debug: 1]
-#!arguments=动态最常访问:auto,创作中心:0,过滤置顶评论广告:1,空降助手:bilibili.airborne,优化评论区卡顿:#,日志等级:4
+#!arguments-desc=动态最常访问: [auto, show, hide]\n- auto: 仅当列表中存在直播状态时显示\n- show: 始终显示\n- hide: 始终隐藏\n\n创作中心: [1, 0]\n- 1: 显示\n- 0: 隐藏\n\n过滤置顶评论广告: [1, 0]\n- 1: 开启\n- 0: 关闭\n\n空降助手: 默认开启，配置为"#"时关闭\n\n优化评论区卡顿: 默认开启，配置为"#"时关闭\n\n日志等级: [off: 5, error: 4, warn: 3, info: 2, debug: 1]
+#!arguments=动态最常访问:auto,创作中心:0,过滤置顶评论广告:1,空降助手:bilibili.airborne,优化评论区卡顿:bilibili.request,日志等级:4
 
 [Rule]
 DOMAIN,api.biliapi.com,REJECT,extended-matching,pre-matching
@@ -31,7 +31,7 @@ http-response-jq ^https:\/\/api\.live\.bilibili\.com\/xlive\/(app-interface\/v2\
 
 ^https:\/\/grpc\.biliapi\.net\/bilibili\.app\.interface\.v1\.Teenagers\/ModeStatus$ data-type=base64 data="AAAAABMKEQgCEgl0ZWVuYWdlcnMgAioA" header="content-type: application/grpc"
 
-^https:\/\/grpc\.biliapi\.net\/bilibili\.app\.interface\.v1\.Search\/DefaultWords$ data-type=base64 data="AAAAACkaHeaQnOe0ouinhumikeOAgeeVquWJp+aIlnVw5Li7IgAoAToAQgBKAA==" header="content-type: application/grpc"
+^https:\/\/grpc\.biliapi\.net\/bilibili\.app\.interface\.v1\.Search\/DefaultWords$ data-type=base64 data="AAAAACEaHeaQnOe0ouinhumikeOAgeeVquWJp+aIlnVw5Li7KAE=" header="content-type: application/grpc"
 
 ^https:\/\/grpc\.biliapi\.net\/bilibili\.app\.(view\.v1\.View\/TFInfo|viewunite\.v1\.View\/ViewEndPage)$ data-type=base64 data="AAAAAAA=" header="content-type: application/grpc"
 
