@@ -3,14 +3,14 @@
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
 #!tag=Jacob
 
-#!arguments-desc=动态最常访问: [auto, show, hide]\n- auto: 仅当列表中存在直播状态时显示\n- show: 始终显示\n- hide: 始终隐藏\n\n创作中心: [1, 0]\n- 1: 显示\n- 0: 隐藏\n\n过滤置顶评论广告: [1, 0]\n- 1: 开启\n- 0: 关闭\n\n空降助手: 默认开启，配置为"#"时关闭\n\n优化评论区卡顿: 默认开启，配置为"#"时关闭\n\n日志等级: [off: 5, error: 4, warn: 3, info: 2, debug: 1]
+#!arguments-desc=动态最常访问: [auto, show, hide]\n- auto: 仅当列表中存在直播状态时显示\n- show: 始终显示\n- hide: 始终隐藏\n\n创作中心: [1, 0]\n- 1: 显示\n- 0: 隐藏\n\n过滤置顶评论广告: [1, 0]\n- 1: 开启\n- 0: 关闭\n\n空降助手: 默认开启，配置为"#"时关闭\n\n优化评论区加载: 默认开启，配置为"#"时关闭\n\n日志等级: [off: 5, error: 4, warn: 3, info: 2, debug: 1]
 
 [Argument]
 动态最常访问=input,auto,tag=动态最常访问, desc=动态最常访问
 创作中心=input,0,tag=创作中心, desc=创作中心
 过滤置顶评论广告=input,1,tag=过滤置顶评论广告, desc=过滤置顶评论广告
 空降助手=input,bilibili.airborne,tag=空降助手, desc=空降助手
-优化评论区卡顿=input,bilibili.request,tag=优化评论区卡顿, desc=优化评论区卡顿
+优化评论区加载=input,bilibili.request,tag=优化评论区加载, desc=优化评论区加载
 日志等级=input,4,tag=日志等级, desc=日志等级
 
 [Rule]
@@ -36,7 +36,7 @@ AND,((DOMAIN-SUFFIX,chat.bilibili.com),(OR,((DOMAIN-KEYWORD,stun),(DOMAIN-KEYWOR
 [Script]
 http-request ^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.community\.service\.dm\.v1\.DM\/DmSegMobile$ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/kokoryh/bilibili/bilibili.protobuf.request.js, requires-body=true, binary-body-mode=true, timeout=10, tag={空降助手}, argument="{"logLevel":"{日志等级}"}"
 
-http-request ^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.(app\.viewunite\.v1\.View\/View|main\.community\.reply\.v1\.Reply\/MainList)$ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/kokoryh/bilibili/bilibili.protobuf.request.js, requires-body=true, binary-body-mode=true, timeout=10, tag={优化评论区卡顿}, argument="{"purifyComment":{过滤置顶评论广告},"logLevel":"{日志等级}"}"
+http-request ^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.(app\.viewunite\.v1\.View\/View|main\.community\.reply\.v1\.Reply\/MainList)$ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/kokoryh/bilibili/bilibili.protobuf.request.js, requires-body=true, binary-body-mode=true, timeout=10, tag={优化评论区加载}, argument="{"purifyComment":{过滤置顶评论广告},"logLevel":"{日志等级}"}"
 
 http-response ^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\? script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/kokoryh/bilibili/bili-suit-diy.js, requires-body=true, tag=bilibili.skin
 
