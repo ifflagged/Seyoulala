@@ -1,0 +1,7 @@
+# > 中国电信<微信小程序> - CN189
+
+[Body Rewrite]
+http-response ^https?:\/\/wcmp\.189\.cn\/xcxApiService\/api\/gateway adItems random_body
+
+[MITM]
+hostname= %APPEND% wcmp.189.cn
