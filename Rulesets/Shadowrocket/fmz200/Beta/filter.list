@@ -1,4 +1,4 @@
-#规则数量:2755
+#规则数量:2757
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -1968,6 +1968,8 @@ DOMAIN-SUFFIX,a.union.mi.com
 DOMAIN,39d83s.com
 DOMAIN-KEYWORD,mpos-pic.helipay.com
 DOMAIN,mistat.xiaomi.com
+DOMAIN-SUFFIX,adintl.cn
+DOMAIN-SUFFIX,zhangyuyidong.cn
 DOMAIN-SUFFIX,1sapp.com
 DOMAIN-SUFFIX,aiclk.com
 DOMAIN-SUFFIX,adbiding.com
