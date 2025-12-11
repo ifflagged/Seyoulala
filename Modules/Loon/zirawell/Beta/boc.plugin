@@ -12,9 +12,6 @@
 #!homepage=https://github.com/zirawell/R-Store/tree/main/Rule/Surge/README.md
 #!date=2025-07-08
 
-[Rule]
-DOMAIN,openapi.boc.cn,REJECT
-
 [Rewrite]
 ^https?:\/\/mbs\.boc\.cn\/ubas-mgateway-static\/images\/advertType\/.+.jpg mock-response-body data-type=text status-code=200
 
