@@ -1,4 +1,4 @@
-#规则数量:1365
+#规则数量:1364
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -396,7 +396,6 @@ DOMAIN,ocsp.pki.goog
 DOMAIN,open-pixon.ads-pixiv.net
 DOMAIN,open.e.kuaishou.com
 DOMAIN,open.kuaishou.com
-DOMAIN,openapi.boc.cn
 DOMAIN,optimus-ads.amap.com
 DOMAIN,ossgw.alicdn.com
 DOMAIN,pageviewp.icbc.com.cn
