@@ -5,10 +5,10 @@
 [Rule]
 #DOMAIN,bsbsb.top,PROXY
 # DOMAIN, bsbsb.top, PROXY
-DOMAIN,api.biliapi.com,REJECT,extended-matching
-DOMAIN,app.biliapi.com,REJECT,extended-matching
-DOMAIN,api.biliapi.net,REJECT,extended-matching
-DOMAIN,app.biliapi.net,REJECT,extended-matching
+DOMAIN,api.biliapi.com,REJECT
+DOMAIN,app.biliapi.com,REJECT
+DOMAIN,api.biliapi.net,REJECT
+DOMAIN,app.biliapi.net,REJECT
 AND,((DOMAIN-SUFFIX,chat.bilibili.com),(OR,((DOMAIN-KEYWORD,stun),(DOMAIN-KEYWORD,tracker)))),REJECT
 
 [URL Rewrite]
