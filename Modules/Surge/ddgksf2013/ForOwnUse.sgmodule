@@ -35,9 +35,6 @@ ClarityProCrack = type=http-response, pattern=^https:\/\/claritywallpaper\.com\/
 # ✅ Picsart
 PicsartProCrack = type=http-response, pattern=^https?:\/\/api\.meiease\.cn\/shop\/subscription\/validate, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ddgksf2013/ForOwnUse/PicsartProCrack.js, requires-body=true, max-size=-1, timeout=60
 
-# ✅ 搜图神器
-replaceBody = type=http-response, pattern=http:\/\/wallpaper\.soutushenqi\.com\/api\/v1\/account\/token, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ddgksf2013/ForOwnUse/replace-body.js, requires-body=true, max-size=-1, timeout=30, argument=vipType%22%3A%200-%3EvipType%22%3A%201024
-
 # ✅ 黄油相机
 BybutterProCrack = type=http-response, pattern=^https?:\/\/api4\.bybutter\.com\/v4\/(users\/me$|shop\/me\/privileges$), script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ddgksf2013/ForOwnUse/BybutterProCrack.js, requires-body=true, max-size=-1, timeout=60
 
@@ -47,20 +44,11 @@ FocosProCrack = type=http-response, pattern=^https?:\/\/.*oracle\.bendingspoonsa
 # ✅ 养基宝
 YangJiBaoProCrack = type=http-response, pattern=^https?:\/\/.*yangjibao\.com\/(wxapi\/)?account, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ddgksf2013/ForOwnUse/YangJiBaoProCrack.js, requires-body=true, max-size=-1, timeout=60
 
-# ✅ 极简汇率
-JiJianHuiLvProCrack = type=http-response, pattern=^https?:\/\/explorer\.tratao\.com\/api\/client\/xtool\/vip, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ddgksf2013/ForOwnUse/JiJianHuiLvProCrack.js, requires-body=true, max-size=-1, timeout=60
-
 # ✅ TopWidgets
 TopwidgetsProCrack = type=http-response, pattern=^https?:\/\/.*xiaozujian\.com\/api\/app\/config\/userConfig, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ddgksf2013/ForOwnUse/TopwidgetsProCrack.js, requires-body=true, max-size=-1, timeout=60
 
 # 🟥 WPS(国区)
 #WPSOffice = type=http-response, pattern=^https:\/\/(vas|account)\.wps\.cn\/(query\/api\/v\d\/list_purchase_info|api\/users\/\d+\/overview), script-path=https://raw.githubusercontent.com/510004015/Quantumult_X/Remote/Premium/WPSOffice.js, requires-body=true, max-size=-1, timeout=60
-
-# ✅ Appraven(美化)
-appraven.vip = type=http-response, pattern=^https?:\/\/.*appraven\.net\/appraven\/graphql, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ddgksf2013/ForOwnUse/appraven.vip.js, requires-body=true, max-size=-1, timeout=60
-
-# ✅ Nicegram
-NicegramProCrack = type=http-response, pattern=^https?:\/\/nicegram\.cloud\/api\/v\d\/(ai-assistant\/purchase-list|user\/info|telegram\/auth), script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ddgksf2013/ForOwnUse/NicegramProCrack.js, requires-body=true, max-size=-1, timeout=60
 
 # ✅ 扫描全能王
 CamscannerProCrack = type=http-response, pattern=^https:\/\/(api|api-cs)\.intsig\.net\/purchase\/cs\/query_property\?, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ddgksf2013/ForOwnUse/CamscannerProCrack.js, requires-body=true, max-size=-1, timeout=60
