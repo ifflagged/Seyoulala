@@ -4,17 +4,6 @@
 #!tag=Jacob
 
 [Script]
-# ✅ Spotify
-http-response ^https:\/\/spclient\.wg\.spotify\.com\/(bootstrap\/v1\/bootstrap|user-customization-service\/v1\/customize)$ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ddgksf2013/ForOwnUse/spotify-proto.js, requires-body=true, binary-body-mode=true, timeout=60, tag=spotify-proto
-
-http-request ^https:\/\/spclient\.wg\.spotify\.com\/(artistview\/v1\/artist|album-entity-view\/v2\/album)\/ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ddgksf2013/ForOwnUse/spotify-json.js, timeout=60, tag=spotify-json
-
-# ✅ 一言(need登录)
-http-response ^https:\/\/app\.yiyan\.art\/yiyan\/ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ddgksf2013/ForOwnUse/YiYanProCrack.js, requires-body=true, timeout=60, tag=YiYanProCrack
-
-# ✅ 西窗烛(need登录)
-http-response https://lchttpapi.xczim.com/* script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ddgksf2013/ForOwnUse/XiChuangZhuProCrack.js, requires-body=true, timeout=60, tag=XiChuangZhuProCrack
-
 # ✅ 简讯(need登录)
 http-response ^https?:\/\/api\.tipsoon\.com\/api\/v1\/user\/info script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ddgksf2013/ForOwnUse/JianXunProCrack.js, requires-body=true, timeout=60, tag=JianXunProCrack
 
@@ -23,9 +12,6 @@ http-request ^https?:\/\/mobile\.flightradar24\.com\/mobile\/(user-session|\w{9}
 
 # ✅ 财新周刊
 http-response http://ipadcms.caixin.com/tmp/articles script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ddgksf2013/ForOwnUse/CaiXinZhouKanProCrack.js, requires-body=true, timeout=60, tag=CaiXinZhouKanProCrack
-
-# ✅ Fimo(need登录)
-http-response ^https?:\/\/server\.zbisq\.com\/fimo-user script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ddgksf2013/ForOwnUse/FimoProCrack.js, requires-body=true, timeout=60, tag=FimoProCrack
 
 # ✅ 傲软抠图(need登录)
 http-response ^https?:\/\/.*aoscdn\.com\/base\/vip\/v\d\/vips script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ddgksf2013/ForOwnUse/ApowersoftProCrack.js, requires-body=true, timeout=60, tag=ApowersoftProCrack

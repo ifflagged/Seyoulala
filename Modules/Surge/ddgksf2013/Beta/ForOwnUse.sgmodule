@@ -3,17 +3,6 @@
 #!category=Jacob
 
 [Script]
-# ✅ Spotify
-spotify-proto = type=http-response, pattern=^https:\/\/spclient\.wg\.spotify\.com\/(bootstrap\/v1\/bootstrap|user-customization-service\/v1\/customize)$, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ddgksf2013/ForOwnUse/spotify-proto.js, requires-body=true, binary-body-mode=true, max-size=-1, timeout=60
-
-spotify-json = type=http-request, pattern=^https:\/\/spclient\.wg\.spotify\.com\/(artistview\/v1\/artist|album-entity-view\/v2\/album)\/, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ddgksf2013/ForOwnUse/spotify-json.js, timeout=60
-
-# ✅ 一言(need登录)
-YiYanProCrack = type=http-response, pattern=^https:\/\/app\.yiyan\.art\/yiyan\/, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ddgksf2013/ForOwnUse/YiYanProCrack.js, requires-body=true, max-size=-1, timeout=60
-
-# ✅ 西窗烛(need登录)
-XiChuangZhuProCrack = type=http-response, pattern=https://lchttpapi.xczim.com/*, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ddgksf2013/ForOwnUse/XiChuangZhuProCrack.js, requires-body=true, max-size=-1, timeout=60
-
 # ✅ 简讯(need登录)
 JianXunProCrack = type=http-response, pattern=^https?:\/\/api\.tipsoon\.com\/api\/v1\/user\/info, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ddgksf2013/ForOwnUse/JianXunProCrack.js, requires-body=true, max-size=-1, timeout=60
 
@@ -22,9 +11,6 @@ flightradar24 = type=http-request, pattern=^https?:\/\/mobile\.flightradar24\.co
 
 # ✅ 财新周刊
 CaiXinZhouKanProCrack = type=http-response, pattern=http://ipadcms.caixin.com/tmp/articles, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ddgksf2013/ForOwnUse/CaiXinZhouKanProCrack.js, requires-body=true, max-size=-1, timeout=60
-
-# ✅ Fimo(need登录)
-FimoProCrack = type=http-response, pattern=^https?:\/\/server\.zbisq\.com\/fimo-user, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ddgksf2013/ForOwnUse/FimoProCrack.js, requires-body=true, max-size=-1, timeout=60
 
 # ✅ 傲软抠图(need登录)
 ApowersoftProCrack = type=http-response, pattern=^https?:\/\/.*aoscdn\.com\/base\/vip\/v\d\/vips, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ddgksf2013/ForOwnUse/ApowersoftProCrack.js, requires-body=true, max-size=-1, timeout=60
