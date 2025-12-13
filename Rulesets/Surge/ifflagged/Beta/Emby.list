@@ -1,7 +1,36 @@
-Emby%0A：Error: Response code 504 (Gateway Time-out)
+#规则数量:30
+#不支持的规则数量:0
+#已排除的规则数量:0
 
+#-----------------以下为解析后的规则-----------------#
 
-
-
-
-Script Hub 规则集转换: ❌  可自行翻译错误信息或复制错误信息后点击通知进行反馈
+DOMAIN-SUFFIX,emby.wtf
+DOMAIN-SUFFIX,term.wtf
+DOMAIN-SUFFIX,xmsl.org
+DOMAIN-SUFFIX,loseremby.org
+DOMAIN-SUFFIX,emby.moe
+DOMAIN-SUFFIX,coemn.com
+DOMAIN-SUFFIX,313445.xyz
+DOMAIN-SUFFIX,charontv.com
+DOMAIN-SUFFIX,nanflix.net
+DOMAIN-SUFFIX,lyrebirdemby.com
+DOMAIN-SUFFIX,bangumi.ca
+DOMAIN-SUFFIX,sfcj.org
+DOMAIN-SUFFIX,embymv.link
+DOMAIN-SUFFIX,tdck.fun
+DOMAIN-SUFFIX,vfing.de
+DOMAIN-SUFFIX,favoritewife.com
+DOMAIN-SUFFIX,28.al
+DOMAIN-SUFFIX,catlinks.co.uk
+DOMAIN-SUFFIX,jingzhe.pro
+DOMAIN-SUFFIX,beebi.org
+DOMAIN-SUFFIX,saturdayvideo.top
+DOMAIN-SUFFIX,misty.cx
+DOMAIN-SUFFIX,nijigem.by
+DOMAIN-SUFFIX,wenjian.de
+DOMAIN-SUFFIX,114514.quest
+DOMAIN,116161.xyz
+DOMAIN-SUFFIX,aliz.work
+DOMAIN-SUFFIX,yunti.online
+DOMAIN,emby3.mcjoker.xyz
+DOMAIN-SUFFIX,reflix.top
