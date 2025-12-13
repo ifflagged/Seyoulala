@@ -1,12 +1,7 @@
-#!name=Top
-#!desc=Top
-#!author=Jacob
-#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
-#!tag=Jacob
+Plugin-Top%0A：Error: Response code 504 (Gateway Time-out)
 
-#!tag=Jacob
-#!date=2025-6-18 18:00:00
 
-[MITM]
-hostname = -mobile.12306.cn
 
+
+
+Script Hub 重写转换: ❌  可自行翻译错误信息或复制错误信息后点击通知进行反馈
