@@ -1,4 +1,4 @@
-#规则数量:1364
+#规则数量:1365
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -518,6 +518,7 @@ DOMAIN,waapdg.jd.com
 DOMAIN,webcast-open.douyin.com
 DOMAIN,webproxy-advp.iad-apple.com
 DOMAIN,webproxy-advp.iad-apple.com.akadns.net
+DOMAIN,wgo.mmstat.com
 DOMAIN,wn.pos.baidu.com
 DOMAIN,woodpecker.uc.cn
 DOMAIN,wqs.jd.com
