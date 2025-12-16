@@ -296,7 +296,7 @@ IP-CIDR6,2402:4e00:1200:ed00:0:9089:6dac:96b6/128,REJECT,no-resolve
 # hostname = api.21jingji.com
 ^https?:\/\/api\.21jingji\.com\/ad\/ - reject
 # hostname = gateway.36kr.com
-^https?:\/\/gateway\.36kr\.com\/api\/adx\/ad\/show - reject
+#^https?:\/\/gateway\.36kr\.com\/api\/adx\/ad\/show - reject
 ^https?:\/\/[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+){1,3}(:\d+)?\/api\/v\d\/advert - reject
 ^https?:\/\/app\.58\.com\/api\/home\/(advertising|appadv)\/ - reject
 ^https?:\/\/app\.58\.com\/api\/log\/ - reject
