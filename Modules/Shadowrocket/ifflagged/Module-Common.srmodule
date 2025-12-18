@@ -28,12 +28,12 @@ https?:\/\/91porn\.com(\/|)$ https://91porn.com/index.php 302
 
 [Script]
 # 京粉 //api.m.jd.com
-JD-Share = type=http-response, pattern=^https:\/\/api\.m\.jd\.com\/\?functionId=union_exhibition_bff&client=apple&clientVer, script-path=https://github.com/ifflagged/Neverflagged/raw/main/Surge/Scripts/JD-JF.js, requires-body=true, max-size=0
+JD-Share = type=http-response, pattern=^https:\/\/api\.m\.jd\.com\/\?functionId=union_exhibition_bff&client=apple&clientVer, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ifflagged/Module-Common/JD-JF.js, requires-body=true, max-size=0
 
 # NSFW // *.pornhub.com, 91porn.com
-Pornhub = type=http-response, pattern=^https?:/\/(cn|www)\.pornhub\.com\/($|(view|video).*$), script-path=https://github.com/ddgksf2013/Scripts/raw/master/pornhub.js, requires-body=true, max-size=0, script-update-interval=0
+Pornhub = type=http-response, pattern=^https?:/\/(cn|www)\.pornhub\.com\/($|(view|video).*$), script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ifflagged/Module-Common/pornhub.js, requires-body=true, max-size=0, script-update-interval=0
 
-91Porn = type=http-response, pattern=https?:\/\/91porn\.com\/(index|view_video|login|search_result)\.php, script-path=https://github.com/Yuheng0101/X/raw/main/Scripts/91porn.js, requires-body=true, max-size=0, script-update-interval=0
+91Porn = type=http-response, pattern=https?:\/\/91porn\.com\/(index|view_video|login|search_result)\.php, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ifflagged/Module-Common/91porn.js, requires-body=true, max-size=0, script-update-interval=0
 
 [MITM]
 hostname = %APPEND% wxa.wxs.qq.com, wximg.wxs.qq.com, wxsmw.wxs.qq.com, api.m.jd.com, spamblocker-api.zeekstudio.com, *.pornhub.com, 91porn.com
