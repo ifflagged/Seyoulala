@@ -6,6 +6,9 @@
 #!update=2025-11-18 23:42
 
 [Rule]
+IP-CIDR,139.199.244.6/32,REJECT,no-resolve
+IP-CIDR,113.46.225.9/32,REJECT,no-resolve
+IP-CIDR,139.199.244.7/32,REJECT,no-resolve
 IP-CIDR,113.46.225.8/32,REJECT,no-resolve
 IP-CIDR,123.207.209.39/32,REJECT,no-resolve
 IP-CIDR,123.207.209.60/32,REJECT,no-resolve
@@ -56,5 +59,5 @@ Didichuxing = type=http-response, pattern=^https:\/\/api\.udache\.com\/gulfstrea
 Didichuxing = type=http-response, pattern=^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v1\/oversea\/layout, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ZenmoFeiShi/Didichuxing/Didichuxing.js, requires-body=true, max-size=-1, timeout=60
 
 [MITM]
-hostname = %APPEND% common.diditaxi.com.cn, freight.xiaojukeji.com, daijia.kuaidadi.com, 162.14.157.*, ct.xiaojukeji.com, res.xiaojukeji.com, conf.diditaxi.com.cn, api.udache.com, 123.207.209.*, 112.53.55.225, 120.241.142.*, 120.241.143.*, 116.85.*, 139.199.240.84
+hostname = %APPEND% 113.46.225.*, common.diditaxi.com.cn, freight.xiaojukeji.com, daijia.kuaidadi.com, 162.14.157.*, ct.xiaojukeji.com, res.xiaojukeji.com, conf.diditaxi.com.cn, api.udache.com, 123.207.209.*, 112.53.55.225, 120.241.142.*, 120.241.143.*, 116.85.*, 139.199.240.84
 
