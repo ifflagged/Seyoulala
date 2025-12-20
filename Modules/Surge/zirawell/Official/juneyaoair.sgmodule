@@ -17,5 +17,8 @@
 # 屏蔽更新
 ^https?:\/\/hoapp\.juneyaoair\.com\/version data-type=text data="" status-code=200
 
+[Script]
+juneyaoair = type=http-response,pattern=^https?:\/\/hoapp\.juneyaoair\.com\/data\/index\/getPictureList,requires-body=1,max-size=0,script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zirawell/juneyaoair/juneyaoair.js
+
 [MITM]
 hostname= %APPEND% hoapp.juneyaoair.com
