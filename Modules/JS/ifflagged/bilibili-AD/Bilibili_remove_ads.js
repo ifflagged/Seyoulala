@@ -1,3 +1,3 @@
-<html><body><h1>504 Gateway Time-out</h1>
-The server didn't respond in time.
+<html><body><h1>503 Service Unavailable</h1>
+No server is available to handle this request.
 </body></html>
