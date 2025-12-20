@@ -3,7 +3,7 @@
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
 #!tag=Jacob
 
-#!arguments-desc=动态最常访问: [auto, show, hide]\n- auto: 仅当列表中存在直播状态时显示\n- show: 始终显示\n- hide: 始终隐藏\n\n创作中心: [1, 0]\n- 1: 显示\n- 0: 隐藏\n\n过滤置顶评论广告: [1, 0]\n- 1: 开启\n- 0: 关闭\n\n优化评论区加载: 默认开启，配置为"#"时关闭\n\n空降助手: 默认开启，配置为"#"时关闭\n\n空降助手策略: 默认直连，建议配置为代理策略\n\n日志等级: [off: 5, error: 4, warn: 3, info: 2, debug: 1]
+#!arguments-desc=动态最常访问\n- auto: 仅当列表中存在直播状态时显示\n- show: 始终显示\n- hide: 始终隐藏\n\n创作中心\n- 0: 隐藏\n- 1: 显示\n\n过滤置顶评论广告\n- 0: 关闭\n- 1: 开启\n\n优化评论区加载: 默认开启，配置为"#"时关闭\n\n空降助手: 默认开启，配置为"#"时关闭\n\n空降助手策略: 默认直连，建议配置为代理策略\n\n日志等级\n- 1: DEBUG\n- 2: INFO\n- 3: WARN\n- 4: ERROR\n- 5: OFF
 
 [Argument]
 动态最常访问=input,auto,tag=动态最常访问, desc=动态最常访问
