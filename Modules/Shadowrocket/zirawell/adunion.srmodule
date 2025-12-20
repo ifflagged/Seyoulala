@@ -436,11 +436,13 @@ IP-CIDR,180.76.76.112/32,REJECT,no-resolve
 IP-CIDR,180.76.76.200/32,REJECT,no-resolve
 DOMAIN,o2o-ad-log-gateway.alibaba.com,REJECT,extended-matching
 DOMAIN,eco.taobao.com,REJECT,extended-matching
+DOMAIN,ilce.alicdn.com,REJECT,extended-matching
 DOMAIN,ossgw.alicdn.com,REJECT,extended-matching
 DOMAIN,hudong.alicdn.com,REJECT,extended-matching
 DOMAIN,baichuan-sdk.alicdn.com,REJECT,extended-matching
 DOMAIN,beacon-api.aliyuncs.com,REJECT,extended-matching
 DOMAIN,adash.man.aliyuncs.com,REJECT,extended-matching
+DOMAIN,dispatcher.is.autonavi.com,REJECT,extended-matching
 DOMAIN-SUFFIX,mpush-api.aliyun.com,REJECT,extended-matching
 DOMAIN-SUFFIX,aecpm.alicdn.com,REJECT,extended-matching
 DOMAIN-SUFFIX,afp.alicdn.com,REJECT,extended-matching
@@ -549,6 +551,8 @@ DOMAIN-SUFFIX,count.video.sina.com.cn,REJECT,extended-matching
 
 ^https?:\/\/bk\.bingo\.qq\.com\/bk\/crx\/data\/videoAd data-type=text data="{}"
 
+^https?:\/\/api\.map\.baidu\.com\/\?qt=verify data-type=text data="{}"
+
 ^https?:\/\/afd\.baidu\.com\/afd\/entry data-type=tiny-gif
 
 ^https?:\/\/issuecdn\.baidupcs\.com\/issue\/netdisk\/guanggao\/ data-type=text data=""
@@ -581,5 +585,5 @@ adunion = type=http-response, pattern=^https?:\/\/api-access\.pangolin-sdk-touti
 adunion = type=http-response, pattern=^https?:\/\/is.snssdk.com/api/ad/union/sdk, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zirawell/adunion/adsense.js, requires-body=true, max-size=0
 
 [MITM]
-hostname = %APPEND% api2.helper.qq.com, imgcache.qq.com, mtteve.beacon.qq.com, vv.video.qq.com, qt.qq.com, y.gtimg.cn, splashqqlive.gtimg.com, qzonestyle.gtimg.cn, discuz.gtimg.cn, bla.gtimg.com, mmgr.gtimg.com, bk.bingo.qq.com, mi.gdt.qq.com, www.baidu.com, fcvbjbcebos.baidu.com, cover.baidu.com, afd.baidu.com, issuecdn.baidupcs.com, update.pan.baidu.com, video-dsp.pddpic.com, t-dsp.pinduoduo.com, images.pinduoduo.com, amdc.m.taobao.com, gw.alicdn.com, heic.alicdn.com, g.alicdn.com, yixiu-abtest.alicdn.com, img1.126.net, nex.163.com, g1.163.com, c.m.163.com, www.google.com, api*.musical.ly, api-access.pangolin-sdk-toutiao.com, is.snssdk.com, cdn.api.fotoable.com, cloud.bluecardsoft.com
+hostname = %APPEND% api2.helper.qq.com, imgcache.qq.com, mtteve.beacon.qq.com, vv.video.qq.com, qt.qq.com, y.gtimg.cn, splashqqlive.gtimg.com, qzonestyle.gtimg.cn, discuz.gtimg.cn, bla.gtimg.com, mmgr.gtimg.com, bk.bingo.qq.com, mi.gdt.qq.com, www.baidu.com, api.map.baidu.com, fcvbjbcebos.baidu.com, cover.baidu.com, afd.baidu.com, issuecdn.baidupcs.com, update.pan.baidu.com, video-dsp.pddpic.com, t-dsp.pinduoduo.com, images.pinduoduo.com, amdc.m.taobao.com, gw.alicdn.com, heic.alicdn.com, g.alicdn.com, yixiu-abtest.alicdn.com, img1.126.net, nex.163.com, g1.163.com, c.m.163.com, www.google.com, api*.musical.ly, api-access.pangolin-sdk-toutiao.com, is.snssdk.com, cdn.api.fotoable.com, cloud.bluecardsoft.com
 

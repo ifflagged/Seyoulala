@@ -437,11 +437,13 @@ IP-CIDR,180.76.76.112/32,REJECT,no-resolve
 IP-CIDR,180.76.76.200/32,REJECT,no-resolve
 DOMAIN,o2o-ad-log-gateway.alibaba.com,REJECT
 DOMAIN,eco.taobao.com,REJECT
+DOMAIN,ilce.alicdn.com,REJECT
 DOMAIN,ossgw.alicdn.com,REJECT
 DOMAIN,hudong.alicdn.com,REJECT
 DOMAIN,baichuan-sdk.alicdn.com,REJECT
 DOMAIN,beacon-api.aliyuncs.com,REJECT
 DOMAIN,adash.man.aliyuncs.com,REJECT
+DOMAIN,dispatcher.is.autonavi.com,REJECT
 DOMAIN-SUFFIX,mpush-api.aliyun.com,REJECT
 DOMAIN-SUFFIX,aecpm.alicdn.com,REJECT
 DOMAIN-SUFFIX,afp.alicdn.com,REJECT
@@ -536,6 +538,7 @@ DOMAIN-SUFFIX,count.video.sina.com.cn,REJECT
 ^https?:\/\/mmgr\.gtimg\.com\/gjsmall\/qiantu\/upload\/ mock-response-body data-type=tiny-gif status-code=200
 ^https?:\/\/mmgr\.gtimg\.com\/gjsmall\/qqpim\/public\/ios\/splash\/.+?\/\d{4}_\d{4} mock-response-body data-type=tiny-gif status-code=200
 ^https?:\/\/bk\.bingo\.qq\.com\/bk\/crx\/data\/videoAd mock-response-body data-type=text data="{}" status-code=200
+^https?:\/\/api\.map\.baidu\.com\/\?qt=verify mock-response-body data-type=text data="{}" status-code=200
 ^https?:\/\/afd\.baidu\.com\/afd\/entry mock-response-body data-type=tiny-gif status-code=200
 ^https?:\/\/issuecdn\.baidupcs\.com\/issue\/netdisk\/guanggao\/ mock-response-body data-type=text status-code=200
 ^https?:\/\/[\s\S]*\.baidu\.com/.*?ad[xs]\.php mock-response-body data-type=tiny-gif status-code=200
@@ -559,5 +562,5 @@ http-response ^https?:\/\/api-access\.pangolin-sdk-toutiao\.com\/api\/ad\/union\
 http-response ^https?:\/\/is.snssdk.com/api/ad/union/sdk script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zirawell/adunion/adsense.js, requires-body=true, tag=adunion
 
 [MITM]
-hostname = api2.helper.qq.com, imgcache.qq.com, mtteve.beacon.qq.com, vv.video.qq.com, qt.qq.com, y.gtimg.cn, splashqqlive.gtimg.com, qzonestyle.gtimg.cn, discuz.gtimg.cn, bla.gtimg.com, mmgr.gtimg.com, bk.bingo.qq.com, mi.gdt.qq.com, www.baidu.com, fcvbjbcebos.baidu.com, cover.baidu.com, afd.baidu.com, issuecdn.baidupcs.com, update.pan.baidu.com, video-dsp.pddpic.com, t-dsp.pinduoduo.com, images.pinduoduo.com, amdc.m.taobao.com, gw.alicdn.com, heic.alicdn.com, g.alicdn.com, yixiu-abtest.alicdn.com, img1.126.net, nex.163.com, g1.163.com, c.m.163.com, www.google.com, api*.musical.ly, api-access.pangolin-sdk-toutiao.com, is.snssdk.com, cdn.api.fotoable.com, cloud.bluecardsoft.com
+hostname = api2.helper.qq.com, imgcache.qq.com, mtteve.beacon.qq.com, vv.video.qq.com, qt.qq.com, y.gtimg.cn, splashqqlive.gtimg.com, qzonestyle.gtimg.cn, discuz.gtimg.cn, bla.gtimg.com, mmgr.gtimg.com, bk.bingo.qq.com, mi.gdt.qq.com, www.baidu.com, api.map.baidu.com, fcvbjbcebos.baidu.com, cover.baidu.com, afd.baidu.com, issuecdn.baidupcs.com, update.pan.baidu.com, video-dsp.pddpic.com, t-dsp.pinduoduo.com, images.pinduoduo.com, amdc.m.taobao.com, gw.alicdn.com, heic.alicdn.com, g.alicdn.com, yixiu-abtest.alicdn.com, img1.126.net, nex.163.com, g1.163.com, c.m.163.com, www.google.com, api*.musical.ly, api-access.pangolin-sdk-toutiao.com, is.snssdk.com, cdn.api.fotoable.com, cloud.bluecardsoft.com
 
