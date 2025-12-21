@@ -1,4 +1,4 @@
-#规则数量:1373
+#规则数量:1372
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -245,7 +245,6 @@ payload:
   - DOMAIN,dgstatic.jd.com
   - DOMAIN,dig.bdurl.net
   - DOMAIN,dig.zjurl.cn
-  - DOMAIN,dispatcher.is.autonavi.com
   - DOMAIN,dm.bytedance.com
   - DOMAIN,dm.pstatp.com
   - DOMAIN,dns.jd.com
