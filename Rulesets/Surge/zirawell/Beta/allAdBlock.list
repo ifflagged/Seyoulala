@@ -1,4 +1,4 @@
-#规则数量:1372
+#规则数量:1373
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -438,6 +438,7 @@ DOMAIN,rprain.bz.mgtv.com
 DOMAIN,rtlog5-applog.fqnovel.com
 DOMAIN,rtms.alipay.com
 DOMAIN,rttrack.ddxq.mobi
+DOMAIN,rumt-zh.com
 DOMAIN,s.youtube.com
 DOMAIN,s3a.pstatp.com
 DOMAIN,safebrowsing.g.applimg.com
