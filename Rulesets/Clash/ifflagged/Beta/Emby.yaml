@@ -1,4 +1,4 @@
-#规则数量:30
+#规则数量:22
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -12,26 +12,18 @@ payload:
   - DOMAIN-SUFFIX,emby.moe
   - DOMAIN-SUFFIX,coemn.com
   - DOMAIN-SUFFIX,313445.xyz
-  - DOMAIN-SUFFIX,charontv.com
-  - DOMAIN-SUFFIX,nanflix.net
-  - DOMAIN-SUFFIX,lyrebirdemby.com
   - DOMAIN-SUFFIX,bangumi.ca
-  - DOMAIN-SUFFIX,sfcj.org
-  - DOMAIN-SUFFIX,embymv.link
-  - DOMAIN-SUFFIX,tdck.fun
-  - DOMAIN-SUFFIX,vfing.de
-  - DOMAIN-SUFFIX,favoritewife.com
-  - DOMAIN-SUFFIX,28.al
-  - DOMAIN-SUFFIX,catlinks.co.uk
-  - DOMAIN-SUFFIX,jingzhe.pro
-  - DOMAIN-SUFFIX,beebi.org
-  - DOMAIN-SUFFIX,saturdayvideo.top
-  - DOMAIN-SUFFIX,misty.cx
-  - DOMAIN-SUFFIX,nijigem.by
   - DOMAIN-SUFFIX,wenjian.de
+  - DOMAIN-SUFFIX,sfcj.org
+  - DOMAIN-SUFFIX,jingzhe.pro
+  - DOMAIN-SUFFIX,embymv.link
+  - DOMAIN-SUFFIX,28.al
+  - DOMAIN-SUFFIX,saturdayvideo.top
+  - DOMAIN-SUFFIX,cn2gias.uk
+  - DOMAIN-SUFFIX,misty.cx
   - DOMAIN-SUFFIX,114514.quest
   - DOMAIN,116161.xyz
+  - DOMAIN-SUFFIX,shrekmedia.org
+  - DOMAIN-SUFFIX,nijigem.by
   - DOMAIN-SUFFIX,aliz.work
-  - DOMAIN-SUFFIX,yunti.online
-  - DOMAIN,emby3.mcjoker.xyz
   - DOMAIN-SUFFIX,okemby.org
