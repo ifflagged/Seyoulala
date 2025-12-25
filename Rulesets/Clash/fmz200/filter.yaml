@@ -1,4 +1,4 @@
-#规则数量:2755
+#规则数量:2754
 #不支持的规则数量:1
 #已排除的规则数量:0
 #不支持的规则:
@@ -1528,7 +1528,6 @@ payload:
   - DOMAIN-SUFFIX,smaato.net
   - DOMAIN-SUFFIX,spadsync.com
   - DOMAIN-SUFFIX,ads.inmobi.com
-  - DOMAIN-SUFFIX,akamaized.net
   - DOMAIN-SUFFIX,spadsync.com
   - DOMAIN-SUFFIX,tpc.googlesyndication.com
   - DOMAIN-SUFFIX,googleadsserving.cn
