@@ -3,7 +3,7 @@
 #!author=怎么肥事
 #!category=Jacob
 
-#!update=2025-12-29
+#!update=2025-12-30
 
 [Rule]
 IP-CIDR,139.199.244.6/32,REJECT,no-resolve
@@ -45,8 +45,6 @@ Didichuxing = type=http-response, pattern=^https:\/\/conf\.diditaxi\.com\.cn\/ho
 Didichuxing = type=http-response, pattern=^https:\/\/api\.udache\.com\/gulfstream\/pre-sale\/v1\/other\/pGetSceneList, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ZenmoFeiShi/Didichuxing/Didichuxing.js, requires-body=true, max-size=-1, timeout=60
 
 Didichuxing = type=http-response, pattern=^https:\/\/conf\.diditaxi\.com\.cn\/ota\/na\/yuantu\/infoList, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ZenmoFeiShi/Didichuxing/Didichuxing.js, requires-body=true, max-size=-1, timeout=60
-
-Didichuxing = type=http-response, pattern=^https:\/\/api\.udache\.com\/gulfstream\/passenger-center\/v2\/other\/pInTripLayout, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ZenmoFeiShi/Didichuxing/Didichuxing.js, requires-body=true, max-size=-1, timeout=60
 
 Didichuxing = type=http-response, pattern=^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v1\/oversea\/layout, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ZenmoFeiShi/Didichuxing/Didichuxing.js, requires-body=true, max-size=-1, timeout=60
 
