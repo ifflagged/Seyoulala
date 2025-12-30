@@ -33,6 +33,8 @@ IP-CIDR,116.85.3.25/32,REJECT,no-resolve
 ^https:\/\/res\.xiaojukeji\.com\/resapi\/activity\/mget - reject-dict
 ^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/other\/fast - reject-dict
 ^https:\/\/conf\.diditaxi\.com\.cn\/dynamic\/conf - reject-dict
+^https:\/\/api\.udache\.com\/gulfstream\/watson\/v1\/bubble\/getBubble - reject-dict
+^https:\/\/res\.xiaojukeji\.com\/resapi\/activity\/getInsActivityV2 - reject-dict
 ^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v1\/other\/slow - reject-dict
 
 [Body Rewrite]

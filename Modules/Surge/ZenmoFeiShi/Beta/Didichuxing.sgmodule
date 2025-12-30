@@ -47,6 +47,10 @@ http-response-jq ^https:\/\/api\.udache\.com\/gulfstream\/passenger-center\/v2\/
 
 ^https:\/\/conf\.diditaxi\.com\.cn\/dynamic\/conf data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
+^https:\/\/api\.udache\.com\/gulfstream\/watson\/v1\/bubble\/getBubble data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+^https:\/\/res\.xiaojukeji\.com\/resapi\/activity\/getInsActivityV2 data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
 ^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v1\/other\/slow data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 [Script]
