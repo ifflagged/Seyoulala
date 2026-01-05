@@ -1,4 +1,4 @@
-#规则数量:1376
+#规则数量:1375
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -1338,7 +1338,6 @@ DOMAIN-KEYWORD,biz.weibo.com
 DOMAIN-KEYWORD,bjimp.voiceads.cn
 DOMAIN-KEYWORD,c1img.ali.kugou.com
 DOMAIN-KEYWORD,collectionpv.che168.com
-DOMAIN-KEYWORD,dns.alidns.com
 DOMAIN-KEYWORD,dnspod.meituan.httpdns
 DOMAIN-KEYWORD,gdtimg.com
 DOMAIN-KEYWORD,iflyad.bj.openstorage.cn
