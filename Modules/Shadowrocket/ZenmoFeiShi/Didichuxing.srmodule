@@ -3,7 +3,7 @@
 #!author=怎么肥事
 #!category=Jacob
 
-#!update=2025-12-30
+#!update=2026-1-9
 
 [Rule]
 IP-CIDR,139.199.244.6/32,REJECT,no-resolve
@@ -38,8 +38,6 @@ IP-CIDR,116.85.3.25/32,REJECT,no-resolve
 ^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v1\/other\/slow - reject-dict
 
 [Script]
-Didichuxing = type=http-response, pattern=^https:\/\/common\.diditaxi\.com\.cn\/common\/v5\/usercenter\/layout, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ZenmoFeiShi/Didichuxing/Didichuxing.js, requires-body=true, max-size=-1, timeout=60
-
 Didichuxing = type=http-response, pattern=^https:\/\/common\.diditaxi\.com\.cn\/common\/v\d\/usercenter\/me, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ZenmoFeiShi/Didichuxing/Didichuxing.js, requires-body=true, max-size=-1, timeout=60
 
 Didichuxing = type=http-response, pattern=^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/core, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ZenmoFeiShi/Didichuxing/Didichuxing.js, requires-body=true, max-size=-1, timeout=60
