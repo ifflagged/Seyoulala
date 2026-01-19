@@ -1,4 +1,4 @@
-//  2025-05-24
+//  2026-01-19
 //  树先生
 //  当前文件内容仅供个人学习和研究使用，若使用过程中发生任何问题概不负责
 
@@ -44,7 +44,7 @@ if (url.includes("/gw/mtop.taobao.idlemtopsearch.search.shade") || url.includes(
 
 if (url.includes("/mtop.idle.user.page.my.adapter")) {
   //  "0": 会员等级信息; "2": tips横幅; "3": 我买到的; "6"、"8": 底部图标菜单; "5": 横幅; "4":回收横幅广告->底部图标菜单了（2026-01-19）
-  const indexArr = ["0", "2", "4", "5", "6", "8"];
+  const indexArr = ["2", "4", "5", "6", "8"];
   obj.data.container.sections = obj.data.container.sections.filter(item => !indexArr.includes(item.index));
 
   //  "4"索引有多个元素，包含正常内容，需要特殊判断
@@ -74,7 +74,8 @@ if (url.includes("/mtop.idle.user.page.my.adapter")) {
       //section.item.tool.exContent.tools = section.item.tool.exContent.tools.filter(item => tools.includes(item.exContent.toolId));
 
       // 定义要筛选的 toolId 列表
-      const targetToolIds = [20, 1, 13, 26];
+      //const targetToolIds = [20, 1, 13, 26];
+      const targetToolIds = [2, 3, 5, 6];//  2:小法庭; 3:公约; 5:超级擦亮; 6:帖子中心
       // 筛选并保留一层数组结构
       const filteredTools = [
           section.item.tool.exContent.tools.flatMap(subArray => 
@@ -90,6 +91,12 @@ if (url.includes("/mtop.idle.user.page.my.adapter")) {
 
 
   //  处理闲鱼会员信息  data.container.sections[index:0]
+  // obj.data.container.sections.forEach(section => {
+  //   if (section.index === "0" && section.item?.level) {
+  //     delete section.item.level;
+  //   }
+  // });
+  
 }
 
 if (url.includes("/mtop.taobao.idlehome.home.circle.list")) {
