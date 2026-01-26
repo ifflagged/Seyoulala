@@ -1224,7 +1224,7 @@ https://api.rr.tv/storage/business/rootName/app/homePage\?dataType=JSON - reject
 # hostname = service.4gtv.tv
 ^https?:\/\/service\.4gtv\.tv\/4gtv\/Data\/(?>GetAD|ADLog) - reject-200
 # hostname = mapi.sichuanair.com
-^https?:\/\/mapi\.sichuanair\.com\/zt\/tribeport\/encrypt_translate_key - reject-200
+#^https?:\/\/mapi\.sichuanair\.com\/zt\/tribeport\/encrypt_translate_key - reject-200
 # hostname = *.souhu.com
 ^https?:\/\/api\.k\.sohu\.com\/api\/news\/adsense - reject-200
 ^https?:\/\/pic\.k\.sohu\.com\/img8\/wb\/tj\/ - reject-200

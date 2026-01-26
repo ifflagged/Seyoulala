@@ -1881,7 +1881,7 @@ https://api.rr.tv/storage/business/rootName/app/homePage\?dataType=JSON data-typ
 ^https?:\/\/service\.4gtv\.tv\/4gtv\/Data\/(?>GetAD|ADLog) data-type=text data=" " status-code=200
 
 # hostname = mapi.sichuanair.com
-^https?:\/\/mapi\.sichuanair\.com\/zt\/tribeport\/encrypt_translate_key data-type=text data=" " status-code=200
+#^https?:\/\/mapi\.sichuanair\.com\/zt\/tribeport\/encrypt_translate_key data-type=text data=" " status-code=200
 
 # hostname = *.souhu.com
 ^https?:\/\/api\.k\.sohu\.com\/api\/news\/adsense data-type=text data=" " status-code=200
