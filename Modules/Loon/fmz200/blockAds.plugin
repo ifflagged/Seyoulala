@@ -9,7 +9,7 @@
 #!tg-channel=https://t.me/inaisi
 #!tag=去广告, fmz200, 奶思
 #!system=iOS, iPadOS
-#!date=2026-01-21 21:00:00
+#!date=2026-01-29 10:00:00
 #!remark=下方的所有规则都标注了对应的hostname，可能存在错误或者遗漏，欢迎反馈。对于无法/可选MITM的hostname都特别做了“如开启可自行添加主机名”提示，如果提示后面没有标注主机名则包含所有主机名，否则只包含提示语后面的主机名。
 
 [Argument]
@@ -1607,7 +1607,7 @@ https://api.rr.tv/storage/business/rootName/app/homePage\?dataType=JSON - reject
 # hostname = service.4gtv.tv
 ^https?:\/\/service\.4gtv\.tv\/4gtv\/Data\/(?>GetAD|ADLog) - reject-200
 # hostname = mapi.sichuanair.com
-^https?:\/\/mapi\.sichuanair\.com\/zt\/tribeport\/encrypt_translate_key - reject-200
+#^https?:\/\/mapi\.sichuanair\.com\/zt\/tribeport\/encrypt_translate_key - reject-200
 # hostname = *.souhu.com
 ^https?:\/\/api\.k\.sohu\.com\/api\/news\/adsense - reject-200
 ^https?:\/\/pic\.k\.sohu\.com\/img8\/wb\/tj\/ - reject-200
@@ -2723,9 +2723,6 @@ http-response ^https?:\/\/maicai\.api\.ddxq\.mobi\/tool\/getConfig script-path=h
 
 # 我的页净化
 http-response ^https?:\/\/user\.api\.ddxq\.mobi\/userportal-service\/api\/v\d\/user\/queryMyPage script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/blockAds/ddxq.js, requires-body=true, timeout=60, tag=叮咚买菜, enable={ddmc_enable}
-
-# > Flightradar24
-http-response ^https?:\/\/mobile\.flightradar24\.com\/mobile\/(user-session|subscribe) script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/blockAds/Flightradar24.js, requires-body=true, timeout=60, tag=Flightradar24解锁, enable={flightradar24_enable}
 
 # > 飞客茶馆
 http-response ^https?:\/\/47\.100\.65\.202\/source\/plugin\/mobile\/mobile\.php\?module=threadpost&.+?&page=1 script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/blockAds/fly.js, requires-body=true, timeout=60, tag=飞客茶馆, enable={fwke_enable}
