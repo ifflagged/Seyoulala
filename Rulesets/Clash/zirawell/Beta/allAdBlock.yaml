@@ -1,4 +1,4 @@
-#规则数量:1385
+#规则数量:1384
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -680,7 +680,6 @@ payload:
   - DOMAIN-SUFFIX,agoodm.m.taobao.com
   - DOMAIN-SUFFIX,ai.taobao.com
   - DOMAIN-SUFFIX,aiclk.com
-  - DOMAIN-SUFFIX,akamaized.net
   - DOMAIN-SUFFIX,alitui.weibo.com
   - DOMAIN-SUFFIX,alitui.weibo.com.cn
   - DOMAIN-SUFFIX,amazon-adsystem.com
