@@ -36,6 +36,8 @@ http-response ^https?:\/\/waimai-guide\.ele\.me\/h5\/mtop\.alsc\.eleme\.miniapp\
 
 ^https?:\/\/shopping\.ele\.me\/(gw|h5)\/mtop\.o2o\.ad\.exposure\.get data-type=text data="{}"
 
+^https?:\/\/waimai-guide\.ele\.me\/(gw|h5)\/mtop\.alsc\.upp\.tbet\.send data-type=text data="{}"
+
 ^https?:\/\/waimai-guide\.ele\.me\/h5\/mtop\.alsc\.eleme\.homepage\.miniapp\.popup data-type=text data="{}"
 
 [Script]

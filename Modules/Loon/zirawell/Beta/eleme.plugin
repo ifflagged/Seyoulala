@@ -29,6 +29,7 @@ DOMAIN,wgo.mmstat.com,REJECT
 ^https?:\/\/fuss10\.elemecdn\.com\/.+?\.mp4 mock-response-body data-type=tiny-gif status-code=200
 ^https?:\/\/amdc\.m\.ele\.me\/amdc\/mobileDispatch mock-response-body data-type=text data="{}" status-code=200
 ^https?:\/\/shopping\.ele\.me\/(gw|h5)\/mtop\.o2o\.ad\.exposure\.get mock-response-body data-type=text data="{}" status-code=200
+^https?:\/\/waimai-guide\.ele\.me\/(gw|h5)\/mtop\.alsc\.upp\.tbet\.send mock-response-body data-type=text data="{}" status-code=200
 ^https?:\/\/waimai-guide\.ele\.me\/h5\/mtop\.alsc\.eleme\.homepage\.miniapp\.popup mock-response-body data-type=text data="{}" status-code=200
 
 [Script]
