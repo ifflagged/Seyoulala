@@ -3,9 +3,6 @@
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
 #!tag=Jacob
 
-[General]
-skip-proxy = www.163.com
-
 [Rule]
 # NB助手
 DOMAIN,api-dsp.8ziben.com,REJECT

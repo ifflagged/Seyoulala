@@ -2,9 +2,6 @@
 #!desc=Common Tools for All
 #!category=Jacob
 
-[General]
-skip-proxy = %APPEND% www.163.com
-
 [Rule]
 # NB助手
 DOMAIN,api-dsp.8ziben.com,REJECT
