@@ -1,11 +1,7 @@
-#!name=hellobike
-#!desc=hellobike
-#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
-#!tag=Jacob
+hellobike%0A：Error: 请求超时(20 秒)
 
-[Rewrite]
-^https?:\/\/api\.hellobike\.com\/api\?adx mock-response-body data-type=text data="{}" status-code=200
 
-[MITM]
-hostname = api.hellobike.com
 
+
+
+Script Hub 重写转换: ❌  可自行翻译错误信息或复制错误信息后点击通知进行反馈
