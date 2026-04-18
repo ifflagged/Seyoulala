@@ -1,1 +1,3 @@
-upstream connect error or disconnect/reset before headers. retried and the latest reset reason: remote connection failure, transport failure reason: delayed connect error: Connection refused
+<html><body><h1>504 Gateway Time-out</h1>
+The server didn't respond in time.
+</body></html>
