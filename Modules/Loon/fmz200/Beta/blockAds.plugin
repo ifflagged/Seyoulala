@@ -22,7 +22,6 @@ alyp_enable=switch,true,false,tag=阿里云盘-脚本开关
 aiqiyi_enable=switch,true,false,tag=爱奇艺-脚本开关
 blued_enable=switch,true,false,tag=Blued-脚本开关
 bdduditu_enable=switch,true,false,tag=百度地图-脚本开关
-bddutpba_enable=switch,true,false,tag=百度贴吧-脚本开关
 per_filter_video_thread=select,"0",tag=百度贴吧-推荐页不展示视频贴, desc=设置为1则推荐页不展示视频贴
 lawson_enable=switch,true,false,tag=罗森点点-脚本开关
 displayUpList=select,"show",tag=bilibili-[动态]中[最常访问]的显示方式
@@ -32,7 +31,6 @@ sponsorBlock=switch,true,false,tag=bilibili-空降助手
 logLevel=select,"error",tag=bilibili-日志等级
 bilimanhua_enable=switch,true,false,tag=哔哩哔哩漫画-脚本开关
 bohejmkh_enable=switch,true,false,tag=薄荷健康-脚本开关
-cdyytmqi_enable=switch,false,true,tag=彩云天气-脚本开关
 cdnngogo_enable=switch,true,false,tag=菜鸟裹裹-脚本开关
 cdxb_enable=switch,true,false,tag=财新-脚本开关
 davsdmpk_enable=switch,true,false,tag=大众点评-脚本开关
@@ -40,7 +38,6 @@ dshxfg_enable=switch,true,false,tag=动画疯-脚本开关
 didiiuxk_enable=switch,true,false,tag=滴滴出行-脚本开关
 dyls_enable=switch,true,false,tag=电影猎手-脚本开关
 ddmc_enable=switch,true,false,tag=叮咚买菜-脚本开关
-flightradar24_enable=switch,true,false,tag=Flightradar24-脚本开关
 fwke_enable=switch,true,false,tag=飞客茶馆-脚本开关
 ffbi_enable=switch,true,false,tag=粉笔-脚本开关
 hlzh_enable=switch,true,false,tag=航旅纵横-脚本开关
@@ -51,7 +48,6 @@ jhsh_enable=switch,true,false,tag=建行生活-脚本开关
 jkds_enable=switch,true,false,tag=京东-脚本开关
 jkxi_enable=switch,true,false,tag=京喜-脚本开关
 keep_enable=switch,true,false,tag=keep-脚本开关
-kkuz_enable=switch,true,false,tag=快手-脚本开关
 kxke_enable=switch,true,false,tag=夸克-脚本开关
 kuwoybyt_enable=switch,true,false,tag=酷我音乐-脚本开关
 glgclmmg_enable=switch,true,false,tag=快手联盟, 优量汇, 穿山甲「广告联盟」-脚本开关
@@ -94,10 +90,8 @@ wfnibovj_enable=switch,true,false,tag=温尼伯站-脚本开关
 xnmiuhig_enable=switch,true,false,tag=小米商城-脚本开关
 xntuisis_enable=switch,true,false,tag=小兔充充-脚本开关
 xnmh_enable=switch,true,false,tag=小芒-脚本开关
-xmyu_enable=switch,true,false,tag=闲鱼-脚本开关
 xljnuiyivsuvgo_enable=switch,true,false,tag=香蕉是一种水果-脚本开关
 xhs_enable=switch,true,false,tag=小红书-脚本开关
-ximalaya_enable=switch,true,false,tag=喜马拉雅-脚本开关
 youtube_enable=switch,true,false,tag=YouTube-脚本开关
 yzku_enable=switch,true,false,tag=优酷-脚本开关
 yzxiapp_enable=switch,true,false,tag=悠洗APP-脚本开关
