@@ -14,7 +14,7 @@ http-response https:\/\/buy\.itunes\.apple\.com\/verifyReceipt script-path=https
 
 http-response ^https://firebaseremoteconfig.googleapis.com/v1/projects/filebox-ac299/.* script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/projects.js, requires-body=true, tag=projects
 
-http-response ^https://.*.mei(yan|tu).com\/.* script-path=https://raw.githubusercontent.com/Alex0510/Eric/master/surge/Script/myCamera.js, requires-body=true, tag=美颜相机VIP
+http-response ^https://.*.mei(yan|tu).com\/.* script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/myCamera.js, requires-body=true, tag=美颜相机VIP
 
 http-response ^ https://mobile.flightradar24.com/mobile/(user-session|subscribe) script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/flightradar24.js, requires-body=true, tag=flightradar24高级解锁
 
