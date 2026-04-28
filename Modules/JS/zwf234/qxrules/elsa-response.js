@@ -66,7 +66,7 @@ iVBORw0KGgoAAAANSUhEUgAAAZAAAAGZCAMAAACQbpc2AAADAFBMVEWEBz6FAD6FAD6GAD+MAEGOAEOK
       <div id="suggestions">
         <a href="https://support.github.com/contact">Contact Support</a> &mdash;
         <a href="https://githubstatus.com">GitHub Status</a> &mdash;
-        <a href="https://twitter.com/githubstatus">@githubstatus</a>
+        <a href="https://x.com/githubstatus">@githubstatus</a>
       </div>
 
       <a href="/" class="logo logo-img-1x">
