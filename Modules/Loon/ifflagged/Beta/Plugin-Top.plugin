@@ -1,12 +1,7 @@
-#!name=Top
-#!desc=Top
-#!author=Jacob
-#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
-#!tag=Jacob
+Plugin-Top%0A：Error: Response code 404 (Not Found)
 
-#!tag=Jacob
-#!date=2025-6-18 18:00:00
 
-[Rewrite]
-^https:\/\/app\.bilibili\.com\/x\/v2\/account\/mine(?:\/ipad)?\? response-body-json-jq jq-path="https://github.com/ifflagged/Neverflagged/raw/main/Loon/Scripts/mine_Bilibili_remove_ads.jq"
 
+
+
+Script Hub 重写转换: ❌  可自行翻译错误信息或复制错误信息后点击通知进行反馈
