@@ -1,4 +1,4 @@
-#规则数量:1415
+#规则数量:1416
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -56,6 +56,7 @@ IP-CIDR,183.201.213.194/24,no-resolve
 IP-CIDR,186.76.76.200/32,no-resolve
 IP-CIDR,203.107.1.0/24,no-resolve
 IP-CIDR,203.107.63.154/32,no-resolve
+IP-CIDR,203.119.204.80/32,no-resolve
 IP-CIDR,203.119.206.8/32,no-resolve
 IP-CIDR,203.119.206.9/32,no-resolve
 IP-CIDR,203.119.212.22/32,no-resolve
