@@ -35,7 +35,7 @@ IP-CIDR,162.14.137.43/32,REJECT,no-resolve,pre-matching
 
 [Map Local]
 # ⚠️域名[m.ctrip.com]可能存在无法MITM，请在需要使用时关闭MITM
-^https?:\/\/m\.ctrip\.com\/restapi\/soa\d\/\d+\/(?>tripAds|queryWeChatHotEvent) data-type=text data="{}" status-code=200
+^https?:\/\/m\.ctrip\.com\/restapi\/soa\d\/\d+\/(?>tripAds|queryWeChatHotEvent) data-type=json data="{}" status-code=200
 
 [MITM]
 hostname = %APPEND% ma-adx.ctrip.com, mbd.baidu.com, m.ctrip.com

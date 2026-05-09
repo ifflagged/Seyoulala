@@ -19,7 +19,7 @@ DOMAIN,ad.seeyouyima.com,REJECT
 ^https?:\/\/x\.seeyouyima\.com\/adx\/staticstics\? - reject
 ^https?:\/\/axxd\.xmseeyouyima\.com\/ad - reject
 ^https?:\/\/axxd\.xmseeyouyima\.com\/.*getad\? - reject
-^https?:\/\/wxproj\.seeyouyima\.com\/data\/today_tips mock-response-body data-type=text data="{}" status-code=200
+^https?:\/\/wxproj\.seeyouyima\.com\/data\/today_tips mock-response-body data-type=json data="{}" status-code=200
 
 [MITM]
 hostname = x.seeyouyima.com, axxd.xmseeyouyima.com, wxproj.seeyouyima.com

@@ -21,7 +21,7 @@ DOMAIN,ad.seeyouyima.com,REJECT,extended-matching,pre-matching
 ^https?:\/\/axxd\.xmseeyouyima\.com\/.*getad\? - reject
 
 [Map Local]
-^https?:\/\/wxproj\.seeyouyima\.com\/data\/today_tips data-type=text data="{}" status-code=200
+^https?:\/\/wxproj\.seeyouyima\.com\/data\/today_tips data-type=json data="{}" status-code=200
 
 [MITM]
 hostname = %APPEND% x.seeyouyima.com, axxd.xmseeyouyima.com, wxproj.seeyouyima.com

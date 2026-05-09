@@ -24,9 +24,9 @@ http-response ^https?:\/\/m\.lkcoffee\.com\/capi\/resource\/m\/growUp\/main "pop
 
 ^https?:\/\/img0[1-9]{1}\.luckincoffeecdn\.com\/group\d/M00/[A-Z0-9]{2}/[A-Z0-9]{2}/[a-zA-Z0-9]{29}\.(?>jpg|jpeg)_\.webp data-type=text data=""
 
-^https?:\/\/capi\.lkcoffee\.com\/resource\/m\/order\/orderBanner data-type=text data="{}"
+^https?:\/\/capi\.lkcoffee\.com\/resource\/m\/order\/orderBanner data-type=json data="{}"
 
-^https?:\/\/capi\.lkcoffee\.com\/resource\/market\/receiveCoupon\/receiveCouponPop data-type=text data="{}"
+^https?:\/\/capi\.lkcoffee\.com\/resource\/market\/receiveCoupon\/receiveCouponPop data-type=json data="{}"
 
 [MITM]
 hostname = %APPEND% capi.lkcoffee.com, ecapi.lkcoffee.com, m.lkcoffee.com, img*.lkcoffee.com
