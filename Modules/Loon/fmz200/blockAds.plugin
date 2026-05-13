@@ -2692,9 +2692,7 @@ http-response ^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.nbfriend\.message\.
 http-response ^https?:\/\/gg\.caixin\.com\/s\?z=caixin&op=1&c=3362 script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/blockAds/caixinAd.js, requires-body=true, timeout=60, tag=财新广告, enable={cdxb_enable}
 
 # 开屏广告
-http-response ^https?:\/\/img\.meituan\.net\/dpmobile\/ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/blockAds/dianping.js, requires-body=true, timeout=60, tag=大众点评, enable={davsdmpk_enable}
-
-http-response ^https?:\/\/img\.meituan\.net\/goodsawardpic\/\w+\.(?!gif)\w+$ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/blockAds/dianping.js, requires-body=true, timeout=60, tag=大众点评, enable={davsdmpk_enable}
+http-response ^https?:\/\/img\.meituan\.net\/(?>dpmobile|goodsawardpic)\/ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/blockAds/dianping.js, requires-body=true, timeout=60, tag=大众点评, enable={davsdmpk_enable}
 
 http-response ^https?:\/\/ddplus\.meituan\.net\/v\d\/mss_\w+\/picassovc script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/blockAds/dianping.js, requires-body=true, timeout=60, tag=大众点评, enable={davsdmpk_enable}
 
