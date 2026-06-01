@@ -9,7 +9,7 @@
 #!tg-channel=https://t.me/inaisi
 #!category=去广告, 奶思
 #!system=iOS, iPadOS
-#!date=2026-04-26 09:30:00
+#!date=2026-06-01 18:17:00
 #!remark=下方的所有规则都标注了对应的hostname，可能存在错误或者遗漏，欢迎反馈。对于无法/可选MITM的hostname都特别做了“如开启可自行添加主机名”提示，如果提示后面没有标注主机名则包含所有主机名，否则只包含提示语后面的主机名。
 
 [URL Rewrite]
@@ -2283,6 +2283,8 @@ replaceBody = type=http-response, pattern=^https?:\/\/www\.i3zh\.com, script-pat
 
 # 移除 轮播图 置顶文章 信息流广告
 ithome = type=http-response, pattern=^https?:\/\/napi\.ithome\.com\/api\/(news\/index|topmenu\/getfeeds), script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/ithome.js, requires-body=true, max-size=-1, timeout=60
+
+ithome = type=http-response, pattern=^https?:\/\/napi\.ithome\.com\/api\/news\/indexv2\/iphone\/927, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/ithome.js, requires-body=true, max-size=-1, timeout=60
 
 # 全面广告净化
 ccblife = type=http-response, pattern=^https?:\/\/yunbusiness\.ccb\.com\/(?>basic_service|clp_service)\/txCtrl\?txcode=A3341(?>SB16|C147|MB22|A009|A120|AB03|AB04|A068|A095|AB08), script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/ccblife.js, requires-body=true, max-size=-1, timeout=60
