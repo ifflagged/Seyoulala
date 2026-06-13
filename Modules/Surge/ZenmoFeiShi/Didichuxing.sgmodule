@@ -3,7 +3,7 @@
 #!author=怎么肥事
 #!category=Jacob
 
-#!update=2026-5-14
+#!update=2026-6-13
 
 [Rule]
 DOMAIN,gwp.xiaojukeji.com,REJECT
