@@ -1,12 +1,2 @@
-let obj = JSON.parse($response.body);
-
-obj = {
-  "error": false,
-  "data": {
-    "vip_expired": "2566584780",
-    "is_vip_now": true,
-    "is_vip": "1"
-  },
-  "status": 200
-}
-$done({body: JSON.stringify(obj)});
+429: Too Many Requests
+For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service).

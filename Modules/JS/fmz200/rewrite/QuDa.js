@@ -1,13 +1,2 @@
-/**
- * @author fmz200
- * @function 去哒 首页开屏广告
- * @date 2023-11-27 22:50:13
- */
-var body = $response.body;
-var obj = JSON.parse(body);
-if (obj.data.length == 600) {
-    obj.data = "null";
-    $done({body: JSON.stringify(obj)});
-} else {
-    $done({});
-}
+429: Too Many Requests
+For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service).

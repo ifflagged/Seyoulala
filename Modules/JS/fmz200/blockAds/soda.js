@@ -1,5 +1,2 @@
-let obj = JSON.parse($response.body);
-obj.data.objects.forEach(item => {
-  item.imageUrl = "https://raw.githubusercontent.com/fmz200/wool_scripts/main/pic/rewrite/warm_water.png";
-});
-$done({body: JSON.stringify(obj)});
+429: Too Many Requests
+For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service).

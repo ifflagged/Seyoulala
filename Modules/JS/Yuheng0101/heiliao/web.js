@@ -1,8 +1,2 @@
-let body = $response.body;
-
-if (/<\/head>/.test(body)) {
-  body = body.replace(/<\/head>/, "</head><style>.editormd-preview blockquote,.footer-desc,.addbox,#notice_container,.gotoclick,.list-sec{display:none !important;}</style>");
-  $done({ body });
-}
-
-$done({});
+429: Too Many Requests
+For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service).
