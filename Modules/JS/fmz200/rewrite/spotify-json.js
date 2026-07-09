@@ -1,15 +1,2 @@
-console.log(`spotify-json-2025.06.20`);
-let url = $request.url;
-// console.log(`原始url:${url}`);
-if (url.includes('com:443')) {
-    url = url.replace(/com:443/, 'com');
-}
-if (url.includes('platform=iphone')) {
-    url = url.replace(/platform=iphone/, 'platform=ipad');
-    // console.log(`替换platform:${url}`);
-} else {
-    console.log('无需处理');
-}
-$done({
-    url
-});
+429: Too Many Requests
+For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service).

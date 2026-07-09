@@ -1,2 +1,4 @@
-429: Too Many Requests
-For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service).
+let headers = $request.headers;
+delete headers['If-None-Match'];
+console.log('2025.03.20-qx-spotify删除请求头')
+$done({headers});
