@@ -1,17 +1,11 @@
+let obj = JSON.parse($response.body);
 
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
- "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html>
-  <head>
-    <title>503 first byte timeout</title>
-  </head>
-  <body>
-    <h1>Error 503 first byte timeout</h1>
-    <p>first byte timeout</p>
-    <h3>Error 54113</h3>
-    <p>Details: cache-iad-kiad7000093-IAD 1784003135 1775423645</p>
-    <hr>
-    <p>Varnish cache server</p>
-  </body>
-</html>
+// 过滤掉 layout 为 advert_self 的 data 条目
+obj.data = obj.data.filter(item => item.layout !== "advert_self");
+
+// 对每个 data 条目中的 list 进行二次过滤 (移除 type=3 的元素)
+obj.data.forEach(item => {
+  item.list = item.list.filter(ad => ad.type !== 3);
+});
+
+$done({body: JSON.stringify(obj)});
