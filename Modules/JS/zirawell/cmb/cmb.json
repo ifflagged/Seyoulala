@@ -1,2 +1,8 @@
-429: Too Many Requests
-For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service).
+{
+  "sysCode" : 200,
+  "bizResult" : {
+    "message" : "查询个推失败",
+    "code" : 403
+  },
+  "sysMsg" : "Success"
+}
