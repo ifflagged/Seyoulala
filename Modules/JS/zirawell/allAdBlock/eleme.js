@@ -1,2 +1,17 @@
-429: Too Many Requests
-For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service).
+
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>503 first byte timeout</title>
+  </head>
+  <body>
+    <h1>Error 503 first byte timeout</h1>
+    <p>first byte timeout</p>
+    <h3>Error 54113</h3>
+    <p>Details: cache-bur-kbur8200084-BUR 1784588431 1331807612</p>
+    <hr>
+    <p>Varnish cache server</p>
+  </body>
+</html>
