@@ -3042,7 +3042,7 @@ replaceBody = type=http-response, pattern=^https?:\/\/47\.100\.65\.202\/api\/mob
 
 fly = type=http-response, pattern=^https?:\/\/47\.100\.65\.202\/source\/plugin\/mobile\/mobile\.php\?module=threadpost&.+?&page=1, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/fly.js, requires-body=true, max-size=-1, timeout=60
 
-flyert = type=http-response, pattern=^https?:\/\/www\.flyert\.com(\.cn)?\/.*plugin, script-path=https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/flyert.js, requires-body=true, max-size=-1, timeout=60
+flyert = type=http-response, pattern=^https?:\/\/www\.flyert\.com(\.cn)?\/.*plugin, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/flyert.js, requires-body=true, max-size=-1, timeout=60
 
 # 开屏广告
 fenbi = type=http-response, pattern=^https?:\/\/tiku\.fenbi\.com\/activity\/app\/launcher\?, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/fenbi.js, requires-body=true, max-size=-1, timeout=60
@@ -3052,7 +3052,7 @@ foliday = type=http-response, pattern=^https?:\/\/apis\.folidaymall\.com\/online
 
 umetrip_ads = type=http-response, pattern=^http?:\/\/(114\.115\.217\.129)|(home\.umetrip\.com)\/gateway\/api\/umetrip\/native$, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/umetrip_ads.js, requires-body=true, max-size=-1, timeout=60
 
-freshippo = type=http-response, pattern=^https?:\/\/acs(\.|-)m\.(taobao|freshippo)\.com\/gw\/mtop\.wdk\.render\.query(?>indexpage|mypage|tabfeedstream), script-path=https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/freshippo.js, requires-body=true, max-size=-1, timeout=60
+freshippo = type=http-response, pattern=^https?:\/\/acs(\.|-)m\.(taobao|freshippo)\.com\/gw\/mtop\.wdk\.render\.query(?>indexpage|mypage|tabfeedstream), script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/freshippo.js, requires-body=true, max-size=-1, timeout=60
 
 # 感谢【可莉】分享
 huifutianxia_ads = type=http-response, pattern=^https:\/\/mcsp\.cloudpnr\.com\/api\/miniapp\/popular\/T_MINIAPP$, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/huifutianxia_ads.js, requires-body=true, max-size=-1, timeout=60
@@ -3076,7 +3076,7 @@ alicdn = type=http-response, pattern=^https?:\/\/g\.alicdn\.com\/.*o2o-ad, scrip
 replaceBody = type=http-response, pattern=^https?:\/\/waimai-guide\.ele\.me\/\w+\/mtop\.venus\.shopresourceservice\.getshopresource, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/replace-body.js, requires-body=true, max-size=-1, timeout=30, argument=posterList-%3Erandom_body
 
 # hostname = api.m.jd.com, dns.jd.com
-jingdong = type=http-response, pattern=^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome), script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/jingdong/jingdong.js, requires-body=true, max-size=-1, timeout=60
+jingdong = type=http-response, pattern=^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome), script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/jingdong.js, requires-body=true, max-size=-1, timeout=60
 
 # hostname = api.m.jd.com
 replaceBody = type=http-response, pattern=^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=lite_advertising, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/replace-body.js, requires-body=true, max-size=-1, timeout=30, argument=jdLiteAdvertisingVO-%3Efmz200
@@ -3125,7 +3125,7 @@ coolapk = type=http-response, pattern=^https?:\/\/api\.coolapk\.com\/v6\/main\/(
 coolapk = type=http-response, pattern=^https?:\/\/api\.coolapk\.com\/v6\/page\/dataList\?, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/coolapk.js, requires-body=true, max-size=-1, timeout=60
 
 # 首页北京城市导览图片,首页上方轮播图片净化
-ltsst-ad = type=http-response, pattern=^https?:\/\/www\.1314zhilv\.com\/ltsstnew\/(common\/getJGQIconNew|city\/getAllBannelByCity), script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/lvtusuishenting/ltsst-ad.js, requires-body=true, max-size=-1, timeout=60
+ltsst-ad = type=http-response, pattern=^https?:\/\/www\.1314zhilv\.com\/ltsstnew\/(common\/getJGQIconNew|city\/getAllBannelByCity), script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/ltsst-ad.js, requires-body=true, max-size=-1, timeout=60
 
 lawson = type=http-response, pattern=^https:\/\/lawsonapi\.yorentown\.com\/area\/sh-lawson\/app\/v1\/, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/lawson.js, requires-body=true, max-size=-1, timeout=60
 
@@ -3196,7 +3196,7 @@ replaceBody = type=http-response, pattern=^https?:\/\/mobile\.yangkeduo\.com\/pr
 #PPX = type=http-response, pattern=^https?:\/\/.+\.pipix\.com\/bds\/user\/check_in\/, script-path=https://raw.githubusercontent.com/ZenmoFeiShi/Qx/main/PPX.js, requires-body=true, max-size=-1, timeout=60
 
 # 起点开屏页广告,每日导读去除,冷启动强制跳转精选页去除,去除发现页弹出的活动弹窗,去除下方(精选 发现 中间的)活动时的tab,去除书架右下角的活动/广告的悬浮icon,搜索页可以搜索用户
-qidian = type=http-response, pattern=^https?:\/\/magev6\.if\.qidian\.com\/argus\/api\/(v4\/client\/getsplashscreen|v2\/deeplink\/geturl|v1\/(client\/getconf|adv\/getadvlistbatch\?positions=iOS_tab|dailyrecommend\/getdailyrecommend)), script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/qidian.js, requires-body=true, max-size=-1, timeout=60
+qidian = type=http-response, pattern=^https?:\/\/magev6\.if\.qidian\.com\/argus\/api\/(v4\/client\/getsplashscreen|v2\/deeplink\/geturl|v1\/(client\/getconf|adv\/getadvlistbatch\?positions=iOS_tab|dailyrecommend\/getdailyrecommend)), script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/qidian.js, requires-body=true, max-size=-1, timeout=60
 
 # 我的界面及活动按钮
 #Qidian_my = type=http-response, pattern=^https?:\/\/magev6\.if\.qidian\.com\/argus\/api\/(v1\/assembly\/toolbar|v3\/user\/getaccountpage), script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/Qidian_my.js, requires-body=true, max-size=-1, timeout=60
