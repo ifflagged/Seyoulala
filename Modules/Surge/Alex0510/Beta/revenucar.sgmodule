@@ -5,7 +5,7 @@
 #!说明=具体解锁APP请移步https://t.me/Mr_Eric_iOS
 
 [Script]
-Pro = type=http-response, pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts|subscribers\/(\$RCAnonymousID%)?([\u4E00-\u9FA5A-Za-z0-9-_]+))$, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/revenuecat.js, requires-body=true, max-size=0
+Pro = type=http-response, pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts|subscribers\/(\$RCAnonymousID%)?([\u4E00-\u9FA5A-Za-z0-9-_]+))$, script-path=https://raw.githubusercontent.com/Alex0510/Eric/master/surge/Script/revenuecat.js, requires-body=true, max-size=0
 
 RC = type=http-request, pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts|subscribers\/(\$RCAnonymousID%)?([\u4E00-\u9FA5A-Za-z0-9-_]+)), script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/bytq.js, max-size=0, script-update-interval=0
 
