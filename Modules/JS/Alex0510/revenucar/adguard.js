@@ -1,8 +1,2 @@
-/*
-adguard pro
-https://mobile-api.adguard.com/api/1.0/ios_validate_receipt
-*/
-
-var obj = JSON.parse($response.body);
-obj = {"products":[{"product_id":"com.adguard.lifetimePurchase","premium_status":"ACTIVE"}]}
-$done({body: JSON.stringify(obj)});
+429: Too Many Requests
+For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service).
