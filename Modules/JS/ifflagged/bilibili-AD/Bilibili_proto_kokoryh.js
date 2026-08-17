@@ -102,13 +102,13 @@
   <meta name="route-pattern" content="/:user_id/:repository/raw/*name(/*path)" data-turbo-transient>
   <meta name="route-controller" content="blob" data-turbo-transient>
   <meta name="route-action" content="raw" data-turbo-transient>
-  <meta name="fetch-nonce" content="v2:242a5a1f-577a-169e-8359-34456da3000a">
+  <meta name="fetch-nonce" content="v2:01e314bb-34bf-a9f2-5b6f-a16651957101">
 
     
   <meta name="current-catalog-service-hash" content="f3abb0cc802f3d7b95fc8762b94bdcb13bf39634c40c357301c4aa1d67a256fb">
 
 
-  <meta name="request-id" content="7058:2DF7A7:C9CE0:11F2A5:6A832819" data-turbo-transient="true" /><meta name="html-safe-nonce" content="5c916859f5b415cd787f7b15f1cf4a82511f1a8be764dd28b3502d9e167d2d6e" data-turbo-transient="true" /><meta name="visitor-payload" content="eyJyZWZlcnJlciI6bnVsbCwicmVxdWVzdF9pZCI6IjcwNTg6MkRGN0E3OkM5Q0UwOjExRjJBNTo2QTgzMjgxOSIsInZpc2l0b3JfaWQiOiI3NzgyMzk5MTY3ODI1MTI3NDQ5IiwicmVnaW9uX2VkZ2UiOiJpYWQiLCJyZWdpb25fcmVuZGVyIjoiY2VudHJhbHVzIn0=" data-turbo-transient="true" /><meta name="visitor-hmac" content="1ab58a16c5651f695b297e628af5a3a4eba713a58a116c08f2f381f29118b359" data-turbo-transient="true" />
+  <meta name="request-id" content="E3D6:1778E6:2641A4:35A419:6A832EC6" data-turbo-transient="true" /><meta name="html-safe-nonce" content="fed6e202892a17bc243de0c158d66c0c376168ab94cfa60f4680fb42e0fc2a6b" data-turbo-transient="true" /><meta name="visitor-payload" content="eyJyZWZlcnJlciI6bnVsbCwicmVxdWVzdF9pZCI6IkUzRDY6MTc3OEU2OjI2NDFBNDozNUE0MTk6NkE4MzJFQzYiLCJ2aXNpdG9yX2lkIjoiNzI5MDc4MjU1MjQwMTU4NzkxMCIsInJlZ2lvbl9lZGdlIjoiaWFkIiwicmVnaW9uX3JlbmRlciI6ImNlbnRyYWx1cyJ9" data-turbo-transient="true" /><meta name="visitor-hmac" content="895525cc08be132e125bcf4852f6243fc101a91ba44647c885cfda13230e2fe3" data-turbo-transient="true" />
 
 
 
@@ -300,10 +300,10 @@
         <span class="js-stale-session-flash-signed-out" hidden>You signed out in another tab or window. <a class="Link--inTextBlock" href="">Reload</a> to refresh your session.</span>
         <span class="js-stale-session-flash-switched" hidden>You switched accounts on another tab or window. <a class="Link--inTextBlock" href="">Reload</a> to refresh your session.</span>
 
-    <button id="icon-button-d5a8006d-b4b9-4de9-9d10-8fc9d336dee7" aria-labelledby="tooltip-01d2bfee-4330-4e3d-b8fa-91b75e029f92" type="button" data-view-component="true" class="Button Button--iconOnly Button--invisible Button--medium flash-close js-flash-close">  <svg aria-hidden="true" data-component="Octicon" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-x Button-visual">
+    <button id="icon-button-7add778f-a66f-4653-9a42-490d7ff02a98" aria-labelledby="tooltip-ae03f639-63fb-4a8c-964c-8105b5d8f95d" type="button" data-view-component="true" class="Button Button--iconOnly Button--invisible Button--medium flash-close js-flash-close">  <svg aria-hidden="true" data-component="Octicon" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-x Button-visual">
     <path d="M3.72 3.72a.75.75 0 0 1 1.06 0L8 6.94l3.22-3.22a.749.749 0 0 1 1.275.326.749.749 0 0 1-.215.734L9.06 8l3.22 3.22a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215L8 9.06l-3.22 3.22a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042L6.94 8 3.72 4.78a.75.75 0 0 1 0-1.06Z"></path>
 </svg>
-</button><tool-tip id="tooltip-01d2bfee-4330-4e3d-b8fa-91b75e029f92" for="icon-button-d5a8006d-b4b9-4de9-9d10-8fc9d336dee7" popover="manual" data-direction="s" data-type="label" data-view-component="true" class="sr-only position-absolute">Dismiss alert</tool-tip>
+</button><tool-tip id="tooltip-ae03f639-63fb-4a8c-964c-8105b5d8f95d" for="icon-button-7add778f-a66f-4653-9a42-490d7ff02a98" popover="manual" data-direction="s" data-type="label" data-view-component="true" class="sr-only position-absolute">Dismiss alert</tool-tip>
 
 
   

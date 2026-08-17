@@ -102,13 +102,13 @@
   <meta name="route-pattern" content="/:user_id/:repository/raw/*name(/*path)" data-turbo-transient>
   <meta name="route-controller" content="blob" data-turbo-transient>
   <meta name="route-action" content="raw" data-turbo-transient>
-  <meta name="fetch-nonce" content="v2:b49695a2-6c03-280f-ba5e-dd19c82907a5">
+  <meta name="fetch-nonce" content="v2:9f5b3314-4503-2a4f-9cae-92ad93da06ec">
 
     
   <meta name="current-catalog-service-hash" content="f3abb0cc802f3d7b95fc8762b94bdcb13bf39634c40c357301c4aa1d67a256fb">
 
 
-  <meta name="request-id" content="7061:2AE586:8DFA8:BA52C:6A8327D7" data-turbo-transient="true" /><meta name="html-safe-nonce" content="7600e948ac8ac0be9a53150871a71c2e515544e4bf994e4c10a051664809a558" data-turbo-transient="true" /><meta name="visitor-payload" content="eyJyZWZlcnJlciI6bnVsbCwicmVxdWVzdF9pZCI6IjcwNjE6MkFFNTg2OjhERkE4OkJBNTJDOjZBODMyN0Q3IiwidmlzaXRvcl9pZCI6Ijk0NjMxMjcwMTYyMDIwMTQzMSIsInJlZ2lvbl9lZGdlIjoiaWFkIiwicmVnaW9uX3JlbmRlciI6ImNlbnRyYWx1cyJ9" data-turbo-transient="true" /><meta name="visitor-hmac" content="c7a9cb34787db4c83684787e3894a39971b6fbc703026b20b4165a161c37c832" data-turbo-transient="true" />
+  <meta name="request-id" content="E3D9:151522:192E92:218527:6A832E98" data-turbo-transient="true" /><meta name="html-safe-nonce" content="7b7d3432ebc9dcaa9d904c7543cd41baaafc7d739d9a777c9dd728dc3deac220" data-turbo-transient="true" /><meta name="visitor-payload" content="eyJyZWZlcnJlciI6bnVsbCwicmVxdWVzdF9pZCI6IkUzRDk6MTUxNTIyOjE5MkU5MjoyMTg1Mjc6NkE4MzJFOTgiLCJ2aXNpdG9yX2lkIjoiMjA4NzkxODg2NTc3NzYzNDk2OCIsInJlZ2lvbl9lZGdlIjoiaWFkIiwicmVnaW9uX3JlbmRlciI6ImNlbnRyYWx1cyJ9" data-turbo-transient="true" /><meta name="visitor-hmac" content="3a538cc8522f3fefd9bd52161e1c06ad37a13b1de3cf877e09faeee20ab3f03a" data-turbo-transient="true" />
 
 
 
@@ -216,7 +216,7 @@
   <meta name="browser-errors-url" content="https://api.github.com/_private/browser/errors">
 
     <meta name="release" content="1c81212cde639f5bd3ee956e1dd61ef0adeb43ba" data-turbo-track="reload">
-  <meta name="ui-target" content="canary-2">
+  <meta name="ui-target" content="full">
 
   <link rel="mask-icon" href="https://github.githubassets.com/assets/pinned-octocat-093da3e6fa40.svg" color="#000000">
   <link rel="alternate icon" class="js-site-favicon" type="image/png" href="https://github.githubassets.com/favicons/favicon.png">
@@ -300,10 +300,10 @@
         <span class="js-stale-session-flash-signed-out" hidden>You signed out in another tab or window. <a class="Link--inTextBlock" href="">Reload</a> to refresh your session.</span>
         <span class="js-stale-session-flash-switched" hidden>You switched accounts on another tab or window. <a class="Link--inTextBlock" href="">Reload</a> to refresh your session.</span>
 
-    <button id="icon-button-f2e9c6bc-00a1-40af-85e5-8ff39c5bf048" aria-labelledby="tooltip-3d4d0c99-259f-43f5-8b9e-6559a6e8c9fe" type="button" data-view-component="true" class="Button Button--iconOnly Button--invisible Button--medium flash-close js-flash-close">  <svg aria-hidden="true" data-component="Octicon" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-x Button-visual">
+    <button id="icon-button-342ef20e-235a-4c18-8d5d-882c6c6f64bb" aria-labelledby="tooltip-e03fce27-b3c2-46af-a421-ace29a8c4ee9" type="button" data-view-component="true" class="Button Button--iconOnly Button--invisible Button--medium flash-close js-flash-close">  <svg aria-hidden="true" data-component="Octicon" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-x Button-visual">
     <path d="M3.72 3.72a.75.75 0 0 1 1.06 0L8 6.94l3.22-3.22a.749.749 0 0 1 1.275.326.749.749 0 0 1-.215.734L9.06 8l3.22 3.22a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215L8 9.06l-3.22 3.22a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042L6.94 8 3.72 4.78a.75.75 0 0 1 0-1.06Z"></path>
 </svg>
-</button><tool-tip id="tooltip-3d4d0c99-259f-43f5-8b9e-6559a6e8c9fe" for="icon-button-f2e9c6bc-00a1-40af-85e5-8ff39c5bf048" popover="manual" data-direction="s" data-type="label" data-view-component="true" class="sr-only position-absolute">Dismiss alert</tool-tip>
+</button><tool-tip id="tooltip-e03fce27-b3c2-46af-a421-ace29a8c4ee9" for="icon-button-342ef20e-235a-4c18-8d5d-882c6c6f64bb" popover="manual" data-direction="s" data-type="label" data-view-component="true" class="sr-only position-absolute">Dismiss alert</tool-tip>
 
 
   
