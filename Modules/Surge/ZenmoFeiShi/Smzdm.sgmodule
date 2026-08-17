@@ -1,7 +1,17 @@
-Smzdm%0A：Error: Response code 404 (Not Found)
+#!name=什么值得买净化
+#!desc=Smzdm
+#!author=怎么肥事
+#!category=Jacob
 
+#!update=2026-4-14
 
+[Map Local]
+^https:\/\/haojia\.m\.smzdm\.com\/detail_modul\/(other_modul|wiki_related_modul) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
+^https:\/\/s3\.zdmimg\.com\/third\/index data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
+^https:\/\/app-api\.smzdm\.com\/util\/loading data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-Script Hub 重写转换: ❌  可自行翻译错误信息或复制错误信息后点击通知进行反馈
+[MITM]
+hostname = %APPEND% haojia-api.smzdm.com, s-api.smzdm.com, homepage-api.smzdm.com, app-api.smzdm.com, user-api.smzdm.com, article-api.smzdm.com, qianbao.smzdm.com, s3.zdmimg.com, post.m.smzdm.com, haojia.m.smzdm.com
+

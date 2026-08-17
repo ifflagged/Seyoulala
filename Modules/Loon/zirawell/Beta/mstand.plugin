@@ -1,7 +1,15 @@
-mstand%0A：Error: Response code 404 (Not Found)
+#!name=mstand
+#!desc=mstand
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
+#!tag=Jacob
 
+[Rewrite]
+^https?:\/\/wechat-api-dj\.mstand\.cn\/scrm\/app\/mdm\/index\/listAdv\?types=(?!1&) mock-response-body data-type=json data="{}" status-code=200
+^https?:\/\/wechat-api-dj\.mstand\.cn\/system\/dms\/dmsAdSetting\/issue mock-response-body data-type=json data="{}" status-code=200
 
+[Script]
+http-response ^https?:\/\/wechat-api-dj\.mstand\.cn\/scrm\/mini\/app\/index\/info script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zirawell/mstand/wechatApplet.js, requires-body=true, tag=mstand
 
+[MITM]
+hostname = wechat-api-dj.mstand.cn
 
-
-Script Hub 重写转换: ❌  可自行翻译错误信息或复制错误信息后点击通知进行反馈
