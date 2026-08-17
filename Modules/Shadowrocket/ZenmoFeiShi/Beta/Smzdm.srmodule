@@ -1,28 +1,7 @@
-#!name=什么值得买净化
-#!desc=Smzdm
-#!author=怎么肥事
-#!category=Jacob
+Smzdm%0A：Error: Response code 404 (Not Found)
 
-#!update=2026-4-14
 
-[URL Rewrite]
-^https:\/\/haojia\.m\.smzdm\.com\/detail_modul\/(other_modul|wiki_related_modul) - reject-dict
-^https:\/\/s3\.zdmimg\.com\/third\/index - reject-dict
-^https:\/\/app-api\.smzdm\.com\/util\/loading - reject-dict
 
-[Body Rewrite]
-http-response-jq // ^https:\/\/app-api\.smzdm\.com\/util\/loading '.data = null'
-http-response-jq ^https:\/\/haojia-api\.smzdm\.com\/home\/list 'del(.data.banner_v2, .data.widget) | if .data.rows then .data.rows |= map(select(has("ad_banner_id") | not) | select(.ad != "ad_campaign_id_" and .ad != "ad_campaign_name" and .ad != "abs_position")) else . end'
-http-response-jq ^https:\/\/app-api\.smzdm\.com\/util\/update 'del(.data.ad_black_list, .data.operation_float, .data.haojia_widget)'
-http-response-jq ^https:\/\/homepage-api\.smzdm\.com\/v3\/home 'def clean: if type == "array" then map(clean) | map(select(. != null)) elif type == "object" then if .cell_type == "23008" or .cell_type == "23005" or .cell_type == "23024" then null else with_entries(.value |= clean) end else . end; .data |= clean | .data.functions |= map(select(.type == "message")) | .data.component |= map(select(.zz_type == "circular_banner" or .zz_type == "fixed_banner" or .zz_type == "filter" or .zz_type == "list")) | del(.data.widget, .data.operation_float_screen)'
-http-response-jq ^https:\/\/s-api\.smzdm\.com\/sou\/list_v10 'if .data.rows then .data.rows |= map(select(.model_type != "ads" and .article_tag != "广告" and .tag != "广告" and .left_tag != "广告" and .expose_sct != "广告" and .promotion_type != 3)) else . end'
-http-response-jq ^https:\/\/user-api\.smzdm\.com\/vip 'del(.data.big_banner, .data.top_banner, .data.yaoqingshaiwu)'
-http-response-jq ^https:\/\/user-api\.smzdm\.com\/vip\/bottom_card_list 'del(.data.rows)'
-http-response-jq ^https:\/\/article-api\.smzdm\.com\/publish\/get_bubble '.data = null'
-http-response-jq ^https:\/\/qianbao\.smzdm\.com\/v\d\/app\/home '.data |= map(select(.id == "40" or .id == "20"))'
-http-response-jq ^https:\/\/haojia\.m\.smzdm\.com\/detail_modul\/user_related_modul 'del(.data.super_coupon)'
-http-response-jq ^https:\/\/post\.m\.smzdm\.com\/ajax_app\/ajax_get_footer_list 'if .data.activity_banner.hot_widget then .data.activity_banner.hot_widget |= map(del(.pic_url)) else . end'
 
-[MITM]
-hostname = %APPEND% haojia-api.smzdm.com, s-api.smzdm.com, homepage-api.smzdm.com, app-api.smzdm.com, user-api.smzdm.com, article-api.smzdm.com, qianbao.smzdm.com, s3.zdmimg.com, post.m.smzdm.com, haojia.m.smzdm.com
 
+Script Hub 重写转换: ❌  可自行翻译错误信息或复制错误信息后点击通知进行反馈
