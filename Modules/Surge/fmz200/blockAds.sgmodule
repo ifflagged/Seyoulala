@@ -3594,7 +3594,7 @@ mdb = type=http-response, pattern=^https?:\/\/creditcardapp\.bankcomm\.(com|cn)\
 企迈（挪瓦咖啡、林里柠檬茶、霸王茶姬、陈香贵） = type=http-response, pattern=^https?:\/\/(?>webapi|miniapp)\.qmai\.cn\/web\/catering([0-9]-apiserver)?\/advertising\/ad\/advertiseInfo, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/blockAds/qmai.js, requires-body=true, timeout=60
 
 # 过滤推广 关NSFW提示 感谢【xream】分享
-reddit = type=http-response, pattern=^https?:\/\/gql(-fed)?\.reddit\.com, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/blockAds/reddit.js, requires-body=true, timeout=60
+reddit = type=http-response, pattern=^https?:\/\/gql(-fed)?\.reddit\.com, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/reddit.js, requires-body=true, timeout=60
 
 # RRTV_level_info
 rrtv_json = type=http-response, pattern=^https?:\/\/api\.rr\.tv\/\w{3}\/level\/info, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/blockAds/rrtv_json.js, requires-body=true, timeout=60
