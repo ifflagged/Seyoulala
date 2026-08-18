@@ -3101,7 +3101,7 @@ keep = type=http-response, pattern=^https?:\/\/api\.gotokeep\.com\/nuocha\/cours
 keep = type=http-response, pattern=^https?:\/\/api\.gotokeep\.com\/sportpage\/sport\/v\d\/mysport, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/keep.js, requires-body=true, max-size=-1, timeout=60
 
 # hostname = open-cms-api.uc.cn, open-cms-api.quark.cn
-quark = type=http-response, pattern=^https?:\/\/open-cms-api\.(uc|quark)\.cn\/open-cms, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/quark.js, requires-body=true, max-size=-1, timeout=60
+quark = type=http-response, pattern=^https?:\/\/open-cms-api\.(uc|quark)\.cn\/open-cms, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/quark.js, requires-body=true, max-size=-1, timeout=60
 
 kuwo = type=http-response, pattern=^https?:\/\/(mgxhtj|nmobi|searchrecterm)\.kuwo\.cn\/(mgxh|mobi|recterm)\.s, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/kuwo.js, requires-body=true, max-size=-1, timeout=60
 
@@ -3456,7 +3456,7 @@ body_rewrite_2835 = type=http-response, pattern=#^https:\/\/mobwsa\.ximalaya\.co
 body_rewrite_2841 = type=http-response, pattern=#^https:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/mobile-user\/v\d\/homePage\/ url, script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22json-del%22%2C%5B%22data.freeListenV2%22%5D%5D%5D
 
 # 我的页推广
-usmile = type=http-response, pattern=^https?:\/\/www\.myusmile\.online\/user\/plaqueTopic\/selectByType, script-path=https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/usmile.js, requires-body=true, max-size=-1, timeout=60
+usmile = type=http-response, pattern=^https?:\/\/www\.myusmile\.online\/user\/plaqueTopic\/selectByType, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/usmile.js, requires-body=true, max-size=-1, timeout=60
 
 # 响应体
 youtube.response = type=http-response, pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch), script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/youtube.response.js, requires-body=true, binary-body-mode=true, max-size=-1, timeout=60

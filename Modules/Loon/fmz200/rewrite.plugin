@@ -2310,7 +2310,7 @@ http-response ^https?:\/\/api\.gotokeep\.com\/nuocha\/course\/v\d/\w+\/preview s
 http-response ^https?:\/\/api\.gotokeep\.com\/sportpage\/sport\/v\d\/mysport script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/keep.js, requires-body=true, timeout=60, tag=keep
 
 # hostname = open-cms-api.uc.cn, open-cms-api.quark.cn
-http-response ^https?:\/\/open-cms-api\.(uc|quark)\.cn\/open-cms script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/quark.js, requires-body=true, timeout=60, tag=quark
+http-response ^https?:\/\/open-cms-api\.(uc|quark)\.cn\/open-cms script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/quark.js, requires-body=true, timeout=60, tag=quark
 
 http-response ^https?:\/\/(mgxhtj|nmobi|searchrecterm)\.kuwo\.cn\/(mgxh|mobi|recterm)\.s script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/kuwo.js, requires-body=true, timeout=60, tag=kuwo
 
@@ -2665,7 +2665,7 @@ http-response #^https:\/\/mobwsa\.ximalaya\.com\/mobile-playpage\/playpage\/tabs
 http-response #^https:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/mobile-user\/v\d\/homePage\/ url script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, timeout=30, tag=body_rewrite_2841, argument=%5B%5B%22json-del%22%2C%5B%22data.freeListenV2%22%5D%5D%5D
 
 # 我的页推广
-http-response ^https?:\/\/www\.myusmile\.online\/user\/plaqueTopic\/selectByType script-path=https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/usmile.js, requires-body=true, timeout=60, tag=usmile
+http-response ^https?:\/\/www\.myusmile\.online\/user\/plaqueTopic\/selectByType script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/usmile.js, requires-body=true, timeout=60, tag=usmile
 
 # 响应体
 http-response ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch) script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/youtube.response.js, requires-body=true, binary-body-mode=true, timeout=60, tag=youtube.response

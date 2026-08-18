@@ -2889,7 +2889,7 @@ http-response ^https?:\/\/cupid\.51job(app)?\.com\/open\/my-page\/ script-path=h
 http-response ^https?:\/\/(?>webapi|miniapp)\.qmai\.cn\/web\/catering([0-9]-apiserver)?\/advertising\/ad\/advertiseInfo script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/blockAds/qmai.js, requires-body=true, timeout=60, tag=企迈（挪瓦咖啡、林里柠檬茶、霸王茶姬、陈香贵）
 
 # 过滤推广 关NSFW提示 感谢【xream】分享
-http-response ^https?:\/\/gql(-fed)?\.reddit\.com script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/reddit.js, requires-body=true, timeout=60, tag=reddit, enable={reddit_enable}
+http-response ^https?:\/\/gql(-fed)?\.reddit\.com script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/blockAds/reddit.js, requires-body=true, timeout=60, tag=reddit, enable={reddit_enable}
 
 # RRTV_level_info
 http-response ^https?:\/\/api\.rr\.tv\/\w{3}\/level\/info script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/blockAds/rrtv_json.js, requires-body=true, timeout=60, tag=rrtv_json, enable={rfrfuipk_enable}
