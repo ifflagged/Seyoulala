@@ -36,9 +36,9 @@ http-response https?:\/\/(?:musicpay|nmobi|anymatch|vip1|audiobookpay|tingshu)\.
 
 http-response https://app.xunjiepdf.com/api/v4/memprofile script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/yyfyq.js, requires-body=true, tag=语音翻译器
 
-http-response https://ssl-api.itranslateapp.com/accounts/v4/subscriptions/verify/ios script-path=https://raw.githubusercontent.com/Alex0510/Eric/master/surge/Script/itranslate.js, requires-body=true, tag=itranslate翻译
+http-response https://ssl-api.itranslateapp.com/accounts/v4/subscriptions/verify/ios script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/itranslate.js, requires-body=true, tag=itranslate翻译
 
-http-response https://ch.sleepcycle.com/(useraccountstats|api/v1/subscription/get$) script-path=https://raw.githubusercontent.com/Alex0510/Eric/master/surge/Script/sleepcycle.js, requires-body=true, tag=sleepcycle
+http-response https://ch.sleepcycle.com/(useraccountstats|api/v1/subscription/get$) script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/sleepcycle.js, requires-body=true, tag=sleepcycle
 
 http-response https://mobile-api.adguard.com/api/2.0/ios_validate_receipt/.* script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/adguard.js, requires-body=true, tag=adguard
 
