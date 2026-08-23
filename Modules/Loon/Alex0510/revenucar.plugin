@@ -8,7 +8,7 @@
 [Script]
 http-response ^https:\/\/api\.revenuecat\.com\/.+\/(receipts|subscribers\/(\$RCAnonymousID%)?([\u4E00-\u9FA5A-Za-z0-9-_]+))$ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/revenuecat.js, requires-body=true, tag=Pro
 
-http-request ^https:\/\/api\.revenuecat\.com\/.+\/(receipts|subscribers\/(\$RCAnonymousID%)?([\u4E00-\u9FA5A-Za-z0-9-_]+)) script-path=https://raw.githubusercontent.com/Alex0510/Eric/master/surge/Script/bytq.js, tag=RC
+http-request ^https:\/\/api\.revenuecat\.com\/.+\/(receipts|subscribers\/(\$RCAnonymousID%)?([\u4E00-\u9FA5A-Za-z0-9-_]+)) script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/bytq.js, tag=RC
 
 http-response https:\/\/buy\.itunes\.apple\.com\/verifyReceipt script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/test.js, requires-body=true, tag=Receipt
 
@@ -24,7 +24,7 @@ http-response ^https:\/\/dayone\.app\/api\/v2\/users script-path=https://github.
 
 http-response ^https://backend.getdrafts.com/api/v1/verification/verify_receipt script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/Drafts.js, requires-body=true, tag=灵感足迹高级解锁
 
-http-response,8pattern=  https://api.effie.(co|pro)/api/v1/user/member = script-path=https://raw.githubusercontent.com/Alex0510/Eric/master/surge/Script/effie.js, requires-body=true, tag=effie解锁订阅
+http-response,8pattern=  https://api.effie.(co|pro)/api/v1/user/member = script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/effie.js, requires-body=true, tag=effie解锁订阅
 
 http-response https://ssl-api.itranslateapp.com/accounts/v4/subscriptions/verify/ios script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/iTranslate.js, requires-body=true, tag=itranslatePro
 
