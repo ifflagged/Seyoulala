@@ -7,7 +7,7 @@
 [Script]
 Pro = type=http-response, pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts|subscribers\/(\$RCAnonymousID%)?([\u4E00-\u9FA5A-Za-z0-9-_]+))$, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/revenuecat.js, requires-body=true, max-size=0
 
-RC = type=http-request, pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts|subscribers\/(\$RCAnonymousID%)?([\u4E00-\u9FA5A-Za-z0-9-_]+)), script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/bytq.js, max-size=0, script-update-interval=0
+RC = type=http-request, pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts|subscribers\/(\$RCAnonymousID%)?([\u4E00-\u9FA5A-Za-z0-9-_]+)), script-path=https://raw.githubusercontent.com/Alex0510/Eric/master/surge/Script/bytq.js, max-size=0, script-update-interval=0
 
 Receipt = type=http-response, pattern=https:\/\/buy\.itunes\.apple\.com\/verifyReceipt, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/test.js, requires-body=true, max-size=0
 
@@ -23,7 +23,7 @@ DayOne = type=http-response, pattern=^https:\/\/dayone\.app\/api\/v2\/users, scr
 
 灵感足迹高级解锁 = type=http-response, pattern=^https://backend.getdrafts.com/api/v1/verification/verify_receipt, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/Drafts.js, requires-body=true, max-size=0
 
-effie解锁订阅 = type=http-response,8pattern=  https://api.effie.(co|pro)/api/v1/user/member, pattern==, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/effie.js, requires-body=true, max-size=0
+effie解锁订阅 = type=http-response,8pattern=  https://api.effie.(co|pro)/api/v1/user/member, pattern==, script-path=https://raw.githubusercontent.com/Alex0510/Eric/master/surge/Script/effie.js, requires-body=true, max-size=0
 
 itranslatePro = type=http-response, pattern=https://ssl-api.itranslateapp.com/accounts/v4/subscriptions/verify/ios, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/iTranslate.js, requires-body=true, max-size=0
 

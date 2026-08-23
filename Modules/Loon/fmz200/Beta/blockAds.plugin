@@ -2599,9 +2599,9 @@ http-response ^https?:\/\/social\.blued\.cn\/users\/.+\/more\/ios\?v=2 script-pa
 http-response ^https?:\/\/newclient\.map\.baidu\.com\/client\/phpui2\/\?qt=ads script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/blockAds/baidumap.js, requires-body=true, timeout=60, tag=百度地图广告, enable={bdduditu_enable}
 
 # hostname = tiebac.baidu.com
-http-response ^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/(c\/(s\/sync|f\/(ad\/getSplashAd|frs\/(page|threadlist|generalTabList)|pb\/(pic)?page|excellent\/personalized))$|tiebaads\/commonbatch\?) script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/blockAds/tieba-json.js, requires-body=true, timeout=10, tag=贴吧json
+http-response ^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/(c\/(s\/sync|f\/(ad\/getSplashAd|frs\/(page|threadlist|generalTabList)|pb\/(pic)?page|excellent\/personalized))$|tiebaads\/commonbatch\?) script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-json.js, requires-body=true, timeout=10, tag=贴吧json
 
-http-response ^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/c\/(b\/ad\/adBid|f\/(frs\/(page|threadlist|generalTabList)|ad\/getFeedAd|pb\/page|excellent\/personalized))\?cmd script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/blockAds/tieba-proto.js, requires-body=true, binary-body-mode=true, timeout=10, tag=贴吧proto, argument=[{per_filter_video_thread}]
+http-response ^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/c\/(b\/ad\/adBid|f\/(frs\/(page|threadlist|generalTabList)|ad\/getFeedAd|pb\/page|excellent\/personalized))\?cmd script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-proto.js, requires-body=true, binary-body-mode=true, timeout=10, tag=贴吧proto, argument=[{per_filter_video_thread}]
 
 # > 哔哩哔哩
 http-request ^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.community\.service\.dm\.v1\.DM\/DmSegMobile$ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/blockAds/bilibili.protobuf.request.js, requires-body=true, binary-body-mode=true, timeout=10, tag=bilibili.airborne, enable={sponsorBlock}, argument=[{logLevel}]
@@ -2641,7 +2641,7 @@ http-response ^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.nbpresenta
 http-response ^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.nbfriend\.message\.conversation\.list\.cn script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/blockAds/cainiao.js, requires-body=true, timeout=60, tag=菜鸟裹裹, enable={cdnngogo_enable}
 
 # > 财新网
-http-response ^https?:\/\/gg\.caixin\.com\/s\?z=caixin&op=1&c=3362 script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/blockAds/caixinAd.js, requires-body=true, timeout=60, tag=财新广告, enable={cdxb_enable}
+http-response ^https?:\/\/gg\.caixin\.com\/s\?z=caixin&op=1&c=3362 script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/caixin/caixinAd.js, requires-body=true, timeout=60, tag=财新广告, enable={cdxb_enable}
 
 # 开屏广告
 http-response ^https?:\/\/img\.meituan\.net\/(?>dpmobile|goodsawardpic)\/ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/blockAds/dianping.js, requires-body=true, timeout=60, tag=大众点评, enable={davsdmpk_enable}
@@ -2812,7 +2812,7 @@ http-response ^https:\/\/config-service\.seeyouyima\.com\/api\/configs\/batch\? 
 http-response ^https:\/\/config-service\.seeyouyima\.com\/api\/configs\? script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/blockAds/meiyou_ads.js, requires-body=true, timeout=60, tag=美柚App净化, enable={meiyou_enable}
 
 # 去除开屏 首页广告 美修盒广告 我的页面广告
-http-response ^https:\/\/api\.bevol\.com\/(?:appmain\/app\/home\/page|usercenter\/account\/info|personal\/page|appmain\/app\/home\/launch|trialbox\/shop\/app\/homePage)$ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/blockAds/mlxx.js, requires-body=true, timeout=60, tag=美丽修行广告
+http-response ^https:\/\/api\.bevol\.com\/(?:appmain\/app\/home\/page|usercenter\/account\/info|personal\/page|appmain\/app\/home\/launch|trialbox\/shop\/app\/homePage)$ script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/refs/heads/main/mlxx.js, requires-body=true, timeout=60, tag=美丽修行广告
 
 # > 咪咕视频
 http-response ^https?:\/\/display-sc\.miguvideo\.com\/display\/v3\/static\/PERSONAL_CENTER$ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/blockAds/miguvideo_ads.js, requires-body=true, timeout=60, tag=咪咕视频个人中心去广告
