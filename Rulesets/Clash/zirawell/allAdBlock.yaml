@@ -1,4 +1,4 @@
-#规则数量:1428
+#规则数量:1431
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -271,6 +271,7 @@ payload:
   - DOMAIN,dig.bdurl.net
   - DOMAIN,dig.zjurl.cn
   - DOMAIN,discover.300hu.com
+  - DOMAIN,djad.nmgyhxxkj.cn
   - DOMAIN,dm.bytedance.com
   - DOMAIN,dm.pstatp.com
   - DOMAIN,dns.jd.com
@@ -454,6 +455,7 @@ payload:
   - DOMAIN,popup.dushu365.com
   - DOMAIN,pp-cdnfile2pcdn.msstatic.com
   - DOMAIN,pre-acs.youku.com
+  - DOMAIN,pro.dajuhl.com
   - DOMAIN,ptom.caohua.com
   - DOMAIN,push.chsi.com.cn
   - DOMAIN,qwapi.apple.com
@@ -1359,6 +1361,7 @@ payload:
   - DOMAIN-SUFFIX,zhengxiaoliu.top
   - DOMAIN-SUFFIX,znsv.baidu.com
   - DOMAIN-SUFFIX,zymo.mps.weibo.com
+  - DOMAIN-SUFFIX,zzspider.com
   - DOMAIN-KEYWORD,-ad.byteoversea.com
   - DOMAIN-KEYWORD,-adsystem.com
   - DOMAIN-KEYWORD,-analytics.bytescm.com
