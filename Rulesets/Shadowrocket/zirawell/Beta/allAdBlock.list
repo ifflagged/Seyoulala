@@ -1,4 +1,4 @@
-#规则数量:1431
+#规则数量:1432
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -226,6 +226,7 @@ DOMAIN,appgo.189.cn
 DOMAIN,appgoad.189.cn
 DOMAIN,apple.comscoreresearch.com
 DOMAIN,applog-perf.uc.cn
+DOMAIN,applog.paas.cmbchina.com
 DOMAIN,applog.zijieapi.com
 DOMAIN,apps-booster.xiaopeng.com
 DOMAIN,appsupport.qq.com
