@@ -17,7 +17,7 @@
 ^https?:\/\/a\.sinopecsales\.com\/app\/wff\/ mock-response-body data-type=json data="[]" status-code=200
 ^https?:\/\/a\.sinopecsales\.com\/app\/layout\/image\/xfq mock-response-body data-type=tiny-gif status-code=200
 ^https?:\/\/a\.sinopecsales\.com\/app\/update\/(?>AppOpenConfig|AppVersion) mock-response-body data-type=json data="{}" status-code=200
-^https?:\/\/ocrifs\.ejoy\.sinopec\.com\/advertitfs\/advert\/findAdvertInfo mock-response-body data-type=text status-code=200
+^https?:\/\/ocrifs\.ejoy\.sinopec\.com\/advertitfs\/advert\/findAdvertInfo mock-response-body data-type=text data="" status-code=200
 ^https?:\/\/egw\.ejoy\.sinopec\.com\/api\/interface\/queryEffectiveBulletin mock-response-body data-type=json data="{}" status-code=200
 
 [MITM]

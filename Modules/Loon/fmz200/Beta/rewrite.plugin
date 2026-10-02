@@ -5543,7 +5543,7 @@ https://.+\.gamersky.com/v1/statisticAd - reject-dict
 ^https?:\/\/adapi\.izuiyou\.com\/ - reject
 ^https?:\/\/(syh|www)\.zybang\.com\/adx\/ - reject-200
 # hostname = wrapper.cyapi.cn, api.caiyunapp.com
-^https?:\/\/wrapper\.cyapi\.cn\/v1\/activity\? mock-response-body data-type=file data-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/caiyun.json
+^https?:\/\/wrapper\.cyapi\.cn\/v1\/activity\? mock-response-body data-type=json data-path="https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/caiyun.json"
 #^https:\/\/(m|mwsa)\.ximalaya\.com\/community\/square\/v\d\/stream\? mock-response-body data-type=json data="{"data":{"cards":[{"content":{},"type":"RECOMMENDS"}]},"ret":0}" status-code=200
 
 [Script]
