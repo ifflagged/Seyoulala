@@ -3535,7 +3535,6 @@ DOMAIN-SUFFIX,z1.zedo.com,REJECT
 
 [URL Rewrite]
 #^https?:\/\/gab\.122\.gov\.cn\/eapp\/m\/sysquery - reject
-#^https?:\/\/gab\.122\.gov\.cn\/eapp\/m\/sysquery url reject
 ^https?:\/\/gab\.122\.gov\.cn\/eapp\/m\/sysquery\/adver$ - reject
 # hostname = api.21jingji.com
 ^https?:\/\/api\.21jingji\.com\/ad\/ - reject
@@ -3924,7 +3923,6 @@ https?:\/\/helper\.2bulu\.com\/(greenPea\/queryTasks|proSpecial\/allData|saveSpl
 ^https?:\/\/api\.mgzf\.com\/renter-operation\/home\/startHomePage - reject
 # hostname = dispatcher.camera360.com
 ^https?:\/\/dispatcher\.camera360\.com\/api\/v\d\/list$ - reject
-# ^https?:\/\/midc\.cdn-static\.abchina\.com\.cn\/distributecenterimg\/file\/download\/(?!bbc2|f015|1655|0992|4678|a194|d8e2|c513|e51c|0ee1|166e|05ca|c882|d5b8|22ed|a0dc|a55a|6f89|3bf9|3c71|52ec|5b62|ve7a|001c|923d|accf|4a10|0bd7|be7a|5b62|5dd6|1f24|006c|775d|bd02|b983|5251|806b|d119|db14|43c9|41d3|8570|2c10|85ea|1435|814e|f422|aec7|738c|d7c8|0538|02b4|fd20|7647|f6ef|07c5|885b|e4cb|685b|30aa|c23b|9603|f27f|eaf8|8011|a5eb|409d|724c|3f2a|e07f|6744|60a6|158c|8ce3) url reject-dict
 ^https?:\/\/midc\.cdn-static\.abchina\.com\.cn\/distributecenterimg\/file\/download\/(ed64|74b5) - reject
 # hostname = supportda.ofo.com, ma.ofo.com, activity2.api.ofo.com
 ^https?:\/\/supportda\.ofo\.com\/adaction\? - reject
@@ -4065,16 +4063,13 @@ https://ios.sspai.com/api/v3/recommend/page/get\?ad.*ios_home_modal - reject
 ^https?:\/\/\w+\.beacon\.qq\.com - reject
 # hostname = vv.video.qq.com
 #^https?:\/\/[\d\.:]*\/?(defaultts\.tc|vmind\.qqvideo\.tc|finderpdd\.video)\.qq\.com\/\w+ - reject
-# ^https?:\/\/[\d\.:]*\/?(defaultts\.tc|vmind\.qqvideo\.tc|finderpdd\.video)\.qq\.com\/\w+ url reject
 #^https?:\/\/apd-vlive\.apdcdn\.tc\.qq\.com\/vmind\.qqvideo\.tc\.qq\.com\/\w+ - reject
-# ^https?:\/\/apd-vlive\.apdcdn\.tc\.qq\.com\/vmind\.qqvideo\.tc\.qq\.com\/\w+ url reject
 #^https?:\/\/apd-\w+\.v\.smtcdns\.com\/(defaultts|omts|vmind\.qqvideo)\.tc\.qq\.com\/\w+ - reject
 # hostname = otheve.beacon.qq.com
 ^https?://otheve.beacon.qq.com\/analytics\/upload\?sid=.* - reject
 # hostname = news.ssp.qq.com, sports3.gtimg.com
 ^https?:\/\/news\.ssp\.qq\.com\/app - reject
 ^https?:\/\/sports3\.gtimg\.com\/community\/20cf93884470434eaf38b2e77ab7796a\.png - reject
-#^https?:\/\/r\.inews\.qq\.com\/getSplash\?apptype=ios&startarticleid=&__qnr= url reject-img
 ^https?:\/\/r\.inews\.qq\.com\/(adsBlacklist|getFullScreenPic|getQQNewsRemoteConfig) - reject
 ^https?:\/\/r\.inews\.qq\.com\/(getBannerAds|getNewsRemoteConfig|getSplash|searchHotCatList|upLoadLoc) - reject
 # hostname = static.gameplus.qq.com
@@ -5050,7 +5045,6 @@ https?:\/\/awg\.enmonster\.com\/apa\/(advert\/demand\/home\/poster|index\/advert
 # hostname = cdn-oss.00bang.cn, api.00bang.cn
 #^https?:\/\/cdn-oss\.00bang\.cn\/image\/LLB_OSS[A-Z0-9]{32}.jpg data-type=text data=" " status-code=200
 
-#^https?:\/\/cdn-oss\.00bang\.cn\/image\/LLB_OSS[A-Z0-9]{32}.jpg url reject-200
 ^https?:\/\/cdn-oss\.00bang\.cn\/image\/LLB_OSS50140C35669841B7A4218215C8C5338A\.jpg data-type=text data=" " status-code=200
 
 ^https?:\/\/cdn-oss\.00bang\.cn\/image\/LLB_OSS32D553B6981546909417BEF3B7A3BC4D\.jpg data-type=text data=" " status-code=200
@@ -5579,7 +5573,6 @@ https://api.rr.tv/storage/business/rootName/app/homePage\?dataType=JSON data-typ
 
 ^https?://bk\.bingo\.qq\.com/bk/crx/data/videoAd.*$ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-# ^https?:\/\/apd-\w+\.v\.smtcdns\.com\/(defaultts|omts|vmind\.qqvideo)\.tc\.qq\.com\/\w+ url reject
 #^https?:\/\/vv\.video\.qq\.com\/(diff|get)vmind data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # hostname = r.inews.qq.com, news.ssp.qq.com
@@ -5817,7 +5810,6 @@ https?:\/\/interface\d?\.music\.163.com\/eapi\/(mlivestream\/entrance\/playpage|
 
 ^https:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/social-web\/follow-stream\/category\/\d+$ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-# ^https:\/\/mobwsa\.ximalaya\.com\/mobile-playpage\/playpage\/tabs\/v2\/ url response-body-json-del data.playpage.resourceMap.defaultResource data.playpage.resourceMap.playPageTip
 ^https:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/mobile-playpage\/playpage\/recommendContentV\d\/ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 ^https:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/mobile-playpage\/playpage\/recommend\/resource\/allocation\/ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
@@ -5828,7 +5820,6 @@ https?:\/\/interface\d?\.music\.163.com\/eapi\/(mlivestream\/entrance\/playpage|
 
 ^https:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/app-skin-service\/skin\/setting\/info\/ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-#^https:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/mobile-user\/v\d\/homePage\/ url response-body-json-del data.freeListenV2
 ^https:\/\/(live|livewsa)\.ximalaya\.com\/lamia\/v1\/subscribe\/status$ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 ^https:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/subscribe\/v\d\/subscribe\/recommend\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
@@ -6348,7 +6339,6 @@ https://.+\.gamersky.com/v1/statisticAd data-type=text data="{}" status-code=200
 
 #^https?:\/\/.+\.pstatp\.com\/img\/ad data-type=text data=" " status-code=200
 
-#^https?:\/\/.+\.pstatp\.com\/img\/ad url reject-200
 ^https?:\/\/.+\.(amemv|musical|snssdk|tiktokv)\.com\/(api|motor)\/ad\/ data-type=text data=" " status-code=200
 
 ^https?:\/\/.+\.snssdk\.com\/motor\/operation\/activity\/display\/config\/V2\/ data-type=text data=" " status-code=200
@@ -6486,7 +6476,6 @@ didiAds = type=http-response, pattern=^https?:\/\/conf\.diditaxi\.com\.cn\/homep
 
 #didiAds = type=http-response, pattern=^https?:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/core, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/didiAds.js, requires-body=true, max-size=-1, timeout=60
 
-#^https?:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/core url script-response-body https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/didiAds.js
 didiAds = type=http-response, pattern=^https?:\/\/conf\.diditaxi\.com\.cn\/dynamic\/conf, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/didiAds.js, requires-body=true, max-size=-1, timeout=60
 
 didiAds = type=http-response, pattern=^https?:\/\/common\.diditaxi\.com\.cn\/common\/v\d\/usercenter\/me, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/didiAds.js, requires-body=true, max-size=-1, timeout=60
@@ -6566,7 +6555,6 @@ replaceBody = type=http-response, pattern=^https?:\/\/api\.m\.jd\.com\/client\.a
 
 jingxiAd = type=http-response, pattern=^https?:\/\/api\.m\.jd\.com\/api\?functionId=delivery_show, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/jingxiAd.js, requires-body=true, max-size=-1, timeout=60
 
-# ^https?:\/\/api\.coolapk\.com\/v6\/search\?.*type=hotSearch url reject-dict
 coolapk = type=http-response, pattern=^https?:\/\/api\.coolapk\.com\/v6\/feed\/(detail|replyList)\?, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/coolapk.js, requires-body=true, max-size=-1, timeout=60
 
 coolapk = type=http-response, pattern=^https?:\/\/api\.coolapk\.com\/v6\/main\/(dataList|indexV8|init), script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/coolapk.js, requires-body=true, max-size=-1, timeout=60
@@ -6791,7 +6779,6 @@ soul_ads = type=http-response, pattern=^https?:\/\/47\.110\.187\.87\/winterfell\
 
 #soul_ads = type=http-response, pattern=^https?:\/\/api-pay\.soulapp\.cn\/vip\/meet\/userInfo, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/soul_ads.js, requires-body=true, max-size=-1, timeout=60
 
-#^https?:\/\/api-pay\.soulapp\.cn\/vip\/meet\/userInfo url script-response-body https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/soul_ads.js
 #soul_ads = type=http-response, pattern=^https?:\/\/api-pay\.soulapp\.cn\/privilege\/supervip\/status, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/soul_ads.js, requires-body=true, max-size=-1, timeout=60
 
 # hostname = spclient.wg.spotify.com, *spclient.spotify.com
@@ -6811,7 +6798,6 @@ myBlockAds = type=http-response, pattern=^https?:\/\/guide-acs\.m\.taobao\.com\/
 
 myBlockAds = type=http-response, pattern=^https?:\/\/poplayer\.template\.alibaba\.com\/\w+\.json, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/myBlockAds.js, requires-body=true, max-size=-1, timeout=60
 
-# ^https?:\/\/vv\.video\.qq\.com\/(diff|get)vmind url reject-dict
 #replaceBody = type=http-request, pattern=^https?:\/\/vv\.video\.qq\.com\/getvinfo, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/replace-body.js, requires-body=true, max-size=-1, timeout=30, argument=%26sppreviewtype%3D%5Cd(.*)%26spsrt%3D%5Cd-%3E%26sppreviewtype%3D0%241%26spsrt%3D0
 
 qq-news = type=http-response, pattern=^https?:\/\/(news\.ssp\.qq\.com\/app|r\.inews\.qq\.com\/(get(QQNewsUnreadList|TagFeedList)|gw\/page\/event_detail|news_feed\/hot_module_list)), script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/qq-news.js, requires-body=true, max-size=-1, timeout=60
@@ -6902,7 +6888,6 @@ xiaohongshu = type=http-response, pattern=^https?:\/\/edith\.xiaohongshu\.com\/a
 
 #xiaohongshu = type=http-response, pattern=^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d+\/user\/followings\/followfeed, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/xiaohongshu.js, requires-body=true, max-size=-1, timeout=60
 
-#^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d+\/user\/followings\/followfeed url script-response-body https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/xiaohongshu.js
 #xiaohongshu = type=http-response, pattern=^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d+\/recommend\/user\/follow_recommend\?, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/xiaohongshu.js, requires-body=true, max-size=-1, timeout=60
 
 # 图片水印,视频水印

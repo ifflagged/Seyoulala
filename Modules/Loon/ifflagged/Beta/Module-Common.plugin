@@ -19,14 +19,14 @@ DOMAIN,wxsmw.wxs.qq.com,REJECT
 
 [Rewrite]
 # 京粉 //api.m.jd.com
-^https:\/\/api\.m\.jd\.com\/api\?functionId=union_exhibition_bff - reject-dict
+request if ${url} ~= /^https:\/\/api\.m\.jd\.com\/api\?functionId=union_exhibition_bff/i then reject_dict(200)
 # 小熊拦截 3.1.0 //spamblocker-api.zeekstudio.com
-^https:\/\/spamblocker-api\.zeekstudio\.com\/profile - reject
-^https:\/\/spamblocker-api\.zeekstudio\.com\/checkVersion - reject
+request if ${url} ~= /^https:\/\/spamblocker-api\.zeekstudio\.com\/profile/i then reject(200)
+request if ${url} ~= /^https:\/\/spamblocker-api\.zeekstudio\.com\/checkVersion/i then reject(200)
 
 [Script]
 # 京粉 //api.m.jd.com
-http-response ^https:\/\/api\.m\.jd\.com\/\?functionId=union_exhibition_bff&client=apple&clientVer script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ifflagged/Module-Common/JD-JF.js, requires-body=true, tag=JD-Share
+response if ${url} ~= /^https:\/\/api\.m\.jd\.com\/\?functionId=union_exhibition_bff&client=apple&clientVer/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ifflagged/Module-Common/JD-JF.js") with tag="JD-Share", requires_body=true
 
 [MITM]
 hostname = wxa.wxs.qq.com, wximg.wxs.qq.com, wxsmw.wxs.qq.com, api.m.jd.com, spamblocker-api.zeekstudio.com

@@ -6,73 +6,71 @@
 #!说明=具体解锁APP请移步https://t.me/Mr_Eric_iOS
 
 [Script]
-http-response ^https:\/\/api\.revenuecat\.com\/.+\/(receipts|subscribers\/(\$RCAnonymousID%)?([\u4E00-\u9FA5A-Za-z0-9-_]+))$ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/revenuecat.js, requires-body=true, tag=Pro
+response if ${url} ~= /^https:\/\/api\.revenuecat\.com\/.+\/(receipts|subscribers\/(\$RCAnonymousID%)?([\u4E00-\u9FA5A-Za-z0-9-_]+))$/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/revenuecat.js") with tag="Pro", requires_body=true
 
-http-request ^https:\/\/api\.revenuecat\.com\/.+\/(receipts|subscribers\/(\$RCAnonymousID%)?([\u4E00-\u9FA5A-Za-z0-9-_]+)) script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/bytq.js, tag=RC
+request if ${url} ~= /^https:\/\/api\.revenuecat\.com\/.+\/(receipts|subscribers\/(\$RCAnonymousID%)?([\u4E00-\u9FA5A-Za-z0-9-_]+))/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/bytq.js") with tag="RC"
 
-http-response https:\/\/buy\.itunes\.apple\.com\/verifyReceipt script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/test.js, requires-body=true, tag=Receipt
+response if ${url} ~= /https:\/\/buy\.itunes\.apple\.com\/verifyReceipt/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/test.js") with tag="Receipt", requires_body=true
 
-http-response ^https://firebaseremoteconfig.googleapis.com/v1/projects/filebox-ac299/.* script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/projects.js, requires-body=true, tag=projects
+response if ${url} ~= /^https:\/\/firebaseremoteconfig.googleapis.com\/v1\/projects\/filebox-ac299\/.*/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/projects.js") with tag="projects", requires_body=true
 
-http-response ^https://.*.mei(yan|tu).com\/.* script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/myCamera.js, requires-body=true, tag=美颜相机VIP
+response if ${url} ~= /^https:\/\/.*.mei(yan|tu).com\/.*/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/myCamera.js") with tag="美颜相机VIP", requires_body=true
 
-http-response ^ https://mobile.flightradar24.com/mobile/(user-session|subscribe) script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/flightradar24.js, requires-body=true, tag=flightradar24高级解锁
+response if ${url} ~= /^ https:\/\/mobile.flightradar24.com\/mobile\/(user-session|subscribe)/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/flightradar24.js") with tag="flightradar24高级解锁", requires_body=true
 
-http-response ^https://accounts.agenda.com/users/.*/license script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/Agenda.js, requires-body=true, tag=AgendaPro
+response if ${url} ~= /^https:\/\/accounts.agenda.com\/users\/.*\/license/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/Agenda.js") with tag="AgendaPro", requires_body=true
 
-http-response ^https:\/\/dayone\.app\/api\/v2\/users script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/dayone.js, requires-body=true, tag=DayOne
+response if ${url} ~= /^https:\/\/dayone\.app\/api\/v2\/users/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/dayone.js") with tag="DayOne", requires_body=true
 
-http-response ^https://backend.getdrafts.com/api/v1/verification/verify_receipt script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/Drafts.js, requires-body=true, tag=灵感足迹高级解锁
+response if ${url} ~= /^https:\/\/backend.getdrafts.com\/api\/v1\/verification\/verify_receipt/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/Drafts.js") with tag="灵感足迹高级解锁", requires_body=true
 
-http-response,8pattern=  https://api.effie.(co|pro)/api/v1/user/member = script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/effie.js, requires-body=true, tag=effie解锁订阅
+response if ${url} ~= /https:\/\/ssl-api.itranslateapp.com\/accounts\/v4\/subscriptions\/verify\/ios/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/iTranslate.js") with tag="itranslatePro", requires_body=true
 
-http-response https://ssl-api.itranslateapp.com/accounts/v4/subscriptions/verify/ios script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/iTranslate.js, requires-body=true, tag=itranslatePro
+response if ${url} ~= /https:\/\/qianji.xxoojoke.com\/vip\/configios/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/qianji.js") with tag="钱迹", requires_body=true
 
-http-response https://qianji.xxoojoke.com/vip/configios script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/qianji.js, requires-body=true, tag=钱迹
+response if ${url} ~= /^https?:\/\/restore-access\.indream\.app\/restoreAccess/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/nicegram.js") with tag="Nicegram", requires_body=true
 
-http-response ^https?:\/\/restore-access\.indream\.app\/restoreAccess script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/nicegram.js, requires-body=true, tag=Nicegram
+response if ${url} ~= /https?:\/\/(?:musicpay|nmobi|anymatch|vip1|audiobookpay|tingshu)\.kuwo\.cn\/(?:music\.pay\?newver=\d+|mobi.s\?f=kwxs|vip\/(?:enc\/user\/vip\?op=ui&uid=|v2\/theme\?op=gd)|a\.p|v2\/api\/pay\/user\/info)/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/kuwo.js") with tag="酷我音乐", requires_body=true
 
-http-response https?:\/\/(?:musicpay|nmobi|anymatch|vip1|audiobookpay|tingshu)\.kuwo\.cn\/(?:music\.pay\?newver=\d+|mobi.s\?f=kwxs|vip\/(?:enc\/user\/vip\?op=ui&uid=|v2\/theme\?op=gd)|a\.p|v2\/api\/pay\/user\/info) script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/kuwo.js, requires-body=true, tag=酷我音乐
+response if ${url} ~= /https:\/\/app.xunjiepdf.com\/api\/v4\/memprofile/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/yyfyq.js") with tag="语音翻译器", requires_body=true
 
-http-response https://app.xunjiepdf.com/api/v4/memprofile script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/yyfyq.js, requires-body=true, tag=语音翻译器
+response if ${url} ~= /https:\/\/ssl-api.itranslateapp.com\/accounts\/v4\/subscriptions\/verify\/ios/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/itranslate.js") with tag="itranslate翻译", requires_body=true
 
-http-response https://ssl-api.itranslateapp.com/accounts/v4/subscriptions/verify/ios script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/itranslate.js, requires-body=true, tag=itranslate翻译
+response if ${url} ~= /https:\/\/ch.sleepcycle.com\/(useraccountstats|api\/v1\/subscription\/get$)/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/sleepcycle.js") with tag="sleepcycle", requires_body=true
 
-http-response https://ch.sleepcycle.com/(useraccountstats|api/v1/subscription/get$) script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/sleepcycle.js, requires-body=true, tag=sleepcycle
+response if ${url} ~= /https:\/\/mobile-api.adguard.com\/api\/2.0\/ios_validate_receipt\/.*/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/adguard.js") with tag="adguard", requires_body=true
 
-http-response https://mobile-api.adguard.com/api/2.0/ios_validate_receipt/.* script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/adguard.js, requires-body=true, tag=adguard
+response if ${url} ~= /^https:\/\/api2.tophub.app\/account\/sync/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/jinrirebang.js") with tag="今日热榜", requires_body=true
 
-http-response ^https://api2.tophub.app/account/sync script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/jinrirebang.js, requires-body=true, tag=今日热榜
+response if ${url} ~= /^https:\/\/.*.flownow.cn\/v\d.\d.0\/(.*|user.info)/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/flow.js") with tag="flow", requires_body=true
 
-http-response ^https://.*.flownow.cn/v\d.\d.0/(.*|user.info) script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/flow.js, requires-body=true, tag=flow
+response if ${url} ~= /^https:\/\/api.getmimo.com\/v1\/subscriptions/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/mimo.js") with tag="mimo", requires_body=true
 
-http-response ^https://api.getmimo.com/v1/subscriptions script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/mimo.js, requires-body=true, tag=mimo
+response if ${url} ~= /^https:\/\/api.apphud.com\/v1\/(customers|subscriptions)$/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/apphud.js") with tag="apphud", requires_body=true
 
-http-response ^https://api.apphud.com/v1/(customers|subscriptions)$ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/apphud.js, requires-body=true, tag=apphud
+response if ${url} ~= /^https:\/\/api-production.endel.io\/v4\/call/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/endel.js") with tag="endel", requires_body=true
 
-http-response ^https://api-production.endel.io/v4/call script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/endel.js, requires-body=true, tag=endel
+response if ${url} ~= /^https:\/\/ars.alar.my\/api\/v2\/user\/sync/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/alarmy.js") with tag="Alarmy", requires_body=true
 
-http-response ^https://ars.alar.my/api/v2/user/sync script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/alarmy.js, requires-body=true, tag=Alarmy
+response if ${url} ~= /^https:\/\/rdp.duetdisplay.com\/v1\/users\/validateReceipt/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/duet.js") with tag="duet", requires_body=true
 
-http-response ^https://rdp.duetdisplay.com/v1/users/validateReceipt script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/duet.js, requires-body=true, tag=duet
+response if ${url} ~= /^https:\/\/medi.dxzzy321.top\/api\/rest\/commerce\/integrate\/vip\/perform/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/vivacut.js") with tag="vivacut", requires_body=true
 
-http-response ^https://medi.dxzzy321.top/api/rest/commerce/integrate/vip/perform script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/vivacut.js, requires-body=true, tag=vivacut
+response if ${url} ~= /^https:\/\/api.faceapp.io\/api\/v3.3\/auth\/user\/credentials/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/faceapp.js") with tag="faceapp", requires_body=true
 
-http-response ^https://api.faceapp.io/api/v3.3/auth/user/credentials script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/faceapp.js, requires-body=true, tag=faceapp
+response if ${url} ~= /^https:\/\/api-weather.andy.works\/v1\//i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/habits.js") with tag="habits", requires_body=true
 
-http-response ^https://api-weather.andy.works/v1/ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/habits.js, requires-body=true, tag=habits
+response if ${url} ~= /^https:\/\/cocorus-api.excite.co.jp\/v2\/users\/me/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/cocorus.js") with tag="cocorus", requires_body=true
 
-http-response ^https://cocorus-api.excite.co.jp/v2/users/me script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/cocorus.js, requires-body=true, tag=cocorus
+response if ${url} ~= /^http:\/\/format-api.netpock.com\/api\/user_info/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/gszh.js") with tag="格式转换", requires_body=true
 
-http-response ^http://format-api.netpock.com/api/user_info script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/gszh.js, requires-body=true, tag=格式转换
+response if ${url} ~= /^https:\/\/www.skyjos.cn:58080\/ws\/(loadaccountinfo|validate)/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/mty.js") with tag="猫头鹰文件", requires_body=true
 
-http-response ^https://www.skyjos.cn:58080/ws/(loadaccountinfo|validate) script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/mty.js, requires-body=true, tag=猫头鹰文件
+response if ${url} ~= /^https:\/\/asia.gikken.co\/matesync\/(subscription|login|check_user)/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/mate.js") with tag="mate翻译", requires_body=true
 
-http-response ^https://asia.gikken.co/matesync/(subscription|login|check_user) script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/mate.js, requires-body=true, tag=mate翻译
+response if ${url} ~= /^https:\/\/createpdf.acrobat.com\/createpdf\/api\/users\/me\/subscriptions/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/Adobescan.js") with tag="Adobescan", requires_body=true
 
-http-response ^https://createpdf.acrobat.com/createpdf/api/users/me/subscriptions script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/Adobescan.js, requires-body=true, tag=Adobescan
-
-http-response ^https://iap.etm.tech/receipts script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/collart.js, requires-body=true, tag=collart
+response if ${url} ~= /^https:\/\/iap.etm.tech\/receipts/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Alex0510/revenucar/collart.js") with tag="collart", requires_body=true
 
 [MITM]
 hostname = api.revenuecat.com, buy.itunes.apple.com, asia.gikken.co, accounts.agenda.com, api.apphud.com, www.skyjos.cn, iap.etm.tech, api-weather.andy.works, *.163.com, api.faceapp.io, format-api.netpock.com, app.xunjiepdf.com, *.flownow.cn, api2.tophub.app, *.acrobat.com, cocorus-api.excite.co.jp, rdp.duetdisplay.com, ars.alar.my, api.getmimo.com, medi.dxzzy321.top, *.endel.io, ch.sleepcycle.com, callrecorder.icamscanner.com, ssl-api.itranslateapp.com, mobile-api.adguard.com, *.googleapis.com, notability.com, mobile.flightradar24.com, *.meiyan.com, *.meitu.com, dayone.app, backend.getdrafts.com, api.effie.pro, api.effie.co, pushserv.airapps.co, qianji.xxoojoke.com, restore-access.indream.app

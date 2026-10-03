@@ -5,14 +5,14 @@
 
 [Rewrite]
 # SMZDM
-^https:\/\/app-api\.smzdm\.com\/mychannel\/list$ mock-response-body data-type=text data="{}" status-code=200
+response if ${url} ~= /^https:\/\/app-api\.smzdm\.com\/mychannel\/list$/i then response.body.mock("text", "{}", 200)
 
 [Script]
 # bilibili
-http-response ^https?:\/\/app\.bilibili\.com\/x\/resource\/show\/tab script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ifflagged/Module-Top/BiliBili.js, requires-body=true, tag=BiliBili Tab
+response if ${url} ~= /^https?:\/\/app\.bilibili\.com\/x\/resource\/show\/tab/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ifflagged/Module-Top/BiliBili.js") with tag="BiliBili Tab", requires_body=true
 
-http-response ^https?:\/\/app\.bilibili\.com\/x\/v2\/account\/mine script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ifflagged/Module-Top/BiliBili.js, requires-body=true, tag=BiliBili My Info
+response if ${url} ~= /^https?:\/\/app\.bilibili\.com\/x\/v2\/account\/mine/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ifflagged/Module-Top/BiliBili.js") with tag="BiliBili My Info", requires_body=true
 
 # DiDi
-http-response ^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/core script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ifflagged/Module-Top/DiDi.js, requires-body=true, tag=DiDi Tab
+response if ${url} ~= /^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/core/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ifflagged/Module-Top/DiDi.js") with tag="DiDi Tab", requires_body=true
 
