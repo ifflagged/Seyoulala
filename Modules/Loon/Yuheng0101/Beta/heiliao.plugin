@@ -3,7 +3,7 @@
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
 #!tag=Jacob
 
-#!date=2026-10-09 11:00:00
+#!date=2026-10-09 17:41:16
 
 [Script]
 response if ${url} ~= /^https?:\/\/(18hlw\.com).*/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Yuheng0101/heiliao/web.js") with tag="黑料去广告", timeout=60, requires_body=true
