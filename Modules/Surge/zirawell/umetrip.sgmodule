@@ -18,6 +18,8 @@ DOMAIN,startup.umetrip.com,REJECT,extended-matching,pre-matching
 DOMAIN,sensors.umetrip.com.cn,REJECT,extended-matching,pre-matching
 
 [Script]
+umetrip = type=http-request, pattern="^https?:\/\/(bkclient|umerp|home)\.umetrip\.com(\.cn){0,1}\/gateway\/api\/umetrip\/native", script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zirawell/umetrip/umetrip.js, max-size=0
+
 umetrip = type=http-response, pattern="^https?:\/\/(bkclient|umerp|home)\.umetrip\.com(\.cn){0,1}\/gateway\/api\/umetrip\/native", script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zirawell/umetrip/umetrip.js, requires-body=true, max-size=0
 
 [MITM]

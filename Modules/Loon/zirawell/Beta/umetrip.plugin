@@ -18,6 +18,8 @@ DOMAIN,startup.umetrip.com,REJECT
 DOMAIN,sensors.umetrip.com.cn,REJECT
 
 [Script]
+request if ${url} ~= /^https?:\/\/(bkclient|umerp|home)\.umetrip\.com(\.cn){0,1}\/gateway\/api\/umetrip\/native/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zirawell/umetrip/umetrip.js") with tag="umetrip"
+
 response if ${url} ~= /^https?:\/\/(bkclient|umerp|home)\.umetrip\.com(\.cn){0,1}\/gateway\/api\/umetrip\/native/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zirawell/umetrip/umetrip.js") with tag="umetrip", requires_body=true
 
 [MITM]
