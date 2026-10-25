@@ -23,11 +23,11 @@ DOMAIN,wxsmw.wxs.qq.com,REJECT
 
 [Map Local]
 # 京粉 //api.m.jd.com
-^https:\/\/api\.m\.jd\.com\/api\?functionId=union_exhibition_bff data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https:\/\/api\.m\.jd\.com\/api\?(?:[^#?&]+&)*functionId=union_exhibition_bff data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 [Script]
 # 京粉 //api.m.jd.com
-JD-Share = type=http-response, pattern=^https:\/\/api\.m\.jd\.com\/\?functionId=union_exhibition_bff&client=apple&clientVer, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ifflagged/Module-Common/JD-JF.js, requires-body=true, max-size=0
+JD-Share = type=http-response, pattern=^https:\/\/api\.m\.jd\.com\/\?(?:[^#?&]+&)*functionId=union_exhibition_bff&client=apple&clientVer, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ifflagged/Module-Common/JD-JF.js, requires-body=true, max-size=0
 
 [MITM]
 hostname = %APPEND% wxa.wxs.qq.com, wximg.wxs.qq.com, wxsmw.wxs.qq.com, api.m.jd.com, spamblocker-api.zeekstudio.com

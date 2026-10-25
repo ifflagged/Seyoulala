@@ -53,12 +53,12 @@ DOMAIN,adpinpai.video.weibocdn.com,REJECT
 
 [URL Rewrite]
 # 热门视频 | 热推荐
-^https?:\/\/api\.weibo\.c(n|om)\/\d\/(cardlist\?v_f=\d|ad\/weibointl\?) - reject-dict
-^https?:\/\/weibointl\.api\.weibo\.c(n|om)\/portal\.php\?a=hot_search_users - reject-dict
+^https?:\/\/api\.weibo\.c(n|om)\/\d\/(cardlist\?(?:[^#?&]+&)*v_f=\d|ad\/weibointl\?) - reject-dict
+^https?:\/\/weibointl\.api\.weibo\.c(n|om)\/portal\.php\?(?:[^#?&]+&)*a=hot_search_users - reject-dict
 # 微博轻享版热搜词
-^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?a=get_searching_info - reject-dict
+^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?(?:[^#?&]+&)*a=get_searching_info - reject-dict
 # 私信中绿洲的擦边诱导推广
-^https?:\/\/weibointl\.api\.weibo\.c(n|om)\/portal\.php\?a=treehole&auth= - reject-dict
+^https?:\/\/weibointl\.api\.weibo\.c(n|om)\/portal\.php\?(?:[^#?&]+&)*a=treehole&auth= - reject-dict
 # 屏蔽首页左上角每日的弹窗tips
 ^https?:\/\/m?api\.weibo\.c(n|om)\/\d/push\/daily - reject-dict
 # 超话按钮的提示
@@ -78,7 +78,7 @@ DOMAIN,adpinpai.video.weibocdn.com,REJECT
 ^https?:\/\/m?api\.weibo\.c(n|om)\/2\/push\/info\? - reject
 
 [Body Rewrite]
-http-response-jq ^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?a=trends& 'del(.data.banner)'
+http-response-jq ^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?(?:[^#?&]+&)*a=trends& 'del(.data.banner)'
 http-response-jq ^https?:\/\/m?api\.weibo\.c(n|om)\/2\/cardlist\? 'del(.items[] | select(.category == "group"))'
 
 [Script]

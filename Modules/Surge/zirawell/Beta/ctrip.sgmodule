@@ -31,7 +31,7 @@ IP-CIDR,162.14.137.43/32,REJECT,no-resolve,pre-matching
 ^https?:\/\/m\.ctrip\.com\/restapi\/.*\/getDiscardUbts - reject
 ^https?:\/\/m\.ctrip\.com\/html5\/webresource\/js\/iscroll\.js$ - reject
 ^https?:\/\/ma-adx\.ctrip\.com\/_ma\.gif - reject
-^https?:\/\/mbd\.baidu\.com\/newspage\/api\/getmobads\?page\=landingshare - reject
+^https?:\/\/mbd\.baidu\.com\/newspage\/api\/getmobads\?(?:[^#?&]+&)*page\=landingshare - reject
 
 [Map Local]
 # ⚠️域名[m.ctrip.com]可能存在无法MITM，请在需要使用时关闭MITM
