@@ -40,7 +40,7 @@ AND,((DOMAIN-SUFFIX,chat.bilibili.com),(OR,((DOMAIN-KEYWORD,stun),(DOMAIN-KEYWOR
 [Script]
 http-request ^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.(?:app\.viewunite\.v1\.View\/View|main\.community\.reply\.v1\.Reply\/MainList)$ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/kokoryh/bilibili/bilibili.protobuf.request.js, requires-body=true, binary-body-mode=true, timeout=10, tag={优化评论区加载}, argument="{"purifyComment":{过滤置顶评论广告},"logLevel":"{日志等级}"}"
 
-http-request ^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.community\.service\.dm\.v1\.DM\/DmSegMobile$ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/kokoryh/bilibili/bilibili.protobuf.request.js, requires-body=true, binary-body-mode=true, timeout=10, tag={空降助手}, argument="{"logLevel":"{日志等级}"}"
+http-request ^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.(?:community\.service\.dm\.v1\.DM\/DmSegMobile|app\.playerunite\.v1\.Player\/PlayViewUnite)$ script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/kokoryh/bilibili/bilibili.protobuf.request.js, requires-body=true, binary-body-mode=true, timeout=10, tag={空降助手}, argument="{"logLevel":"{日志等级}"}"
 
 http-response ^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\? script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/kokoryh/bilibili/bili-suit-diy.js, requires-body=true, tag=bilibili.skin
 
