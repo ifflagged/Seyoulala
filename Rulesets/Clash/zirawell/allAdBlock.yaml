@@ -1,4 +1,4 @@
-#规则数量:1437
+#规则数量:1435
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -431,10 +431,8 @@ payload:
   - DOMAIN,mobads.baidu.com
   - DOMAIN,mobiledc.stable.alipay.net
   - DOMAIN,mobilelog.kugou.com
-  - DOMAIN,mobs.dl.bankcomm.com
   - DOMAIN,mon.zijieapi.com
   - DOMAIN,mon11-misc.fqnovel.com
-  - DOMAIN,monitor.bankcomm.cn
   - DOMAIN,monitor.music.qq.com
   - DOMAIN,mqtt.zhihu.com
   - DOMAIN,msmp.abchina.com.cn
