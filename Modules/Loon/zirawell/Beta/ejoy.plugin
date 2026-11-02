@@ -17,7 +17,7 @@ response if ${url} ~= /^https?:\/\/a\.sinopecsales\.com\/app\/cms/i then respons
 response if ${url} ~= /^https?:\/\/a\.sinopecsales\.com\/app\/wff\//i then response.body.mock("json", "[]", 200)
 ^https?:\/\/a\.sinopecsales\.com\/app\/layout\/image\/xfq mock-response-body data-type=tiny-gif status-code=200
 response if ${url} ~= /^https?:\/\/a\.sinopecsales\.com\/app\/update\/(?>AppOpenConfig|AppVersion)/i then response.body.mock("json", "{}", 200)
-response if ${url} ~= /^https?:\/\/ocrifs\.ejoy\.sinopec\.com\/advertitfs\/advert\/findAdvertInfo/i then response.body.mock("text", "", 200)
+response if ${url} ~= /^https?:\/\/ocrifs\.ejoy\.sinopec\.com\/advertitfs\/advert/i then response.body.mock("text", "", 200)
 response if ${url} ~= /^https?:\/\/egw\.ejoy\.sinopec\.com\/api\/interface\/queryEffectiveBulletin/i then response.body.mock("json", "{}", 200)
 
 [MITM]

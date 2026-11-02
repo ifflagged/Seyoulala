@@ -21,7 +21,7 @@
 
 ^https?:\/\/a\.sinopecsales\.com\/app\/update\/(?>AppOpenConfig|AppVersion) data-type=json data="{}"
 
-^https?:\/\/ocrifs\.ejoy\.sinopec\.com\/advertitfs\/advert\/findAdvertInfo data-type=text data=""
+^https?:\/\/ocrifs\.ejoy\.sinopec\.com\/advertitfs\/advert data-type=text data=""
 
 ^https?:\/\/egw\.ejoy\.sinopec\.com\/api\/interface\/queryEffectiveBulletin data-type=json data="{}"
 
