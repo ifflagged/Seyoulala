@@ -1,38 +1,90 @@
-// 2024.08.13
 const url = $request.url;
-let obj = JSON.parse($response.body);
+let body = $response.body;
 
-try {
-    if (url.includes('/api/alexa/homepage/hub') && obj.result && Array.isArray(obj.result.bottom_tabs)) {
-        obj.result.bottom_tabs = obj.result.bottom_tabs.filter(tab => tab.title !== '多多视频' && tab.title !== '大促会场' && tab.title !== '搜索' && tab.title !== '直播');
-        delete obj.result.icon_set;
-        delete obj.result.search_bar_hot_query;
-        }
-        
-    if (url.includes("/search")) {
-    delete obj.expansion;
-         }
-        
-    if (url.includes('/api/philo/personal/hub')) {
-        delete obj.monthly_card_entrance;
-        delete obj.personal_center_style_v2_vo;
-        if (obj.icon_set) {
-            delete obj.icon_set.icons;
-            delete obj.icon_set.top_personal_icons;
-        }
-    }
+const keepTabs = ["index.html", "chat_list.html", "personal.html"];
 
-    if (url.includes("/api/oak/integration/render")) {
-        if (obj.ui) {
-            delete obj.ui.bottom_section;  // 限时
-            if (obj.ui.live_section) {
-                delete obj.ui.live_section.float_info;  // 直播
-            }
-        }
-        delete obj.bottom_section_list; // 限时
+function scanFields(s, depthWant, keys) {
+  const found = {};
+  let depth = 0, i = 0, n = s.length, lastKey = null, keyDepth = -1;
+  while (i < n) {
+    const c = s[i];
+    if (c === '"') {
+      let j = i + 1;
+      while (j < n && s[j] !== '"') j += s[j] === "\\" ? 2 : 1;
+      const str = s.slice(i + 1, j);
+      let k = j + 1;
+      while (k < n && /\s/.test(s[k])) k++;
+      if (s[k] === ":" && depth === depthWant && keys.includes(str)) {
+        lastKey = str;
+        keyDepth = depth;
+        k++;
+        while (k < n && /\s/.test(s[k])) k++;
+        found[str] = { start: k };
+        i = k;
+        continue;
+      }
+      i = j + 1;
+      continue;
     }
-} catch (error) {
-    
+    if (c === "{" || c === "[") depth++;
+    else if (c === "}" || c === "]") {
+      depth--;
+      if (lastKey && depth === keyDepth && found[lastKey].end === undefined) {
+        found[lastKey].end = i + 1;
+        lastKey = null;
+      }
+    } else if (lastKey && depth === keyDepth && c === ",") {
+      if (found[lastKey].end === undefined) found[lastKey].end = i;
+      lastKey = null;
+    }
+    i++;
+  }
+  return found;
 }
 
-$done({body: JSON.stringify(obj)});
+function splice(s, found, fn) {
+  const items = Object.keys(found).map(k => ({ k, ...found[k] })).filter(x => x.end > x.start).sort((a, b) => b.start - a.start);
+  let changed = false;
+  for (const it of items) {
+    const raw = s.slice(it.start, it.end);
+    const rep = fn(it.k, raw);
+    if (rep !== null && rep !== raw) {
+      s = s.slice(0, it.start) + rep + s.slice(it.end);
+      changed = true;
+    }
+  }
+  return changed ? s : null;
+}
+
+function pageOf(link) {
+  return String(link || "").split("?")[0].split("#")[0];
+}
+
+try {
+  let out = null;
+  if (/\/api\/alexa\/homepage\/hub/.test(url)) {
+    const f = scanFields(body, 2, ["bottom_tabs", "buffer_bottom_tabs"]);
+    out = splice(body, f, (k, raw) => {
+      const arr = JSON.parse(raw);
+      if (!Array.isArray(arr)) return null;
+      const kept = arr.filter(t => t && keepTabs.includes(pageOf(t.link)));
+      if (!kept.length || kept.length === arr.length) return null;
+      return JSON.stringify(kept);
+    });
+  } else if (/\/hungary\/(window\/)?global\//.test(url)) {
+    const f = scanFields(body, 1, ["list"]);
+    out = splice(body, f, (k, raw) => {
+      const arr = JSON.parse(raw);
+      return Array.isArray(arr) && arr.length ? "[]" : null;
+    });
+  } else if (/\/api\/growth\/nagato\/app\/index\/gather/.test(url)) {
+    const f = scanFields(body, 1, ["newer_index_banner", "push_banner"]);
+    out = splice(body, f, (k, raw) => {
+      const o = JSON.parse(raw);
+      return o && typeof o === "object" && o.valid_data !== false ? '{"valid_data":false}' : null;
+    });
+  }
+  if (out !== null) body = out;
+} catch (e) {}
+
+$done({ body });
