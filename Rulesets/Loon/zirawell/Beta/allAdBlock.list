@@ -1,4 +1,4 @@
-#规则数量:1435
+#规则数量:1438
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -46,6 +46,7 @@ IP-CIDR,203.107.1.0/24,no-resolve
 IP-CIDR,203.107.63.154/32,no-resolve
 IP-CIDR,203.119.212.22/32,no-resolve
 IP-CIDR,203.119.238.164/32,no-resolve
+IP-CIDR,203.119.238.25/32,no-resolve
 IP-CIDR,203.119.238.63/32,no-resolve
 IP-CIDR,210.13.85.204/32,no-resolve
 IP-CIDR,43.160.156.164/32,no-resolve
@@ -444,6 +445,7 @@ DOMAIN,nadvideo2.baidu.com
 DOMAIN,news.ssp.qq.com
 DOMAIN,nex.163.com
 DOMAIN,nsclick.baidu.com
+DOMAIN,o.alicdn.com
 DOMAIN,o2o-ad-log-gateway.alibaba.com
 DOMAIN,ocsp.pki.goog
 DOMAIN,open-pixon.ads-pixiv.net
@@ -452,6 +454,7 @@ DOMAIN,open.kuaishou.com
 DOMAIN,optimus-ads.amap.com
 DOMAIN,pageviewp.icbc.com.cn
 DOMAIN,perf.m.jd.com
+DOMAIN,pigeon.alicdn.com
 DOMAIN,pl.cp31.ott.cibntv.net
 DOMAIN,polaris.zijieapi.com
 DOMAIN,popup.dushu365.com
