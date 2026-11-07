@@ -1,4 +1,4 @@
-#规则数量:1438
+#规则数量:1439
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -463,6 +463,7 @@ DOMAIN,pre-acs.youku.com
 DOMAIN,pro.dajuhl.com
 DOMAIN,ptom.caohua.com
 DOMAIN,push.chsi.com.cn
+DOMAIN,qdzx.cib.com.cn
 DOMAIN,qwapi.apple.com
 DOMAIN,qzonestyle.gtimg.cn
 DOMAIN,qzs.qq.com
