@@ -1,7 +1,30 @@
-NoAds%0A：Response code 504 (Gateway Time-out)
+#!name=NoAds
+#!desc=NoAds
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
+#!tag=Jacob
 
+[Rewrite]
+# 弹窗
+request if ${url} ~= /^https?:\/\/h\.app\.coc\.10086\.cn\/biz-orange\/DH\/popupWindow\/getDetail/i then reject(200, " ")
 
+[Script]
+# 启动页
+response if ${url} ~= /^https?:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/DN\/init\/startInit$/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Yuheng0101/NoAds/NoAds.js") with tag="NoAds", timeout=60, requires_body=true
 
+# 首页 - 下拉
+response if ${url} ~= /^https?:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/DN\/newTopPullSecond\/getNewTopPullList/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Yuheng0101/NoAds/NoAds.js") with tag="NoAds", timeout=60, requires_body=true
 
+# 首页 - 悬浮广告
+response if ${url} ~= /^https?:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/DN\/emotionMarket\/getEmotionMarketNew/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Yuheng0101/NoAds/NoAds.js") with tag="NoAds", timeout=60, requires_body=true
 
-Script Hub 重写转换: ❌  可自行翻译错误信息或复制错误信息后点击通知进行反馈
+response if ${url} ~= /^https?:\/\/h\.app\.coc\.10086\.cn\/biz-orange\/DH\/homeArea\/getTopAreaList/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Yuheng0101/NoAds/NoAds.js") with tag="NoAds", timeout=60, requires_body=true
+
+# 办理 - 横幅
+response if ${url} ~= /^https?:\/\/h\.app\.coc\.10086\.cn\/biz-orange\/DH\/navigation\/getNavigationNewInfo/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Yuheng0101/NoAds/NoAds.js") with tag="NoAds", timeout=60, requires_body=true
+
+# 我的 - 弹窗 
+response if ${url} ~= /^https?:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/DN\/friendShake\/getShakeList/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/Yuheng0101/NoAds/NoAds.js") with tag="NoAds", timeout=60, requires_body=true
+
+[MITM]
+hostname = client.app.coc.10086.cn, h.app.coc.10086.cn
+

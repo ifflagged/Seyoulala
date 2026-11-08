@@ -1,7 +1,17 @@
-jd_price%0A：Response code 504 (Gateway Time-out)
+#!name=jd_price
+#!desc=jd_price
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
+#!tag=Jacob
 
+[Script]
+response if ${url} ~= /^https?:\/\/in\.m\.jd\.com\/product\/graphext\/\d+\.html/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/wf021325/jd_price/jd_price.js") with tag="jd_price", timeout=60, requires_body=true
 
+request if ${url} ~= /^https?:\/\/apapia-sqk-weblogic\.manmanbuy\.com\/baoliao\/center\/menu$/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/wf021325/jd_price/jd_price.js") with tag="jd_price", timeout=60, requires_body=true
 
+#response if ${url} ~= /^https?:\/\/in\.m\.jd\.com\/product\/graphext\/\d+\.html/i then script("http://192.168.2.170:8080/jd_price.js") with tag="jd_price", timeout=60, requires_body=true
 
+#request if ${url} ~= /^https?:\/\/apapia-sqk-weblogic\.manmanbuy\.com\/baoliao\/center\/menu$/i then script("http://192.168.2.170:8080/jd_price.js") with tag="jd_price", timeout=60, requires_body=true
 
-Script Hub 重写转换: ❌  可自行翻译错误信息或复制错误信息后点击通知进行反馈
+[MITM]
+hostname = in.m.jd.com, apapia-sqk-weblogic.manmanbuy.com
+

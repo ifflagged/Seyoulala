@@ -1,7 +1,46 @@
-SmzdmAds%0A：Response code 504 (Gateway Time-out)
+#!name=SmzdmAds
+#!desc=SmzdmAds
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
+#!tag=Jacob
 
+[Rewrite]
+# > 好价详情页去广告@blackmatrix7
+request if ${url} ~= /^https?:\/\/haojia\.m\.smzdm\.com\/detail_modul\/other_modul/i then reject(200, " ")
+# > 好价详情页红包小助手@blackmatrix7
+request if ${url} ~= /^https?:\/\/haojia\.m\.smzdm\.com\/detail_modul\/user_related_modul/i then reject(200, " ")
+# > Wiki@blackmatrix7
+request if ${url} ~= /^https?:\/\/haojia\.m\.smzdm\.com\/detail_modul\/wiki_related_modul/i then reject(200, " ")
 
+[Script]
+# > 搜索框填词@ddgksf2013
+response if ${url} ~= /^https?:\/\/s-api.smzdm\.com\/sou\/search_default_keyword/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ddgksf2013/SmzdmAds/smzdm_json.js") with tag="smzdm_json", timeout=60, requires_body=true
 
+# > 开屏去广告@blackmatrix7@ddgksf2013
+response if ${url} ~= /^https?:\/\/app-api\.smzdm\.com\/util\/loading/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ddgksf2013/SmzdmAds/smzdm_json.js") with tag="smzdm_json", timeout=60, requires_body=true
 
+response if ${url} ~= /^https?:\/\/.*zdmimg\.com\/cpm\/api\/v\d\/advert_distribution\/get_all_advertise/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ddgksf2013/SmzdmAds/smzdm_json.js") with tag="smzdm_json", timeout=60, requires_body=true
 
-Script Hub 重写转换: ❌  可自行翻译错误信息或复制错误信息后点击通知进行反馈
+# > 首页去广告@blackmatrix7@ddgksf2013
+response if ${url} ~= /^https?:\/\/homepage-api\.smzdm\.com\/v3\/home/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ddgksf2013/SmzdmAds/smzdm_json.js") with tag="smzdm_json", timeout=60, requires_body=true
+
+# > 好价去广告@blackmatrix7
+response if ${url} ~= /^https?:\/\/haojia-api\.smzdm\.com\/home\/list/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ddgksf2013/SmzdmAds/smzdm_json.js") with tag="smzdm_json", timeout=60, requires_body=true
+
+# > 好价详情页去广告@blackmatrix7
+response if ${url} ~= /^https?:\/\/haojia\.m\.smzdm\.com\/detail_modul\/article_releated_modul/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ddgksf2013/SmzdmAds/smzdm_json.js") with tag="smzdm_json", timeout=60, requires_body=true
+
+# > 百科去广告@blackmatrix7
+response if ${url} ~= /^https?:\/\/baike-api\.smzdm\.com\/home_v3\/list/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ddgksf2013/SmzdmAds/smzdm_json.js") with tag="smzdm_json", timeout=60, requires_body=true
+
+# > 搜索结果去广告@blackmatrix7
+response if ${url} ~= /^https?:\/\/s-api\.smzdm\.com\/sou\/list_v10/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ddgksf2013/SmzdmAds/smzdm_json.js") with tag="smzdm_json", timeout=60, requires_body=true
+
+# > 搜索标签去广告@blackmatrix7
+response if ${url} ~= /^https?:\/\/s-api\.smzdm\.com\/sou\/filter\/tags\/hot_tags/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ddgksf2013/SmzdmAds/smzdm_json.js") with tag="smzdm_json", timeout=60, requires_body=true
+
+# > 值会员权益中心banner广告@blackmatrix7
+response if ${url} ~= /^https?:\/\/zhiyou\.m\.smzdm\.com\/user\/vip\/ajax_get_banner/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ddgksf2013/SmzdmAds/smzdm_json.js") with tag="smzdm_json", timeout=60, requires_body=true
+
+[MITM]
+hostname = app-api.smzdm.com, *.zdmimg.com, homepage-api.smzdm.com, haojia-api.smzdm.com, haojia.m.smzdm.com, baike-api.smzdm.com, s-api.smzdm.com, zhiyou.m.smzdm.com
+

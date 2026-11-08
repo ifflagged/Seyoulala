@@ -1,7 +1,13 @@
-jd_price2%0A：Response code 504 (Gateway Time-out)
+#!name=京东比价
+#!desc=京东App历史价格（商品详情页面触发）表格
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
+#!tag=Jacob
 
+[Script]
+request if ${url} ~= /^https?:\/\/apapia-sqk-weblogic\.manmanbuy\.com\/baoliao\/center\/menu$/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/githubdulong/jd_price2/jd_price.js") with tag="MMMCK_SCRIPT", timeout=60, requires_body=true
 
+response if ${url} ~= /^https?:\/\/in\.m\.jd\.com\/product\/graphext\/\d+\.html/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/githubdulong/jd_price2/jd_price.js") with tag="京东比价", timeout=60, requires_body=true
 
+[MITM]
+hostname = in.m.jd.com, apapia-sqk-weblogic.manmanbuy.com
 
-
-Script Hub 重写转换: ❌  可自行翻译错误信息或复制错误信息后点击通知进行反馈

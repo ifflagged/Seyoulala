@@ -1,7 +1,44 @@
-smzdm%0A：Response code 504 (Gateway Time-out)
+#!name=什么值得买 - SMZDM
+#!desc=什么值得买
+#!author=zirawell[https://github.com/zirawell]
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
+#!tag=Jacob
 
+#!openUrl=https://apps.apple.com/app/id518213356
+#!bundleId=com.smzdm.client.ios
+#!tag=去广告
+#!basedOn=iOS
+#!surge_version=5.14.2(Build3405,SDK18.2)
+#!homepage=https://github.com/zirawell/R-Store/tree/main/Rule/Surge/README.md
+#!date=2026-05-09
 
+[Rule]
+DOMAIN,api.zuihuimai.com,REJECT
+DOMAIN,analytics-api.smzdm.com,REJECT
+DOMAIN,ynuf.aliapp.org,REJECT
 
+[Rewrite]
+response if ${url} ~= /^https?:\/\/haojia\.m\.smzdm\.com\/detail_modul\/other_modul\?/i then response.body.mock("json", "{}", 200)
 
+[Script]
+response if ${url} ~= /^https?:\/\/haojia\.m\.smzdm\.com\/detail_modul\/user_related_modul\?/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zirawell/smzdm/smzdm.js") with tag="smzdm", requires_body=true
 
-Script Hub 重写转换: ❌  可自行翻译错误信息或复制错误信息后点击通知进行反馈
+response if ${url} ~= /^https?:\/\/user-api\.smzdm\.com\/vip/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zirawell/smzdm/smzdm.js") with tag="smzdm", requires_body=true
+
+response if ${url} ~= /^https?:\/\/app-api\.smzdm\.com\/util\/(loading|update)/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zirawell/smzdm/smzdm.js") with tag="smzdm", requires_body=true
+
+response if ${url} ~= /^https?:\/\/haojia-api\.smzdm\.com\/(?>home\/list|ranking_list\/articles)/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zirawell/smzdm/smzdm.js") with tag="smzdm", requires_body=true
+
+response if ${url} ~= /^https?:\/\/homepage-api\.smzdm\.com\/v\d\/home/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zirawell/smzdm/smzdm.js") with tag="smzdm", requires_body=true
+
+response if ${url} ~= /^https?:\/\/article-api\.smzdm\.com\/publish\/get_bubble/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zirawell/smzdm/smzdm.js") with tag="smzdm", requires_body=true
+
+response if ${url} ~= /^https?:\/\/qianbao\.smzdm\.com\/v\d\/app\/home/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zirawell/smzdm/smzdm.js") with tag="smzdm", requires_body=true
+
+response if ${url} ~= /^https?:\/\/s-api\.smzdm\.com\/sou\/(>?filter\/tags\/hot_tags|list_v\d\?)/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zirawell/smzdm/smzdm.js") with tag="smzdm", requires_body=true
+
+response if ${url} ~= /^https?:\/\/post\.m\.smzdm\.com\/ajax_app\/ajax_get_footer_list/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zirawell/smzdm/smzdm.js") with tag="smzdm", requires_body=true
+
+[MITM]
+hostname = haojia.m.smzdm.com, user-api.smzdm.com, app-api.smzdm.com, haojia-api.smzdm.com, homepage-api.smzdm.com, article-api.smzdm.com, qianbao.smzdm.com, s-api.smzdm.com, post.m.smzdm.com
+

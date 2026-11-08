@@ -1,7 +1,23 @@
-wechatAppletGeneral%0A：Response code 504 (Gateway Time-out)
+#!name=wechatAppletGeneral
+#!desc=wechatAppletGeneral
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
+#!tag=Jacob
 
+[Rule]
+DOMAIN-SUFFIX,wxsmsdy.video.qq.com,REJECT
 
+[Rewrite]
+# 企迈 - QMAI(包含: 挪瓦咖啡、林里柠檬茶、霸王茶姬、陈香贵)
+request if ${url} ~= /^https?:\/\/(?>webapi|miniapp)\.qmai\.cn\/web\/cmk-center\/marketing\/canvas\/advert/i then reject(200)
+response if ${url} ~= /^https?:\/\/rms\.meituan\.com\/api\/v\d\/rmsmina\/c\/queryPortalInfo/i then response.json.jq(".data.modules |= map(select(.data.advType != true and .name != \"float-window\"))")
+response if ${url} ~= /^https?:\/\/mp\.weixin\.qq\.com\/wapad\/getaddata\?action=getad/i then response.body.mock("text", "", 200)
+response if ${url} ~= /^https?:\/\/mp\.weixin\.qq\.com\/wapad\/reportaddata\?action=exposure_report/i then response.body.mock("text", "", 200)
+# 美团系点餐 - MEITUAN(包含: 融柳大铁牛)
+response if ${url} ~= /^https?:\/\/rms\.meituan\.com\/api\/v\d\/rmsmina\/c\/selectpopuptoshow/i then response.body.mock("json", "{}", 200)
 
+[Script]
+response if ${url} ~= /^https?:\/\/(?>webapi|miniapp)\.qmai\.cn\/web\/catering([0-9]-apiserver)?\/advertising\/ad\/advertiseInfo/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zirawell/wechatAppletGeneral/qmai.js") with tag="wechatAppletGeneral", requires_body=true
 
+[MITM]
+hostname = mp.weixin.qq.com, webapi.qmai.cn, miniapp.qmai.cn, rms.meituan.com
 
-Script Hub 重写转换: ❌  可自行翻译错误信息或复制错误信息后点击通知进行反馈

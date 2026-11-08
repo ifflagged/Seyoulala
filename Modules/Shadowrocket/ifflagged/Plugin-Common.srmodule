@@ -1,7 +1,21 @@
-Plugin-Common%0A：Error: Response code 504 (Gateway Time-out)
+#!name=Common Tools
+#!desc=Common Tools for All
+#!author=Jacob
+#!icon=wrench
+#!category=Jacob
 
+#!openUrl=https://github.com/ifflagged/Neverflagged/blob/main/Loon/Plugin/Tools.plugin
+#!tag=Jacob
+#!homepage=https://github.com/ifflagged/Neverflagged/blob/main/Loon/Plugin/Tools.plugin
 
+[URL Rewrite]
+# 高铁管家
+#^http:\/\/cdn\.133\.cn\/md\/gtgj\/.+\/.+720x1280 - reject-dict
+# 拼多多瀑布流 // api.pinduoduo.com
+^https:\/\/api\.pinduoduo\.com\/api\/alexa\/cells\/hub\/v3\? - reject-dict
+# > 亚朵开屏 // api2.yaduo.com
+#^https?:\/\/api2\.yaduo\.com\/atourlife\/activity\/appLaunch - reject-dict
 
+[MITM]
+hostname = %APPEND% api.pinduoduo.com
 
-
-Script Hub 重写转换: ❌  可自行翻译错误信息或复制错误信息后点击通知进行反馈
