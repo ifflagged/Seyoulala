@@ -1,4 +1,4 @@
-#规则数量:1439
+#规则数量:1440
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -1414,6 +1414,7 @@ DOMAIN-KEYWORD,logs.amap.com
 DOMAIN-KEYWORD,logwebs.kugou.com
 DOMAIN-KEYWORD,mapi.m.jd.com
 DOMAIN-KEYWORD,medicine.lanjiyin.com.cn
+DOMAIN-KEYWORD,mob.cib.com.cn
 DOMAIN-KEYWORD,mpos-pic.helipay.com
 DOMAIN-KEYWORD,nbcollect.kugou.com
 DOMAIN-KEYWORD,nbcollectretry.kugou.com
