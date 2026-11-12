@@ -1,4 +1,4 @@
-#规则数量:1440
+#规则数量:1441
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -430,6 +430,7 @@ payload:
   - DOMAIN,mobads-logs.baidu.com
   - DOMAIN,mobads-pre-config.cdn.bcebos.com
   - DOMAIN,mobads.baidu.com
+  - DOMAIN,mobileapm.icbc.com.cn
   - DOMAIN,mobiledc.stable.alipay.net
   - DOMAIN,mobilelog.kugou.com
   - DOMAIN,mon.zijieapi.com
