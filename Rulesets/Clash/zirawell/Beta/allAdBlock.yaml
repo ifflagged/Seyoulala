@@ -1,4 +1,4 @@
-#规则数量:1441
+#规则数量:1442
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -412,6 +412,7 @@ payload:
   - DOMAIN,mallapi2.qinlinkeji.com
   - DOMAIN,mars.jd.com
   - DOMAIN,mazu.m.qq.com
+  - DOMAIN,mb.cdn-static.abchina.com.cn
   - DOMAIN,mbads.paas.cmbchina.com
   - DOMAIN,mc.tencentmusic.com
   - DOMAIN,mcs.snssdk.com
