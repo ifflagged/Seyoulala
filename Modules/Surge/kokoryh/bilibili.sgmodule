@@ -15,7 +15,7 @@ DOMAIN,app.biliapi.net,REJECT,extended-matching,pre-matching
 AND,((DOMAIN-SUFFIX,chat.bilibili.com),(OR,((DOMAIN-KEYWORD,stun),(DOMAIN-KEYWORD,tracker),(DOMAIN-KEYWORD,p2p)))),REJECT,pre-matching
 
 [Body Rewrite]
-http-response-jq ^http:\/\/[^?]+\/resolve\?host=(?:ap[ip]\.bilibili\.com|grpc\.biliapi\.net|api\.live\.bilibili\.com) '.dns[]? |= (.ips = [] | .ttl = 86400)'
+http-response-jq ^http:\/\/[^?]+\/resolve\?(?:[^#?&]+&)*host=(?:ap[ip]\.bilibili\.com|grpc\.biliapi\.net|api\.live\.bilibili\.com) '.dns[]? |= (.ips = [] | .ttl = 86400)'
 http-response-jq ^https:\/\/api\.live\.bilibili\.com\/xlive\/open-interface\/v2\/tracker\/conf\? '.data.domains = ["wss://tracker.chat.bilibili.com"]'
 http-response-jq ^https:\/\/api\.bilibili\.com\/x\/pd-proxy\/tracker\? '.data[][]? = "stun.chat.bilibili.com:3478"'
 http-response-jq ^https:\/\/api\.bilibili\.com\/pgc\/view\/v2\/app\/season\? 'del(.data.payment)'
@@ -39,9 +39,9 @@ http-response-jq ^https:\/\/api\.bilibili\.com\/pgc\/page\/channel\? '.data.modu
 ^https:\/\/grpc\.biliapi\.net\/bilibili\.app\.(?:view\.v1\.View\/TFInfo|viewunite\.v1\.View\/(?:PlayPause|ViewEndPage))$ data-type=base64 data="AAAAAAA=" header="content-type: application/grpc|grpc-status: 0"
 
 [Script]
-{{{优化评论区加载}}} = type=http-request, pattern=^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.(?:app\.viewunite\.v1\.View\/View|main\.community\.reply\.v1\.Reply\/MainList)$, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/kokoryh/bilibili/bilibili.protobuf.request.js, requires-body=true, binary-body-mode=true, engine=webview, max-size=-1, timeout=10, argument="{"purifyComment":{{{过滤置顶评论广告}}},"logLevel":"{{{日志等级}}}"}"
+优化评论区加载 = type=http-request, pattern=^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.(?:app\.viewunite\.v1\.View\/View|main\.community\.reply\.v1\.Reply\/MainList)$, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/kokoryh/bilibili/bilibili.protobuf.request.js, requires-body=true, binary-body-mode=true, engine=webview, max-size=-1, timeout=10, argument="{"purifyComment":{{{过滤置顶评论广告}}},"logLevel":"{{{日志等级}}}"}"
 
-{{{空降助手}}} = type=http-request, pattern=^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.(?:community\.service\.dm\.v1\.DM\/DmSegMobile|app\.view(?:unite)?\.v1\.View\/ViewProgress)$, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/kokoryh/bilibili/bilibili.protobuf.request.js, requires-body=true, binary-body-mode=true, engine=webview, max-size=-1, timeout=10, argument="{"logLevel":"{{{日志等级}}}"}"
+空降助手 = type=http-request, pattern=^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.(?:community\.service\.dm\.v1\.DM\/DmSegMobile|app\.view(?:unite)?\.v1\.View\/ViewProgress)$, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/kokoryh/bilibili/bilibili.protobuf.request.js, requires-body=true, binary-body-mode=true, engine=webview, max-size=-1, timeout=10, argument="{"logLevel":"{{{日志等级}}}"}"
 
 bilibili.skin = type=http-response, pattern=^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\?, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/kokoryh/bilibili/bili-suit-diy.js, requires-body=true, engine=webview, max-size=-1
 

@@ -5599,14 +5599,14 @@ response if ${url} ~= /^https?:\/\/search\.video\.iqiyi\.com\/q\?/i then script(
 # 开屏广告,播放广告
 response if ${url} ~= /^https?:\/\/(kjp|t7z)\.cupid\.iqiyi\.com\/mixer\?/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/cnftp.js") with tag="cnftp", timeout=60, requires_body=true
 
-response if ${url} ~= /^https?:\/\/newclient\.map\.baidu\.com\/client\/phpui2\/\?qt=ads/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/baidumap.js") with tag="baidumap", timeout=60, requires_body=true
+response if ${url} ~= /^https?:\/\/newclient\.map\.baidu\.com\/client\/phpui2\/\?qt=ads/i then script("https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/baidumap.js") with tag="baidumap", timeout=60, requires_body=true
 
 # 净化 个人页随机图片
 #response if ${url} ~= /^https?:\/\/mime\.baidu\.com\/(imrobot\/v1\/pub\/relation\/get_robot_list|v5\/custom_page\/(layout|getdata))/i then script("https://raw.githubusercontent.com/Keywos/rule/main/JS/bdsrf.js") with tag="bdsrf", timeout=60, requires_body=true
 
 response if ${url} ~= /^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/(c\/(s\/sync|f\/(ad\/getSplashAd|frs\/(page|threadlist|generalTabList)|pb\/(pic)?page|excellent\/personalized))$|tiebaads\/commonbatch\?)/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/tieba-json.js") with tag="tieba-json", timeout=60, requires_body=true
 
-response if ${url} ~= /^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/c\/(b\/ad\/adBid|f\/(frs\/(page|threadlist|generalTabList)|ad\/getFeedAd|pb\/page|excellent\/personalized))\?cmd/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/tieba-proto.js") with tag="tieba-proto", timeout=60, requires_body=true, binary_body_mode=true
+response if ${url} ~= /^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/c\/(b\/ad\/adBid|f\/(frs\/(page|threadlist|generalTabList)|ad\/getFeedAd|pb\/page|excellent\/personalized))\?cmd/i then script("https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-proto.js") with tag="tieba-proto", timeout=60, requires_body=true, binary_body_mode=true
 
 # 记录 - 大家都在看data.recom_cards / 底部按钮data.recom_btns
 response if ${url} ~= /^https:\/\/api\.boohee\.com\/meta-interface\/v2\/index\?/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/bohe_ads.js") with tag="bohe_ads", timeout=60, requires_body=true
@@ -5626,9 +5626,9 @@ response if ${url} ~= /^https?:\/\/manga\.bilibili\.com\/twirp\/comic\.v\d\.Home
 response if ${url} ~= /^https?:\/\/manga\.bilibili\.com\/twirp\/comic\.v\d\.Comment\/Main/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/bilibiliManga.js") with tag="bilibiliManga", timeout=60, requires_body=true
 
 # 登录后个人界面广告
-response if ${url} ~= /^https?:\/\/social\.blued\.cn\/users\/.+\/more\/ios\?v=2/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/blued.js") with tag="blued", timeout=60, requires_body=true
+response if ${url} ~= /^https?:\/\/social\.blued\.cn\/users\/.+\/more\/ios\?v=2/i then script("https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/blued.js") with tag="blued", timeout=60, requires_body=true
 
-response if ${url} ~= /^https?:\/\/gg\.caixin\.com\/s\?z=caixin&op=1&c=3362/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/caixinAd.js") with tag="caixinAd", timeout=60, requires_body=true
+response if ${url} ~= /^https?:\/\/gg\.caixin\.com\/s\?z=caixin&op=1&c=3362/i then script("https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/caixin/caixinAd.js") with tag="caixinAd", timeout=60, requires_body=true
 
 response if ${url} ~= /^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.m?show\.cn/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/cainiao.js") with tag="cainiao", timeout=60, requires_body=true
 
@@ -5693,7 +5693,7 @@ response if ${url} ~= /^https?:\/\/ump\.ems\.com\.cn\/new-generation-extend\/red
 
 response if ${url} ~= /^https?:\/\/47\.100\.65\.202\/api\/mobile\/index\.php\?version=\d&mobile=yes&module=basicdata&type=forumlist/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/replace-body.js", "adv-%3Efmz200") with tag="replaceBody", timeout=30, requires_body=true
 
-response if ${url} ~= /^https?:\/\/47\.100\.65\.202\/source\/plugin\/mobile\/mobile\.php\?module=threadpost&.+?&page=1/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/fly.js") with tag="fly", timeout=60, requires_body=true
+response if ${url} ~= /^https?:\/\/47\.100\.65\.202\/source\/plugin\/mobile\/mobile\.php\?module=threadpost&.+?&page=1/i then script("https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/fly.js") with tag="fly", timeout=60, requires_body=true
 
 response if ${url} ~= /^https?:\/\/www\.flyert\.com(\.cn)?\/.*plugin/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/flyert.js") with tag="flyert", timeout=60, requires_body=true
 
@@ -5722,21 +5722,21 @@ response if ${url} ~= /^https?:\/\/www\.i3zh\.com/i then script("https://github.
 response if ${url} ~= /^https?:\/\/napi\.ithome\.com\/api\/(news\/index|topmenu\/getfeeds)/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/ithome.js") with tag="ithome", timeout=60, requires_body=true
 
 # 全面广告净化
-response if ${url} ~= /^https?:\/\/yunbusiness\.ccb\.com\/(?>basic_service|clp_service)\/txCtrl\?txcode=A3341(?>SB16|C147|MB22|A009|A120|AB03|AB04|A068|A095|AB08)/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/ccblife.js") with tag="ccblife", timeout=60, requires_body=true
+response if ${url} ~= /^https?:\/\/yunbusiness\.ccb\.com\/(?>basic_service|clp_service)\/txCtrl\?txcode=A3341(?>SB16|C147|MB22|A009|A120|AB03|AB04|A068|A095|AB08)/i then script("https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/ccblife.js") with tag="ccblife", timeout=60, requires_body=true
 
 # 内置饿了么
 response if ${url} ~= /^https?:\/\/g\.alicdn\.com\/.*o2o-ad/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/alicdn.js") with tag="alicdn", timeout=60, requires_body=true
 
 response if ${url} ~= /^https?:\/\/waimai-guide\.ele\.me\/\w+\/mtop\.venus\.shopresourceservice\.getshopresource/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/replace-body.js", "posterList-%3Erandom_body") with tag="replaceBody", timeout=30, requires_body=true
 
-response if ${url} ~= /^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome)/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/jingdong.js") with tag="jingdong", timeout=60, requires_body=true
+response if ${url} ~= /^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome)/i then script("https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/jingdong/jingdong.js") with tag="jingdong", timeout=60, requires_body=true
 
 # hostname = api.m.jd.com
 response if ${url} ~= /^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=lite_advertising/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/replace-body.js", "jdLiteAdvertisingVO-%3Efmz200") with tag="replaceBody", timeout=30, requires_body=true
 
 response if ${url} ~= /^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=lite_SmartPush/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/replace-body.js", "pushData-%3Efmz200") with tag="replaceBody", timeout=30, requires_body=true
 
-response if ${url} ~= /^https?:\/\/api\.m\.jd\.com\/api\?functionId=delivery_show/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/jingxiAd.js") with tag="jingxiAd", timeout=60, requires_body=true
+response if ${url} ~= /^https?:\/\/api\.m\.jd\.com\/api\?functionId=delivery_show/i then script("https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/jingxiAd.js") with tag="jingxiAd", timeout=60, requires_body=true
 
 response if ${url} ~= /^https?:\/\/api\.coolapk\.com\/v6\/feed\/(detail|replyList)\?/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/coolapk.js") with tag="coolapk", timeout=60, requires_body=true
 
@@ -5785,7 +5785,7 @@ response if ${url} ~= /^https:\/\/lawsonapi\.yorentown\.com\/portal\/app\/global
 
 response if ${url} ~= /^https?:\/\/mapi\.mafengwo\.cn\/user\/profile\/get_(list|profile)/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/mafengwo.js") with tag="mafengwo", timeout=60, requires_body=true
 
-response if ${url} ~= /^https?:\/\/creditcardapp\.bankcomm\.(com|cn)\/rcg\/index\.html\?callbackurl=rcg\/index\.html&orclogin=1&/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/mdb.js") with tag="mdb", timeout=60, requires_body=true
+response if ${url} ~= /^https?:\/\/creditcardapp\.bankcomm\.(com|cn)\/rcg\/index\.html\?callbackurl=rcg\/index\.html&orclogin=1&/i then script("https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/mdb.js") with tag="mdb", timeout=60, requires_body=true
 
 # 帖子末尾 - 看过此贴的用户也在看
 response if ${url} ~= /^https:\/\/(h3\.)?open\.taou\.com\/maimai\/feed\/v6\/detail_recommend_feeds\?/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/maimai_ads.js") with tag="maimai_ads", timeout=60, requires_body=true
@@ -5849,7 +5849,7 @@ response if ${url} ~= /^https?:\/\/www\.pushplus\.plus.*/i then script("https://
 response if ${url} ~= /^https?:\/\/(?>webapi|miniapp)\.qmai\.cn\/web\/catering([0-9]-apiserver)?\/advertising\/ad\/advertiseInfo/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/qmai.js") with tag="qmai", timeout=60, requires_body=true
 
 # 起点开屏页广告,每日导读去除,冷启动强制跳转精选页去除,去除发现页弹出的活动弹窗,去除下方(精选 发现 中间的)活动时的tab,去除书架右下角的活动/广告的悬浮icon,搜索页可以搜索用户
-response if ${url} ~= /^https?:\/\/magev6\.if\.qidian\.com\/argus\/api\/(v4\/client\/getsplashscreen|v2\/deeplink\/geturl|v1\/(client\/getconf|adv\/getadvlistbatch\?positions=iOS_tab|dailyrecommend\/getdailyrecommend))/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/qidian.js") with tag="qidian", timeout=60, requires_body=true
+response if ${url} ~= /^https?:\/\/magev6\.if\.qidian\.com\/argus\/api\/(v4\/client\/getsplashscreen|v2\/deeplink\/geturl|v1\/(client\/getconf|adv\/getadvlistbatch\?positions=iOS_tab|dailyrecommend\/getdailyrecommend))/i then script("https://raw.githubusercontent.com/app2smile/rules/master/js/qidian.js") with tag="qidian", timeout=60, requires_body=true
 
 # 我的界面及活动按钮
 #response if ${url} ~= /^https?:\/\/magev6\.if\.qidian\.com\/argus\/api\/(v1\/assembly\/toolbar|v3\/user\/getaccountpage)/i then script("https://raw.githubusercontent.com/Yu9191/Rewrite/main/Qidian_my.js") with tag="Qidian_my", timeout=60, requires_body=true
@@ -5931,7 +5931,7 @@ response if ${url} ~= /^https?:\/\/article-api\.smzdm\.com\/publish\/get_bubble/
 response if ${url} ~= /^https?:\/\/qianbao\.smzdm\.com\/v\d\/app\/home/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/Smzdm.js") with tag="Smzdm", timeout=60, requires_body=true
 
 # 净化（需要卸载重装）感谢【TEXAS】分享
-response if ${url} ~= /^https?:\/\/api\.sodalife\.xyz\/v1\/posters\?location=SODA_APP%3AHOME%3ATOP/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/soda.js") with tag="soda", timeout=60, requires_body=true
+response if ${url} ~= /^https?:\/\/api\.sodalife\.xyz\/v1\/posters\?location=SODA_APP%3AHOME%3ATOP/i then script("https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/soda.js") with tag="soda", timeout=60, requires_body=true
 
 # 替换信息收集
 request if ${url} ~= /^https:\/\/data-collector\.soulapp\.cn\/api\/data\/report\/v\d/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/req_replace_body.js") with tag="req_replace_body", timeout=60, requires_body=true
@@ -6029,7 +6029,7 @@ response if ${url} ~= /^https?:\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad/i then s
 response if ${url} ~= /^https\:\/\/(weixin110\.qq|security.wechat)\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi\?/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/UnblockURLinWeChat.js") with tag="UnblockURLinWeChat", timeout=60, requires_body=true
 
 # hostname = vue3-api.zhixiny.cn
-response if ${url} ~= /^https:\/\/vue3-api\.zhixiny\.cn\/v1\/initui\?key=index/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/wnbz.js") with tag="wnbz", timeout=60, requires_body=true
+response if ${url} ~= /^https:\/\/vue3-api\.zhixiny\.cn\/v1\/initui\?key=index/i then script("https://raw.githubusercontent.com/Sliverkiss/QuantumultX/main/AdBlock/xmApp/wnbz.js") with tag="wnbz", timeout=60, requires_body=true
 
 # 商品信息流广告
 response if ${url} ~= /^https:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlehome\.home\.nextfresh\//i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/goofish.js") with tag="goofish", timeout=60, requires_body=true

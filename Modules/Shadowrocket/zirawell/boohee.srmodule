@@ -6,7 +6,7 @@
 
 #!openUrl=https://apps.apple.com/app/id457856023
 #!bundleId=com.boohee.food
-#!tag=去广告
+#!category=去广告
 #!basedOn=iOS
 #!surge_version=5.14.2(Build3405,SDK18.2)
 #!homepage=https://github.com/zirawell/R-Store/tree/main/Rule/Surge/README.md
@@ -39,7 +39,7 @@ boohee = type=http-response, pattern=^https?:\/\/api\.boohee\.com\/meta-interfac
 
 boohee = type=http-response, pattern=^https?:\/\/api\.boohee\.com\/meta-interface\/v\d\/index\/plaza\?, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zirawell/boohee/boohee.js, requires-body=true, max-size=0
 
-boohee = type=http-response, pattern=^https?:\/\/api\.boohee\.com\/open-interface\/v\d\/string\/market_page\?title=metabolism_config$, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zirawell/boohee/boohee.js, requires-body=true, max-size=0
+boohee = type=http-response, pattern=^https?:\/\/api\.boohee\.com\/open-interface\/v\d\/string\/market_page\?(?:[^#?&]+&)*title=metabolism_config$, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/zirawell/boohee/boohee.js, requires-body=true, max-size=0
 
 [MITM]
 hostname = %APPEND% *.boohee.com, *.boohee.cn, bohe.sfo-tx-shanghai-01.saas.sensorsdata.cn

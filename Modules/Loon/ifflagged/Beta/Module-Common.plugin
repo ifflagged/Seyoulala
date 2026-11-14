@@ -26,7 +26,7 @@ request if ${url} ~= /^https:\/\/spamblocker-api\.zeekstudio\.com\/checkVersion/
 
 [Script]
 # 京粉 //api.m.jd.com
-response if ${url} ~= /^https:\/\/api\.m\.jd\.com\/\?functionId=union_exhibition_bff&client=apple&clientVer/i then script("https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/ifflagged/Module-Common/JD-JF.js") with tag="JD-Share", requires_body=true
+response if ${url} ~= /^https:\/\/api\.m\.jd\.com\/\?functionId=union_exhibition_bff&client=apple&clientVer/i then script("https://github.com/ifflagged/Neverflagged/raw/main/Surge/Scripts/JD-JF.js") with tag="JD-Share", requires_body=true
 
 [MITM]
 hostname = wxa.wxs.qq.com, wximg.wxs.qq.com, wxsmw.wxs.qq.com, api.m.jd.com, spamblocker-api.zeekstudio.com

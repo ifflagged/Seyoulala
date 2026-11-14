@@ -5606,14 +5606,14 @@ cnftp = type=http-response, pattern=^https?:\/\/search\.video\.iqiyi\.com\/q\?, 
 # 开屏广告,播放广告
 cnftp = type=http-response, pattern=^https?:\/\/(kjp|t7z)\.cupid\.iqiyi\.com\/mixer\?, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/cnftp.js, requires-body=true, max-size=-1, timeout=60
 
-baidumap = type=http-response, pattern=^https?:\/\/newclient\.map\.baidu\.com\/client\/phpui2\/\?(?:[^#?&]+&)*qt=ads, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/baidumap.js, requires-body=true, max-size=-1, timeout=60
+baidumap = type=http-response, pattern=^https?:\/\/newclient\.map\.baidu\.com\/client\/phpui2\/\?(?:[^#?&]+&)*qt=ads, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/baidumap.js, requires-body=true, max-size=-1, timeout=60
 
 # 净化 个人页随机图片
 #bdsrf = type=http-response, pattern=^https?:\/\/mime\.baidu\.com\/(imrobot\/v1\/pub\/relation\/get_robot_list|v5\/custom_page\/(layout|getdata)), script-path=https://raw.githubusercontent.com/Keywos/rule/main/JS/bdsrf.js, requires-body=true, max-size=-1, timeout=60
 
 tieba-json = type=http-response, pattern=^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/(c\/(s\/sync|f\/(ad\/getSplashAd|frs\/(page|threadlist|generalTabList)|pb\/(pic)?page|excellent\/personalized))$|tiebaads\/commonbatch\?), script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/tieba-json.js, requires-body=true, max-size=-1, timeout=60
 
-tieba-proto = type=http-response, pattern=^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/c\/(b\/ad\/adBid|f\/(frs\/(page|threadlist|generalTabList)|ad\/getFeedAd|pb\/page|excellent\/personalized))\?(?:[^#?&]+&)*cmd, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/tieba-proto.js, requires-body=true, binary-body-mode=true, max-size=-1, timeout=60
+tieba-proto = type=http-response, pattern=^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/c\/(b\/ad\/adBid|f\/(frs\/(page|threadlist|generalTabList)|ad\/getFeedAd|pb\/page|excellent\/personalized))\?(?:[^#?&]+&)*cmd, script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-proto.js, requires-body=true, binary-body-mode=true, max-size=-1, timeout=60
 
 # 记录 - 大家都在看data.recom_cards / 底部按钮data.recom_btns
 bohe_ads = type=http-response, pattern=^https:\/\/api\.boohee\.com\/meta-interface\/v2\/index\?, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/bohe_ads.js, requires-body=true, max-size=-1, timeout=60
@@ -5633,9 +5633,9 @@ bilibiliManga = type=http-response, pattern=^https?:\/\/manga\.bilibili\.com\/tw
 bilibiliManga = type=http-response, pattern=^https?:\/\/manga\.bilibili\.com\/twirp\/comic\.v\d\.Comment\/Main, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/bilibiliManga.js, requires-body=true, max-size=-1, timeout=60
 
 # 登录后个人界面广告
-blued = type=http-response, pattern=^https?:\/\/social\.blued\.cn\/users\/.+\/more\/ios\?(?:[^#?&]+&)*v=2, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/blued.js, requires-body=true, max-size=-1, timeout=60
+blued = type=http-response, pattern=^https?:\/\/social\.blued\.cn\/users\/.+\/more\/ios\?(?:[^#?&]+&)*v=2, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/blued.js, requires-body=true, max-size=-1, timeout=60
 
-caixinAd = type=http-response, pattern=^https?:\/\/gg\.caixin\.com\/s\?(?:[^#?&]+&)*z=caixin&op=1&c=3362, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/caixinAd.js, requires-body=true, max-size=-1, timeout=60
+caixinAd = type=http-response, pattern=^https?:\/\/gg\.caixin\.com\/s\?(?:[^#?&]+&)*z=caixin&op=1&c=3362, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/caixin/caixinAd.js, requires-body=true, max-size=-1, timeout=60
 
 cainiao = type=http-response, pattern=^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.m?show\.cn, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/cainiao.js, requires-body=true, max-size=-1, timeout=60
 
@@ -5700,7 +5700,7 @@ wechatApplet = type=http-response, pattern=^https?:\/\/ump\.ems\.com\.cn\/new-ge
 
 replaceBody = type=http-response, pattern=^https?:\/\/47\.100\.65\.202\/api\/mobile\/index\.php\?(?:[^#?&]+&)*version=\d&mobile=yes&module=basicdata&type=forumlist, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/replace-body.js, requires-body=true, max-size=-1, timeout=30, argument=adv-%3Efmz200
 
-fly = type=http-response, pattern=^https?:\/\/47\.100\.65\.202\/source\/plugin\/mobile\/mobile\.php\?(?:[^#?&]+&)*module=threadpost&.+?&page=1, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/fly.js, requires-body=true, max-size=-1, timeout=60
+fly = type=http-response, pattern=^https?:\/\/47\.100\.65\.202\/source\/plugin\/mobile\/mobile\.php\?(?:[^#?&]+&)*module=threadpost&.+?&page=1, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/fly.js, requires-body=true, max-size=-1, timeout=60
 
 flyert = type=http-response, pattern=^https?:\/\/www\.flyert\.com(\.cn)?\/.*plugin, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/flyert.js, requires-body=true, max-size=-1, timeout=60
 
@@ -5729,21 +5729,21 @@ replaceBody = type=http-response, pattern=^https?:\/\/www\.i3zh\.com, script-pat
 ithome = type=http-response, pattern=^https?:\/\/napi\.ithome\.com\/api\/(news\/index|topmenu\/getfeeds), script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/ithome.js, requires-body=true, max-size=-1, timeout=60
 
 # 全面广告净化
-ccblife = type=http-response, pattern=^https?:\/\/yunbusiness\.ccb\.com\/(?>basic_service|clp_service)\/txCtrl\?(?:[^#?&]+&)*txcode=A3341(?>SB16|C147|MB22|A009|A120|AB03|AB04|A068|A095|AB08), script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/ccblife.js, requires-body=true, max-size=-1, timeout=60
+ccblife = type=http-response, pattern=^https?:\/\/yunbusiness\.ccb\.com\/(?>basic_service|clp_service)\/txCtrl\?(?:[^#?&]+&)*txcode=A3341(?>SB16|C147|MB22|A009|A120|AB03|AB04|A068|A095|AB08), script-path=https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/ccblife.js, requires-body=true, max-size=-1, timeout=60
 
 # 内置饿了么
 alicdn = type=http-response, pattern=^https?:\/\/g\.alicdn\.com\/.*o2o-ad, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/alicdn.js, requires-body=true, max-size=-1, timeout=60
 
 replaceBody = type=http-response, pattern=^https?:\/\/waimai-guide\.ele\.me\/\w+\/mtop\.venus\.shopresourceservice\.getshopresource, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/replace-body.js, requires-body=true, max-size=-1, timeout=30, argument=posterList-%3Erandom_body
 
-jingdong = type=http-response, pattern=^https:\/\/api\.m\.jd\.com\/client\.action\?(?:[^#?&]+&)*functionId=(deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome), script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/jingdong.js, requires-body=true, max-size=-1, timeout=60
+jingdong = type=http-response, pattern=^https:\/\/api\.m\.jd\.com\/client\.action\?(?:[^#?&]+&)*functionId=(deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome), script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/jingdong/jingdong.js, requires-body=true, max-size=-1, timeout=60
 
 # hostname = api.m.jd.com
 replaceBody = type=http-response, pattern=^https?:\/\/api\.m\.jd\.com\/client\.action\?(?:[^#?&]+&)*functionId=lite_advertising, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/replace-body.js, requires-body=true, max-size=-1, timeout=30, argument=jdLiteAdvertisingVO-%3Efmz200
 
 replaceBody = type=http-response, pattern=^https?:\/\/api\.m\.jd\.com\/client\.action\?(?:[^#?&]+&)*functionId=lite_SmartPush, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/replace-body.js, requires-body=true, max-size=-1, timeout=30, argument=pushData-%3Efmz200
 
-jingxiAd = type=http-response, pattern=^https?:\/\/api\.m\.jd\.com\/api\?(?:[^#?&]+&)*functionId=delivery_show, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/jingxiAd.js, requires-body=true, max-size=-1, timeout=60
+jingxiAd = type=http-response, pattern=^https?:\/\/api\.m\.jd\.com\/api\?(?:[^#?&]+&)*functionId=delivery_show, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/jingxiAd.js, requires-body=true, max-size=-1, timeout=60
 
 coolapk = type=http-response, pattern=^https?:\/\/api\.coolapk\.com\/v6\/feed\/(detail|replyList)\?, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/coolapk.js, requires-body=true, max-size=-1, timeout=60
 
@@ -5792,7 +5792,7 @@ lawson = type=http-response, pattern=^https:\/\/lawsonapi\.yorentown\.com\/porta
 
 mafengwo = type=http-response, pattern=^https?:\/\/mapi\.mafengwo\.cn\/user\/profile\/get_(list|profile), script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/mafengwo.js, requires-body=true, max-size=-1, timeout=60
 
-mdb = type=http-response, pattern=^https?:\/\/creditcardapp\.bankcomm\.(com|cn)\/rcg\/index\.html\?(?:[^#?&]+&)*callbackurl=rcg\/index\.html&orclogin=1&, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/mdb.js, requires-body=true, max-size=-1, timeout=60
+mdb = type=http-response, pattern=^https?:\/\/creditcardapp\.bankcomm\.(com|cn)\/rcg\/index\.html\?(?:[^#?&]+&)*callbackurl=rcg\/index\.html&orclogin=1&, script-path=https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/mdb.js, requires-body=true, max-size=-1, timeout=60
 
 # 帖子末尾 - 看过此贴的用户也在看
 maimai_ads = type=http-response, pattern=^https:\/\/(h3\.)?open\.taou\.com\/maimai\/feed\/v6\/detail_recommend_feeds\?, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/maimai_ads.js, requires-body=true, max-size=-1, timeout=60
@@ -5856,7 +5856,7 @@ replaceBody = type=http-response, pattern=^https?:\/\/www\.pushplus\.plus.*, scr
 qmai = type=http-response, pattern=^https?:\/\/(?>webapi|miniapp)\.qmai\.cn\/web\/catering([0-9]-apiserver)?\/advertising\/ad\/advertiseInfo, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/qmai.js, requires-body=true, max-size=-1, timeout=60
 
 # 起点开屏页广告,每日导读去除,冷启动强制跳转精选页去除,去除发现页弹出的活动弹窗,去除下方(精选 发现 中间的)活动时的tab,去除书架右下角的活动/广告的悬浮icon,搜索页可以搜索用户
-qidian = type=http-response, pattern=^https?:\/\/magev6\.if\.qidian\.com\/argus\/api\/(v4\/client\/getsplashscreen|v2\/deeplink\/geturl|v1\/(client\/getconf|adv\/getadvlistbatch\?(?:[^#?&]+&)*positions=iOS_tab|dailyrecommend\/getdailyrecommend)), script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/qidian.js, requires-body=true, max-size=-1, timeout=60
+qidian = type=http-response, pattern=^https?:\/\/magev6\.if\.qidian\.com\/argus\/api\/(v4\/client\/getsplashscreen|v2\/deeplink\/geturl|v1\/(client\/getconf|adv\/getadvlistbatch\?(?:[^#?&]+&)*positions=iOS_tab|dailyrecommend\/getdailyrecommend)), script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/qidian.js, requires-body=true, max-size=-1, timeout=60
 
 # 我的界面及活动按钮
 #Qidian_my = type=http-response, pattern=^https?:\/\/magev6\.if\.qidian\.com\/argus\/api\/(v1\/assembly\/toolbar|v3\/user\/getaccountpage), script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/Qidian_my.js, requires-body=true, max-size=-1, timeout=60
@@ -5938,7 +5938,7 @@ Smzdm = type=http-response, pattern=^https?:\/\/article-api\.smzdm\.com\/publish
 Smzdm = type=http-response, pattern=^https?:\/\/qianbao\.smzdm\.com\/v\d\/app\/home, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/Smzdm.js, requires-body=true, max-size=-1, timeout=60
 
 # 净化（需要卸载重装）感谢【TEXAS】分享
-soda = type=http-response, pattern=^https?:\/\/api\.sodalife\.xyz\/v1\/posters\?(?:[^#?&]+&)*location=SODA_APP%3AHOME%3ATOP, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/soda.js, requires-body=true, max-size=-1, timeout=60
+soda = type=http-response, pattern=^https?:\/\/api\.sodalife\.xyz\/v1\/posters\?(?:[^#?&]+&)*location=SODA_APP%3AHOME%3ATOP, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/soda.js, requires-body=true, max-size=-1, timeout=60
 
 # 替换信息收集
 req_replace_body = type=http-request, pattern=^https:\/\/data-collector\.soulapp\.cn\/api\/data\/report\/v\d, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/req_replace_body.js, requires-body=true, max-size=-1, timeout=60
@@ -6036,7 +6036,7 @@ replaceBody = type=http-response, pattern=^https?:\/\/mp\.weixin\.qq\.com\/mp\/g
 UnblockURLinWeChat = type=http-response, pattern=^https\:\/\/(weixin110\.qq|security.wechat)\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi\?, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/UnblockURLinWeChat.js, requires-body=true, max-size=-1, timeout=60
 
 # hostname = vue3-api.zhixiny.cn
-wnbz = type=http-response, pattern=^https:\/\/vue3-api\.zhixiny\.cn\/v1\/initui\?(?:[^#?&]+&)*key=index, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/wnbz.js, requires-body=true, max-size=-1, timeout=60
+wnbz = type=http-response, pattern=^https:\/\/vue3-api\.zhixiny\.cn\/v1\/initui\?(?:[^#?&]+&)*key=index, script-path=https://raw.githubusercontent.com/Sliverkiss/QuantumultX/main/AdBlock/xmApp/wnbz.js, requires-body=true, max-size=-1, timeout=60
 
 # 商品信息流广告
 goofish = type=http-response, pattern=^https:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlehome\.home\.nextfresh\/, script-path=https://github.com/ifflagged/Seyoulala/raw/main/Modules/JS/fmz200/rewrite/goofish.js, requires-body=true, max-size=-1, timeout=60
