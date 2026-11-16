@@ -1,4 +1,4 @@
-#规则数量:1441
+#规则数量:1443
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -293,6 +293,7 @@ DOMAIN,easytomessage.com
 DOMAIN,eco.taobao.com
 DOMAIN,ef-dongfeng.tanx.com
 DOMAIN,effect.snssdk.com
+DOMAIN,emapm.eastmoney.com
 DOMAIN,emdcadvertise.eastmoney.com
 DOMAIN,emdcadvertisepj.eastmoney.com
 DOMAIN,emma-414870e223.huodonghezi.com
@@ -521,6 +522,7 @@ DOMAIN,statistic.live.126.net
 DOMAIN,stun1.douyucdn.cn
 DOMAIN,stun1.qvb.qcloud.com
 DOMAIN,sugar.zhihu.com
+DOMAIN,swdlcdn.eastmoney.com
 DOMAIN,switch.cup.com.cn
 DOMAIN,t-ads.xiaohongshu.com
 DOMAIN,t-dsp.pinduoduo.com
