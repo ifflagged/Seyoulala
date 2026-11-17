@@ -1,4 +1,4 @@
-#规则数量:76
+#规则数量:77
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -65,6 +65,7 @@ payload:
   - DOMAIN-SUFFIX,groq.com
   - DOMAIN-SUFFIX,grazie.ai
   - DOMAIN-SUFFIX,meta.ai
+  - DOMAIN-SUFFIX,muse.ai
   - DOMAIN-WILDCARD,scontent-*.xx.fbcdn.net
   - DOMAIN,graph.facebook.com
   - DOMAIN,imagine.meta.com
