@@ -3126,7 +3126,6 @@ DOMAIN,appcloud2.in.zhihu.com,REJECT
 DOMAIN,mqtt.zhihu.com,REJECT
 DOMAIN,sugar.zhihu.com,REJECT
 DOMAIN,crash2.zhihu.com,REJECT
-DOMAIN,118.89.204.198,REJECT
 DOMAIN,zxid-m.mobileservice.cn,REJECT
 IP-CIDR,118.89.204.198/32,REJECT,no-resolve
 IP-CIDR,103.41.167.237/32,REJECT,no-resolve
@@ -5421,9 +5420,9 @@ request if ${url} ~= /^https?:\/\/(syh|www)\.zybang\.com\/adx\//i then reject(20
 #request if ${url} ~= /^https?:\/\/.+\.pstatp\.com\/img\/ad/i then reject(200, " ")
 
 [Script]
-response if ${url} ~= /#^https?:\/\/www\.pushplus\.plus.*/i then script("https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js", "[[\"replace-regex\",[[\"(<head>)\",\"$1<style\"],[\"type=\\\"text/css\\\">\",\"div.container.py-3.text-center\"],[\"{display:\",\"none!\"],[\"important}\",\"</style\"]]]]") with tag="body_rewrite_5286", timeout=30, requires_body=true
+response if ${url} ~= /#^https?:\/\/www\.pushplus\.plus.*/i then script("https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js", "[[\"replace-regex\",[[\"(<head>)\",\"$1<style\"],[\"type=\\\"text/css\\\">\",\"div.container.py-3.text-center\"],[\"{display:\",\"none!\"],[\"important}\",\"</style\"]]]]") with tag="body_rewrite_5285", timeout=30, requires_body=true
 
-response if ${url} ~= /#^https?:\/\/vv\.video\.qq\.com\/getvinfo/i then script("https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js", "[[\"replace-regex\",[[\"&sppreviewtype=\\\\d(.*)&spsrt=\\\\d\",\"&sppreviewtype=0$1&spsrt=0\"]]]]") with tag="body_rewrite_5697", timeout=30, requires_body=true
+response if ${url} ~= /#^https?:\/\/vv\.video\.qq\.com\/getvinfo/i then script("https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js", "[[\"replace-regex\",[[\"&sppreviewtype=\\\\d(.*)&spsrt=\\\\d\",\"&sppreviewtype=0$1&spsrt=0\"]]]]") with tag="body_rewrite_5696", timeout=30, requires_body=true
 
 request if ${url} ~= /^https?:\/\/ad\.12306\.cn\/ad\/ser\/getAdList/i then script("https://raw.githubusercontent.com/kokoryh/Script/master/js/12306.js") with enable=${12306_enable}, tag="12306", timeout=60, requires_body=true
 
