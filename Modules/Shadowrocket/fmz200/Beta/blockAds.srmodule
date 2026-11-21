@@ -550,8 +550,6 @@ DOMAIN,afd.baidu.com,REJECT
 DOMAIN,afdconf.baidu.com,REJECT
 DOMAIN,httpdns.baidubce.com,REJECT
 DOMAIN,lc.map.baidu.com,REJECT
-# hostname = tiebac.baidu.com
-DOMAIN,180.76.76.200,REJECT
 # 屏蔽域名dns查询, REJECT
 IP-CIDR,180.76.76.200/32,REJECT,no-resolve
 # > 百姓网
@@ -3681,6 +3679,7 @@ DOMAIN-SUFFIX,z1.zedo.com,REJECT
 [URL Rewrite]
 #Marketo, - reject
 #安全浏览限制解除, - reject
+# hostname = tiebac.baidu.com
 #屏蔽域名dns查询, - reject
 # > C&J Marketing
 #https://www.zhihu.com/question/46746200, - reject

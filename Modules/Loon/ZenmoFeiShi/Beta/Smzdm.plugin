@@ -7,7 +7,7 @@
 #!update=2026-4-14
 
 [Rewrite]
-// ^https:\/\/app-api\.smzdm\.com\/util\/loading response-body-json-jq '.data = null'
+#response if ${url} ~= /^https:\/\/app-api\.smzdm\.com\/util\/loading/i then response.json.jq(".data = null")
 response if ${url} ~= /^https:\/\/haojia-api\.smzdm\.com\/home\/list/i then response.json.jq("del(.data.banner_v2, .data.widget) | if .data.rows then .data.rows |= map(select(has(\"ad_banner_id\") | not) | select(.ad != \"ad_campaign_id_\" and .ad != \"ad_campaign_name\" and .ad != \"abs_position\")) else . end")
 response if ${url} ~= /^https:\/\/app-api\.smzdm\.com\/util\/update/i then response.json.jq("del(.data.ad_black_list, .data.operation_float, .data.haojia_widget)")
 response if ${url} ~= /^https:\/\/homepage-api\.smzdm\.com\/v3\/home/i then response.json.jq("def clean: if type == \"array\" then map(clean) | map(select(. != null)) elif type == \"object\" then if .cell_type == \"23008\" or .cell_type == \"23005\" or .cell_type == \"23024\" then null else with_entries(.value |= clean) end else . end; .data |= clean | .data.functions |= map(select(.type == \"message\")) | .data.component |= map(select(.zz_type == \"circular_banner\" or .zz_type == \"fixed_banner\" or .zz_type == \"filter\" or .zz_type == \"list\")) | del(.data.widget, .data.operation_float_screen)")

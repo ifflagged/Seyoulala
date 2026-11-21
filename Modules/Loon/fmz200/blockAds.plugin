@@ -634,8 +634,6 @@ DOMAIN,afd.baidu.com,REJECT
 DOMAIN,afdconf.baidu.com,REJECT
 DOMAIN,httpdns.baidubce.com,REJECT
 DOMAIN,lc.map.baidu.com,REJECT
-# hostname = tiebac.baidu.com
-DOMAIN,180.76.76.200,REJECT
 # 屏蔽域名dns查询, REJECT
 IP-CIDR,180.76.76.200/32,REJECT,no-resolve
 # > 百姓网
@@ -5175,6 +5173,7 @@ request if ${url} ~= /^https?:\/\/adapi\.izuiyou\.com\//i then reject(404)
 request if ${url} ~= /^https?:\/\/(syh|www)\.zybang\.com\/adx\//i then reject(200)
 #request if ${url} ~= /Marketo,/i then reject(200)
 #request if ${url} ~= /安全浏览限制解除,/i then reject(200)
+# hostname = tiebac.baidu.com
 #request if ${url} ~= /屏蔽域名dns查询,/i then reject(200)
 # > C&J Marketing
 #request if ${url} ~= /https:\/\/www.zhihu.com\/question\/46746200,/i then reject(200)
@@ -5422,9 +5421,9 @@ request if ${url} ~= /^https?:\/\/(syh|www)\.zybang\.com\/adx\//i then reject(20
 #request if ${url} ~= /^https?:\/\/.+\.pstatp\.com\/img\/ad/i then reject(200, " ")
 
 [Script]
-response if ${url} ~= /#^https?:\/\/www\.pushplus\.plus.*/i then script("https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js", "[[\"replace-regex\",[[\"(<head>)\",\"$1<style\"],[\"type=\\\"text/css\\\">\",\"div.container.py-3.text-center\"],[\"{display:\",\"none!\"],[\"important}\",\"</style\"]]]]") with tag="body_rewrite_5287", timeout=30, requires_body=true
+response if ${url} ~= /#^https?:\/\/www\.pushplus\.plus.*/i then script("https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js", "[[\"replace-regex\",[[\"(<head>)\",\"$1<style\"],[\"type=\\\"text/css\\\">\",\"div.container.py-3.text-center\"],[\"{display:\",\"none!\"],[\"important}\",\"</style\"]]]]") with tag="body_rewrite_5286", timeout=30, requires_body=true
 
-response if ${url} ~= /#^https?:\/\/vv\.video\.qq\.com\/getvinfo/i then script("https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js", "[[\"replace-regex\",[[\"&sppreviewtype=\\\\d(.*)&spsrt=\\\\d\",\"&sppreviewtype=0$1&spsrt=0\"]]]]") with tag="body_rewrite_5698", timeout=30, requires_body=true
+response if ${url} ~= /#^https?:\/\/vv\.video\.qq\.com\/getvinfo/i then script("https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js", "[[\"replace-regex\",[[\"&sppreviewtype=\\\\d(.*)&spsrt=\\\\d\",\"&sppreviewtype=0$1&spsrt=0\"]]]]") with tag="body_rewrite_5697", timeout=30, requires_body=true
 
 request if ${url} ~= /^https?:\/\/ad\.12306\.cn\/ad\/ser\/getAdList/i then script("https://raw.githubusercontent.com/kokoryh/Script/master/js/12306.js") with enable=${12306_enable}, tag="12306", timeout=60, requires_body=true
 
