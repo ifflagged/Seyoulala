@@ -1,4 +1,4 @@
-#规则数量:1443
+#规则数量:1444
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -594,6 +594,7 @@ DOMAIN,ynuf.aliapp.org
 DOMAIN,youku-acs.m.taobao.com
 DOMAIN,yt-adp.nosdn.127.net
 DOMAIN,yt-adp.ws.126.net
+DOMAIN,zconfig.elemecdn.com
 DOMAIN,zlink.ugsdk.cn
 DOMAIN,zxid-m.mobileservice.cn
 DOMAIN-SUFFIX,10086.cn.baidu.cdn.yiwk.com
