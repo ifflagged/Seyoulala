@@ -10,7 +10,7 @@
 #!tag=去广告, fmz200, 奶思
 #!system=iOS, iPadOS
 #!loon_version=3.5.1 (978)
-#!date=2026-11-16 22:26:12
+#!date=2026-11-25 21:36:18
 #!remark=下方的所有规则都标注了对应的hostname，可能存在错误或者遗漏，欢迎反馈。对于无法/可选MITM的hostname都特别做了“如开启可自行添加主机名”提示，如果提示后面没有标注主机名则包含所有主机名，否则只包含提示语后面的主机名。
 
 [Argument]
@@ -93,7 +93,11 @@ xnmiuhig_enable=switch,true,false,tag=小米商城-脚本开关
 xntuisis_enable=switch,true,false,tag=小兔充充-脚本开关
 yzku_enable=switch,true,false,tag=优酷-脚本开关
 yzxiapp_enable=switch,true,false,tag=悠洗APP-脚本开关
-youtube_enable=switch,true,false,tag=YouTube-脚本开关
+blockUpload=switch,true,false,tag=屏蔽上传按钮, desc=屏蔽上传按钮
+blockImmersive=switch,true,false,tag=屏蔽选段按钮, desc=屏蔽选段按钮
+blockShorts=switch,false,true,tag=屏蔽Shorts按钮, desc=屏蔽Shorts按钮
+captionLang=input,"off",tag=字幕翻译语言, desc=字幕翻译语言
+debug=switch,false,true,tag=启用调试模式, desc=启用调试模式
 vhuhgsjn_enable=switch,true,false,tag=掌上公交-脚本开关
 vihu_enable=switch,true,false,tag=知乎-脚本开关
 vsgogojihhks_enable=switch,true,false,tag=中国国际航空-脚本开关
@@ -5059,7 +5063,6 @@ request if ${url} ~= /^https:\/\/gw3\.ykccn\.com\/api\/omp\/mt\/appAdvertising\/
 request if ${url} ~= /^https:\/\/gw3\.ykccn\.com\/api\/omp\/mt\/charge\/activity\/package\/newest/i then reject_dict(200)
 request if ${url} ~= /^https?:\/\/restapi\.iyunmai\.com\/api\/ios\/ad\//i then reject(200)
 request if ${url} ~= /^https?:\/\/m\.yap\.yahoo\.com\/v\d{2}\/getAds\.do/i then reject(404)
-request if ${url} ~= /^https:\/\/rr[\w-]+\.googlevideo\.com\/initplayback\?/i then reject_dict(200)
 request if ${url} ~= /^https?:\/\/c\.zhangle\.com\/pic\/mktg\/diversity\/.+\.jpg$/i then reject_dict(200)
 request if ${url} ~= /^https?:\/\/live\.inst-service\.htsc\.com\/live/i then reject_dict(200)
 request if ${url} ~= /^https?:\/\/geetest\.htsc\.com:8888\/pre_get_token/i then reject(200)
@@ -5420,9 +5423,9 @@ request if ${url} ~= /^https?:\/\/(syh|www)\.zybang\.com\/adx\//i then reject(20
 #request if ${url} ~= /^https?:\/\/.+\.pstatp\.com\/img\/ad/i then reject(200, " ")
 
 [Script]
-response if ${url} ~= /#^https?:\/\/www\.pushplus\.plus.*/i then script("https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js", "[[\"replace-regex\",[[\"(<head>)\",\"$1<style\"],[\"type=\\\"text/css\\\">\",\"div.container.py-3.text-center\"],[\"{display:\",\"none!\"],[\"important}\",\"</style\"]]]]") with tag="body_rewrite_5285", timeout=30, requires_body=true
+response if ${url} ~= /#^https?:\/\/www\.pushplus\.plus.*/i then script("https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js", "[[\"replace-regex\",[[\"(<head>)\",\"$1<style\"],[\"type=\\\"text/css\\\">\",\"div.container.py-3.text-center\"],[\"{display:\",\"none!\"],[\"important}\",\"</style\"]]]]") with tag="body_rewrite_5290", timeout=30, requires_body=true
 
-response if ${url} ~= /#^https?:\/\/vv\.video\.qq\.com\/getvinfo/i then script("https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js", "[[\"replace-regex\",[[\"&sppreviewtype=\\\\d(.*)&spsrt=\\\\d\",\"&sppreviewtype=0$1&spsrt=0\"]]]]") with tag="body_rewrite_5696", timeout=30, requires_body=true
+response if ${url} ~= /#^https?:\/\/vv\.video\.qq\.com\/getvinfo/i then script("https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js", "[[\"replace-regex\",[[\"&sppreviewtype=\\\\d(.*)&spsrt=\\\\d\",\"&sppreviewtype=0$1&spsrt=0\"]]]]") with tag="body_rewrite_5701", timeout=30, requires_body=true
 
 request if ${url} ~= /^https?:\/\/ad\.12306\.cn\/ad\/ser\/getAdList/i then script("https://raw.githubusercontent.com/kokoryh/Script/master/js/12306.js") with enable=${12306_enable}, tag="12306", timeout=60, requires_body=true
 
@@ -5830,7 +5833,11 @@ response if ${url} ~= /^https?:\/\/un-acs\.youku\.com\/gw\/mtop\.youku\.play\.up
 
 response if ${url} ~= /^https?:\/\/api\.ulife\.group\/market\/homeIconDetail\/list\/v7/i then script("https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/yx.js") with enable=${yzxiapp_enable}, tag="悠洗APP", timeout=60, requires_body=true
 
-response if ${url} ~= /^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch)/i then script("https://raw.githubusercontent.com/Maasea/sgmodule/refs/heads/master/Script/Youtube/youtube.response.js") with enable=${youtube_enable}, tag="YouTube响应体", timeout=60, requires_body=true, binary_body_mode=true
+response if ${url} ~= /^https:\/\/youtubei\.googleapis\.com\/(youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch|log_event|config))(\?(.*))?$/i then script("https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/youtube.response.js", {${captionLang}, ${blockUpload}, ${blockImmersive}, ${blockShorts}, ${debug}}) with tag="youtube.response", requires_body=true, binary_body_mode=true
+
+request if ${url} ~= /^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&ack.*/i then script("https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/youtube.request.js", {${captionLang}}) with tag="youtube.request.init", requires_body=true, binary_body_mode=true
+
+request if ${url} ~= /^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/log_event/i then script("https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/youtube.request.js") with tag="youtube.request.log_event", requires_body=true, binary_body_mode=true
 
 response if ${url} ~= /^https?:\/\/wx\.mygolbs\.com\/WxBusServer\/ApiData\.do/i then script("https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/zhangshanggongjiao.js") with enable=${vhuhgsjn_enable}, tag="掌上公交小程序广告", timeout=60, requires_body=true
 
